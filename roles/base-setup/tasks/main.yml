@@ -1,0 +1,90 @@
+- name: Install packages for DN42 router
+  apt:
+    package: "{{ item }}"
+    state: latest
+    install_recommends: yes
+  loop:
+    - git
+    # bird2 backports from https://deb.utopia-repository.org
+    - bird2
+    # wireguard from buster-backports
+    - wireguard
+    # needed to sudo into an unprivileged user: https://docs.ansible.com/ansible/latest/user_guide/become.html#risks-of-becoming-an-unprivileged-user
+    - acl
+
+# https://dn42.net/howto/networksettings
+- name: Set network settings for DN42
+  sysctl:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    state: present
+  loop:
+    - {name: 'net.ipv4.conf.default.rp_filter', value: '0'}
+    - {name: 'net.ipv4.conf.all.rp_filter',     value: '0'}
+    - {name: 'net.ipv4.conf.all.forwarding',    value: '1'}
+    - {name: 'net.ipv6.conf.all.forwarding',    value: '1'}
+
+- name: Prepare Wireguard keys
+  block:
+  - name: Make sure /etc/wireguard exists
+    file:
+      path: "/etc/wireguard"
+      state: directory
+      mode: '0755'
+  - name: Generate Wireguard private key
+    shell: "wg genkey > /etc/wireguard/privatekey"
+    args:
+      creates: "/etc/wireguard/privatekey"
+  - name: "Secure Wireguard private key"
+    file:
+      path: "/etc/wireguard/privatekey"
+      mode: '0640'
+      owner: root
+      group: root
+    ignore_errors: "{{ ansible_check_mode }}"
+  - name: Generate Wireguard public key
+    shell: "wg pubkey < /etc/wireguard/privatekey > /etc/wireguard/publickey"
+    args:
+      creates: "/etc/wireguard/publickey"
+
+- name: Install Wireguard helpers script
+  block:
+  - name: Upload Wireguard helpers script
+    copy:
+      src: wireguard-helpers.sh
+      dest: /etc/wireguard/
+      owner: root
+      group: adm
+      mode: '0755'
+  - name: Install Wireguard helpers systemd service
+    copy:
+      src: wireguard-dn42.service
+      dest: /etc/systemd/system/
+      owner: root
+      group: adm
+      mode: '0755'
+  - name: Enable Wireguard helpers systemd service
+    systemd:
+      name: wireguard-dn42
+      enabled: true
+
+- name: Install dn42 ROA sync script
+  block:
+  - name: Upload dn42 ROA sync script
+    copy:
+      src: dn42-update-roas.sh
+      dest: /usr/local/bin/dn42-update-roas.sh
+      owner: root
+      group: adm
+      mode: '0755'
+  - name: Run dn42 ROA sync script
+    command: "/usr/local/bin/dn42-update-roas.sh"
+    become: yes
+    become_user: bird
+    ignore_errors: "{{ ansible_check_mode }}"
+  - name: Create cron job for dn42 ROA sync script
+    cron:
+      name: "Pull dn42 ROA tables"
+      minute: "*/15"
+      job: "/usr/local/bin/dn42-update-roas.sh"
+      user: bird

@@ -1,0 +1,5 @@
+- name: Base setup for DN42 routers
+  hosts: dn42routers
+  become: yes
+  roles:
+    - base-setup
