@@ -1,0 +1,6 @@
+- name: Configure DN42 routers
+  hosts: dn42routers
+  become: yes
+  roles:
+    - config-wireguard
+    - config-bird2

@@ -1,0 +1,10 @@
+
+- name: Write Wireguard tunnel settings
+  template:
+    src: "{{ role_path }}/templates/{{ inventory_hostname }}/wireguard.sh.j2"
+    dest: "/etc/wireguard/wireguard.sh"
+    owner: "root"
+    group: "adm"
+    mode: '0755'
+  notify:
+    - start wireguard helper

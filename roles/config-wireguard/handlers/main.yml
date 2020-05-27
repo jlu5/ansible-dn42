@@ -1,0 +1,4 @@
+- name: start wireguard helper
+  systemd:
+    name: wireguard-dn42
+    state: started

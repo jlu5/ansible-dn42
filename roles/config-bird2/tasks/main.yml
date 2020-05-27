@@ -1,0 +1,45 @@
+- name: Template server-specific bird settings
+  template:
+    src: node-settings.conf.j2
+    dest: /etc/bird/node-settings.conf
+    group: bird
+    mode: '0644'
+  notify:
+    - reconfigure bird
+
+- name: Write generic bird settings
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/bird/"
+    group: "bird"
+    mode: '0644'
+  with_fileglob:
+    - "*.conf"
+  notify:
+    - reconfigure bird
+
+- name: Make sure /etc/bird/peers exists
+  file:
+    path: "/etc/bird/peers"
+    group: "bird"
+    state: directory
+    mode: '0755'
+
+- name: Make sure bird logs dir exists
+  file:
+    path: "/var/log/bird"
+    owner: "bird"
+    group: "bird"
+    state: directory
+    mode: '0750'
+
+- name: Write peer settings
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/bird/peers/"
+    group: "bird"
+    mode: '0644'
+  with_fileglob:
+    - "{{ role_path }}/files/peers/{{ inventory_hostname }}/*.conf"
+  notify:
+    - reconfigure bird
