@@ -6,7 +6,7 @@ PRIVATE_KEY="$(cat /etc/wireguard/privatekey)"
 
 {% macro igp_link(name, port) %}
 {% set nodedata = hostvars[name] %}
-"$action" {{ port }} "igp-{{ nodedata['shortname'] }}" "{{ nodedata['wg_pubkey'] }}" "{{ name }}:{{ port }}" "{{ nodedata['ownip'] }}" "{{ nodedata['ownip6'] }}"
+"$action" {{ port }} "igp-{{ nodedata['shortname'] }}" "{{ nodedata['wg_pubkey'] }}" "{{ name }}:{{ port }}" "{{ nodedata['ownip'] }}" "{{ nodedata['link_local_ip6'] }}" "{{ link_local_ip6 }}"
 {% endmacro %}
 
 peers() {

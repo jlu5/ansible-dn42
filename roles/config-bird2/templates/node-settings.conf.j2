@@ -6,3 +6,31 @@ define OWNNETv6 = {{ ownnet6 }};
 define OWNNETSET = [{{ ownnet }}+];
 define OWNNETSETv6 = [{{ ownnet6 }}+];
 define DN42_REGION = {{ dn42_region }};
+
+protocol static {
+{% if static_routes4 is defined %}
+{% for route in static_routes4 %}
+    route {{ route }};
+{% endfor %}
+{% endif %}
+    route OWNNET reject;
+
+    ipv4 {
+        import all;
+        export none;
+    };
+}
+
+protocol static {
+{% if static_routes6 is defined %}
+{% for route in static_routes6 %}
+    route {{ route }};
+{% endfor %}
+{% endif %}
+    route OWNNETv6 reject;
+
+    ipv6 {
+        import all;
+        export none;
+    };
+}
