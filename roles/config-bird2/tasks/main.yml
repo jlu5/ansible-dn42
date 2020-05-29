@@ -1,13 +1,5 @@
-- name: Template server-specific bird settings
-  template:
-    src: "{{ role_path }}/config/node-settings.conf.j2"
-    dest: /etc/bird/node-settings.conf
-    group: bird
-    mode: '0644'
-  notify:
-    - reconfigure bird
 
-- name: Write generic bird settings
+- name: Write global bird settings (static)
   copy:
     src: "{{ item }}"
     dest: "/etc/bird/"
@@ -15,6 +7,17 @@
     mode: '0644'
   with_fileglob:
     - "{{ role_path }}/config/*.conf"
+  notify:
+    - reconfigure bird
+
+- name: Write global bird settings (dynamic)
+  template:
+    src: "{{ item }}"
+    dest: "/etc/bird/{{ item | basename | regex_replace('\\.j2$', '')}}"
+    group: "bird"
+    mode: '0644'
+  with_fileglob:
+    - "{{ role_path }}/config/*.conf.j2"
   notify:
     - reconfigure bird
 
@@ -33,7 +36,7 @@
     state: directory
     mode: '0750'
 
-- name: Write peer settings
+- name: Write peer settings (static)
   copy:
     src: "{{ item }}"
     dest: "/etc/bird/peers/"
@@ -41,5 +44,16 @@
     mode: '0644'
   with_fileglob:
     - "{{ role_path }}/config/peers/{{ inventory_hostname }}/*.conf"
+  notify:
+    - reconfigure bird
+
+- name: Write peer settings (dynamic)
+  template:
+    src: "{{ item }}"
+    dest: "/etc/bird/peers/{{ item | basename | regex_replace('\\.j2$', '')}}"
+    group: "bird"
+    mode: '0644'
+  with_fileglob:
+    - "{{ role_path }}/config/peers/{{ inventory_hostname }}/*.conf.j2"
   notify:
     - reconfigure bird
