@@ -1,6 +1,6 @@
 - name: Template server-specific bird settings
   template:
-    src: node-settings.conf.j2
+    src: "{{ role_path }}/config/node-settings.conf.j2"
     dest: /etc/bird/node-settings.conf
     group: bird
     mode: '0644'
@@ -14,7 +14,7 @@
     group: "bird"
     mode: '0644'
   with_fileglob:
-    - "*.conf"
+    - "{{ role_path }}/config/*.conf"
   notify:
     - reconfigure bird
 
@@ -40,6 +40,6 @@
     group: "bird"
     mode: '0644'
   with_fileglob:
-    - "{{ role_path }}/files/peers/{{ inventory_hostname }}/*.conf"
+    - "{{ role_path }}/config/peers/{{ inventory_hostname }}/*.conf"
   notify:
     - reconfigure bird
