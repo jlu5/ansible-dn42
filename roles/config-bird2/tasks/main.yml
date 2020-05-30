@@ -1,3 +1,50 @@
+###
+# Remove files no longer present in ansible config dir. Based off https://stackoverflow.com/a/18016700
+- name: "List bird config files on remote"
+  shell: "ls -1 /etc/bird/*.conf"
+  register: bird_contents
+  changed_when: false
+  check_mode: no
+
+- name: Make sure /etc/bird/peers exists
+  file:
+    path: "/etc/bird/peers"
+    group: "bird"
+    state: directory
+    mode: '0755'
+
+- name: "List bird peers config files on remote"
+  shell: "ls -1 /etc/bird/peers/*.conf"
+  register: bird_peers_contents
+  changed_when: false
+  check_mode: no
+
+- name: "Enumerate config folder paths"
+  set_fact:
+    config_dir:               "{{ role_path }}/config"
+    peers_config_dir:         "{{ role_path }}/config/peers/{{ inventory_hostname }}"
+
+- name: "Enumerate config folder contents"
+  # This is a separate step because set_fact can't template facts set in the same task
+  set_fact:
+    bird_managed_files:       "{{ lookup('fileglob', '{{ config_dir }}/*.conf*').split(',')       | map('basename') | map('regex_replace', '\\.j2$', '') | list }}"
+    bird_peers_managed_files: "{{ lookup('fileglob', '{{ peers_config_dir }}/*.conf*').split(',') | map('basename') | map('regex_replace', '\\.j2$', '') | list }}"
+
+- name: "Remove unknown bird config files"
+  file:
+    path: "/etc/bird/{{ item }}"
+    state: absent
+  loop: "{{ bird_contents.stdout_lines }}"
+  # Don't remove managed files or autosynced ROA tables
+  when: item|basename not in bird_managed_files and item|basename is not match("roa_dn42.*\\.conf")
+
+- name: "Remove unknown bird peers config files"
+  file:
+    path: "/etc/bird/peers/{{ item }}"
+    state: absent
+  loop: "{{ bird_peers_contents.stdout_lines }}"
+  when: item|basename not in bird_peers_managed_files
+###
 
 - name: Write global bird settings (static)
   copy:
@@ -6,7 +53,7 @@
     group: "bird"
     mode: '0644'
   with_fileglob:
-    - "{{ role_path }}/config/*.conf"
+    - "{{ config_dir }}/*.conf"
   notify:
     - reconfigure bird
 
@@ -17,16 +64,9 @@
     group: "bird"
     mode: '0644'
   with_fileglob:
-    - "{{ role_path }}/config/*.conf.j2"
+    - "{{ config_dir }}/*.conf.j2"
   notify:
     - reconfigure bird
-
-- name: Make sure /etc/bird/peers exists
-  file:
-    path: "/etc/bird/peers"
-    group: "bird"
-    state: directory
-    mode: '0755'
 
 - name: Make sure bird logs dir exists
   file:
@@ -43,7 +83,7 @@
     group: "bird"
     mode: '0644'
   with_fileglob:
-    - "{{ role_path }}/config/peers/{{ inventory_hostname }}/*.conf"
+    - "{{ peers_config_dir }}/*.conf"
   notify:
     - reconfigure bird
 
@@ -54,6 +94,6 @@
     group: "bird"
     mode: '0644'
   with_fileglob:
-    - "{{ role_path }}/config/peers/{{ inventory_hostname }}/*.conf.j2"
+    - "{{ peers_config_dir }}/*.conf.j2"
   notify:
     - reconfigure bird
