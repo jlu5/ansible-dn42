@@ -7,15 +7,18 @@ protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
     path metric 1;
     igp metric 1;
     neighbor {{ nodedata['ownip6'] }} as {{ ownas }};
+    direct;
 
     ipv4 {
         next hop self;
+        gateway direct;
         import all;
         export all;
     };
 
     ipv6 {
         next hop self;
+        gateway direct;
         import all;
         export all;
     };
