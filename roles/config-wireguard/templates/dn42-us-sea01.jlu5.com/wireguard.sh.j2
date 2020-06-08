@@ -16,6 +16,7 @@ peers() {
   # port, peer_ip4 and peer_ip6, local_ip6 can be empty
   ## example:
   #"$action" "4242" "gruetzkopf" "HsPvddOJbSIS8LogJMpMTDG+IHm9eXfHCfapw9cRPAM=" "daemon.gruetzkopf.org:42232" "172.20.239.112/32" ""
+  "$action" 51475 "dn42sfo-sirmyst" "S1Pm3Oqdn6flQ15WoG5n+FQhyGPPS5Xdh98VQwephjA=" "dn42-us-sfo1.sirmysterion.com:51475" "172.20.20.98/32" "fe80::b562" "fe80::114"
 
   {{ igp_link("dn42-us-chi01.jlu5.com", 55001) }}
 }
