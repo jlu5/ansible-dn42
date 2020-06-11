@@ -19,7 +19,7 @@ BIND_PORT = "{{ birdlg_web_port }}"
 ROUTER_IP = {
 {% for host in ansible_play_hosts_all %}
 {% set nodedata = hostvars[host] %}
-    "dn42-{{ nodedata['shortname'] }}": ["{{ nodedata['ownip'] }}", "{{ nodedata['ownip6'] }}"],
+    "{{ nodedata['shortname'] }}": ["{{ nodedata['ownip'] }}", "{{ nodedata['ownip6'] }}"],
 {% endfor %}
 }
 

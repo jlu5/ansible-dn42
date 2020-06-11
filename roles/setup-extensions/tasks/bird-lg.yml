@@ -62,5 +62,3 @@
     enabled: yes
     daemon_reload: yes
   when: birdlg_webserver|default(False)
-
-# TODO: bird-lg-webservice unit is manually configured for now
