@@ -4,15 +4,17 @@
     state: directory
     mode: '0755'
 
-- name: Create automation account for DN42 scripts
+- name: Create automation account for dn42 scripts
   user:
     name: dn42-automation
     group: nogroup
     system: true
     password: "!"
     home: "/opt/dn42/automation"
+  register: dn42_user
 
-- name: Install DN42 peerfinder
+### dn42 peerfinder
+- name: Install dn42 peerfinder
   block:
   - name: "Upload peerfinder script"
     copy:
@@ -25,5 +27,9 @@
       name: dn42 peerfinder
       minute: "*/5"
       user: dn42-automation
-      job: "env UUID={{peerfinder_uuid}} LOGFILE=/opt/dn42/automation/peerfinder.log /opt/dn42/peerfinder.sh"
+      job: "env UUID={{ peerfinder_uuid }} LOGFILE={{ dn42_user.home }}/peerfinder.log /opt/dn42/peerfinder.sh"
   when: peerfinder_uuid is defined
+
+### bird-lg
+- name: Install bird looking glass
+  include_tasks: "bird-lg.yml"

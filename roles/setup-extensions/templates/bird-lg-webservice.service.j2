@@ -1,0 +1,40 @@
+# Copyright (C) 2015-2018 Alsace Réseau Neutre
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+[Unit]
+Description=BIRD Looking-Glass web server
+#After=apache2.service
+
+[Service]
+Type=simple
+User=bird
+Group=bird
+
+ProtectSystem=strict
+NoNewPrivileges=yes
+ProtectControlGroups=yes
+PrivateTmp=yes
+PrivateDevices=yes
+DevicePolicy=closed
+MemoryDenyWriteExecute=yes
+ProtectHome=true
+
+ReadWritePaths={{ bird_logs_dir }}
+WorkingDirectory={{ birdlg_src_dir }}
+ExecStart={{ birdlg_venv_dir }}/bin/gunicorn --bind {{ ownip }}:{{ birdlg_web_port }} --bind 127.0.0.1:{{ birdlg_web_port }} --bind [::1]:{{ birdlg_web_port }} lg:app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

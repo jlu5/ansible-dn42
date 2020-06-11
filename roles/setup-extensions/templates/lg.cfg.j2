@@ -1,0 +1,43 @@
+{#
+This might be the strangest thing I've ever written...
+App configuration as a Python script templated with Jinja?!
+#}
+
+DEBUG = True
+LOG_FILE = "{{ bird_logs_dir }}/bird-lg.log"
+LOG_LEVEL = "WARNING"
+UNIFIED_DAEMON = True
+#MEMCACHE_SERVER = "127.0.0.1:11211"
+
+DOMAIN = "{{ birdlg_domain }}"
+
+# Note: this will be overridden by gunicorn - these options only apply to the flask development server
+BIND_IP = "{{ ownip }}"
+BIND_PORT = "{{ birdlg_web_port }}"
+
+# A list of internal IPs, used for bgpmap.
+ROUTER_IP = {
+{% for host in ansible_play_hosts_all %}
+{% set nodedata = hostvars[host] %}
+    "dn42-{{ nodedata['shortname'] }}": ["{{ nodedata['ownip'] }}", "{{ nodedata['ownip6'] }}"],
+{% endfor %}
+}
+
+# Autofill proxy address for each router
+PROXY = {node: "%s:{{ birdlg_proxy_port }}" % ips[0] for node, ips in ROUTER_IP.items()}
+
+# Lazily assuming all nodes share the same ASN
+AS_NUMBER = {node: "{{ ownas }}" for node in ROUTER_IP}
+
+# set a timeout (in seconds) on lgproxy requests
+PROXY_TIMEOUT = {
+    "bird":       5,
+    "traceroute": 60
+}
+
+WHOIS_SERVER = "whois.dn42"
+
+# DNS zone to query for ASN -> name mapping
+#ASN_ZONE = "asn.dn42"
+
+SESSION_KEY = "{{ birdlg_session_key | trim }}"
