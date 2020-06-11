@@ -1,0 +1,29 @@
+- name: Create scripts dir for dn42
+  file:
+    path: "/opt/dn42"
+    state: directory
+    mode: '0755'
+
+- name: Create automation account for DN42 scripts
+  user:
+    name: dn42-automation
+    group: nogroup
+    system: true
+    password: "!"
+    home: "/opt/dn42/automation"
+
+- name: Install DN42 peerfinder
+  block:
+  - name: "Upload peerfinder script"
+    copy:
+      src: "peerfinder.sh"
+      dest: "/opt/dn42/peerfinder.sh"
+      mode: '0755'
+
+  - name: Create cron job for peerfinder
+    cron:
+      name: dn42 peerfinder
+      minute: "*/5"
+      user: dn42-automation
+      job: "env UUID={{peerfinder_uuid}} LOGFILE=/opt/dn42/automation/peerfinder.log /opt/dn42/peerfinder.sh"
+  when: peerfinder_uuid is defined

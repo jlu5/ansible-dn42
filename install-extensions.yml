@@ -1,0 +1,5 @@
+- name: Install dn42 automation and extensions
+  hosts: dn42routers
+  become: yes
+  roles:
+    - setup-extensions
