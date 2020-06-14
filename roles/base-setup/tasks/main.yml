@@ -47,27 +47,6 @@
     args:
       creates: "/etc/wireguard/publickey"
 
-- name: Install Wireguard helpers script
-  block:
-  - name: Upload Wireguard helpers script
-    copy:
-      src: wireguard-helpers.sh
-      dest: /etc/wireguard/
-      owner: root
-      group: adm
-      mode: '0755'
-  - name: Install Wireguard helpers systemd service
-    copy:
-      src: wireguard-dn42.service
-      dest: /etc/systemd/system/
-      owner: root
-      group: adm
-      mode: '0755'
-  - name: Enable Wireguard helpers systemd service
-    systemd:
-      name: wireguard-dn42
-      enabled: true
-
 - name: Install dn42 ROA sync script
   block:
   - name: Upload dn42 ROA sync script
