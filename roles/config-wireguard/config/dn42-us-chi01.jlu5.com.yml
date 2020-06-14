@@ -1,0 +1,47 @@
+wg_peers:
+- name: dn42chi-burble
+  port: 50001
+  remote: "dn42-us-chi1.burble.com:21080"
+  wg_pubkey: "+qLFgFIfFKMagWVVAZf/WeOopMm0g6aMTBKGqPBf6Qw="
+  peer_v4: "172.20.129.166/32"
+  peer_v6: "fd42:4242:2601:2e::1/128"
+
+- name: dn42chi-tech9
+  port: 50002
+  remote: "us-chi01.dn42.tech9.io:53737"
+  wg_pubkey: "0kb8ffMcbx8oXZ3Ii5khOuCzmRqM2Cy0IslmrWtRGSk="
+  peer_v4: "172.20.16.139/32"
+  peer_v6: "fe80::1588/64"
+  local_v6: "fe80::100"
+
+- name: "dn42atl-doxz"
+  port: 50003
+  remote: "45.76.249.17:51822"
+  wg_pubkey: "2RkCWgwBkoq5jJhjDWI15nCxwgb6oQxdY9lIO18KEzs="
+  peer_v4: "172.22.159.60/32"
+  peer_v6: "fdfc:694e:234f::3/128"
+
+- name: "dn42tor-hexanet"
+  port: 53078
+  remote: "omicron.hexanet.dev:31080"
+  wg_pubkey: "+pHEjVI8t2b8yu5mlV2q+rEpxirvXJk6Nnh3tyWk/Fw="
+  peer_v4: null  # v6-only
+  peer_v6: "fe80::10:3621"
+
+- name: "dn42nyc-marropa"
+  port: 50880
+  remote: "dn42-us-ipv4.marropax.com:21080"
+  wg_pubkey: "l64RRVzVLNkp5GtVWjZbFjkSse7Yo+FQqyNFUOG3SgI="
+  peer_v4: "172.21.106.113/32"
+  peer_v6: "fe80::cafe"
+
+- name: "dn42kan-sbernau"
+  port: 51297
+  remote: "57a2c73.online-server.cloud:51080"
+  wg_pubkey: "LIpv4meXlO+aGPbujTpevJwJJllPkgKOICQ09IEf6x8="
+  peer_v4: "172.20.234.65/32"
+  peer_v6: "fe80::12:97"
+
+igp_peers:
+  - name: "dn42-us-sea01.jlu5.com"
+    port: 55001

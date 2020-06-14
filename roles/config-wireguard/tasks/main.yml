@@ -1,10 +1,41 @@
 
-- name: Write Wireguard tunnel settings
-  template:
-    src: "{{ role_path }}/templates/{{ inventory_hostname }}/wireguard.sh.j2"
-    dest: "/etc/wireguard/wireguard.sh"
-    owner: "root"
-    group: "adm"
-    mode: '0755'
-  notify:
-    - start wireguard helper
+#- name: Write Wireguard tunnel settings
+#  template:
+#    src: "{{ role_path }}/templates/{{ inventory_hostname }}/wireguard.sh.j2"
+#    dest: "/etc/wireguard/wireguard.sh"
+#    owner: "root"
+#    group: "adm"
+#    mode: '0755'
+#  notify:
+#    - start wireguard helper
+
+- name: Read Wireguard tunnel settings (v2)
+  include_vars:
+    file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
+
+- name: Ensure /etc/network/interfaces.d is sourced from
+  lineinfile:
+    line: "source-directory /etc/network/interfaces.d"
+    path: "/etc/network/interfaces"
+  register: enable_interfaces_d
+
+- name: Write Wireguard tunnel settings for peers (v2)
+  include_tasks: "write-wg-settings.yml"
+  loop: "{{ wg_peers }}"
+  loop_control:
+    loop_var: peer_info
+
+- name: Write Wireguard tunnel settings for internal nodes (v2)
+  include_tasks: "write-wg-settings.yml"
+  loop: "{{ igp_peers }}"
+  loop_control:
+    loop_var: igp_peer_info
+  vars:
+    # XXX: ugly substitutions...
+    peer_info:
+      name: "igp-{{ hostvars[igp_peer_info.name]['shortname'] }}"
+      port: "{{ igp_peer_info.port }}"
+      remote: "{{ igp_peer_info.name }}:{{ igp_peer_info.port }}"
+      wg_pubkey: "{{ hostvars[igp_peer_info.name]['wg_pubkey'] }}"
+      peer_v4: "{{ hostvars[igp_peer_info.name]['ownip'] }}"
+      peer_v6: "{{ hostvars[igp_peer_info.name]['ownip6'] }}"
