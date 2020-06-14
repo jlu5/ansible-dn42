@@ -1,9 +1,6 @@
 - name: Install packages for DN42 router
   apt:
-    package: "{{ item }}"
-    state: latest
-    install_recommends: yes
-  loop:
+    name:
     - git
     # bird2 backports from https://deb.utopia-repository.org
     - bird2
@@ -11,6 +8,8 @@
     - wireguard
     # needed to sudo into an unprivileged user: https://docs.ansible.com/ansible/latest/user_guide/become.html#risks-of-becoming-an-unprivileged-user
     - acl
+    state: latest
+    install_recommends: yes
 
 # https://dn42.net/howto/networksettings
 - name: Set network settings for DN42
