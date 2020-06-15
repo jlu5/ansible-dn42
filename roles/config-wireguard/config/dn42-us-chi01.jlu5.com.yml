@@ -41,7 +41,3 @@ wg_peers:
   wg_pubkey: "LIpv4meXlO+aGPbujTpevJwJJllPkgKOICQ09IEf6x8="
   peer_v4: "172.20.234.65/32"
   peer_v6: "fe80::12:97"
-
-igp_peers:
-  - name: "dn42-us-sea01.jlu5.com"
-    port: 55001

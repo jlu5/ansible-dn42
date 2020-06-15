@@ -14,17 +14,35 @@
   loop_control:
     loop_var: peer_info
 
+- name: Enumerate intra-AS tunnels
+  set_fact:
+    current_igp_tunnel_port: 55000
+    igp_tunnel_ports: {}
+    other_servers: "{{ ansible_play_hosts_all | select('ne', inventory_hostname) | list }}"
+
+# For each combination of servers, set the port for the two servers to current_igp_tunnel_port and increment
+- name: Enumerate intra-AS tunnels
+  set_fact:
+    igp_tunnel_ports: "{{ igp_tunnel_ports | combine({','.join(item): current_igp_tunnel_port, '%s,%s' % (item[1], item[0]): current_igp_tunnel_port}) }}"
+    current_igp_tunnel_port: "{{ current_igp_tunnel_port|int + 1 }}"
+  loop: "{{ ansible_play_hosts_all | combinations(2) | list }}"
+
+- debug:
+    msg: "All other servers: {{ other_servers }}"
+- debug:
+    msg: "igp_tunnel_ports: {{ igp_tunnel_ports }}"
+
 - name: Write Wireguard tunnel settings for internal nodes (v2)
   include_tasks: "write-wg-settings.yml"
-  loop: "{{ igp_peers }}"
+  loop: "{{ other_servers }}"
   loop_control:
-    loop_var: igp_peer_info
+    loop_var: igp_node
   vars:
     # XXX: ugly substitutions...
     peer_info:
-      name: "igp-{{ hostvars[igp_peer_info.name]['shortname'] }}"
-      port: "{{ igp_peer_info.port }}"
-      remote: "{{ igp_peer_info.name }}:{{ igp_peer_info.port }}"
-      wg_pubkey: "{{ hostvars[igp_peer_info.name]['wg_pubkey'] }}"
-      peer_v4: "{{ hostvars[igp_peer_info.name]['ownip'] }}"
-      peer_v6: "{{ hostvars[igp_peer_info.name]['ownip6'] }}"
+      name: "igp-{{ hostvars[igp_node]['shortname'] }}"
+      port: "{{ igp_tunnel_ports['%s,%s' % (inventory_hostname, igp_node)] }}"
+      remote: "{{ igp_node }}:{{ igp_tunnel_ports['%s,%s' % (inventory_hostname, igp_node)] }}"
+      wg_pubkey: "{{ hostvars[igp_node]['wg_pubkey'] }}"
+      peer_v4: "{{ hostvars[igp_node]['ownip'] }}"
+      peer_v6: "{{ hostvars[igp_node]['ownip6'] }}"

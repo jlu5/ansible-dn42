@@ -19,7 +19,3 @@ wg_peers:
   wg_pubkey: "4j71bm03SLt6Me3KkkPBciXWBcFXnpEqxOgms7erV24="
   peer_v4: "172.21.74.97/32"
   peer_v6: "fe80::97"
-
-igp_peers:
-  - name: "dn42-us-chi01.jlu5.com"
-    port: 55001
