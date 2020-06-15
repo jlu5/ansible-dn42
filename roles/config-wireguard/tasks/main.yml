@@ -27,9 +27,8 @@
     current_igp_tunnel_port: "{{ current_igp_tunnel_port|int + 1 }}"
   loop: "{{ ansible_play_hosts_all | combinations(2) | list }}"
 
-- debug:
-    msg: "All other servers: {{ other_servers }}"
-- debug:
+- name: Print tunnel port configuration
+  debug:
     msg: "igp_tunnel_ports: {{ igp_tunnel_ports }}"
 
 - name: Write Wireguard tunnel settings for internal nodes (v2)
