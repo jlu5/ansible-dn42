@@ -1,0 +1,5 @@
+ibgp_costs:
+  # These costs are configured as the latency between 2 nodes, rounded to the nearest 5ms
+  'us-sea01,us-chi01': 45
+  'us-sea01,ca-bhs01': 65
+  'us-chi01,ca-bhs01': 20

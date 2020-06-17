@@ -49,6 +49,11 @@
   when: item|basename not in bird_peers_managed_files
 ###
 
+- name: Read template settings for bird config
+  include_vars:
+    dir: "{{ role_path }}/config/"
+    ignore_unknown_extensions: true
+
 - name: Write global bird settings (static)
   copy:
     src: "{{ item }}"
