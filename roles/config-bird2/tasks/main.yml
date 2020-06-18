@@ -63,7 +63,7 @@
   with_fileglob:
     - "{{ config_dir }}/*.conf"
   notify:
-    - reconfigure bird
+    - Reconfigure bird
 
 - name: Write global bird settings (dynamic)
   template:
@@ -74,7 +74,7 @@
   with_fileglob:
     - "{{ config_dir }}/*.conf.j2"
   notify:
-    - reconfigure bird
+    - Reconfigure bird
 
 - name: Make sure bird logs dir exists
   file:
@@ -93,7 +93,7 @@
   with_fileglob:
     - "{{ peers_config_dir }}/*.conf"
   notify:
-    - reconfigure bird
+    - Reconfigure bird
 
 - name: Write peer settings (dynamic)
   template:
@@ -104,4 +104,4 @@
   with_fileglob:
     - "{{ peers_config_dir }}/*.conf.j2"
   notify:
-    - reconfigure bird
+    - Reconfigure bird

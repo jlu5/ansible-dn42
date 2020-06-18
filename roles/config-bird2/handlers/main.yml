@@ -1,3 +1,9 @@
-- name: reconfigure bird
+- name: Reconfigure bird
   command: /usr/sbin/birdc configure
   become_user: bird
+  register: reconfigure_bird_output
+  notify: Print bird reconfigure output
+
+- name: Print bird reconfigure output
+  debug:
+    var: reconfigure_bird_output.stdout_lines
