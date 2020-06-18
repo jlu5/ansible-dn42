@@ -13,8 +13,6 @@
 
 protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
     local as {{ ownas }};
-    path metric 1;
-    igp metric 1;
     neighbor {{ nodedata['ownip6'] }} as {{ ownas }};
     direct;
 
