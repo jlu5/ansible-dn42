@@ -19,3 +19,10 @@ wg_peers:
   wg_pubkey: "4j71bm03SLt6Me3KkkPBciXWBcFXnpEqxOgms7erV24="
   peer_v4: "172.21.74.97/32"
   peer_v6: "fe80::97"
+
+- name: dn42sjo-sunnet
+  port: 53088
+  remote: "sjc1-us.dn42.6700.cc:21080"
+  wg_pubkey: "G/ggwlVSy5jKWFlJM01hxcWnL8VDXsD5EXZ/S47SmhM="
+  peer_v4: "172.21.100.191/32"
+  peer_v6: "fe80::3088:191/64"

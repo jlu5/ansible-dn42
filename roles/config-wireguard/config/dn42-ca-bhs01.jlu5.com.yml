@@ -1,1 +1,7 @@
-wg_peers: []
+wg_peers:
+- name: dn42bhs-sunnet
+  port: 53088
+  remote: "bhs1-ca.dn42.6700.cc:21080"
+  wg_pubkey: "8Fy74XQsrlXxl8TTlsYo7hr+tc8VtydPHNgqI0P7o14="
+  peer_v4: "172.21.100.208"
+  peer_v6: "fe80::3088:208/64"
