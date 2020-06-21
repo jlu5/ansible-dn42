@@ -29,11 +29,7 @@ wg_peers:
   peer_v6: "fe80::10:3621"
 
 - name: "dn42nyc-marropa"
-  port: 50880
-  remote: "dn42-us-ipv4.marropax.com:21080"
-  wg_pubkey: "l64RRVzVLNkp5GtVWjZbFjkSse7Yo+FQqyNFUOG3SgI="
-  peer_v4: "172.21.106.113/32"
-  peer_v6: "fe80::cafe"
+  remove: true  # moved to bhs01
 
 - name: "dn42kan-sbernau"
   port: 51297

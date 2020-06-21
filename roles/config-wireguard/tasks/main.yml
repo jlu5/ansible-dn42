@@ -13,6 +13,14 @@
   loop: "{{ wg_peers }}"
   loop_control:
     loop_var: peer_info
+  when: not peer_info.get('remove')
+
+- name: Remove obsolete Wireguard tunnels
+  include_tasks: "remove-wg-settings.yml"
+  loop: "{{ wg_peers }}"
+  loop_control:
+    loop_var: peer_info
+  when: peer_info.get('remove')
 
 - name: Enumerate intra-AS tunnels
   set_fact:

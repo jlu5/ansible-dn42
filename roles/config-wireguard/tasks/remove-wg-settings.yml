@@ -1,0 +1,17 @@
+- name: "Remove Wireguard tunnel config for peer {{ peer_info.name }}"
+  file:
+    dest: "/etc/wireguard/{{ peer_info.name }}.conf"
+    state: absent
+  register: wg_tunnel_remove
+
+- name: "Remove interfaces.d entry for peer {{ peer_info.name }}"
+  file:
+    dest: "/etc/network/interfaces.d/{{ peer_info.name }}"
+    state: absent
+  register: interfaces_remove
+
+- name: "Stop interface for peer {{ peer_info.name }}"
+  command: "ifdown --force {{ peer_info.name }}"
+  # TODO: document the restart_all_tunnels variable
+  when: wg_tunnel_remove.changed or interfaces_remove.changed or (restart_all_tunnels | default(False))
+  ignore_errors: yes
