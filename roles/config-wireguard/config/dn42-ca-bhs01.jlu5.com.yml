@@ -12,3 +12,10 @@ wg_peers:
   wg_pubkey: "Y74Q+xtl3YXureqokfYhSjfHWQU2cO4QP3mgmatj2gs="
   peer_v4: "172.23.149.11"
   peer_v6: "fe80::172:23:149:11"
+
+- name: "dn42nyc-marropa"
+  port: 50880
+  remote: "dn42-us.marropax.com:21080"
+  wg_pubkey: "l64RRVzVLNkp5GtVWjZbFjkSse7Yo+FQqyNFUOG3SgI="
+  peer_v4: "172.21.106.113/32"
+  peer_v6: "fe80::cafe"
