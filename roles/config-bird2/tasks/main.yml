@@ -1,7 +1,7 @@
 ###
 # Remove files no longer present in ansible config dir. Based off https://stackoverflow.com/a/18016700
 - name: "List bird config files on remote"
-  shell: "ls -1 /etc/bird/*.conf | true"
+  shell: "ls -1 /etc/bird/*.conf || true"
   register: bird_contents
   changed_when: false
   check_mode: no
@@ -14,7 +14,7 @@
     mode: '0755'
 
 - name: "List bird peers config files on remote"
-  shell: "ls -1 /etc/bird/peers/*.conf | true"
+  shell: "ls -1 /etc/bird/peers/*.conf || true"
   register: bird_peers_contents
   changed_when: false
   check_mode: no
@@ -35,18 +35,22 @@
 
 - name: "Remove unknown bird config files"
   file:
-    path: "/etc/bird/{{ item }}"
+    path: "/etc/bird/{{ item|basename }}"
     state: absent
   loop: "{{ bird_contents.stdout_lines }}"
   # Don't remove managed files or autosynced ROA tables
   when: item|basename not in bird_managed_files and item|basename is not match("roa_dn42.*\\.conf")
+  notify:
+    - Reconfigure bird
 
 - name: "Remove unknown bird peers config files"
   file:
-    path: "/etc/bird/peers/{{ item }}"
+    path: "/etc/bird/peers/{{ item|basename }}"
     state: absent
   loop: "{{ bird_peers_contents.stdout_lines }}"
   when: item|basename not in bird_peers_managed_files
+  notify:
+    - Reconfigure bird
 ###
 
 - name: Read template settings for bird config
