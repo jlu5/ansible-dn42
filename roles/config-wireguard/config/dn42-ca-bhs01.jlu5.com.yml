@@ -19,3 +19,10 @@ wg_peers:
   wg_pubkey: "l64RRVzVLNkp5GtVWjZbFjkSse7Yo+FQqyNFUOG3SgI="
   peer_v4: "172.21.106.113/32"
   peer_v6: "fe80::cafe"
+
+- name: "dn42bhs-wxmn"
+  port: 52227
+  remote: "dn42-ca-bhs-1.wxmn.net:21080"
+  wg_pubkey: "j7wMOk5lXWF8hPy1EHEv5yRt5jfcm1/tIJB9KM6bl0Y="
+  peer_v4: "172.22.127.68"
+  peer_v6: "fe80::42:22:400"
