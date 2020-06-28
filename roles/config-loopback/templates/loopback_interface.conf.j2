@@ -1,9 +1,4 @@
 iface {{ loopback_ifname }} inet static
-    address {{ peering_lan_ip }}
-    netmask 255.255.255.255
-    network {{ peering_lan_ip }}
-
-iface {{ loopback_ifname }} inet static
     address {{ ownip }}
     netmask 255.255.255.255
     network {{ ownip }}

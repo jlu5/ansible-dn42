@@ -3,7 +3,13 @@ define OWNIP = {{ ownip }};
 define OWNIPv6 = {{ ownip6 }};
 define OWNNET = {{ ownnet }};
 define OWNNETv6 = {{ ownnet6 }};
-define OWNNETSET = [{{ ownnet }}+];
+define OWNNETSET = [
+    {{ ownnet }}+,
+    # Peering LAN
+    192.168.88.0/24+,
+    # Other infra (specific to my network)
+    192.168.33.0/24+
+];
 define OWNNETSETv6 = [{{ ownnet6 }}+];
 define DN42_REGION = {{ dn42_region }};
 
