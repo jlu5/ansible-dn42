@@ -4,5 +4,6 @@
   # Linear operation makes templating peer data really slow...
   strategy: free
   roles:
+    - config-loopback
     - config-wireguard
     - config-bird2

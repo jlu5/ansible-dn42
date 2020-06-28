@@ -14,32 +14,17 @@
 protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
     local as {{ ownas }};
     neighbor {{ nodedata['ownip6'] }} as {{ ownas }};
-    direct;
 
     ipv4 {
-        next hop self;
         cost {{ ibgp_cost(nodedata) }};
-        # Treat the preconfigured iBGP cost as a fake igp_metric - this way we can expose it
-        # as a MED attribute to external peers.
-        # From bird manual:
-        # "int igp_metric [is an] optional attribute that can be used to specify a distance to the
-        # network for routes that do not have a native protocol metric attribute (like ospf_metric1
-        # for OSPF routes)."
-        import filter {
-            igp_metric = {{ ibgp_cost(nodedata) }};
-            accept;
-        };
-        export all;
+        import where source = RTS_BGP && is_valid_network();
+        export where source = RTS_BGP && is_valid_network();
     };
 
     ipv6 {
-        next hop self;
         cost {{ ibgp_cost(nodedata) }};
-        import filter {
-            igp_metric = {{ ibgp_cost(nodedata) }};
-            accept;
-        };
-        export all;
+        import where source = RTS_BGP && is_valid_network_v6();
+        export where source = RTS_BGP && is_valid_network_v6();
     };
 }
 {% endif %}

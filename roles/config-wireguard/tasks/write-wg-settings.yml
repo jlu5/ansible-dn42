@@ -13,5 +13,5 @@
 - name: "Restart interface for peer {{ peer_info.name }}"
   shell: "ifdown --force {{ peer_info.name }}; ifup {{ peer_info.name }}"
   # TODO: document the restart_all_tunnels variable
-  when: enable_interfaces_d.changed or wg_tunnel_tmpl.changed or interfaces_tmpl.changed or (restart_all_tunnels | default(False))
+  when: wg_tunnel_tmpl.changed or interfaces_tmpl.changed or (restart_all_tunnels | default(False))
   ignore_errors: yes

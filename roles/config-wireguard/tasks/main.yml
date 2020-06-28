@@ -2,12 +2,6 @@
   include_vars:
     file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
 
-- name: Ensure /etc/network/interfaces.d is sourced from
-  lineinfile:
-    line: "source-directory /etc/network/interfaces.d"
-    path: "/etc/network/interfaces"
-  register: enable_interfaces_d
-
 - name: Write Wireguard tunnel settings for peers (v2)
   include_tasks: "write-wg-settings.yml"
   loop: "{{ wg_peers }}"
@@ -51,5 +45,6 @@
       port: "{{ igp_tunnel_ports['%s,%s' % (inventory_hostname, igp_node)] }}"
       remote: "{{ igp_node }}:{{ igp_tunnel_ports['%s,%s' % (inventory_hostname, igp_node)] }}"
       wg_pubkey: "{{ hostvars[igp_node]['wg_pubkey'] }}"
-      peer_v4: "{{ hostvars[igp_node]['ownip'] }}"
-      peer_v6: "{{ hostvars[igp_node]['ownip6'] }}"
+      peer_v4: "{{ hostvars[igp_node]['peering_lan_ip'] }}"
+      peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
+      is_internal_node: true

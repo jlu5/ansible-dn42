@@ -1,0 +1,19 @@
+- name: Ensure /etc/network/interfaces.d is sourced from
+  lineinfile:
+    line: "source-directory /etc/network/interfaces.d"
+    path: "/etc/network/interfaces"
+
+- name: "Set loopback interface name"
+  set_fact:
+    loopback_ifname: "lo:10"
+
+- name: "Write loopback interface in interfaces.d"
+  template:
+    src: loopback_interface.conf.j2
+    dest: "/etc/network/interfaces.d/dn42-lo-ibgp"
+  register: interfaces_tmpl
+
+- name: "(Re)start loopback interface"
+  shell: "ifdown --force {{ loopback_ifname }}; ifup {{ loopback_ifname }}"
+  when: interfaces_tmpl.changed
+  ignore_errors: yes
