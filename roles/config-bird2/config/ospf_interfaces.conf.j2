@@ -1,0 +1,27 @@
+{% macro internal_cost(nodedata) -%}
+{# Costs are specified in igp_costs.yml and default to 200 if not given.
+   Only one of (A,B) and (B,A) have to be defined, to save space. #}
+{% set default_cost = 200 %}
+{{ (internal_costs.get('%s,%s' % (shortname, nodedata['shortname'])) or
+    internal_costs.get('%s,%s' % (nodedata['shortname'], shortname)) or default_cost) }}
+{%- endmacro %}
+
+{% for host in ansible_play_hosts_all %}
+{% if host != inventory_hostname %}
+{% set nodedata = hostvars[host] %}
+interface "igp-{{ nodedata['shortname'] }}" {
+    cost {{ internal_cost(nodedata) }};
+    type ptp;
+};
+{% endif %}
+{% endfor %}
+
+# Loopback interface on each machine
+interface "lo" {
+    stub;
+};
+
+# Separate VPN links
+interface "tun*" {
+    stub;
+};
