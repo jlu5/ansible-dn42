@@ -14,19 +14,22 @@
 protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
     local as {{ ownas }};
     neighbor {{ nodedata['ownip6'] }} as {{ ownas }};
+    source address {{ ownip6 }};
 
     ipv4 {
-        cost {{ ibgp_cost(nodedata) }};
+        #cost {{ ibgp_cost(nodedata) }};
         import where source = RTS_BGP && is_valid_network() && !is_self_net();
         export where source = RTS_BGP && is_valid_network() && !is_self_net();
-        source address {{ ownip }};
+        next hop address {{ ownip }};
+        next hop self;
     };
 
     ipv6 {
-        cost {{ ibgp_cost(nodedata) }};
+        #cost {{ ibgp_cost(nodedata) }};
         import where source = RTS_BGP && is_valid_network_v6() && !is_self_net_v6();
         export where source = RTS_BGP && is_valid_network_v6() && !is_self_net_v6();
-        source address {{ ownip6 }};
+        next hop address {{ ownip6 }};
+        next hop self;
     };
 }
 {% endif %}
