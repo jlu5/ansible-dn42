@@ -26,3 +26,10 @@ wg_peers:
   wg_pubkey: "j7wMOk5lXWF8hPy1EHEv5yRt5jfcm1/tIJB9KM6bl0Y="
   peer_v4: "172.22.127.68"
   peer_v6: "fe80::42:22:400"
+
+- name: "dn42bhs-munster"
+  port: 52237
+  remote: "ca-bhs01.dn42.munsternet.eu:51850"
+  wg_pubkey: "0MdSpit+qpvlUlFH/gMvTXuvNATvRUTAHVAnKeT+NhU="
+  peer_v4: null
+  peer_v6: "fe80::42:1080:1"
