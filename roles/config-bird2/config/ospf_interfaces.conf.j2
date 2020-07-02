@@ -20,8 +20,3 @@ interface "igp-{{ nodedata['shortname'] }}" {
 interface "lo" {
     stub;
 };
-
-# Separate VPN links
-interface "tun*" {
-    stub;
-};
