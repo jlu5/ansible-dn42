@@ -38,8 +38,8 @@
     path: "/etc/bird/{{ item|basename }}"
     state: absent
   loop: "{{ bird_contents.stdout_lines }}"
-  # Don't remove managed files or autosynced ROA tables
-  when: item|basename not in bird_managed_files and item|basename is not match("roa_dn42.*\\.conf")
+  # Don't remove managed files, node-specific local configs, or autosynced ROA tables
+  when: item|basename not in bird_managed_files and item|basename is not match("(roa_dn42|local|ospf_local).*\\.conf")
   notify:
     - Reconfigure bird
 
