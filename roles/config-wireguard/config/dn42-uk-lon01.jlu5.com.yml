@@ -1,1 +1,7 @@
-wg_peers: []
+wg_peers:
+- name: dn42lon-strexp
+  port: 51331
+  remote: "lon1.uk.dn42.strexp.net:21080"
+  wg_pubkey: "k06qY2e3mliYjPfbUUkeczvymOdLYzMRmhvqlT4jW0Y="
+  peer_v4: "172.20.158.145"
+  peer_v6: "fe80::1331"

@@ -33,3 +33,10 @@ wg_peers:
   wg_pubkey: "0MdSpit+qpvlUlFH/gMvTXuvNATvRUTAHVAnKeT+NhU="
   peer_v4: null
   peer_v6: "fe80::42:1080:1"
+
+- name: dn42nyc-strexp
+  port: 51331
+  remote: "nyc1.us.dn42.strexp.net:21080"
+  wg_pubkey: "s00+3HRZVTFsGJyTZoF88/x4qG82M4sYOraNo4KxIXM="
+  peer_v4: "172.20.158.144"
+  peer_v6: "fe80::1331"
