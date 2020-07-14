@@ -25,3 +25,18 @@ bw = min(up,down) for asymmetric connections
 Propagation:
 - - for latency pick max(received_route.latency, link_latency)
 - - for encryption and bandwidth pick min between received BGP community and peer link
+
+Route origins:
+(64511, 41) :: Europe
+(64511, 42) :: North America-E
+(64511, 43) :: North America-C
+(64511, 44) :: North America-W
+(64511, 45) :: Central America
+(64511, 46) :: South America-E
+(64511, 47) :: South America-W
+(64511, 48) :: Africa-N (above Sahara)
+(64511, 49) :: Africa-S (below Sahara)
+(64511, 50) :: Asia-S (IN,PK,BD)
+(64511, 51) :: Asia-SE (TH,SG,PH,ID,MY)
+(64511, 52) :: Asia-E (JP,CN,KR)
+(64511, 53) :: Pacific
