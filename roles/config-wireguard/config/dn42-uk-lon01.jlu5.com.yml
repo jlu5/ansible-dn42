@@ -5,3 +5,11 @@ wg_peers:
   wg_pubkey: "k06qY2e3mliYjPfbUUkeczvymOdLYzMRmhvqlT4jW0Y="
   peer_v4: "172.20.158.145"
   peer_v6: "fe80::1331"
+
+- name: dn42fra-tech9
+  port: 51588
+  remote: "de-fra02.dn42.tech9.io:51085"
+  wg_pubkey: "MD1EdVe9a0yycUdXCH3A61s3HhlDn17m5d07e4H33S0="
+  peer_v4: "172.20.16.141"
+  peer_v6: "fe80::1588/64"
+  local_v6: "fe80::100"
