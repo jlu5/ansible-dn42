@@ -8,7 +8,7 @@ wg_peers:
 
 - name: dn42fra-tech9
   port: 51588
-  remote: "de-fra02.dn42.tech9.io:51085"
+  remote: "de-fra02.dn42.tech9.io:56181"
   wg_pubkey: "MD1EdVe9a0yycUdXCH3A61s3HhlDn17m5d07e4H33S0="
   peer_v4: "172.20.16.141"
   peer_v6: "fe80::1588/64"
