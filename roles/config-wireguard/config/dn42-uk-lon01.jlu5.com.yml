@@ -13,3 +13,10 @@ wg_peers:
   peer_v4: "172.20.16.141"
   peer_v6: "fe80::1588/64"
   local_v6: "fe80::100"
+
+- name: dn42lon-bauen1
+  port: 50151
+  remote: "dn42-uk-london0.dn42.bauen1.xyz:21080"
+  wg_pubkey: "YIcioh9MB/8fR3M5OHDaQo/15XtPlZsMEZEjAqLmDx4="
+  peer_v4: "172.20.18.225"
+  peer_v6: "fe80::eafa:46e8"
