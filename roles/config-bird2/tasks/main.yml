@@ -6,31 +6,16 @@
   changed_when: false
   check_mode: no
 
-- name: Make sure /etc/bird/peers exists
-  file:
-    path: "/etc/bird/peers"
-    group: "bird"
-    state: directory
-    mode: '0755'
-
-- name: "List bird peers config files on remote"
-  shell: "ls -1 /etc/bird/peers/*.conf || true"
-  register: bird_peers_contents
-  changed_when: false
-  check_mode: no
-
 - name: "Enumerate config folder paths"
   set_fact:
     config_dir:               "{{ role_path }}/config"
     peers_config_dir:         "{{ role_path }}/config/peers/{{ inventory_hostname }}"
     bird_managed_files:       []
-    bird_peers_managed_files: []
 
 - name: "Enumerate config folder contents (ignore errors if no peers are defined)"
   # This is a separate step because set_fact can't template facts set in the same task
   set_fact:
     bird_managed_files:       "{{ lookup('fileglob', '{{ config_dir }}/*.conf*').split(',')       | map('basename') | map('regex_replace', '\\.j2$', '') | list }}"
-    bird_peers_managed_files: "{{ lookup('fileglob', '{{ peers_config_dir }}/*.conf*').split(',') | map('basename') | map('regex_replace', '\\.j2$', '') | list }}"
   ignore_errors: true
 
 - name: "Remove unknown bird config files"
@@ -40,15 +25,6 @@
   loop: "{{ bird_contents.stdout_lines }}"
   # Don't remove managed files, node-specific local configs, or autosynced ROA tables
   when: item|basename not in bird_managed_files and item|basename is not match("(roa_dn42|local|ospf_local).*\\.conf")
-  notify:
-    - Reconfigure bird
-
-- name: "Remove unknown bird peers config files"
-  file:
-    path: "/etc/bird/peers/{{ item|basename }}"
-    state: absent
-  loop: "{{ bird_peers_contents.stdout_lines }}"
-  when: item|basename not in bird_peers_managed_files
   notify:
     - Reconfigure bird
 ###
@@ -88,24 +64,12 @@
     state: directory
     mode: '0750'
 
-- name: Write peer settings (static)
-  copy:
-    src: "{{ item }}"
-    dest: "/etc/bird/peers/"
+- name: Write peer settings
+  assemble:
+    src: "{{ peers_config_dir }}"
+    dest: /etc/bird/local_dn42peers.conf
     group: "bird"
     mode: '0644'
-  with_fileglob:
-    - "{{ peers_config_dir }}/*.conf"
-  notify:
-    - Reconfigure bird
-
-- name: Write peer settings (dynamic)
-  template:
-    src: "{{ item }}"
-    dest: "/etc/bird/peers/{{ item | basename | regex_replace('\\.j2$', '')}}"
-    group: "bird"
-    mode: '0644'
-  with_fileglob:
-    - "{{ peers_config_dir }}/*.conf.j2"
+    remote_src: no
   notify:
     - Reconfigure bird
