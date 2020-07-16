@@ -2,6 +2,10 @@ ownas: "4242421080"
 ownnet: 172.20.229.112/29
 ownnet6: fd86:bad:11b7::/48
 
+# Dummy / loopback device name used for iBGP peering
+dummy_ifname: "igp-dummy0"
+dummy_ifname_glob: "igp-dummy*"
+
 bird_logs_dir: "/var/log/bird/"
 birdlg_proxy_port: 5000
 birdlg_web_port: 5001

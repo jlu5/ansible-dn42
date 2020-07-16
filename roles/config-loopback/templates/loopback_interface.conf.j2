@@ -1,7 +1,0 @@
-iface {{ loopback_ifname }} inet static
-    address {{ ownip }}
-    netmask 255.255.255.255
-    network {{ ownip }}
-
-iface {{ loopback_ifname }} inet6 static
-    address {{ ownip6 }}/128

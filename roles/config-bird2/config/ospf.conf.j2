@@ -3,7 +3,7 @@
 protocol direct {
     ipv4;
     ipv6;
-    interface "lo*";
+    interface "{{ dummy_ifname_glob }}";
 }
 
 protocol ospf v3 int_ospf {
