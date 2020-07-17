@@ -1,4 +1,4 @@
-iface {{ dummy_ifname }} inet static
+iface {{ dummy_ifname | mandatory }} inet static
     address {{ ownip }}
     netmask 255.255.255.255
     network {{ ownip }}

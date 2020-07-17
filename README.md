@@ -17,8 +17,8 @@ Here I use Ansible to configure the following components:
 - BIRD 2 ([roles/config-bird2/](roles/config-bird2/))
 - [BIRD Looking Glass](https://github.com/sesa-me/bird-lg)
 - [dn42 Peerfinder](https://dn42.us/peers)
+- Anycast DNS via dnsmasq
 
 Things not included:
 
-- DNS master (TODO)
 - Firewall (Managed elsewhere)

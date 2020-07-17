@@ -1,0 +1,16 @@
+- name: Install dnsmasq
+  apt:
+    name: dnsmasq
+    state: present
+
+- name: Template dn42 configuration for dnsmasq
+  template:
+    src: "dnsmasq-dn42.conf.j2"
+    dest: "/etc/dnsmasq.d/dnsmasq-dn42.conf"
+  notify: 'Restart dnsmasq'
+
+- name: Write additional hosts for dnsmasq
+  template:
+    src: "dnsmasq-dn42.hosts.j2"
+    dest: "/etc/dnsmasq-dn42.hosts"
+  notify: 'Restart dnsmasq'

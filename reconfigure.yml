@@ -4,6 +4,7 @@
   # Linear operation makes templating peer data really slow...
   strategy: free
   roles:
-    - config-loopback
+    - role: config-loopback
+      dummy_iface_conf_name: "dn42-dummy-igp"
     - config-wireguard
     - config-bird2

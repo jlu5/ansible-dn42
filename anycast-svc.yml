@@ -1,0 +1,10 @@
+- name: Configure anycast services
+  hosts: anycast_pool
+  become: yes
+  roles:
+    - role: config-loopback
+      ownip: "{{ anycast_ip }}"
+      ownip6: "{{ anycast_ip6 }}"
+      dummy_ifname: "{{ dummy_ifname_anycast }}"
+      dummy_iface_conf_name: "dn42-dummy-anycast"
+    - config-dns

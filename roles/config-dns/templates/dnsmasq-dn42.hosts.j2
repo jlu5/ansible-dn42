@@ -1,0 +1,9 @@
+{# For each node that has dns_records attached to it,
+   point them to the node's v4 and v6 addresses #}
+{% for node in ansible_play_hosts_all %}
+{% set nodedata = hostvars[node] %}
+{% for dnsname in nodedata.get('dns_records', []) %}
+{{ nodedata['ownip'] }} {{ dnsname }}
+{{ nodedata['ownip6'] }} {{ dnsname }}
+{% endfor %}
+{% endfor %}

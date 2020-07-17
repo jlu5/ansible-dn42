@@ -1,0 +1,30 @@
+server=/dn42/{{ dns_preferred }}
+server=/20.172.in-addr.arpa/{{ dns_preferred }}
+server=/21.172.in-addr.arpa/{{ dns_preferred }}
+server=/22.172.in-addr.arpa/{{ dns_preferred }}
+server=/23.172.in-addr.arpa/{{ dns_preferred }}
+server=/d.f.ip6.arpa/{{ dns_preferred6 }}
+
+{# Looks roughly like:
+auth-server=jlu5.dn42,172.20.229.112,fd86:bad:11b7:53::1
+auth-zone=jlu5.dn42,172.20.229.112/29,fd86:bad:11b7:53::/48
+#}
+auth-server={{ dns_domain }},{{ anycast_ip }},{{ anycast_ip6 }}
+auth-zone={{ dns_domain }},{{ ownnet }},{{ ownnet6 }}
+
+# Machines in {{ dns_domain }} zone
+{% for node in ansible_play_hosts_all %}
+{% set nodedata = hostvars[node] %}
+{# Expands to:
+host-record=us-chi01.jlu5.dn42,172.20.229.113,fd86:bad:11b7::1
+host-record=us-sea01.jlu5.dn42,172.20.229.114,fd86:bad:11b7:1::1
+.. etc
+#}
+host-record={{ nodedata['shortname'] }}.{{ dns_domain }},{{ nodedata['ownip'] }},{{ nodedata['ownip6'] }}
+{% endfor %}
+
+host-record=anycast0.{{ dns_domain }},{{ anycast_ip }},{{ anycast_ip6 }}
+
+# Load additional hosts
+no-hosts
+addn-hosts=/etc/dnsmasq-dn42.hosts

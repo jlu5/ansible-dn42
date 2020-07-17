@@ -6,7 +6,7 @@
 - name: "Write dummy interface in interfaces.d"
   template:
     src: dummy_interface.conf.j2
-    dest: "/etc/network/interfaces.d/dn42-dummy-igp"
+    dest: "/etc/network/interfaces.d/{{ dummy_iface_conf_name }}"
   register: interfaces_tmpl
 
 - name: "(Re)start dummy interface"
