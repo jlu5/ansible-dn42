@@ -16,12 +16,6 @@ area 0 {
     };
 {% endif %}
 {% endfor %}
-{% for linkname, details in ospf_links.get(shortname, {}).items() %}
-    interface "igp-{{ linkname }}" {
-        cost {{ details['cost'] }};
-        type ptp;
-    };
-{% endfor %}
 
     # Loopback interface on each machine
     interface "{{ dummy_ifname_glob }}" {
