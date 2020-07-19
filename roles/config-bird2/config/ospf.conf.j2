@@ -1,22 +1,6 @@
 protocol ospf v3 int_ospf {
     ipv4 {
-        import filter {
-            # Set igp_metric to OSPF metric1 - this way it can be read by iBGP as the IGP cost metric.
-            # See https://bird.network.cz/pipermail/bird-users/2015-September/009909.html
-            # Routes imported from "protocol direct" are redistributed as OSPF external type 2 by default.
-            # ----
-            # According to https://bird.network.cz/pipermail/bird-users/2015-September/009912.html the more
-            # correct solution may be to mark these as OSPF external type 1 routes, but I haven't found
-            # a straightforward way of doing so.
-            # https://bird.network.cz/pipermail/bird-users/2019-March/013152.html presents a workaround
-            # but I couldn't get it to work. - is ospf_metric1 set to the interface cost by the time
-            # export filters run?
-            if is_self_net() then {
-                igp_metric = ospf_metric1;
-                accept;
-            }
-            reject;
-        };
+        import where is_self_net();
         export where is_self_net();
     };
 
@@ -26,13 +10,7 @@ protocol ospf v3 int_ospf {
 
 protocol ospf v3 int_ospf6 {
     ipv6 {
-        import filter {
-            if is_self_net_v6() then {
-                igp_metric = ospf_metric1;
-                accept;
-            }
-            reject;
-        };
+        import where is_self_net_v6();
         export where is_self_net_v6();
     };
 
