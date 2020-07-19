@@ -1,0 +1,4 @@
+ospf_links:
+  us-sea01:
+    ca-yvr01fl:
+      cost: 1500
