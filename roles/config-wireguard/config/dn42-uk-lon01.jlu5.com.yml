@@ -34,3 +34,10 @@ wg_peers:
   wg_pubkey: "jNZkG98+AzMeIlAwI4JsssVE5sCYeSFTstO83yE1wj0="
   peer_v4: ""  # v6-only
   peer_v6: "fe80::d:3621"
+
+- name: dn42fra-owens
+  port: 51099
+  remote: "95.179.250.248:1269"
+  wg_pubkey: "13NKYtCKbBw2ZzhFLSO5HaQJdVBnv8pi2cbIgDauhwE="
+  peer_v4: "172.21.99.137/32"
+  peer_v6: "fd42:4242:1099:179::69/128"
