@@ -8,12 +8,14 @@
     {%- set local_v6 = ownip6 %}
 {% endif %}
 
+{%- set local_v4 = peer_info.get('local_v4', ownip) %}
+
 auto {{ ifname }}
 iface {{ ifname }} inet static
 {% if peer_info.get('is_internal_node') %}
     address {{ peering_lan_ip }}
 {% else %}
-    address {{ ownip }}
+    address {{ local_v4 }}
 {% endif %}
     netmask 255.255.255.255
 {% if peer_info['peer_v4'] %}
