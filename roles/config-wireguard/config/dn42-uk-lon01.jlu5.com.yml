@@ -50,3 +50,10 @@ wg_peers:
   local_v4: "172.22.255.7/31"
   peer_v6:  "fdef:5d0d:ee12:0105:2:fcde:3558:1/112"
   local_v6: "fdef:5d0d:ee12:0105:2:fcde:3558:2/112"
+
+- name: dn42lon-bitbake
+  port: 51224
+  remote: "uk01.bitbakers.no:21080"
+  wg_pubkey: "hyO/6RtFWUPaw2PIUmb1kAt3yJ3vgv9WCl7VZGsdChc="
+  peer_v4: "172.21.66.18/32"
+  peer_v6: "fe80::caca/64"
