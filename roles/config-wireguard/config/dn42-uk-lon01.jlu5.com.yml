@@ -57,3 +57,10 @@ wg_peers:
   wg_pubkey: "hyO/6RtFWUPaw2PIUmb1kAt3yJ3vgv9WCl7VZGsdChc="
   peer_v4: "172.21.66.18/32"
   peer_v6: "fe80::caca/64"
+
+- name: dn42lon-burble
+  port: 52601
+  remote: "dn42-uk-lon1.burble.com:21080"
+  wg_pubkey: "EH6XQtkstJt9inl55EAck4GXR1ZHvy5yzuRMyd3/WWw="
+  peer_v4: "172.20.129.187/32"
+  peer_v6: "fd42:4242:2601:35::1/128"
