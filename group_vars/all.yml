@@ -1,5 +1,5 @@
 ownas: "4242421080"
-ownnet: 172.20.229.112/29
+ownnet: 172.20.229.112/28
 ownnet6: fd86:bad:11b7::/48
 
 # Dummy / loopback device name used for iBGP peering
