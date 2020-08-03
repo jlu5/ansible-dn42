@@ -17,7 +17,7 @@ BIND_PORT = "{{ birdlg_web_port }}"
 
 # A list of internal IPs, used for bgpmap.
 ROUTER_IP = {
-{% for host in ansible_play_hosts_all %}
+{% for host in groups['dn42routers'] %}
 {% set nodedata = hostvars[host] %}
     "{{ nodedata['shortname'] }}": ["{{ nodedata['ownip'] }}", "{{ nodedata['ownip6'] }}", "{{ nodedata['peering_lan_ip'] }}"],
 {% endfor %}
