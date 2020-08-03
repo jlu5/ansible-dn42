@@ -34,6 +34,10 @@
     dir: "{{ role_path }}/config/"
     ignore_unknown_extensions: true
 
+- name: Read IGP tunnel settings
+  include_vars:
+    file: "igp-tunnels.yml"
+
 - name: Write global bird settings (static)
   copy:
     src: "{{ item }}"

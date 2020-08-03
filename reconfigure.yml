@@ -1,3 +1,6 @@
+- name: "Run prestep: Enumerate IGP tunnels"
+  import_playbook: enumerate-igp-tunnels.yml
+
 - name: Configure dn42 routers
   hosts: dn42routers
   become: yes
