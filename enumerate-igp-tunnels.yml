@@ -1,6 +1,7 @@
 - name: Enumerate IGP tunnels
   hosts: localhost
   connection: local
+  gather_facts: no
   tasks:
   - name: Run enumerate-igp-tunnels script
     command: ./enumerate-igp-tunnels.py

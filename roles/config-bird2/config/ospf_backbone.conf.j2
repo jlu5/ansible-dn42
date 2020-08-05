@@ -1,8 +1,9 @@
 {% macro internal_cost(nodedata) -%}
+{% set indirect_penalty = 10 %}
 {# Costs are specified in internal_costs.yml.
    Only one of (A,B) and (B,A) have to be defined, to save space. #}
 {{ (internal_costs.get('%s,%s' % (shortname, nodedata['shortname'])) or
-    internal_costs.get('%s,%s' % (nodedata['shortname'], shortname)) or default_cost) }}
+    internal_costs.get('%s,%s' % (nodedata['shortname'], shortname)) or default_cost) + indirect_penalty }}
 {%- endmacro %}
 
 area 0 {

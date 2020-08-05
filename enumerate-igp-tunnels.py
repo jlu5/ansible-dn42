@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Enumerate intra-AS tunnel settings for AS42421080. This script generates a list of intra-AS neighbours for each node (mesh and non-mesh), as well as which Wireguard ports to connect to.
+Enumerate intra-AS tunnel settings for AS4242421080. This script generates a list of intra-AS neighbours for each node (mesh and non-mesh), as well as which Wireguard ports to connect to.
 This was split from the Ansible playbook to allow for more flexibility.
 """
 import itertools
