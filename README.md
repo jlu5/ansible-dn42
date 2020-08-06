@@ -4,8 +4,9 @@ This repository contains the configs for AS4242421080/JLU5-AS on [dn42](https://
 
 ## Network topology
 
-Currently the network uses OSPF + iBGP internally. Tunnels are created between all routers using [Ansible loops](roles/config-wireguard/tasks) to ensure maximum redundancy.
-[Costs between links](roles/config-bird2/config/ibgp_costs.yml) are manually configured to roughly match the link latency.
+![AS4242421080 Network Map](AS4242421080.svg)
+
+Currently the network uses OSPF and a mesh of iBGP connections. [Costs between links](roles/config-bird2/config/internal_costs.yml) are manually configured to roughly match the link latency.
 
 TODO: elaborate more on routing policy
 
