@@ -75,5 +75,6 @@
     group: "bird"
     mode: '0644'
     remote_src: no
+  ignore_errors: true  # The peers list may be empty
   notify:
     - Reconfigure bird
