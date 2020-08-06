@@ -9,6 +9,12 @@ internal_costs:
   'uk-lon01,us-chi01': 90
   'uk-lon01,ca-bhs01': 80
   'uk-lon01,us-sea01': 125
+  'de-nbg01,us-sea01': 145
+  'de-nbg01,uk-lon01': 20
+  'de-nbg01,us-chi01': 105
+  'de-nbg01,ca-bhs01': 95
+  'nl-ams01,de-nbg01': 15
+  'uk-lon01,nl-ams01': 10
 
 # Default latency if nothing is set.
 default_cost: 300
