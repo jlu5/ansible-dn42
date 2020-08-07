@@ -1,7 +1,3 @@
-- name: Set default Wireguard tunnel settings
-  set_fact:
-    wg_peers: []
-
 - name: Read Wireguard tunnel settings (v2)
   include_vars:
     file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
@@ -9,14 +5,14 @@
 
 - name: Write Wireguard tunnel settings for peers (v2)
   include_tasks: "write-wg-settings.yml"
-  loop: "{{ wg_peers }}"
+  loop: "{{ wg_peers | default([]) }}"
   loop_control:
     loop_var: peer_info
   when: not peer_info.get('remove')
 
 - name: Remove obsolete Wireguard tunnels
   include_tasks: "remove-wg-settings.yml"
-  loop: "{{ wg_peers }}"
+  loop: "{{ wg_peers | default([]) }}"
   loop_control:
     loop_var: peer_info
   when: peer_info.get('remove')
