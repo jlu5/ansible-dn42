@@ -19,3 +19,10 @@ wg_peers:
   wg_pubkey: "Q4cHTtTYBJY0jq3phMdgDM4/ijHRht+vQNB7L2NeZnM="
   peer_v4: "172.23.235.1"
   peer_v6: "fe80::1299:e"
+
+- name: dn42fra-lantian
+  port: 52547
+  remote: "45.138.97.165:21080"
+  wg_pubkey: "DkmSBCIgrxPPZmT07DraoCSD/jSByjPkYqHJWfVZ5hM="
+  peer_v4: "172.22.76.187"
+  peer_v6: "fe80::2547"
