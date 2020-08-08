@@ -5,3 +5,10 @@ wg_peers:
   wg_pubkey: "zNP632K1qrezFIl8NQK1tR3XEdYHat/YgzdCXnFIWDE="
   peer_v4: "172.23.193.2"
   peer_v6: "fe80::b0b6/64"
+
+- name: dn42nbg-zotan
+  port: 52341
+  remote: "nbg1.dn42.zotan.network:42432"
+  wg_pubkey: "PlMza8PC6N58vpGqMsBo3UjvjXThl/2WCTK6drjqbgY="
+  peer_v4: "172.20.177.34"
+  peer_v6: "fe80::3"
