@@ -33,7 +33,7 @@ ProtectHome=true
 
 ReadWritePaths={{ bird_logs_dir }}
 WorkingDirectory={{ birdlg_src_dir }}
-ExecStart={{ birdlg_venv_dir }}/bin/gunicorn --bind {{ ownip }}:{{ birdlg_web_port }} --bind 127.0.0.1:{{ birdlg_web_port }} --bind [::1]:{{ birdlg_web_port }} lg:app
+ExecStart={{ birdlg_venv_dir }}/bin/gunicorn --bind {{ ownip }}:{{ birdlg_web_port }} --bind 127.0.0.1:{{ birdlg_web_port }} --bind [::1]:{{ birdlg_web_port }} --limit-request-line 16384 lg:app
 Restart=on-failure
 
 [Install]
