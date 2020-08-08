@@ -7,12 +7,7 @@ wg_peers:
   peer_v6: "fe80::1331"
 
 - name: dn42fra-tech9
-  port: 51588
-  remote: "de-fra02.dn42.tech9.io:56181"
-  wg_pubkey: "MD1EdVe9a0yycUdXCH3A61s3HhlDn17m5d07e4H33S0="
-  peer_v4: "172.20.16.141"
-  peer_v6: "fe80::1588/64"
-  local_v6: "fe80::100"
+  remove: true  # moved to de-nbg01
 
 - name: dn42lon-bauen1
   port: 50151
