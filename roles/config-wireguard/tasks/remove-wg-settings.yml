@@ -11,7 +11,7 @@
   register: interfaces_remove
 
 - name: "Stop interface for peer {{ peer_info.name }}"
-  command: "ifdown --force {{ peer_info.name }}"
+  command: "ip link del {{ peer_info.name }}"
   # TODO: document the restart_all_tunnels variable
   when: wg_tunnel_remove.changed or interfaces_remove.changed or (restart_all_tunnels | default(False))
   ignore_errors: yes
