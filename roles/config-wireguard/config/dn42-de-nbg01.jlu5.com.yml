@@ -12,3 +12,10 @@ wg_peers:
   wg_pubkey: "PlMza8PC6N58vpGqMsBo3UjvjXThl/2WCTK6drjqbgY="
   peer_v4: "172.20.177.34"
   peer_v6: "fe80::3"
+
+- name: dn42fsn-tbspace
+  port: 56190
+  remote: "dn42.tbspace.de:49047"
+  wg_pubkey: "Q4cHTtTYBJY0jq3phMdgDM4/ijHRht+vQNB7L2NeZnM="
+  peer_v4: "172.23.235.1"
+  peer_v6: "fe80::1299:e"
