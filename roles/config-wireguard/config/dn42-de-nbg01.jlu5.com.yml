@@ -34,3 +34,10 @@ wg_peers:
   peer_v4: "172.20.16.141"
   peer_v6: "fe80::1588/64"
   local_v6: "fe80::100"
+
+- name: dn42nbg-kioubit
+  port: 53914
+  remote: "de2.g-load.eu:21080"
+  wg_pubkey: "B1xSG/XTJRLd+GrWDsB06BqnIq8Xud93YVh/LYYYtUY="
+  peer_v4: "172.20.53.97"
+  peer_v6: "fe80::ade0"
