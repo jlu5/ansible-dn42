@@ -19,7 +19,7 @@ BIND_PORT = "{{ birdlg_web_port }}"
 ROUTER_IP = {
 {% for host in groups['dn42routers'] %}
 {% set nodedata = hostvars[host] %}
-    "{{ nodedata['shortname'] }}": ["{{ nodedata['ownip'] }}", "{{ nodedata['ownip6'] }}", "{{ nodedata['peering_lan_ip'] }}"],
+    "{{ nodedata['shortname'] }}": ["{{ nodedata['ownip'] }}", "{{ nodedata['ownip6'] }}", "{{ nodedata['link_local_ip6'] }}", "{{ nodedata['peering_lan_ip'] }}"],
 {% endfor %}
 }
 
