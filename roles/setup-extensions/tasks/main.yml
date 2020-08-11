@@ -28,6 +28,7 @@
       minute: "*/5"
       user: dn42-automation
       job: "env UUID={{ peerfinder_uuid }} LOGFILE={{ dn42_user.home }}/peerfinder.log /opt/dn42/peerfinder.sh"
+      disabled: "{{ not (open_to_peers | default(true)) }}"
   when: peerfinder_uuid is defined
 
 ### bird-lg
