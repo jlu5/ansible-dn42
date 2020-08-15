@@ -9,6 +9,12 @@
     dest: "/etc/dnsmasq.d/dnsmasq-dn42.conf"
   notify: 'Restart dnsmasq'
 
+- name: Template AS4242421080-specific settings for dnsmasq
+  template:
+    src: "dnsmasq-alchemynet.conf.j2"
+    dest: "/etc/dnsmasq.d/dnsmasq-alchemynet.conf"
+  notify: 'Restart dnsmasq'
+
 - name: Write additional hosts for dnsmasq
   template:
     src: "dnsmasq-dn42.hosts.j2"
