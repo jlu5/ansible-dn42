@@ -41,3 +41,10 @@ wg_peers:
   wg_pubkey: "B1xSG/XTJRLd+GrWDsB06BqnIq8Xud93YVh/LYYYtUY="
   peer_v4: "172.20.53.97"
   peer_v6: "fe80::ade0"
+
+- name: dn42nbg-miegl
+  port: 50181
+  remote: "de-nue01.dn42.miegl.cz:31206"
+  wg_pubkey: "gUG7Thru8TyS8pUVqBrR4Jt7AXpGMRj0VHZlb4I5GiE="
+  peer_v4: "172.20.48.129"
+  peer_v6: "fe80::181:1"
