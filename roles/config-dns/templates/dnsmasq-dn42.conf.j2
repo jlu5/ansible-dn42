@@ -4,6 +4,12 @@ server=/21.172.in-addr.arpa/{{ dns_preferred }}
 server=/22.172.in-addr.arpa/{{ dns_preferred }}
 server=/23.172.in-addr.arpa/{{ dns_preferred }}
 server=/d.f.ip6.arpa/{{ dns_preferred6 }}
+# External DNS
+server=/neo/{{ dns_preferred }}
+server=/127.10.in-addr.arpa/{{ dns_preferred }}
+server=/rzl/{{ dns_preferred }}
+server=/hack/{{ dns_preferred }}
+server=/31.172.in-addr.arpa/{{ dns_preferred }}
 
 {# Looks roughly like:
 auth-server=jlu5.dn42,172.20.229.112,fd86:bad:11b7:53::1
@@ -23,6 +29,7 @@ host-record=us-sea01.jlu5.dn42,172.20.229.114,fd86:bad:11b7:1::1
 host-record={{ nodedata['shortname'] }}.{{ dns_domain }},{{ nodedata['ownip'] }},{{ nodedata['ownip6'] }}
 {% endfor %}
 
+# Anycast addresses
 host-record=anycast0.{{ dns_domain }},{{ anycast_ip }},{{ anycast_ip6 }}
 
 # Load additional hosts
