@@ -33,3 +33,10 @@ wg_peers:
   wg_pubkey: "sG60tTYIDdPzFad//6UC37uotPlqlb99VGnT+wNHKgg="
   peer_v4: "172.20.158.147"
   peer_v6: "fe80::1331"
+
+- name: dn42yvr-moetern
+  port: 52464
+  remote: "yvr.dneo.moeternet.com:21080"
+  wg_pubkey: "VITWVhKaL0qwuT9WTdkIVY6OE4ocIKSQguFrrbnDkBM="
+  peer_v4: "169.254.24.64"
+  peer_v6: "fe80::2464"
