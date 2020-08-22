@@ -34,3 +34,11 @@ wg_peers:
   wg_pubkey: "LIpv4meXlO+aGPbujTpevJwJJllPkgKOICQ09IEf6x8="
   peer_v4: "172.20.234.65/32"
   peer_v6: "fe80::12:97"
+
+- name: "dn42mia-santost"
+  port: 50009
+  remote: "192.168.2.253:41734"  # NAT traversal
+  wg_pubkey: "f9fkX26H68M/lGGi/YwaJjD6Qnzsle6qMTD7Lh7Axzk="
+  peer_v4: "10.127.69.1/32"
+  peer_v6: "fd10:127:ec39:2221::1/64"
+  local_v6: "fd10:127:ec39:2221::5555/64"
