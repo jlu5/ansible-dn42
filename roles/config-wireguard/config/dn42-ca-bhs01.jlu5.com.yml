@@ -47,3 +47,11 @@ wg_peers:
   wg_pubkey: "a+zL2tDWjwxBXd2bho2OjR/BEmRe2tJF9DHFmZIE+Rk="
   peer_v4: "172.22.76.190"
   peer_v6: "fe80::2547"
+
+- name: dn42tor-jrb0001
+  port: 50119
+  remote: "155.138.133.127:21080"
+  wg_pubkey: "ZjP3OeS4viVGqsQdFMzuIheRkZ+Jj9qRKfnp8LaxyBo="
+  peer_v4: "172.20.1.9"
+  peer_v6: "fe80::119"
+

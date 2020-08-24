@@ -55,3 +55,10 @@ wg_peers:
   wg_pubkey: "qIhJZf6mTruzO4GTCUrJnLqs9ID4TI1GctRhaRilBkg="
   peer_v4: "169.254.24.64"
   peer_v6: "fe80::2464"
+
+- name: dn42fra-jrb0001
+  port: 50119
+  remote: "199.247.16.176:21080"
+  wg_pubkey: "v5P00HJje1ucENA2VodkKMmrtTlB4fduMvAJLuleo0c="
+  peer_v4: "172.20.1.2"
+  peer_v6: "fe80::119"

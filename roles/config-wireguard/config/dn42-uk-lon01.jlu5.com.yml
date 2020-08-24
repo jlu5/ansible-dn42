@@ -66,3 +66,10 @@ wg_peers:
   wg_pubkey: "7QrVLrZ9xLpVt1zQSv6dcr6+DU8TRPxjx/hXQWECrRw="
   peer_v4: "172.23.24.1"
   peer_v6: "fe80::1"
+
+- name: dn42lon-jrb0001
+  port: 50119
+  remote: "45.63.101.40:21080"
+  wg_pubkey: "79RlgA68KnWS7i9TarFuNBIsT4WzKGSHyJmffbOzbCg="
+  peer_v4: "172.20.1.3"
+  peer_v6: "fe80::119"
