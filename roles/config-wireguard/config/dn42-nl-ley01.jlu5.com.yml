@@ -1,0 +1,7 @@
+wg_peers:
+- name: "dn42ams-marropa"
+  port: 50880
+  remote: "dn42-eu.marropax.com:21080"
+  wg_pubkey: "2NjtKD8MdHnxAZMuoXNlN4n5HrJZW2bnudswDNUvSHs="
+  peer_v4: "172.21.106.97/32"
+  peer_v6: "fe80::beef"
