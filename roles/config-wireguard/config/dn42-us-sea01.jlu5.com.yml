@@ -47,3 +47,10 @@ wg_peers:
   wg_pubkey: "XPjYjGhP2vXeNXDki6GiHce72f4om+aUpCxY6xJ5Wjo="
   peer_v4: "172.20.1.10"
   peer_v6: "fe80::119"
+
+- name: dn42yvr-shypre
+  port: 52466
+  remote: "shypre.ddns.net:51080"
+  wg_pubkey: "80bDAhxXLyAGuDCF0DbjKyGEoT3YjRkOJgEOBtApe1s="
+  peer_v4: "172.20.236.64"
+  peer_v6: null
