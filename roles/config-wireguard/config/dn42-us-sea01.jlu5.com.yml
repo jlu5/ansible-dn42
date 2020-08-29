@@ -28,11 +28,14 @@ wg_peers:
   peer_v6: "fe80::3088:191/64"
 
 - name: dn42fmt-strexp
+  remove: true  # moved to yvr
+
+- name: dn42yvr-strexp
   port: 51331
-  remote: "fmt1.us.dn42.strexp.net:21080"
-  wg_pubkey: "sG60tTYIDdPzFad//6UC37uotPlqlb99VGnT+wNHKgg="
-  peer_v4: "172.20.158.147"
-  peer_v6: "fe80::1331"
+  remote: "van1.ca.dn42.strexp.net:21080"
+  wg_pubkey: "pTgzo0VLRUaUTBGdaRY/+hpDA+C7J9NN8/Vst7JZ5RU="
+  peer_v4: "172.20.158.133"
+  peer_v6: "fe80::1331/64"
 
 - name: dn42yvr-moetern
   port: 52464
