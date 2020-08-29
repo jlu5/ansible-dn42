@@ -4,8 +4,6 @@
 - name: Configure dn42 routers
   hosts: dn42routers
   become: yes
-  # Linear operation makes templating peer data really slow...
-  strategy: free
   roles:
     - role: config-loopback
       dummy_iface_conf_name: "dn42-dummy-igp"
