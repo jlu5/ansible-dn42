@@ -16,6 +16,10 @@ dns_preferred6: "fd42:d42:d42:53::1"
 anycast_ip: "172.20.229.112"
 anycast_ip6: "fd86:bad:11b7:53::1"
 
+# Mitogen needs this to be set; it doesn't follow the interpreter_python setting in ansible.cfg yet
+# See https://github.com/dw/mitogen/issues/740
+ansible_python_interpreter: /usr/bin/python3
+
 # Bird settings
 bird_logs_dir: "/var/log/bird/"
 
