@@ -1,0 +1,38 @@
+- name: Download apt signing key for Netdata
+  get_url:
+    url: https://packagecloud.io/netdata/netdata/gpgkey
+    dest: /usr/share/keyrings/netdata-packagecloud.asc
+    mode: '0644'
+
+- name: Add Netdata repository to sources.list.d
+  apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/netdata-packagecloud.asc] https://packagecloud.io/netdata/netdata/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
+    state: present
+    filename: netdata-packagecloud
+
+- name: Install Netdata package
+  apt:
+    package: netdata
+    state: latest
+    install_recommends: yes
+    update_cache: yes
+
+- name: Write Netdata configuration
+  template:
+    src: netdata.conf.j2
+    dest: /etc/netdata/netdata.conf
+  notify:
+  - Restart Netdata
+
+- name: Run Netdata Cloud claim
+  become: yes
+  become_user: netdata
+  command:
+    cmd: netdata-claim.sh -token={{ netdata_token }} -rooms={{ netdata_room_ids }} -url={{ netdata_cloud_url }}
+    creates: /var/lib/netdata/cloud.d/claimed_id
+  register: netdata_claim_output
+  when: netdata_register_cloud
+
+- name: Print Netdata claim output
+  debug:
+    var: netdata_claim_output.stderr_lines

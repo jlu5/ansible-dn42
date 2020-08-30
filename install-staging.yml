@@ -1,0 +1,7 @@
+- name: Install monitoring utilities
+  hosts: staging
+  become: yes
+  roles:
+    #- base-setup
+    #- setup-extensions
+    - setup-monitoring
