@@ -12,3 +12,10 @@ wg_peers:
   wg_pubkey: "hwEFCjMf4xzaXzsmk4JdPllJjuxC3r7UPjL632A+L3M="
   peer_v4: "172.20.1.1"
   peer_v6: "fe80::119"
+
+- name: dn42ams-aureus
+  port: 50007
+  remote: "s.aureus.ga:8558"
+  wg_pubkey: "ViMRAXJbz8rxqiXUljsx3gF0nLG9a612Qr6DllYLs3k="
+  peer_v4: "10.127.8.185"
+  peer_v6: "fd10:127:7::1"
