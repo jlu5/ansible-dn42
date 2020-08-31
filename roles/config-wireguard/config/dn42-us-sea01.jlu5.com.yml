@@ -27,9 +27,6 @@ wg_peers:
   peer_v4: "172.21.100.191/32"
   peer_v6: "fe80::3088:191/64"
 
-- name: dn42fmt-strexp
-  remove: true  # moved to yvr
-
 - name: dn42yvr-strexp
   port: 51331
   remote: "van1.ca.dn42.strexp.net:21080"
@@ -57,3 +54,10 @@ wg_peers:
   wg_pubkey: "80bDAhxXLyAGuDCF0DbjKyGEoT3YjRkOJgEOBtApe1s="
   peer_v4: "172.20.236.64"
   peer_v6: null
+
+- name: dn42sea-steveyi
+  port: 59557
+  remote: "us-sea01.dn42.s.yiy.tw:31080"
+  wg_pubkey: "ChYcmqA9u99DzvThNF7etaDK6GVLIYxKXSoDhvAtChY="
+  peer_v4: "172.22.189.112"
+  peer_v6: "fd69:9889:9692:3::1"
