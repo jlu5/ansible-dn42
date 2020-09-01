@@ -1,7 +1,5 @@
 - name: Install monitoring utilities
-  hosts: staging
+  hosts: dn42routers
   become: yes
   roles:
-    #- base-setup
-    #- setup-extensions
     - setup-monitoring
