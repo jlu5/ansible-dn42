@@ -28,3 +28,8 @@
 
     # by default do not expose the netdata port
     bind to = localhost
+
+[plugins]
+    # 1.24.0 has an issue where this collector sucks up a lot of CPU
+    # https://github.com/netdata/netdata/issues/9727
+    ebpf = no
