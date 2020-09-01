@@ -24,6 +24,9 @@
   notify:
   - Restart Netdata
 
+- name: Restart Netdata (as needed)
+  meta: flush_handlers
+
 - name: Run Netdata Cloud claim
   become: yes
   become_user: netdata
