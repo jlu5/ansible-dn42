@@ -17,12 +17,15 @@
     install_recommends: yes
     update_cache: yes
 
-- name: Write Netdata configuration
+- name: Write Netdata base config
   template:
     src: netdata.conf.j2
     dest: /etc/netdata/netdata.conf
   notify:
   - Restart Netdata
+
+- name: Write Netdata config overrides
+  include_tasks: "netdata-overrides.yml"
 
 - name: Restart Netdata (as needed)
   meta: flush_handlers

@@ -1,0 +1,44 @@
+diff --git a/usr/lib/netdata/conf.d/health.d/net.conf b/health.d/net.conf
+index 261290e..3701e19 100644
+--- a/usr/lib/netdata/conf.d/health.d/net.conf
++++ b/health.d/net.conf
+@@ -58,7 +58,8 @@ template: inbound_packets_dropped
+       on: net.drops
+       os: linux
+    hosts: *
+-families: *
++# Disable checks on noisy VPS network interfaces (tcpdump shows lots of STP packets out of my control)
++families: !eth* *
+   lookup: sum -10m unaligned absolute of inbound
+    units: packets
+    every: 1m
+@@ -71,7 +72,8 @@ template: outbound_packets_dropped
+       on: net.drops
+       os: linux
+    hosts: *
+-families: *
++# Don't warn on dn42 peers being down
++families: !dn42* *
+   lookup: sum -10m unaligned absolute of outbound
+    units: packets
+    every: 1m
+@@ -84,7 +86,8 @@ template: inbound_packets_dropped_ratio
+       on: net.packets
+       os: linux
+    hosts: *
+-families: *
++# Disable checks on noisy VPS network interfaces (tcpdump shows lots of STP packets out of my control)
++families: !eth* *
+   lookup: sum -10m unaligned absolute of received
+     calc: (($inbound_packets_dropped != nan AND $this > 0) ? ($inbound_packets_dropped * 100 / $this) : (0))
+    units: %
+@@ -99,7 +102,8 @@ template: outbound_packets_dropped_ratio
+       on: net.packets
+       os: linux
+    hosts: *
+-families: *
++# Don't warn on dn42 peers being down
++families: !dn42* *
+   lookup: sum -10m unaligned absolute of sent
+     calc: (($outbound_packets_dropped != nan AND $this > 0) ? ($outbound_packets_dropped * 100 / $this) : (0))
+    units: %

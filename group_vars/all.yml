@@ -59,3 +59,7 @@ netdata_room_ids: !vault |
       66313436653363616439636161393036336536306461353761383932313739633931366431363938
       3362303537333536616639393735663038636366336533376133
 netdata_cloud_url: https://app.netdata.cloud
+
+# Netdata settings
+netdata_stock_config_dir: /usr/lib/netdata/conf.d
+netdata_user_config_dir: /etc/netdata
