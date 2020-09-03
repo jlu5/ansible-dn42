@@ -21,6 +21,9 @@ iface {{ ifname }} inet static
 {% if peer_info['peer_v4'] %}
     pointopoint {{ peer_info['peer_v4'] }}
 {% endif %}
+{% if 'wg_mtu' in peer_info %}
+    mtu {{ peer_info['wg_mtu'] }}
+{% endif %}
     pre-up ip link add {{ ifname }} type wireguard
     pre-up wg setconf {{ ifname }} /etc/wireguard/{{ ifname }}.conf
     pre-up wg set {{ ifname }} private-key /etc/wireguard/privatekey

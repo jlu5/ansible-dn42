@@ -59,5 +59,6 @@ wg_peers:
   port: 59557
   remote: "us-sea01.dn42.s.yiy.tw:31080"
   wg_pubkey: "ChYcmqA9u99DzvThNF7etaDK6GVLIYxKXSoDhvAtChY="
+  wg_mtu: 1320
   peer_v4: "172.22.189.112"
   peer_v6: "fd69:9889:9692:3::1"
