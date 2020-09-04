@@ -1,5 +1,5 @@
-- name: "Run prestep: Enumerate IGP tunnels"
-  import_playbook: enumerate-igp-tunnels.yml
+- name: "Run prestep: update local state"
+  import_playbook: update-local-state.yml
 
 - name: Configure dn42 routers
   hosts: dn42routers

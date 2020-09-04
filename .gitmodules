@@ -1,0 +1,3 @@
+[submodule "dn42-registry"]
+	path = dn42-registry
+	url = git@git.dn42.dev:dn42/registry.git
