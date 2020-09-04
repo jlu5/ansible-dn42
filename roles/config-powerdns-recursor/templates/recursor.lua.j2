@@ -5,6 +5,14 @@
 -- running rootkeys.lua too.
 dofile("/usr/share/pdns-recursor/lua-config/rootkeys.lua")
 
-{% for anchor in dnssec_trust_anchors %}
-addTA('dn42', "{{ anchor }}")
+{% for zone in dns_zones_dn42 + (dns_zones_extra.keys() | list) %}
+{% if zone in dnssec_trust_anchors %}
+
+{%- for anchor in dnssec_trust_anchors[zone] %}
+addTA("{{ zone }}", "{{ anchor }}")
+{% endfor -%}
+
+{% else %}
+addNTA("{{ zone }}", "No known DNSSEC TA for zone {{ zone }}")
+{% endif %}
 {% endfor %}

@@ -1,6 +1,12 @@
 # Parse the delegation server IPs and DNSSEC trust anchors from the registry
 delegation_servers: "{{ lookup('file', 'dn42-registry/data/dns/delegation-servers.dn42') | regex_findall('^nserver:\\s+[a-z]\\.delegation-servers\\.dn42 ([0-9a-fA-F.:]+)$', multiline=True) }}"
-dnssec_trust_anchors: "{{ lookup('file', 'dn42-registry/data/dns/dn42') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
+dnssec_trust_anchors:
+  dn42: "{{ lookup('file', 'dn42-registry/data/dns/dn42') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
+  20.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.20.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
+  22.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.22.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
+  23.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.23.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
+  31.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.31.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
+  d.f.ip6.arpa: "{{ lookup('file', 'dn42-registry/data/inet6num/fd00::_8') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
 
 # Zones for dn42 and connected networks
 dns_zones_dn42:
@@ -57,10 +63,10 @@ dns_zones_dn42:
 - 22.172.in-addr.arpa
 - 23.172.in-addr.arpa
 - 31.172.in-addr.arpa
-- c.f.ip6.arpa
+- d.f.ip6.arpa
 
 dns_zones_extra:
   # Extra zones not supported by the delegation servers
-  "neo":                    ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
-  "127.10.in-addr.arpa":    ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
-  "7.2.1.0.1.d.f.ip5.arpa": ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
+  "neo":                      ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
+  "127.10.in-addr.arpa":      ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
+  "7.2.1.0.0.1.d.f.ip6.arpa": ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
