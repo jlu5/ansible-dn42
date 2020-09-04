@@ -1,0 +1,18 @@
+$ORIGIN {{ dns_domain }}
+{% include "zone-headers.j2" %}
+
+{% for node in groups['dn42routers'] %}
+{% set nodedata = hostvars[node] %}
+{# Add DNS entries for each node's hostname #}
+{{ nodedata['shortname'] }} IN A {{ nodedata['ownip'] }}
+{{ nodedata['shortname'] }} IN AAAA {{ nodedata['ownip6'] }}
+{# Manually configured DNS entries for a particular node #}
+{% for dnsname in nodedata.get('dns_records', []) %}
+{{ dnsname }} IN A {{ nodedata['ownip'] }}
+{{ dnsname }} IN AAAA {{ nodedata['ownip6'] }}
+{% endfor %}
+{% endfor %}
+
+; Anycast addresses
+anycast IN A {{ anycast_ip }}
+anycast IN AAAA {{ anycast_ip6 }}

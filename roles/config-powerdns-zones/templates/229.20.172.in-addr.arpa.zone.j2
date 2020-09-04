@@ -1,0 +1,10 @@
+$ORIGIN 229.20.172.in-addr.arpa
+{% include "zone-headers.j2" %}
+
+; CNAME PTR queries under 229.20.172.in-addr.arpa to our zone, per RFC 2317
+; Only queries from within our network should actually use this - the public resolvers for dn42
+; already delegate our IPs to us via the 112/28.229.20.172.in-addr.arpa zone
+{# XXX: these numbers are hardcoded #}
+{% for last_octet in range(112, 128) %}
+{{ last_octet }} IN CNAME {{ last_octet }}.112/28.229.20.172.in-addr.arpa.
+{% endfor %}

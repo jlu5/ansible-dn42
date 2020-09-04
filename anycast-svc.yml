@@ -7,4 +7,17 @@
       ownip6: "{{ anycast_ip6 }}"
       dummy_ifname: "{{ dummy_ifname_anycast }}"
       dummy_iface_conf_name: "dn42-dummy-anycast"
-    - config-dns
+
+    # PowerDNS authoritative server
+    - role: PowerDNS.pdns
+      # PowerDNS 4.3.x
+      pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 }}"
+      pdns_config:
+        local-address: "{{ anycast_ip }},{{ anycast_ip6 | ipwrap }}"
+      pdns_backends:
+        bind:
+          config: "/etc/powerdns/named.conf"
+    - role: config-powerdns-zones
+
+    # PowerDNS resolver
+    #- role: PowerDNS.pdns_recursor

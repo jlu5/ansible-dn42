@@ -9,6 +9,8 @@ dummy_ifname_glob: "igp-dummy*"
 
 # DNS related settings
 dns_domain: "jlu5.dn42"
+dns_ttl: 300
+# Preferred upstreams for forwarded queries
 dns_preferred: "172.23.0.53"
 dns_preferred6: "fd42:d42:d42:53::1"
 
