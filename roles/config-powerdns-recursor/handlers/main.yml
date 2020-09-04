@@ -1,0 +1,4 @@
+- name: Reconfigure PowerDNS recursor
+  service:
+    name: pdns-recursor
+    state: restarted

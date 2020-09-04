@@ -1,0 +1,23 @@
+- name: "Print delegation servers"
+  debug:
+    var: delegation_servers
+
+- name: "Print DNSSEC trust anchors"
+  debug:
+    var: dnssec_trust_anchors
+
+- name: "Template config.lua for PowerDNS recursor"
+  template:
+    src: recursor.lua.j2
+    dest: "/etc/powerdns/recursor.lua"
+    mode: '0644'
+  notify:
+    - Reconfigure PowerDNS recursor
+
+- name: "Template forwarding zones for PowerDNS recursor"
+  template:
+    src: recursive-zones.conf.j2
+    dest: "/etc/powerdns/recursive-zones.conf"
+    mode: '0644'
+  notify:
+    - Reconfigure PowerDNS recursor

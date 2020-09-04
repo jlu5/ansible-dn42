@@ -18,7 +18,9 @@ Here I use Ansible to configure the following components:
 - BIRD 2 ([roles/config-bird2/](roles/config-bird2/))
 - [BIRD Looking Glass](https://github.com/sesa-me/bird-lg)
 - [dn42 Peerfinder](https://dn42.us/peers)
-- Anycast DNS via dnsmasq
+- Anycast DNS via PowerDNS:
+  - Authoritative server for jlu5.dn42 and PTR zones
+  - Recursive server (localhost-only for now)
 
 Things not included:
 

@@ -1,0 +1,60 @@
+# Parse the delegation server IPs and DNSSEC trust anchors from the registry
+delegation_servers: "{{ lookup('file', 'dn42-registry/data/dns/delegation-servers.dn42') | regex_findall('^nserver:\\s+[a-z]\\.delegation-servers\\.dn42 ([0-9a-fA-F.:]+)$', multiline=True) }}"
+dnssec_trust_anchors: "{{ lookup('file', 'dn42-registry/data/dns/dn42') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
+
+# Zones for dn42 and connected networks
+dns_zones_dn42:
+- dn42
+- hack
+- ffhh
+- ffac
+- "020"
+- adm
+- ffa
+- ffhb
+- ffc
+- ffda
+- ffdh
+- ff3l
+- fffl
+- ffffm
+- fffr
+- fffd
+- ffgl
+- fflln
+- ffbcd
+- ffbgl
+- ffgoe
+- ffgt
+- ffh
+- helgo
+- ffhef
+- ffj
+- ffka
+- ffki
+- ffhl
+- fflux
+- ffms
+- mueritz
+- ffnord
+- ffnw
+- ffoh
+- ffpb
+- ffpi
+- ffrade
+- ffrgb
+- ffrg
+- rzl
+- ffsaar
+- fftr
+- fftdf
+- ffwk
+- ffgro
+- ffwk
+- ffwp
+- ffw
+- 20.172.in-addr.arpa
+- 22.172.in-addr.arpa
+- 23.172.in-addr.arpa
+- 31.172.in-addr.arpa
+- c.f.ip6.arpa

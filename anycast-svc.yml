@@ -1,3 +1,6 @@
+- name: "Run prestep: update local state"
+  import_playbook: update-local-state.yml
+
 - name: Configure anycast services
   hosts: anycast_pool
   become: yes
@@ -8,7 +11,7 @@
       dummy_ifname: "{{ dummy_ifname_anycast }}"
       dummy_iface_conf_name: "dn42-dummy-anycast"
 
-    # PowerDNS authoritative server
+    # Install & configure PowerDNS authoritative server
     - role: PowerDNS.pdns
       # PowerDNS 4.3.x
       pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 }}"
@@ -16,8 +19,29 @@
         local-address: "{{ anycast_ip }},{{ anycast_ip6 | ipwrap }}"
       pdns_backends:
         bind:
-          config: "/etc/powerdns/named.conf"
+          config: "{{ pdns_config_dir }}/named.conf"
+
+    # Configure zone files for authoritative DNS
     - role: config-powerdns-zones
 
-    # PowerDNS resolver
-    #- role: PowerDNS.pdns_recursor
+    # Upload config files for pdns-recursor
+    - role: config-powerdns-recursor
+
+    # Install & configure PowerDNS resolver
+    - role: PowerDNS.pdns_recursor
+      pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_43 }}"
+      pdns_rec_config:
+        # Reduce dont-query list from defaults to exclude dn42 ranges
+        dont-query: 127.0.0.0/8, 10.0.0.0/8, 192.168.0.0/16, ::1/128, fe80::/10
+
+        forward-zones-file: "{{ pdns_rec_config_dir }}/recursive-zones.conf"
+        lua-config-file: "{{ pdns_rec_config_dir }}/recursor.lua"
+
+        # DNSSEC
+        dnssec: validate
+        dnssec-log-bogus: true
+
+        # Allow sending queries over IPv6
+        query-local-address6: "::"
+
+        local-address: "127.0.0.1 ::1"
