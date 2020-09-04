@@ -58,3 +58,9 @@ dns_zones_dn42:
 - 23.172.in-addr.arpa
 - 31.172.in-addr.arpa
 - c.f.ip6.arpa
+
+dns_zones_extra:
+  # Extra zones not supported by the delegation servers
+  "neo":                    ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
+  "127.10.in-addr.arpa":    ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
+  "7.2.1.0.1.d.f.ip5.arpa": ["10.127.255.2", "fd10:127:5f37:59df::255:2"]
