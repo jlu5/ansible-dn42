@@ -1,3 +1,4 @@
+auto {{ dummy_ifname | mandatory }}
 iface {{ dummy_ifname | mandatory }} inet static
     address {{ ownip }}
     netmask 255.255.255.255
