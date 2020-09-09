@@ -19,3 +19,10 @@ wg_peers:
   wg_pubkey: "ViMRAXJbz8rxqiXUljsx3gF0nLG9a612Qr6DllYLs3k="
   peer_v4: "10.127.8.185"
   peer_v6: "fd10:127:7::1"
+
+- name: dn42ams-hexanet
+  port: 53078
+  remote: "epsilon.hexanet.dev:31080"
+  wg_pubkey: "jNZkG98+AzMeIlAwI4JsssVE5sCYeSFTstO83yE1wj0="
+  peer_v4: ""  # v6-only
+  peer_v6: "fe80::d:3621"

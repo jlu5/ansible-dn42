@@ -69,3 +69,10 @@ wg_peers:
   wg_pubkey: "OEcsyejUCkQpdGnAmuzW50H6MVzVXIhOTT0u2ShGN3M="
   peer_v4: "172.22.189.120"
   peer_v6: "fd69:9889:9692:4::1"
+
+- name: dn42nbg-hexanet
+  port: 53078
+  remote: "gamma.hexanet.dev:31080"
+  wg_pubkey: "5XpUor03B3DBHIMx0Z4ufOg7qCGtBqlYXfraRqncRlI="
+  peer_v4: ""  # v6-only
+  peer_v6: "fe80::c:3621"
