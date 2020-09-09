@@ -25,7 +25,7 @@ def _yaml_load(filename):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("-o", "--outfile", help="output path (without extension)", default="AS4242421080")
+    parser.add_argument("-o", "--outfile", help="output path", default="AS4242421080.gv")
     parser.add_argument("-H", "--hosts", help="path to hosts configuration / inventory file",
                         type=str, default='hosts.yml')
     parser.add_argument("-c", "--costs", help="path to internal costs configuration",

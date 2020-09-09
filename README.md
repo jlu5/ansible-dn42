@@ -4,7 +4,7 @@ This repository contains the configs for AS4242421080/JLU5-AS on [dn42](https://
 
 ## Network topology
 
-![AS4242421080 Network Map](AS4242421080.svg)
+![AS4242421080 Network Map](AS4242421080.gv.svg)
 
 This iteration of the network uses Babel as IGP and a full mesh of iBGP connections. [Costs between links](roles/config-bird2/config/internal_costs.yml) are manually configured to roughly match the link latency.
 
