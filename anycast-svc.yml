@@ -38,7 +38,7 @@
         lua-config-file: "{{ pdns_rec_config_dir }}/recursor.lua"
 
         # DNSSEC
-        dnssec: validate
+        dnssec: log-fail
         dnssec-log-bogus: true
 
         # Allow sending queries over IPv6
