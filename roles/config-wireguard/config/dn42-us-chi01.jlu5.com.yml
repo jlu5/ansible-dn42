@@ -22,11 +22,7 @@ wg_peers:
   peer_v6: "fdfc:694e:234f::3/128"
 
 - name: "dn42tor-hexanet"
-  port: 53078
-  remote: "omicron.hexanet.dev:31080"
-  wg_pubkey: "+pHEjVI8t2b8yu5mlV2q+rEpxirvXJk6Nnh3tyWk/Fw="
-  peer_v4: null  # v6-only
-  peer_v6: "fe80::10:3621"
+  remove: true  # moved to ca-bhs01
 
 - name: "dn42kan-sbernau"
   port: 51297
