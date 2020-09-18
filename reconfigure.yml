@@ -4,6 +4,7 @@
 - name: Configure dn42 routers
   hosts: dn42routers
   become: yes
+  strategy: mitogen_free
   roles:
     - role: config-loopback
       dummy_iface_conf_name: "dn42-dummy-igp"
