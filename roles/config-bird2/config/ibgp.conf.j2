@@ -12,6 +12,7 @@ protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
         export where source = RTS_BGP && is_valid_network() && !is_self_net();
         next hop address {{ ownip }};
         next hop self;
+        add paths on;
     };
 
     ipv6 {
@@ -19,6 +20,7 @@ protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
         export where source = RTS_BGP && is_valid_network_v6() && !is_self_net_v6();
         next hop address {{ ownip6 }};
         next hop self;
+        add paths on;
     };
 }
 {% endif %}
