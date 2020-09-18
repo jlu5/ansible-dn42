@@ -8,6 +8,3 @@
     register: enumerate_igp_tunnels
   - debug:
       var: enumerate_igp_tunnels.stdout_lines
-
-  - name: Update cached copy of dn42 registry
-    shell: cd dn42-registry && git pull

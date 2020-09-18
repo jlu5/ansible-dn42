@@ -1,9 +1,12 @@
-- name: "Run prestep: update local state"
-  import_playbook: update-local-state.yml
-
 - name: Configure anycast services
   hosts: anycast_pool
   become: yes
+  pre_tasks:
+    - name: Update cached copy of dn42 registry
+      local_action: shell cd dn42-registry && git pull
+      become: false
+      run_once: true
+
   roles:
     - role: config-loopback
       ownip: "{{ anycast_ip }}"
