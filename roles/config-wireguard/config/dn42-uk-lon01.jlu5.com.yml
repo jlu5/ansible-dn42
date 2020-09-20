@@ -85,3 +85,10 @@ wg_peers:
   wg_pubkey: "ioFN575e/dD15BiD2mkXug6TKyeqYB4BC0f2NFMHYEM="
   peer_v4: null
   peer_v6: "fd22:ad17:8e8d:10::10c/128"
+
+- name: dn42lon-sunnet
+  port: 53088
+  remote: "lon1-uk.dn42.6700.cc:21080"
+  wg_pubkey: "hYIX+Ea/2h0rL7OY0yahjN+DJZlOaokymoDG8UW1kyg="
+  peer_v4: "172.21.100.197/32"
+  peer_v6: "fe80::3088:197/64"
