@@ -8,7 +8,7 @@ wg_peers:
 
 - name: dn42lon-bauen1
   port: 50151
-  remote: "dn42-uk-london0.dn42.bauen1.xyz:21080"
+  remote: "45.91.93.48:21080"
   wg_pubkey: "YIcioh9MB/8fR3M5OHDaQo/15XtPlZsMEZEjAqLmDx4="
   peer_v4: "172.20.18.225"
   peer_v6: "fe80::eafa:46e8"
@@ -19,9 +19,6 @@ wg_peers:
   wg_pubkey: "eNgNR4SXD7aBnE7POW/asfsw2BiVmjEz684zC8WAITo="
   peer_v4: "172.22.169.140"
   peer_v6: "fda9:26a9:1c47:2d42:42:42:1080:1050"
-
-- name: dn42ams-hexanet
-  remove: true  # moved to nl-ley01
 
 - name: dn42fra-owens
   port: 51099
