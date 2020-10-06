@@ -25,3 +25,7 @@ Here I use Ansible to configure the following components:
 Things not included:
 
 - Firewall (Managed elsewhere)
+
+## Network history
+
+![History of my network](history.svg)
