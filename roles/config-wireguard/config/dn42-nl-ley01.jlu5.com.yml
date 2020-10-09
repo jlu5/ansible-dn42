@@ -15,7 +15,7 @@ wg_peers:
 
 - name: dn42ams-aureus
   port: 50007
-  remote: "s.aureus.ga:8558"
+  remote: "s.hanfucw.com:8558"
   wg_pubkey: "ViMRAXJbz8rxqiXUljsx3gF0nLG9a612Qr6DllYLs3k="
   peer_v4: "10.127.8.185"
   peer_v6: "fd10:127:7::1"
