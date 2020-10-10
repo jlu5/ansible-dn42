@@ -33,3 +33,8 @@
     # 1.24.0 has an issue where this collector sucks up a lot of CPU
     # https://github.com/netdata/netdata/issues/9727
     ebpf = no
+
+[global]
+    # Use a larger page size to prevent flush errors
+    page cache size = 64
+    dbengine multihost disk space = 256
