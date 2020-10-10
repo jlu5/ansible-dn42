@@ -104,3 +104,10 @@ wg_peers:
   wg_pubkey: "7V65FxvD9AQetyUr0qSiu+ik8samB4Atrw2ekvC0xQM="
   peer_v4: "172.20.191.129"
   peer_v6: "fe80::780"
+
+- name: dn42nbg-maraun
+  port: 52225
+  remote: "37.120.175.249:51080"
+  wg_pubkey: "uS1AYe7zTGAP48XeNn0vppNjg7q0hawyh8Y0bvvAWhk="
+  peer_v4: "172.20.12.196"
+  peer_v6: "fe80::42:4242:2225"
