@@ -89,7 +89,7 @@ wg_peers:
   remote: "gr-01.livid.pw:21080"
   wg_pubkey: "ChMatUzWx+XIpF2i2Fp5+6V2HN3M8ENOaNpxyenQpiw="
   peer_v4: "172.20.34.161/32"
-  peer_v6: "fe80::deea:1/128"
+  peer_v6: "fe80::deea/128"
 
 - name: dn42fra-uffsalo
   port: 50780
