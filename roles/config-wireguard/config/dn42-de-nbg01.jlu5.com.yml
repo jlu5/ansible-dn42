@@ -104,3 +104,10 @@ wg_peers:
   wg_pubkey: "uS1AYe7zTGAP48XeNn0vppNjg7q0hawyh8Y0bvvAWhk="
   peer_v4: "172.20.12.196"
   peer_v6: "fe80::42:4242:2225"
+
+- name: dn42nbg-fralins
+  port: 50380
+  remote: "anemone.sigterm.xyz:21080"
+  wg_pubkey: "NrCmqtkFMUOcfd7sS45CxVAZXaj8mdYqlDNyEITKCDQ="
+  peer_v4: "172.20.44.1"
+  peer_v6: "fe80::380"
