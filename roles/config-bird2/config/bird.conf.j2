@@ -1,7 +1,49 @@
-include "/etc/bird/node_settings.conf";
-
 log "/var/log/bird/bird.log" 10485760 "/var/log/bird/bird.log.1" { info, remote, warning, error, auth, fatal, bug, debug, trace };
 #debug protocols { routes, events };
+define OWNAS = {{ ownas }};
+define OWNIP = {{ ownip }};
+define OWNIPv6 = {{ ownip6 }};
+define OWNNET = {{ ownnet }};
+define OWNNETv6 = {{ ownnet6 }};
+define OWNNETSET = [
+    {{ ownnet }}+,
+    # Peering LAN
+    192.168.88.0/24+,
+    # Other infra (specific to my network)
+    192.168.33.0/24+
+];
+define OWNNETSETv6 = [{{ ownnet6 }}+];
+define DN42_REGION = {{ dn42_region }};
+
+protocol static {
+{% if static_routes4 is defined %}
+{% for route in static_routes4 %}
+    route {{ route }};
+{% endfor %}
+{% endif %}
+    route OWNNET reject;
+    route 192.168.88.0/24 reject;
+    route 192.168.33.0/24 reject;
+
+    ipv4 {
+        import all;
+        export none;
+    };
+}
+
+protocol static {
+{% if static_routes6 is defined %}
+{% for route in static_routes6 %}
+    route {{ route }};
+{% endfor %}
+{% endif %}
+    route OWNNETv6 reject;
+
+    ipv6 {
+        import all;
+        export none;
+    };
+}
 
 router id OWNIP;
 
