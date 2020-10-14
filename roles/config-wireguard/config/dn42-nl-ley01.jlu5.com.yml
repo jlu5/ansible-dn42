@@ -33,3 +33,10 @@ wg_peers:
   wg_pubkey: "TSHrfsRayvUruE2Q9i+2GB8jo2qlBMAg1iEw4LRgRgs="
   peer_v4: "172.23.186.35/32"
   peer_v6: "fe80::2575:3/64"
+
+- name: dn42lon-nab
+  port: 50781
+  remote: "dn42.nabeelomer.me:21080"
+  wg_pubkey: "5Xru3ent/00yGaW4Pg2VR+6hMhgjqzwQ5GwqJjTYq3M="
+  peer_v4: null
+  peer_v6: "fe80::beef"
