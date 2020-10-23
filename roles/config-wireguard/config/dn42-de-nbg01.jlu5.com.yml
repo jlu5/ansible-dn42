@@ -111,3 +111,10 @@ wg_peers:
   wg_pubkey: "NrCmqtkFMUOcfd7sS45CxVAZXaj8mdYqlDNyEITKCDQ="
   peer_v4: "172.20.44.1"
   peer_v6: "fe80::380"
+
+- name: dn42mrs-cvillis
+  port: 50308
+  remote: "46.182.6.167:21080"
+  wg_pubkey: "8TtTCaIsdmW4yVdQAZqPTPUjZR4eDIop0X+AHLmDKWg="
+  peer_v4: "172.20.149.17"
+  peer_v6: "fe80::0308:35"
