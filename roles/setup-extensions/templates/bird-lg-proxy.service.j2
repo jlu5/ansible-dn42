@@ -33,3 +33,6 @@ ProtectHome=true
 WorkingDirectory={{ birdlg_src_dir }}
 ExecStart={{ birdlg_venv_dir }}/bin/gunicorn --bind {{ ownip }}:{{ birdlg_proxy_port }} lgproxy:app
 Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
