@@ -125,3 +125,10 @@ wg_peers:
   wg_pubkey: "Z3hd+ogID0pOUwJTyGQV7RBoGh0JBpe7ZOD7lJ63JWg="
   peer_v4: "172.21.67.65"
   peer_v6: "fe80::65"
+
+- name: dn42nbg-aasg
+  port: 50827
+  remote: "behemoth.lorkep.trade:54565"
+  wg_pubkey: "6oDGG1ssnWdXR9vSeUKsaExw0Ze3005NmLG/Nyb0fEE="
+  peer_v4: null
+  peer_v6: "fe80::2174:c008:1460:d271"
