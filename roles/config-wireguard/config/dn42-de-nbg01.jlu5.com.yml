@@ -120,7 +120,7 @@ wg_peers:
   peer_v6: "fe80::0308:35"
 
 - name: dn42nbg-rhmn
-  port: 20807
+  port: 50807
   remote: "dn42-de1.rhmn.io:21080"
   wg_pubkey: "Z3hd+ogID0pOUwJTyGQV7RBoGh0JBpe7ZOD7lJ63JWg="
   peer_v4: "172.21.67.65"
