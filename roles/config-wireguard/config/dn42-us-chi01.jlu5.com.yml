@@ -45,3 +45,10 @@ wg_peers:
   wg_pubkey: "6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s="
   peer_v4: "172.20.53.98"
   peer_v6: "fe80::ade0"
+
+- name: dn42bos-hammy
+  port: 50769
+  remote: "hammynet.duckdns.org:43339"
+  wg_pubkey: "JY92YXc5ShMQF76gafcNopwpCE0a1P9KgW8o9axH2QM="
+  peer_v4: "172.21.67.145"
+  peer_v6: null
