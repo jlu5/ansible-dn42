@@ -132,3 +132,10 @@ wg_peers:
   wg_pubkey: "6oDGG1ssnWdXR9vSeUKsaExw0Ze3005NmLG/Nyb0fEE="
   peer_v4: null
   peer_v6: "fe80::2174:c008:1460:d271"
+
+- name: dn42fra-sunnet
+  port: 53088
+  remote: "fra1-de.dn42.6700.cc:21080"
+  wg_pubkey: "TWQhJYK+ynNz7A4GMAQSHAyUUKTnAYrBfWTzzjzhAFs="
+  peer_v4: "172.21.100.195/32"
+  peer_v6: "fe80::3088:195/64"
