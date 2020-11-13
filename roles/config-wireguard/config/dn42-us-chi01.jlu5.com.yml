@@ -52,3 +52,10 @@ wg_peers:
   wg_pubkey: "JY92YXc5ShMQF76gafcNopwpCE0a1P9KgW8o9axH2QM="
   peer_v4: "172.21.67.145"
   peer_v6: null
+
+- name: dn42mci-aftbit
+  port: 50822
+  remote: "dn42.aftbit.com:51080"
+  wg_pubkey: "JBj2+QjkQwFjBn/QRRVB2RWAw9mwC2Efev8AX2uMoUY="
+  peer_v4: "172.23.222.129"
+  peer_v6: "fe80::100"
