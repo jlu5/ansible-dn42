@@ -1,3 +1,12 @@
+- name: Read Wireguard settings for peers
+  include_vars:
+    file: "{{ playbook_dir }}/roles/config-wireguard/config/{{ inventory_hostname }}.yml"
+  ignore_errors: true
+
+- name: Read IGP tunnel settings
+  include_vars:
+    file: "igp-tunnels.yml"
+
 - name: "Read iptables rules template"
   set_fact:
     iptables_rules: "{{ lookup('template', 'templates/rules.j2') }}"
