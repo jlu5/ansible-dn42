@@ -1,0 +1,27 @@
+- name: "Read iptables rules template"
+  set_fact:
+    iptables_rules: "{{ lookup('template', 'templates/rules.j2') }}"
+
+- name: "Write iptables rules for IPv4"
+  blockinfile:
+    dest: "{{ iptables_rules_path }}"
+    content: '{{ iptables_rules }}'
+    insertafter: "\\*filter"
+    state: present
+    #backup: yes
+    validate: "iptables-restore --test %s"
+    marker: "# {mark} ansible-dn42 managed block"
+  notify:
+  - "Reload iptables rules for IPv4"
+
+- name: "Write iptables rules for IPv6"
+  blockinfile:
+    dest: "{{ ip6tables_rules_path }}"
+    content: '{{ iptables_rules }}'
+    state: present
+    insertafter: "^\\*filter$"
+    #backup: yes
+    validate: "ip6tables-restore --test %s"
+    marker: "# {mark} ansible-dn42 managed block"
+  notify:
+  - "Reload iptables rules for IPv6"

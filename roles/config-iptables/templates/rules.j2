@@ -1,0 +1,31 @@
+# BGP sessions
+-A INPUT -p tcp --dport 179 -i dn42+ -j ACCEPT
+-A INPUT -p tcp --sport 179 -i dn42+ -j ACCEPT
+-A INPUT -p tcp --dport 179 -i igp+ -j ACCEPT
+-A INPUT -p tcp --sport 179 -i igp+ -j ACCEPT
+
+# Wireguard tunnels (clearnet)
+-A INPUT -p udp --dport 50000:60000 -i {{ ansible_default_ipv4.interface }} -j ACCEPT
+
+# Babel (IGP only)
+-A INPUT -p udp --dport 6696 -i igp+ -j ACCEPT
+
+# looking glass proxy (IGP only)
+-A INPUT -p tcp --dport 5000 -i igp+ -j ACCEPT
+
+# Anycast DNS
+-A INPUT -p udp --dport 53 -i dn42+ -j ACCEPT
+-A INPUT -p tcp --dport 53 -i dn42+ -j ACCEPT
+-A INPUT -p udp --dport 53 -i igp+ -j ACCEPT
+-A INPUT -p tcp --dport 53 -i igp+ -j ACCEPT
+
+# Allow forwarding between dn42 and IGP links
+-A FORWARD -i dn42+ -o dn42+ -j ACCEPT
+-A FORWARD -i igp+ -o igp+ -j ACCEPT
+-A FORWARD -i igp+ -o dn42+ -j ACCEPT
+-A FORWARD -i dn42+ -o igp+ -j ACCEPT
+
+{# Catch all rules are commented out here to prevent clashes with machine-specific rules, but you should enable something like these!
+-A INPUT -j DROP
+-A FORWARD -j REJECT
+#}

@@ -21,10 +21,7 @@ Here I use Ansible to configure the following components:
 - Anycast DNS via PowerDNS:
   - Authoritative server for jlu5.dn42 and PTR zones
   - Recursive server (localhost-only for now)
-
-Things not included:
-
-- Firewall (Managed elsewhere)
+- Stateful firewall rules for dn42 via iptables
 
 ## Network history
 

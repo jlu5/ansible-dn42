@@ -2,6 +2,7 @@
   apt:
     name:
     - git
+    - iptables
     # bird2 backports from https://deb.utopia-repository.org
     - bird2
     # wireguard from buster-backports

@@ -6,6 +6,7 @@
   become: yes
   strategy: mitogen_free
   roles:
+    - config-iptables
     - role: config-loopback
       dummy_iface_conf_name: "dn42-dummy-igp"
     - config-wireguard

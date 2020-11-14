@@ -44,6 +44,10 @@ birdlg_session_key: !vault |
       6535393461656132380a383335313537346361633938396137336235323335643938316334663932
       39393431646137653435336335363562656133353264313061373434303939396663
 
+# iptables (stateful firewall)
+iptables_rules_path:  "/etc/iptables/rules.v4"
+ip6tables_rules_path: "/etc/iptables/rules.v6"
+
 # Netdata Cloud settings
 netdata_register_cloud: true
 netdata_token: !vault |
