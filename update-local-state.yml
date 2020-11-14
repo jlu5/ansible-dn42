@@ -6,5 +6,6 @@
   - name: Run enumerate-igp-tunnels script
     command: ./enumerate-igp-tunnels.py
     register: enumerate_igp_tunnels
+    changed_when: false
   - debug:
       var: enumerate_igp_tunnels.stdout_lines
