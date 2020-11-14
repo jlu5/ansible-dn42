@@ -24,7 +24,7 @@ def _read_previous_settings():
         return {
             'next_port': START_PORT,
             'igp_neighbours': {},
-            'ports': {},
+            'igp_wg_ports': {},
         }
 
 def main():
@@ -56,7 +56,7 @@ def main():
             data['igp_neighbours'][neighbour].append(server)
 
     # Now populate ports for each combination of routers. This simplfies by including all routers, even those that aren't directly connected
-    ports = data['ports']
+    ports = data['igp_wg_ports']
     for cmb in itertools.combinations(dn42routers, 2):
         # Join tuples together as they are not a native YAML type
         cmb_reverse = ','.join((cmb[1], cmb[0]))

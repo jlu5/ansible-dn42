@@ -30,8 +30,7 @@ igp_neighbours:
   - dn42-uk-lon01.jlu5.com
   - dn42-ca-bhs01.jlu5.com
   - dn42-de-nbg01.jlu5.com
-next_port: 55015
-ports:
+igp_wg_ports:
   dn42-ca-bhs01.jlu5.com,dn42-de-nbg01.jlu5.com: 55010
   dn42-ca-bhs01.jlu5.com,dn42-nl-ley01.jlu5.com: 55011
   dn42-ca-bhs01.jlu5.com,dn42-uk-lon01.jlu5.com: 55005
@@ -62,3 +61,4 @@ ports:
   dn42-us-sea01.jlu5.com,dn42-nl-ley01.jlu5.com: 55009
   dn42-us-sea01.jlu5.com,dn42-uk-lon01.jlu5.com: 55004
   dn42-us-sea01.jlu5.com,dn42-us-chi01.jlu5.com: 55000
+next_port: 55015
