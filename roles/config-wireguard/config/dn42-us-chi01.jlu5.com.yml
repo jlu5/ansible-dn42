@@ -51,7 +51,7 @@ wg_peers:
   remote: "hammynet.duckdns.org:43339"
   wg_pubkey: "JY92YXc5ShMQF76gafcNopwpCE0a1P9KgW8o9axH2QM="
   peer_v4: "172.21.67.145"
-  peer_v6: null
+  peer_v6: "fe80::90:0769"
 
 - name: dn42mci-aftbit
   port: 50822
