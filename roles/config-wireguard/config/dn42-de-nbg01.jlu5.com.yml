@@ -139,3 +139,10 @@ wg_peers:
   wg_pubkey: "TWQhJYK+ynNz7A4GMAQSHAyUUKTnAYrBfWTzzjzhAFs="
   peer_v4: "172.21.100.195/32"
   peer_v6: "fe80::3088:195/64"
+
+- name: dn42fra-samip
+  port: 53021
+  remote: "[2a0e:8f02:201c::1]:51080"
+  wg_pubkey: "rHcgtpzZC8QWGxe/UkFbqUjnV+vOuauyfCSUVHgP418="
+  peer_v4: "172.22.114.98"
+  peer_v6: "fe80::423"
