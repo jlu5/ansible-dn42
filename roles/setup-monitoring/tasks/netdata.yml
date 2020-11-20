@@ -42,3 +42,9 @@
 - name: Print Netdata claim output
   debug:
     var: netdata_claim_output.stderr_lines
+
+- name: Enable netdata systemd service
+  systemd:
+    state: started
+    enabled: yes
+    name: netdata
