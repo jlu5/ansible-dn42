@@ -11,6 +11,7 @@
     - acl
     state: latest
     install_recommends: yes
+    update_cache: yes
 
 # https://dn42.net/howto/networksettings
 - name: Set network settings for DN42
