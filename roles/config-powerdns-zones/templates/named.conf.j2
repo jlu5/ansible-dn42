@@ -8,14 +8,14 @@ zone "{{ dns_domain }}" in {
 };
 
 # Reverse DNS zones
-{# Hacky substitutions...
+{# HACK: these substitutions are really something...
 v4 in the form: 112/28.229.20.172.in-addr.arpa   (CIDR pieces reversed, per RFC 2317)
 v4 delegation:  229.20.172.in-addr.arpa          (first 3 octets of CIDR reversed)
 v6 in the form: 7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa (all pieces of network reversed)
 #}
-{% set ip4_reverse = (ownnet.split('.') | reverse | join('.')) + ".in-addr.arpa" %}
-{% set ip4_delegation = (ownnet.rsplit('.', 1)[0].split('.') | reverse | join('.')) + ".in-addr.arpa" %}
-{% set ip6_reverse = ownnet6 | ipaddr('network') | ipaddr('revdns') | regex_replace('^(0\\.)+', '') | regex_replace('\\.$', '') %}
+{% set ip4_reverse = (ownnets4[0].split('.') | reverse | join('.')) + ".in-addr.arpa" %}
+{% set ip4_delegation = (ownnets4[0].rsplit('.', 1)[0].split('.') | reverse | join('.')) + ".in-addr.arpa" %}
+{% set ip6_reverse = ownnets6[0] | ipaddr('network') | ipaddr('revdns') | regex_replace('^(0\\.)+', '') | regex_replace('\\.$', '') %}
 
 zone "{{ ip4_reverse }}" in {
     file "{{ ip4_reverse | replace('/', '_') }}.zone";
