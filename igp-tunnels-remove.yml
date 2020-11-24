@@ -1,0 +1,4 @@
+# This exists for cleaning up resources of nodes that are no longer active
+# This file IS managed manually.
+igp_neighbours_remove:
+   - us-sea01
