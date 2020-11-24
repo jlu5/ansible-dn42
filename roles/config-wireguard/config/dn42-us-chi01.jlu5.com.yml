@@ -35,7 +35,7 @@ wg_peers:
   port: 50009
   remote: "192.168.2.253:41734"  # NAT traversal
   wg_pubkey: "f9fkX26H68M/lGGi/YwaJjD6Qnzsle6qMTD7Lh7Axzk="
-  peer_v4: "10.127.69.1/32"
+  peer_v4: "10.127.39.1/32"
   peer_v6: "fd10:127:ec39:2221::1/64"
   local_v6: "fd10:127:ec39:2221::5555/64"
 
