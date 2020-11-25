@@ -37,13 +37,9 @@
       peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
       is_internal_node: true
 
-- name: Read list of Wireguard tunnels for internal nodes to remove
-  include_vars:
-    file: "igp-tunnels-remove.yml"
-
 - name: Remove obsolete Wireguard tunnels for internal nodes
   include_tasks: "remove-wg-settings.yml"
-  loop: "{{ igp_neighbours_remove | default([]) }}"
+  loop: "{{ cleanup_remove_nodes | default([]) }}"
   vars:
     peer_info:
       name: "igp-{{ item }}"
