@@ -8,8 +8,17 @@ dns_records:
   "www":
     type: ansible_host_alias
     target: dn42-us-chi01.jlu5.com
+  "ping":
+    type: CNAME
+    target: ca-yvr01
 
 dns_extra_hosts:
+  "ca-yvr01":
+    ip4: 172.20.229.120
+    ip6: fd86:bad:11b7:120::1
+  "ca-yvr02":
+    ip4: 172.20.229.121
+    ip6: fd86:bad:11b7:121::1
   "anycast":
     ip4: "{{ anycast_ip }}"
     ip6: "{{ anycast_ip6 }}"
