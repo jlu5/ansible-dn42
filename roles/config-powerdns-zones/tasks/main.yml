@@ -7,6 +7,10 @@
   notify:
     - Reconfigure PowerDNS
 
+- name: "Read additional configuration for DNS entries"
+  include_vars:
+    file: "{{ role_path }}/dns_entries.yml"
+
 - name: "Template DNS zone files"
   template:
     src: "{{ item }}"

@@ -1,0 +1,15 @@
+dns_records:
+  "@":
+    type: ansible_host_alias # will be expanded to the node's IPs
+    target: dn42-us-chi01.jlu5.com
+  "lg":
+    type: ansible_host_alias
+    target: dn42-us-chi01.jlu5.com
+  "www":
+    type: ansible_host_alias
+    target: dn42-us-chi01.jlu5.com
+
+dns_extra_hosts:
+  "anycast":
+    ip4: "{{ anycast_ip }}"
+    ip6: "{{ anycast_ip6 }}"

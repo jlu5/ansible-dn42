@@ -18,6 +18,8 @@ $ORIGIN 112/28.229.20.172.in-addr.arpa
 {% set nodedata = hostvars[node] %}
 {{ last_octet(nodedata['ownip'])}} IN PTR {{ nodedata['shortname'] }}.{{ dns_domain }}.
 {% endfor %}
-
-; Anycast addresses
-{{ last_octet(anycast_ip) }} IN PTR anycast.{{ dns_domain }}.
+{% for nodename, nodedata in dns_extra_hosts.items() %}
+{% if nodedata.get('ip4') %}
+{{ last_octet(nodedata['ip4'])}} IN PTR {{ nodename }}.{{ dns_domain }}.
+{% endif %}
+{% endfor %}

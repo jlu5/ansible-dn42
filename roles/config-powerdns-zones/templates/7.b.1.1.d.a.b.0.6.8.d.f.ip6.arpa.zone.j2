@@ -8,5 +8,8 @@ $ORIGIN 7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa
 {{ nodedata['ownip6'] | ipaddr('revdns') }} IN PTR {{ nodedata['shortname'] }}.{{ dns_domain }}.
 {% endfor %}
 
-; Anycast addresses
-{{ anycast_ip6 | ipaddr('revdns') }} IN PTR anycast.{{ dns_domain }}.
+{% for nodename, nodedata in dns_extra_hosts.items() %}
+{% if nodedata.get('ip6') %}
+{{ nodedata['ip6'] | ipaddr('revdns') }} IN PTR {{ nodename }}.{{ dns_domain }}.
+{% endif %}
+{% endfor %}
