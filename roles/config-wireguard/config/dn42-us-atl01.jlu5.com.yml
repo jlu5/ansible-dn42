@@ -1,0 +1,8 @@
+wg_peers:
+- name: dn42dal-gatuno
+  port: 50180
+  remote: "bokbok.gatuno.mx:50180"
+  wg_pubkey: "sORFj7pR8ZO1U4vZxmgq0ue9gGGNf8wdrgr7kb+CTBA="
+  peer_v4: "172.22.122.15"
+  peer_v6: "fd42:470:f0ef:307::1/64"
+  local_v6: "fd42:470:f0ef:307::2/64"
