@@ -64,11 +64,7 @@ wg_peers:
   peer_v6: "fe80::119"
 
 - name: dn42nbg-steveyi
-  port: 59557
-  remote: "de-nbg01.dn42.s.yiy.tw:31080"
-  wg_pubkey: "OEcsyejUCkQpdGnAmuzW50H6MVzVXIhOTT0u2ShGN3M="
-  peer_v4: "172.22.189.120"
-  peer_v6: "fd69:9889:9692:4::1"
+  remove: true
 
 - name: dn42nbg-hexanet
   port: 53078
