@@ -10,6 +10,9 @@ protocol static {
 {% for prefix in ownnets4 %}
     route {{ prefix }} reject;
 {% endfor %}
+{% for route in static_routes4|default([]) %}
+    route {{ route }};
+{% endfor %}
 
     ipv4 {
         import all;
@@ -20,6 +23,9 @@ protocol static {
 protocol static {
 {% for prefix in ownnets6 %}
     route {{ prefix }} reject;
+{% endfor %}
+{% for route in static_routes6|default([]) %}
+    route {{ route }};
 {% endfor %}
 
     ipv6 {
