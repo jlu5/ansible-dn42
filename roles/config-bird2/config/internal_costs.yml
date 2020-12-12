@@ -6,17 +6,27 @@ internal_costs:
   'us-sea01,us-chi01': 45
   'us-sea01,ca-bhs01': 65
   'us-chi01,ca-bhs01': 20
+
   'uk-lon01,us-chi01': 90
   'uk-lon01,ca-bhs01': 80
   'uk-lon01,us-sea01': 125
+
   'de-nbg01,us-sea01': 145
   'de-nbg01,uk-lon01': 20
   'de-nbg01,us-chi01': 105
   'de-nbg01,ca-bhs01': 95
+
   'nl-ley01,de-nbg01': 15
   'uk-lon01,nl-ley01': 10
+
   'us-atl01,us-chi01': 15
   'us-atl01,ca-bhs01': 30
+  'us-atl01,uk-lon01': 85
+  'us-atl01,de-nbg01': 100
+
+  'us-lax01,us-sea02': 30
+  'us-lax01,us-chi01': 45
+  'us-lax01,us-atl01': 45
 
 # Default latency if nothing is set.
 default_cost: 300
