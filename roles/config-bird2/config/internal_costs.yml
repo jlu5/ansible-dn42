@@ -1,17 +1,17 @@
 internal_costs:
   # These costs are configured as the latency between 2 nodes, rounded to the
-  # nearest 5 ms. ospf_backbone.conf adds 10 to these to break ties, encouraging
+  # nearest 5 ms. indirect_penalty is added to break ties, encouraging
   # direct routing in those cases.
   # TODO: make this more dynamic?
-  'us-sea01,us-chi01': 45
-  'us-sea01,ca-bhs01': 65
+  'us-sea02,us-chi01': 45
+  'us-sea02,ca-bhs01': 65
   'us-chi01,ca-bhs01': 20
 
   'uk-lon01,us-chi01': 90
   'uk-lon01,ca-bhs01': 80
-  'uk-lon01,us-sea01': 125
+  'uk-lon01,us-sea02': 130
 
-  'de-nbg01,us-sea01': 145
+  'de-nbg01,us-sea02': 155
   'de-nbg01,uk-lon01': 20
   'de-nbg01,us-chi01': 105
   'de-nbg01,ca-bhs01': 95
