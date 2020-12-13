@@ -63,9 +63,6 @@ wg_peers:
   peer_v4: "172.20.1.2"
   peer_v6: "fe80::119"
 
-- name: dn42nbg-steveyi
-  remove: true
-
 - name: dn42nbg-hexanet
   port: 53078
   remote: "gamma.hexanet.dev:31080"
@@ -142,3 +139,10 @@ wg_peers:
   wg_pubkey: "rHcgtpzZC8QWGxe/UkFbqUjnV+vOuauyfCSUVHgP418="
   peer_v4: "172.22.114.98"
   peer_v6: "fe80::423"
+
+- name: dn42kiv-gfa
+  port: 51097
+  remote: "dn42-md-1.4679.ar:51821"
+  wg_pubkey: "KC7nEIh1EEpX7h+F3Qm4LED5fVoohWUOMpBORNaHKVs="
+  peer_v4: "172.21.68.1"
+  peer_v6: "fe80::1:100/64"
