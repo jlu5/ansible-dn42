@@ -3,26 +3,35 @@ digraph {
 	ratio=0.8
 	subgraph "cluster_North America" {
 		fontname=bold label="North America"
+		"us-sea02" [label="us-sea02"]
+		"us-lax01" [label="us-lax01"]
 		"ca-bhs01" [label="ca-bhs01"]
+		"us-atl01" [label="us-atl01"]
 		"us-chi01" [label="us-chi01"]
-		"us-sea01" [label="us-sea01"]
 	}
 	subgraph cluster_Europe {
 		fontname=bold label=Europe
-		"uk-lon01" [label="uk-lon01"]
 		"de-nbg01" [label="de-nbg01"]
+		"uk-lon01" [label="uk-lon01"]
 		"nl-ley01" [label="nl-ley01"]
 	}
-	"us-sea01" -> "ca-bhs01" [label=65 color=grey dir=both]
+	"us-sea02" -> "ca-bhs01" [label=65 color=grey dir=both]
 	"us-chi01" -> "ca-bhs01" [label=20 color=grey dir=both]
 	"uk-lon01" -> "ca-bhs01" [label=80 color=grey dir=both]
 	"de-nbg01" -> "ca-bhs01" [label=95 color=grey dir=both]
-	"us-sea01" -> "de-nbg01" [label=145 color=grey dir=both]
+	"us-atl01" -> "ca-bhs01" [label=30 color=grey dir=both]
+	"us-sea02" -> "de-nbg01" [label=155 color=grey dir=both]
 	"us-chi01" -> "de-nbg01" [label=105 color=grey dir=both]
 	"uk-lon01" -> "de-nbg01" [label=20 color=grey dir=both]
 	"nl-ley01" -> "de-nbg01" [label=15 color=grey dir=both]
+	"us-atl01" -> "de-nbg01" [label=100 color=grey dir=both]
 	"uk-lon01" -> "nl-ley01" [label=10 color=grey dir=both]
-	"us-sea01" -> "uk-lon01" [label=125 color=grey dir=both]
+	"us-sea02" -> "uk-lon01" [label=130 color=grey dir=both]
 	"us-chi01" -> "uk-lon01" [label=90 color=grey dir=both]
-	"us-sea01" -> "us-chi01" [label=45 color=grey dir=both]
+	"us-atl01" -> "uk-lon01" [label=85 color=grey dir=both]
+	"us-chi01" -> "us-atl01" [label=15 color=grey dir=both]
+	"us-lax01" -> "us-atl01" [label=45 color=grey dir=both]
+	"us-sea02" -> "us-chi01" [label=45 color=grey dir=both]
+	"us-lax01" -> "us-chi01" [label=45 color=grey dir=both]
+	"us-sea02" -> "us-lax01" [label=30 color=grey dir=both]
 }

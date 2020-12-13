@@ -61,6 +61,8 @@ def main():
     seen = set()
     # Draw edges to represent IGP connections
     for node, neighbours in tunnels['igp_neighbours'].items():
+        if node not in short_names:
+            continue
         node = short_names[node]
         for neighbour in neighbours:
             neighbour = short_names[neighbour]
