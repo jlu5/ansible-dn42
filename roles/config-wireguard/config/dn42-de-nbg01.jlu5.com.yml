@@ -143,6 +143,6 @@ wg_peers:
 - name: dn42kiv-gfa
   port: 51097
   remote: "dn42-md-1.4679.ar:51821"
-  wg_pubkey: "KC7nEIh1EEpX7h+F3Qm4LED5fVoohWUOMpBORNaHKVs="
+  wg_pubkey: "Ta3fZ2A2FVhyD6cOzXdqF5zo0mYG5x9pmFJPbI6p8X4="
   peer_v4: "172.21.68.1"
   peer_v6: "fe80::1:100/64"
