@@ -8,6 +8,9 @@ dns_records:
   "www":
     type: ansible_host_alias
     target: dn42-us-chi01.jlu5.com
+  "nightfall":
+    type: ansible_host_alias
+    target: dn42-us-atl01.jlu5.com
   "ping":
     type: CNAME
     target: ca-yvr01
