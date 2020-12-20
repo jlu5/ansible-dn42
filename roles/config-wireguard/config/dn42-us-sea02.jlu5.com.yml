@@ -10,7 +10,11 @@ wg_peers:
   remove: true
 
 - name: dn42sea-kyle
-  remove: true
+  port: 52389
+  remote: "dn42.h.kyle.im:51080"
+  wg_pubkey: "4j71bm03SLt6Me3KkkPBciXWBcFXnpEqxOgms7erV24="
+  peer_v4: "172.21.74.97/32"
+  peer_v6: "fe80::97"
 
 - name: dn42sjo-sunnet
   port: 53088
