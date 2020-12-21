@@ -28,6 +28,14 @@ internal_costs:
   'us-lax01,us-chi01': 45
   'us-lax01,us-atl01': 45
 
+  'us-nyc01,us-sea02': 60
+  'us-nyc01,us-lax01': 65
+  'us-nyc01,us-chi01': 20
+  'us-nyc01,us-atl01': 20
+  'us-nyc01,uk-lon01': 70
+  'us-nyc01,de-nbg01': 90
+  'us-nyc01,ca-bhs01': 10
+
 # Default latency if nothing is set.
 default_cost: 300
 
