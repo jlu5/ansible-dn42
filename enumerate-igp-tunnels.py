@@ -33,27 +33,27 @@ def main():
         hosts = yaml.full_load(f.read())
     dn42routers = hosts['dn42routers']['hosts']
     meshrouters = hosts['meshrouters']['hosts']
+    data['igp_neighbours'].clear()  # clear igp_neighbours, we will be rewriting it
 
     # For each router, populate a list of neighbours
     for server, serverdata in dn42routers.items():
-        data['igp_neighbours'][server] = neighbours = []
-        neighbours.clear()
+        neighbours = data['igp_neighbours'].setdefault(server, set())
         if server in meshrouters:
             # For servers in meshrouters group, add all other nodes in the mesh
-            neighbours += meshrouters
+            neighbours |= set(meshrouters)
             neighbours.remove(server)
 
         # For leaf servers, add all nodes specified in igp_upstreams
-        igp_upstreams = serverdata.get('igp_upstreams', [])
+        igp_upstreams = set(serverdata.get('igp_upstreams', []))
 
         # ^ in this case is logical xor
         if not ((server in meshrouters) ^ bool(igp_upstreams)):
             raise ValueError(f'{server} must either define igp_upstreams or be part of meshrouters group (and not both)')
 
-        neighbours += igp_upstreams
+        neighbours |= igp_upstreams
         for neighbour in igp_upstreams:
             # Add ourselves as neighbour to all of our upstreams
-            data['igp_neighbours'][neighbour].append(server)
+            data['igp_neighbours'].setdefault(neighbour, set()).add(server)
 
     # Now populate ports for each combination of routers. This simplfies by including all routers, even those that aren't directly connected
     ports = data['igp_wg_ports']
