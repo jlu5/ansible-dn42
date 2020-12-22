@@ -20,7 +20,8 @@
     dest: "{{ birdlg_src_dir }}"
     update: yes
     # FIXME: this is ugly. ideally we want to not have the config file in the source dir
-    force: yes
+    #force: yes
+  ignore_errors: true
 
 - name: Set up virtualenv for bird-lg
   pip:
