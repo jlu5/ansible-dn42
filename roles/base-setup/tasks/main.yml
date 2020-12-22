@@ -68,11 +68,3 @@
       minute: "*/15"
       job: "/usr/local/bin/dn42-update-roas.sh"
       user: bird
-
-- name: Read Wireguard public key
-  slurp:
-    src: /etc/wireguard/publickey
-  register: wg_pubkey_file
-- name: Print Wireguard public key
-  debug:
-    msg: "Node {{ inventory_hostname }} has WG public key: {{ wg_pubkey_file['content'] | b64decode | trim }}"
