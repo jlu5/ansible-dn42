@@ -146,3 +146,10 @@ wg_peers:
   wg_pubkey: "Ta3fZ2A2FVhyD6cOzXdqF5zo0mYG5x9pmFJPbI6p8X4="
   peer_v4: "172.21.68.1"
   peer_v6: "fe80::1:100/64"
+
+- name: dn42fra-zhaofen
+  port: 51926
+  remote: "[2a06:e881:5506::1]:21080"
+  wg_pubkey: "Y/OkiTBx7Nkg/mmG7WnHrDY/UisV/M6FyHwr7mKNmEM="
+  peer_v4: "172.20.16.2"
+  peer_v6: "fe80::1926:1"

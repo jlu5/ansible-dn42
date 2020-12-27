@@ -6,3 +6,10 @@ wg_peers:
   peer_v4: "172.20.53.103"
   peer_v6: "fe80::ade0"
   local_v6: "fe80::ade1"
+
+- name: dn42lax-zhaofen
+  port: 51926
+  remote: "[2a06:e881:5502::1]:21080"
+  wg_pubkey: "7/7eZZGr8S5qR+bkKaQdQQBSopjcx2xLpOM7Edw4UF4="
+  peer_v4: "172.20.16.3"
+  peer_v6: "fe80::1926:1"
