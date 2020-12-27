@@ -6,3 +6,10 @@ wg_peers:
   peer_v4: "172.22.122.15"
   peer_v6: "fd42:470:f0ef:307::1/64"
   local_v6: "fd42:470:f0ef:307::2/64"
+
+- name: dn42dal-scooter
+  port: 53856
+  remote: "98.17.108.94:23858"
+  wg_pubkey: "3FSIiNYx8nknbmgRo0yk8AXWwGXScFjjL/aimatQ6GI="
+  peer_v4: "172.23.109.171"
+  peer_v6: null
