@@ -17,6 +17,11 @@ REGIONS = {
     42: 'North America',
     43: 'North America',
     44: 'North America',
+    52: 'East Asia'
+}
+
+IGNORED_NODES = {
+    'ca-bhs01'  # pending removal
 }
 
 def _yaml_load(filename):
@@ -56,17 +61,21 @@ def main():
         with dot.subgraph(name=f'cluster_{region}') as cluster:
             cluster.attr(label=region, fontname='bold')
             for node in nodes_in_region:
+                if node in IGNORED_NODES:
+                    continue
                 cluster.node(node, node)
 
     seen = set()
     # Draw edges to represent IGP connections
     for node, neighbours in tunnels['igp_neighbours'].items():
-        if node not in short_names:
+        if node not in short_names or node in IGNORED_NODES:
             continue
         node = short_names[node]
         for neighbour in neighbours:
             neighbour = short_names[neighbour]
-            if f'{neighbour},{node}' not in seen:
+            if f'{neighbour},{node}' not in seen and \
+                    node not in IGNORED_NODES and \
+                    neighbour not in IGNORED_NODES:
                 datapair = f'{node},{neighbour}'
                 seen.add(datapair)
                 cost = costs['internal_costs'].get(datapair) or costs['internal_costs'].get(f'{neighbour},{node}') or costs['default_cost']
