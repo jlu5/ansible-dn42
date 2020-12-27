@@ -23,7 +23,7 @@
 
 - name: Write Wireguard tunnel settings for internal nodes (v2)
   include_tasks: "write-wg-settings.yml"
-  loop: "{{ igp_neighbours[inventory_hostname] | list }}"
+  loop: "{{ igp_neighbours[inventory_hostname] | sort }}"
   loop_control:
     loop_var: igp_node
   vars:
