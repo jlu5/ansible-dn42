@@ -36,6 +36,9 @@ internal_costs:
   'us-nyc01,de-nbg01': 90
   'us-nyc01,ca-bhs01': 10
 
+  'jp-tyo01,us-sea02': 110
+  'jp-tyo01,us-lax01': 110
+
 # Default latency if nothing is set.
 default_cost: 300
 
