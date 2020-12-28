@@ -111,7 +111,7 @@ def main():
                     description=f'~{cost} ms',
                     coords=[node_coords[node], node_coords[neighbour]]
                 )
-                line.linestyle.color = "#32c0c0c0"  # gray at ~20% opacity
+                line.linestyle.color = "#7f111111"  # gray at ~50% opacity
 
     kml.save(args.outfile)
     print(f"Wrote map data to {args.outfile}")
