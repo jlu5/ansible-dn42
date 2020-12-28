@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Style id="4">
+            <IconStyle id="5">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="6">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="9">
+            <IconStyle id="10">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="11">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="14">
+            <IconStyle id="15">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="16">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="19">
+            <IconStyle id="20">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="21">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="24">
+            <IconStyle id="25">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="26">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="29">
+            <IconStyle id="30">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="31">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="34">
+            <IconStyle id="35">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="36">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="39">
+            <IconStyle id="40">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="41">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="44">
+            <IconStyle id="45">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="46">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="49">
+            <IconStyle id="50">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="51">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <name>AS4242421080 network map</name>
+        <Placemark id="3">
+            <name>us-chi01</name>
+            <description>Chicago, IL, US</description>
+            <styleUrl>#4</styleUrl>
+            <Point id="2">
+                <coordinates>-87.6297982,41.8781136,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="8">
+            <name>us-sea02</name>
+            <description>Seattle, WA, US</description>
+            <styleUrl>#9</styleUrl>
+            <Point id="7">
+                <coordinates>-122.3320708,47.6062095,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="13">
+            <name>ca-bhs01</name>
+            <description>Beauharnois, QC, CA</description>
+            <styleUrl>#14</styleUrl>
+            <Point id="12">
+                <coordinates>-73.8779033,45.3150817,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="18">
+            <name>uk-lon01</name>
+            <description>London, UK</description>
+            <styleUrl>#19</styleUrl>
+            <Point id="17">
+                <coordinates>-0.1277583,51.5073509,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="23">
+            <name>de-nbg01</name>
+            <description>Nuremberg, DE</description>
+            <styleUrl>#24</styleUrl>
+            <Point id="22">
+                <coordinates>11.0766654,49.4521018,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="28">
+            <name>nl-ley01</name>
+            <description>Lelystad, NL</description>
+            <styleUrl>#29</styleUrl>
+            <Point id="27">
+                <coordinates>5.471422,52.51853699999999,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="33">
+            <name>us-atl01</name>
+            <description>Atlanta, GA, US</description>
+            <styleUrl>#34</styleUrl>
+            <Point id="32">
+                <coordinates>-84.3879824,33.7489954,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="38">
+            <name>us-lax01</name>
+            <description>Los Angeles, CA, US</description>
+            <styleUrl>#39</styleUrl>
+            <Point id="37">
+                <coordinates>-118.2436849,34.0522342,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="43">
+            <name>us-nyc01</name>
+            <description>New York City, NY, US</description>
+            <styleUrl>#44</styleUrl>
+            <Point id="42">
+                <coordinates>-74.0059728,40.7127753,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="48">
+            <name>jp-tyo01</name>
+            <description>Tokyo, JP</description>
+            <styleUrl>#49</styleUrl>
+            <Point id="47">
+                <coordinates>139.6503106,35.6761919,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53">
+            <name>ca-bhs01 &lt;-&gt;uk-lon01</name>
+            <description>80</description>
+            <LineString id="52">
+                <coordinates>-73.8779033,45.3150817,0.0 -0.1277583,51.5073509,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="55">
+            <name>ca-bhs01 &lt;-&gt;us-chi01</name>
+            <description>20</description>
+            <LineString id="54">
+                <coordinates>-73.8779033,45.3150817,0.0 -87.6297982,41.8781136,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="57">
+            <name>ca-bhs01 &lt;-&gt;us-nyc01</name>
+            <description>10</description>
+            <LineString id="56">
+                <coordinates>-73.8779033,45.3150817,0.0 -74.0059728,40.7127753,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="59">
+            <name>ca-bhs01 &lt;-&gt;de-nbg01</name>
+            <description>95</description>
+            <LineString id="58">
+                <coordinates>-73.8779033,45.3150817,0.0 11.0766654,49.4521018,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="61">
+            <name>ca-bhs01 &lt;-&gt;us-atl01</name>
+            <description>30</description>
+            <LineString id="60">
+                <coordinates>-73.8779033,45.3150817,0.0 -84.3879824,33.7489954,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="63">
+            <name>ca-bhs01 &lt;-&gt;us-sea02</name>
+            <description>65</description>
+            <LineString id="62">
+                <coordinates>-73.8779033,45.3150817,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="65">
+            <name>de-nbg01 &lt;-&gt;uk-lon01</name>
+            <description>20</description>
+            <LineString id="64">
+                <coordinates>11.0766654,49.4521018,0.0 -0.1277583,51.5073509,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="67">
+            <name>de-nbg01 &lt;-&gt;us-chi01</name>
+            <description>105</description>
+            <LineString id="66">
+                <coordinates>11.0766654,49.4521018,0.0 -87.6297982,41.8781136,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="69">
+            <name>de-nbg01 &lt;-&gt;us-atl01</name>
+            <description>100</description>
+            <LineString id="68">
+                <coordinates>11.0766654,49.4521018,0.0 -84.3879824,33.7489954,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="71">
+            <name>de-nbg01 &lt;-&gt;us-nyc01</name>
+            <description>90</description>
+            <LineString id="70">
+                <coordinates>11.0766654,49.4521018,0.0 -74.0059728,40.7127753,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="73">
+            <name>de-nbg01 &lt;-&gt;us-sea02</name>
+            <description>155</description>
+            <LineString id="72">
+                <coordinates>11.0766654,49.4521018,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="75">
+            <name>de-nbg01 &lt;-&gt;nl-ley01</name>
+            <description>15</description>
+            <LineString id="74">
+                <coordinates>11.0766654,49.4521018,0.0 5.471422,52.51853699999999,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="77">
+            <name>jp-tyo01 &lt;-&gt;us-lax01</name>
+            <description>110</description>
+            <LineString id="76">
+                <coordinates>139.6503106,35.6761919,0.0 -118.2436849,34.0522342,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="79">
+            <name>jp-tyo01 &lt;-&gt;us-sea02</name>
+            <description>110</description>
+            <LineString id="78">
+                <coordinates>139.6503106,35.6761919,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="81">
+            <name>nl-ley01 &lt;-&gt;uk-lon01</name>
+            <description>10</description>
+            <LineString id="80">
+                <coordinates>5.471422,52.51853699999999,0.0 -0.1277583,51.5073509,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="83">
+            <name>uk-lon01 &lt;-&gt;us-chi01</name>
+            <description>90</description>
+            <LineString id="82">
+                <coordinates>-0.1277583,51.5073509,0.0 -87.6297982,41.8781136,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="85">
+            <name>uk-lon01 &lt;-&gt;us-atl01</name>
+            <description>85</description>
+            <LineString id="84">
+                <coordinates>-0.1277583,51.5073509,0.0 -84.3879824,33.7489954,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="87">
+            <name>uk-lon01 &lt;-&gt;us-nyc01</name>
+            <description>70</description>
+            <LineString id="86">
+                <coordinates>-0.1277583,51.5073509,0.0 -74.0059728,40.7127753,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="89">
+            <name>uk-lon01 &lt;-&gt;us-sea02</name>
+            <description>130</description>
+            <LineString id="88">
+                <coordinates>-0.1277583,51.5073509,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="91">
+            <name>us-atl01 &lt;-&gt;us-chi01</name>
+            <description>15</description>
+            <LineString id="90">
+                <coordinates>-84.3879824,33.7489954,0.0 -87.6297982,41.8781136,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="93">
+            <name>us-atl01 &lt;-&gt;us-lax01</name>
+            <description>45</description>
+            <LineString id="92">
+                <coordinates>-84.3879824,33.7489954,0.0 -118.2436849,34.0522342,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="95">
+            <name>us-atl01 &lt;-&gt;us-nyc01</name>
+            <description>20</description>
+            <LineString id="94">
+                <coordinates>-84.3879824,33.7489954,0.0 -74.0059728,40.7127753,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="97">
+            <name>us-chi01 &lt;-&gt;us-lax01</name>
+            <description>45</description>
+            <LineString id="96">
+                <coordinates>-87.6297982,41.8781136,0.0 -118.2436849,34.0522342,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="99">
+            <name>us-chi01 &lt;-&gt;us-nyc01</name>
+            <description>20</description>
+            <LineString id="98">
+                <coordinates>-87.6297982,41.8781136,0.0 -74.0059728,40.7127753,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="101">
+            <name>us-chi01 &lt;-&gt;us-sea02</name>
+            <description>45</description>
+            <LineString id="100">
+                <coordinates>-87.6297982,41.8781136,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="103">
+            <name>us-lax01 &lt;-&gt;us-nyc01</name>
+            <description>65</description>
+            <LineString id="102">
+                <coordinates>-118.2436849,34.0522342,0.0 -74.0059728,40.7127753,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="105">
+            <name>us-lax01 &lt;-&gt;us-sea02</name>
+            <description>30</description>
+            <LineString id="104">
+                <coordinates>-118.2436849,34.0522342,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="107">
+            <name>us-nyc01 &lt;-&gt;us-sea02</name>
+            <description>60</description>
+            <LineString id="106">
+                <coordinates>-74.0059728,40.7127753,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>

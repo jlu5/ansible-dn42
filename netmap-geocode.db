@@ -1,0 +1,30 @@
+Atlanta, GA, US: !!python/tuple
+- 33.7489954
+- -84.3879824
+Beauharnois, QC, CA: !!python/tuple
+- 45.3150817
+- -73.8779033
+Chicago, IL, US: !!python/tuple
+- 41.8781136
+- -87.6297982
+Lelystad, NL: !!python/tuple
+- 52.51853699999999
+- 5.471422
+London, UK: !!python/tuple
+- 51.5073509
+- -0.1277583
+Los Angeles, CA, US: !!python/tuple
+- 34.0522342
+- -118.2436849
+New York City, NY, US: !!python/tuple
+- 40.7127753
+- -74.0059728
+Nuremberg, DE: !!python/tuple
+- 49.4521018
+- 11.0766654
+Seattle, WA, US: !!python/tuple
+- 47.6062095
+- -122.3320708
+Tokyo, JP: !!python/tuple
+- 35.6761919
+- 139.6503106
