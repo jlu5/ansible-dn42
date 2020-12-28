@@ -90,7 +90,7 @@ def main():
         coords = node_coords[node_short_names[node]] = (raw_coords[1], raw_coords[0])
 
         point = kml.newpoint(name=node_short_names[node], description=nodedata['location'], coords=[coords])
-        point.style.iconstyle.icon.href = 'https://maps.google.com/mapfiles/kml/paddle/blu-blank.png'
+        point.style.iconstyle.icon.href = 'https://maps.google.com/mapfiles/kml/paddle/ylw-blank.png'
 
     # Create a new line for each IGP tunnel
     graphed_tunnels = set()
@@ -106,8 +106,12 @@ def main():
                 cost = costs['internal_costs'].get(datapair) or \
                        costs['internal_costs'].get(f'{neighbour},{node}') or \
                        costs['default_cost']
-                kml.newlinestring(name=f'{node} <->{neighbour}', description=str(cost),
-                                  coords=[node_coords[node], node_coords[neighbour]])
+                line = kml.newlinestring(
+                    name=f'{node} &lt;-&gt; {neighbour}',
+                    description=f'~{cost} ms',
+                    coords=[node_coords[node], node_coords[neighbour]]
+                )
+                line.linestyle.color = "#32c0c0c0"  # gray at ~20% opacity
 
     kml.save(args.outfile)
     print(f"Wrote map data to {args.outfile}")
