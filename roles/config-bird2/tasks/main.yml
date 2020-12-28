@@ -36,14 +36,10 @@
     - Reconfigure bird
 ###
 
-- name: Read template settings for bird config
+- name: Read global-config settings
   include_vars:
-    dir: "{{ role_path }}/config/"
+    dir: "{{ playbook_dir }}/global-config/"
     ignore_unknown_extensions: true
-
-- name: Read IGP tunnel settings
-  include_vars:
-    file: "igp-tunnels.yml"
 
 - name: Write global bird settings (static)
   copy:

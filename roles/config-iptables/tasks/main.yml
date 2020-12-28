@@ -5,7 +5,7 @@
 
 - name: Read IGP tunnel settings
   include_vars:
-    file: "igp-tunnels.yml"
+    file: "global-config/igp-tunnels.yml"
 
 - name: "Read iptables rules template"
   set_fact:

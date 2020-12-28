@@ -19,7 +19,7 @@
 
 - name: Read IGP tunnel settings
   include_vars:
-    file: "igp-tunnels.yml"
+    file: "global-config/igp-tunnels.yml"
 
 - name: Write Wireguard tunnel settings for internal nodes (v2)
   include_tasks: "write-wg-settings.yml"

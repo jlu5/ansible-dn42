@@ -12,7 +12,7 @@ import yaml
 # See https://github.com/yaml/pyyaml/issues/86
 yaml.add_multi_constructor('', lambda *args: None)
 
-OUTFILE = "igp-tunnels.yml"
+OUTFILE = "global-config/igp-tunnels.yml"
 START_PORT = 55000  # Port to start building tunnels from
 
 def _read_previous_settings():

@@ -34,9 +34,9 @@ def main():
     parser.add_argument("-H", "--hosts", help="path to hosts configuration / inventory file",
                         type=str, default='hosts.yml')
     parser.add_argument("-c", "--costs", help="path to internal costs configuration",
-                        type=str, default='roles/config-bird2/config/internal_costs.yml')
+                        type=str, default='global-config/internal-costs.yml')
     parser.add_argument("-t", "--tunnels", help="path to IGP tunnels configuration",
-                        type=str, default='igp-tunnels.yml')
+                        type=str, default='global-config/igp-tunnels.yml')
     parser.add_argument("-f", "--format", help="output format",
                         type=str, default='svg')
     args = parser.parse_args()
