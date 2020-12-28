@@ -13,3 +13,10 @@ wg_peers:
   wg_pubkey: "7/7eZZGr8S5qR+bkKaQdQQBSopjcx2xLpOM7Edw4UF4="
   peer_v4: "172.20.16.3"
   peer_v6: "fe80::1926:1"
+
+- name: dn42lax-sunnet
+  port: 53088
+  remote: "lax1-us.dn42.6700.cc:21080"
+  wg_pubkey: "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo="
+  peer_v4: "172.21.100.193"
+  peer_v6: "fe80::3088:193/64"
