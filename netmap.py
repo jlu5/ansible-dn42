@@ -107,11 +107,11 @@ def main():
                        costs['internal_costs'].get(f'{neighbour},{node}') or \
                        costs['default_cost']
                 line = kml.newlinestring(
-                    name=f'{node} &lt;-&gt; {neighbour}',
+                    name=f'{node} to {neighbour}',
                     description=f'~{cost} ms',
                     coords=[node_coords[node], node_coords[neighbour]]
                 )
-                line.linestyle.color = "#7f111111"  # gray at ~50% opacity
+                line.linestyle.color = "#66111111"  # dark gray at ~40% opacity
 
     kml.save(args.outfile)
     print(f"Wrote map data to {args.outfile}")
