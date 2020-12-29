@@ -63,3 +63,10 @@ wg_peers:
   wg_pubkey: "H7u4EiDd0dG+ERtzmSOs/tqurJDTFeqDRQmuSinF0GI="
   peer_v4: 192.168.88.1
   peer_v6: fe80::120
+
+- name: dn42pdx-yuutaw
+  port: 52980
+  remote: "35.247.71.186:21080"
+  wg_pubkey: "7TPaxdYboON2y/dPL/84H8PToXfQqMhwkpX2i4srDGk="
+  peer_v4: "172.23.105.1"
+  peer_v6: "fe80::2980/64"
