@@ -54,3 +54,10 @@ wg_peers:
   wg_pubkey: "OwQeiRnPmE3/28I0lWP3TD9JZOSULAmnEAIbSw0wtBY="
   peer_v4: null
   peer_v6: "fe80::c13c:3759:4b20:e63f"
+
+- name: dn42buf-cperrin
+  port: 53735
+  remote: "us1.dn42.cperrin.xyz:51080"
+  wg_pubkey: "p3v600DE0VBgZmBXZACi9ei9FdP+6An4SZge6CicH3E="
+  peer_v4: null
+  peer_v6: "fe80::3735:1"
