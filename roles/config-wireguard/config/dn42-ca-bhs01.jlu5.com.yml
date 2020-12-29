@@ -35,18 +35,10 @@ wg_peers:
   peer_v6: "fe80::42:2237/128"
 
 - name: dn42nyc-strexp
-  port: 51331
-  remote: "nyc1.us.dn42.strexp.net:21080"
-  wg_pubkey: "s00+3HRZVTFsGJyTZoF88/x4qG82M4sYOraNo4KxIXM="
-  peer_v4: "172.20.158.144"
-  peer_v6: "fe80::1331"
+  remove: yes
 
 - name: dn42buf-lantian
-  port: 52547
-  remote: "107.172.134.89:21080"
-  wg_pubkey: "a+zL2tDWjwxBXd2bho2OjR/BEmRe2tJF9DHFmZIE+Rk="
-  peer_v4: "172.22.76.190"
-  peer_v6: "fe80::2547"
+  remove: yes
 
 - name: dn42tor-jrb0001
   port: 50119
@@ -66,11 +58,7 @@ wg_peers:
   remove: true  # moved to us-nyc01
 
 - name: "dn42nyc-xnoe"
-  port: 52833
-  remote: "157.230.2.4:43338"
-  wg_pubkey: "UARKACjdZOuZ2WdnbmXegkGFHu7hs6Ia6dgBNpDB2ns="
-  peer_v4: "172.20.224.194"
-  peer_v6: "fe80::2833"
+  remove: yes
 
 - name: dn42bhs-aasg
   port: 50827

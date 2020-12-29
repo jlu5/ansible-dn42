@@ -19,3 +19,38 @@ wg_peers:
   wg_pubkey: "NnIsCmxiGctp5hR9ViuNRjZXr8lxtjn382sIwsV+GBU="
   peer_v4: 172.21.67.200/32
   peer_v6: "fe80::42:1080:1/128"
+
+- name: "dn42nyc-marropa"
+  port: 50880
+  remote: "dn42-us.marropax.com:21080"
+  wg_pubkey: "l64RRVzVLNkp5GtVWjZbFjkSse7Yo+FQqyNFUOG3SgI="
+  peer_v4: "172.21.106.113/32"
+  peer_v6: "fe80::cafe"
+
+- name: dn42buf-lantian
+  port: 52547
+  remote: "107.172.134.89:21080"
+  wg_pubkey: "a+zL2tDWjwxBXd2bho2OjR/BEmRe2tJF9DHFmZIE+Rk="
+  peer_v4: "172.22.76.190"
+  peer_v6: "fe80::2547"
+
+- name: "dn42bhs-hexanet"
+  port: 53078
+  remote: "omicron.hexanet.dev:31080"
+  wg_pubkey: "S0kjHNnfFUn4ts9+pM/dt7LZ/7ZUjJZeVTW8KWYE3Ug="
+  peer_v4: null  # v6-only
+  peer_v6: "fe80::10:3621"
+
+- name: "dn42nyc-xnoe"
+  port: 52833
+  remote: "157.230.2.4:43338"
+  wg_pubkey: "UARKACjdZOuZ2WdnbmXegkGFHu7hs6Ia6dgBNpDB2ns="
+  peer_v4: "172.20.224.194"
+  peer_v6: "fe80::2833"
+
+- name: dn42bhs-aasg
+  port: 50827
+  remote: "shingebiss.lorkep.trade:54567"
+  wg_pubkey: "OwQeiRnPmE3/28I0lWP3TD9JZOSULAmnEAIbSw0wtBY="
+  peer_v4: null
+  peer_v6: "fe80::c13c:3759:4b20:e63f"
