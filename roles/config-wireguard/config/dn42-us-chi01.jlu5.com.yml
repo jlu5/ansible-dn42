@@ -85,3 +85,10 @@ wg_peers:
   wg_pubkey: "m39Agg8VVPHtyrYChv8oD+OUR7kTO0zZ9L2oIqoeuFs="
   peer_v4: "172.22.108.0/28"
   peer_v6: null
+
+- name: dn42chi-ncw
+  port: 51288
+  remote: "chi2.sc00.org:21080"
+  wg_pubkey: "750WkOmYTh+gfrod2LRgKU46nkEJrWK2z6emynV+j3U="
+  peer_v4: "172.20.233.129"
+  peer_v6: "fe80::1288/64"
