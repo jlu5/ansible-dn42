@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Graph the growth of my my network over time!
 
 import itertools
