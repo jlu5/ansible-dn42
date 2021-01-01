@@ -1,0 +1,8 @@
+wg_peers:
+- name: dn42tyo-tech9
+  port: 51588
+  remote: "jp-tyo01.dn42.tech9.io:52952"
+  wg_pubkey: "unTYSat5YjkY+BY31Q9xLSfFhTUBvn3CiDCSZxbINVM="
+  peer_v4: "172.20.16.145/32"
+  peer_v6: "fe80::1588/64"
+  local_v6: "fe80::100"
