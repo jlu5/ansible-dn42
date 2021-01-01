@@ -6,3 +6,10 @@ wg_peers:
   peer_v4: "172.20.16.145/32"
   peer_v6: "fe80::1588/64"
   local_v6: "fe80::100"
+
+- name: dn42tyo-koala
+  port: 51488
+  remote: "132.145.113.147:21080"
+  wg_pubkey: "IL1Wkw5cLpGUUvFlYwAG4rAsw9lbd1QpTcBPsk/w/SM="
+  peer_v4: null
+  peer_v6: "fe80::3621"
