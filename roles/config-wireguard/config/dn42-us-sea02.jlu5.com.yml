@@ -70,3 +70,10 @@ wg_peers:
   wg_pubkey: "7TPaxdYboON2y/dPL/84H8PToXfQqMhwkpX2i4srDGk="
   peer_v4: "172.23.105.1"
   peer_v6: "fe80::2980/64"
+
+- name: dn42sea-ncw
+  port: 51288
+  remote: "sea1.sc00.org:21080"
+  wg_pubkey: "AMmUVNOn6ZtL0+vn1tfO4c7M1Fby19lSVZpJJhML6VI="
+  peer_v4: "172.20.233.153"
+  peer_v6: "fe80::1288/64"

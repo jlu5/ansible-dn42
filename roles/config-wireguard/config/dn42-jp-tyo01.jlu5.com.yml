@@ -13,3 +13,10 @@ wg_peers:
   wg_pubkey: "IL1Wkw5cLpGUUvFlYwAG4rAsw9lbd1QpTcBPsk/w/SM="
   peer_v4: null
   peer_v6: "fe80::3621"
+
+- name: dn42tyo-ncw
+  port: 51288
+  remote: "jpn1.sc00.org:21080"
+  wg_pubkey: "gOcvbENQnONJ0SDgTPGVzukSHGALi1N7gRWuWuhk7hU="
+  peer_v4: "172.20.233.130"
+  peer_v6: "fe80::1288/64"
