@@ -27,19 +27,6 @@ wg_peers:
   peer_v4: "172.22.127.68"
   peer_v6: "fe80::42:22:400"
 
-- name: "dn42bhs-munster"
-  port: 52237
-  remote: "ca-bhs01.dn42.munsternet.eu:21080"
-  wg_pubkey: "0MdSpit+qpvlUlFH/gMvTXuvNATvRUTAHVAnKeT+NhU="
-  peer_v4: null
-  peer_v6: "fe80::42:2237/128"
-
-- name: dn42nyc-strexp
-  remove: yes
-
-- name: dn42buf-lantian
-  remove: yes
-
 - name: dn42tor-jrb0001
   port: 50119
   remote: "155.138.133.127:21080"
@@ -53,12 +40,6 @@ wg_peers:
   wg_pubkey: "S0kjHNnfFUn4ts9+pM/dt7LZ/7ZUjJZeVTW8KWYE3Ug="
   peer_v4: null  # v6-only
   peer_v6: "fe80::10:3621"
-
-- name: "dn42pnj-tomkap"
-  remove: true  # moved to us-nyc01
-
-- name: "dn42nyc-xnoe"
-  remove: yes
 
 - name: dn42bhs-aasg
   port: 50827
