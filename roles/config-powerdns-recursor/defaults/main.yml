@@ -3,6 +3,7 @@ delegation_servers: "{{ lookup('file', 'dn42-registry/data/dns/delegation-server
 dnssec_trust_anchors:
   dn42: "{{ lookup('file', 'dn42-registry/data/dns/dn42') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
   20.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.20.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
+  21.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.21.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
   22.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.22.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
   23.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.23.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
   31.172.in-addr.arpa: "{{ lookup('file', 'dn42-registry/data/inetnum/172.31.0.0_16') | regex_findall('^ds-rdata:\\s+(.*)$', multiline=True) }}"
@@ -60,6 +61,7 @@ dns_zones_dn42:
 - ffwp
 - ffw
 - 20.172.in-addr.arpa
+- 21.172.in-addr.arpa
 - 22.172.in-addr.arpa
 - 23.172.in-addr.arpa
 - 31.172.in-addr.arpa
