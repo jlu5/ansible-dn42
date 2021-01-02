@@ -3,6 +3,5 @@
 {{ zone }}={{ delegation_servers | join(', ') }}
 {% endfor %}
 {% for zone, servers in dns_zones_extra.items() %}
-{# "+" before zone name forwards with recursion bit set. This is needed when redirecting queries to another recursive server #}
-+{{ zone }}={{ servers | join(', ') }}
+{{ zone }}={{ servers | join(', ') }}
 {% endfor %}
