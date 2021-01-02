@@ -9,7 +9,7 @@
 
 - name: "Read additional configuration for DNS entries"
   include_vars:
-    file: "{{ role_path }}/dns_entries.yml"
+    file: "{{ playbook_dir }}/global-config/dns-entries.yml"
 
 - name: "Template DNS zone files"
   template:
