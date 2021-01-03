@@ -17,6 +17,7 @@ cleanup_remove_nodes:
 # Dummy / loopback device name used for iBGP peering
 dummy_ifname: "igp-dummy0"
 dummy_ifname_anycast: "igp-dummy1"
+dummy_ifname_anycast_recursors: "igp-dummy2"
 dummy_ifname_glob: "igp-dummy*"
 
 # DNS related settings
@@ -26,6 +27,8 @@ dns_ttl: 300
 # Anycast services
 anycast_ip: "172.20.229.112"
 anycast_ip6: "fd86:bad:11b7:53::1"
+anycast_recursors_ip: "172.22.108.22"
+anycast_recursors_ip6: "fd86:bad:11b7:53::2"
 
 # Mitogen needs this to be set; it doesn't follow the interpreter_python setting in ansible.cfg yet
 # See https://github.com/dw/mitogen/issues/740

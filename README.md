@@ -14,14 +14,14 @@ This iteration of the network uses Babel as IGP and a full mesh of iBGP connecti
 
 Here I use Ansible to configure the following components:
 
-- Wireguard ([roles/config-wireguard/](roles/config-wireguard/))
+- Wireguard ([roles/config-wireguard/](roles/config-wireguard/)) via ifupdown (i.e. `/etc/network/interfaces.d`)
 - BIRD 2 ([roles/config-bird2/](roles/config-bird2/))
 - [BIRD Looking Glass](https://github.com/sesa-me/bird-lg)
 - [dn42 Peerfinder](https://dn42.us/peers)
 - Anycast DNS via PowerDNS:
   - Authoritative server for jlu5.dn42 and PTR zones
-  - Recursive server (localhost-only for now)
-- Stateful firewall rules for dn42 via iptables
+  - Public recursive resolver @ **dns.jlu5.dn42**
+- iptables firewall rules for dn42
 
 ## Network history
 
