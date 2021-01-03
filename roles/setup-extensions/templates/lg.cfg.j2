@@ -31,8 +31,8 @@ AS_NUMBER = {node: "{{ ownas }}" for node in ROUTER_IP}
 
 # set a timeout (in seconds) on lgproxy requests
 PROXY_TIMEOUT = {
-    "bird":       5,
-    "traceroute": 60
+    "bird":       10,
+    "traceroute": 120
 }
 
 WHOIS_SERVER = "whois.dn42"
