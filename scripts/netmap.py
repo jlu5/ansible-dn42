@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generates a network map (.kml file) for AS42421080.
+Generates a network map (.kml file) for AS4242421080.
 """
 
 import argparse
