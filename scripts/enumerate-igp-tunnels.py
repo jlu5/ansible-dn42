@@ -7,10 +7,7 @@ import itertools
 import os
 import pprint
 
-import yaml
-# Add a stub handler to ignore Ansible specific values like !vault
-# See https://github.com/yaml/pyyaml/issues/86
-yaml.add_multi_constructor('', lambda *args: None)
+from _common import *
 
 OUTFILE = "global-config/igp-tunnels.yml"
 START_PORT = 55000  # Port to start building tunnels from
@@ -29,8 +26,8 @@ def _read_previous_settings():
 
 def main():
     data = _read_previous_settings()
-    with open('hosts.yml') as f:
-        hosts = yaml.full_load(f.read())
+    hosts = yaml_load('hosts.yml')
+
     dn42routers = hosts['dn42routers']['hosts']
     meshrouters = hosts['meshrouters']['hosts']
     data['igp_neighbours'].clear()  # clear igp_neighbours, we will be rewriting it

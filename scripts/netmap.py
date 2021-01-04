@@ -9,14 +9,8 @@ import time
 
 import geopy
 import simplekml
-import yaml
-# Add a stub handler to ignore Ansible specific values like !vault
-# See https://github.com/yaml/pyyaml/issues/86
-yaml.add_multi_constructor('', lambda *args: None)
 
-def _yaml_load(filename):
-    with open(filename) as f:
-        return yaml.full_load(f.read())
+from _common import *
 
 class NetmapGeocoder():
     """geopy wrapper that saves geocoding results to disk.
@@ -25,7 +19,7 @@ class NetmapGeocoder():
         self.db_filename = db_filename
         self.api_key = api_key
         try:
-            self.entries = _yaml_load(db_filename)
+            self.entries = yaml_load(db_filename)
         except FileNotFoundError:
             self.entries = {}
 
@@ -70,10 +64,10 @@ def main():
                         type=str, default="AS4242421080 network map")
     args = parser.parse_args()
 
-    hosts = _yaml_load(args.hosts)
+    hosts = yaml_load(args.hosts)
     hosts = hosts['dn42routers']['hosts']
-    costs = _yaml_load(args.costs)
-    tunnels = _yaml_load(args.tunnels)
+    costs = yaml_load(args.costs)
+    tunnels = yaml_load(args.tunnels)
 
     geocoder = NetmapGeocoder(args.geocode_cache, args.geocode_apikey)
     node_coords = {}
