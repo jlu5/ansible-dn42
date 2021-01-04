@@ -21,8 +21,11 @@ dummy_ifname_anycast_recursors: "igp-dummy2"
 dummy_ifname_glob: "igp-dummy*"
 
 # DNS related settings
+# This is the main domain used for creating host records for routers (<shortname>.<dns_domains[0]>).
+# Other domains can be specified in global-config/dns-entries.yml
 dns_domain: "jlu5.dn42"
 dns_ttl: 300
+dns_nameserver_prefix: "ns1"  # used in zone files
 
 # Anycast services
 anycast_ip: "172.20.229.112"

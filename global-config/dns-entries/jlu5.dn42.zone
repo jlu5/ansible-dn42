@@ -1,0 +1,18 @@
+$ORIGIN jlu5.dn42
+$TTL 300
+@   IN  SOA     ns1.jlu5.dn42 placeholder-see-registry.jlu5.dn42 (
+        1           ; serial
+        7200        ; refresh period
+        2400        ; retry period
+        86400       ; expiration
+        3600        ; minimum TTL
+)
+@ IN A 172.20.229.113
+@ IN AAAA 172.20.229.113
+lg IN A 172.20.229.113
+lg IN AAAA 172.20.229.113
+www IN A 172.20.229.113
+www IN AAAA 172.20.229.113
+nightfall IN A 172.20.229.119
+nightfall IN AAAA 172.20.229.119
+ping IN CNAME ca-yvr01
