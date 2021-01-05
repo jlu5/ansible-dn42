@@ -17,17 +17,20 @@ dns_records:
       type: CNAME
       target: ca-yvr01
 
-# Subdomains to add both DNS and rDNS entries
-dns_extra_hosts:
-  "ca-yvr01":
-    ip4: 172.22.108.17
-    ip6: fd86:bad:11b7:a::1
-  "ca-yvr02":
-    ip4: 172.22.108.18
-    ip6: fd86:bad:11b7:a::2
-  "anycast":
-    ip4: "{{ anycast_ip }}"
-    ip6: "{{ anycast_ip6 }}"
-  "dns":
-    ip4: "{{ anycast_recursors_ip }}"
-    ip6: "{{ anycast_recursors_ip6 }}"
+    # Hosts to create forward and reverse entries for
+    "ca-yvr01":
+      type: ansible_host_record
+      ip4: 172.22.108.17
+      ip6: fd86:bad:11b7:a::1
+    "ca-yvr02":
+      type: ansible_host_record
+      ip4: 172.22.108.18
+      ip6: fd86:bad:11b7:a::2
+    "anycast":
+      type: ansible_host_record
+      ip4: "{{ anycast_ip }}"
+      ip6: "{{ anycast_ip6 }}"
+    "dns":
+      type: ansible_host_record
+      ip4: "{{ anycast_recursors_ip }}"
+      ip6: "{{ anycast_recursors_ip6 }}"

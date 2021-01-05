@@ -21,6 +21,7 @@ dummy_ifname_glob: "igp-dummy*"
 dns_domain: "jlu5.dn42"
 dns_ttl: 300
 dns_nameserver_prefix: "ns1"  # used in zone files
+dns_zones_dir: "/etc/powerdns/dns-zones"
 
 # Anycast services
 anycast_ip: "172.20.229.112"
