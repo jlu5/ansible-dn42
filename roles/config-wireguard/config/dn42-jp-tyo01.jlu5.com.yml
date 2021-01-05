@@ -27,3 +27,11 @@ wg_peers:
   wg_pubkey: "tDNRiZDVxwzdYdoi+5ydgLwpVu252aP7y+NKxfAzyVY="
   peer_v4: "172.20.191.200"
   peer_v6: "fe80::2464/64"
+
+- name: dn42tyo-yuetaw
+  port: 50925
+  remote: "nrt.yuetau.net:21080"
+  wg_pubkey: "KcSV/4L6bHIAjZGnuYaTG9+3X0yWiXM4DKvECOJ6txI="
+  peer_v4: "172.21.68.33"
+  peer_v6: "fe80::925/64"
+
