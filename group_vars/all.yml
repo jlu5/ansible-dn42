@@ -1,12 +1,7 @@
 ownas: "4242421080"
 ownnets4:
-# dn42 public range. XXX: config-powerdns-zones expects this to be first in the list!
 - 172.20.229.112/28
 - 172.22.108.0/26
-# IGP peering LAN
-- 192.168.88.0/24
-# Other private infra
-- 192.168.33.0/24
 ownnets6:
 - fd86:bad:11b7::/48
 
