@@ -95,8 +95,8 @@ def _write_ptr_zone(zonename, ipnet):
     for ipaddr, record in ptr_records.items():
         if ipaddr in ipnet:
             if not record.endswith('.'):
-                record += "."  # just to be sure
-            _write_entry(fd, ipaddr.reverse_pointer, "PTR", record)
+                record += '.'  # just to be sure
+            _write_entry(fd, ipaddr.reverse_pointer+'.', "PTR", record)
     fd.close()
 
 def write_ptr4_zone(netblock):
