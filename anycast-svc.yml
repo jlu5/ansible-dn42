@@ -6,6 +6,10 @@
       local_action: shell cd dn42-registry && git pull
       become: false
       run_once: true
+    - name: Generate DNS zones
+      local_action: command scripts/make-dns-records.py
+      become: false
+      run_once: true
 
   roles:
     # Configure loopback for auth DNS anycast

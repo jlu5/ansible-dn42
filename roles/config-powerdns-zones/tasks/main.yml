@@ -1,22 +1,15 @@
 
 - name: "Template named.conf for PowerDNS"
-  template:
-    src: named.conf.j2
+  copy:
+    src: "{{ playbook_dir }}/global-config/named.conf"
     dest: "/etc/powerdns/named.conf"
     mode: '0644'
   notify:
     - Reconfigure PowerDNS
 
-- name: "Read additional configuration for DNS entries"
-  include_vars:
-    file: "{{ playbook_dir }}/global-config/dns-entries.yml"
-
-- name: "Template DNS zone files"
-  template:
-    src: "{{ item }}"
-    dest: "/etc/powerdns/{{ item | basename | regex_replace('\\.j2$', '')}}"
-    mode: '0644'
-  with_fileglob:
-    - "{{ role_path }}/templates/*.zone.j2"
+- name: "Synchronize DNS zones"
+  synchronize:
+    src: "{{ playbook_dir }}/global-config/dns-zones/"
+    dest: "{{ dns_zones_dir }}"
   notify:
     - Reconfigure PowerDNS
