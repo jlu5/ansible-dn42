@@ -1,3 +1,9 @@
+# Restrict traffic from our network to IGP & dummy interfaces
+-A INPUT  -s {{ my_cidrs }} -i lo -j ACCEPT
+-A OUTPUT -d {{ my_cidrs }} -o lo -j ACCEPT
+-A INPUT  -s {{ my_cidrs }} ! -i igp+ -j REJECT
+-A OUTPUT -d {{ my_cidrs }} ! -o igp+ -j REJECT
+
 # BGP sessions
 -A INPUT -p tcp --dport 179 -i dn42+ -j ACCEPT
 -A INPUT -p tcp --sport 179 -i dn42+ -j ACCEPT
@@ -19,11 +25,13 @@
 {% endif %}
 {% endfor %}
 
-# Babel (IGP only)
--A INPUT -p udp --dport 6696 -i igp+ -j ACCEPT
+{% if iftype == 6 %}
+# Babel (internal only)
+-A INPUT -p udp --dport 6696 -i igp+ -s fe80::/10 -j ACCEPT
 
-# looking glass proxy (IGP only)
--A INPUT -p tcp --dport 5000 -i igp+ -j ACCEPT
+{% endif %}
+# looking glass proxy (internal only)
+-A INPUT -p tcp --dport 5000 -s {{ my_cidrs }} -j ACCEPT
 
 # Anycast DNS
 -A INPUT -p udp --dport 53 -i dn42+ -j ACCEPT

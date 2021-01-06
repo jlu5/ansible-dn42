@@ -6,6 +6,16 @@
 - name: "Read iptables rules template"
   set_fact:
     iptables_rules: "{{ lookup('template', 'templates/rules.j2') }}"
+  vars:
+    my_cidrs: "{{ ownnets4 | join(',') }}"
+    iftype: 4
+
+- name: "Read iptables rules template"
+  set_fact:
+    ip6tables_rules: "{{ lookup('template', 'templates/rules.j2') }}"
+  vars:
+    my_cidrs: "{{ ownnets6 | join(',') }}"
+    iftype: 6
 
 - name: "Write iptables rules for IPv4"
   blockinfile:
@@ -22,7 +32,7 @@
 - name: "Write iptables rules for IPv6"
   blockinfile:
     dest: "{{ ip6tables_rules_path }}"
-    content: '{{ iptables_rules }}'
+    content: '{{ ip6tables_rules }}'
     state: present
     insertafter: "^\\*filter$"
     #backup: yes
