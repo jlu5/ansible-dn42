@@ -3,11 +3,14 @@
     name:
     - git
     - iptables
+    - rsync
+    - dnsutils
+    - mtr-tiny
     # bird2 backports from https://deb.utopia-repository.org
     - bird2
     # wireguard from buster-backports
     - wireguard
-    # needed to sudo into an unprivileged user: https://docs.ansible.com/ansible/latest/user_guide/become.html#risks-of-becoming-an-unprivileged-user
+    # needed to use ansible become on an unprivileged user: https://docs.ansible.com/ansible/latest/user_guide/become.html#risks-of-becoming-an-unprivileged-user
     - acl
     state: latest
     install_recommends: yes
