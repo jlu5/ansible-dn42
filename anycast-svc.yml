@@ -55,6 +55,8 @@
         # DNSSEC
         dnssec: validate
         dnssec-log-bogus: true
+        # Don't cache records where DNSSEC validation failed. (I seem to get intermittent validation issues?)
+        max-cache-bogus-ttl: 20
 
         # Allow sending queries over IPv6
         query-local-address6: "::"
