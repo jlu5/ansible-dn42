@@ -1,0 +1,9 @@
+options {
+    directory {{ dns_zones_dir }};
+};
+
+{% for zone, filename in dns_zones_local.items() %}
+zone "{{ zone }}" {
+    file "{{ filename }}";
+};
+{% endfor %}
