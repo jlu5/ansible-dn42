@@ -35,8 +35,8 @@
 
 - name: Remove obsolete Wireguard tunnels for internal nodes
   include_tasks: "remove-wg-settings.yml"
-  loop: "{{ cleanup_remove_nodes | default([]) }}"
+  loop: "{{ cleanup_remove_ifaces | default([]) }}"
   vars:
     peer_info:
-      name: "igp-{{ item }}"
+      name: "{{ item }}"
       # This task file doesn't require any other vars
