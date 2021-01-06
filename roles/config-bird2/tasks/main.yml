@@ -36,11 +36,6 @@
     - Reconfigure bird
 ###
 
-- name: Read global-config settings
-  include_vars:
-    dir: "{{ playbook_dir }}/global-config/"
-    ignore_unknown_extensions: true
-
 - name: Write global bird settings (static)
   copy:
     src: "{{ item }}"

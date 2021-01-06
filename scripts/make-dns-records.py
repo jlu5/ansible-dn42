@@ -4,7 +4,7 @@ Generate DNS records from my Ansible config.
 
 This scripts looks at the following files:
 - global-config/dns-entries.yml for custom DNS entries
-- group_vars/all.yml for general AS settings; specifically the following options:
+- global-config/general.yml for general AS settings; specifically the following options:
   "ownnets4", "ownnets6", "dns_*"
 - The inventory file (hosts.yml) to create host records for routers, unless --no-host-records is set
 -
@@ -155,15 +155,15 @@ def write_ptr6_zone(netblock):
 def _load_config():
     global hosts
     hosts = yaml_load(args.hosts)['dn42routers']['hosts']
-    group_vars = yaml_load(args.group_vars)
+    general_vars = yaml_load(args.general_conf)
 
     # Follow Ansible templating for dns-entries.yml
     with open(args.dns_entries) as f:
         dns_entries_raw = f.read()
     dns_entries_tmpl = jinja2.Template(dns_entries_raw)
-    dns_entries = yaml.full_load(dns_entries_tmpl.render(group_vars))
+    dns_entries = yaml.full_load(dns_entries_tmpl.render(general_vars))
 
-    global_vars.update(group_vars)
+    global_vars.update(general_vars)
     global_vars.update(dns_entries)
 
 def main():
@@ -173,8 +173,8 @@ def main():
                         type=str, default='hosts.yml')
     parser.add_argument("-D", "--dns-entries", help="path to DNS entries configuration",
                         type=str, default='global-config/dns-entries.yml')
-    parser.add_argument("-G", "--group-vars", help="path to group vars configuration",
-                        type=str, default='group_vars/all.yml')
+    parser.add_argument("-G", "--general-conf", help="path to general configuration",
+                        type=str, default='global-config/general.yml')
     global args
     args = parser.parse_args()
 

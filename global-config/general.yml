@@ -1,0 +1,46 @@
+### Misc settings & AS-specific information
+ownas: "4242421080"
+ownnets4:
+- 172.20.229.112/28
+- 172.22.108.0/26
+ownnets6:
+- fd86:bad:11b7::/48
+
+# Decommissioned nodes to cleanup resources for (e.g. Wireguard tunnels)
+cleanup_remove_nodes:
+   - us-sea01
+
+# DNS related settings
+# This is the main domain used for creating host records for routers (<shortname>.<dns_domains[0]>).
+# Other domains can be specified in global-config/dns-entries.yml
+dns_domain: "jlu5.dn42"
+dns_nameserver_prefix: "ns1"  # used in zone files
+dns_ttl: 300
+dns_zones_dir: "/etc/powerdns/dns-zones"
+
+# Anycast service IPs
+anycast_ip: "172.20.229.112"
+anycast_ip6: "fd86:bad:11b7:53::1"
+anycast_recursors_ip: "172.22.108.22"
+anycast_recursors_ip6: "fd86:bad:11b7:53::2"
+
+# Dummy device names for IGP and Anycast
+# (I should've chose better names here because the script doesn't make changing these simple...)
+dummy_ifname: "igp-dummy0"
+dummy_ifname_anycast: "igp-dummy1"
+dummy_ifname_anycast_recursors: "igp-dummy2"
+dummy_ifname_glob: "igp-dummy*"
+
+# Mitogen needs this to be set; it doesn't follow the interpreter_python setting in ansible.cfg yet
+# See https://github.com/dw/mitogen/issues/740
+ansible_python_interpreter: /usr/bin/python3
+
+# Bird settings
+# See roles/config-bird2/config for the full Bird config
+bird_logs_dir: "/var/log/bird/"
+
+# iptables (stateful firewall)
+# These files are passed into ip(6)tables-restore. If you already have rules here, the ones from this repo
+# will be merged under the *filter block.
+iptables_rules_path:  "/etc/iptables/rules.v4"
+ip6tables_rules_path: "/etc/iptables/rules.v6"

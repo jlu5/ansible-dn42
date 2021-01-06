@@ -1,4 +1,4 @@
-# Custom DNS entries. This is read by scripts/make-dns-entries.py
+# Custom DNS entries. This is read by scripts/make-dns-entries.py to generate Bind-style zones under dns-zones/
 dns_records:
   "{{ dns_domain }}":
     "@":

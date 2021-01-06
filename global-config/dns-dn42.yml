@@ -1,4 +1,4 @@
-### General DNS settings for dn42
+### DNS Recursor settings for dn42
 
 # Parse the delegation server IPs and DNSSEC trust anchors from the registry
 delegation_servers: "{{ lookup('file', 'dn42-registry/data/dns/delegation-servers.dn42') | regex_findall('^nserver:\\s+[a-z]\\.delegation-servers\\.dn42 ([0-9a-fA-F.:]+)$', multiline=True) }}"
