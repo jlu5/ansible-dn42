@@ -10,6 +10,9 @@
     dest: "/etc/network/interfaces.d/{{ peer_info.name }}"
   register: interfaces_tmpl
 
+# Some sort of parameterized handler would be more ideal here but those aren't supported...
+# Ansible handlers only run once per playbook, so the workaround for that would require building up a list of
+# interfaces to restart in the handler. I think this method is more straightforward.
 - name: "Restart interface for peer {{ peer_info.name }}"
   shell: "ifdown --force {{ peer_info.name }}; ifup {{ peer_info.name }}"
   # TODO: document the restart_all_tunnels variable

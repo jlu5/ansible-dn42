@@ -3,19 +3,27 @@
     file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
   ignore_errors: true
 
+- name: Clean up obsolete tunnels for peers
+  include_tasks: "remove-wg-settings.yml"
+  loop: "{{ wg_peers | default([]) }}"
+  loop_control:
+    loop_var: peer_info
+  when: peer_info.get('remove')
+
+- name: Clean up unused interfaces
+  include_tasks: "remove-wg-settings.yml"
+  loop: "{{ cleanup_remove_ifaces | default([]) }}"
+  vars:
+    peer_info:
+      name: "{{ item }}"
+      # This task file doesn't require any other vars
+
 - name: Write Wireguard tunnel settings for peers (v2)
   include_tasks: "write-wg-settings.yml"
   loop: "{{ wg_peers | default([]) }}"
   loop_control:
     loop_var: peer_info
   when: not peer_info.get('remove')
-
-- name: Remove obsolete Wireguard tunnels
-  include_tasks: "remove-wg-settings.yml"
-  loop: "{{ wg_peers | default([]) }}"
-  loop_control:
-    loop_var: peer_info
-  when: peer_info.get('remove')
 
 - name: Write Wireguard tunnel settings for internal nodes (v2)
   include_tasks: "write-wg-settings.yml"
@@ -32,11 +40,3 @@
       peer_v4: "{{ hostvars[igp_node]['peering_lan_ip'] }}"
       peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
       is_internal_node: true
-
-- name: Remove obsolete Wireguard tunnels for internal nodes
-  include_tasks: "remove-wg-settings.yml"
-  loop: "{{ cleanup_remove_ifaces | default([]) }}"
-  vars:
-    peer_info:
-      name: "{{ item }}"
-      # This task file doesn't require any other vars

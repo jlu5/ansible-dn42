@@ -74,6 +74,8 @@ wg_peers:
 # This is kind of a gross ifname, but I want to treat this link as a stub and there's already
 # a protocol entry for "igp-dummy*" that does so...
 - name: igp-dummy-chi02
+  remove: true
+- name: igp-dummy-chi03
   port: 60001
   remote: !vault |
           $ANSIBLE_VAULT;1.1;AES256
