@@ -1,4 +1,4 @@
-# Plain old DNS entries
+# Custom DNS entries. This is read by scripts/make-dns-entries.py
 dns_records:
   "{{ dns_domain }}":
     "@":

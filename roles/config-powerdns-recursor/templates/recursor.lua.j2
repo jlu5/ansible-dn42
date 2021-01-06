@@ -5,7 +5,7 @@
 -- running rootkeys.lua too.
 dofile("/usr/share/pdns-recursor/lua-config/rootkeys.lua")
 
-{% for zone in dns_zones_dn42 + (dns_zones_extra.keys() | list) %}
+{% for zone in dns_zones_dn42 + (dns_zones_extra.keys() | list) + (dns_zones_local.keys() | list) %}
 {% if zone in dnssec_trust_anchors %}
 
 {%- for anchor in dnssec_trust_anchors[zone] %}

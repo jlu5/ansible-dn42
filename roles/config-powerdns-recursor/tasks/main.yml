@@ -1,10 +1,17 @@
+- name: Read global-config settings
+  include_vars:
+    dir: "{{ playbook_dir }}/global-config/"
+    ignore_unknown_extensions: true
+
 - name: "Print delegation servers"
   debug:
     var: delegation_servers
+  run_once: true
 
 - name: "Print DNSSEC trust anchors"
   debug:
     var: dnssec_trust_anchors
+  run_once: true
 
 - name: "Template config.lua for PowerDNS recursor"
   template:
