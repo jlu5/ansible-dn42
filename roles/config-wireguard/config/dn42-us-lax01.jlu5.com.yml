@@ -27,3 +27,10 @@ wg_peers:
   wg_pubkey: "PGTK1pzAYtSGoaPYfpEBCwm3S3gYAra3WkSMtshFfW8="
   peer_v4: "172.20.233.131"
   peer_v6: "fe80::1288/64"
+
+- name: dn42lax-cperrin
+  port: 53735
+  remote: "us2.dn42.cperrin.xyz:51080"
+  wg_pubkey: "izcoRqAeyFFM9PtKykV2iaSDQPcbZMSD5oHa4SK0rnA="
+  peer_v4: null
+  peer_v6: "fe80::3735:3"
