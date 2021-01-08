@@ -1,9 +1,6 @@
--- Debian default Lua configuration file for PowerDNS Recursor
-
--- Load DNSSEC root keys from dns-root-data package.
--- Note: If you provide your own Lua configuration file, consider
--- running rootkeys.lua too.
-dofile("/usr/share/pdns-recursor/lua-config/rootkeys.lua")
+-- Read distribution shipped root anchors.
+-- Disable automatic reloading to prevent wiping the manually configured dn42 zones?
+readTrustAnchorsFromFile("/usr/share/dns/root.key", 0)
 
 {% for zone in dns_zones_dn42 + (dns_zones_extra.keys() | list) + (dns_zones_local.keys() | list) %}
 {% if zone in dnssec_trust_anchors %}
