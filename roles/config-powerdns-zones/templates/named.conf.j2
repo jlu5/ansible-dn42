@@ -1,5 +1,5 @@
 options {
-    directory {{ dns_zones_dir }};
+    directory "{{ dns_zones_dir }}";
 };
 
 {% for zone, filename in dns_zones_local.items() %}
