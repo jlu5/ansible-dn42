@@ -39,6 +39,19 @@ internal_costs:
   'jp-tyo01,us-sea02': 110
   'jp-tyo01,us-lax01': 110
 
+  'es-mad01,uk-lon01': 30
+  'es-mad01,de-nbg01': 35
+  'es-mad01,nl-ley01': 35
+  'es-mad01,us-chi01': 100
+  'es-mad01,us-nyc01': 100
+
+  'it-mil01,uk-lon01': 25
+  'it-mil01,nl-ley01': 20
+  'it-mil01,de-nbg01': 15
+  'it-mil01,es-mad01': 20
+  'it-mil01,us-chi01': 105
+  'it-mil01,us-nyc01': 95
+
 # Default latency if nothing is set.
 default_cost: 300
 

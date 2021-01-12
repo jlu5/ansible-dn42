@@ -45,3 +45,7 @@ us-nyc01 IN A 172.20.229.123
 us-nyc01 IN AAAA fd86:bad:11b7:23::1
 jp-tyo01 IN A 172.20.229.124
 jp-tyo01 IN AAAA fd86:bad:11b7:224::1
+es-mad01 IN A 172.20.229.120
+es-mad01 IN AAAA fd86:bad:11b7:120::1
+it-mil01 IN A 172.20.229.121
+it-mil01 IN AAAA fd86:bad:11b7:121::1
