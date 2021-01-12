@@ -31,10 +31,18 @@ def main():
     dn42routers = hosts['dn42routers']['hosts']
     meshrouters = hosts['meshrouters']['hosts']
     data['igp_neighbours'].clear()  # clear igp_neighbours, we will be rewriting it
+    seen_shortnames = {}
 
     # For each router, populate a list of neighbours
     for server, serverdata in dn42routers.items():
         neighbours = data['igp_neighbours'].setdefault(server, set())
+
+        # Sanity check: make sure there are no duplicate shortnames
+        shortname = serverdata['shortname']
+        if shortname in seen_shortnames:
+            raise ValueError(f"Duplicate shortname {shortname}: {seen_shortnames[shortname]}, {server}")
+        seen_shortnames[shortname] = server
+
         if server in meshrouters:
             # For servers in meshrouters group, add all other nodes in the mesh
             neighbours |= set(meshrouters)
