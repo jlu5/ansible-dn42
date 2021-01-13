@@ -160,3 +160,10 @@ wg_peers:
   wg_pubkey: "p8SOiZ+EN6DOHVUbBb/kUiq81Uu006Xrz0B55W+fqDg="
   peer_v4: null
   peer_v6: "fe80::42:2237/128"
+
+- name: dn42fra-burble
+  port: 52601
+  remote: "dn42-de-fra1.burble.com:21080"
+  wg_pubkey: "e85ftjKwgZCu5Zfx8chHY/LYJSwTbTqX3tbSqViX7Xo="
+  peer_v4: "172.20.129.169"
+  peer_v6: "fd42:4242:2601:31::1/128"

@@ -1,0 +1,7 @@
+wg_peers:
+- name: dn42mad-burble
+  port: 52601
+  remote: "dn42-es-mad1.burble.com:21080"
+  wg_pubkey: "1+PQDr1fBcoeqiqnGuj5OL24tQKeyB5UyAfXKaz1fk4="
+  peer_v4: "172.20.129.170"
+  peer_v6: "fd42:4242:2601:2c::1/128"
