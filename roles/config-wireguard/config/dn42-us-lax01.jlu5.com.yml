@@ -41,3 +41,10 @@ wg_peers:
   wg_pubkey: "WgkIfqjm2uzDWvIMFUk/R3Mu0HBJTG10G2pd7THaS0o="
   peer_v4: "172.20.129.165"
   peer_v6: "fd42:4242:2601:3a::1/128"
+
+- name: dn42lax-jrb0001
+  port: 50119
+  remote: "[2001:19f0:6001:5416:5400:2ff:fe19:f24f]:21080"
+  wg_pubkey: "GevdxN7huUifa31ypLx1wrPb02hg3Z0BdGcMUj9E6Cw="
+  peer_v4: "172.20.1.11"
+  peer_v6: "fe80::119"
