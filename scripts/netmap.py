@@ -36,7 +36,7 @@ class NetmapGeocoder():
             self._init_backend()
             time.sleep(0.01)  # throttle our API calls slightly
             result = self._backend.geocode(location, **kwargs)
-            coords = (result.longitude, result.latitude)
+            coords = (result.latitude, result.longitude)
             print(f"Geocode: found coords {coords} for location {location}")
             self.entries[location] = coords
         else:
@@ -105,7 +105,7 @@ def main():
                     description=f'~{cost} ms',
                     coords=[node_coords[node], node_coords[neighbour]]
                 )
-                line.linestyle.color = "#66111111"  # dark gray at ~40% opacity
+                line.linestyle.color = "#66F0F011"  # turquoise at ~40% opacity
 
     kml.save(args.outfile)
     print(f"Wrote map data to {args.outfile}")
