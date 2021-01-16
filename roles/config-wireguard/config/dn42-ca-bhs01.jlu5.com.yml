@@ -1,11 +1,4 @@
 wg_peers:
-- name: dn42bhs-sunnet
-  port: 53088
-  remote: "bhs1-ca.dn42.6700.cc:21080"
-  wg_pubkey: "8Fy74XQsrlXxl8TTlsYo7hr+tc8VtydPHNgqI0P7o14="
-  peer_v4: "172.21.100.208"
-  peer_v6: "fe80::3088:208/64"
-
 - name: dn42bhs-grmml
   port: 50123
   remote: "ca-bha.grmml.net:51080"
@@ -13,33 +6,12 @@ wg_peers:
   peer_v4: "172.23.149.11"
   peer_v6: "fe80::172:23:149:11"
 
-- name: "dn42nyc-marropa"
-  port: 50880
-  remote: "dn42-us.marropax.com:21080"
-  wg_pubkey: "l64RRVzVLNkp5GtVWjZbFjkSse7Yo+FQqyNFUOG3SgI="
-  peer_v4: "172.21.106.113/32"
-  peer_v6: "fe80::cafe"
-
 - name: "dn42bhs-wxmn"
   port: 52227
   remote: "dn42-ca-bhs-1.wxmn.net:21080"
   wg_pubkey: "j7wMOk5lXWF8hPy1EHEv5yRt5jfcm1/tIJB9KM6bl0Y="
   peer_v4: "172.22.127.68"
   peer_v6: "fe80::42:22:400"
-
-- name: dn42tor-jrb0001
-  port: 50119
-  remote: "155.138.133.127:21080"
-  wg_pubkey: "ZjP3OeS4viVGqsQdFMzuIheRkZ+Jj9qRKfnp8LaxyBo="
-  peer_v4: "172.20.1.9"
-  peer_v6: "fe80::119"
-
-- name: "dn42bhs-hexanet"
-  port: 53078
-  remote: "omicron.hexanet.dev:31080"
-  wg_pubkey: "S0kjHNnfFUn4ts9+pM/dt7LZ/7ZUjJZeVTW8KWYE3Ug="
-  peer_v4: null  # v6-only
-  peer_v6: "fe80::10:3621"
 
 - name: dn42bhs-aasg
   port: 50827
