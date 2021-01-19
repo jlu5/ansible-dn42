@@ -10,7 +10,6 @@ $TTL 300
 )
 113 IN PTR us-chi01.jlu5.dn42.
 114 IN PTR us-sea02.jlu5.dn42.
-115 IN PTR ca-bhs01.jlu5.dn42.
 116 IN PTR uk-lon01.jlu5.dn42.
 117 IN PTR de-nbg01.jlu5.dn42.
 118 IN PTR nl-ley01.jlu5.dn42.

@@ -29,8 +29,6 @@ us-chi01 IN A 172.20.229.113
 us-chi01 IN AAAA fd86:bad:11b7::1
 us-sea02 IN A 172.20.229.114
 us-sea02 IN AAAA fd86:bad:11b7:1::1
-ca-bhs01 IN A 172.20.229.115
-ca-bhs01 IN AAAA fd86:bad:11b7:2::1
 uk-lon01 IN A 172.20.229.116
 uk-lon01 IN AAAA fd86:bad:11b7:116::1
 de-nbg01 IN A 172.20.229.117
