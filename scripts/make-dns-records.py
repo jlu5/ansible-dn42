@@ -98,6 +98,12 @@ def write_forward_zone(domain, records):
             router_hostname = global_vars['dns_auto_host_record_format'] % hosts[router]['shortname']
             _write_entry(fd, router_hostname, 'A',    hosts[router]['ownip'],  reverse_domain=domain)
             _write_entry(fd, router_hostname, 'AAAA', hosts[router]['ownip6'], reverse_domain=domain)
+
+    # Add $GENERATE records
+    for generate_record in global_vars['dns_generate_records'].get(domain, []):
+        _write_generate_entry(fd, generate_record['start'], generate_record['end'], generate_record['template'],
+                              generate_record['rtype'], generate_record['target'])
+
     fd.close()
 
 def _write_ptr_zone(zonename, ipnet, record_name_func=None):
@@ -112,6 +118,13 @@ def _write_ptr_zone(zonename, ipnet, record_name_func=None):
             if not record.endswith('.'):
                 record += '.'  # just to be sure
             _write_entry(fd, record_name_func(ipaddr), "PTR", record)
+
+    for generate_record in global_vars['dns_generate_records'].get(str(ipnet), []):
+        if rtype := generate_record.get('rtype', 'PTR') != 'PTR':
+            raise ValueError(f"Invalid record type in dns_generate_records::{ipnet}; expected PTR, got {rtype}")
+        _write_generate_entry(fd, generate_record['start'], generate_record['end'], generate_record['template'],
+                              'PTR', generate_record['target'])
+
     fd.close()
 
 def write_ptr4_zone(netblock):

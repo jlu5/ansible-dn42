@@ -34,3 +34,18 @@ dns_records:
       type: host_record
       ip4: "{{ anycast_recursors_ip }}"
       ip6: "{{ anycast_recursors_ip6 }}"
+
+dns_generate_records:
+  "172.22.108.0/26":
+    - start: 1
+      end: 15
+      template: "$"
+      rtype: PTR
+      target: "host-172-22-108-$.riptidenet.jlu5.com."
+
+  "riptidenet.jlu5.com":  # Not enabled yet, as of 2021-01-18
+    - start: 1
+      end: 15
+      template: "host-172-22-108-$.riptidenet.jlu5.com."
+      rtype: A
+      target: "172.22.108.$"
