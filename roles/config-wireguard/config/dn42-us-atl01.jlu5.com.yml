@@ -9,9 +9,9 @@ wg_peers:
 
 - name: dn42dal-scooter
   port: 53856
-  remote: "98.17.108.94:23858"
-  wg_pubkey: "3FSIiNYx8nknbmgRo0yk8AXWwGXScFjjL/aimatQ6GI="
-  peer_v4: "172.23.109.171"
+  remote: "vpn.scooterharris.com:23858"
+  wg_pubkey: "5W5zt9TqJfPulaYvz0rY+QeqCCIjkik/5WUS/1YdhjU="
+  peer_v4: "172.23.109.169"
   peer_v6: null
 
 - name: dn42atl-napster
