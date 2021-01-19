@@ -19,18 +19,18 @@ dns_records:
 
     # Hosts to create forward and reverse entries for
     "ca-yvr01":
-      type: ansible_host_record
+      type: host_record
       ip4: 172.22.108.17
       ip6: fd86:bad:11b7:a::1
     "ca-yvr02":
-      type: ansible_host_record
+      type: host_record
       ip4: 172.22.108.18
       ip6: fd86:bad:11b7:a::2
     "anycast":
-      type: ansible_host_record
+      type: host_record
       ip4: "{{ anycast_ip }}"
       ip6: "{{ anycast_ip6 }}"
     "dns":
-      type: ansible_host_record
+      type: host_record
       ip4: "{{ anycast_recursors_ip }}"
       ip6: "{{ anycast_recursors_ip6 }}"
