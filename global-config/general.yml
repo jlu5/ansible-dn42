@@ -14,6 +14,8 @@ cleanup_remove_ifaces:
 # This is the main domain used for creating host records for routers (<shortname>.<dns_domains[0]>).
 # Other domains can be specified in global-config/dns-entries.yml
 dns_domain: "jlu5.dn42"
+# Format to use when automatically creating host records for routers. "%s" substitutes the node shortname
+dns_auto_host_record_format: "%s.rtr"
 dns_nameserver_prefix: "ns1"  # used in zone files
 dns_ttl: 300
 dns_zones_dir: "/etc/powerdns/dns-zones"
