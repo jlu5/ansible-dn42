@@ -8,14 +8,4 @@ $TTL 300
         86400       ; expiration
         3600        ; minimum TTL
 )
-113 IN CNAME 113.112/28.229.20.172.in-addr.arpa.
-114 IN CNAME 114.112/28.229.20.172.in-addr.arpa.
-116 IN CNAME 116.112/28.229.20.172.in-addr.arpa.
-117 IN CNAME 117.112/28.229.20.172.in-addr.arpa.
-118 IN CNAME 118.112/28.229.20.172.in-addr.arpa.
-119 IN CNAME 119.112/28.229.20.172.in-addr.arpa.
-120 IN CNAME 120.112/28.229.20.172.in-addr.arpa.
-121 IN CNAME 121.112/28.229.20.172.in-addr.arpa.
-122 IN CNAME 122.112/28.229.20.172.in-addr.arpa.
-123 IN CNAME 123.112/28.229.20.172.in-addr.arpa.
-124 IN CNAME 124.112/28.229.20.172.in-addr.arpa.
+$GENERATE 112-127 $ CNAME $.112/28.229.20.172.in-addr.arpa.

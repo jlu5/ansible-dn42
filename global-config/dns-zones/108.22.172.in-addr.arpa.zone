@@ -8,6 +8,4 @@ $TTL 300
         86400       ; expiration
         3600        ; minimum TTL
 )
-17 IN CNAME 17.0/26.108.22.172.in-addr.arpa.
-18 IN CNAME 18.0/26.108.22.172.in-addr.arpa.
-22 IN CNAME 22.0/26.108.22.172.in-addr.arpa.
+$GENERATE 0-63 $ CNAME $.0/26.108.22.172.in-addr.arpa.

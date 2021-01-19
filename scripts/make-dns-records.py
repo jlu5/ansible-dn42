@@ -68,6 +68,14 @@ def _write_entry(fd, name, rtype, data, reverse_domain=None):
             ipaddr = ipaddress.ip_address(data)
             ptr_records[ipaddr] = f'{name}.{reverse_domain}'
 
+def _write_generate_entry(fd, start_digit, end_digit, name_template, rtype, data):
+    """
+    Write a BIND-style $GENERATE directive.
+    name_template and data should include a "$" to be substituted into the resulting record.
+    """
+    rtype = rtype.upper()
+    fd.write(f"$GENERATE {start_digit}-{end_digit} {name_template} {rtype} {data}\n")
+
 def write_forward_zone(domain, records):
     """
     Write the data for a forward DNS zone.
@@ -91,14 +99,18 @@ def write_forward_zone(domain, records):
             _write_entry(fd, hosts[router]['shortname'], 'AAAA', hosts[router]['ownip6'], reverse_domain=domain)
     fd.close()
 
-def _write_ptr_zone(zonename, ipnet):
+def _write_ptr_zone(zonename, ipnet, record_name_func=None):
+    if record_name_func is None:
+        # By default, just take the standard reverse pointer (in-addr.arpa / ip6.arpa)
+        record_name_func = lambda ipaddr: ipaddr.reverse_pointer+'.'
+
     print(f"Writing PTR zone {zonename} for {ipnet}")
     fd = get_zone_file(zonename)
     for ipaddr, record in ptr_records.items():
         if ipaddr in ipnet:
             if not record.endswith('.'):
                 record += '.'  # just to be sure
-            _write_entry(fd, ipaddr.reverse_pointer+'.', "PTR", record)
+            _write_entry(fd, record_name_func(ipaddr), "PTR", record)
     fd.close()
 
 def write_ptr4_zone(netblock):
@@ -113,7 +125,7 @@ def write_ptr4_zone(netblock):
         # IPv4Network.reverse_pointer will return things like "0/24.1.168.192.in-addr.arpa", but we don't want the leftmost octet
         zonename = ipnet.network_address.reverse_pointer.lstrip('0.')
         _write_ptr_zone(zonename, ipnet)
-    else:
+    elif ipnet.prefixlen > 24:
         zonename = ipnet.reverse_pointer
         fd = get_zone_file(zonename)
         # Calculate the closest classful block
@@ -125,21 +137,23 @@ def write_ptr4_zone(netblock):
         print(f"Writing PTR zone {zonename} for {ipnet}")
         print(f"Writing RFC2317 PTR delegation zone {classful_zonename} for {ipnet}")
         classful_fd = get_zone_file(classful_zonename)
-        for ipaddr in ipnet.hosts():
-            if record := ptr_records.get(ipaddr):
-                # Chop off the bits in common with the classful zone name
-                relevant_octets = ipaddr.reverse_pointer[:len(ipaddr.reverse_pointer)-len(classful_zonename)-1]
-                if not record.endswith('.'):
-                    record += "."
-                _write_entry(fd, relevant_octets, "PTR", record)
-                # For the delegation zone we want records like this for 172.20.229.112/28:
-                #   112 IN CNAME 112.112/28.229.20.172.in-addr.arpa
-                #   113 IN CNAME 113.112/28.229.20.172.in-addr.arpa.
-                # and so on
-                cname_record = f'{relevant_octets}.{ipnet.reverse_pointer}.'
-                _write_entry(classful_fd, relevant_octets, "CNAME", cname_record)
+
+        def _get_last_v4_octet(ipaddr):
+            return str(ipaddr).split('.')[-1]
+
+        # Write PTR records for each IP
+        _write_ptr_zone(zonename, ipnet, record_name_func=_get_last_v4_octet)
+
+        # For the delegation zone, create a $GENERATE entry that writes CNAMEs for the entire IP range.
+        first_ip_octets = _get_last_v4_octet(ipnet.network_address)
+        last_ip_octets  = _get_last_v4_octet(ipnet.broadcast_address)
+        cname_target = f'$.{ipnet.reverse_pointer}.'
+        _write_generate_entry(classful_fd, first_ip_octets, last_ip_octets, '$', 'CNAME', cname_target)
+
         classful_fd.close()
         fd.close()
+    else:
+        raise ValueError("PTR records are only supported for /8, /16, and >= /24 ranges")
 
 def write_ptr6_zone(netblock):
     """
