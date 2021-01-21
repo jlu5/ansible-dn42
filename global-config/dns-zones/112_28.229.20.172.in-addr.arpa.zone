@@ -20,3 +20,4 @@ $TTL 300
 124 IN PTR jp-tyo01.rtr.jlu5.dn42.
 120 IN PTR es-mad01.rtr.jlu5.dn42.
 121 IN PTR it-mil01.rtr.jlu5.dn42.
+125 IN PTR au-syd01.rtr.jlu5.dn42.

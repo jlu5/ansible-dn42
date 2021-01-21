@@ -52,6 +52,10 @@ internal_costs:
   'it-mil01,us-chi01': 105
   'it-mil01,us-nyc01': 95
 
+  'au-syd01,jp-tyo01': 115
+  'au-syd01,us-sea02': 160
+  'au-syd01,us-lax01': 165
+
 # Default latency if nothing is set.
 default_cost: 300
 
