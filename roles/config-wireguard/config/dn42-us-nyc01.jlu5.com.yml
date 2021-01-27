@@ -6,26 +6,12 @@ wg_peers:
   peer_v4: "172.21.100.194"
   peer_v6: "fe80::3088:194/64"
 
-- name: dn42nyc-strexp
-  port: 51331
-  remote: "nyc1.us.dn42.strexp.net:21080"
-  wg_pubkey: "s00+3HRZVTFsGJyTZoF88/x4qG82M4sYOraNo4KxIXM="
-  peer_v4: "172.20.158.144"
-  peer_v6: "fe80::1331"
-
 - name: "dn42pnj-tomkap"
   port: 52092
   remote: "us0.dn42.pebkac.gr:51080"
   wg_pubkey: "NnIsCmxiGctp5hR9ViuNRjZXr8lxtjn382sIwsV+GBU="
   peer_v4: 172.21.67.200/32
   peer_v6: "fe80::42:1080:1/128"
-
-- name: "dn42nyc-marropa"
-  port: 50880
-  remote: "dn42-us.marropax.com:21080"
-  wg_pubkey: "l64RRVzVLNkp5GtVWjZbFjkSse7Yo+FQqyNFUOG3SgI="
-  peer_v4: "172.21.106.113/32"
-  peer_v6: "fe80::cafe"
 
 - name: dn42buf-lantian
   port: 52547
@@ -89,3 +75,45 @@ wg_peers:
   wg_pubkey: "gu8W8w4AYPETdYYGN1M1EtvpHLxGIyZR4k0DSpdUn1s="
   peer_v4: "172.20.1.13"
   peer_v6: "fe80::119"
+
+### legacy configurations from ca-bhs01
+- name: dn42bhs-grmml
+  port: 50123
+  remote: "ca-bha.grmml.net:51080"
+  wg_pubkey: "Y74Q+xtl3YXureqokfYhSjfHWQU2cO4QP3mgmatj2gs="
+  peer_v4: "172.23.149.11"
+  peer_v6: "fe80::172:23:149:11"
+  local_v4: "172.20.229.115"
+  local_v6: "fe80::115"
+  wg_privkey: "/etc/wireguard/privatekey_ca-bhs01-legacy"
+
+- name: "dn42bhs-wxmn"
+  port: 52227
+  remote: "dn42-ca-bhs-1.wxmn.net:21080"
+  wg_pubkey: "j7wMOk5lXWF8hPy1EHEv5yRt5jfcm1/tIJB9KM6bl0Y="
+  peer_v4: "172.22.127.68"
+  peer_v6: "fe80::42:22:400"
+  local_v4: "172.20.229.115"
+  local_v6: "fe80::115"
+  wg_privkey: "/etc/wireguard/privatekey_ca-bhs01-legacy"
+
+- name: dn42nyc-strexp
+  port: 51331
+  remote: "nyc1.us.dn42.strexp.net:21080"
+  wg_pubkey: "s00+3HRZVTFsGJyTZoF88/x4qG82M4sYOraNo4KxIXM="
+  peer_v4: "172.20.158.144"
+  peer_v6: "fe80::1331"
+  local_v4: "172.20.229.115"
+  local_v6: "fe80::115"
+  wg_privkey: "/etc/wireguard/privatekey_ca-bhs01-legacy"
+
+- name: "dn42nyc-marropa"
+  port: 50880
+  remote: "dn42-us.marropax.com:21080"
+  wg_pubkey: "l64RRVzVLNkp5GtVWjZbFjkSse7Yo+FQqyNFUOG3SgI="
+  peer_v4: "172.21.106.113/32"
+  peer_v6: "fe80::cafe"
+  local_v4: "172.20.229.115"
+  local_v6: "fe80::115"
+  wg_privkey: "/etc/wireguard/privatekey_ca-bhs01-legacy"
+### end legacy configurations from ca-bhs01
