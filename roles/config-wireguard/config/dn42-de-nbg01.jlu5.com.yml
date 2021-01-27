@@ -70,7 +70,7 @@ wg_peers:
   peer_v4: ""  # v6-only
   peer_v6: "fe80::c:3621"
 
-- name: dn42fra-liangjw
+- name: dn42fra-moecast
   port: 50604
   remote: "de1.dn42.cas7.moe:21080"
   wg_pubkey: "1dJpFLegKHKButkXqbv1KLLMTmS6KtFkWBz6GRo2uxE="

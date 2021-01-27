@@ -6,7 +6,7 @@ This repository contains the configs for AS4242421080 / JLU5-AS on [dn42](https:
 
 This iteration of the network uses Babel as IGP and a full mesh of iBGP connections. [Costs between links](global-config/internal_costs.yml) are manually configured to roughly match the link latency.
 
-[Routing Policy](routing-policy.md)
+[Routing Policy](ROUTING-POLICY.md)
 
 ## Config structure
 
