@@ -34,8 +34,7 @@ def graph(times, n_ebgp_routers, n_ebgp_peerings, n_ebgp_unique, output="history
     print(f"Saved to {output}")
 
 def _read_git():
-    # Read the source folder that the script is in
-    repo = git.Repo(os.path.dirname(os.path.realpath(__file__)))
+    repo = git.Repo('.')
     assert not repo.bare
 
     times = []
