@@ -73,8 +73,6 @@ wg_peers:
 
 # This is kind of a gross ifname, but I want to treat this link as a stub and there's already
 # a protocol entry for "igp-dummy*" that does so...
-- name: igp-dummy-chi02
-  remove: true
 - name: igp-dummy-chi03
   port: 60001
   remote: !vault |
@@ -86,7 +84,7 @@ wg_peers:
           30626135613434386439633335383934306135323637636566633137366462356561
   wg_pubkey: "m39Agg8VVPHtyrYChv8oD+OUR7kTO0zZ9L2oIqoeuFs="
   peer_v4: "172.22.108.0/28"
-  peer_v6: null
+  peer_v6: "fd86:bad:11b7:aa22::1/64"
 
 - name: dn42chi-ncw
   port: 51288
