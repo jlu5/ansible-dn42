@@ -18,3 +18,11 @@ wg_peers:
   wg_pubkey: "sxmRisB7+VhOul3VgoQAe8arFgwMFHYWJky6FPli42w="
   peer_v4: "172.20.1.6"
   peer_v6: "fe80::119"
+
+- name: dn42syd-narnia
+  port: 52037
+  remote: "syd2.dn42.narnia.network:21080"
+  wg_pubkey: "0T0LUDBHnWAAg5Kz4OBF0r0+r+9WHtaUsvywKZSci2I="
+  peer_v4: null
+  peer_v6: "fd23:0:0:ffff::2037"
+  local_v6: "fd23:0:0:ffff::1080"
