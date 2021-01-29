@@ -41,3 +41,10 @@ wg_peers:
   wg_pubkey: "TTwRbv4nXW95PtiP26Q+QKdTCWuf5x20u/PbF0KSqV4="
   peer_v4: "172.20.1.7"
   peer_v6: "fe80::119"
+
+- name: dn42tyo-jerry
+  port: 53618
+  remote: jpn.neo.jerryxiao.cc:50101
+  wg_pubkey: "7c3/iRHLHL/DGPacgZf+JSnNBtKT4fUKaQw2xPUpAGE="
+  peer_v4: "172.20.51.97"
+  peer_v6: "fe80::3618/64"

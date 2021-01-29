@@ -55,3 +55,10 @@ wg_peers:
   wg_pubkey: "1dJpFLegKHKButkXqbv1KLLMTmS6KtFkWBz6GRo2uxE="
   peer_v4: "172.23.89.4"
   peer_v6: "fe80::604:4"
+
+- name: dn42sjc-jerry
+  port: 53618
+  remote: "us.neo.jerryxiao.cc:50095"
+  wg_pubkey: "YeJpT3unO3gKW5OcUsaAdhyIbX7z8Garwe4ITiJ6A3Q="
+  peer_v4: "172.20.51.112"
+  peer_v6: "fe80::3618/64"
