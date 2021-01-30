@@ -54,6 +54,18 @@ function is_self_net_v6() {
   ];
 }
 
+function is_self_net_aggr() {
+  return net ~ [
+    {{ownnets4 | join(', ')}}
+  ];
+}
+
+function is_self_net_aggr_v6() {
+  return net ~ [
+    {{ownnets6 | join(', ')}}
+  ];
+}
+
 function is_valid_network() {
   return net ~ [
     172.20.0.0/14{21,29}, # dn42
