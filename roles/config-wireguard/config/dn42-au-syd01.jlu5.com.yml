@@ -25,4 +25,3 @@ wg_peers:
   wg_pubkey: "0T0LUDBHnWAAg5Kz4OBF0r0+r+9WHtaUsvywKZSci2I="
   peer_v4: null
   peer_v6: "fd23:0:0:ffff::2037"
-  local_v6: "fd23:0:0:ffff::1080"
