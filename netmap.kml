@@ -112,187 +112,215 @@
             </IconStyle>
         </Style>
         <Style id="59">
-            <LineStyle id="60">
+            <IconStyle id="60">
+                <colorMode>normal</colorMode>
+                <scale>1</scale>
+                <heading>0</heading>
+                <Icon id="61">
+                    <href>https://maps.google.com/mapfiles/kml/paddle/ylw-blank.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="64">
+            <LineStyle id="65">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="63">
-            <LineStyle id="64">
+        <Style id="68">
+            <LineStyle id="69">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="67">
-            <LineStyle id="68">
+        <Style id="72">
+            <LineStyle id="73">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="71">
-            <LineStyle id="72">
+        <Style id="76">
+            <LineStyle id="77">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="75">
-            <LineStyle id="76">
+        <Style id="80">
+            <LineStyle id="81">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="79">
-            <LineStyle id="80">
+        <Style id="84">
+            <LineStyle id="85">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="83">
-            <LineStyle id="84">
+        <Style id="88">
+            <LineStyle id="89">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="87">
-            <LineStyle id="88">
+        <Style id="92">
+            <LineStyle id="93">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="91">
-            <LineStyle id="92">
+        <Style id="96">
+            <LineStyle id="97">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="95">
-            <LineStyle id="96">
+        <Style id="100">
+            <LineStyle id="101">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="99">
-            <LineStyle id="100">
+        <Style id="104">
+            <LineStyle id="105">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="103">
-            <LineStyle id="104">
+        <Style id="108">
+            <LineStyle id="109">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="107">
-            <LineStyle id="108">
+        <Style id="112">
+            <LineStyle id="113">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="111">
-            <LineStyle id="112">
+        <Style id="116">
+            <LineStyle id="117">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="115">
-            <LineStyle id="116">
+        <Style id="120">
+            <LineStyle id="121">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="119">
-            <LineStyle id="120">
+        <Style id="124">
+            <LineStyle id="125">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="123">
-            <LineStyle id="124">
+        <Style id="128">
+            <LineStyle id="129">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="127">
-            <LineStyle id="128">
+        <Style id="132">
+            <LineStyle id="133">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="131">
-            <LineStyle id="132">
+        <Style id="136">
+            <LineStyle id="137">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="135">
-            <LineStyle id="136">
+        <Style id="140">
+            <LineStyle id="141">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="139">
-            <LineStyle id="140">
+        <Style id="144">
+            <LineStyle id="145">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="143">
-            <LineStyle id="144">
+        <Style id="148">
+            <LineStyle id="149">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="147">
-            <LineStyle id="148">
+        <Style id="152">
+            <LineStyle id="153">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="151">
-            <LineStyle id="152">
+        <Style id="156">
+            <LineStyle id="157">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="155">
-            <LineStyle id="156">
+        <Style id="160">
+            <LineStyle id="161">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="159">
-            <LineStyle id="160">
+        <Style id="164">
+            <LineStyle id="165">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="163">
-            <LineStyle id="164">
+        <Style id="168">
+            <LineStyle id="169">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="167">
-            <LineStyle id="168">
+        <Style id="172">
+            <LineStyle id="173">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="171">
-            <LineStyle id="172">
+        <Style id="176">
+            <LineStyle id="177">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="175">
-            <LineStyle id="176">
+        <Style id="180">
+            <LineStyle id="181">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
         </Style>
-        <Style id="179">
-            <LineStyle id="180">
+        <Style id="184">
+            <LineStyle id="185">
+                <color>#66F0F011</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+        </Style>
+        <Style id="188">
+            <LineStyle id="189">
+                <color>#66F0F011</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+        </Style>
+        <Style id="192">
+            <LineStyle id="193">
+                <color>#66F0F011</color>
+                <colorMode>normal</colorMode>
+            </LineStyle>
+        </Style>
+        <Style id="196">
+            <LineStyle id="197">
                 <color>#66F0F011</color>
                 <colorMode>normal</colorMode>
             </LineStyle>
@@ -387,250 +415,282 @@
             </Point>
         </Placemark>
         <Placemark id="58">
+            <name>au-syd01</name>
+            <description>Sydney, AU</description>
+            <styleUrl>#59</styleUrl>
+            <Point id="57">
+                <coordinates>151.2092955,-33.8688197,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="63">
+            <name>au-syd01 to jp-tyo01</name>
+            <description>~115 ms</description>
+            <styleUrl>#64</styleUrl>
+            <LineString id="62">
+                <coordinates>151.2092955,-33.8688197,0.0 139.6503106,35.6761919,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="67">
+            <name>au-syd01 to us-sea02</name>
+            <description>~160 ms</description>
+            <styleUrl>#68</styleUrl>
+            <LineString id="66">
+                <coordinates>151.2092955,-33.8688197,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="71">
+            <name>au-syd01 to us-lax01</name>
+            <description>~165 ms</description>
+            <styleUrl>#72</styleUrl>
+            <LineString id="70">
+                <coordinates>151.2092955,-33.8688197,0.0 -118.2436849,34.0522342,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="75">
             <name>de-nbg01 to us-chi01</name>
             <description>~105 ms</description>
-            <styleUrl>#59</styleUrl>
-            <LineString id="57">
+            <styleUrl>#76</styleUrl>
+            <LineString id="74">
                 <coordinates>11.0766654,49.4521018,0.0 -87.6297982,41.8781136,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="62">
-            <name>de-nbg01 to es-mad01</name>
-            <description>~35 ms</description>
-            <styleUrl>#63</styleUrl>
-            <LineString id="61">
-                <coordinates>11.0766654,49.4521018,0.0 -3.7037902,40.4167754,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="66">
-            <name>de-nbg01 to us-atl01</name>
-            <description>~100 ms</description>
-            <styleUrl>#67</styleUrl>
-            <LineString id="65">
-                <coordinates>11.0766654,49.4521018,0.0 -84.3879824,33.7489954,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="70">
-            <name>de-nbg01 to uk-lon01</name>
-            <description>~20 ms</description>
-            <styleUrl>#71</styleUrl>
-            <LineString id="69">
-                <coordinates>11.0766654,49.4521018,0.0 -0.1277583,51.5073509,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="74">
-            <name>de-nbg01 to us-sea02</name>
-            <description>~155 ms</description>
-            <styleUrl>#75</styleUrl>
-            <LineString id="73">
-                <coordinates>11.0766654,49.4521018,0.0 -122.3320708,47.6062095,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="78">
+        <Placemark id="79">
             <name>de-nbg01 to us-nyc01</name>
             <description>~90 ms</description>
-            <styleUrl>#79</styleUrl>
-            <LineString id="77">
+            <styleUrl>#80</styleUrl>
+            <LineString id="78">
                 <coordinates>11.0766654,49.4521018,0.0 -74.0059728,40.7127753,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="82">
-            <name>de-nbg01 to nl-ley01</name>
-            <description>~15 ms</description>
-            <styleUrl>#83</styleUrl>
-            <LineString id="81">
-                <coordinates>11.0766654,49.4521018,0.0 5.471422,52.51853699999999,0.0</coordinates>
+        <Placemark id="83">
+            <name>de-nbg01 to uk-lon01</name>
+            <description>~20 ms</description>
+            <styleUrl>#84</styleUrl>
+            <LineString id="82">
+                <coordinates>11.0766654,49.4521018,0.0 -0.1277583,51.5073509,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="86">
+        <Placemark id="87">
             <name>de-nbg01 to it-mil01</name>
             <description>~15 ms</description>
-            <styleUrl>#87</styleUrl>
-            <LineString id="85">
+            <styleUrl>#88</styleUrl>
+            <LineString id="86">
                 <coordinates>11.0766654,49.4521018,0.0 9.189982,45.4642035,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="90">
-            <name>es-mad01 to us-chi01</name>
-            <description>~100 ms</description>
-            <styleUrl>#91</styleUrl>
-            <LineString id="89">
-                <coordinates>-3.7037902,40.4167754,0.0 -87.6297982,41.8781136,0.0</coordinates>
+        <Placemark id="91">
+            <name>de-nbg01 to es-mad01</name>
+            <description>~35 ms</description>
+            <styleUrl>#92</styleUrl>
+            <LineString id="90">
+                <coordinates>11.0766654,49.4521018,0.0 -3.7037902,40.4167754,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="94">
+        <Placemark id="95">
+            <name>de-nbg01 to nl-ley01</name>
+            <description>~15 ms</description>
+            <styleUrl>#96</styleUrl>
+            <LineString id="94">
+                <coordinates>11.0766654,49.4521018,0.0 5.471422,52.51853699999999,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="99">
+            <name>de-nbg01 to us-atl01</name>
+            <description>~100 ms</description>
+            <styleUrl>#100</styleUrl>
+            <LineString id="98">
+                <coordinates>11.0766654,49.4521018,0.0 -84.3879824,33.7489954,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="103">
+            <name>de-nbg01 to us-sea02</name>
+            <description>~155 ms</description>
+            <styleUrl>#104</styleUrl>
+            <LineString id="102">
+                <coordinates>11.0766654,49.4521018,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="107">
             <name>es-mad01 to uk-lon01</name>
             <description>~30 ms</description>
-            <styleUrl>#95</styleUrl>
-            <LineString id="93">
+            <styleUrl>#108</styleUrl>
+            <LineString id="106">
                 <coordinates>-3.7037902,40.4167754,0.0 -0.1277583,51.5073509,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="98">
-            <name>es-mad01 to nl-ley01</name>
-            <description>~35 ms</description>
-            <styleUrl>#99</styleUrl>
-            <LineString id="97">
-                <coordinates>-3.7037902,40.4167754,0.0 5.471422,52.51853699999999,0.0</coordinates>
+        <Placemark id="111">
+            <name>es-mad01 to us-chi01</name>
+            <description>~100 ms</description>
+            <styleUrl>#112</styleUrl>
+            <LineString id="110">
+                <coordinates>-3.7037902,40.4167754,0.0 -87.6297982,41.8781136,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="102">
+        <Placemark id="115">
             <name>es-mad01 to it-mil01</name>
             <description>~20 ms</description>
-            <styleUrl>#103</styleUrl>
-            <LineString id="101">
+            <styleUrl>#116</styleUrl>
+            <LineString id="114">
                 <coordinates>-3.7037902,40.4167754,0.0 9.189982,45.4642035,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="106">
+        <Placemark id="119">
+            <name>es-mad01 to nl-ley01</name>
+            <description>~35 ms</description>
+            <styleUrl>#120</styleUrl>
+            <LineString id="118">
+                <coordinates>-3.7037902,40.4167754,0.0 5.471422,52.51853699999999,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="123">
             <name>it-mil01 to uk-lon01</name>
             <description>~25 ms</description>
-            <styleUrl>#107</styleUrl>
-            <LineString id="105">
+            <styleUrl>#124</styleUrl>
+            <LineString id="122">
                 <coordinates>9.189982,45.4642035,0.0 -0.1277583,51.5073509,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="110">
-            <name>it-mil01 to us-nyc01</name>
-            <description>~95 ms</description>
-            <styleUrl>#111</styleUrl>
-            <LineString id="109">
-                <coordinates>9.189982,45.4642035,0.0 -74.0059728,40.7127753,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="114">
+        <Placemark id="127">
             <name>it-mil01 to nl-ley01</name>
             <description>~20 ms</description>
-            <styleUrl>#115</styleUrl>
-            <LineString id="113">
+            <styleUrl>#128</styleUrl>
+            <LineString id="126">
                 <coordinates>9.189982,45.4642035,0.0 5.471422,52.51853699999999,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="118">
+        <Placemark id="131">
+            <name>it-mil01 to us-nyc01</name>
+            <description>~95 ms</description>
+            <styleUrl>#132</styleUrl>
+            <LineString id="130">
+                <coordinates>9.189982,45.4642035,0.0 -74.0059728,40.7127753,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="135">
             <name>jp-tyo01 to us-sea02</name>
             <description>~110 ms</description>
-            <styleUrl>#119</styleUrl>
-            <LineString id="117">
+            <styleUrl>#136</styleUrl>
+            <LineString id="134">
                 <coordinates>139.6503106,35.6761919,0.0 -122.3320708,47.6062095,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="122">
+        <Placemark id="139">
             <name>jp-tyo01 to us-lax01</name>
             <description>~110 ms</description>
-            <styleUrl>#123</styleUrl>
-            <LineString id="121">
+            <styleUrl>#140</styleUrl>
+            <LineString id="138">
                 <coordinates>139.6503106,35.6761919,0.0 -118.2436849,34.0522342,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="126">
+        <Placemark id="143">
             <name>nl-ley01 to uk-lon01</name>
             <description>~10 ms</description>
-            <styleUrl>#127</styleUrl>
-            <LineString id="125">
+            <styleUrl>#144</styleUrl>
+            <LineString id="142">
                 <coordinates>5.471422,52.51853699999999,0.0 -0.1277583,51.5073509,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="130">
+        <Placemark id="147">
             <name>uk-lon01 to us-chi01</name>
             <description>~90 ms</description>
-            <styleUrl>#131</styleUrl>
-            <LineString id="129">
+            <styleUrl>#148</styleUrl>
+            <LineString id="146">
                 <coordinates>-0.1277583,51.5073509,0.0 -87.6297982,41.8781136,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="134">
-            <name>uk-lon01 to us-atl01</name>
-            <description>~85 ms</description>
-            <styleUrl>#135</styleUrl>
-            <LineString id="133">
-                <coordinates>-0.1277583,51.5073509,0.0 -84.3879824,33.7489954,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="138">
-            <name>uk-lon01 to us-sea02</name>
-            <description>~130 ms</description>
-            <styleUrl>#139</styleUrl>
-            <LineString id="137">
-                <coordinates>-0.1277583,51.5073509,0.0 -122.3320708,47.6062095,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="142">
+        <Placemark id="151">
             <name>uk-lon01 to us-nyc01</name>
             <description>~70 ms</description>
-            <styleUrl>#143</styleUrl>
-            <LineString id="141">
+            <styleUrl>#152</styleUrl>
+            <LineString id="150">
                 <coordinates>-0.1277583,51.5073509,0.0 -74.0059728,40.7127753,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="146">
+        <Placemark id="155">
+            <name>uk-lon01 to us-atl01</name>
+            <description>~85 ms</description>
+            <styleUrl>#156</styleUrl>
+            <LineString id="154">
+                <coordinates>-0.1277583,51.5073509,0.0 -84.3879824,33.7489954,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="159">
+            <name>uk-lon01 to us-sea02</name>
+            <description>~130 ms</description>
+            <styleUrl>#160</styleUrl>
+            <LineString id="158">
+                <coordinates>-0.1277583,51.5073509,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="163">
             <name>us-atl01 to us-chi01</name>
             <description>~15 ms</description>
-            <styleUrl>#147</styleUrl>
-            <LineString id="145">
+            <styleUrl>#164</styleUrl>
+            <LineString id="162">
                 <coordinates>-84.3879824,33.7489954,0.0 -87.6297982,41.8781136,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="150">
-            <name>us-atl01 to us-lax01</name>
-            <description>~45 ms</description>
-            <styleUrl>#151</styleUrl>
-            <LineString id="149">
-                <coordinates>-84.3879824,33.7489954,0.0 -118.2436849,34.0522342,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="154">
+        <Placemark id="167">
             <name>us-atl01 to us-nyc01</name>
             <description>~20 ms</description>
-            <styleUrl>#155</styleUrl>
-            <LineString id="153">
+            <styleUrl>#168</styleUrl>
+            <LineString id="166">
                 <coordinates>-84.3879824,33.7489954,0.0 -74.0059728,40.7127753,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="158">
-            <name>us-chi01 to us-lax01</name>
+        <Placemark id="171">
+            <name>us-atl01 to us-lax01</name>
             <description>~45 ms</description>
-            <styleUrl>#159</styleUrl>
-            <LineString id="157">
-                <coordinates>-87.6297982,41.8781136,0.0 -118.2436849,34.0522342,0.0</coordinates>
+            <styleUrl>#172</styleUrl>
+            <LineString id="170">
+                <coordinates>-84.3879824,33.7489954,0.0 -118.2436849,34.0522342,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="162">
-            <name>us-chi01 to us-sea02</name>
-            <description>~45 ms</description>
-            <styleUrl>#163</styleUrl>
-            <LineString id="161">
-                <coordinates>-87.6297982,41.8781136,0.0 -122.3320708,47.6062095,0.0</coordinates>
-            </LineString>
-        </Placemark>
-        <Placemark id="166">
+        <Placemark id="175">
             <name>us-chi01 to us-nyc01</name>
             <description>~20 ms</description>
-            <styleUrl>#167</styleUrl>
-            <LineString id="165">
+            <styleUrl>#176</styleUrl>
+            <LineString id="174">
                 <coordinates>-87.6297982,41.8781136,0.0 -74.0059728,40.7127753,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="170">
-            <name>us-lax01 to us-sea02</name>
-            <description>~30 ms</description>
-            <styleUrl>#171</styleUrl>
-            <LineString id="169">
-                <coordinates>-118.2436849,34.0522342,0.0 -122.3320708,47.6062095,0.0</coordinates>
+        <Placemark id="179">
+            <name>us-chi01 to us-lax01</name>
+            <description>~45 ms</description>
+            <styleUrl>#180</styleUrl>
+            <LineString id="178">
+                <coordinates>-87.6297982,41.8781136,0.0 -118.2436849,34.0522342,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="174">
+        <Placemark id="183">
+            <name>us-chi01 to us-sea02</name>
+            <description>~45 ms</description>
+            <styleUrl>#184</styleUrl>
+            <LineString id="182">
+                <coordinates>-87.6297982,41.8781136,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="187">
             <name>us-lax01 to us-nyc01</name>
             <description>~65 ms</description>
-            <styleUrl>#175</styleUrl>
-            <LineString id="173">
+            <styleUrl>#188</styleUrl>
+            <LineString id="186">
                 <coordinates>-118.2436849,34.0522342,0.0 -74.0059728,40.7127753,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="178">
+        <Placemark id="191">
+            <name>us-lax01 to us-sea02</name>
+            <description>~30 ms</description>
+            <styleUrl>#192</styleUrl>
+            <LineString id="190">
+                <coordinates>-118.2436849,34.0522342,0.0 -122.3320708,47.6062095,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="195">
             <name>us-nyc01 to us-sea02</name>
             <description>~60 ms</description>
-            <styleUrl>#179</styleUrl>
-            <LineString id="177">
+            <styleUrl>#196</styleUrl>
+            <LineString id="194">
                 <coordinates>-74.0059728,40.7127753,0.0 -122.3320708,47.6062095,0.0</coordinates>
             </LineString>
         </Placemark>

@@ -31,6 +31,9 @@ Nuremberg, DE: !!python/tuple
 Seattle, WA, US: !!python/tuple
 - 47.6062095
 - -122.3320708
+Sydney, AU: !!python/tuple
+- -33.8688197
+- 151.2092955
 Tokyo, JP: !!python/tuple
 - 35.6761919
 - 139.6503106
