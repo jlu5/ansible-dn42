@@ -12,7 +12,7 @@ wg_peers:
   remote: "vpn.scooterharris.com:23858"
   wg_pubkey: "5W5zt9TqJfPulaYvz0rY+QeqCCIjkik/5WUS/1YdhjU="
   peer_v4: "172.23.109.169"
-  peer_v6: null
+  peer_v6: "fd38:cfa3:7091:a1::1"
 
 - name: dn42atl-napster
   port: 51050
@@ -20,4 +20,3 @@ wg_peers:
   wg_pubkey: "Cro0O53QVO63240SyAu1vkF7kOa/KeMIwT8+7qGV9lI="
   peer_v4: "172.22.169.128"
   peer_v6: "fda9:26a9:1c47:d42:42:42:1080:1050"
-  #local_v6: "fda9:26a9:1c47:d42:42:42:1080:1051"
