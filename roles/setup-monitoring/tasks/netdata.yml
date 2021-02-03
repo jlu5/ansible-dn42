@@ -6,7 +6,7 @@
 
 - name: Add Netdata repository to sources.list.d
   apt_repository:
-    repo: "deb [signed-by=/usr/share/keyrings/netdata-packagecloud.asc] https://packagecloud.io/netdata/netdata/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
+    repo: "deb [signed-by=/usr/share/keyrings/netdata-packagecloud.asc] https://packagecloud.io/netdata/netdata-edge/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
     state: present
     filename: netdata-packagecloud
 
