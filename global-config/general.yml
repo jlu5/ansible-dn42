@@ -8,7 +8,8 @@ ownnets6:
 
 # Interfaces to clean up (e.g. for decommissioned nodes)
 cleanup_remove_ifaces:
-   - igp-ca-bhs01
+   - igp-es-mad01
+   - igp-it-mil01
 
 # DNS related settings
 # This is the main domain used for creating host records for routers (<shortname>.<dns_domains[0]>).
