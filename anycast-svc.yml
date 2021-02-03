@@ -29,7 +29,7 @@
     # Install & configure PowerDNS authoritative server
     - role: PowerDNS.pdns
       # PowerDNS 4.3.x
-      pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 }}"
+      pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
       pdns_config:
         local-address: "{{ anycast_ip }},{{ anycast_ip6 | ipwrap }}"
       pdns_backends:
@@ -44,7 +44,7 @@
 
     # Install & configure PowerDNS resolver
     - role: PowerDNS.pdns_recursor
-      pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_43 }}"
+      pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
       pdns_rec_config:
         # Reduce dont-query list from defaults to exclude dn42 ranges
         dont-query: 127.0.0.0/8, 10.0.0.0/8, 192.168.0.0/16, ::1/128, fe80::/10
@@ -62,3 +62,8 @@
         query-local-address6: "::"
 
         local-address: "127.0.0.1,::1,{{ anycast_recursors_ip }},{{ anycast_recursors_ip6 | ipwrap }}"
+
+      # Work around errors described at https://github.com/PowerDNS/pdns_recursor-ansible/issues/69
+      pdns_rec_service_overrides:
+        User: "{{ pdns_rec_user }}"
+        Group: "{{ pdns_rec_group }}"
