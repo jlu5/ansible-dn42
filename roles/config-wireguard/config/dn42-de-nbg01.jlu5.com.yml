@@ -174,3 +174,10 @@ wg_peers:
   wg_pubkey: "ywlHp+XW7J86rYXtDyWflt2yrlbu2kH2F59I2KZ1Pk4="
   peer_v4: "172.22.135.17"
   peer_v6: "fe80::1722:2135:17"
+
+- name: dn42fra-napster
+  port: 51050
+  remote: ffm1-de.dn42.napshome.net:51080
+  wg_pubkey: "uo7tLeb1QNoRJtecjUV4TeNYgw2imd11oLx7Hftg2SM="
+  peer_v4: "172.22.169.141"
+  peer_v6: "fda9:26a9:1c47:1d42:42:42:1080:1050"
