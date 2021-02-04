@@ -1,14 +1,26 @@
-- name: Download apt signing key for Netdata
-  get_url:
-    url: https://packagecloud.io/netdata/netdata/gpgkey
-    dest: /usr/share/keyrings/netdata-packagecloud.asc
-    mode: '0644'
+- name: Add Netdata apt repository
+  block:
+  - name: Set Netdata repository URL
+    set_fact:
+      netdata_repo_url: "https://packagecloud.io/netdata/netdata-edge"
 
-- name: Add Netdata repository to sources.list.d
-  apt_repository:
-    repo: "deb [signed-by=/usr/share/keyrings/netdata-packagecloud.asc] https://packagecloud.io/netdata/netdata-edge/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
-    state: present
-    filename: netdata-packagecloud
+  - name: Download apt signing key for Netdata
+    get_url:
+      url: "{{ netdata_repo_url }}/gpgkey"
+      dest: /usr/share/keyrings/netdata-packagecloud.asc
+      mode: '0644'
+
+  - name: Add Netdata repository to sources.list.d
+    apt_repository:
+      repo: >
+        deb [signed-by=/usr/share/keyrings/netdata-packagecloud.asc]
+        {{ netdata_repo_url }}/{{ ansible_distribution | lower }}/
+        {{ ansible_distribution_release }} main
+      state: present
+      filename: netdata-packagecloud
+  # Skip adding this on testing machines - I'll ship my own binaries of netdata
+  # until Bullseye is officially supported
+  when: ansible_distribution_version != "testing" and ansible_distribution_release != "bullseye"
 
 - name: Install Netdata package
   apt:
