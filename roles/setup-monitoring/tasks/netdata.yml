@@ -2,7 +2,7 @@
   block:
   - name: Set Netdata repository URL
     set_fact:
-      netdata_repo_url: "https://packagecloud.io/netdata/netdata-edge"
+      netdata_repo_url: "https://packagecloud.io/netdata/netdata"
 
   - name: Download apt signing key for Netdata
     get_url:
