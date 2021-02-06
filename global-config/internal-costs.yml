@@ -38,6 +38,10 @@ internal_costs:
 
   'jp-tyo01,us-sea02': 110
   'jp-tyo01,us-lax01': 110
+  'jp-tyo01,uk-lon01': 240
+  # only when v4 only:
+  #'jp-tyo01,de-nbg01': 230
+  #'jp-tyo01,nl-ley01': 220
 
   'es-mad01,uk-lon01': 30
   'es-mad01,de-nbg01': 35
@@ -55,6 +59,8 @@ internal_costs:
   'au-syd01,jp-tyo01': 115
   'au-syd01,us-sea02': 160
   'au-syd01,us-lax01': 165
+  'au-syd01,uk-lon01': 245
+  'au-syd01,de-nbg01': 250
 
 # Default latency if nothing is set.
 default_cost: 300
