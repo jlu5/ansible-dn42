@@ -2,16 +2,18 @@ This page describes the Routing Policy for AS4242421080.
 
 ## Route Selection
 
-Last updated 2021-01-11:
+This is a rough overview, when in doubt you can check my actual filter code: [custom_filters.conf](roles/config-bird2/config/custom_filters.conf.j2)
 
 1. Prefer routes originating from the same dn42 region, as marked by the [dn42 BGP community `(64511, 41..53)`](https://dn42.dev/howto/Bird-communities). This is essentially cold potato routing:
   - Routes with no region community or the same origin value as a PoP are given `bgp_local_pref = 100 + 200/bgp_path.len`
   - Other routes are left with the default local preference (100)
-2. When bgp_local_pref ties, prefer routes with shortest AS path
-3. Prefer routes with the lowest BGP MED.
-4. Prefer routes received via eBGP over iBGP.
-5. Prefer routes from edge routers closest to the current node (lowest internal distance)
-6. When latency is tied, prefer the first received route (RFC 5004)
+2. Prefer routes with low (<= 20ms) inter-AS latency.
+  - Specifically this adds a penalty of `3*x` to `bgp_local_pref` for routes that have community `(64511, x)`, for all `4 <= x <= 9`
+3. When bgp_local_pref ties, prefer routes with shortest AS path
+4. Prefer routes with the lowest BGP MED.
+5. Prefer routes received via eBGP over iBGP.
+6. Prefer routes from edge routers closest to the current node (lowest internal distance)
+7. When latency is tied, prefer the first received route (RFC 5004)
 
 ## BGP Communities
 
