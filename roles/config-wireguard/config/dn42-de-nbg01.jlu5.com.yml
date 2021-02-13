@@ -64,11 +64,7 @@ wg_peers:
   peer_v6: "fe80::119"
 
 - name: dn42nbg-hexanet
-  port: 53078
-  remote: "gamma.hexanet.dev:31080"
-  wg_pubkey: "5XpUor03B3DBHIMx0Z4ufOg7qCGtBqlYXfraRqncRlI="
-  peer_v4: ""  # v6-only
-  peer_v6: "fe80::c:3621"
+  remove: true
 
 - name: dn42fra-moecast
   port: 50604
@@ -134,11 +130,7 @@ wg_peers:
   peer_v6: "fe80::3088:195/64"
 
 - name: dn42fra-samip
-  port: 53021
-  remote: "[2a0e:8f02:201c::1]:51080"
-  wg_pubkey: "rHcgtpzZC8QWGxe/UkFbqUjnV+vOuauyfCSUVHgP418="
-  peer_v4: "172.22.114.98"
-  peer_v6: "fe80::423"
+  remove: true
 
 - name: dn42kiv-gfa
   port: 51097
