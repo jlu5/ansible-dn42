@@ -47,7 +47,7 @@ internal_costs:
   'es-mad01,de-nbg01': 35
   'es-mad01,nl-ley01': 35
   'es-mad01,us-chi01': 100
-  'es-mad01,us-nyc01': 100
+  'es-mad01,us-nyc01': 95
 
   'it-mil01,uk-lon01': 25
   'it-mil01,nl-ley01': 20
@@ -61,6 +61,10 @@ internal_costs:
   'au-syd01,us-lax01': 165
   'au-syd01,uk-lon01': 245
   'au-syd01,de-nbg01': 250
+
+  'us-las01,us-lax01': 10
+  'us-las01,us-sea02': 35
+  'us-las02,us-chi01': 60  # but only 40 over ipv4 :(
 
 # Default latency if nothing is set.
 default_cost: 300
