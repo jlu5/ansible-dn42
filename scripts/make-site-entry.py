@@ -3,6 +3,13 @@
 Make a website entry for a server on https://jlu5.com/dn42
 """
 import sys
+try:
+    import flag
+except ImportError:
+    print('WARNING: flag module missing; install it with "pip install emoji-country-flag"', file=sys.stderr)
+    _get_flag = lambda country: ''
+else:
+    _get_flag = flag.flag
 
 from _common import *
 
@@ -21,9 +28,10 @@ def main():
     servername = servers_by_name[server]
     serverdata = hosts[servername]
 
-    # too lazy to do the flag code now
+    loc = serverdata['location']
+    country = loc[-2:]
     print(f"""
-#### {serverdata['location']}
+#### {_get_flag(country)} {loc}
 
 - **Hostname**: {servername}
 - **Wireguard port**: 50000 + last 4 digits of your ASN
