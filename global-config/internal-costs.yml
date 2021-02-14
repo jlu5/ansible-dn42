@@ -27,6 +27,8 @@ internal_costs:
   'us-lax01,us-sea02': 30
   'us-lax01,us-chi01': 45
   'us-lax01,us-atl01': 45
+  'us-lax01,de-nbg01': 155
+  'us-lax01,uk-lon01': 130
 
   'us-nyc01,us-sea02': 60
   'us-nyc01,us-lax01': 65
@@ -70,4 +72,4 @@ internal_costs:
 default_cost: 300
 
 # Penalize indirect paths to prefer direct routing.
-indirect_penalty: 10
+indirect_penalty: 5
