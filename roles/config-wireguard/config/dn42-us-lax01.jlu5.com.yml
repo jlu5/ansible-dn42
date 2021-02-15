@@ -69,3 +69,10 @@ wg_peers:
   wg_pubkey: "AwOK/XdO8IDbVqebcZG2HAgO6crA9agRUKLOczQNmGU="
   peer_v4: "172.21.68.33"
   peer_v6: "fe80::925/64"
+
+- name: dn42lax-lss233
+  port: 51826
+  remote: "lax.n.lss233.com:53735"
+  wg_pubkey: "okfX4nra3vEz8TdXD08142TAi9YCYXOJAbF0DAx/dnw="
+  peer_v4: "172.20.143.50"
+  peer_v6: "fe80::1826"
