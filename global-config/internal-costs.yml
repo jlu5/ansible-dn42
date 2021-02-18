@@ -40,6 +40,7 @@ internal_costs:
 
   'jp-tyo01,us-sea02': 110
   'jp-tyo01,us-lax01': 110
+  'jp-tyo01,us-chi01': 130
   'jp-tyo01,uk-lon01': 240
   # only when v4 only:
   #'jp-tyo01,de-nbg01': 230
