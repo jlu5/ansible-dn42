@@ -1,10 +1,10 @@
-# AS4242421080 / JLU5-AS config
+# ansible-dn42
 
 This repository contains the configs for AS4242421080 / JLU5-AS on [dn42](https://dn42.net/Home). For peering details, see https://jlu5.com/dn42
 
 ## Network topology
 
-This iteration of the network uses Babel as IGP and a full mesh of iBGP connections. [Costs between links](global-config/internal_costs.yml) are manually configured to roughly match the link latency.
+This iteration of the network uses the Babel IGP and a combination of fully meshed iBGP routers and route reflectors. [IGP costs between nodes](global-config/internal_costs.yml) are manually configured to roughly match clearnet latency.
 
 [Routing Policy](ROUTING-POLICY.md)
 
