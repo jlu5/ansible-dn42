@@ -1,0 +1,1007 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    151.209295,
+                    -33.86882
+                ]
+            },
+            "properties": {
+                "title": "au-syd01",
+                "description": "Sydney, AU"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.076665,
+                    49.452102
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01",
+                "description": "Nuremberg, DE"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.70379,
+                    40.416775
+                ]
+            },
+            "properties": {
+                "title": "es-mad01",
+                "description": "Madrid, ES"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.189982,
+                    45.464204
+                ]
+            },
+            "properties": {
+                "title": "it-mil01",
+                "description": "Milan, IT"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    139.650311,
+                    35.676192
+                ]
+            },
+            "properties": {
+                "title": "jp-tyo01",
+                "description": "Tokyo, JP"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.471422,
+                    52.518537
+                ]
+            },
+            "properties": {
+                "title": "nl-ley01",
+                "description": "Lelystad, NL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.127758,
+                    51.507351
+                ]
+            },
+            "properties": {
+                "title": "uk-lon01",
+                "description": "London, UK"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.387982,
+                    33.748995
+                ]
+            },
+            "properties": {
+                "title": "us-atl01",
+                "description": "Atlanta, GA, US"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -87.629798,
+                    41.878114
+                ]
+            },
+            "properties": {
+                "title": "us-chi01",
+                "description": "Chicago, IL, US"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.13983,
+                    36.169941
+                ]
+            },
+            "properties": {
+                "title": "us-las01",
+                "description": "Las Vegas, NV, US"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.243685,
+                    34.052234
+                ]
+            },
+            "properties": {
+                "title": "us-lax01",
+                "description": "Los Angeles, CA, US"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.005973,
+                    40.712775
+                ]
+            },
+            "properties": {
+                "title": "us-nyc01",
+                "description": "New York City, NY, US"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.332071,
+                    47.606209
+                ]
+            },
+            "properties": {
+                "title": "us-sea02",
+                "description": "Seattle, WA, US"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        151.209295,
+                        -33.86882
+                    ],
+                    [
+                        11.076665,
+                        49.452102
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "au-syd01 <-> de-nbg01",
+                "description": "~250 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        151.209295,
+                        -33.86882
+                    ],
+                    [
+                        139.650311,
+                        35.676192
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "au-syd01 <-> jp-tyo01",
+                "description": "~115 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        151.209295,
+                        -33.86882
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "au-syd01 <-> uk-lon01",
+                "description": "~245 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        151.209295,
+                        -33.86882
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "au-syd01 <-> us-lax01",
+                "description": "~165 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        151.209295,
+                        -33.86882
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "au-syd01 <-> us-sea02",
+                "description": "~160 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        -3.70379,
+                        40.416775
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> es-mad01",
+                "description": "~35 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        9.189982,
+                        45.464204
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> it-mil01",
+                "description": "~15 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        5.471422,
+                        52.518537
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> nl-ley01",
+                "description": "~15 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> uk-lon01",
+                "description": "~20 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        -84.387982,
+                        33.748995
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> us-atl01",
+                "description": "~100 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        -87.629798,
+                        41.878114
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> us-chi01",
+                "description": "~105 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> us-lax01",
+                "description": "~155 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        -74.005973,
+                        40.712775
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> us-nyc01",
+                "description": "~90 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> us-sea02",
+                "description": "~155 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -3.70379,
+                        40.416775
+                    ],
+                    [
+                        9.189982,
+                        45.464204
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "es-mad01 <-> it-mil01",
+                "description": "~20 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -3.70379,
+                        40.416775
+                    ],
+                    [
+                        5.471422,
+                        52.518537
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "es-mad01 <-> nl-ley01",
+                "description": "~35 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -3.70379,
+                        40.416775
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "es-mad01 <-> uk-lon01",
+                "description": "~30 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -3.70379,
+                        40.416775
+                    ],
+                    [
+                        -87.629798,
+                        41.878114
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "es-mad01 <-> us-chi01",
+                "description": "~100 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        9.189982,
+                        45.464204
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "it-mil01 <-> uk-lon01",
+                "description": "~25 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        139.650311,
+                        35.676192
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "jp-tyo01 <-> uk-lon01",
+                "description": "~240 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        139.650311,
+                        35.676192
+                    ],
+                    [
+                        -87.629798,
+                        41.878114
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "jp-tyo01 <-> us-chi01",
+                "description": "~130 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        139.650311,
+                        35.676192
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "jp-tyo01 <-> us-lax01",
+                "description": "~110 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        139.650311,
+                        35.676192
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "jp-tyo01 <-> us-sea02",
+                "description": "~110 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        5.471422,
+                        52.518537
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "nl-ley01 <-> uk-lon01",
+                "description": "~10 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.127758,
+                        51.507351
+                    ],
+                    [
+                        -84.387982,
+                        33.748995
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "uk-lon01 <-> us-atl01",
+                "description": "~85 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.127758,
+                        51.507351
+                    ],
+                    [
+                        -87.629798,
+                        41.878114
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "uk-lon01 <-> us-chi01",
+                "description": "~90 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.127758,
+                        51.507351
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "uk-lon01 <-> us-lax01",
+                "description": "~130 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.127758,
+                        51.507351
+                    ],
+                    [
+                        -74.005973,
+                        40.712775
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "uk-lon01 <-> us-nyc01",
+                "description": "~70 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.127758,
+                        51.507351
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "uk-lon01 <-> us-sea02",
+                "description": "~130 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -84.387982,
+                        33.748995
+                    ],
+                    [
+                        -87.629798,
+                        41.878114
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-atl01 <-> us-chi01",
+                "description": "~15 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -84.387982,
+                        33.748995
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-atl01 <-> us-lax01",
+                "description": "~45 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -84.387982,
+                        33.748995
+                    ],
+                    [
+                        -74.005973,
+                        40.712775
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-atl01 <-> us-nyc01",
+                "description": "~20 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -87.629798,
+                        41.878114
+                    ],
+                    [
+                        -115.13983,
+                        36.169941
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-chi01 <-> us-las01",
+                "description": "~300 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -87.629798,
+                        41.878114
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-chi01 <-> us-lax01",
+                "description": "~45 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -87.629798,
+                        41.878114
+                    ],
+                    [
+                        -74.005973,
+                        40.712775
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-chi01 <-> us-nyc01",
+                "description": "~20 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -87.629798,
+                        41.878114
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-chi01 <-> us-sea02",
+                "description": "~45 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.13983,
+                        36.169941
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-las01 <-> us-lax01",
+                "description": "~10 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.13983,
+                        36.169941
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-las01 <-> us-sea02",
+                "description": "~35 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.243685,
+                        34.052234
+                    ],
+                    [
+                        -74.005973,
+                        40.712775
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-lax01 <-> us-nyc01",
+                "description": "~65 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.243685,
+                        34.052234
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-lax01 <-> us-sea02",
+                "description": "~30 ms"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.005973,
+                        40.712775
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-nyc01 <-> us-sea02",
+                "description": "~60 ms"
+            }
+        }
+    ]
+}

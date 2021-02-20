@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generates a network map (.kml file) for AS4242421080.
+Generates a GeoJSON network map of the network.
 """
 
 import argparse
@@ -8,13 +8,13 @@ import collections
 import time
 
 import geopy
-import simplekml
+import geojson
 
 from _common import *
 
 class NetmapGeocoder():
     """geopy wrapper that saves geocoding results to disk.
-    The underlying backend is lazy-loaded when the API is queried, so an API key is only needed when we queru a new location."""
+    The underlying backend is lazy-loaded when the API is queried, so an API key is only needed when we query a new location."""
     def __init__(self, db_filename, api_key):
         self.db_filename = db_filename
         self.api_key = api_key
@@ -47,9 +47,12 @@ class NetmapGeocoder():
         with open(self.db_filename, 'w') as f:
             yaml.dump(self.entries, f)
 
+def _sort_features(feature):
+    return feature['properties']['title']
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("-o", "--outfile", help="output path", default="netmap.kml")
+    parser.add_argument("-o", "--outfile", help="output path", default="netmap.geojson")
     parser.add_argument("-H", "--hosts", help="path to hosts configuration / inventory file",
                         type=str, default='hosts.yml')
     parser.add_argument("-c", "--costs", help="path to internal costs configuration",
@@ -73,41 +76,51 @@ def main():
     node_coords = {}
     node_short_names = {node: data['shortname'] for node, data in hosts.items()}
 
-    kml = simplekml.Kml(name=args.document_name)
+    node_markers = []
+    tunnel_lines = []
 
     # Create a new point for each node
     for node, nodedata in hosts.items():
-        # Fetch the GPS coordinates for each node. Here I reverse this too because
-        # KML expects coordinates in longitude,latitude,altitude form
-        # The altitude is just an arbitrary value to make sure the line doesn't get buried by terrain
-        raw_coords = geocoder.geocode(nodedata['location'])
-        coords = node_coords[node_short_names[node]] = (raw_coords[1], raw_coords[0])
-
-        point = kml.newpoint(name=node_short_names[node], description=nodedata['location'], coords=[coords])
-        point.style.iconstyle.icon.href = 'https://maps.google.com/mapfiles/kml/paddle/ylw-blank.png'
+        coords = node_coords[node_short_names[node]] = geocoder.geocode(nodedata['location'])
+        # GeoJSON uses longitude and then latitude
+        point = geojson.Point((coords[1], coords[0]))
+        feature = geojson.Feature(geometry=point, properties={
+            "title": node_short_names[node],
+            "description": nodedata['location'],
+        })
+        node_markers.append(feature)
 
     # Create a new line for each IGP tunnel
-    graphed_tunnels = set()
+    seen_tunnels = set()
     for node, neighbours in tunnels['igp_neighbours'].items():
         if node not in hosts:
             continue
         node = node_short_names[node]
         for neighbour in neighbours:
             neighbour = node_short_names[neighbour]
-            if f'{neighbour},{node}' not in graphed_tunnels:  # Only add a connection once
+            if f'{neighbour},{node}' not in seen_tunnels:  # Only add a connection once
                 datapair = f'{node},{neighbour}'
-                graphed_tunnels.add(datapair)
+                seen_tunnels.add(datapair)
                 cost = costs['internal_costs'].get(datapair) or \
                        costs['internal_costs'].get(f'{neighbour},{node}') or \
                        costs['default_cost']
-                line = kml.newlinestring(
-                    name=f'{node} to {neighbour}',
-                    description=f'~{cost} ms',
-                    coords=[node_coords[node], node_coords[neighbour]]
+                line = geojson.LineString(
+                    [(node_coords[node][1], node_coords[node][0]),
+                     (node_coords[neighbour][1], node_coords[neighbour][0])],
                 )
-                line.linestyle.color = "#66F0F011"  # turquoise at ~40% opacity
+                feature = geojson.Feature(geometry=line, properties={
+                    "title": f'{node} <-> {neighbour}',
+                    "description": f'~{cost} ms',
+                })
+                tunnel_lines.append(feature)
 
-    kml.save(args.outfile)
+    node_markers.sort(key=_sort_features)
+    tunnel_lines.sort(key=_sort_features)
+    with open(args.outfile, 'w') as f:
+        feature_collection = geojson.FeatureCollection(node_markers + tunnel_lines)
+        print("feature_collection errors:", feature_collection.errors())
+        geojson.dump(feature_collection, f, indent=4)
+
     print(f"Wrote map data to {args.outfile}")
     geocoder.save()
     print(f"Wrote geocode cache to {args.geocode_cache}")
