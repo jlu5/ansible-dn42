@@ -87,9 +87,6 @@ wg_peers:
   local_v6: "fe80::115"
   wg_privkey: "/etc/wireguard/privatekey_ca-bhs01-legacy"
 
-- name: "dn42bhs-wxmn"
-  remove: true
-
 - name: dn42nyc-strexp
   port: 51331
   remote: "nyc1.us.dn42.strexp.net:21080"
@@ -103,3 +100,10 @@ wg_peers:
 - name: "dn42nyc-marropa"
   remove: true
 ### end legacy configurations from ca-bhs01
+
+- name: dn42nyc-yura
+  port: 52464
+  remote: "nyc.dneo.moeternet.com:21080"
+  wg_pubkey: "MLVJrwrph6d0VqrAq8/rkhbkG+mrQNytqmwrNgk2qFs="
+  peer_v4: "172.20.191.197"
+  peer_v6: "fe80::2464"

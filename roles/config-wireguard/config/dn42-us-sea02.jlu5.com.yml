@@ -30,7 +30,9 @@ wg_peers:
   peer_v4: "172.20.158.133"
   peer_v6: "fe80::1331/64"
 
-- name: dn42yvr-moetern
+- name: dn42yvr-moetern # renamed
+  remove: true
+- name: dn42yvr-yura
   port: 52464
   remote: "yvr.dneo.moeternet.com:21080"
   wg_pubkey: "VITWVhKaL0qwuT9WTdkIVY6OE4ocIKSQguFrrbnDkBM="

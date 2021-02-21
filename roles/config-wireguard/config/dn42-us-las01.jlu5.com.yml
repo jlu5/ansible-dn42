@@ -1,0 +1,8 @@
+wg_peers:
+- name: dn42las-yura
+  port: 52464
+  #remote: "las.dneo.moeternet.com:21080"
+  remote: "205.185.123.126:21080"
+  wg_pubkey: "viR4CoaJTBHROo/Bgbb27hQ2ttr8AbByGY/yOz3D3GY="
+  peer_v4: "172.20.191.194"
+  peer_v6: "fe80::2464"
