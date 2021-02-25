@@ -167,3 +167,10 @@ wg_peers:
   wg_pubkey: "uo7tLeb1QNoRJtecjUV4TeNYgw2imd11oLx7Hftg2SM="
   peer_v4: "172.22.169.141"
   peer_v6: "fda9:26a9:1c47:1d42:42:42:1080:1050"
+
+- name: dn42fra-dumergu
+  port: 52848
+  remote: 18.159.219.232:52848
+  wg_pubkey: "77xa/nfvRShdy2QUVAgny00oA0cwrLyaUCgn65CFexQ="
+  peer_v4: "172.22.125.194"
+  peer_v6: "fdb2:48f2:8ac5::1"
