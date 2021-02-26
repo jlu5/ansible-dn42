@@ -9,9 +9,10 @@ import git
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-def graph(times, n_ebgp_routers, n_ebgp_peerings, n_ebgp_unique, output="history.svg"):
-    plt.rcParams['svg.fonttype'] = 'none'  # use vector rendering for text
+# Make svg output deterministic, https://stackoverflow.com/questions/48107855/
+plt.rcParams['svg.hashsalt'] = 424242
 
+def graph(times, n_ebgp_routers, n_ebgp_peerings, n_ebgp_unique, output="history.svg"):
     fig, ax = plt.subplots(figsize=(10, 8))
     ax.plot(times, n_ebgp_routers, label="eBGP routers", alpha=0.8)
     ax.plot(times, n_ebgp_peerings, label="total eBGP peerings", alpha=0.8)
@@ -30,7 +31,13 @@ def graph(times, n_ebgp_routers, n_ebgp_peerings, n_ebgp_unique, output="history
 
     plt.ylabel("Count")
     plt.legend()
-    plt.savefig(output, bbox_inches='tight')  # Use small borders, bbox_inches='tight'
+    plt.savefig(
+        output,
+        # Use smaller margins
+        bbox_inches='tight',
+        # Disable date embed for deterministic file output
+        metadata={'Date': None}
+    )
     print(f"Saved to {output}")
 
 def _read_git():
