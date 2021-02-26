@@ -67,7 +67,7 @@ internal_costs:
 
   'us-las01,us-lax01': 10
   'us-las01,us-sea02': 35
-  'us-las01,us-chi01': 60  # but only 40 over ipv4 :(
+  'us-las01,us-chi01': 55
 
 # Default latency if nothing is set.
 default_cost: 300
