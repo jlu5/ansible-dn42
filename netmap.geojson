@@ -840,7 +840,7 @@
             },
             "properties": {
                 "title": "us-chi01 <-> us-las01",
-                "description": "~300 ms"
+                "description": "~60 ms"
             }
         },
         {
