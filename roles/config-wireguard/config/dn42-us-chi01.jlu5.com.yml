@@ -77,3 +77,10 @@ wg_peers:
   wg_pubkey: "7SAw34vmYtgyEi05f78nc5kbEiCGvVTeqa3xdN+0034="
   peer_v4: "172.22.167.67"
   peer_v6: "fd62:e667:840a::2"
+
+- name: dn42chi-fixmix
+  port: 51876
+  remote: "92.38.176.67:21080"
+  wg_pubkey: "l6fUpiE0YM8lv2x7fOd+M4PahO/R5BS3qKQCyUWEGCg="
+  peer_v4: "172.22.66.56"
+  peer_v6: "fe80::1876"

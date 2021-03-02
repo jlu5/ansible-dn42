@@ -174,3 +174,10 @@ wg_peers:
   wg_pubkey: "77xa/nfvRShdy2QUVAgny00oA0cwrLyaUCgn65CFexQ="
   peer_v4: "172.22.125.194"
   peer_v6: "fdb2:48f2:8ac5::1"
+
+- name: dn42nbg-fixmix
+  port: 51876
+  remote: "157.90.166.124:21080"
+  wg_pubkey: "rlfzxSL24UfKvl3cZsHcUr+i3MtG13tu8PRdDqOX3A0="
+  peer_v4: "172.22.66.59"
+  peer_v6: "fe80::1876"

@@ -76,3 +76,10 @@ wg_peers:
   wg_pubkey: "okfX4nra3vEz8TdXD08142TAi9YCYXOJAbF0DAx/dnw="
   peer_v4: "172.20.143.50"
   peer_v6: "fe80::1826"
+
+- name: dn42lax-fixmix
+  port: 51876
+  remote: "107.172.22.228:21080"
+  wg_pubkey: "haGUA0ZiXX0GKugLbwU3q4PL8KMBV+ktgwKxPr0xxkc="
+  peer_v4: "172.22.66.54"
+  peer_v6: "fe80::1876"
