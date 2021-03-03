@@ -114,3 +114,10 @@ wg_peers:
   wg_pubkey: "EJvoVa5DrJl1rnryF4GThX1Rf86lMBtu2sg8Huru9Gs="
   peer_v4: "172.22.66.53"
   peer_v6: "fe80::1876"
+
+- name: dn42nyc-eastbnd
+  port: 52633
+  remote: "lga.eastbnd.com:21080"
+  wg_pubkey: "ifJ451maK3eaEg1FrewNbgCEMjMmEinYt1Sd1pwGTDc="
+  peer_v4: "172.23.250.42"
+  peer_v6: "fe80::2633"

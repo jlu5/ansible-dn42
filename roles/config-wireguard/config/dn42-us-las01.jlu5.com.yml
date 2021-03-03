@@ -6,3 +6,10 @@ wg_peers:
   wg_pubkey: "viR4CoaJTBHROo/Bgbb27hQ2ttr8AbByGY/yOz3D3GY="
   peer_v4: "172.20.191.194"
   peer_v6: "fe80::2464"
+
+- name: dn42las-eastbnd
+  port: 52633
+  remote: "las.eastbnd.com:21080"
+  wg_pubkey: "XQpDtLZ0/OOQgIV829vPs1SYvxQk5TlUmrTAgI5S7xg="
+  peer_v4: "172.23.250.42"
+  peer_v6: "fe80::2633"

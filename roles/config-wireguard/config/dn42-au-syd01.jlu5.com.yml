@@ -1,5 +1,7 @@
 wg_peers:
 - name: dn42syd-1acl
+  remove: true  # renamed
+- name: dn42syd-eastbnd
   port: 52633
   remote: !vault |
           $ANSIBLE_VAULT;1.1;AES256
