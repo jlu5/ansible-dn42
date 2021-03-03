@@ -181,3 +181,10 @@ wg_peers:
   wg_pubkey: "rlfzxSL24UfKvl3cZsHcUr+i3MtG13tu8PRdDqOX3A0="
   peer_v4: "172.22.66.59"
   peer_v6: "fe80::1876"
+
+- name: dn42rhr-n0emis
+  port: 50197
+  remote: "himalia.dn42.n0emis.eu:51080"
+  wg_pubkey: "ObF+xGC6DdddJer0IUw6nzC0RqzeKWwEiQU0ieowzhg="
+  peer_v4: "172.20.190.96"
+  peer_v6: "fe80::42:42:1"
