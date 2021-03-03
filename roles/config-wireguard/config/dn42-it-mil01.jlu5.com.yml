@@ -1,7 +1,7 @@
 wg_peers:
 - name: dn42buh-eastbnd
   port: 52633
-  remote: "lga.eastbnd.com:21080"
-  wg_pubkey: "ifJ451maK3eaEg1FrewNbgCEMjMmEinYt1Sd1pwGTDc="
+  remote: "buh.eastbnd.com:21080"
+  wg_pubkey: "z6oPliY8LB6n5DNcRT+rNqDtya9qrq4iWkX8XJiZF3M="
   peer_v4: "172.23.250.42"
   peer_v6: "fe80::2633"
