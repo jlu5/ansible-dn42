@@ -1,0 +1,33 @@
+- name: Configure anycast DNS
+  hosts: anycast_pool
+  become: yes
+  pre_tasks:
+    - name: Update cached copy of dn42 registry
+      local_action: shell cd dn42-registry && git pull
+      become: false
+      run_once: true
+    - name: Generate DNS zones
+      local_action: command scripts/make-dns-records.py
+      become: false
+      run_once: true
+
+  roles:
+    # Configure loopback for auth DNS anycast
+    - role: config-loopback
+      ownip: "{{ anycast_ip }}"
+      ownip6: "{{ anycast_ip6 }}"
+      dummy_ifname: "{{ dummy_ifname_anycast }}"
+      dummy_iface_conf_name: "dn42-dummy-anycast"
+
+    # Configure loopback for recursive DNS anycast
+    - role: config-loopback
+      ownip: "{{ anycast_recursors_ip }}"
+      ownip6: "{{ anycast_recursors_ip6 }}"
+      dummy_ifname: "{{ dummy_ifname_anycast_recursors }}"
+      dummy_iface_conf_name: "dn42-dummy-anycast-recursors"
+
+    # Install & configure PowerDNS authoritative server
+    - role: config-powerdns
+
+    # Install & configure PowerDNS recursor
+    - role: config-powerdns-recursor
