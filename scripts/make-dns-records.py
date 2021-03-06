@@ -133,7 +133,7 @@ def write_ptr4_zone(netblock):
     """
     ipnet = ipaddress.IPv4Network(netblock)
     # For IPv4 blocks that don't fit within a class boundary (/8, /16, /24) we want to use RFC2317 style
-    # delegation, e.g. "112/28.229.20.172.in-addr.arpa" and create a delegation zone from the nearest classful block
+    # delegation, e.g. "112/28.229.20.172.in-addr.arpa"
     # For blocks that do fit on the class boundary, we can use the classic "3.2.1.in-addr.arpa" format as-is.
     if ipnet.prefixlen % 8 == 0:
         # IPv4Network.reverse_pointer will return things like "0/24.1.168.192.in-addr.arpa", but we don't want the leftmost octet
@@ -142,15 +142,7 @@ def write_ptr4_zone(netblock):
     elif ipnet.prefixlen > 24:
         zonename = ipnet.reverse_pointer
         fd = get_zone_file(zonename)
-        # Calculate the closest classful block
-        nearest_classful_prefixlen = math.floor(ipnet.prefixlen / 8) * 8
-        assert ipnet.prefixlen > nearest_classful_prefixlen
-        nearest_classful_net = ipnet.supernet(new_prefix=nearest_classful_prefixlen)
-
-        classful_zonename = nearest_classful_net.network_address.reverse_pointer.lstrip('0.')
         print(f"Writing PTR zone {zonename} for {ipnet}")
-        print(f"Writing RFC2317 PTR delegation zone {classful_zonename} for {ipnet}")
-        classful_fd = get_zone_file(classful_zonename)
 
         def _get_last_v4_octet(ipaddr):
             return str(ipaddr).split('.')[-1]
@@ -158,13 +150,6 @@ def write_ptr4_zone(netblock):
         # Write PTR records for each IP
         _write_ptr_zone(zonename, ipnet, record_name_func=_get_last_v4_octet)
 
-        # For the delegation zone, create a $GENERATE entry that writes CNAMEs for the entire IP range.
-        first_ip_octets = _get_last_v4_octet(ipnet.network_address)
-        last_ip_octets  = _get_last_v4_octet(ipnet.broadcast_address)
-        cname_target = f'$.{ipnet.reverse_pointer}.'
-        _write_generate_entry(classful_fd, first_ip_octets, last_ip_octets, '$', 'CNAME', cname_target)
-
-        classful_fd.close()
         fd.close()
     else:
         raise ValueError("PTR records are only supported for /8, /16, and >= /24 ranges")
