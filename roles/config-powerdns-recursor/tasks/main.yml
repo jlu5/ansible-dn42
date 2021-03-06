@@ -53,6 +53,9 @@
 
       local-address: "127.0.0.1,::1,{{ anycast_recursors_ip }},{{ anycast_recursors_ip6 | ipwrap }}"
 
+      # Use a higher timeout for queries
+      network-timeout: 5000
+
     # Work around errors described at https://github.com/PowerDNS/pdns_recursor-ansible/issues/69
     pdns_rec_service_overrides:
       User: "{{ pdns_rec_user }}"
