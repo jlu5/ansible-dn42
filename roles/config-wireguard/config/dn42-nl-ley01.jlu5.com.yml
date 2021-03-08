@@ -53,3 +53,10 @@ wg_peers:
   wg_pubkey: "r5cUWNrnRpe9RNDD1dGggMwbjPPcW8/aNvtsXE3VqQU="
   peer_v4: "172.22.66.55"
   peer_v6: "fe80::1876"
+
+- name: dn42fra-welterd
+  port: 54738
+  remote: "gate1.defra0.dn42.welterde.net:42002"
+  wg_pubkey: "I68Jv8818pk2NX0GC8ul18095/iZ66XCxJuo/brk/Go="
+  peer_v4: null
+  peer_v6: "fe80::fcde:3558"
