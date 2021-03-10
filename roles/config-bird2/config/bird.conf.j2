@@ -3,8 +3,6 @@ log "/var/log/bird/bird.log" 10485760 "/var/log/bird/bird.log.1" { info, remote,
 define OWNAS = {{ ownas }};
 define OWNIP = {{ ownip }};
 define OWNIPv6 = {{ ownip6 }};
-# Node ID is AS4242421080-specific and used for informational communities and route pinning
-define NODEID = {{ ownip.rsplit('.', 1)[1] }};
 
 define DN42_REGION = {{ dn42_region }};
 

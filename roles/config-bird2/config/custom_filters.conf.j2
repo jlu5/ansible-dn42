@@ -1,4 +1,28 @@
 # Custom filters for AS4242421080
+{#
+__        ___    ____  _   _ ___ _   _  ____ _
+\ \      / / \  |  _ \| \ | |_ _| \ | |/ ___| |
+ \ \ /\ / / _ \ | |_) |  \| || ||  \| | |  _| |
+  \ V  V / ___ \|  _ <| |\  || || |\  | |_| |_|
+   \_/\_/_/   \_\_| \_\_| \_|___|_| \_|\____(_)
+
+__        ___    ____  _   _ ___ _   _  ____ _ _ _
+\ \      / / \  |  _ \| \ | |_ _| \ | |/ ___| | | |
+ \ \ /\ / / _ \ | |_) |  \| || ||  \| | |  _| | | |
+  \ V  V / ___ \|  _ <| |\  || || |\  | |_| |_|_|_|
+   \_/\_/_/   \_\_| \_\_| \_|___|_| \_|\____(_|_|_)
+
+This file contains examples of custom route tweaks that I *happen to be using* on my network.
+Many of these filters are designed specifically for my AS, and altogether they drastically alter the way that my network
+processes dn42 routes.
+
+In short, you are NOT meant to copy what's here. ESPECIALLY DON'T COPY PIECES YOU HAVEN'T TAKEN THE TIME TO UNDERSTAND YOURSELF!
+If you just want BGP community support, look at community_filters.conf (it's based off the dn42 Wiki anyways)
+
+#}
+
+# Node ID is AS4242421080-specific and used for informational communities and route pinning. You probably don't need it
+define NODEID = {{ ownip.rsplit('.', 1)[1] }};
 
 function read_bgp_blackhole() {
     # Implement BLACKHOLE community as defined by RFC 7999
