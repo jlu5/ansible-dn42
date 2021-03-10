@@ -106,3 +106,10 @@ wg_peers:
   wg_pubkey: "FI1wpfkYRgAVyHCl3aq3fy/qFehdEcROm+j8vLCJO0M="
   peer_v4: 172.20.149.65
   peer_v6: "fe80::1189"
+
+- name: dn42hel-andi
+  port: 53991
+  remote: "iota.h4ck.space:42029"
+  wg_pubkey: "s6OL5S5GvUykOs1XVAWL2i6Mflk6niZ4BZhrHmdB5Gw="
+  peer_v4: null
+  peer_v6: "fe80::1"
