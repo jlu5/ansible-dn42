@@ -55,10 +55,6 @@ function handle_special_cases() {
     if (NODEID = 117 && bgp_path.last ~ [4242420101]) then {
         bgp_local_pref = bgp_local_pref + 25;
     }
-    # 2020-12-29: reject long flapping AS (ICVPN-BODENSEE)
-    if (bgp_path.last = 64875) then {
-        reject;
-    }
 }
 
 # Subtract x from bgp_local_pref, while checking for underflow
@@ -96,4 +92,8 @@ function ebgp_import_filter() {
 };
 
 function ebgp_export_filter() {
+    # 2021-03-13: don't export paths from long flapping ASes
+    if (bgp_path.last ~ [64875]) then {
+        reject;
+    }
 };
