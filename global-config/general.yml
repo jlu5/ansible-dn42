@@ -7,7 +7,8 @@ ownnets6:
 - fd86:bad:11b7::/48
 
 # Interfaces to clean up (e.g. for decommissioned nodes)
-cleanup_remove_ifaces: []
+cleanup_remove_ifaces:
+- igp-nl-ley01
 
 # DNS related settings
 # This is the main domain used for creating host records for routers (<shortname>.<dns_domains[0]>).

@@ -16,11 +16,15 @@ internal_costs:
   'de-nbg01,us-chi01': 105
   'de-nbg01,ca-bhs01': 95
 
-  'nl-ley01,de-nbg01': 15
-  'uk-lon01,nl-ley01': 10
+  'nl-ams02,de-nbg01': 15
+  'nl-ams02,uk-lon01': 5
+  'nl-ams02,es-mad01': 30
+  'nl-ams02,it-mil01': 25
+  'nl-ams02,us-chi01': 95
+  'nl-ams02,us-nyc01': 75
+  'nl-ams02,us-atl01': 90
 
   'us-atl01,us-chi01': 15
-  'us-atl01,ca-bhs01': 30
   'us-atl01,uk-lon01': 85
   'us-atl01,de-nbg01': 100
 
@@ -42,18 +46,13 @@ internal_costs:
   'jp-tyo01,us-lax01': 110
   'jp-tyo01,us-chi01': 130
   'jp-tyo01,uk-lon01': 240
-  # only when v4 only:
-  #'jp-tyo01,de-nbg01': 230
-  #'jp-tyo01,nl-ley01': 220
 
   'es-mad01,uk-lon01': 30
   'es-mad01,de-nbg01': 35
-  'es-mad01,nl-ley01': 35
   'es-mad01,us-chi01': 100
   'es-mad01,us-nyc01': 95
 
   'it-mil01,uk-lon01': 25
-  'it-mil01,nl-ley01': 20
   'it-mil01,de-nbg01': 15
   'it-mil01,es-mad01': 20
   'it-mil01,us-chi01': 105
