@@ -73,3 +73,10 @@ wg_peers:
   wg_pubkey: "POrlh8qOwfUjL/EqB//ZozvrjLlOz0bpy47/3ZGiMSA="
   peer_v4: "172.20.48.177"
   peer_v6: "fe80::406"
+
+- name: dn42ams-nurex
+  port: 52340
+  remote: "rosella.nrx.me:21080"
+  wg_pubkey: "6SR8Ss28Edo6hwwGL17ySay3EfK6kPFsm7EcfjUjkXA="
+  peer_v4: "172.20.32.146/32"
+  peer_v6: "fe80::3240:2/64"
