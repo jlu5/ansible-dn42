@@ -20,7 +20,7 @@ internal_costs:
   'nl-ams02,uk-lon01': 5
   'nl-ams02,es-mad01': 30
   'nl-ams02,it-mil01': 25
-  'nl-ams02,us-chi01': 95
+  'nl-ams02,us-chi01': 240 # 2021-03-18: gtt issue?
   'nl-ams02,us-nyc01': 75
   'nl-ams02,us-atl01': 90
 
