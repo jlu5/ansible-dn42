@@ -25,6 +25,7 @@ internal_costs:
   'nl-ams02,us-atl01': 90
 
   'us-atl01,us-chi01': 15
+  'us-atl01,ca-bhs01': 30
   'us-atl01,uk-lon01': 85
   'us-atl01,de-nbg01': 100
 
