@@ -43,8 +43,8 @@ internal_costs:
   'us-nyc01,de-nbg01': 90
   'us-nyc01,ca-bhs01': 10
 
-  'jp-tyo01,us-sea02': 110
-  'jp-tyo01,us-lax01': 110
+  'jp-tyo01,us-sea02': 125
+  'jp-tyo01,us-lax01': 115
   'jp-tyo01,us-chi01': 130
   'jp-tyo01,uk-lon01': 240
 
