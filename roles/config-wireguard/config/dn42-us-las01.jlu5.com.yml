@@ -26,3 +26,10 @@ wg_peers:
   wg_pubkey: "vfrrbtKAO5438daHrTD0SSS8V6yk78S/XW7DeFrYLXA="
   peer_v4: "172.23.6.6"
   peer_v6: "fe80::2688/64"
+
+- name: dn42las-anillc
+  port: 52526
+  remote: "las.awsl.ee:21080"
+  wg_pubkey: "NQfs6evQLemuJcdcvpO4ds1wXwUHTlzlQXWTJv+WCXY="
+  peer_v4: "172.22.167.97"
+  peer_v6: "fe80::2526/64"
