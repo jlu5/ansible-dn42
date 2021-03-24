@@ -5,3 +5,10 @@ wg_peers:
   wg_pubkey: "1+PQDr1fBcoeqiqnGuj5OL24tQKeyB5UyAfXKaz1fk4="
   peer_v4: "172.20.129.170"
   peer_v6: "fd42:4242:2601:2c::1/128"
+
+- name: dn42lgv-camelus
+  port: 51592
+  remote: "esp-ionos.dn42.trampel.org:41080"
+  wg_pubkey: "b5LpJUSHTxoFe+z7hBVUlMabKjr0FIsFdYk8tTUCxEw="
+  peer_v4: "172.21.99.190"
+  peer_v6: "fe80::1592"
