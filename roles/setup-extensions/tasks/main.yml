@@ -1,17 +1,17 @@
 - name: Create scripts dir for dn42
   file:
-    path: "/opt/dn42"
+    path: "{{ automation_root_dir }}"
     state: directory
     mode: '0755'
 
 - name: Create automation account for dn42 scripts
   user:
-    name: dn42-automation
+    name: "{{ automation_user }}"
     group: nogroup
+    groups: bird
     system: true
     password: "!"
-    home: "/opt/dn42/automation"
-  register: dn42_user
+    home: "{{ automation_user_home }}"
 
 ### dn42 peerfinder
 - name: Install dn42 peerfinder
@@ -19,15 +19,15 @@
   - name: "Upload peerfinder script"
     copy:
       src: "peerfinder.sh"
-      dest: "/opt/dn42/peerfinder.sh"
+      dest: "{{ automation_root_dir }}/peerfinder.sh"
       mode: '0755'
 
   - name: Create cron job for peerfinder
     cron:
       name: dn42 peerfinder
       minute: "*/5"
-      user: dn42-automation
-      job: "env UUID={{ peerfinder_uuid }} LOGFILE={{ dn42_user.home }}/peerfinder.log /opt/dn42/peerfinder.sh"
+      user: "{{ automation_user }}"
+      job: "env UUID={{ peerfinder_uuid }} LOGFILE={{ automation_user_home }}/peerfinder.log {{ automation_root_dir }}/peerfinder.sh"
       disabled: "{{ not (open_to_peers | default(true)) }}"
   when: peerfinder_uuid is defined
 

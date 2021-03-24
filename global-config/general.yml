@@ -46,3 +46,8 @@ bird_logs_dir: "/var/log/bird/"
 # will be merged under the *filter block.
 iptables_rules_path:  "/etc/iptables/rules.v4"
 ip6tables_rules_path: "/etc/iptables/rules.v6"
+
+# Automation user for running scripts like peerfinder
+automation_user: dn42-automation
+automation_root_dir: /opt/dn42
+automation_user_home: /opt/dn42/automation/
