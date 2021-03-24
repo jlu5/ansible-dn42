@@ -68,6 +68,6 @@
   - name: Create cron job for dn42 ROA sync script
     cron:
       name: "Pull dn42 ROA tables"
-      minute: "*/15"
+      minute: "5"
       job: "/usr/local/bin/dn42-update-roas.sh"
       user: bird
