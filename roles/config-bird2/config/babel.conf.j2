@@ -25,7 +25,11 @@ protocol babel int_babel {
 {% for host in igp_neighbours[inventory_hostname] | sort %}
 {% set nodedata = hostvars[host] %}
     interface "igp-{{ nodedata['shortname'] }}" {
+{% if inventory_hostname in groups['staging'] %}
+        include "{{ automation_root_dir }}/igpping/rxcost/{{ host }}.conf";
+{% else %}
         rxcost {{ internal_cost(nodedata) }};
+{% endif %}
     };
 {% endfor %}
 {% if babel_links is defined %}

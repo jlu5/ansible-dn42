@@ -31,6 +31,10 @@
       disabled: "{{ not (open_to_peers | default(true)) }}"
   when: peerfinder_uuid is defined
 
+### igpping
+- name: Install igpping
+  include_tasks: "igpping.yml"
+
 ### bird-lg
 - name: Install bird looking glass
   include_tasks: "bird-lg.yml"

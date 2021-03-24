@@ -1,0 +1,3 @@
+{% for host in igp_neighbours[inventory_hostname]|sort %}
+{{ host }}
+{% endfor %}

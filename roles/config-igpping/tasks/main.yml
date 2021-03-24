@@ -1,0 +1,15 @@
+- name: Read IGP tunnel settings
+  include_vars:
+    file: "global-config/igp-tunnels.yml"
+
+- name: Template igpping hosts file
+  template:
+    src: "igpping-hosts.txt.j2"
+    dest: "{{ automation_root_dir }}/igpping/igpping-hosts.txt"
+
+- name: Run igpping.py --init
+  command:
+    cmd: "python3 igpping.py --init"
+    chdir: "{{ automation_root_dir }}/igpping/"
+  become: true
+  become_user: "{{ automation_user }}"
