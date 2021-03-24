@@ -50,9 +50,9 @@ function prefer_same_region_origin(int base_weight) {
 
 # Special cases I've added for route optimization, your mileage may vary
 function handle_special_cases() {
-    # Pin the following to DE:
+    # Pin the following to EU:
     # - AS4242420101 / CCCDA        - hackint IRC
-    if (NODEID = 117 && bgp_path.last ~ [4242420101]) then {
+    if (DN42_REGION = 41 && bgp_path.last ~ [4242420101]) then {
         bgp_local_pref = bgp_local_pref + 25;
     }
 }
