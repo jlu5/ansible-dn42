@@ -84,3 +84,10 @@ wg_peers:
           3265643836323665333639306561346165666262353032343565
   peer_v4: "172.23.105.2"
   peer_v6: "fe80::2980"
+
+- name: dn42tyo-librehs
+  port: 51037
+  remote: "megumi.yukipedia.cf:55080"
+  wg_pubkey: "iCzvsHAYuIuLQd83iW5A0LGtG9+yzFr0f3U6Yk1xInI="
+  peer_v4: "10.127.8.1"
+  peer_v6: "fd46:e3dc:db4a:1::1"
