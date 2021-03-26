@@ -1,7 +1,4 @@
 wg_peers:
-- name: "dn42ams-marropa"
-  remove: true
-
 - name: dn42ams-jrb0001
   port: 50119
   remote: "95.179.134.138:21080"
@@ -15,9 +12,6 @@ wg_peers:
   wg_pubkey: "ViMRAXJbz8rxqiXUljsx3gF0nLG9a612Qr6DllYLs3k="
   peer_v4: "10.127.8.185"
   peer_v6: "fd10:127:7::1"
-
-- name: dn42ams-hexanet
-  remove: true
 
 - name: dn42erf-androw
   port: 52575
@@ -74,3 +68,10 @@ wg_peers:
   wg_pubkey: "6SR8Ss28Edo6hwwGL17ySay3EfK6kPFsm7EcfjUjkXA="
   peer_v4: "172.20.32.146/32"
   peer_v6: "fe80::3240:2/64"
+
+- name: dn42ams-zeph
+  port: 50801
+  remote: "185.193.159.246:21080"
+  wg_pubkey: "UvNeCWYMi+Xi/wXCxFixZYulAsB2Nm3ctCW7Lor6xiI="
+  peer_v4: "172.22.159.129"
+  peer_v6: "fe80::801"
