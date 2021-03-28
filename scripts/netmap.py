@@ -5,6 +5,7 @@ Generates a GeoJSON network map of the network.
 
 import argparse
 import collections
+import os
 import time
 
 import geopy
@@ -15,9 +16,9 @@ from _common import *
 class NetmapGeocoder():
     """geopy wrapper that saves geocoding results to disk.
     The underlying backend is lazy-loaded when the API is queried, so an API key is only needed when we query a new location."""
-    def __init__(self, db_filename, api_key):
+    def __init__(self, db_filename, api_key=None):
         self.db_filename = db_filename
-        self.api_key = api_key
+        self.api_key = api_key or os.environ.get('GOOGLEMAPS_API_KEY')
         try:
             self.entries = yaml_load(db_filename)
         except FileNotFoundError:
@@ -27,7 +28,7 @@ class NetmapGeocoder():
 
     def _init_backend(self):
         if not self.api_key:
-            raise ValueError("No API key given for geocoding. Run with --geocode-apikey <key>")
+            raise ValueError("No API key given for geocoding. Try setting the GOOGLEMAPS_API_KEY environment variable")
         elif self._backend is None:
             self._backend = geopy.geocoders.GoogleV3(api_key=self.api_key)
 
@@ -61,8 +62,6 @@ def main():
                         type=str, default='global-config/igp-tunnels.yml')
     parser.add_argument("-gc", "--geocode-cache", help="cache filename for geocode entries",
                         type=str, default='netmap-geocode.db')
-    parser.add_argument("-ga", "--geocode-apikey", help="Google Maps API key for geocoding",
-                        type=str, default='')
     parser.add_argument("-dn", "--document-name", help="KML document name",
                         type=str, default="AS4242421080 network map")
     args = parser.parse_args()
@@ -72,7 +71,7 @@ def main():
     costs = yaml_load(args.costs)
     tunnels = yaml_load(args.tunnels)
 
-    geocoder = NetmapGeocoder(args.geocode_cache, args.geocode_apikey)
+    geocoder = NetmapGeocoder(args.geocode_cache)
     node_coords = {}
     node_short_names = {node: data['shortname'] for node, data in hosts.items()}
 
