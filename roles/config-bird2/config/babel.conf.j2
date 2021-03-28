@@ -4,13 +4,6 @@ protocol direct {
     interface "{{ dummy_ifname_glob }}";
 };
 
-{% macro internal_cost(nodedata) -%}
-{# Costs are specified in internal_costs.yml.
-   Only one of (A,B) and (B,A) have to be defined, to save space. #}
-{{ (internal_costs.get('%s,%s' % (shortname, nodedata['shortname'])) or
-    internal_costs.get('%s,%s' % (nodedata['shortname'], shortname)) or default_cost) + indirect_penalty }}
-{%- endmacro %}
-
 protocol babel int_babel {
     ipv4 {
         import where source != RTS_BGP && is_self_net();
@@ -25,13 +18,10 @@ protocol babel int_babel {
 {% for host in igp_neighbours[inventory_hostname] | sort %}
 {% set nodedata = hostvars[host] %}
     interface "igp-{{ nodedata['shortname'] }}" {
-{% if 1 %}
         include "{{ automation_root_dir }}/igpping/rxcost/{{ host }}.conf";
-{% else %}
-        rxcost {{ internal_cost(nodedata) }};
-{% endif %}
     };
 {% endfor %}
+
 {% if babel_links is defined %}
 {% for ifname, cost in babel_links.items() %}
     interface "{{ ifname }}" {

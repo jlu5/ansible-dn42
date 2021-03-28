@@ -48,7 +48,7 @@ class NetmapGeocoder():
         with open(self.db_filename, 'w') as f:
             yaml.dump(self.entries, f)
 
-def _sort_features(feature):
+def _sort_feature_by_title(feature):
     return feature['properties']['title']
 
 def main():
@@ -56,8 +56,6 @@ def main():
     parser.add_argument("-o", "--outfile", help="output path", default="netmap.geojson")
     parser.add_argument("-H", "--hosts", help="path to hosts configuration / inventory file",
                         type=str, default='hosts.yml')
-    parser.add_argument("-c", "--costs", help="path to internal costs configuration",
-                        type=str, default='global-config/internal-costs.yml')
     parser.add_argument("-t", "--tunnels", help="path to IGP tunnels configuration",
                         type=str, default='global-config/igp-tunnels.yml')
     parser.add_argument("-gc", "--geocode-cache", help="cache filename for geocode entries",
@@ -68,7 +66,6 @@ def main():
 
     hosts = yaml_load(args.hosts)
     hosts = hosts['dn42routers']['hosts']
-    costs = yaml_load(args.costs)
     tunnels = yaml_load(args.tunnels)
 
     geocoder = NetmapGeocoder(args.geocode_cache)
@@ -100,21 +97,17 @@ def main():
             if f'{neighbour},{node}' not in seen_tunnels:  # Only add a connection once
                 datapair = f'{node},{neighbour}'
                 seen_tunnels.add(datapair)
-                cost = costs['internal_costs'].get(datapair) or \
-                       costs['internal_costs'].get(f'{neighbour},{node}') or \
-                       costs['default_cost']
                 line = geojson.LineString(
                     [(node_coords[node][1], node_coords[node][0]),
                      (node_coords[neighbour][1], node_coords[neighbour][0])],
                 )
                 feature = geojson.Feature(geometry=line, properties={
                     "title": f'{node} <-> {neighbour}',
-                    "description": f'~{cost} ms',
                 })
                 tunnel_lines.append(feature)
 
-    node_markers.sort(key=_sort_features)
-    tunnel_lines.sort(key=_sort_features)
+    node_markers.sort(key=_sort_feature_by_title)
+    tunnel_lines.sort(key=_sort_feature_by_title)
     with open(args.outfile, 'w') as f:
         feature_collection = geojson.FeatureCollection(node_markers + tunnel_lines)
         print("feature_collection errors:", feature_collection.errors())

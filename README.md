@@ -4,7 +4,7 @@ This repository contains the configs for AS4242421080 / JLU5-AS on [dn42](https:
 
 ## Network topology
 
-This iteration of the network uses the Babel IGP and a combination of fully meshed iBGP routers and route reflectors. [IGP costs between nodes](global-config/internal_costs.yml) are manually configured to roughly match clearnet latency.
+This iteration of the network uses the Babel IGP and a partial mesh of iBGP routers + route reflectors. Internal costs between nodes are [automatically generated](scripts/igpping/) based off latency and packet loss.
 
 [Routing Policy](ROUTING-POLICY.md)
 
