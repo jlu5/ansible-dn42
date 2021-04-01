@@ -209,3 +209,10 @@ wg_peers:
   wg_pubkey: "iMU/cowB17kYnBWktlT5H98J2mKRYf5v3PwsjWcNmR8="
   peer_v4: "172.21.99.191"
   peer_v6: "fe80::1592"
+
+- name: dn42fra-kever
+  port: 50406
+  remote: "de.kever.us.to:21080"
+  wg_pubkey: "Fhs7ut0bFk00xS22oKC6hVfrka0V+ZNA0vUMd5PpeB8="
+  peer_v4: "172.20.48.190"
+  peer_v6: "fdb8:90b8:5ba6:9d0d::124"
