@@ -86,7 +86,7 @@ wg_peers:
 
 - name: dn42sjc-yuuta
   port: 52980
-  remote: "us-sj1.dn42.yuuta.moe:21080"
+  remote: "sjc1.us.dn42.yuuta.moe:21080"
   wg_pubkey: "amtG1Sj6Ar9ntidaa+b2DAPtDuI5mhZruTXVYSso62k="
   wg_presharedkey: !vault |
           $ANSIBLE_VAULT;1.1;AES256
