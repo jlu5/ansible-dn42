@@ -24,6 +24,15 @@ If you just want BGP community support, look at community_filters.conf (it's bas
 # Node ID is AS4242421080-specific and used for informational communities and route pinning. You probably don't need it
 define NODEID = {{ ownip.rsplit('.', 1)[1] }};
 
+# Subtract x from bgp_local_pref, while checking for underflow
+function safe_lower_pref(int x) {
+    if (bgp_local_pref > x) then {
+        bgp_local_pref = bgp_local_pref - x;
+    } else {
+        bgp_local_pref = 0;
+    }
+}
+
 function read_bgp_blackhole() {
     # Implement BLACKHOLE community as defined by RFC 7999
     # Based off https://bird.network.cz/pipermail/bird-users/2016-October/010705.html
@@ -51,18 +60,10 @@ function prefer_same_region_origin(int base_weight) {
 # Special cases I've added for route optimization, your mileage may vary
 function handle_special_cases() {
     # Pin the following to EU:
-    # - AS4242420101 / CCCDA        - hackint IRC
-    if (DN42_REGION = 41 && bgp_path.last ~ [4242420101]) then {
-        bgp_local_pref = bgp_local_pref + 25;
-    }
-}
-
-# Subtract x from bgp_local_pref, while checking for underflow
-function safe_lower_pref(int x) {
-    if (bgp_local_pref > x) then {
-        bgp_local_pref = bgp_local_pref - x;
-    } else {
-        bgp_local_pref = 0;
+    # - AS4242420101 / CCCDA
+    # - AS65043 / ICVPN-DREILAENDERECK
+    if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043] * =]) then {
+        safe_lower_pref(20);
     }
 }
 
