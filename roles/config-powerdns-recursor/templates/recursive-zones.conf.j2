@@ -1,7 +1,0 @@
-# Recursive zones for pdns-recursor
-{% for zone in dns_zones_dn42 %}
-{{ zone }}={{ delegation_servers | join(', ') }}
-{% endfor %}
-{% for zone, servers in dns_zones_extra.items() %}
-{{ zone }}={{ servers | join(', ') }}
-{% endfor %}

@@ -10,6 +10,10 @@
       local_action: command scripts/make-dns-records.py
       become: false
       run_once: true
+    - name: Generate forward-zones config
+      local_action: command scripts/make-forward-zones.sh
+      become: false
+      run_once: true
 
   roles:
     # Configure loopback for auth DNS anycast

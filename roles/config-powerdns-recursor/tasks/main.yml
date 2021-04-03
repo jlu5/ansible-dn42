@@ -1,28 +1,13 @@
-- name: "Print delegation servers"
-  debug:
-    var: delegation_servers
-  run_once: true
-
-- name: "Print DNSSEC trust anchors"
-  debug:
-    var: dnssec_trust_anchors
-  run_once: true
-
-- name: "Template config.lua for PowerDNS recursor"
-  template:
-    src: recursor.lua.j2
-    dest: "/etc/powerdns/recursor.lua"
+- name: "Upload config files for PowerDNS recursor"
+  copy:
+    src: "{{ playbook_dir }}/global-config/pdns-recursor/{{ item }}"
+    dest: "/etc/powerdns/{{ item }}"
     mode: '0644'
   notify:
     - Reconfigure PowerDNS recursor
-
-- name: "Template forwarding zones for PowerDNS recursor"
-  template:
-    src: recursive-zones.conf.j2
-    dest: "/etc/powerdns/recursive-zones.conf"
-    mode: '0644'
-  notify:
-    - Reconfigure PowerDNS recursor
+  loop:
+    - "forward-zones.conf"
+    - "recursor.lua"
 
 - name: "Add local recursor to /etc/resolv.conf"
   lineinfile:
@@ -37,9 +22,9 @@
     pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
     pdns_rec_config:
       # Reduce dont-query list from defaults to exclude dn42 ranges
-      dont-query: 127.0.0.0/8, 10.0.0.0/8, 192.168.0.0/16, ::1/128, fe80::/10
+      dont-query: 127.0.0.0/8, 192.168.0.0/16, ::1/128, fe80::/10
 
-      forward-zones-file: "{{ pdns_rec_config_dir }}/recursive-zones.conf"
+      forward-zones-file: "{{ pdns_rec_config_dir }}/forward-zones.conf"
       lua-config-file: "{{ pdns_rec_config_dir }}/recursor.lua"
 
       # DNSSEC
