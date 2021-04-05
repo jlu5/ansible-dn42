@@ -13,3 +13,5 @@
     chdir: "{{ automation_root_dir }}/igpping/"
   become: true
   become_user: "{{ automation_user }}"
+  register: igpping_init_result
+  changed_when: "igpping_init_result.stdout | length > 0"
