@@ -98,3 +98,10 @@ wg_peers:
   wg_pubkey: "TNmCdvH0DuPX0xxS6DPHw/2v3ojLa5kXIT/Z4Tpx+GY="
   peer_v4: "172.23.91.116/32"
   peer_v6: "fe80::2189/64"
+
+- name: dn42tyo-tecgoo
+  port: 51306
+  remote: "tyo.pop.dn42.ioalzx.top:21080"
+  wg_pubkey: "1dlVkQEmbFspSh40KEVo58tycjYV63VUcCSM1kv0ois="
+  peer_v4: "172.23.8.6"
+  peer_v6: "fe80::1306"

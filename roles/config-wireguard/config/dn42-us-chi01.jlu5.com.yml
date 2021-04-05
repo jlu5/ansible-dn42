@@ -84,3 +84,10 @@ wg_peers:
   wg_pubkey: "l6fUpiE0YM8lv2x7fOd+M4PahO/R5BS3qKQCyUWEGCg="
   peer_v4: "172.22.66.56"
   peer_v6: "fe80::1876"
+
+- name: dn42tor-tecgoo
+  port: 51306
+  remote: "tor.pop.dn42.ioalzx.top:21080"
+  wg_pubkey: "+OxMTbkJPmn4CEN03bywCyy/et6NpH96xAMs//VFfG8="
+  peer_v4: "172.23.8.4"
+  peer_v6: "fe80::1306"

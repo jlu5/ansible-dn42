@@ -113,3 +113,10 @@ wg_peers:
   wg_pubkey: "s6OL5S5GvUykOs1XVAWL2i6Mflk6niZ4BZhrHmdB5Gw="
   peer_v4: null
   peer_v6: "fe80::1"
+
+- name: dn42man-tecgoo
+  port: 51306
+  remote: "mcr.pop.dn42.ioalzx.top:21080"
+  wg_pubkey: "+mH7+82rQe24UywIKnXglq0rsKWEsJit4yfTx/9NB04="
+  peer_v4: "172.23.8.1"
+  peer_v6: "fe80::1306"

@@ -33,3 +33,10 @@ wg_peers:
   wg_pubkey: "NQfs6evQLemuJcdcvpO4ds1wXwUHTlzlQXWTJv+WCXY="
   peer_v4: "172.22.167.97"
   peer_v6: "fe80::2526/64"
+
+- name: dn42las-tecgoo
+  port: 51306
+  remote: "las.pop.dn42.ioalzx.top:21080"
+  wg_pubkey: "0fN1syRS6NSsR9AEkJKi0rSmrFZUhFFFaJLxNH09flo="
+  peer_v4: "172.23.8.5"
+  peer_v6: "fe80::1306"
