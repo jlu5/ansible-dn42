@@ -165,7 +165,7 @@
                 ]
             },
             "properties": {
-                "title": "us-nyc01",
+                "title": "us-nyc02",
                 "description": "New York City, NY, US"
             }
         },
@@ -427,7 +427,7 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> us-nyc01"
+                "title": "de-nbg01 <-> us-nyc02"
             }
         },
         {
@@ -693,7 +693,7 @@
                 ]
             },
             "properties": {
-                "title": "nl-ams02 <-> us-nyc01"
+                "title": "nl-ams02 <-> us-nyc02"
             }
         },
         {
@@ -769,7 +769,7 @@
                 ]
             },
             "properties": {
-                "title": "uk-lon01 <-> us-nyc01"
+                "title": "uk-lon01 <-> us-nyc02"
             }
         },
         {
@@ -845,7 +845,7 @@
                 ]
             },
             "properties": {
-                "title": "us-atl01 <-> us-nyc01"
+                "title": "us-atl01 <-> us-nyc02"
             }
         },
         {
@@ -902,7 +902,7 @@
                 ]
             },
             "properties": {
-                "title": "us-chi01 <-> us-nyc01"
+                "title": "us-chi01 <-> us-nyc02"
             }
         },
         {
@@ -978,7 +978,7 @@
                 ]
             },
             "properties": {
-                "title": "us-lax01 <-> us-nyc01"
+                "title": "us-lax01 <-> us-nyc02"
             }
         },
         {
@@ -1016,7 +1016,7 @@
                 ]
             },
             "properties": {
-                "title": "us-nyc01 <-> us-sea02"
+                "title": "us-nyc02 <-> us-sea02"
             }
         }
     ]

@@ -16,7 +16,7 @@ $TTL 300
 118 IN PTR nl-ams02.rtr.jlu5.dn42.
 119 IN PTR us-atl01.rtr.jlu5.dn42.
 122 IN PTR us-lax01.rtr.jlu5.dn42.
-123 IN PTR us-nyc01.rtr.jlu5.dn42.
+123 IN PTR us-nyc02.rtr.jlu5.dn42.
 124 IN PTR jp-tyo01.rtr.jlu5.dn42.
 120 IN PTR es-mad01.rtr.jlu5.dn42.
 121 IN PTR it-mil01.rtr.jlu5.dn42.
