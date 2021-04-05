@@ -216,3 +216,10 @@ wg_peers:
   wg_pubkey: "Fhs7ut0bFk00xS22oKC6hVfrka0V+ZNA0vUMd5PpeB8="
   peer_v4: "172.20.48.190"
   peer_v6: "fdb8:90b8:5ba6:9d0d::124"
+
+- name: dn42par-tchekda
+  port: 51722
+  remote: "peer.dn42.tchekda.fr:21080"
+  wg_pubkey: "QF93Jc4mGgHvZvaY+qUeyU1vYZKW7ATwztc9oYie92k="
+  peer_v4: "172.20.4.97"
+  peer_v6: "fe80::1722:97/64"

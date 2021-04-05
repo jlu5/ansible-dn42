@@ -127,3 +127,10 @@ wg_peers:
   wg_pubkey: "0ndXPAg17zmVx5CfxMblRfdcDjHRDB6OKBkYvvtq1g0="
   peer_v4: "172.22.118.129"
   peer_v6: "fe80::3770/64"
+
+- name: dn42lys-tchekda
+  port: 51722
+  remote: "lyon.dn42.tchekda.fr:21080"
+  wg_pubkey: "FvGyw906HZKWI8oEQ+oBHoyzEvmF6bIm2AXotOH5IW4="
+  peer_v4: "172.20.4.98"
+  peer_v6: "fe80::1722:98/64"
