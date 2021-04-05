@@ -91,3 +91,10 @@ wg_peers:
   wg_pubkey: "iCzvsHAYuIuLQd83iW5A0LGtG9+yzFr0f3U6Yk1xInI="
   peer_v4: "10.127.8.1"
   peer_v6: "fd46:e3dc:db4a:1::1"
+
+- name: dn42tyo-iedon
+  port: 52189
+  remote: "172.93.221.127:22203"
+  wg_pubkey: "TNmCdvH0DuPX0xxS6DPHw/2v3ojLa5kXIT/Z4Tpx+GY="
+  peer_v4: "172.23.91.116/32"
+  peer_v6: "fe80::2189/64"

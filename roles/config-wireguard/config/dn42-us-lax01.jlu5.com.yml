@@ -98,3 +98,10 @@ wg_peers:
           6461623964366533383534616362616563643238313238346339
   peer_v4: "172.23.105.3"
   peer_v6: "fe80::2980"
+
+- name: dn42lax-iedon
+  port: 52189
+  remote: "204.44.99.106:22204"
+  wg_pubkey: "DIw4TKAQelurK10Sh1qE6IiDKTqL1yciI5ItwBgcHFA="
+  peer_v4: "172.23.91.114/32"
+  peer_v6: "fe80::2189:ef/64"
