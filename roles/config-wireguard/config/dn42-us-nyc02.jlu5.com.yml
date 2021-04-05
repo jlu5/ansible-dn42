@@ -43,7 +43,7 @@ wg_peers:
 
 - name: dn42bhs-aasg
   port: 50827
-  remote: "shingebiss.lorkep.trade:54567"
+  remote: "shingebiss.lorkep.trade:51080"
   wg_pubkey: "OwQeiRnPmE3/28I0lWP3TD9JZOSULAmnEAIbSw0wtBY="
   peer_v4: null
   peer_v6: "fe80::c13c:3759:4b20:e63f"
