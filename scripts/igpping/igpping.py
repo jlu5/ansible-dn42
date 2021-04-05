@@ -39,7 +39,7 @@ def write_costs(hosts, results, overwrite):
         output_path = output_path_format.format_map(format_args)
 
         if os.path.exists(output_path) and not overwrite:
-            return  # already exists
+            continue  # already exists
 
         output_text = CONFIG.get(CONFIG.default_section, 'OutputTextFormat').format_map(format_args)
         print(f"{output_text} => {output_path}")
