@@ -120,3 +120,10 @@ wg_peers:
   wg_pubkey: "+mH7+82rQe24UywIKnXglq0rsKWEsJit4yfTx/9NB04="
   peer_v4: "172.23.8.1"
   peer_v6: "fe80::1306"
+
+- name: dn42rbx-serverm
+  port: 53770
+  remote: "rbx1.dn42.servermade.com:51080"
+  wg_pubkey: "0ndXPAg17zmVx5CfxMblRfdcDjHRDB6OKBkYvvtq1g0="
+  peer_v4: "172.22.118.129"
+  peer_v6: "fe80::3770/64"
