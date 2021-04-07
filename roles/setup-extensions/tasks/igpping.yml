@@ -23,6 +23,7 @@
 - name: Create cron job for igpping
   cron:
     name: igpping
-    minute: "*/15"
+    minute: "15"
+    hour: "*/2"
     user: "{{ automation_user }}"
     job: "cd {{ automation_root_dir }}/igpping && python3 igpping.py >igpping.log 2>&1 && /usr/sbin/birdc configure >>igpping.log 2>&1"
