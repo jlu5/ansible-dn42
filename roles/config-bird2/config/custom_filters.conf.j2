@@ -70,6 +70,11 @@ function handle_special_cases() {
 function ebgp_import_filter() {
     handle_special_cases();
 
+    # Reject routes with unreasonable path lengths
+    if (bgp_path.len > 12) then {
+        reject;
+    }
+
     # Apply same region filtering on routes which specify the dn42 community tags
     if (bgp_community ~ [(64511, 41..53)]) then {
         prefer_same_region_origin(200);
