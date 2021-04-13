@@ -6,6 +6,8 @@ define OWNIPv6 = {{ ownip6 }};
 
 define DN42_REGION = {{ dn42_region }};
 
+hostname "{{ inventory_hostname }}";
+
 protocol static {
 {% for prefix in ownnets4 %}
     route {{ prefix }} reject;
@@ -136,7 +138,10 @@ include "/etc/bird/community_filters.conf";
 template bgp dnpeers {
     local as OWNAS;
     # When eBGP routes tie in latency, prefer older routes instead of comparing router ID
-    prefer older 1;
+    prefer older on;
+
+    enforce first as on;
+    advertise hostname on;
 }
 
 include "/etc/bird/babel.conf";
