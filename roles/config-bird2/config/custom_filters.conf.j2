@@ -24,6 +24,9 @@ If you just want BGP community support, look at community_filters.conf (it's bas
 # Node ID is AS4242421080-specific and used for informational communities and route pinning. You probably don't need it
 define NODEID = {{ ownip.rsplit('.', 1)[1] }};
 
+define LC_ORIGIN_REGION = 101;
+define LC_ORIGIN_NODEID = 103;
+
 # Subtract x from bgp_local_pref, while checking for underflow
 function safe_lower_pref(int x) {
     if (bgp_local_pref > x) then {
@@ -76,7 +79,7 @@ function ebgp_import_filter() {
     }
 
     # Apply same region filtering on routes which specify the dn42 community tags
-    if (bgp_community ~ [(64511, 41..53)]) then {
+    if (bgp_community ~ [(64511, 41..44), (64511, 52)]) then {
         prefer_same_region_origin(200);
     } else {
         # Some peers attach region communities to routes in transit, which screws up calculations
@@ -95,8 +98,10 @@ function ebgp_import_filter() {
 {% endfor %}
     }
     # Informational communities: region of import & node ID of import
-    bgp_large_community.add((OWNAS, 101, DN42_REGION));
-    bgp_large_community.add((OWNAS, 103, NODEID));
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION, 41..53)]);
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 112..127)]);
+    bgp_large_community.add((OWNAS, LC_ORIGIN_REGION, DN42_REGION));
+    bgp_large_community.add((OWNAS, LC_ORIGIN_NODEID, NODEID));
 };
 
 function ebgp_export_filter() {
