@@ -7,17 +7,18 @@ protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
 {% if rr_client %}
     rr client;
 {% endif %}
+    advertise hostname on;
 
     ipv4 {
-        import where source = RTS_BGP && is_valid_network() && !is_self_net();
-        export where source = RTS_BGP && is_valid_network() && !is_self_net();
+        import where ibgp_import_filter();
+        export where ibgp_export_filter();
         next hop address {{ ownip }};
         next hop self ebgp;
     };
 
     ipv6 {
-        import where source = RTS_BGP && is_valid_network_v6() && !is_self_net_v6();
-        export where source = RTS_BGP && is_valid_network_v6() && !is_self_net_v6();
+        import where ibgp_import_filter();
+        export where ibgp_export_filter();
         next hop address {{ ownip6 }};
         next hop self ebgp;
     };
