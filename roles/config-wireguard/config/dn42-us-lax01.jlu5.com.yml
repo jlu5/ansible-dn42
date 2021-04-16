@@ -105,3 +105,10 @@ wg_peers:
   wg_pubkey: "DIw4TKAQelurK10Sh1qE6IiDKTqL1yciI5ItwBgcHFA="
   peer_v4: "172.23.91.114/32"
   peer_v6: "fe80::2189:ef/64"
+
+- name: dn42lax-ykis
+  port: 52021
+  remote: "lax-node.ykis.moe:41080"
+  wg_pubkey: "lDPGJPvwoD5PdaDhL0NgNEb1evJKr+qHworHmrCzrEE="
+  peer_v4: "172.20.51.128"
+  peer_v6: "fe80::2021"
