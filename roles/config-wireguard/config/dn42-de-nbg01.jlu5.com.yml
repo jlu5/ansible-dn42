@@ -7,11 +7,7 @@ wg_peers:
   peer_v6: "fe80::b0b6/64"
 
 - name: dn42nbg-zotan
-  port: 52341
-  remote: "nbg1.dn42.zotan.network:42432"
-  wg_pubkey: "PlMza8PC6N58vpGqMsBo3UjvjXThl/2WCTK6drjqbgY="
-  peer_v4: "172.20.177.34"
-  peer_v6: "fe80::3"
+  remove: true
 
 - name: dn42fsn-tbspace
   port: 56190
@@ -92,11 +88,7 @@ wg_peers:
   peer_v6: "fe80::42:4242:2225"
 
 - name: dn42nbg-fralins
-  port: 50380
-  remote: "anemone.sigterm.xyz:21080"
-  wg_pubkey: "NrCmqtkFMUOcfd7sS45CxVAZXaj8mdYqlDNyEITKCDQ="
-  peer_v4: "172.20.44.1"
-  peer_v6: "fe80::380"
+  remove: true
 
 - name: dn42mrs-cvillis
   port: 50308
@@ -155,11 +147,7 @@ wg_peers:
   peer_v6: "fd42:4242:2601:31::1/128"
 
 - name: dn42fra-0xcb
-  port: 52203
-  remote: "de-fra01.42.0xcb.dev:21080"
-  wg_pubkey: "ywlHp+XW7J86rYXtDyWflt2yrlbu2kH2F59I2KZ1Pk4="
-  peer_v4: "172.22.135.17"
-  peer_v6: "fe80::1722:2135:17"
+  remove: true
 
 - name: dn42fra-napster
   port: 51050

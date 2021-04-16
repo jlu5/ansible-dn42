@@ -35,11 +35,7 @@ wg_peers:
   peer_v6: "fe80::42:2237/128"
 
 - name: "dn42nyc-xnoe"
-  port: 52833
-  remote: "157.230.2.4:43338"
-  wg_pubkey: "UARKACjdZOuZ2WdnbmXegkGFHu7hs6Ia6dgBNpDB2ns="
-  peer_v4: "172.20.224.194"
-  peer_v6: "fe80::2833"
+  remove: true
 
 - name: dn42bhs-aasg
   port: 50827

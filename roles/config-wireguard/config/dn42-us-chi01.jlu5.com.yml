@@ -29,12 +29,7 @@ wg_peers:
   peer_v6: "fe80::12:97"
 
 - name: "dn42mia-santost"
-  port: 50009
-  remote: "192.168.2.253:41734"  # NAT traversal
-  wg_pubkey: "f9fkX26H68M/lGGi/YwaJjD6Qnzsle6qMTD7Lh7Axzk="
-  peer_v4: "10.127.39.1/32"
-  peer_v6: "fd10:127:ec39:2221::1/64"
-  local_v6: "fd10:127:ec39:2221::5555/64"
+  remove: true
 
 - name: dn42buf-kioubit
   port: 53914
@@ -44,11 +39,7 @@ wg_peers:
   peer_v6: "fe80::ade0"
 
 - name: dn42bos-hammy
-  port: 50769
-  remote: "home.ddns.hamptonmoore.com:43339"
-  wg_pubkey: "JY92YXc5ShMQF76gafcNopwpCE0a1P9KgW8o9axH2QM="
-  peer_v4: "172.21.67.145"
-  peer_v6: "fe80::90:0769"
+  remove: true
 
 - name: dn42mci-aftbit
   port: 50822
