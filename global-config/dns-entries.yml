@@ -28,12 +28,12 @@ dns_records:
       ip6: fd86:bad:11b7:a::2
     "anycast":
       type: host_record
-      ip4: "{{ anycast_ip }}"
-      ip6: "{{ anycast_ip6 }}"
+      ip4: "{{ dummy_interfaces.anycast_auth_dns.ip4[0] }}"
+      ip6: "{{ dummy_interfaces.anycast_auth_dns.ip6[0] }}"
     "dns":
       type: host_record
-      ip4: "{{ anycast_recursors_ip }}"
-      ip6: "{{ anycast_recursors_ip6 }}"
+      ip4: "{{ dummy_interfaces.anycast_recursors.ip4[0] }}"
+      ip6: "{{ dummy_interfaces.anycast_recursors.ip6[0] }}"
 
 dns_generate_records:
   "172.22.108.0/26":

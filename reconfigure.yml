@@ -8,7 +8,7 @@
   roles:
     - config-iptables
     - role: config-loopback
-      dummy_iface_conf_name: "dn42-dummy-igp"
+      dummy_iface: "{{ dummy_interfaces.igp }}"
     - config-wireguard
     - config-igpping
     - config-bird2

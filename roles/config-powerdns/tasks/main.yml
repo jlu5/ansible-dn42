@@ -4,7 +4,7 @@
     # PowerDNS 4.3.x
     pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
     pdns_config:
-      local-address: "{{ anycast_ip }},{{ anycast_ip6 | ipwrap }}"
+      local-address: "{{ local_ips | join(', ') }}"
     pdns_backends:
       bind:
         config: "{{ pdns_config_dir }}/named.conf"

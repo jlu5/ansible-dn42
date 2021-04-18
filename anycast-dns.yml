@@ -16,22 +16,16 @@
       run_once: true
 
   roles:
-    # Configure loopback for auth DNS anycast
+    # Configure loopbacks for anycast addresses
     - role: config-loopback
-      ownip: "{{ anycast_ip }}"
-      ownip6: "{{ anycast_ip6 }}"
-      dummy_ifname: "{{ dummy_ifname_anycast }}"
-      dummy_iface_conf_name: "dn42-dummy-anycast"
-
-    # Configure loopback for recursive DNS anycast
+      dummy_iface: "{{ dummy_interfaces.anycast_auth_dns }}"
     - role: config-loopback
-      ownip: "{{ anycast_recursors_ip }}"
-      ownip6: "{{ anycast_recursors_ip6 }}"
-      dummy_ifname: "{{ dummy_ifname_anycast_recursors }}"
-      dummy_iface_conf_name: "dn42-dummy-anycast-recursors"
+      dummy_iface: "{{ dummy_interfaces.anycast_recursors }}"
 
     # Install & configure PowerDNS authoritative server
     - role: config-powerdns
+      local_ips: "{{ dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6 }}"
 
     # Install & configure PowerDNS recursor
     - role: config-powerdns-recursor
+      local_ips: "{{ dummy_interfaces.anycast_recursors.ip4 + dummy_interfaces.anycast_recursors.ip6 }}"

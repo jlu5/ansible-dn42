@@ -6,10 +6,25 @@ ownnets4:
 ownnets6:
 - fd86:bad:11b7::/48
 
+# Dummy device names for IGP and Anycast services
+# To simplify IGP configuration in Bird this assumes that all dummy interfaces follow a predictable pattern
+dummy_interfaces:
+  igp:
+    ifname: "igp-dummy0"
+    ip4: ["{{ ownip }}"]
+    ip6: ["{{ ownip6 }}"]
+  anycast_auth_dns:
+    ifname: "igp-dummy1"
+    ip4: ["172.20.229.112"]
+    ip6: ["fd86:bad:11b7:53::1"]
+  anycast_recursors:
+    ifname: "igp-dummy2"
+    ip4: ["172.22.108.22"]
+    ip6: ["fd86:bad:11b7:53::2"]
+dummy_ifname_glob: "igp-dummy*"
+
 # Interfaces to clean up (e.g. for decommissioned nodes)
-cleanup_remove_ifaces:
-- igp-nl-ley01
-- igp-us-nyc01
+cleanup_remove_ifaces: []
 
 # DNS related settings
 # This is the main domain used for creating host records for routers (<shortname>.<dns_domains[0]>).
@@ -20,19 +35,6 @@ dns_auto_host_record_format: "%s.rtr"
 dns_nameserver_prefix: "ns1"  # used in zone files
 dns_ttl: 300
 dns_zones_dir: "/etc/powerdns/dns-zones"
-
-# Anycast service IPs
-anycast_ip: "172.20.229.112"
-anycast_ip6: "fd86:bad:11b7:53::1"
-anycast_recursors_ip: "172.22.108.22"
-anycast_recursors_ip6: "fd86:bad:11b7:53::2"
-
-# Dummy device names for IGP and Anycast
-# (I should've chose better names here because the script doesn't make changing these simple...)
-dummy_ifname: "igp-dummy0"
-dummy_ifname_anycast: "igp-dummy1"
-dummy_ifname_anycast_recursors: "igp-dummy2"
-dummy_ifname_glob: "igp-dummy*"
 
 # Mitogen needs this to be set; it doesn't follow the interpreter_python setting in ansible.cfg yet
 # See https://github.com/dw/mitogen/issues/740

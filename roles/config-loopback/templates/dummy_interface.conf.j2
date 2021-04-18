@@ -1,9 +1,28 @@
-auto {{ dummy_ifname | mandatory }}
-iface {{ dummy_ifname | mandatory }} inet static
-    address {{ ownip }}
-    netmask 255.255.255.255
-    network {{ ownip }}
-    pre-up ip link add {{ dummy_ifname }} type dummy
+auto {{ dummy_iface.ifname | mandatory }}
+{#
+Use a namespace variable to track state across scopes: https://stackoverflow.com/a/61342337
+In particular we only want to attach the interface creation pre-up command to the first IP associated with
+an interface, or those will run multiple times and cause errors.
+Note: this requires Jinja2 2.10+
+#}
+{% set ns = namespace(has_init_line=false) %}
 
-iface {{ dummy_ifname }} inet6 static
-    address {{ ownip6 }}/128
+{% for ip in dummy_iface.ip4 %}
+iface {{ dummy_iface.ifname | mandatory }} inet static
+    address {{ ip }}
+    netmask 255.255.255.255
+    network {{ ip }}
+{% if not ns.has_init_line %}
+    pre-up ip link add {{ dummy_iface.ifname }} type dummy
+{% set ns.has_init_line = true %}
+{% endif %}
+{% endfor %}
+
+{% for ip in dummy_iface.ip6 %}
+iface {{ dummy_iface.ifname }} inet6 static
+    address {{ ip }}/128
+{% if not ns.has_init_line %}
+    pre-up ip link add {{ dummy_iface.ifname }} type dummy
+{% set ns.has_init_line = true %}
+{% endif %}
+{% endfor %}

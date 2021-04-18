@@ -6,10 +6,10 @@
 - name: "Write dummy interface in interfaces.d"
   template:
     src: dummy_interface.conf.j2
-    dest: "/etc/network/interfaces.d/{{ dummy_iface_conf_name }}"
+    dest: "/etc/network/interfaces.d/{{ dummy_iface.ifname }}"
   register: interfaces_tmpl
 
 - name: "(Re)start dummy interface"
-  shell: "ifdown --force {{ dummy_ifname }}; ifup {{ dummy_ifname }}"
+  shell: "ifdown --force {{ dummy_iface.ifname }}; ip link del {{ dummy_iface.ifname }}; ifup {{ dummy_iface.ifname }}"
   when: interfaces_tmpl.changed
   ignore_errors: yes
