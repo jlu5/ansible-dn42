@@ -28,4 +28,6 @@
 
     # Install & configure PowerDNS recursor
     - role: config-powerdns-recursor
-      local_ips: "{{ dummy_interfaces.anycast_recursors.ip4 + dummy_interfaces.anycast_recursors.ip6 }}"
+      local_ips: "{{ dummy_interfaces.anycast_recursors.ip4
+                     + dummy_interfaces.anycast_recursors.ip6
+                     + ['127.0.0.1', '[0::1]'] }}"
