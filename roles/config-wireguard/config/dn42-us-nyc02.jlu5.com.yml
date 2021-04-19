@@ -104,9 +104,9 @@ wg_peers:
   peer_v4: "172.20.191.197"
   peer_v6: "fe80::2464"
 
-- name: dn42buf-fixmix
+- name: dn42nyc-fixmix
   port: 51876
-  remote: "23.95.9.128:21080"
+  remote: "198.98.60.147:21080"
   wg_pubkey: "EJvoVa5DrJl1rnryF4GThX1Rf86lMBtu2sg8Huru9Gs="
   peer_v4: "172.22.66.53"
   peer_v6: "fe80::1876"
