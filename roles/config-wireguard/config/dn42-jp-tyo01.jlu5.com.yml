@@ -9,7 +9,7 @@ wg_peers:
 
 - name: dn42tyo-koala
   port: 51488
-  remote: "132.145.113.147:21080"
+  remote: "tanuki.koala.gq:21080"
   wg_pubkey: "IL1Wkw5cLpGUUvFlYwAG4rAsw9lbd1QpTcBPsk/w/SM="
   peer_v4: null
   peer_v6: "fe80::3621"
