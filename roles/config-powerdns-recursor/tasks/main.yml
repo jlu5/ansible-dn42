@@ -36,7 +36,10 @@
       # Allow sending queries over IPv6
       query-local-address6: "::"
 
-      local-address: "{{ local_ips | join(', ') }}"
+      local-address: "{{ (dummy_interfaces.anycast_recursors.ip4
+                          + dummy_interfaces.anycast_recursors.ip6
+                          + ['127.0.0.1', '[0::1]', ownip, ownip6])
+                          | join(', ') }}"
 
       # Use a higher timeout for queries
       network-timeout: 5000
