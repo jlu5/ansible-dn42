@@ -22,7 +22,7 @@ ptr_zones["21.172.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/172.21.0.0_16"
 ptr_zones["22.172.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/172.22.0.0_16"
 ptr_zones["23.172.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/172.23.0.0_16"
 ptr_zones["31.172.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/172.31.0.0_16"
-ptr_zones["127.10.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/10.127.0.0_16"
+ptr_zones["10.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/10.0.0.0_8"
 ptr_zones["d.f.ip6.arpa"]="$REGISTRY_ROOT/inet6num/fd00::_8"
 
 addrtype() {
