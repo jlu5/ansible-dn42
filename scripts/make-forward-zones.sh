@@ -7,6 +7,14 @@ OUTPUT_DNSSEC=../global-config/pdns-recursor/recursor.lua
 NSERVER_SEPARATOR=","
 REGISTRY_ROOT=../dn42-registry/data
 
+# hardcoded zones 🙈
+# It might be better to parse these from icvpn-meta but these are updated pretty infrequently anyways
+declare -A HARDCODED_ZONES
+# https://github.com/freifunk/icvpn-meta/blob/master/rzl
+HARDCODED_ZONES["rzl"]="172.22.36.1"
+# https://github.com/freifunk/icvpn-meta/blob/master/chaosvpn
+HARDCODED_ZONES["hack"]="172.31.0.5,172.31.255.53"
+
 # PTR zones are manually mapped for now
 declare -A ptr_zones
 ptr_zones["20.172.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/172.20.0.0_16"
@@ -66,7 +74,9 @@ write_nservers() {
         fi
     done <<< "$raw_nservers"
 
-    if (( ${#parsed_nservers[@]} )); then
+    if [[ -n "${HARDCODED_ZONES["$zone_name"]}" ]]; then
+        echo "$zone_name=${HARDCODED_ZONES["$zone_name"]}" | tee -a "$OUTPUT"
+    elif (( ${#parsed_nservers[@]} )); then
         IFS="${NSERVER_SEPARATOR}" nservers_flat="${parsed_nservers[*]}"
         echo "$zone_name=$nservers_flat" | tee -a "$OUTPUT"
     else
