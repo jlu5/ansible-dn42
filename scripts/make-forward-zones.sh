@@ -34,6 +34,7 @@ addrtype() {
 }
 
 # Read nameserver IPs for the dn42 delegation servers (and other manually defined entries)
+# IPv4 addresses are stored as "x.delegation-servers.dn42,4", and IPv6 addresses in "x.delegation-servers.dn42,6" to prevent conflicts
 declare -A nserver_ips
 echo "Read these delegation servers:" 1>&2
 while IFS=" " read -r name ip; do
