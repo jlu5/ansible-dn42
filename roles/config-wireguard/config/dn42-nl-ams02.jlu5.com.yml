@@ -75,3 +75,10 @@ wg_peers:
   wg_pubkey: "UvNeCWYMi+Xi/wXCxFixZYulAsB2Nm3ctCW7Lor6xiI="
   peer_v4: "172.22.159.129"
   peer_v6: "fe80::801"
+
+- name: dn42ams-yura
+  port: 52464
+  remote: "llix.dneo.moeternet.com:21080"
+  wg_pubkey: "3egMh/fpa/+YTAfIXihtNYTReh27AaS53WJyp7UT/Qg="
+  peer_v4: "172.20.191.207/32"
+  peer_v6: "fe80::2464/64"
