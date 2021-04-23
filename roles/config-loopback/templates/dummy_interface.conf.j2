@@ -9,9 +9,11 @@ Note: this requires Jinja2 2.10+
 
 {% for ip in dummy_iface.ip4 %}
 iface {{ dummy_iface.ifname | mandatory }} inet static
+{# Rewrite single IP addresses as a /32, but leave netblocks of other sizes as is #}
+{% if ip | ipaddr('address') %}
+{% set ip = ip | ipaddr('host') %}
+{% endif %}
     address {{ ip }}
-    netmask 255.255.255.255
-    network {{ ip }}
 {% if not ns.has_init_line %}
     pre-up ip link add {{ dummy_iface.ifname }} type dummy
 {% set ns.has_init_line = true %}
@@ -20,7 +22,11 @@ iface {{ dummy_iface.ifname | mandatory }} inet static
 
 {% for ip in dummy_iface.ip6 %}
 iface {{ dummy_iface.ifname }} inet6 static
-    address {{ ip }}/128
+{# Rewrite single IP addresses as a /128, but leave netblocks of other sizes as is #}
+{% if ip | ipaddr('address') %}
+{% set ip = ip | ipaddr('host') %}
+{% endif %}
+    address {{ ip }}
 {% if not ns.has_init_line %}
     pre-up ip link add {{ dummy_iface.ifname }} type dummy
 {% set ns.has_init_line = true %}

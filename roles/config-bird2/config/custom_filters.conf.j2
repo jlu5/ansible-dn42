@@ -32,7 +32,7 @@ define LC_ORIGIN_NODEID = 103;
 define ANYCAST_IPS_4 = [172.23.0.53/32];
 define ANYCAST_IPS_6 = [fd42:d42:d42:53::/64];
 
-function is_anycast_service() {
+function is_anycast_network() {
     if net.type = NET_IP4 && net ~ ANYCAST_IPS_4 then {
         return true;
     } else if net.type = NET_IP6 && net ~ ANYCAST_IPS_6 then {
@@ -121,7 +121,7 @@ function ebgp_export_filter() {
 function ibgp_import_filter() {
     # Only pass routes that are learned from BGP and don't match our networks, but accept iBGP routes
     # for anycast services
-    if ((source != RTS_BGP || is_self_net() || is_self_net_v6()) && !is_anycast_service()) then {
+    if ((source != RTS_BGP || is_self_net() || is_self_net_v6()) && !is_anycast_network()) then {
         reject;
     }
     if (!is_valid_network() && !is_valid_network_v6()) then {
@@ -144,7 +144,7 @@ function ibgp_import_filter() {
 }
 
 function ibgp_export_filter() {
-    if ((source != RTS_BGP || is_self_net() || is_self_net_v6()) && !is_anycast_service()) then {
+    if ((source != RTS_BGP || is_self_net() || is_self_net_v6()) && !is_anycast_network()) then {
         reject;
     }
     accept;
