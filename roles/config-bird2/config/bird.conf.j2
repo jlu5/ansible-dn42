@@ -29,6 +29,10 @@ protocol static {
 {% for route in static_routes6|default([]) %}
     route {{ route }};
 {% endfor %}
+{% if inventory_hostname in groups['anycast_pool'] %}
+    # Special case for dn42 anycast DNS, which is advertised as a /64 instead of /128
+    route fd42:d42:d42:53::/64 reject;
+{% endif %}
 
     ipv6 {
         import all;

@@ -27,6 +27,21 @@ define NODEID = {{ ownip.rsplit('.', 1)[1] }};
 define LC_ORIGIN_REGION = 101;
 define LC_ORIGIN_NODEID = 103;
 
+# Special case for anycast services we're hosting
+# Route these through iBGP instead of IGP since they should coexist with other instances
+define ANYCAST_IPS_4 = [172.23.0.53/32];
+define ANYCAST_IPS_6 = [fd42:d42:d42:53::/64];
+
+function is_anycast_service() {
+    if net.type = NET_IP4 && net ~ ANYCAST_IPS_4 then {
+        return true;
+    } else if net.type = NET_IP6 && net ~ ANYCAST_IPS_6 then {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 # Subtract x from bgp_local_pref, while checking for underflow
 function safe_lower_pref(int x) {
     if (bgp_local_pref > x) then {
@@ -104,13 +119,19 @@ function ebgp_export_filter() {
 };
 
 function ibgp_import_filter() {
-    # Only pass routes that are learned from BGP and don't match our networks
-    if (source != RTS_BGP || is_self_net() || is_self_net_v6()) then {
+    # Only pass routes that are learned from BGP and don't match our networks, but accept iBGP routes
+    # for anycast services
+    if ((source != RTS_BGP || is_self_net() || is_self_net_v6()) && !is_anycast_service()) then {
         reject;
     }
     if (!is_valid_network() && !is_valid_network_v6()) then {
         # Not routable for dn42
         reject;
+    }
+
+    if (bgp_path.len = 0) then {
+        # Prefer locally originated iBGP routes, e.g. for anycast services
+        bgp_local_pref = 300;
     }
 
     # Penalize routes learned from another region that have high (>50ms) latency
@@ -123,7 +144,7 @@ function ibgp_import_filter() {
 }
 
 function ibgp_export_filter() {
-    if (source != RTS_BGP || is_self_net() || is_self_net_v6()) then {
+    if ((source != RTS_BGP || is_self_net() || is_self_net_v6()) && !is_anycast_service()) then {
         reject;
     }
     accept;

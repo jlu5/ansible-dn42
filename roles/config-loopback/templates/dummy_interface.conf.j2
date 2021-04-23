@@ -2,7 +2,7 @@ auto {{ dummy_iface.ifname | mandatory }}
 {#
 Use a namespace variable to track state across scopes: https://stackoverflow.com/a/61342337
 In particular we only want to attach the interface creation pre-up command to the first IP associated with
-an interface, or those will run multiple times and cause errors.
+an interface, or that command will run multiple times and cause errors.
 Note: this requires Jinja2 2.10+
 #}
 {% set ns = namespace(has_init_line=false) %}
