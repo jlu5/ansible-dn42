@@ -11,4 +11,3 @@ $TTL 300
 17 IN PTR ca-yvr01.jlu5.dn42.
 18 IN PTR ca-yvr02.jlu5.dn42.
 22 IN PTR dns.jlu5.dn42.
-$GENERATE 1-15 $ PTR host-172-22-108-$.riptidenet.jlu5.com.
