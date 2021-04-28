@@ -6,9 +6,6 @@ wg_peers:
   peer_v4: "172.23.193.2"
   peer_v6: "fe80::b0b6/64"
 
-- name: dn42nbg-zotan
-  remove: true
-
 - name: dn42fsn-tbspace
   port: 56190
   remote: "dn42.tbspace.de:49047"
@@ -87,9 +84,6 @@ wg_peers:
   peer_v4: "172.20.12.196"
   peer_v6: "fe80::42:4242:2225"
 
-- name: dn42nbg-fralins
-  remove: true
-
 - name: dn42mrs-cvillis
   port: 50308
   remote: "46.182.6.167:21080"
@@ -145,9 +139,6 @@ wg_peers:
   wg_pubkey: "e85ftjKwgZCu5Zfx8chHY/LYJSwTbTqX3tbSqViX7Xo="
   peer_v4: "172.20.129.169"
   peer_v6: "fd42:4242:2601:31::1/128"
-
-- name: dn42fra-0xcb
-  remove: true
 
 - name: dn42fra-napster
   port: 51050
@@ -211,3 +202,10 @@ wg_peers:
   wg_pubkey: "QF93Jc4mGgHvZvaY+qUeyU1vYZKW7ATwztc9oYie92k="
   peer_v4: "172.20.4.97"
   peer_v6: "fe80::1722:97/64"
+
+- name: dn42nbg-serverm
+  port: 53770
+  remote: "nbg1.dn42.servermade.com:51080"
+  wg_pubkey: "iM2wCf6z5DnzeI4QufFima+slsPloQXccnLygeSTDmA="
+  peer_v4: "172.22.118.134"
+  peer_v6: "fe80::3770/64"
