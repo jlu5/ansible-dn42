@@ -12,3 +12,10 @@ wg_peers:
   wg_pubkey: "b5LpJUSHTxoFe+z7hBVUlMabKjr0FIsFdYk8tTUCxEw="
   peer_v4: "172.21.99.190"
   peer_v6: "fe80::1592"
+
+- name: dn42grx-jlxip
+  port: 52896
+  remote: "nas.jlxip.net:57542"
+  wg_pubkey: "yV8UG5MJoVQ648Gi/Ff5KEquCRGEKYwG/ePqL5yIGyM="
+  peer_v4: "169.254.59.134"
+  peer_v6: "fe80:8aa4:ef24::1"
