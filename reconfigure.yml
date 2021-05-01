@@ -4,7 +4,7 @@
 - name: Configure dn42 routers
   hosts: dn42routers
   become: yes
-  strategy: mitogen_free
+  strategy: mitogen_linear
   roles:
     - config-iptables
     - role: config-loopback

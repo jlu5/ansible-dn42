@@ -1,4 +1,4 @@
-- name: Read Wireguard tunnel settings (v2)
+- name: Read WireGuard tunnel settings
   include_vars:
     file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
   ignore_errors: true
@@ -9,35 +9,20 @@
   include_vars:
     file: "global-config/igp-tunnels.yml"
 
-- name: Clean up obsolete tunnels for peers
-  include_tasks: "remove-wg-settings.yml"
-  loop: "{{ wg_peers | default([]) }}"
-  loop_control:
-    loop_var: peer_info
-  when: peer_info.get('remove')
+- name: Enumerate WireGuard tunnels to update
+  set_fact:
+    _wg_to_remove: "{{ (cleanup_remove_ifaces | default([]))
+                       + (wg_peers | default([]) | selectattr('remove', 'true') | map(attribute='name') | list) }}"
+    _wg_to_add: "{{ wg_peers | default([]) | selectattr('remove', 'false') | list
+                    + wg_peers | default([]) | selectattr('remove', 'undefined') | list}}"
 
-- name: Clean up unused interfaces
-  include_tasks: "remove-wg-settings.yml"
-  loop: "{{ cleanup_remove_ifaces | default([]) }}"
-  vars:
-    peer_info:
-      name: "{{ item }}"
-      # This task file doesn't require any other vars
-
-- name: Write Wireguard tunnel settings for peers (v2)
-  include_tasks: "write-wg-settings.yml"
-  loop: "{{ wg_peers | default([]) }}"
-  loop_control:
-    loop_var: peer_info
-  when: not peer_info.get('remove')
-
-- name: Write Wireguard tunnel settings for internal nodes (v2)
-  include_tasks: "write-wg-settings.yml"
+- name: Enumerate WireGuard tunnels to update (internal nodes)
+  set_fact:
+    _wg_to_add: "{{ _wg_to_add + [peer_info] }}"
   loop: "{{ igp_neighbours[inventory_hostname] | sort }}"
   loop_control:
     loop_var: igp_node
   vars:
-    # XXX: ugly substitutions...
     peer_info:
       name: "igp-{{ hostvars[igp_node]['shortname'] }}"
       port: "{{ igp_wg_ports['%s,%s' % (inventory_hostname, igp_node)] }}"
@@ -46,3 +31,17 @@
       peer_v4: "{{ hostvars[igp_node]['peering_lan_ip'] }}"
       peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
       is_internal_node: true
+
+# - name: "Debug _wg_to_remove"
+#   debug:
+#     var: _wg_to_remove
+
+# - name: "Debug _wg_to_add"
+#   debug:
+#     var: _wg_to_add
+
+- name: Remove obsolete WireGuard tunnels
+  include_tasks: "wg-remove.yml"
+
+- name: Write updated WireGuard tunnels
+  include_tasks: "wg-update.yml"
