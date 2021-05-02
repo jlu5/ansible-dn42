@@ -1,2 +1,0 @@
-- name: Install Netdata Agent
-  include_tasks: "netdata.yml"
