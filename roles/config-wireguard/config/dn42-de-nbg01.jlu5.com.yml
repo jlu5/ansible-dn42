@@ -209,3 +209,10 @@ wg_peers:
   wg_pubkey: "iM2wCf6z5DnzeI4QufFima+slsPloQXccnLygeSTDmA="
   peer_v4: "172.22.118.134"
   peer_v6: "fe80::3770/64"
+
+- name: dn42nbg-n4gi0s
+  port: 51311
+  remote: "dn42-peer1.tnkoch.de:51080"
+  wg_pubkey: "CGtVMUg58p4aRqKG27fuzaMdkp06qzrnlVzt7NM5dyI="
+  peer_v4: "172.22.66.97"
+  peer_v6: "fe80::229"
