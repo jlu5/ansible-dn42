@@ -132,20 +132,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -115.13983,
-                    36.169941
-                ]
-            },
-            "properties": {
-                "title": "us-las01",
-                "description": "Las Vegas, NV, US"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -118.243685,
                     34.052234
                 ]
@@ -858,25 +844,6 @@
                         41.878114
                     ],
                     [
-                        -115.13983,
-                        36.169941
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi01 <-> us-las01"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
                         -118.243685,
                         34.052234
                     ]
@@ -922,44 +889,6 @@
             },
             "properties": {
                 "title": "us-chi01 <-> us-sea02"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -115.13983,
-                        36.169941
-                    ],
-                    [
-                        -118.243685,
-                        34.052234
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-las01 <-> us-lax01"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -115.13983,
-                        36.169941
-                    ],
-                    [
-                        -122.332071,
-                        47.606209
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-las01 <-> us-sea02"
             }
         },
         {
