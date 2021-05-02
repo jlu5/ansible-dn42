@@ -13,7 +13,7 @@
 auto {{ ifname }}
 iface {{ ifname }} inet static
 {% if peer_info.get('is_internal_node') %}
-    address {{ peering_lan_ip }}
+    address {{ link_local_ip4 }}
 {% else %}
     address {{ local_v4 }}
 {% endif %}

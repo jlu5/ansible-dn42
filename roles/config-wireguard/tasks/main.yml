@@ -28,7 +28,7 @@
       port: "{{ igp_wg_ports['%s,%s' % (inventory_hostname, igp_node)] }}"
       remote: "{{ igp_node }}:{{ igp_wg_ports['%s,%s' % (inventory_hostname, igp_node)] }}"
       wg_pubkey: "{{ hostvars[igp_node]['wg_pubkey'] }}"
-      peer_v4: "{{ hostvars[igp_node]['peering_lan_ip'] }}"
+      peer_v4: "{{ hostvars[igp_node]['link_local_ip4'] }}"
       peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
       is_internal_node: true
 
