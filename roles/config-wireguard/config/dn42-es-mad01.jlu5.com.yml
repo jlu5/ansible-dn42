@@ -18,4 +18,4 @@ wg_peers:
   remote: "nas.jlxip.net:57542"
   wg_pubkey: "yV8UG5MJoVQ648Gi/Ff5KEquCRGEKYwG/ePqL5yIGyM="
   peer_v4: "169.254.59.134"
-  peer_v6: "fe80:8aa4:ef24::1"
+  peer_v6: "fe80::caca:120"
