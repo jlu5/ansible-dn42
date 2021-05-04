@@ -25,3 +25,10 @@ wg_peers:
   wg_pubkey: "0T0LUDBHnWAAg5Kz4OBF0r0+r+9WHtaUsvywKZSci2I="
   peer_v4: null
   peer_v6: "fd23:0:0:ffff::2037"
+
+- name: dn42syd-owens
+  port: 51099
+  remote: "au-syd01.owensresearch.org:21080"
+  wg_pubkey: "GVZ4ATpTmxxpzt8l0BtMiBuQQeunN19Y+Fbyusx8jRw="
+  peer_v4: "172.21.99.153"
+  peer_v6: "fd42:4242:1099:179::153"
