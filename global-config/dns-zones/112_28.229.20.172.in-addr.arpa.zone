@@ -21,4 +21,4 @@ $TTL 300
 120 IN PTR es-mad01.rtr.jlu5.dn42.
 121 IN PTR it-mil01.rtr.jlu5.dn42.
 125 IN PTR au-syd01.rtr.jlu5.dn42.
-126 IN PTR us-las01.rtr.jlu5.dn42.
+127 IN PTR sg01.rtr.jlu5.dn42.

@@ -18,7 +18,7 @@ Here I use Ansible to configure the following components:
 - [dn42 Peerfinder](https://dn42.us/peers)
 - Anycast DNS via PowerDNS:
   - Authoritative server for jlu5.dn42 and PTR zones
-  - Public recursive resolver (dn42, NeoNetwork, clearnet) @ **dns.jlu5.dn42**
+  - Public recursive resolver (dn42, clearnet, and interconnected networks) @ **dns.jlu5.dn42** / 172.23.0.53 / fd42:d42:d42:53::1
   - For this I also use a [custom DNS zone generator](scripts/make-dns-zones.py) that reads from [YAML](global-config/dns-entries.yml) and the Ansible inventory
 - iptables firewall rules for dn42
 
