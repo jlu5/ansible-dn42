@@ -24,7 +24,7 @@ ROUTER_IP = {
 }
 
 # Autofill proxy address for each router
-PROXY = {node: "%s:{{ birdlg_proxy_port }}" % ips[0] for node, ips in ROUTER_IP.items()}
+PROXY = {node: "%s:{{ birdlg_proxy_port }}" % ips[0] for node, ips in sorted(ROUTER_IP.items())}
 
 # Lazily assuming all nodes share the same ASN
 AS_NUMBER = {node: "{{ ownas }}" for node in ROUTER_IP}
