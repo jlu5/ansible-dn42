@@ -171,3 +171,10 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_las01"
 
 ### END tunnels migrated from us-las01
+
+- name: dn42lax-hertz
+  port: 51353
+  remote: "45.63.56.229:21080"
+  wg_pubkey: "KhU1i+sGJKl4VNqQeuOraos8rEkfomV9w35K8lOmgns="
+  peer_v4: "172.20.29.65"
+  peer_v6: "fe80::1353"
