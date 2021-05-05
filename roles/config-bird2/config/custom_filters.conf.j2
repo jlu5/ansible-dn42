@@ -87,6 +87,7 @@ function prefer_same_region_origin(int base_weight)
     # Without this, they will suck up all traffic for routes regardless of origin because everything
     # they export will appear to have the same region tag as the receiving node.
     my_region_tag = get_region_tag(DN42_REGION);
+    incoming_tag = 0;
 
 {# This is really cursed but I don't want to write the get_region_tag logic twice... #}
 {# It doesn't seem possible to extract values from communities OR use clist literals (substituting the bgp_community field) #}
