@@ -1,0 +1,10 @@
+ovpn_peers:
+- name: dn42sgp-icez
+  #port: 52244  # not used
+  remote: "sgp.dn42.icez.net:41080"
+  proto: udp
+  peer_v4: "172.23.233.251"
+  peer_v6: null
+  ovpn_cipher: aes-256-cbc
+  ovpn_options:
+  - comp-lzo
