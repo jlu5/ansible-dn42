@@ -117,3 +117,10 @@ wg_peers:
   wg_pubkey: "ifJ451maK3eaEg1FrewNbgCEMjMmEinYt1Sd1pwGTDc="
   peer_v4: "172.23.250.42"
   peer_v6: "fe80::2633"
+
+- name: dn42bhs-serverm
+  port: 53770
+  remote: "bhs1.dn42.servermade.com:51080"
+  wg_pubkey: "6YKlRpiqLJb9C8esZjUS0RbC9Bh7aTo5M5F3cUAcZ2o="
+  peer_v4: "172.22.118.135"
+  peer_v6: "fe80::3770/64"
