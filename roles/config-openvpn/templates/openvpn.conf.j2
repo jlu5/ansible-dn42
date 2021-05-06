@@ -1,0 +1,33 @@
+{%- set ifname = peer_info['name'] %}
+{%- set _ovpn_proto = peer_info['proto'] | default('udp') %}
+proto {{ _ovpn_proto }}
+mode p2p
+
+dev {{ ifname }}
+remote {{ peer_info['remote'].rsplit(':', 1)[0] }}
+rport {{ peer_info['remote'].rsplit(':', 1)[1] }}
+{# Follow wireguard config behaviour: if no port is specified, don't bind to anything #}
+{% if peer_info.get('port') %}
+local {{ ansible_default_ipv6.address if '6' in _ovpn_proto else ansible_default_ipv4.address }}
+lport {{ peer_info['port'] }}
+{% else %}
+nobind
+{% endif %}
+
+ifconfig {{ peer_info.get('local_v4', ownip) }} {{ peer_info['peer_v4'] }}
+
+{% if peer_info['peer_v6'] %}
+tun-ipv6
+ifconfig-ipv6 {{ peer_info.get('local_v6', ownip6) }} {{ peer_info['peer_v6'] }}
+{% endif %}
+
+dev-type tun
+persist-key
+persist-tun
+
+cipher {{ peer_info['ovpn_cipher'] }}
+secret /etc/openvpn/dn42-keys/{{ ifname }}.key
+
+{% for option in peer_info.get('ovpn_options', []) %}
+{{ option }}
+{% endfor %}

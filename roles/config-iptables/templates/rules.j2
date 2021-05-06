@@ -18,10 +18,16 @@
 {% set igp_wg_port = igp_wg_ports["%s,%s" % (inventory_hostname, igp_neighbour)] %}
 -A INPUT -p udp --dport {{ igp_wg_port }} -i {{ ansible_default_ipv4.interface }} -j ACCEPT
 {% endfor %}
-# Peers
+# WireGuard peers
 {% for wg_peer in wg_peers|default([]) %}
 {% if wg_peer.get('port') %}
 -A INPUT -p udp --dport {{ wg_peer['port'] }} -i {{ ansible_default_ipv4.interface }} -j ACCEPT
+{% endif %}
+{% endfor %}
+# OpenVPN peers
+{% for ovpn_peer in ovpn_peers|default([]) %}
+{% if ovpn_peer.get('port') %}
+-A INPUT -p {{ 'tcp' if ovpn_peer.get('proto', 'udp').startswith('tcp') else 'udp' }} --dport {{ ovpn_peer['port'] }} -i {{ ansible_default_ipv4.interface }} -j ACCEPT
 {% endif %}
 {% endfor %}
 

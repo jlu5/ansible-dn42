@@ -3,11 +3,16 @@
     name:
     - git
     - iptables
-    - rsync
+    - rsync  # for synchronize module
+
+    # Tools to assist troubleshooting
     - dnsutils
     - mtr-tiny
+    - tcpdump
+
     # bird2 backports from https://deb.utopia-repository.org
     - bird2
+    - openvpn
     # wireguard from buster-backports
     - wireguard
     # needed to use ansible become on an unprivileged user: https://docs.ansible.com/ansible/latest/user_guide/become.html#risks-of-becoming-an-unprivileged-user

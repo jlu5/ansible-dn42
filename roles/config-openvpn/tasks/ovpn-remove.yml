@@ -1,0 +1,24 @@
+- name: "Remove obsolete OpenVPN tunnel configs"
+  file:
+    dest: "/etc/openvpn/{{ peer_name }}.conf"
+    state: absent
+  loop: "{{ _ovpn_to_remove }}"
+  loop_control:
+    loop_var: peer_name
+
+- name: "Remove obsolete OpenVPN keys"
+  file:
+    dest: "/etc/openvpn/dn42-keys/{{ peer_name }}.key"
+    state: absent
+  loop: "{{ _ovpn_to_remove }}"
+  loop_control:
+    loop_var: peer_name
+
+- name: "Stop obsolete OpenVPN instances"
+  systemd:
+    name: "openvpn@{{ peer_name }}"
+    state: stopped
+    enabled: no
+  loop: "{{ _ovpn_to_remove }}"
+  loop_control:
+    loop_var: peer_name

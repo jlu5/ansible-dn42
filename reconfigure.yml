@@ -10,5 +10,6 @@
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.igp }}"
     - config-wireguard
+    - config-openvpn
     - config-igpping
     - config-bird2

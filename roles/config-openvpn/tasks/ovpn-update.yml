@@ -1,0 +1,40 @@
+- name: "Write OpenVPN tunnel config"
+  template:
+    src: openvpn.conf.j2
+    dest: "/etc/openvpn/{{ peer_info.name }}.conf"
+  loop: "{{ _ovpn_to_add }}"
+  loop_control:
+    loop_var: peer_info
+  register: _ovpn_conf_tmpl
+
+- name: "Write OpenVPN private key"
+  copy:
+    src: "{{ role_path }}/config/keys/{{ peer_info.name }}.key"
+    dest: "/etc/openvpn/dn42-keys/{{ peer_info.name }}.key"
+    owner: root
+    group: root
+    mode: '600'
+  loop: "{{ _ovpn_to_add }}"
+  loop_control:
+    loop_var: peer_info
+  register: _ovpn_key_copy
+
+- name: "Start OpenVPN instances"
+  systemd:
+    name: "openvpn@{{ peer_info.name }}"
+    state: "started"
+    enabled: yes
+  loop: "{{ _ovpn_to_add }}"
+  loop_control:
+    loop_var: peer_info
+  ignore_errors: true  # Don't cause errors to block execution
+
+- name: "Reload OpenVPN instances"
+  systemd:
+    name: "openvpn@{{ peer_info.name }}"
+    state: "reloaded"
+    enabled: yes
+  loop: "{{ _ovpn_to_add }}"
+  loop_control:
+    loop_var: peer_info
+  ignore_errors: true
