@@ -103,6 +103,7 @@ def main():
                 )
                 feature = geojson.Feature(geometry=line, properties={
                     "title": f'{node} <-> {neighbour}',
+                    "description": '(costs calculated dynamically)',
                 })
                 tunnel_lines.append(feature)
 

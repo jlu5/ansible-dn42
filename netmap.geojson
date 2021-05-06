@@ -90,6 +90,20 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    103.819836,
+                    1.352083
+                ]
+            },
+            "properties": {
+                "title": "sg01",
+                "description": "Singapore, SG"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -0.127758,
                     51.507351
                 ]
@@ -185,7 +199,8 @@
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> de-nbg01"
+                "title": "au-syd01 <-> de-nbg01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -204,7 +219,28 @@
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> jp-tyo01"
+                "title": "au-syd01 <-> jp-tyo01",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        151.209295,
+                        -33.86882
+                    ],
+                    [
+                        103.819836,
+                        1.352083
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "au-syd01 <-> sg01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -223,7 +259,8 @@
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> uk-lon01"
+                "title": "au-syd01 <-> uk-lon01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -242,7 +279,8 @@
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> us-lax01"
+                "title": "au-syd01 <-> us-lax01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -261,7 +299,8 @@
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> us-sea02"
+                "title": "au-syd01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -280,7 +319,8 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> es-mad01"
+                "title": "de-nbg01 <-> es-mad01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -299,7 +339,8 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> it-mil01"
+                "title": "de-nbg01 <-> it-mil01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -318,7 +359,28 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> nl-ams02"
+                "title": "de-nbg01 <-> nl-ams02",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        103.819836,
+                        1.352083
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> sg01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -337,7 +399,8 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> uk-lon01"
+                "title": "de-nbg01 <-> uk-lon01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -356,7 +419,8 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> us-atl01"
+                "title": "de-nbg01 <-> us-atl01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -375,7 +439,8 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> us-chi01"
+                "title": "de-nbg01 <-> us-chi01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -394,7 +459,8 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> us-lax01"
+                "title": "de-nbg01 <-> us-lax01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -413,7 +479,8 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> us-nyc02"
+                "title": "de-nbg01 <-> us-nyc02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -432,7 +499,8 @@
                 ]
             },
             "properties": {
-                "title": "de-nbg01 <-> us-sea02"
+                "title": "de-nbg01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -451,7 +519,8 @@
                 ]
             },
             "properties": {
-                "title": "es-mad01 <-> it-mil01"
+                "title": "es-mad01 <-> it-mil01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -470,7 +539,8 @@
                 ]
             },
             "properties": {
-                "title": "es-mad01 <-> nl-ams02"
+                "title": "es-mad01 <-> nl-ams02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -489,7 +559,8 @@
                 ]
             },
             "properties": {
-                "title": "es-mad01 <-> uk-lon01"
+                "title": "es-mad01 <-> uk-lon01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -508,7 +579,28 @@
                 ]
             },
             "properties": {
-                "title": "es-mad01 <-> us-chi01"
+                "title": "es-mad01 <-> us-chi01",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        9.189982,
+                        45.464204
+                    ],
+                    [
+                        103.819836,
+                        1.352083
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "it-mil01 <-> sg01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -527,7 +619,28 @@
                 ]
             },
             "properties": {
-                "title": "it-mil01 <-> uk-lon01"
+                "title": "it-mil01 <-> uk-lon01",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        139.650311,
+                        35.676192
+                    ],
+                    [
+                        103.819836,
+                        1.352083
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "jp-tyo01 <-> sg01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -546,7 +659,8 @@
                 ]
             },
             "properties": {
-                "title": "jp-tyo01 <-> uk-lon01"
+                "title": "jp-tyo01 <-> uk-lon01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -565,7 +679,8 @@
                 ]
             },
             "properties": {
-                "title": "jp-tyo01 <-> us-chi01"
+                "title": "jp-tyo01 <-> us-chi01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -584,7 +699,8 @@
                 ]
             },
             "properties": {
-                "title": "jp-tyo01 <-> us-lax01"
+                "title": "jp-tyo01 <-> us-lax01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -603,7 +719,8 @@
                 ]
             },
             "properties": {
-                "title": "jp-tyo01 <-> us-sea02"
+                "title": "jp-tyo01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -622,7 +739,8 @@
                 ]
             },
             "properties": {
-                "title": "nl-ams02 <-> uk-lon01"
+                "title": "nl-ams02 <-> uk-lon01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -641,7 +759,8 @@
                 ]
             },
             "properties": {
-                "title": "nl-ams02 <-> us-atl01"
+                "title": "nl-ams02 <-> us-atl01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -660,7 +779,8 @@
                 ]
             },
             "properties": {
-                "title": "nl-ams02 <-> us-chi01"
+                "title": "nl-ams02 <-> us-chi01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -679,7 +799,68 @@
                 ]
             },
             "properties": {
-                "title": "nl-ams02 <-> us-nyc02"
+                "title": "nl-ams02 <-> us-nyc02",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        103.819836,
+                        1.352083
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "sg01 <-> uk-lon01",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        103.819836,
+                        1.352083
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "sg01 <-> us-lax01",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        103.819836,
+                        1.352083
+                    ],
+                    [
+                        -122.332071,
+                        47.606209
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "sg01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -698,7 +879,8 @@
                 ]
             },
             "properties": {
-                "title": "uk-lon01 <-> us-atl01"
+                "title": "uk-lon01 <-> us-atl01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -717,7 +899,8 @@
                 ]
             },
             "properties": {
-                "title": "uk-lon01 <-> us-chi01"
+                "title": "uk-lon01 <-> us-chi01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -736,7 +919,8 @@
                 ]
             },
             "properties": {
-                "title": "uk-lon01 <-> us-lax01"
+                "title": "uk-lon01 <-> us-lax01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -755,7 +939,8 @@
                 ]
             },
             "properties": {
-                "title": "uk-lon01 <-> us-nyc02"
+                "title": "uk-lon01 <-> us-nyc02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -774,7 +959,8 @@
                 ]
             },
             "properties": {
-                "title": "uk-lon01 <-> us-sea02"
+                "title": "uk-lon01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -793,7 +979,8 @@
                 ]
             },
             "properties": {
-                "title": "us-atl01 <-> us-chi01"
+                "title": "us-atl01 <-> us-chi01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -812,7 +999,8 @@
                 ]
             },
             "properties": {
-                "title": "us-atl01 <-> us-lax01"
+                "title": "us-atl01 <-> us-lax01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -831,7 +1019,8 @@
                 ]
             },
             "properties": {
-                "title": "us-atl01 <-> us-nyc02"
+                "title": "us-atl01 <-> us-nyc02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -850,7 +1039,8 @@
                 ]
             },
             "properties": {
-                "title": "us-chi01 <-> us-lax01"
+                "title": "us-chi01 <-> us-lax01",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -869,7 +1059,8 @@
                 ]
             },
             "properties": {
-                "title": "us-chi01 <-> us-nyc02"
+                "title": "us-chi01 <-> us-nyc02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -888,7 +1079,8 @@
                 ]
             },
             "properties": {
-                "title": "us-chi01 <-> us-sea02"
+                "title": "us-chi01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -907,7 +1099,8 @@
                 ]
             },
             "properties": {
-                "title": "us-lax01 <-> us-nyc02"
+                "title": "us-lax01 <-> us-nyc02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -926,7 +1119,8 @@
                 ]
             },
             "properties": {
-                "title": "us-lax01 <-> us-sea02"
+                "title": "us-lax01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -945,7 +1139,8 @@
                 ]
             },
             "properties": {
-                "title": "us-nyc02 <-> us-sea02"
+                "title": "us-nyc02 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
             }
         }
     ]

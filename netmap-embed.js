@@ -1,6 +1,7 @@
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: new google.maps.LatLng(42, -90),
+        // Roughly centre the map so that all PoPs are in view
+        center: new google.maps.LatLng(30, -120),
         zoom: 2,
         mapTypeId: 'hybrid'
     });
