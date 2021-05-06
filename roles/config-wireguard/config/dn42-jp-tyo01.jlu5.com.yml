@@ -28,7 +28,7 @@ wg_peers:
   peer_v4: "172.20.191.200"
   peer_v6: "fe80::2464/64"
 
-- name: dn42tyo-yuetaw
+- name: dn42tyo-yuetau
   port: 50925
   remote: "nrt.yuetau.net:21080"
   wg_pubkey: "KcSV/4L6bHIAjZGnuYaTG9+3X0yWiXM4DKvECOJ6txI="

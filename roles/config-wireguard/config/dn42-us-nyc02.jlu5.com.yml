@@ -34,9 +34,6 @@ wg_peers:
   peer_v4: null
   peer_v6: "fe80::42:2237/128"
 
-- name: "dn42nyc-xnoe"
-  remove: true
-
 - name: dn42bhs-aasg
   port: 50827
   remote: "shingebiss.lorkep.trade:51080"
@@ -51,7 +48,7 @@ wg_peers:
   peer_v4: null
   peer_v6: "fe80::3735:1"
 
-- name: dn42ykt-yuetaw
+- name: dn42ykt-yuetau
   port: 50925
   remote: "ykf.yuetau.net:21080"
   wg_pubkey: "BSBEILTeZrJlg8YcOkJhfE0AGpwWLCsgo9AOUgWfBVA="
@@ -93,8 +90,6 @@ wg_peers:
   local_v6: "fe80::115"
   wg_privkey: "/etc/wireguard/privatekey_ca-bhs01-legacy"
 
-- name: "dn42nyc-marropa"
-  remove: true
 ### end legacy configurations from ca-bhs01
 
 - name: dn42nyc-yura
