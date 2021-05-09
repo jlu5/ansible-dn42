@@ -1,5 +1,5 @@
-- name: "Reload iptables rules for IPv4"
-  command: "iptables-restore {{ iptables_rules_path }}"
+- name: "Reload iptables rules"
+  command: "{{ iptables_dir }}/apply"
 
-- name: "Reload iptables rules for IPv6"
-  command: "ip6tables-restore {{ ip6tables_rules_path }}"
+- name: "Reload anycast rules"
+  shell: "{{ iptables_dir }}/apply-anycast stop; {{ iptables_dir }}/apply-anycast start"

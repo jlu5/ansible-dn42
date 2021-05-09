@@ -135,6 +135,11 @@ function ebgp_export_filter() {
     if (bgp_path.last ~ [64875]) then {
         reject;
     }
+    # Don't export device routes for dn42 anycast networks. These will be filled in via a static route config
+    # triggered by service start/stop
+    if (is_anycast_network() && source = RTS_DEVICE) then {
+        reject;
+    }
 };
 
 function ibgp_import_filter() {
@@ -164,6 +169,11 @@ function ibgp_import_filter() {
 
 function ibgp_export_filter() {
     if ((source != RTS_BGP || is_self_net() || is_self_net_v6()) && !is_anycast_network()) then {
+        reject;
+    }
+    # Don't export device routes for dn42 anycast networks. These will be filled in via a static route config
+    # triggered by service start/stop
+    if (is_anycast_network() && source = RTS_DEVICE) then {
         reject;
     }
     accept;

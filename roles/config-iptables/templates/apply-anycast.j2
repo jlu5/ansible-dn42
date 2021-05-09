@@ -1,0 +1,42 @@
+#!/bin/bash
+# Apply anycast NAT rules and static routes for 172.23.0.53 and friends
+
+if [[ $EUID -ne 0 ]]; then
+	echo "This script must be run as root."
+	exit 1
+fi
+
+{% set anycast_dns_redirect_target = dummy_interfaces.anycast_recursors.ip4[1] | quote %}
+
+if [[ "$1" == "start" ]]; then
+	iptables -t nat -A PREROUTING -d 172.23.0.53 -j DNAT --to-destination {{ anycast_dns_redirect_target }}
+	iptables -t nat -A OUTPUT -d 172.23.0.53 -j DNAT --to-destination {{ anycast_dns_redirect_target }}
+	iptables -t nat -A POSTROUTING -s {{ anycast_dns_redirect_target }} -j SNAT --to-source 172.23.0.53
+	echo "Configured NAT rules"
+	cat > /etc/bird/local_acs_recursors.conf << "EOF"
+protocol static static_acs4 {
+	ipv4;
+	route 172.23.0.53/32 via "{{ dummy_interfaces.anycast_recursors.ifname }}";
+}
+
+protocol static static_acs6 {
+	ipv6;
+	route fd42:d42:d42:53::/64 via "{{ dummy_interfaces.anycast_recursors.ifname }}" {
+		preference = 250;
+	};
+}
+EOF
+	echo "Configured static route configuration /etc/bird/local_acs_recursors.conf"
+	birdc configure || true
+
+elif [[ "$1" == "stop" ]]; then
+	rm -f -v /etc/bird/local_acs_recursors.conf
+	birdc configure || true
+	iptables -t nat -D PREROUTING -d 172.23.0.53 -j DNAT --to-destination {{ anycast_dns_redirect_target }}
+	iptables -t nat -D OUTPUT -d 172.23.0.53 -j DNAT --to-destination {{ anycast_dns_redirect_target }}
+	iptables -t nat -D POSTROUTING -s {{ anycast_dns_redirect_target }} -j SNAT --to-source 172.23.0.53
+	echo "Deconfigured NAT rules"
+else
+	echo "Unknown subcommand: expected start or stop"
+	exit 1
+fi

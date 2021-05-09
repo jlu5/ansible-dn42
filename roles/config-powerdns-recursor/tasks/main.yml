@@ -48,7 +48,10 @@
       # work around https://github.com/PowerDNS/pdns/issues/10263
       qname-minimization: no
 
-    # Work around errors described at https://github.com/PowerDNS/pdns_recursor-ansible/issues/69
     pdns_rec_service_overrides:
+      # Work around errors described at https://github.com/PowerDNS/pdns_recursor-ansible/issues/69
       User: "{{ pdns_rec_user }}"
       Group: "{{ pdns_rec_group }}"
+      # Start/stop
+      ExecStartPost: "+-{{ iptables_dir }}/apply-anycast start"
+      ExecStopPost: "+-{{ iptables_dir }}/apply-anycast stop"

@@ -107,7 +107,6 @@ protocol kernel {
         import none;
         export filter {
             if source = RTS_DEVICE then {
-              print "Not registering device route for ", net, " in kernel";
               reject;
             }
             krt_prefsrc = OWNIPv6;
@@ -123,7 +122,6 @@ protocol kernel {
         import none;
         export filter {
             if source = RTS_DEVICE then {
-              print "Not registering device route for ", net, " in kernel";
               reject;
             }
             krt_prefsrc = OWNIP;

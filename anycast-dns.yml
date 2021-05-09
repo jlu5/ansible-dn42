@@ -21,6 +21,7 @@
       dummy_iface: "{{ dummy_interfaces.anycast_auth_dns }}"
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.anycast_recursors }}"
+    - role: config-iptables
 
     # Install & configure PowerDNS authoritative server
     - role: config-powerdns

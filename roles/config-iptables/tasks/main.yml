@@ -28,6 +28,27 @@
     my_cidrs: "{{ ownnets6 | join(',') }}"
     iftype: 6
 
+- name: "Create iptables rules folder"
+  file:
+    path: "{{ iptables_dir }}"
+    state: directory
+
+- name: "Template iptables apply script"
+  template:
+    src: apply.j2
+    dest: "{{ iptables_dir }}/apply"
+    mode: '755'
+  notify:
+  - "Reload iptables rules"
+
+- name: "Template iptables NAT support script"
+  template:
+    src: apply-anycast.j2
+    dest: "{{ iptables_dir }}/apply-anycast"
+    mode: '755'
+  notify:
+  - "Reload anycast rules"
+
 - name: "Write iptables rules for IPv4"
   blockinfile:
     dest: "{{ iptables_rules_path }}"
@@ -38,7 +59,7 @@
     validate: "iptables-restore --test %s"
     marker: "# {mark} ansible-dn42 managed block"
   notify:
-  - "Reload iptables rules for IPv4"
+  - "Reload iptables rules"
 
 - name: "Write iptables rules for IPv6"
   blockinfile:
@@ -50,4 +71,4 @@
     validate: "ip6tables-restore --test %s"
     marker: "# {mark} ansible-dn42 managed block"
   notify:
-  - "Reload iptables rules for IPv6"
+  - "Reload iptables rules"
