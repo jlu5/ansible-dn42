@@ -82,3 +82,10 @@ wg_peers:
   wg_pubkey: "3egMh/fpa/+YTAfIXihtNYTReh27AaS53WJyp7UT/Qg="
   peer_v4: "172.20.191.207/32"
   peer_v6: "fe80::2464/64"
+
+- name: dn42osl-yurui
+  port: 52330
+  remote: "osl01.kn.node.argonauts.xyz:51080"
+  wg_pubkey: "POZ2ZRRPbQtfcb1d0eiNeKlBVqJiYFQ4/naY/xfkfDQ="
+  peer_v4: "172.23.32.3"
+  peer_v6: "fe80::2330:1"
