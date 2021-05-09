@@ -21,6 +21,9 @@
   synchronize:
     src: "{{ playbook_dir }}/global-config/dns-zones/"
     dest: "{{ dns_zones_dir }}"
+    checksum: true
+    archive: false
     delete: true
+    recursive: true
   notify:
     - Reconfigure PowerDNS
