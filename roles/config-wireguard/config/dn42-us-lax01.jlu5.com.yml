@@ -178,3 +178,10 @@ wg_peers:
   wg_pubkey: "KhU1i+sGJKl4VNqQeuOraos8rEkfomV9w35K8lOmgns="
   peer_v4: "172.20.29.65"
   peer_v6: "fe80::1353"
+
+- name: dn42lax-testnet
+  port: 53308
+  remote: "lax01.dn42.testnet.cyou:41080"
+  wg_pubkey: "fxzL3/spstTHn0cxaAlVZHIfa1VQP06FKjJL9P/Zzgg="
+  peer_v4: "172.23.99.65"
+  peer_v6: "fe80::3308:65"
