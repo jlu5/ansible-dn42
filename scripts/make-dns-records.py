@@ -167,7 +167,8 @@ def write_ptr6_zone(netblock):
 
 def _load_config():
     global hosts
-    hosts = yaml_load(args.hosts)['dn42routers']['hosts']
+    hosts = yaml_load(args.hosts)
+    hosts = get_hosts(hosts)
     general_vars = yaml_load(args.general_conf)
 
     # Follow Ansible templating for dns-entries.yml

@@ -15,7 +15,7 @@ from _common import *
 
 def main():
     hosts = yaml_load('hosts.yml')
-    hosts = hosts['dn42routers']['hosts']
+    hosts = get_hosts(hosts)
     servers_by_name = {serverdata['shortname']: server for server, serverdata in hosts.items()}
 
     try:

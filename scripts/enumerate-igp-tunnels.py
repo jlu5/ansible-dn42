@@ -28,7 +28,7 @@ def main():
     data = _read_previous_settings()
     hosts = yaml_load('hosts.yml')
 
-    dn42routers = hosts['dn42routers']['hosts']
+    dn42routers = get_hosts(hosts)
     meshrouters = hosts['meshrouters']['hosts']
     data['igp_neighbours'].clear()  # clear igp_neighbours, we will be rewriting it
     seen_shortnames = {}
