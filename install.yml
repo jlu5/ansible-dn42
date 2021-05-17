@@ -2,8 +2,8 @@
   hosts: dn42routers
   become: yes
   roles:
-    - base-setup
-    - setup-extensions
+    - setup-base
+    - setup-igpping  # needed for IGP costs
 
   post_tasks:
   - name: Read Wireguard public key
