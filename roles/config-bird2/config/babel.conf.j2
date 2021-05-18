@@ -4,6 +4,7 @@ protocol direct {
     interface "{{ dummy_ifname_glob }}";
 };
 
+{% if babel_links is defined or inventory_hostname in igp_neighbours %}
 protocol babel int_babel {
     ipv4 {
         import where source != RTS_BGP && is_self_net();
@@ -30,3 +31,4 @@ protocol babel int_babel {
 {% endfor %}
 {% endif %}
 };
+{% endif %}
