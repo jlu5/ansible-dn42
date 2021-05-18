@@ -25,7 +25,6 @@ protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
 }
 {%- endmacro %}
 
-{# Servers in mesh have ibgp_rr_upstreams defined. #}
 {# Template RR upstreams for servers not in mesh #}
 {% if ibgp_rr_upstreams is defined %}
 {% for host in ibgp_rr_upstreams %}
