@@ -48,6 +48,7 @@
     mode: '755'
   notify:
   - "Reload anycast rules"
+  when: "'anycast_pool' in group_names"
 
 - name: "Write iptables rules for IPv4"
   blockinfile:

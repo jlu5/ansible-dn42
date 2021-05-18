@@ -2,7 +2,7 @@
   import_playbook: update-local-state.yml
 
 - name: Configure dn42 routers
-  hosts: dn42routers
+  hosts: dn42routers:private
   become: yes
   strategy: mitogen_linear
   roles:

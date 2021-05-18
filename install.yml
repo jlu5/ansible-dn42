@@ -1,5 +1,5 @@
 - name: Base setup for dn42 routers
-  hosts: dn42routers
+  hosts: dn42routers:private
   become: yes
   roles:
     - setup-base

@@ -1,5 +1,5 @@
 - name: Setup extensions for dn42 routers
-  hosts: dn42routers:!private
+  hosts: dn42routers
   become: yes
   roles:
   # These are optional roles only needed for nodes open to peering
