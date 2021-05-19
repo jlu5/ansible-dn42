@@ -97,7 +97,7 @@ function prefer_same_region_origin(int base_weight)
     }
 {% endfor %}
     if (incoming_tag = 0 || incoming_tag = my_region_tag) then {
-        print "Route ", net, " has incoming tag ", incoming_tag, " matching ours ", my_region_tag;
+        #print "Route ", net, " has incoming tag ", incoming_tag, " matching ours ", my_region_tag;
         bgp_local_pref = bgp_local_pref + base_weight/bgp_path.len;
     }
 }
@@ -159,7 +159,7 @@ function ibgp_import_filter() {
     }
 
     # Penalize routes learned from another region that have high (>50ms) latency
-    if ((OWNAS, LC_ORIGIN_REGION, DN42_REGION) !~ bgp_large_community && bgp_community ~ [(64511, 5..9)]) then {
+    else if ((OWNAS, LC_ORIGIN_REGION, DN42_REGION) !~ bgp_large_community && bgp_community ~ [(64511, 5..9)]) then {
         safe_lower_pref(100 / bgp_path.len);
         safe_lower_pref(1);
     }
