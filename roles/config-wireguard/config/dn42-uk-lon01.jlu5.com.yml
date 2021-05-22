@@ -94,11 +94,7 @@ wg_peers:
   peer_v6: "fe80::3618/64"
 
 - name: dn42rbx-kszczot
-  port: 53124
-  remote: "5.135.153.44:21005"
-  wg_pubkey: "FI1wpfkYRgAVyHCl3aq3fy/qFehdEcROm+j8vLCJO0M="
-  peer_v4: 172.20.149.65
-  peer_v6: "fe80::1189"
+  remove: true
 
 - name: dn42hel-andi
   port: 53991

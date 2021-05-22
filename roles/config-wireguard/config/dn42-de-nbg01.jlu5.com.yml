@@ -216,3 +216,10 @@ wg_peers:
   wg_pubkey: "CGtVMUg58p4aRqKG27fuzaMdkp06qzrnlVzt7NM5dyI="
   peer_v4: "172.22.66.97"
   peer_v6: "fe80::229"
+
+- name: dn42fsn-kszczot
+  port: 53124
+  remote: "de01.dn42.kszczot.ovh:21080"
+  wg_pubkey: "7dBbLZa2s7oSsb2gh+umVhz+bs8vv5HPRvilVagl/xc="
+  peer_v4: 172.20.149.66
+  peer_v6: "fe80::3124"
