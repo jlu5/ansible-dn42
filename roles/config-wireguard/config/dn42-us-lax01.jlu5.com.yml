@@ -192,3 +192,10 @@ wg_peers:
   wg_pubkey: "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI="
   peer_v4: "172.20.47.1"
   peer_v6: "fe80::1123"
+
+- name: dn42lax-nwn
+  port: 50344
+  remote: "lax1.us.node.nwn.moe:21080"
+  wg_pubkey: "3eVAIQT9T0RqjG0chqnaTYcMWaXBzwEEO5JO8j/Wxlc="
+  peer_v4: "172.23.110.97"
+  peer_v6: "fe80::cafe"
