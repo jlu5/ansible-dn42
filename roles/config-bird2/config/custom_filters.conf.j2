@@ -68,10 +68,8 @@ function get_region_tag(int dn42_region_tag) {
         return 2;  # North America - Central/East
     } else if (dn42_region_tag = 41) then {
         return 3;  # Europe
-    } else if (dn42_region_tag ~ [51..52]) then {
-        return 4;  # Asia E/SE
-    } else if (dn42_region_tag = 53) then {
-        return 5;  # Oceania
+    } else if (dn42_region_tag ~ [51..53]) then {
+        return 4;  # Asia E/SE + Oceania
     }
     return 0;
 }
