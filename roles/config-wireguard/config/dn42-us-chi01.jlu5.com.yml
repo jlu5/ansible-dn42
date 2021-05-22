@@ -1,10 +1,6 @@
 wg_peers:
 - name: dn42chi-burble
-  port: 50001
-  remote: "dn42-us-chi1.burble.com:21080"
-  wg_pubkey: "+qLFgFIfFKMagWVVAZf/WeOopMm0g6aMTBKGqPBf6Qw="
-  peer_v4: "172.20.129.166/32"
-  peer_v6: "fd42:4242:2601:2e::1/128"
+  remove: true
 
 - name: dn42chi-tech9
   port: 50002
@@ -28,18 +24,12 @@ wg_peers:
   peer_v4: "172.20.234.65/32"
   peer_v6: "fe80::12:97"
 
-- name: "dn42mia-santost"
-  remove: true
-
 - name: dn42buf-kioubit
   port: 53914
   remote: "us2.g-load.eu:21080"
   wg_pubkey: "6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s="
   peer_v4: "172.20.53.98"
   peer_v6: "fe80::ade0"
-
-- name: dn42bos-hammy
-  remove: true
 
 - name: dn42mci-aftbit
   port: 50822
