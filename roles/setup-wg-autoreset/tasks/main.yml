@@ -1,0 +1,12 @@
+- name: "Upload wg-autoreset script"
+  copy:
+    src: "{{ playbook_dir }}/scripts/wg-autoreset.sh"
+    dest: "{{ automation_root_dir }}/"
+    mode: '0755'
+
+- name: Create cron job for wg-autoreset
+  cron:
+    name: wg-autoreset
+    minute: "3"   # trigger once every hour
+    user: "root"  # needed to access & change wg settings
+    job: "{{ automation_root_dir }}/wg-autoreset.sh > {{ automation_user_home }}/wg-autoreset.log 2>&1"

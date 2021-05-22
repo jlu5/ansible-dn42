@@ -6,3 +6,4 @@
   # This should run after reconfigure.yml as the dn42 dummy interfaces need to be created first.
     - setup-peerfinder
     - setup-bird-lg
+    - setup-wg-autoreset
