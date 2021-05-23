@@ -3,10 +3,10 @@ ListenPort = {{ peer_info['port'] }}
 
 [Peer]
 PublicKey = {{ peer_info['wg_pubkey'] }}
-{% if 'wg_presharedkey' in peer_info %}
+{% if peer_info.get('wg_presharedkey') %}
 PresharedKey = {{ peer_info['wg_presharedkey'] }}
 {% endif %}
-{% if 'remote' in peer_info %}
+{% if peer_info.get('remote') %}
 Endpoint = {{ peer_info['remote'] }}
 {% endif %}
 AllowedIPs = 0.0.0.0/0,::/0
