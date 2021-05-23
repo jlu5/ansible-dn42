@@ -11,9 +11,11 @@ read -ra wg_interfaces < <(wg show interfaces)
 TIMEOUT=$(expr 60 '*' 30)  # 30 minutes
 
 reset_iface() {
-    echo "  Resetting interface $1"
+    echo "  Stopping interface $1"
+    ifdown "$1"
     ip link del "$1"
-    ifup "$1" --force
+    echo "  Starting interface $1"
+    ifup "$1"
     echo "  Done"
 }
 
