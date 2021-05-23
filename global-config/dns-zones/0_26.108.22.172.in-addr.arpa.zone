@@ -11,3 +11,4 @@ $TTL 300
 17 IN PTR ca-yvr01.jlu5.dn42.
 18 IN PTR ca-yvr02.jlu5.dn42.
 22 IN PTR dns.jlu5.dn42.
+33 IN PTR br-sao01.rtr.jlu5.dn42.

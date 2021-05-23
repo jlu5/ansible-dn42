@@ -51,3 +51,5 @@ au-syd01.rtr IN A 172.20.229.125
 au-syd01.rtr IN AAAA fd86:bad:11b7:225::1
 sg01.rtr IN A 172.20.229.127
 sg01.rtr IN AAAA fd86:bad:11b7:227::1
+br-sao01.rtr IN A 172.22.108.33
+br-sao01.rtr IN AAAA fd86:bad:11b7:333::1
