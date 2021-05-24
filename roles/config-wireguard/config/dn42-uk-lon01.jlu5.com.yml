@@ -73,11 +73,7 @@ wg_peers:
   peer_v6: "fd4d:ce73:68f9:9a62::3"
 
 - name: dn42rio-paterno
-  port: 53073
-  remote: "dn42.shiva.eti.br:21080"
-  wg_pubkey: "ioFN575e/dD15BiD2mkXug6TKyeqYB4BC0f2NFMHYEM="
-  peer_v4: null
-  peer_v6: "fd22:ad17:8e8d:10::10c/128"
+  remove: true
 
 - name: "dn42lon-munster"
   port: 52237
