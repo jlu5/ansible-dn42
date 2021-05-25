@@ -89,3 +89,10 @@ wg_peers:
   wg_pubkey: "POZ2ZRRPbQtfcb1d0eiNeKlBVqJiYFQ4/naY/xfkfDQ="
   peer_v4: "172.23.32.3"
   peer_v6: "fe80::2330:1"
+
+- name: dn42ams-mayli
+  port: 51123
+  remote: "ams.ccp.ovh:21080"
+  wg_pubkey: "e5X1ZlZUOVtTFeWi+d6cUqqNaXB0F2UHwbquAKU4z3I="
+  peer_v4: "172.20.47.2"
+  peer_v6: "fe80::1123"

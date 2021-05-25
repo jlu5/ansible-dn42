@@ -35,3 +35,10 @@ wg_peers:
   wg_pubkey: "ZPXAgNqWs9t/5Ekj16rdIe66/8nVCio3VcN5N0wpjko="
   peer_v4: "172.21.68.32"
   peer_v6: "fe80::925/64"
+
+- name: dn42hkg-mayli
+  port: 51123
+  remote: "hkg.ccp.ovh:21080"
+  wg_pubkey: "bLysMVqew2hlvJVS17hp+qaURzZuLERLgfSbvK/mgUU="
+  peer_v4: "172.20.47.3"
+  peer_v6: "fe80::1123"
