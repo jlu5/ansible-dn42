@@ -6,6 +6,9 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
+export PATH="$PATH:/sbin:/usr/sbin"
+echo "Current time: $(date)"
+
 read -ra wg_interfaces < <(wg show interfaces)
 
 TIMEOUT=$(expr 60 '*' 30)  # 30 minutes
