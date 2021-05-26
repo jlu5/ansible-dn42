@@ -34,6 +34,9 @@ New York City, NY, US: !!python/tuple
 Nuremberg, DE: !!python/tuple
 - 49.4521018
 - 11.0766654
+Sao Paulo, BR: !!python/tuple
+- -23.5505199
+- -46.63330939999999
 Seattle, WA, US: !!python/tuple
 - 47.6062095
 - -122.3320708

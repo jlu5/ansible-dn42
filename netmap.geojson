@@ -20,6 +20,20 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -46.633309,
+                    -23.55052
+                ]
+            },
+            "properties": {
+                "title": "br-sao01",
+                "description": "Sao Paulo, BR"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     11.076665,
                     49.452102
                 ]
@@ -300,6 +314,66 @@
             },
             "properties": {
                 "title": "au-syd01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -46.633309,
+                        -23.55052
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "br-sao01 <-> uk-lon01",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -46.633309,
+                        -23.55052
+                    ],
+                    [
+                        -84.387982,
+                        33.748995
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "br-sao01 <-> us-atl01",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -46.633309,
+                        -23.55052
+                    ],
+                    [
+                        -74.005973,
+                        40.712775
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "br-sao01 <-> us-nyc02",
                 "description": "(costs calculated dynamically)"
             }
         },

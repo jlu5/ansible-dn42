@@ -65,7 +65,7 @@ def main():
     args = parser.parse_args()
 
     hosts = yaml_load(args.hosts)
-    hosts = hosts['dn42routers']['hosts']
+    hosts = get_hosts(hosts)
     tunnels = yaml_load(args.tunnels)
 
     geocoder = NetmapGeocoder(args.geocode_cache)
