@@ -35,6 +35,8 @@ us-lax01.rtr IN A 172.20.229.122
 us-lax01.rtr IN AAAA fd86:bad:11b7:22::1
 us-nyc02.rtr IN A 172.20.229.123
 us-nyc02.rtr IN AAAA fd86:bad:11b7:23::1
+us-las01.rtr IN A 172.20.229.126
+us-las01.rtr IN AAAA fd86:bad:11b7:26::1
 uk-lon01.rtr IN A 172.20.229.116
 uk-lon01.rtr IN AAAA fd86:bad:11b7:116::1
 de-nbg01.rtr IN A 172.20.229.117

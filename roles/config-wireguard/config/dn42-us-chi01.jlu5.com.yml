@@ -1,7 +1,4 @@
 wg_peers:
-- name: dn42chi-burble
-  remove: true
-
 - name: dn42chi-tech9
   port: 50002
   remote: "us-chi01.dn42.tech9.io:53737"
