@@ -6,7 +6,14 @@
   template:
     src: "igpping-hosts.txt.j2"
     dest: "{{ automation_root_dir }}/igpping/igpping-hosts.txt"
-  register: igpping_hosts
+  register: _igpping_hosts
+
+- name: Write igpping config
+  copy:
+    src: "{{ playbook_dir }}/scripts/igpping/igpping.conf"
+    dest: "{{ automation_root_dir }}/igpping/"
+    owner: "{{ automation_user }}"
+  register: _igpping_config
 
 - name: Bootstrap igpping
   command:
@@ -16,4 +23,4 @@
   become_user: "{{ automation_user }}"
   register: igpping_init_result
   changed_when: "igpping_init_result.stdout | length > 0"
-  when: igpping_hosts.changed
+  when: _igpping_hosts.changed or _igpping_config.changed
