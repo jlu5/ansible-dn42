@@ -34,7 +34,9 @@
     name: "openvpn@{{ peer_info.name }}"
     state: "reloaded"
     enabled: yes
-  loop: "{{ _ovpn_to_add }}"
+  loop: "{{ (_ovpn_conf_tmpl.results + _ovpn_key_copy.results)
+            | selectattr('changed', 'true')
+            | map(attribute='peer_info') | map(attribute='name') | unique | list }}"
   loop_control:
     loop_var: peer_info
   ignore_errors: true
