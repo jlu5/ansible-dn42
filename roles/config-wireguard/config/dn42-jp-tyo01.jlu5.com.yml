@@ -112,3 +112,10 @@ wg_peers:
   wg_pubkey: "LNpOdAZMc2RszmMB/JrvGoqLt8aE+p9JyYODKphzyyw="
   peer_v4: "172.23.32.5"
   peer_v6: "fe80::2330:5"
+
+- name: dn42tyo-hinata
+  port: 53724
+  remote: "jp01.dn42.katohinata.eu.org:21080"
+  wg_pubkey: "zhtttxYDZtt/iIdm5HqG5G+g7iJHciJwLbLB/6Rjy1s="
+  peer_v4: "172.23.215.226"
+  peer_v6: "fe80::3724"
