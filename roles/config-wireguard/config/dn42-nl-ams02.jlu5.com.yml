@@ -96,3 +96,10 @@ wg_peers:
   wg_pubkey: "e5X1ZlZUOVtTFeWi+d6cUqqNaXB0F2UHwbquAKU4z3I="
   peer_v4: "172.20.47.2"
   peer_v6: "fe80::1123"
+
+- name: dn42bru-neutri
+  port: 52514
+  remote: null  # behind NAT
+  wg_pubkey: "fvGNCJm6FDS/0x92SERajCuwOsWpCk4pbTq3C6sMxyg="
+  peer_v4: "172.20.228.226"
+  peer_v6: "fda0:b455:bb86::226"
