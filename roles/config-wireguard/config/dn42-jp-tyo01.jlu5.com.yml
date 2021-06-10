@@ -115,7 +115,7 @@ wg_peers:
 
 - name: dn42tyo-hinata
   port: 53724
-  remote: "jp01.dn42.katohinata.eu.org:21080"
+  remote: "tyo01.jp.42.katohinata.eu.org:21080"
   wg_pubkey: "zhtttxYDZtt/iIdm5HqG5G+g7iJHciJwLbLB/6Rjy1s="
   peer_v4: "172.23.215.226"
   peer_v6: "fe80::3724"
