@@ -42,3 +42,10 @@ wg_peers:
   wg_pubkey: "bLysMVqew2hlvJVS17hp+qaURzZuLERLgfSbvK/mgUU="
   peer_v4: "172.20.47.3"
   peer_v6: "fe80::1123"
+
+- name: dn42sgp-radiono
+  port: 51032
+  remote: "sg.dn42.atri.tk:51080"
+  wg_pubkey: "x5i9qx8tglqzvghOckjXuRBcWQ8srWLNZOlt7VtFmwI="
+  peer_v4: "172.23.10.1"
+  peer_v6: "fe80::1032"
