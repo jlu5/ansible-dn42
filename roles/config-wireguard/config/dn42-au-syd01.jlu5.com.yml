@@ -32,3 +32,10 @@ wg_peers:
   wg_pubkey: "GVZ4ATpTmxxpzt8l0BtMiBuQQeunN19Y+Fbyusx8jRw="
   peer_v4: "172.21.99.153"
   peer_v6: "fd42:4242:1099:179::153"
+
+- name: dn42ade-dropbea
+  port: 50723
+  remote: "person.ppl.town:51820"
+  wg_pubkey: "panlaInhth/ftiiB/VtH3rCjkbnFxMybJMcwQ5d3XX4="
+  peer_v4: "169.254.42.1/32"
+  peer_v6: "fdc6:6093:bfda:ff::1"
