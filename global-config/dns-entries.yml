@@ -1,6 +1,7 @@
 # Custom DNS entries. This is read by scripts/make-dns-entries.py to generate Bind-style zones under dns-zones/
 dns_records:
   "{{ dns_domain }}":
+    # Public-facing
     "@":
       type: ansible_host_alias # will be expanded to the node's IPs
       target: dn42-us-chi01.jlu5.com
@@ -10,12 +11,17 @@ dns_records:
     "www":
       type: ansible_host_alias
       target: dn42-us-chi01.jlu5.com
-    "nightfall":
-      type: ansible_host_alias
-      target: dn42-us-atl01.jlu5.com
     "ping":
       type: CNAME
       target: ca-yvr01
+
+    # Internal services
+    "nightfall":
+      type: ansible_host_alias
+      target: dn42-us-atl01.jlu5.com
+    "music":
+      type: A
+      target: 172.22.108.25
 
     # Hosts to create forward and reverse entries for
     "ca-yvr01":
