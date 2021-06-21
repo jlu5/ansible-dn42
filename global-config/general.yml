@@ -8,7 +8,9 @@ ownnets6:
 
 # Dummy device names for IGP and Anycast services
 # To simplify IGP configuration in Bird this assumes that all dummy interface names follow a pattern
-dummy_ifname_glob: "igp-dummy*"
+dummy_ifname_globs:
+- "igp-dummy*"
+- "igp-stub*"
 dummy_interfaces:
   igp:
     ifname: "igp-dummy0"

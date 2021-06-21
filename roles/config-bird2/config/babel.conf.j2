@@ -1,7 +1,9 @@
 protocol direct {
     ipv4;
     ipv6;
-    interface "{{ dummy_ifname_glob }}";
+{% for glob in dummy_ifname_globs %}
+    interface "{{ glob }}";
+{% endfor %}
 };
 
 {% if babel_links is defined or inventory_hostname in igp_neighbours %}
