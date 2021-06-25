@@ -1,0 +1,11 @@
+ovpn_peers:
+- name: igp-stub-roam01
+  port: 51080
+  remote: null
+  proto: tcp-server
+  peer_v4: "172.22.108.19"
+  peer_v6: null  # later
+  ovpn_cipher: aes-256-cbc
+  ovpn_options:
+  - 'push "dhcp-option DNS 172.22.108.22"'
+  - 'push "dhcp-option DNS 8.8.4.4"'
