@@ -4,8 +4,10 @@ proto {{ _ovpn_proto }}
 mode p2p
 
 dev {{ ifname }}
+{% if peer_info.get('remote') %}
 remote {{ peer_info['remote'].rsplit(':', 1)[0] }}
 rport {{ peer_info['remote'].rsplit(':', 1)[1] }}
+{% endif %}
 {# Follow wireguard config behaviour: if no port is specified, don't bind to anything #}
 {% if peer_info.get('port') %}
 local {{ ansible_default_ipv6.address if '6' in _ovpn_proto else ansible_default_ipv4.address }}
