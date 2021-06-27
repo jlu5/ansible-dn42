@@ -12,3 +12,10 @@ wg_peers:
   wg_pubkey: "JSSVhGm8Opw944J1gXj0iNiAwsdh7vP/zBGq1Gfb0nk="
   peer_v4: null
   peer_v6: "fe80::c3c0:ebbb"
+
+- name: dn42rom-matwolf
+  port: 50688
+  remote: "dn42-it01.wolf.network:51080"
+  wg_pubkey: "zQKdKiappowslCIbEyCiqLwrwUc6APcyEBIkIvzA6nw="
+  peer_v4: "172.20.28.224"
+  peer_v6: "fda5:a8a8:9989:4242::1"
