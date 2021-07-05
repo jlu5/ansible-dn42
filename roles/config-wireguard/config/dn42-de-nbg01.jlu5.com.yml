@@ -223,3 +223,10 @@ wg_peers:
   wg_pubkey: "7dBbLZa2s7oSsb2gh+umVhz+bs8vv5HPRvilVagl/xc="
   peer_v4: 172.20.149.66
   peer_v6: "fe80::3124"
+
+- name: dn42nbg-plasma
+  port: 52322
+  remote: "85.10.202.194:42235"
+  wg_pubkey: "g4jQ1g2pYk2mXQhuDNL7E6zHqkcLpqS+YxdMAnAAo3w="
+  peer_v4: 172.22.181.193
+  peer_v6: fd42:4242:2322::1
