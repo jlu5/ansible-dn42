@@ -62,3 +62,10 @@ wg_peers:
   wg_pubkey: "4U1409RtLriPIRQefuQTm5q6hzMWaBIrblXTpOMO2SA="
   peer_v4: "172.23.4.64"
   peer_v6: null
+
+- name: dn42-astroanax
+  port: 52457
+  remote: null
+  wg_pubkey: "tWHOTUUr3q/CS11TPLdHePKJOMPeHBTlKNMMJszVW00="
+  peer_v4: "172.21.112.65"
+  peer_v6: null
