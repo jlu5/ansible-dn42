@@ -68,4 +68,4 @@ wg_peers:
   remote: null
   wg_pubkey: "tWHOTUUr3q/CS11TPLdHePKJOMPeHBTlKNMMJszVW00="
   peer_v4: "172.21.112.65"
-  peer_v6: null
+  peer_v6: "fd42:defe:c8ed::1"
