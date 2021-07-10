@@ -230,3 +230,10 @@ wg_peers:
   wg_pubkey: "g4jQ1g2pYk2mXQhuDNL7E6zHqkcLpqS+YxdMAnAAo3w="
   peer_v4: 172.22.181.193
   peer_v6: fd42:4242:2322::1
+
+- name: dn42nbg-hax404
+  port: 50428
+  remote: "jlu5.peers.hax404.de:42023"
+  wg_pubkey: "jhBOiTGmvmyp1g3T7FwLVeHMMsxBHgjTtbebdwnfIH0="
+  peer_v4: "172.23.136.34"
+  peer_v6: "fe80::404"
