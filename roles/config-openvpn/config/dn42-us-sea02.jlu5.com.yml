@@ -1,5 +1,5 @@
 ovpn_peers:
-- name: igp-stub-roam01
+- name: cl-roam01
   port: 51080
   remote: null
   proto: tcp-server

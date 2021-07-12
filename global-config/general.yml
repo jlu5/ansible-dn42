@@ -8,9 +8,10 @@ ownnets6:
 
 # Dummy device names for IGP and Anycast services
 # To simplify IGP configuration in Bird this assumes that all dummy interface names follow a pattern
+# Note: forwarding rules are managed separately in roles/config-iptables/
 dummy_ifname_globs:
 - "igp-dummy*"
-- "igp-stub*"
+- "cl*"
 dummy_interfaces:
   igp:
     ifname: "igp-dummy0"

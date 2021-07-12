@@ -1,6 +1,13 @@
+# This configuration assumes the following:
+# - Tunnels to other networks start with "dn42"
+# - Tunnels to other nodes in the same network start with "igp"
+# - Tunnels to plain clients start with "cl"
+
 # Restrict traffic from our network to IGP & dummy interfaces
 -A INPUT  -s {{ my_cidrs }} -i lo -j ACCEPT
 -A OUTPUT -d {{ my_cidrs }} -o lo -j ACCEPT
+-A INPUT  -s {{ my_cidrs }} -i cl+ -j ACCEPT
+-A OUTPUT -d {{ my_cidrs }} -o cl+ -j ACCEPT
 -A INPUT  -s {{ my_cidrs }} ! -i igp+ -j REJECT
 -A OUTPUT -d {{ my_cidrs }} ! -o igp+ -j REJECT
 
@@ -44,12 +51,21 @@
 -A INPUT -p tcp --dport 53 -i dn42+ -j ACCEPT
 -A INPUT -p udp --dport 53 -i igp+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i igp+ -j ACCEPT
+-A INPUT -p udp --dport 53 -i cl+ -j ACCEPT
+-A INPUT -p tcp --dport 53 -i cl+ -j ACCEPT
 
 # Allow forwarding between dn42 and IGP links
 -A FORWARD -i dn42+ -o dn42+ -j ACCEPT
 -A FORWARD -i igp+ -o igp+ -j ACCEPT
 -A FORWARD -i igp+ -o dn42+ -j ACCEPT
 -A FORWARD -i dn42+ -o igp+ -j ACCEPT
+
+# Clients: only allow outgoing connections to the rest of dn42
+-A FORWARD -i cl+ -o dn42+ -j ACCEPT
+-A FORWARD -i cl+ -o igp+ -j ACCEPT
+-A FORWARD -s {{ my_cidrs }} -o cl+ -j ACCEPT
+-A FORWARD -o cl+ -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A FORWARD -o cl+ -j REJECT
 
 {# Catch all rules are commented out here to prevent clashes with machine-specific rules, but you should enable something like these!
 -A INPUT -j DROP
