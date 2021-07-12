@@ -50,6 +50,13 @@ wg_peers:
   peer_v4: 172.22.108.18
   peer_v6: fe80::1080:18
 
+# TODO: a more descriptive name other than "dummy interface" would be better
+- name: igp-dummy-shypr
+  port: 49999
+  wg_pubkey: "DJIy9r6kCsiArLpUKaClGkGFoT1dcrKaCQVrnn2sgDc="
+  peer_v4: 172.22.108.49
+  peer_v6: fd86:bad:11b7:7e3b::1
+
 - name: dn42sea-ncw
   port: 51288
   remote: "sea1.sc00.org:21080"
