@@ -7,3 +7,11 @@ fi
 
 iptables-restore  < {{ iptables_rules_path  | quote }} && echo 'applied IPv4 rules'
 ip6tables-restore < {{ ip6tables_rules_path | quote }} && echo 'applied IPv6 rules'
+
+{% if 'anycast_pool' in group_names %}
+if systemctl is-active --quiet pdns-recursor; then
+	/etc/iptables/apply-anycast start
+else
+	/etc/iptables/apply-anycast stop
+fi
+{% endif %}
