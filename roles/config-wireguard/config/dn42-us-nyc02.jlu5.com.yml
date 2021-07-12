@@ -119,3 +119,10 @@ wg_peers:
   wg_pubkey: "6YKlRpiqLJb9C8esZjUS0RbC9Bh7aTo5M5F3cUAcZ2o="
   peer_v4: "172.22.118.135"
   peer_v6: "fe80::3770/64"
+
+- name: dn42nyc-kzhao
+  port: 50921
+  remote: "143.244.170.175:51080"
+  wg_pubkey: "k2mfkpGQpbSNaXWSa3TnQq/+V8Psv4ZNn7WyJaKqG3o="
+  peer_v4: "172.20.31.97"
+  peer_v6: null
