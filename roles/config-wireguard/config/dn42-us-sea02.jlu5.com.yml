@@ -45,10 +45,12 @@ wg_peers:
   is_internal_node: true  # use peering LAN IP
 
 - name: igp-ca-yvr02
-  port: 55101
-  wg_pubkey: "O6LFGZ/03W74TO/4pEEay/lWvB2N25gjIo5PEZdIAyg="
-  peer_v4: 172.22.108.18
-  peer_v6: fe80::1080:18
+  remove: true
+# - name: igp-ca-yvr02
+#   port: 55101
+#   wg_pubkey: "O6LFGZ/03W74TO/4pEEay/lWvB2N25gjIo5PEZdIAyg="
+#   peer_v4: 172.22.108.18
+#   peer_v6: fe80::1080:18
 
 - name: cl-shypre
   port: 49999
