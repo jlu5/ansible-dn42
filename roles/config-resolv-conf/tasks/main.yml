@@ -1,0 +1,15 @@
+- name: "Install resolvconf"
+  apt:
+    package: resolvconf
+    state: present
+
+- name: "Add local recursor to /etc/resolvconf/resolv.conf.d/head"
+  blockinfile:
+    path: /etc/resolvconf/resolv.conf.d/head
+    insertafter: BOF
+    block: |
+      # Set dn42 nameservers as default
+      nameserver fd42:d42:d42:53::1
+      nameserver 172.23.0.53
+      # Ignore the systemd-resolved comment - this is likely not enabled here
+  notify: "Refresh resolvconf"

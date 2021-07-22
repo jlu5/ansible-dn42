@@ -9,12 +9,6 @@
     - "forward-zones.conf"
     - "recursor.lua"
 
-- name: "Add local recursor to /etc/resolv.conf"
-  lineinfile:
-    path: /etc/resolv.conf
-    insertbefore: BOF
-    line: "nameserver 127.0.0.1"
-
 # Install & configure PowerDNS resolver
 - import_role:
     name: PowerDNS.pdns_recursor
