@@ -1,0 +1,10 @@
+{
+    "cSpell.enableFiletypes": [
+        "!yaml",
+        "!yml",
+        "!properties"
+    ],
+    "cSpell.words": [
+        "netmap"
+    ]
+}
