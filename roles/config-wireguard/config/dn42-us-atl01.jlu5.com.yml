@@ -40,3 +40,10 @@ wg_peers:
   wg_pubkey: "9sovbU6D6QaTtuB8ntLFnuQU4L/c9xC26SVuMpVQmV8="
   peer_v4: 172.22.188.68
   peer_v6: fe80::4446:4
+
+- name: dn42dal-winterf
+  port: 52895
+  remote: "161.129.153.144:51871"
+  wg_pubkey: "Jr3oK2dDhDXr3GEIYjSMeBeny7buh/XIDhPDa6she0c="
+  peer_v4: "172.23.183.32"
+  peer_v6: "fd71:244:9983::1"
