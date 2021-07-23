@@ -1,13 +1,51 @@
-- import_role:
-    name: PowerDNS.pdns
-  vars:
-    # PowerDNS 4.3.x
-    pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
-    pdns_config:
-      local-address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6) | join(', ') }}"
-    pdns_backends:
+
+- name: Download GeoIP database from db-ip.com
+  get_url:
+    url: https://download.db-ip.com/free/dbip-country-lite-2021-07.mmdb.gz
+    dest: "{{ automation_root_dir }}/dbip-country-lite.mmdb.gz"
+    mode: '0640'
+    owner: root
+    group: pdns
+  when: serve_clearnet_dns|default(False)
+
+- name: Extract GeoIP database
+  command: "gunzip -k dbip-country-lite.mmdb.gz"
+  args:
+    chdir: "{{ automation_root_dir }}"
+    creates: "{{ automation_root_dir }}/dbip-country-lite.mmdb"
+  when: serve_clearnet_dns|default(False)
+
+- name: "Enumerate PowerDNS backends"
+  set_fact:
+    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6) | join(', ') }}"
+    _pdns_backends:
       bind:
-        config: "{{ pdns_config_dir }}/named.conf"
+        config: "/etc/powerdns/named.conf"
+
+- name: "Enumerate PowerDNS backends (GeoIP)"
+  set_fact:
+    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6 + [ansible_default_ipv4.get('address', 0), ansible_default_ipv6.get('address', 0)]) | select('string') | join(', ') }}"
+    _pdns_backends:
+      bind:
+        config: "/etc/powerdns/named.conf"
+      geoip:
+        zones-file: "/etc/powerdns/geodns.yml"
+        database-files: "{{ automation_root_dir }}/dbip-country-lite.mmdb"
+  when: serve_clearnet_dns|default(False)
+
+- name: "Create PowerDNS config folder"
+  file:
+    path: "/etc/powerdns"
+    state: directory
+
+- name: "Upload geodns.yml for PowerDNS"
+  copy:
+    src: "geodns.yml"
+    dest: "/etc/powerdns/geodns.yml"
+    mode: '0644'
+  notify:
+    - Reconfigure PowerDNS
+  when: serve_clearnet_dns|default(False)
 
 - name: "Template named.conf for PowerDNS"
   template:
@@ -16,6 +54,15 @@
     mode: '0644'
   notify:
     - Reconfigure PowerDNS
+
+- import_role:
+    name: PowerDNS.pdns
+  vars:
+    # PowerDNS 4.3.x
+    pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
+    pdns_config:
+      local-address: "{{ _pdns_local_address }}"
+    pdns_backends: "{{ _pdns_backends }}"
 
 - name: "Synchronize DNS zones"
   synchronize:

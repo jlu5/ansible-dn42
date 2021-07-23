@@ -46,13 +46,19 @@
 # looking glass proxy (internal only)
 -A INPUT -p tcp --dport 5000 -s {{ my_cidrs }} -j ACCEPT
 
-# Anycast DNS
+{% if serve_clearnet_dns|default(false) %}
+# DNS (dn42 and clearnet!!)
+-A INPUT -p udp --dport 53 -j ACCEPT
+-A INPUT -p tcp --dport 53 -j ACCEPT
+{% else %}
+# Anycast DNS within dn42
 -A INPUT -p udp --dport 53 -i dn42+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i dn42+ -j ACCEPT
 -A INPUT -p udp --dport 53 -i igp+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i igp+ -j ACCEPT
 -A INPUT -p udp --dport 53 -i cl+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i cl+ -j ACCEPT
+{% endif %}
 
 # Allow forwarding between dn42 and IGP links
 -A FORWARD -i dn42+ -o dn42+ -j ACCEPT

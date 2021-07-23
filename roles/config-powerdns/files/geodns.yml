@@ -1,0 +1,28 @@
+# These sites are not related to dn42, but I configure them here so that all the DNS bits live in one repo
+domains:
+- domain: geo.utopia-repository.org
+  ttl: 60
+  records:
+    geo.utopia-repository.org:
+      - soa: ns1.utopia-repository.org webmaster.overdrivenetworks.com 1 7200 2400 86400 3600
+
+    eu.root.geo.utopia-repository.org: &europe
+      - a: 185.193.158.145
+      - aaaa: 2a0f:93c1:26:27c::1
+    af.root.geo.utopia-repository.org: *europe
+
+    as.root.geo.utopia-repository.org: &apac
+      - a: 66.42.57.164
+      - aaaa: 2401:c080:1400:4ae7:5400:3ff:fe56:105c
+    oc.root.geo.utopia-repository.org: *apac
+
+    na.root.geo.utopia-repository.org: &na
+      - a: 199.195.248.191
+      - aaaa: 2605:6400:10:da::1
+    sa.root.geo.utopia-repository.org: *na
+    an.root.geo.utopia-repository.org: *na
+
+  services:
+    # I would prefer to omit "root.", but GeoDNS on the apex domain is not yet supported:
+    # see https://github.com/PowerDNS/pdns/issues/9341
+    root.geo.utopia-repository.org: '%cn.root.geo.utopia-repository.org'
