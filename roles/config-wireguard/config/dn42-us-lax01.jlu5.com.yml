@@ -36,7 +36,7 @@ wg_peers:
   peer_v6: "fe80::3735:3"
 
 - name: dn42lax-burble
-  port: 52601
+  port: 22601
   remote: "dn42-us-lax1.burble.com:21080"
   wg_pubkey: "WgkIfqjm2uzDWvIMFUk/R3Mu0HBJTG10G2pd7THaS0o="
   peer_v4: "172.20.129.165"

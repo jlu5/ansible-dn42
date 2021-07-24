@@ -37,7 +37,7 @@ wg_peers:
   local_v6: "fdef:5d0d:ee12:0105:2:fcde:3558:2/112"
 
 - name: dn42lon-burble
-  port: 52601
+  port: 22601
   remote: "dn42-uk-lon1.burble.com:21080"
   wg_pubkey: "EH6XQtkstJt9inl55EAck4GXR1ZHvy5yzuRMyd3/WWw="
   peer_v4: "172.20.129.187/32"

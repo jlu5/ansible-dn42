@@ -69,3 +69,10 @@ wg_peers:
   wg_pubkey: "tWHOTUUr3q/CS11TPLdHePKJOMPeHBTlKNMMJszVW00="
   peer_v4: "172.21.112.65"
   peer_v6: "fd42:defe:c8ed::1"
+
+- name: dn42sgp-burble
+  port: 22601
+  remote: "dn42-sg-sin2.burble.com:21080"
+  wg_pubkey: "jeCt21YFT0e+1Mx/qMP9fIlPhXUiOaxK2Jh28vrC2Bg="
+  peer_v4: "172.20.129.181"
+  peer_v6: "fe80::42:2601:37:1"
