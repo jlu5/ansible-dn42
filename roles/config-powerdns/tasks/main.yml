@@ -40,7 +40,7 @@
 
 - name: "Upload geodns.yml for PowerDNS"
   copy:
-    src: "geodns.yml"
+    src: "{{ playbook_dir }}/geodns.yml"
     dest: "/etc/powerdns/geodns.yml"
     mode: '0644'
   notify:
