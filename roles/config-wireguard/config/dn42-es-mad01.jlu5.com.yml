@@ -7,7 +7,7 @@ wg_peers:
   peer_v6: "fd42:4242:2601:2c::1/128"
 
 - name: dn42lgv-camelus
-  port: 51592
+  port: 21592
   remote: "esp-ionos.dn42.trampel.org:41080"
   wg_pubkey: "b5LpJUSHTxoFe+z7hBVUlMabKjr0FIsFdYk8tTUCxEw="
   peer_v4: "172.21.99.190"

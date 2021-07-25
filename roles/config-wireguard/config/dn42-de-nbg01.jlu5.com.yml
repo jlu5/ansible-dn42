@@ -183,7 +183,7 @@ wg_peers:
   peer_v6: "fe80::42:3847:42:1080"
 
 - name: dn42fsn-camelus
-  port: 51592
+  port: 21592
   remote: "fsn1-hetzner.dn42.trampel.org:41080"
   wg_pubkey: "iMU/cowB17kYnBWktlT5H98J2mKRYf5v3PwsjWcNmR8="
   peer_v4: "172.21.99.191"
