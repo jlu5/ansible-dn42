@@ -3,9 +3,7 @@
   get_url:
     url: https://download.db-ip.com/free/dbip-country-lite-2021-07.mmdb.gz
     dest: "{{ automation_root_dir }}/dbip-country-lite.mmdb.gz"
-    mode: '0640'
-    owner: root
-    group: pdns
+    mode: '0644'
   when: serve_clearnet_dns|default(False)
 
 - name: Extract GeoIP database
