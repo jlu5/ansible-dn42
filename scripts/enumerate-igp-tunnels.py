@@ -79,6 +79,12 @@ def main():
         for server2 in igp_upstreams:
             _add_tunnel(data, server1, server2)
 
+    for server1, serverdata in dn42routers.items():
+        # Sanity check: all iBGP RR upstreams should be direct neighbours
+        ibgp_upstreams = set(serverdata.get('ibgp_rr_upstreams', {}))
+        ibgp_not_direct = ibgp_upstreams - data['igp_neighbours'][server1]
+        if ibgp_not_direct:
+            raise ValueError(f'{server1} defines ibgp_rr_upstreams not in neighbours: %s' % ibgp_not_direct)
 
     pprint.pprint(data)
     with open(OUTFILE, 'w') as f:
