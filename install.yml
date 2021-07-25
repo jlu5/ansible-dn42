@@ -13,3 +13,14 @@
   - name: Print Wireguard public key
     debug:
       msg: "Node {{ inventory_hostname }} has WG public key: {{ wg_pubkey_file['content'] | b64decode | trim }}"
+
+  pre_tasks:
+    - name: Check whether circuit breaker exists
+      stat:
+        path: /etc/ansible-dn42-disable
+      register: _circuit_breaker_stat
+
+    - name: Fail if circuit breaker exists
+      fail:
+        msg: "aborting, /etc/ansible-dn42-disable exists"
+      when: _circuit_breaker_stat.stat.exists
