@@ -119,3 +119,10 @@ wg_peers:
   wg_pubkey: "FvGyw906HZKWI8oEQ+oBHoyzEvmF6bIm2AXotOH5IW4="
   peer_v4: "172.20.4.98"
   peer_v6: "fe80::1722:98/64"
+
+- name: dn42lon-camelus
+  port: 21592
+  remote: "uk01.dn42.trampel.org:41080"
+  wg_pubkey: "oUFScw06Qe6nyDWwbywdecgnt1QQNWe1DFAUb3QCqgU="
+  peer_v4: "172.21.99.188"
+  peer_v6: "fe80::1592"
