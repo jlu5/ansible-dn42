@@ -5,6 +5,10 @@
         "!properties"
     ],
     "cSpell.words": [
-        "netmap"
-    ]
+        "ibgp",
+        "netmap",
+        "upstreams"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

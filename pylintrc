@@ -1,5 +1,7 @@
+[FORMAT]
 # It boggles my mind why pylint complains about names like "f"[1] that are literally used
 # in the Python tutorial[2]
 # [1]: https://github.com/PyCQA/pylint/issues/2018
 # [2]: https://docs.python.org/3/tutorial/inputoutput.html
 good-names=i,f
+max-line-length=120

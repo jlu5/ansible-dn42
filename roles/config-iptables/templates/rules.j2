@@ -22,7 +22,7 @@
 {# Downside: more coupling in the code here. #}
 # IGP links
 {% for igp_neighbour in igp_neighbours.get(inventory_hostname, []) | sort %}
-{% set igp_wg_port = igp_wg_ports["%s,%s" % (inventory_hostname, igp_neighbour)] %}
+{% set igp_wg_port = igp_wg_ports[inventory_hostname][igp_neighbour] %}
 -A INPUT -p udp --dport {{ igp_wg_port }} -i {{ ansible_default_ipv4.interface }} -j ACCEPT
 {% endfor %}
 # WireGuard peers
