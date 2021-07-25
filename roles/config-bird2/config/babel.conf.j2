@@ -1,8 +1,8 @@
 protocol direct {
     ipv4;
     ipv6;
-{% for glob in dummy_ifname_globs %}
-    interface "{{ glob }}";
+{% for entry in stub_ifnames + stub_ifnames_append|default([]) %}
+    interface "{{ entry }}";
 {% endfor %}
 };
 
