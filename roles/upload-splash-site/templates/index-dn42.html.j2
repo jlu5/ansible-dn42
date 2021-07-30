@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>AS4242421080 Splash Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="main">
+    <h1>highdef.network</h1>
+    <h2>AS4242421080</h2>
+    <p>
+        <a href="https://jlu5.com/dn42">Peering</a>
+        -
+        <a href="https://lg42.jlu5.com/">Looking Glass</a>
+    </p>
+    <hr>
+    <h2>
+        <i class="fa fa-server" aria-hidden="true"></i>
+        Server info
+    </h2>
+    <div id="serverinfo-container">
+        <p>Current server: <b>{{ shortname }}</b></p>
+        <p>Test IPs: <b>{{ ownip }}</b> / <b>{{ ownip6 }}</b></p>
+        <p>Location: <b>{{ location }}</b></p>
+    </div>
+    <hr>
+    <h2>
+        <i class="fa fa-signal" aria-hidden="true"></i>
+        Connection info
+    </h2>
+    <p id="connectionInfo">
+        <noscript><a href="connectionInfo">Click to check</a></noscript>
+    </p>
+</div>
+<script>
+let req = new XMLHttpRequest();
+req.addEventListener("load", function() {
+    let textContainer = document.getElementById("connectionInfo");
+    if (this.status === 200) {
+        textContainer.innerText = this.responseText;
+    } else
+        textContainer.innerText = `[Error loading: ${this.status} ${this.statusText}]`;
+    }
+);
+req.overrideMimeType("text/plain;");
+req.open("GET", "connectionInfo");
+req.send();
+</script>
+</body>
+</html>

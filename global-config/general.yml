@@ -64,3 +64,11 @@ ip6tables_rules_path: "{{ iptables_dir }}/rules.v6"
 automation_user: dn42-automation
 automation_root_dir: /opt/dn42
 automation_user_home: /opt/dn42/automation/
+
+# splash hosts for clearnet
+splash_hosts:
+  - highdef.network
+  - www.highdef.network
+
+letsencrypt_account_email: "{{ 'hel' + 'lo@jl' + 'u5.com' if ownas == '4242421080' | mandatory('Please change letsencrypt_account_email to your account') }}"
+letsencrypt_webroot_path: "/var/www/html"

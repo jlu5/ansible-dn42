@@ -1,0 +1,5 @@
+- name: Setup splash site for dn42 routers
+  hosts: dn42routers
+  become: yes
+  roles:
+    - upload-splash-site

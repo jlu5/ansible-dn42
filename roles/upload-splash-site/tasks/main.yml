@@ -1,0 +1,35 @@
+- name: Create splash page folder
+  file:
+    path: "{{ automation_root_dir }}/splash"
+    state: directory
+
+- name: Upload splash page files
+  template:
+    src: index-dn42.html.j2
+    dest: "{{ automation_root_dir }}/splash/index-dn42.html"
+- name: Upload splash page files
+  template:
+    src: index-clearnet.html.j2
+    dest: "{{ automation_root_dir }}/splash/index-clearnet.html"
+- name: Upload splash page files
+  copy:
+    src: style.css
+    dest: "{{ automation_root_dir }}/splash/style.css"
+
+- name: Setup splash page for dn42
+  include_role:
+    name: apps_nginx
+  vars:
+    nginx_site:
+      src: dn42-splash.conf.j2
+      dst: dn42-splash.conf
+
+- name: Setup splash page for clearnet
+  include_role:
+    name: apps_nginx
+  vars:
+    letsencrypt_domains: "{{ splash_hosts }}"
+    nginx_site:
+      src: dn42-splash-clearnet.conf.j2
+      dst: dn42-splash-clearnet.conf
+  when: "'web' in group_names"

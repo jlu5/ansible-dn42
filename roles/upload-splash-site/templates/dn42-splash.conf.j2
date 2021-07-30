@@ -1,0 +1,25 @@
+{% set rtrname = dns_auto_host_record_format | replace("%s", shortname) %}
+
+# dn42 splash
+server {
+    listen 80;
+    listen [::]:80;
+    server_name *.{{ dns_domain }};
+    server_name 172.23.0.53;
+{% for iface, options in dummy_interfaces.items() %}
+{% for ip in options.ip4 + options.ip6 %}
+    server_name {{ ip | ipaddr('address') | ipwrap }};
+{% endfor %}
+{% endfor %}
+
+	location /connectionInfo {
+		keepalive_requests 0;
+		default_type text/plain;
+		return 200 "$remote_addr (you) ↔ $server_addr (me)";
+	}
+
+    location / {
+        root {{ automation_root_dir }}/splash;
+        index index-dn42.html;
+    }
+}

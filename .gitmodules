@@ -1,3 +1,6 @@
 [submodule "dn42-registry"]
 	path = dn42-registry
 	url = git@git.dn42.dev:dn42/registry.git
+[submodule "roles/apps_nginx"]
+	path = roles/apps_nginx
+	url = https://github.com/jlu5/ansible-nginx
