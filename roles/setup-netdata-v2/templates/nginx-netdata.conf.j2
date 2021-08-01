@@ -11,6 +11,14 @@ server {
     server_name {{ ownip }};
     server_name {{ ownip6 }};
 
+{% if netdata_mgmt_ips | default([]) %}
+    satisfy any;
+{% for ipblock in netdata_mgmt_ips %}
+    allow {{ ipblock }};
+{% endfor %}
+    deny all;
+{% endif %}
+
     auth_basic "Restricted";
     auth_basic_user_file /etc/nginx/htpasswd-netdata;
 
