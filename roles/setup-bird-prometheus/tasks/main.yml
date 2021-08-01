@@ -1,0 +1,28 @@
+- name: Create bird-exporter directory
+  file:
+    path: "{{ automation_root_dir }}/bird-exporter/"
+    state: directory
+
+- name: Download bird-exporter binary package
+  get_url:
+    url: https://github.com/czerwonk/bird_exporter/releases/download/1.2.6/bird_exporter_1.2.6_linux_amd64.tar.gz
+    dest: "{{ automation_root_dir }}/bird-exporter/bird_exporter.tar.gz"
+    checksum: "sha256:9807ee500c3ecf51ec7720fd24fad4d6b640f80d9035d14f35261570c07c49b4"
+    mode: "0644"
+
+- name: Extract bird-exporter binary package
+  unarchive:
+    src: "{{ automation_root_dir }}/bird-exporter/bird_exporter.tar.gz"
+    dest: "{{ automation_root_dir }}/bird-exporter/"
+    remote_src: yes
+
+- name: Install bird-exporter systemd service
+  template:
+    src: "bird-exporter.service.j2"
+    dest: "/etc/systemd/system/bird-exporter.service"
+
+- name: Start bird-exporter service
+  systemd:
+    name: "bird-exporter"
+    enabled: true
+    state: started

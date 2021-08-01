@@ -1,0 +1,7 @@
+- name: Setup monitoring
+  hosts: dn42routers
+  become: yes
+  roles:
+    - config-iptables
+    - setup-bird-prometheus
+    - setup-netdata-v2

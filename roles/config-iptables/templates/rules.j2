@@ -46,6 +46,11 @@
 # looking glass proxy (internal only)
 -A INPUT -p tcp --dport 5000 -s {{ my_cidrs }} -j ACCEPT
 
+{% if netdata_proxy_port | default(0) %}
+# netdata
+-A INPUT -p tcp --dport {{ netdata_proxy_port }} -s {{ my_cidrs }} -j ACCEPT
+{% endif %}
+
 {% if serve_clearnet_dns|default(false) %}
 # DNS (dn42 and clearnet!!)
 -A INPUT -p udp --dport 53 -j ACCEPT

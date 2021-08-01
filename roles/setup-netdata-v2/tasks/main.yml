@@ -1,0 +1,42 @@
+- name: Install netdata
+  apt:
+    package:
+    # From Debian bullseye or backports @ deb.utopia-repository.org
+    - netdata
+    # From https://github.com/utopia-repository/netdata-go.d.plugin
+    - netdata-plugins-go
+    # Required for ansible htpasswd integration
+    - python3-passlib
+    state: present
+    update_cache: true
+
+- name: Setup htpasswd for netdata
+  community.general.htpasswd:
+    path: /etc/nginx/htpasswd-netdata
+    name: "{{ item.user }}"
+    password: "{{ item.pass }}"
+    state: "{{ item.state | default('present') }}"
+    owner: root
+    group: www-data
+    mode: 0640
+  loop: "{{ netdata_logins }}"
+
+- name: Push netdata config
+  template:
+    src: netdata.conf.j2
+    dest: "/etc/netdata/netdata.conf"
+  notify: Restart netdata
+
+- name: Enable/start netdata service
+  systemd:
+    name: netdata
+    enabled: true
+    state: started
+
+- name: Configure nginx proxy for netdata
+  include_role:
+    name: apps_nginx
+  vars:
+    nginx_site:
+      src: nginx-netdata.conf.j2
+      dst: netdata.conf

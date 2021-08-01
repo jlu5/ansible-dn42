@@ -1,0 +1,14 @@
+[Unit]
+Description=BIRD Prometheus exporter
+After=bird.service
+
+[Service]
+Type=simple
+User=bird
+Group=bird
+WorkingDirectory={{ automation_root_dir }}/bird-exporter
+ExecStart={{ automation_root_dir }}/bird-exporter/bird_exporter -format.new -bird.v2 -bird.socket /run/bird/bird.ctl
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
