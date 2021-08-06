@@ -46,3 +46,10 @@ wg_peers:
   wg_pubkey: "W8IoIklrTsWKDJEJ35kh1aHPO9CIyyfNBF/MptzX4jw="
   peer_v4: "172.23.215.228"
   peer_v6: "fe80::3724"
+
+- name: dn42las-naiveto
+  port: 23309
+  remote: "lav.tsinghuamakerxian.cn:21080"
+  wg_pubkey: "sahaUh1IbK9rZCFOl096QokESVGXV8Ko8wZ5m0dcdiY="
+  peer_v4: "172.23.163.163"
+  peer_v6: "fe80::3309"

@@ -140,3 +140,10 @@ wg_peers:
   wg_pubkey: "3eVAIQT9T0RqjG0chqnaTYcMWaXBzwEEO5JO8j/Wxlc="
   peer_v4: "172.23.110.97"
   peer_v6: "fe80::cafe"
+
+- name: dn42lax-naiveto
+  port: 23309
+  remote: "lax.tsinghuamakerxian.cn:21080"
+  wg_pubkey: "C9QViSndf1zga5nOoSoXXMLUWBJvEFiJDWSFCbU1Ynw="
+  peer_v4: "172.23.163.161"
+  peer_v6: "fe80::3309"
