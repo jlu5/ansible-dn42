@@ -76,3 +76,10 @@ wg_peers:
   wg_pubkey: "mXvjlMq5T+Oo6VrFSvYQYI/wifyIORDlFhHM1le/F0w="
   peer_v4: "172.20.128.199"
   peer_v6: "fe80::977"
+
+- name: dn42kck-baoshuo
+  port: 20247
+  remote: "us1.dn42.as141776.net:41080"
+  wg_pubkey: "tRRiOqYhTsygV08ltrWtMkfJxCps1+HUyN4tb1J7Yn4="
+  peer_v4: "172.23.250.81"
+  peer_v6: "fe80::247"

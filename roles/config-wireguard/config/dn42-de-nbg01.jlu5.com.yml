@@ -244,3 +244,10 @@ wg_peers:
   wg_pubkey: "P9BQFIpN7LvgnqkU/1srErP1I0twhgkUgEHZfaF5vyQ="
   peer_v4: "169.254.0.3"
   peer_v6: "fe80::beef:8"
+
+- name: dn42fsn-baoshuo
+  port: 20247
+  remote: "eu1.dn42.as141776.net:41080"
+  wg_pubkey: "edTGR6Fs0rwAmGzWx/Zl6xxksYveRo+d75wWjxQYN0g="
+  peer_v4: "172.23.250.91"
+  peer_v6: "fe80::247"
