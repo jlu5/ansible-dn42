@@ -28,3 +28,5 @@
 
     # Install & configure PowerDNS recursor
     - role: config-powerdns-recursor
+
+    - config-resolv-conf

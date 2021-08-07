@@ -7,4 +7,3 @@
     - setup-peerfinder
     - setup-bird-lg
     - setup-wg-autoreset
-    - config-resolv-conf
