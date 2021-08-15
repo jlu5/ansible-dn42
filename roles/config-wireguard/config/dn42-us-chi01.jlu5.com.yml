@@ -83,3 +83,10 @@ wg_peers:
   wg_pubkey: "tRRiOqYhTsygV08ltrWtMkfJxCps1+HUyN4tb1J7Yn4="
   peer_v4: "172.23.250.81"
   peer_v6: "fe80::247"
+
+- name: cl-chi03
+  port: 5508
+  remote: null
+  wg_pubkey: "RiqZGe3gi8K36AdM7Xan4wFhQuuJllei8DXLKLxOPS4="
+  peer_v4: "172.22.108.41"
+  peer_v6: null
