@@ -251,3 +251,10 @@ wg_peers:
   wg_pubkey: "edTGR6Fs0rwAmGzWx/Zl6xxksYveRo+d75wWjxQYN0g="
   peer_v4: "172.23.250.91"
   peer_v6: "fe80::247"
+
+- name: dn42fsn-foxxx0
+  port: 23669
+  remote: "valhalla.nano-srv.net:21080"
+  wg_pubkey: "6xP06zR9g8lCD1zSxPDAjERI7mq+3M68dCUwVhJ5cEM="
+  peer_v4: "172.22.169.194"
+  peer_v6: "fe80::3669:1"
