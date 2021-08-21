@@ -18,7 +18,8 @@
     src: "{{ item }}"
     dest: "{{ automation_root_dir }}/splash/{{ item | basename | regex_replace('\\.j2$', '')}}"
   with_fileglob:
-    - "{{ playbook_dir }}/web/*.j2"
+    - "{{ playbook_dir }}/web/*.html.j2"
+    - "{{ playbook_dir }}/web/*.htm.j2"
 
 - name: Configure splash page for dn42 in nginx
   include_role:
