@@ -7,6 +7,7 @@ body {
 
     color: #eee;
     font-family: sans-serif;
+    overflow-wrap: break-word;
 }
 
 body, html {
@@ -56,6 +57,10 @@ a:visited:hover {
     margin: 0 auto;
     text-align: left;
     display: block;
+}
+
+#map {
+    color: initial;
 }
 
 hr {

@@ -12,7 +12,7 @@ function initMap() {
        strokeWeight: 5
     });
     map.data.loadGeoJson(
-        "/static/netmap.geojson"
+        "netmap.geojson"
     );
 
     map.data.addListener("click", (event) => {

@@ -13,6 +13,14 @@
     <h2>AS4242421080</h2>
     <p>highdef is an experimental network interconnected with <a href="https://dn42.dev">dn42</a>.</p>
     {% include 'navigation.j2' %}
+
+    <h3>Network Map</h3>
+    <div id="map" style="height: 500px"></div>
+    <script src="netmap-embed.js"></script>
+
 </div>
+{% set _token1 = "AIzaSyBQpliJPYWowdL" %}
+{% set _token2 = "33oCVAfHKHhzvQv6PvaQ" %}
+<script defer src="https://maps.googleapis.com/maps/api/js?key={{ _token1 }}{{ _token2 }}&amp;callback=initMap"></script>
 </body>
 </html>
