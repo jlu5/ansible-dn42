@@ -39,10 +39,9 @@
 
 {% macro peering_info(host) %}
 {% set serverdata = hostvars[host] %}
-{% set link_slug = serverdata.location.replace(',', '').replace(' ', '-') | lower %}
-<h4 id="{{ link_slug }}">
+<h4 id="{{ serverdata.shortname }}">
     {{ serverdata.location[-2:] | flag }} {{ serverdata.location }}
-    <a href="#{{ link_slug }}"><i class="fa fa-link" aria-hidden="true"></i></a>
+    <a href="#{{ serverdata.shortname }}"><i class="fa fa-link" aria-hidden="true"></i></a>
 </h4>
 <ul>
     <li><strong>Hostname</strong>: {{ host }}</li>
