@@ -13,19 +13,29 @@
 <h1>AS4242421080 Peering</h2>
 {% include 'navigation.j2' %}
 <div id="container">
-<h2 id="recent-changes">Recent Changes</h2>
-    <ul>
-        <li><strong>2021-07-24</strong>: the default peering port has been moved from 5xxxx to 2xxxx to avoid conflicts with the default <a href="https://en.wikipedia.org/wiki/Ephemeral_port">ephemeral port range</a> on Linux. Existing peers are unchanged for now.</li>
-    </ul>
 
-<h2 id="peering-info">Peering Info</h2>
+<h2 id="peering-info">
+    <i class="fa fa-random" aria-hidden="true"></i>
+    Peering Info
+</h2>
     <p>To set up peering, feel free to reach out via IRC (jlu5), <a href="https://t.me/jlu5ca">Telegram</a>, or <a href="mailto:james@overdrivenetworks.com">email</a>. These PoPs support WireGuard (preferred) and OpenVPN.</p>
     <p>For consistency, I prefer multiprotocol BGP sessions over IPv6. For WireGuard + BIRD users, I recommend using <strong>link-local IPv6 addresses</strong>, and <strong>ULA IPv6 addresses</strong> if you’re using OpenVPN or any other BGP daemon (there are some interoperability issues). Note: <strong>I will usually set up WireGuard with link-local addresses unless you mention otherwise</strong>.</p>
     <p>If you have multiple nodes, especially across multiple continents, I also recommend setting up multiple links to improve redundancy and encourage the most direct routing.</p>
     <p>Note: my publicly visible <a href="https://github.com/jlu5/ansible-dn42">config repo</a> includes the endpoint info for most of my peers. If you would like to keep this private, please let me know when submitting your peering request.</p>
     <p>OpenVPN peers should send me their static keys via PGP-encrypted mail (<a href="https://keys.openpgp.org/search?q=D5D568B2D34AB32A337944D22EC3F60DE71C0B9D">D5D568B2D34AB32A337944D22EC3F60DE71C0B9D</a>) or some other secure medium.</p>
 
-<h2 id="nodes">Nodes</h2>
+<h2 id="recent-changes">
+    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+    Recent Changes
+</h2>
+    <ul>
+        <li><strong>2021-07-24</strong>: the default peering port has been moved from 5xxxx to 2xxxx to avoid conflicts with the default <a href="https://en.wikipedia.org/wiki/Ephemeral_port">ephemeral port range</a> on Linux. Existing peers are unchanged for now.</li>
+    </ul>
+
+<h2 id="nodes">
+    <i class="fa fa-server" aria-hidden="true"></i>
+    Nodes
+</h2>
 
 {% macro peering_info(host) %}
 {% set serverdata = hostvars[host] %}

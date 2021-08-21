@@ -3,9 +3,9 @@
 body {
     text-align: center;
     margin-top: 10vh;
-    background-color: #121214;
+    background-color: rgb(24, 24, 31);
 
-    color: #dedede;
+    color: #eee;
     font-family: sans-serif;
 }
 
