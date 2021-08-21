@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <title>AS4242421080 Splash Site</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
@@ -24,7 +25,7 @@
     <div id="serverinfo-container">
         <p>Current server: <b>{{ shortname }}</b></p>
         <p>Test IPs: <b>{{ ownip }}</b> / <b>{{ ownip6 }}</b></p>
-        <p>Location: <b>{{ location }}</b></p>
+        <p>Location: <b>{{ location[-2:] | flag }} {{ location }}</b></p>
     </div>
     <hr>
     <h2>
