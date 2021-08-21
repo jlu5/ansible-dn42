@@ -2,18 +2,16 @@
 
 body {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 10vh;
     background-color: #121214;
 
     color: #dedede;
     font-family: sans-serif;
-    font-size: large;
 }
 
 body, html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    width: 99%;
+    height: 86vh;
 }
 
 .main {
@@ -21,9 +19,13 @@ body, html {
     margin: auto;
 }
 
+.largefont {
+    font-size: large;
+}
+
 h1, h2 {
     font-family: 'Comfortaa', cursive;
-    margin: 1vh;
+    margin: 3vh 0;
     text-shadow: 2px 2px 10px #121240;
 }
 
@@ -49,8 +51,8 @@ a:visited:hover {
     color: #ffd6dd;
 }
 
-#serverinfo-container {
-    max-width: 600px;
+#container {
+    max-width: 1000px;
     margin: 0 auto;
     text-align: left;
     display: block;
