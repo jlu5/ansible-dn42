@@ -71,3 +71,10 @@ wg_peers:
   wg_pubkey: "AMmUVNOn6ZtL0+vn1tfO4c7M1Fby19lSVZpJJhML6VI="
   peer_v4: "172.20.233.153"
   peer_v6: "fe80::1288/64"
+
+- name: dn42sea-0x6
+  port: 20588
+  remote: "sea.v.x6c.us:21080"
+  wg_pubkey: "0rjLJxdX8sGODIo3TMhdPJ509lpZikAhy1qkJlBnJmw="
+  peer_v4: "172.23.110.69"
+  peer_v6: "fe80::69:1"
