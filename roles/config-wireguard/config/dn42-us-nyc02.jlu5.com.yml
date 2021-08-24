@@ -129,7 +129,7 @@ wg_peers:
 
 - name: dn42buf-imlongh
   port: 21888
-  remote: "23.95.222.131:21080"
+  remote: "us1.dn42.ni.sb:21080"
   wg_pubkey: "uVIBY5keaBLtkT7oyD/W/TgEBiXerr/IPxtH+JO0amI="
   peer_v4: "172.22.68.0"
   peer_v6: "fe80::1888"
