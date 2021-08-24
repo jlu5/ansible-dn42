@@ -112,7 +112,8 @@ function handle_special_cases() {
     # Pin the following to EU:
     # - AS4242420101 / CCCDA
     # - AS65043 / ICVPN-DREILAENDERECK
-    if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043] * =]) then {
+    # - AS64654 / ChaosVPN
+    if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043, 64654] * =]) then {
         safe_lower_pref(20);
     }
 }
