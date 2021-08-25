@@ -126,3 +126,10 @@ wg_peers:
   wg_pubkey: "oUFScw06Qe6nyDWwbywdecgnt1QQNWe1DFAUb3QCqgU="
   peer_v4: "172.21.99.188"
   peer_v6: "fe80::1592"
+
+- name: dn42lon-tsingya
+  port: 23699
+  remote: "lon-gb.tsingyao.pub:21080"
+  wg_pubkey: "V0brcpop7aLl2eFlHMQ50uGCPE+8+I8zGEOrKT17CjQ="
+  peer_v4: "172.22.155.6"
+  peer_v6: "fe80::42:3699:6"

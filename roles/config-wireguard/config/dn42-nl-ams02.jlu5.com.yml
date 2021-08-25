@@ -110,3 +110,10 @@ wg_peers:
   wg_pubkey: "RcXm6OK+3+/sjXoivNTdjU3W5ctdohZ9GKYS25f05n8="
   peer_v4: "172.21.99.189"
   peer_v6: "fe80::1592"
+
+- name: dn42dus-tsingya
+  port: 23699
+  remote: "dus-de.tsingyao.pub:21080"
+  wg_pubkey: "xyhzHBpNDQlyeNG44xaU5zz86+Qeig8v6/PTutZqCRM="
+  peer_v4: "172.22.155.9"
+  peer_v6: "fe80::42:3699:9"

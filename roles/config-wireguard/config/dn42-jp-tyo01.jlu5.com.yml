@@ -119,3 +119,10 @@ wg_peers:
   wg_pubkey: "zhtttxYDZtt/iIdm5HqG5G+g7iJHciJwLbLB/6Rjy1s="
   peer_v4: "172.23.215.226"
   peer_v6: "fe80::3724"
+
+- name: dn42tyo-tsingya
+  port: 23699
+  remote: "tok-jp.tsingyao.pub:21080"
+  wg_pubkey: "CtfgbThSgmw847gMd1eqRLaud3OrKI/mMwFLMZXvIHg="
+  peer_v4: "172.22.155.10"
+  peer_v6: "fe80::42:3699:10"

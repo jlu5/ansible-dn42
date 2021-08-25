@@ -77,6 +77,13 @@ wg_peers:
   peer_v4: "172.20.129.181"
   peer_v6: "fe80::42:2601:37:1"
 
+- name: dn42sgp-tsingya
+  port: 23699
+  remote: "sg.tsingyao.pub:21080"
+  wg_pubkey: "7NP0CESs1L8ODPqYNm8YDizwMe9WKrvUjrULGNyFHVg="
+  peer_v4: "172.22.155.7"
+  peer_v6: "fe80::42:3699:7"
+
 - name: dn42sgp-imlongh
   port: 21888
   remote: "sg1.dn42.ni.sb:21080"

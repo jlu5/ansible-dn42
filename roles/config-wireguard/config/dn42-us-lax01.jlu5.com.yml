@@ -147,3 +147,10 @@ wg_peers:
   wg_pubkey: "C9QViSndf1zga5nOoSoXXMLUWBJvEFiJDWSFCbU1Ynw="
   peer_v4: "172.23.163.161"
   peer_v6: "fe80::3309"
+
+- name: dn42lax-tsingya
+  port: 23699
+  remote: "lax-us.tsingyao.pub:21080"
+  wg_pubkey: "O9Xl/1dU8hZXBZ7F5f9nAuG+JhrRakdf95NaXsktAmg="
+  peer_v4: "172.22.155.2"
+  peer_v6: "fe80::42:3699:2"
