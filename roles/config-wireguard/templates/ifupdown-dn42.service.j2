@@ -1,0 +1,14 @@
+[Unit]
+Description=Autostart dn42 interfaces
+After=network-online.target
+Wants=network-online.target
+
+[Install]
+WantedBy=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/ifup -a --ignore-errors --interfaces={{ _ifupdown_dn42_iface_file }}
+ExecStop=/sbin/ifdown -a --ignore-errors --interfaces={{ _ifupdown_dn42_iface_file }}
+RemainAfterExit=true
+TimeoutStartSec=5min

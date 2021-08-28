@@ -25,7 +25,7 @@ iface {{ ifname }} inet static
     mtu {{ peer_info['wg_mtu'] }}
 {% endif %}
     pre-up ip link add {{ ifname }} type wireguard
-    pre-up timeout 10 wg setconf {{ ifname }} /etc/wireguard/{{ ifname }}.conf
+    pre-up timeout 3 wg setconf {{ ifname }} /etc/wireguard/{{ ifname }}.conf
     pre-up wg set {{ ifname }} private-key {{ peer_info.get('wg_privkey', "/etc/wireguard/privatekey") }}
 {% if peer_info['peer_v6'] %}
     post-up ip -6 addr add {{ local_v6 }} peer {{ peer_info['peer_v6'] }} dev {{ ifname }}

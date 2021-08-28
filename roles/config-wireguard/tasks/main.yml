@@ -3,6 +3,33 @@
     file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
   ignore_errors: true
 
+- name: Set variables for ifupdown-dn42
+  set_fact:
+    _ifupdown_dn42_iface_dir: "{{ automation_root_dir }}/interfaces"
+    _ifupdown_dn42_iface_file: "{{ automation_root_dir }}/interfaces-dn42"
+
+- name: Create ifupdown-dn42 interfaces directory
+  file:
+    path: "{{ _ifupdown_dn42_iface_dir }}"
+    state: directory
+
+- name: Create ifupdown-dn42 interfaces file
+  copy:
+    content: "source-directory {{ _ifupdown_dn42_iface_dir }}/"
+    dest: "{{ _ifupdown_dn42_iface_file }}"
+
+- name: Create ifupdown-dn42 systemd service
+  template:
+    src: ifupdown-dn42.service.j2
+    dest: "/etc/systemd/system/ifupdown-dn42.service"
+  register: _ifupdown_dn42_service
+
+- name: Enable ifupdown-dn42 systemd service
+  systemd:
+    service: ifupdown-dn42.service
+    enabled: true
+    daemon-reload: "{{ _ifupdown_dn42_service.changed }}"
+
 # This is already read in once as part of group_vars/all, but the values may have been changed
 # by scripts/enumerate-igp-tunnels.py: pre_tasks still run after enumerating facts the first time
 - name: Read IGP tunnel settings
@@ -18,7 +45,8 @@
 
 - name: Enumerate WireGuard tunnels to update (internal nodes)
   set_fact:
-    _wg_to_add: "{{ _wg_to_add + [peer_info] }}"
+    # Template internal nodes before peers
+    _wg_to_add: "{{ [peer_info] + _wg_to_add }}"
   loop: "{{ igp_neighbours.get(inventory_hostname, []) | sort }}"
   loop_control:
     loop_var: igp_node
@@ -30,6 +58,7 @@
       wg_pubkey: "{{ hostvars[igp_node]['wg_pubkey'] }}"
       peer_v4: "{{ hostvars[igp_node]['link_local_ip4'] }}"
       peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
+      priority: 10
       is_internal_node: true
 
 # - name: "Debug _wg_to_remove"
@@ -39,6 +68,9 @@
 # - name: "Debug _wg_to_add"
 #   debug:
 #     var: _wg_to_add
+
+- name: "Remove stale interfaces.d entries"
+  shell: "rm -f /etc/network/interfaces.d/dn42* /etc/network/interfaces.d/igp-??-* /etc/network/interfaces.d/igp-sg01 /etc/network/interfaces.d/cl*"
 
 - name: Remove obsolete WireGuard tunnels
   include_tasks: "wg-remove.yml"
