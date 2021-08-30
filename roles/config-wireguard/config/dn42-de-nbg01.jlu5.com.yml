@@ -259,8 +259,6 @@ wg_peers:
   peer_v4: "172.22.169.194"
   peer_v6: "fe80::3669:1"
 
-- name: dn42dus-tsingya
-  remove: true
 - name: dn42fra-tsingya
   port: 23699
   remote: "fra-de.tsingyao.pub:21080"
