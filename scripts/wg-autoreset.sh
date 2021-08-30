@@ -1,6 +1,12 @@
 #!/bin/bash
 # Automatically reset dead WireGuard tunnels
 
+if [[ -f /opt/dn42/interfaces-dn42 ]]; then
+    IFACEFILE=/opt/dn42/interfaces-dn42
+else
+    IFACEFILE=/etc/network/interfaces
+fi
+
 if [[ $EUID -ne 0 ]]; then
 	echo "This script must be run as root."
 	exit 1
@@ -15,10 +21,10 @@ TIMEOUT=$(expr 60 '*' 30)  # 30 minutes
 
 reset_iface() {
     echo "  Stopping interface $1"
-    ifdown "$1"
+    ifdown "$1" --interfaces="$IFACEFILE"
     ip link del "$1"
     echo "  Starting interface $1"
-    ifup "$1"
+    ifup "$1" --interfaces="$IFACEFILE"
     echo "  Done"
 }
 
