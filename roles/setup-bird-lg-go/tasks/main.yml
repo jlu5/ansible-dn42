@@ -1,0 +1,63 @@
+- name: Set configuration variables
+  set_fact:
+    _bird_lg_go_dir: "{{ automation_root_dir }}/bird-lg-go"
+
+- name: Create bird-lg-go directory
+  file:
+    path: "{{ _bird_lg_go_dir }}"
+    state: directory
+
+- name: Download bird-lg-go binary package
+  get_url:
+    # FIXME: this should probably be more flexible with architectures
+    url: https://github.com/jlu5/bird-lg-go/releases/download/0.20210901.1/bird-lg-go_0.20210901.1_linux_amd64.tar.gz
+    dest: "{{ _bird_lg_go_dir }}/bird-lg-go.tar.gz"
+    checksum: "sha256:e1f1ad31cd6bd424a131dd333b9d32d81e118a8aa46ecc61ec9f499c053b1318"
+    mode: "0644"
+
+- name: Extract bird-lg-go binary package
+  unarchive:
+    src: "{{ _bird_lg_go_dir }}/bird-lg-go.tar.gz"
+    dest: "{{ _bird_lg_go_dir }}/"
+    remote_src: yes
+
+- name: Generate bird-lg-go configs
+  template:
+    src: "bird-lg-{{ item }}.env.j2"
+    dest: "{{ _bird_lg_go_dir }}/bird-lg-{{ item }}.env"
+  loop:
+    - proxy
+    - frontend
+
+- name: Install bird-lg-go systemd services
+  template:
+    src: "bird-lg-{{ item }}.service.j2"
+    dest: "/etc/systemd/system/bird-lg-{{ item }}.service"
+  loop:
+    - proxy
+    - frontend
+
+- name: Start bird-lg-go proxy service
+  systemd:
+    name: "bird-lg-proxy"
+    enabled: true
+    state: restarted
+    daemon_reload: true
+
+- name: Start bird-lg-go frontend service
+  systemd:
+    name: "bird-lg-frontend"
+    enabled: true
+    state: restarted
+  when: "'web' in group_names"
+
+- name: Configure bird-lg-go in nginx
+  include_role:
+    name: apps_nginx
+  vars:
+    letsencrypt_domains:
+      - "{{ birdlg_domain_clearnet }}"
+    nginx_site:
+      src: bird-lg-nginx.conf.j2
+      dst: bird-lg-nginx.conf
+  when: "'web' in group_names"

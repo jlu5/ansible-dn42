@@ -1,0 +1,14 @@
+[Unit]
+Description=BIRD Looking Glass - Frontend
+After=bird.service
+
+[Service]
+Type=simple
+User=bird
+Group=bird
+ExecStart={{ _bird_lg_go_dir }}/frontend
+Restart=on-failure
+EnvironmentFile={{ _bird_lg_go_dir }}/bird-lg-frontend.env
+
+[Install]
+WantedBy=multi-user.target

@@ -4,6 +4,14 @@
   roles:
   # These are optional roles only needed for nodes open to peering
   # This should run after reconfigure.yml as the dn42 dummy interfaces need to be created first.
+    - setup-bird-lg-go
     - setup-peerfinder
-    - setup-bird-lg
     - setup-wg-autoreset
+
+  pre_tasks:
+    - name: Disable legacy bird-lg services
+      systemd:
+        name: bird-lg-webservice
+        state: stopped
+        enabled: no
+      ignore_errors: true
