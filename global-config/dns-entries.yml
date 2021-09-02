@@ -4,7 +4,7 @@ dns_records:
     # Public-facing
     "lg":
       type: ansible_host_alias
-      target: dn42-us-chi01.jlu5.com
+      target: dn42-us-sea02.jlu5.com
     "ping":
       type: CNAME
       target: 01.yvrlab
