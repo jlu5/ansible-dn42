@@ -5,3 +5,5 @@ birdlg_branding_title: "{{ dns_domain }} looking glass"
 birdlg_branding_navbar: "{{ dns_domain }}"
 birdlg_domain: "lg.{{ dns_domain }}"
 birdlg_domain_clearnet: "lg.highdef.network"
+birdlg_allowed_ips:
+- 172.22.108.1
