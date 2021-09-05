@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>AS4242421080 Splash Site</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+<!-- {% import 'helpers.j2' as helpers %} -->
+</head>
+
+<body>
+<div class="main">
+<h1>Recent Changes</h1>
+{% include 'navigation.j2' %}
+<div id="container">
+    <ul class="spacedlist">
+        <li><strong>2021-09-04</strong>: Added a new PoP in Fremont, CA, US ({{ helpers.link_node('us-fmt01') }}).</li>
+        <li><strong>2021-09-04</strong>: All nodes updated to support <b>extended next hops</b>.</li>
+        <li><strong>2021-07-24</strong>: the default peering port has been moved from 5xxxx to 2xxxx to avoid conflicts with the default <a href="https://en.wikipedia.org/wiki/Ephemeral_port">ephemeral port range</a> on Linux. Existing peers are unchanged for now.</li>
+    </ul>
+
+</div>
+</body>
+</html>

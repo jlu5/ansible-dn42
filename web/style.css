@@ -24,6 +24,10 @@ body, html {
     font-size: large;
 }
 
+.spacedlist > li {
+    padding-bottom: 1em;
+}
+
 h1, h2 {
     font-family: 'Comfortaa', cursive;
     margin: 3vh 0;

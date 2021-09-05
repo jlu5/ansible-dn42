@@ -1,0 +1,3 @@
+{%- macro link_node(node) -%}
+{{ node[:2] | upper | flag }} <a href="peering.html#{{ node }}">{{ node }}</a>
+{%- endmacro -%}
