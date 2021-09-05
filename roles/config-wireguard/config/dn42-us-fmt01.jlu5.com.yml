@@ -20,3 +20,10 @@ wg_peers:
           6461623964366533383534616362616563643238313238346339
   peer_v4: "172.23.105.3"
   peer_v6: "fe80::2980"
+
+- name: dn42sjc-sunnet
+  port: 23088
+  remote: "sjc1-us.dn42.6700.cc:21080"
+  wg_pubkey: "G/ggwlVSy5jKWFlJM01hxcWnL8VDXsD5EXZ/S47SmhM="
+  peer_v4: "172.21.100.191"
+  peer_v6: "fe80::3088:191"
