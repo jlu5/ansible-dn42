@@ -2,6 +2,7 @@
   hosts: dn42routers
   become: yes
   roles:
-    - config-iptables
-    - setup-bird-prometheus
+    - config-iptables  # configures the netdata web port
+    - name: setup-bird-prometheus
+      when: not v6_only|default(False)
     - setup-netdata-v2
