@@ -12,4 +12,5 @@ $TTL 300
 18 IN PTR 02.yvrlab.highdef.dn42.
 21 IN PTR ns.highdef.dn42.
 22 IN PTR dns.highdef.dn42.
+34 IN PTR us-fmt01.rtr.highdef.dn42.
 33 IN PTR br-sao01.rtr.highdef.dn42.

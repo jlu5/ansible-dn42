@@ -10,6 +10,9 @@ Beauharnois, QC, CA: !!python/tuple
 Chicago, IL, US: !!python/tuple
 - 41.8781136
 - -87.6297982
+Fremont, CA, US: !!python/tuple
+- 37.5485396
+- -121.988583
 Las Vegas, NV, US: !!python/tuple
 - 36.1699412
 - -115.1398296
