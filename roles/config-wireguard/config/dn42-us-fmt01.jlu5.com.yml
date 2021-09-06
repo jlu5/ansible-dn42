@@ -27,3 +27,10 @@ wg_peers:
   wg_pubkey: "G/ggwlVSy5jKWFlJM01hxcWnL8VDXsD5EXZ/S47SmhM="
   peer_v4: "172.21.100.191"
   peer_v6: "fe80::3088:191"
+
+- name: dn42fmt-moecast
+  port: 20604
+  remote: "fmt1.dn42.cas7.moe:21080"
+  wg_pubkey: "1dJpFLegKHKButkXqbv1KLLMTmS6KtFkWBz6GRo2uxE="
+  peer_v4: "172.23.89.4"
+  peer_v6: "fe80::604:4"
