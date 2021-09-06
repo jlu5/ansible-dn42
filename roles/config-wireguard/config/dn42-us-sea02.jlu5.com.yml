@@ -54,11 +54,19 @@ wg_peers:
   peer_v4: 172.22.108.28
   peer_v6: fd86:bad:11b7:7e3b::1
 
+# p2p is too hard for most wg frontends :(
 - name: cl-roam03
   port: 19998
   wg_pubkey: "I5OjtNeH+ZfQLeoiDKGdQDPXo+sVj8fV8YxLzLeCIkc="
   peer_v4: 172.22.108.16
   local_v4: 172.22.108.17
+  peer_v6: null
+
+- name: cl-roam04
+  port: 19997
+  wg_pubkey: "zy6EF1SUHRRB5U0UOad7uvz+H8Scb5IphutbHVtGaA8="
+  peer_v4: 172.22.108.31
+  local_v4: 172.22.108.30
   peer_v6: null
 
 - name: dn42sea-ncw
