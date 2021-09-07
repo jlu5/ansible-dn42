@@ -7,8 +7,8 @@ wg_peers:
   peer_v6: "fe80::2633"
 
 - name: dn42flr-zolfa
-  port: 51042
-  remote: "lilik-dn42.firenze.net.zolfa.nl:51080"
+  port: 21042
+  remote: "lilik-dn42.firenze.net.zolfa.nl:21080"
   wg_pubkey: "JSSVhGm8Opw944J1gXj0iNiAwsdh7vP/zBGq1Gfb0nk="
   peer_v4: null
   peer_v6: "fe80::c3c0:ebbb"
