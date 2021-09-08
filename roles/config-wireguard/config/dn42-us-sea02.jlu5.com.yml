@@ -77,8 +77,4 @@ wg_peers:
   peer_v6: "fe80::1288/64"
 
 - name: dn42sea-0x6
-  port: 20588
-  remote: "sea.v.x6c.us:21080"
-  wg_pubkey: "0rjLJxdX8sGODIo3TMhdPJ509lpZikAhy1qkJlBnJmw="
-  peer_v4: "172.23.110.69"
-  peer_v6: "fe80::69:1"
+  remove: true

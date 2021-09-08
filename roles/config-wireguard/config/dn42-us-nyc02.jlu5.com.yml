@@ -135,6 +135,8 @@ wg_peers:
   peer_v6: "fe80::1888"
 
 - name: dn42pnj-0x6
+  remove: true
+- name: dn42pnj-x6c
   port: 20588
   remote: "ewr.l.x6c.us:21080"
   wg_pubkey: "kbkhBKH8NUo8uUaAPn5Poif0hAsOzBpB7+xdBKSTqi8="

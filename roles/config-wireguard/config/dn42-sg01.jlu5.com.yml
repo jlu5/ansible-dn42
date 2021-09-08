@@ -90,3 +90,10 @@ wg_peers:
   wg_pubkey: "vBcYFxMLwcsVScQ0LqkGDEIbbykskatmqWHlPGEUrE8="
   peer_v4: "172.22.68.0"
   peer_v6: "fe80::1888"
+
+- name: dn42sgp-x6c
+  port: 20588
+  remote: "sgp.l.x6c.us:21080"
+  wg_pubkey: "nDPy+99y/BORsbpLWA36jRjs0YKwSCjZWion+RZDNQg="
+  peer_v4: "172.23.110.69"
+  peer_v6: "fe80::69:1"

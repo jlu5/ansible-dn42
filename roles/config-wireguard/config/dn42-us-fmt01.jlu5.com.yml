@@ -34,3 +34,10 @@ wg_peers:
   wg_pubkey: "1dJpFLegKHKButkXqbv1KLLMTmS6KtFkWBz6GRo2uxE="
   peer_v4: "172.23.89.4"
   peer_v6: "fe80::604:4"
+
+- name: dn42fmt-x6c
+  port: 20588
+  remote: "fnc.l.x6c.us:21080"
+  wg_pubkey: "V4Cb9Jy5evG3XTUBrDWbneEE4IkP/hE8g35i4gQ53RM="
+  peer_v4: "172.23.110.68"
+  peer_v6: "fe80::68:1"

@@ -265,3 +265,10 @@ wg_peers:
   wg_pubkey: "EgsM8KZIgnFJqpybLxmElf0rbMrn2CDanFm9eNCm+3o="
   peer_v4: "172.22.155.12"
   peer_v6: "fe80::42:3699:12"
+
+- name: dn42fra-x6c
+  port: 20588
+  remote: "fra.l.x6c.us:21080"
+  wg_pubkey: "tZ9TXziiPdFvEN+u7fICse0RnGmp6tI/zOB9uo0Fjik="
+  peer_v4: "172.23.110.73"
+  peer_v6: "fe80::73:1"

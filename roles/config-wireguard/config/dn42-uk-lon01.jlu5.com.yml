@@ -133,3 +133,10 @@ wg_peers:
   wg_pubkey: "V0brcpop7aLl2eFlHMQ50uGCPE+8+I8zGEOrKT17CjQ="
   peer_v4: "172.22.155.6"
   peer_v6: "fe80::42:3699:6"
+
+- name: dn42lon-x6c
+  port: 20588
+  remote: "lhr.l.x6c.us:21080"
+  wg_pubkey: "TXYvwzhBGoTQqes4nBA0NeJBB8QLLCTqZcSmXN+VDXk="
+  peer_v4: "172.23.110.70"
+  peer_v6: "fe80::70:1"

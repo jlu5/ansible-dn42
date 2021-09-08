@@ -126,3 +126,10 @@ wg_peers:
   wg_pubkey: "CtfgbThSgmw847gMd1eqRLaud3OrKI/mMwFLMZXvIHg="
   peer_v4: "172.22.155.10"
   peer_v6: "fe80::42:3699:10"
+
+- name: dn42tyo-x6c
+  port: 20588
+  remote: "nrt.l.x6c.us:21080"
+  wg_pubkey: "Bxl8C2QjsLKBIEVz9imulfLtVvgdwkAMaTXR/PBdQhk="
+  peer_v4: "172.23.110.72"
+  peer_v6: "fe80::72:1"

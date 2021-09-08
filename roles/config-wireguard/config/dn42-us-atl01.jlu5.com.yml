@@ -49,8 +49,4 @@ wg_peers:
   peer_v6: "fd71:244:9983::1"
 
 - name: dn42atl-0x6
-  port: 20588
-  remote: "74.207.235.45:21080"
-  wg_pubkey: "MetunYravDi2+bL4hRVj+BT1B65lWGsMCe0aYk+zkkQ="
-  peer_v4: "172.23.110.65"
-  peer_v6: "fe80::100"
+  remove: true
