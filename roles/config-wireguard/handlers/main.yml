@@ -1,2 +1,0 @@
-- name: start wireguard helper
-  command: /etc/wireguard/wireguard.sh start
