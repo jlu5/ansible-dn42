@@ -5,6 +5,7 @@
     dest: "{{ automation_root_dir }}/dbip-country-lite.mmdb.gz"
     mode: '0644'
   when: serve_clearnet_dns|default(False)
+  ignore_errors: true
 
 - name: Extract GeoIP database
   command: "gunzip -k dbip-country-lite.mmdb.gz"

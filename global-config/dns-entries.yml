@@ -16,6 +16,9 @@ dns_records:
     "music":
       type: A
       target: 172.22.108.25
+    "jf":
+      type: CNAME
+      target: 01.yvrlab
 
     # Hosts to create forward and reverse entries for
     "01.yvrlab":
