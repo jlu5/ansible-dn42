@@ -13,9 +13,12 @@ dns_records:
     "nightfall":
       type: ansible_host_alias
       target: dn42-us-atl01.jlu5.com
+    "mediactr":
+      type: host_record
+      ip4: 172.22.108.25
     "music":
-      type: A
-      target: 172.22.108.25
+      type: CNAME
+      target: mediactr
     "jf":
       type: CNAME
       target: 01.yvrlab
@@ -38,6 +41,32 @@ dns_records:
       ip4: "{{ dummy_interfaces.anycast_recursors.ip4[0] }}"
       ip6: "{{ dummy_interfaces.anycast_recursors.ip6[0] }}"
 
+    # client nodes and /31 pairs
+    "mobi1-ptp.us-sea02.rtr":
+      type: host_record
+      ip4: 172.22.108.16
+    "mobi1.clients":
+      type: host_record
+      ip4: 172.22.108.17
+    "mobi2.clients":
+      type: host_record
+      ip4: 172.22.108.19
+    "urepo-mirror-master":
+      type: host_record
+      ip4: 172.22.108.26
+    "urepo-mirror-master-ptp.us-nyc02.rtr":
+      type: host_record
+      ip4: 172.22.108.27
+    "shypre-1.clients":
+      type: host_record
+      ip4: 172.22.108.28
+    "silverthing-ptp.us-sea02.rtr":
+      type: host_record
+      ip4: 172.22.108.30
+    "silverthing.clients":
+      type: host_record
+      ip4: 172.22.108.31
+
   "jlu5.dn42":
     # CNAMEs to new domain
     "lg":
@@ -47,10 +76,16 @@ dns_records:
       type: CNAME
       target: ping.highdef.dn42.
 
-dns_generate_records: {}
-#  "172.22.108.0/26":
-#    - start: 1
-#      end: 15
-#      template: "$"
-#      rtype: PTR
-#      target: "host-172-22-108-$.riptidenet.jlu5.com."
+dns_generate_records:
+  "highdef.dn42":
+    - start: 2
+      end: 15
+      template: "ct-${0,2,d}.yvrlab"  # pad 2 to IP section
+      rtype: A
+      target: "172.22.108.$"
+  "172.22.108.0/26":
+    - start: 2
+      end: 15
+      template: "$"
+      rtype: PTR
+      target: "ct-${0,2,d}.yvrlab.highdef.dn42"

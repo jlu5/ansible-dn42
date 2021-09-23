@@ -87,8 +87,10 @@ def write_forward_zone(domain, records):
             _write_entry(fd, record_name, 'A',    hostdata['ownip'])
             _write_entry(fd, record_name, 'AAAA', hostdata['ownip6'])
         elif data['type'] == 'host_record':
-            _write_entry(fd, record_name, 'A',    data['ip4'], reverse_domain=domain)
-            _write_entry(fd, record_name, 'AAAA', data['ip6'], reverse_domain=domain)
+            if 'ip4' in data:
+                _write_entry(fd, record_name, 'A',    data['ip4'], reverse_domain=domain)
+            if 'ip6' in data:
+                _write_entry(fd, record_name, 'AAAA', data['ip6'], reverse_domain=domain)
         else:
             _write_entry(fd, record_name, data['type'], data['target'])
     # Add host records onto the main domain
