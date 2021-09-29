@@ -42,7 +42,7 @@ dns_records:
       ip6: "{{ dummy_interfaces.anycast_recursors.ip6[0] }}"
 
     # client nodes and /31 pairs
-    "mobi1-ptp.us-sea02.rtr":
+    "mobi1-ptp.us-sea02":
       type: host_record
       ip4: 172.22.108.16
     "mobi1.clients":
@@ -54,13 +54,13 @@ dns_records:
     "urepo-mirror-master":
       type: host_record
       ip4: 172.22.108.26
-    "urepo-mirror-master-ptp.us-nyc02.rtr":
+    "urepo-mirror-master-ptp.us-nyc02":
       type: host_record
       ip4: 172.22.108.27
     "shypre-1.clients":
       type: host_record
       ip4: 172.22.108.28
-    "silverthing-ptp.us-sea02.rtr":
+    "silverthing-ptp.us-sea02":
       type: host_record
       ip4: 172.22.108.30
     "silverthing.clients":

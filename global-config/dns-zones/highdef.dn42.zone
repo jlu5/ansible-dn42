@@ -24,13 +24,13 @@ ns IN A 172.22.108.21
 ns IN AAAA fd86:bad:11b7:53::1
 dns IN A 172.22.108.22
 dns IN AAAA fd86:bad:11b7:53::2
-mobi1-ptp.us-sea02.rtr IN A 172.22.108.16
+mobi1-ptp.us-sea02 IN A 172.22.108.16
 mobi1.clients IN A 172.22.108.17
 mobi2.clients IN A 172.22.108.19
 urepo-mirror-master IN A 172.22.108.26
-urepo-mirror-master-ptp.us-nyc02.rtr IN A 172.22.108.27
+urepo-mirror-master-ptp.us-nyc02 IN A 172.22.108.27
 shypre-1.clients IN A 172.22.108.28
-silverthing-ptp.us-sea02.rtr IN A 172.22.108.30
+silverthing-ptp.us-sea02 IN A 172.22.108.30
 silverthing.clients IN A 172.22.108.31
 us-chi01.rtr IN A 172.20.229.113
 us-chi01.rtr IN AAAA fd86:bad:11b7::1
