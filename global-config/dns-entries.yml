@@ -88,4 +88,4 @@ dns_generate_records:
       end: 15
       template: "$"
       rtype: PTR
-      target: "ct-${0,2,d}.yvrlab.highdef.dn42"
+      target: "ct-${0,2,d}.yvrlab.highdef.dn42."
