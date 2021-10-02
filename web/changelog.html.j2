@@ -15,6 +15,7 @@
 {% include 'navigation.j2' %}
 <div id="container">
     <ul class="spacedlist">
+        <li><strong>2021-10-01</strong>: Decommissioned Sao Paulo, BR node ({{ helpers.link_node('br-sao01') }}).</li>
         <li><strong>2021-09-04</strong>: Added a new PoP in Fremont, CA, US ({{ helpers.link_node('us-fmt01') }}).</li>
         <li><strong>2021-09-04</strong>: All nodes updated to support <b>extended next hops</b>.</li>
         <li><strong>2021-07-24</strong>: the default peering port has been moved from 5xxxx to 2xxxx to avoid conflicts with the default <a href="https://en.wikipedia.org/wiki/Ephemeral_port">ephemeral port range</a> on Linux. Existing peers are unchanged for now.</li>
