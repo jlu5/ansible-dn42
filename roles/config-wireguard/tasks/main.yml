@@ -69,9 +69,6 @@
 #   debug:
 #     var: _wg_to_add
 
-- name: "Remove stale interfaces.d entries"
-  shell: "rm -f /etc/network/interfaces.d/dn42* /etc/network/interfaces.d/igp-??-* /etc/network/interfaces.d/igp-sg01 /etc/network/interfaces.d/cl*"
-
 - name: Remove obsolete WireGuard tunnels
   include_tasks: "wg-remove.yml"
 
