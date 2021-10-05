@@ -272,3 +272,10 @@ wg_peers:
   wg_pubkey: "tZ9TXziiPdFvEN+u7fICse0RnGmp6tI/zOB9uo0Fjik="
   peer_v4: "172.23.110.73"
   peer_v6: "fe80::73:1"
+
+- name: dn42nbg-thomas
+  port: 22571
+  remote: "dn42.tho.cloud:21080"
+  wg_pubkey: "+yN2BB+jmJRSG3fA4tGNiT0iC277x0ae+4jvWt9nS0w="
+  peer_v4: "172.20.42.148"
+  peer_v6: "fe80::2571"
