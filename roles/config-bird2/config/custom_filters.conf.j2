@@ -118,11 +118,18 @@ function handle_special_cases() {
     }
 }
 
+define ASES_REJECT = [
+    0  # placeholder
+];
 function ebgp_import_filter() {
     handle_special_cases();
 
     # Reject routes with unreasonable path lengths
     if (bgp_path.len > 12) then {
+        reject;
+    }
+
+    if (bgp_path ~ [= * ASES_REJECT * =]) then {
         reject;
     }
 
@@ -137,10 +144,6 @@ function ebgp_import_filter() {
 };
 
 function ebgp_export_filter() {
-    # 2021-03-13: don't export paths from long flapping ASes
-    if (bgp_path.last ~ [64875]) then {
-        reject;
-    }
     # Don't export device routes for dn42 anycast networks. These will be filled in via a static route config
     # triggered by service start/stop
     if (is_anycast_network() && source = RTS_DEVICE) then {
