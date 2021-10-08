@@ -11,8 +11,8 @@ dns_records:
 
     # Internal services
     "nightfall":
-      type: ansible_host_alias
-      target: dn42-us-atl01.jlu5.com
+      type: A
+      target: 172.22.108.45
     "mediactr":
       type: host_record
       ip4: 172.22.108.25
@@ -42,10 +42,10 @@ dns_records:
       ip6: "{{ dummy_interfaces.anycast_recursors.ip6[0] }}"
 
     # client nodes and /31 pairs
-    "mobi1-ptp.us-sea02":
+    "mobi1.clients":
       type: host_record
       ip4: 172.22.108.16
-    "mobi1.clients":
+    "mobi1-ptp.us-sea02":
       type: host_record
       ip4: 172.22.108.17
     "mobi2.clients":
