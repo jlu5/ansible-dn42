@@ -117,3 +117,10 @@ wg_peers:
   wg_pubkey: "xyhzHBpNDQlyeNG44xaU5zz86+Qeig8v6/PTutZqCRM="
   peer_v4: "172.22.155.9"
   peer_v6: "fe80::42:3699:9"
+
+- name: dn42dus-alphvin
+  port: 21862
+  remote: "194.87.139.56:21080"
+  wg_pubkey: "Utag1F2oPnA8Omw7yvBhGk3xDMIRdhwlA7eLtAvSEnE="
+  peer_v4: "172.20.45.97"
+  peer_v6: "fe80::1862"
