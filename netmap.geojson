@@ -20,20 +20,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -46.633309,
-                    -23.55052
-                ]
-            },
-            "properties": {
-                "title": "br-sao01",
-                "description": "Sao Paulo, BR"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     11.076665,
                     49.452102
                 ]
@@ -96,6 +82,20 @@
             },
             "properties": {
                 "title": "nl-ams02",
+                "description": "Amsterdam, NL"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.904139,
+                    52.367573
+                ]
+            },
+            "properties": {
+                "title": "nl-ams03",
                 "description": "Amsterdam, NL"
             }
         },
@@ -351,66 +351,6 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -46.633309,
-                        -23.55052
-                    ],
-                    [
-                        4.904139,
-                        52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "br-sao01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -46.633309,
-                        -23.55052
-                    ],
-                    [
-                        -84.387982,
-                        33.748995
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "br-sao01 <-> us-atl01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -46.633309,
-                        -23.55052
-                    ],
-                    [
-                        -74.005973,
-                        40.712775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "br-sao01 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
                         11.076665,
                         49.452102
                     ],
@@ -462,6 +402,26 @@
             },
             "properties": {
                 "title": "de-nbg01 <-> nl-ams02",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        11.076665,
+                        49.452102
+                    ],
+                    [
+                        4.904139,
+                        52.367573
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "de-nbg01 <-> nl-ams03",
                 "description": "(costs calculated dynamically)"
             }
         },
@@ -822,6 +782,26 @@
             },
             "properties": {
                 "title": "jp-tyo01 <-> us-sea02",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        4.904139,
+                        52.367573
+                    ],
+                    [
+                        4.904139,
+                        52.367573
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "nl-ams02 <-> nl-ams03",
                 "description": "(costs calculated dynamically)"
             }
         },
