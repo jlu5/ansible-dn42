@@ -155,11 +155,16 @@ wg_peers:
   peer_v4: "172.20.45.98"
   peer_v6: "fe80::1853"
 
-- name: dn42nyc-kskb
-  remove: true
 - name: dn42ash-kskb # autopeer ID 21080
   port: 21111
   remote: null
   wg_pubkey: "dPGEbUpmBy7A4YxwLTlo+j/wD2Sycojs7nOxKkQFvlI="
   peer_v4: "10.127.111.49"
   peer_v6: "fe80::aa:1111:31"
+
+- name: dn42nyc-flyingp
+  port: 20995
+  remote: "nyc1.dn42.flyingpackets.net:21080"
+  wg_pubkey: "54e/I/Wmzfkv1jpcH6m78shv5mxd/qJ68Qg4l5pRD3s="
+  peer_v4: "172.20.128.129"
+  peer_v6: "fe80::26f1"
