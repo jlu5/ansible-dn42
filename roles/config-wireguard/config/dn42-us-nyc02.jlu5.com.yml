@@ -154,3 +154,12 @@ wg_peers:
   wg_pubkey: "azbU3mQxubwZZiqZw2Z1dCUhS5W1JsUgbA7DILJpxlY="
   peer_v4: "172.20.45.98"
   peer_v6: "fe80::1853"
+
+- name: dn42nyc-kskb
+  remove: true
+- name: dn42ash-kskb # autopeer ID 21080
+  port: 21111
+  remote: null
+  wg_pubkey: "dPGEbUpmBy7A4YxwLTlo+j/wD2Sycojs7nOxKkQFvlI="
+  peer_v4: "10.127.111.49"
+  peer_v6: "fe80::aa:1111:31"

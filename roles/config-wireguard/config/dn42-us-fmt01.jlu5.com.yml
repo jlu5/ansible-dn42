@@ -62,3 +62,10 @@ wg_peers:
   wg_pubkey: "U7PMoiNEBWVRqjs7YV9fpXZ1WOrhfpYjeg6IM77gb2k="
   peer_v4: "172.20.21.100"
   peer_v6: "fe80::2333"
+
+- name: dn42sjc-kskb # autopeer ID 21080
+  port: 21111
+  remote: null
+  wg_pubkey: "ffcWCDuBP3YdufFzOaiW2QeZLFG/GXg4QfbWTZ6LVz8="
+  peer_v4: "10.127.111.33"
+  peer_v6: "fe80::aa:1111:21"
