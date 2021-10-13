@@ -134,8 +134,6 @@ wg_peers:
   peer_v4: "172.22.68.0"
   peer_v6: "fe80::1888"
 
-- name: dn42pnj-0x6
-  remove: true
 - name: dn42pnj-x6c
   port: 20588
   remote: "ewr.l.x6c.us:21080"
@@ -149,3 +147,10 @@ wg_peers:
   wg_pubkey: "ioFN575e/dD15BiD2mkXug6TKyeqYB4BC0f2NFMHYEM="
   peer_v4: null
   peer_v6: "fd22:ad17:8e8d:10::10c"
+
+- name: dn42nyc-alphvin
+  port: 21862
+  remote: "ny1-us.alphvino.com:21080"
+  wg_pubkey: "azbU3mQxubwZZiqZw2Z1dCUhS5W1JsUgbA7DILJpxlY="
+  peer_v4: "172.20.45.98"
+  peer_v6: "fe80::1853"
