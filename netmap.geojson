@@ -90,20 +90,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    4.904139,
-                    52.367573
-                ]
-            },
-            "properties": {
-                "title": "nl-ams03",
-                "description": "Amsterdam, NL"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     103.819836,
                     1.352083
                 ]
@@ -402,26 +388,6 @@
             },
             "properties": {
                 "title": "de-nbg01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        11.076665,
-                        49.452102
-                    ],
-                    [
-                        4.904139,
-                        52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "de-nbg01 <-> nl-ams03",
                 "description": "(costs calculated dynamically)"
             }
         },
@@ -782,26 +748,6 @@
             },
             "properties": {
                 "title": "jp-tyo01 <-> us-sea02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        4.904139,
-                        52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> nl-ams03",
                 "description": "(costs calculated dynamically)"
             }
         },

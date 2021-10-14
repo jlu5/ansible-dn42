@@ -93,6 +93,8 @@ def main():
             continue
         node = node_short_names[node]
         for neighbour in neighbours:
+            if neighbour not in hosts:
+                continue
             neighbour = node_short_names[neighbour]
             if f'{neighbour},{node}' not in seen_tunnels:  # Only add a connection once
                 datapair = f'{node},{neighbour}'
