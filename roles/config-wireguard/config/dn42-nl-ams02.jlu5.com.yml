@@ -144,3 +144,10 @@ wg_peers:
   wg_pubkey: "XTWFGICtAn9WveGf9JapJJQdcQ5MTHtLkG/SfiKAgA8="
   peer_v4: "172.23.132.97"
   peer_v6: null
+
+- name: dn42mow-dgy
+  port: 20826
+  remote: "ru.dn42.dgy.xyz:21080"
+  wg_pubkey: "Y8E2cd2DKr7hZ3qs1WgU+2l+qWHaOxw4vFPAGevpiW0="
+  peer_v4: null
+  peer_v6: "fe80::826"
