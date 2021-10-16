@@ -138,3 +138,9 @@ wg_peers:
   peer_v4: null
   peer_v6: "fe80::2331"
 
+- name: dn42par-neuther
+  port: 23771
+  remote: "v4.dn.neutheria.org:21080"
+  wg_pubkey: "XTWFGICtAn9WveGf9JapJJQdcQ5MTHtLkG/SfiKAgA8="
+  peer_v4: "172.23.132.97"
+  peer_v6: null
