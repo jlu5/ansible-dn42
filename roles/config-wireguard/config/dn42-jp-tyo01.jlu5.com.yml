@@ -133,3 +133,11 @@ wg_peers:
   wg_pubkey: "Bxl8C2QjsLKBIEVz9imulfLtVvgdwkAMaTXR/PBdQhk="
   peer_v4: "172.23.110.72"
   peer_v6: "fe80::72:1"
+
+- name: dn42tyo-myon
+  port: 20639
+  remote: "r42.myon98.net:21080"
+  wg_pubkey: "YfMA5dAA3CRMWXb/ONQk5sjnrpz+Bsrj6Azj1+nx4nc="
+  peer_v4: "172.22.177.87"
+  peer_v6: "fe80::639"
+
