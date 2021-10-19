@@ -14,8 +14,10 @@ wg_peers:
   peer_v6: "fe80::1299:e"
 
 - name: dn42fra-lantian
+  remove: true
+- name: dn42lux-lantian
   port: 52547
-  remote: "45.138.97.165:21080"
+  remote: "buyvm.lantian.pub:21080"
   wg_pubkey: "DkmSBCIgrxPPZmT07DraoCSD/jSByjPkYqHJWfVZ5hM="
   peer_v4: "172.22.76.187"
   peer_v6: "fe80::2547"
