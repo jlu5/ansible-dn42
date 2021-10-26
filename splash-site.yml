@@ -2,4 +2,6 @@
   hosts: dn42routers
   become: yes
   roles:
-    - upload-splash-site
+    - name: upload-splash-site
+      # Blocked by ssl-config.mozilla.org / GitHub Pages
+      when: not v6_only|default(False)
