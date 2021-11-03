@@ -133,6 +133,7 @@ protocol kernel {
 include "/etc/bird/custom_filters.conf";
 include "/etc/bird/community_filters.conf";
 
+define DEFAULT_BGP_PREF = 500;
 template bgp dnpeers {
     local as OWNAS;
     # When eBGP routes tie in latency, prefer older routes instead of comparing router ID
@@ -140,6 +141,7 @@ template bgp dnpeers {
 
     enforce first as on;
     advertise hostname on;
+    default bgp_local_pref DEFAULT_BGP_PREF;
 }
 
 include "/etc/bird/babel.conf";

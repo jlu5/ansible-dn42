@@ -5,8 +5,8 @@ This page describes the Routing Policy for AS4242421080.
 This is a rough overview, when in doubt you can check my actual filter code: [custom_filters.conf](roles/config-bird2/config/custom_filters.conf.j2)
 
 1. Prefer routes originating from the same dn42 region, as marked by the [dn42 BGP community `(64511, 41..53)`](https://dn42.dev/howto/Bird-communities). This is essentially cold potato routing:
-  - Routes with no region community or the same origin value as a PoP are given `bgp_local_pref = 100 + 200/bgp_path.len`
-  - Other routes are left with the default local preference (100)
+  - Routes with no region community or the same origin value as a PoP are given `bgp_local_pref = 500 + 200/bgp_path.len`
+  - Other routes are left with a default local preference of 500
 2. Prefer routes with low (<= 20ms) inter-AS latency.
   - Specifically this adds a penalty of `3*x` to `bgp_local_pref` for routes that have community `(64511, x)`, for all `4 <= x <= 9`
 3. When bgp_local_pref ties, prefer routes with shortest AS path
@@ -17,7 +17,7 @@ This is a rough overview, when in doubt you can check my actual filter code: [cu
 
 ## BGP Communities
 
-The [standard dn42 BGP Communities](https://dn42.net/howto/Bird-communities) for max. inter-AS link latency, bandwidth, and encryption are supported. All of my nodes so far are marked as >=100Mbps bandwidth, as capacity varies and I cannot guarantee anything higher.
+The [standard dn42 BGP Communities](https://dn42.net/howto/Bird-communities) for max. inter-AS link latency, bandwidth, and encryption are supported. All of my nodes so far are marked as >= 100 Mbps bandwidth, as capacity varies and I cannot guarantee anything higher.
 
 ### Large communities
 
