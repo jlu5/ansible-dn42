@@ -123,3 +123,10 @@ wg_peers:
   wg_pubkey: "8xYXoU9lNuKyIMHQpB+RHxLER5xT0fIhWxp+F64Dqlc="
   peer_v4: null
   peer_v6: "fe80::3704"
+
+- name: dn42sgp-wcysite
+  port: 23410
+  remote: "sg.wcysite.com:11080"
+  wg_pubkey: "BfN1CpQJZKe12g3lQsZQ9A0oD520RSgtP+mne5TIYgU="
+  peer_v4: "172.20.41.49"
+  peer_v6: "fe80::3410"

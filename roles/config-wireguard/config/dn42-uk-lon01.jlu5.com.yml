@@ -153,3 +153,10 @@ wg_peers:
   wg_pubkey: "LOaG6FgBFIs2WFt6V1SJ8PX1OqF818eeXLm6izS3t3U="
   peer_v4: "172.22.131.161"
   peer_v6: null
+
+- name: dn42lon-wcysite
+  port: 23410
+  remote: "uk.wcysite.com:11080"
+  wg_pubkey: "qbRtA56r969HCnhYUDyYk5vxQe7nFeW5VhUH3cFnElw="
+  peer_v4: "172.20.41.50"
+  peer_v6: "fe80::3410"
