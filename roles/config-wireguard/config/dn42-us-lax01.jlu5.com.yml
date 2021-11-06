@@ -141,3 +141,10 @@ wg_peers:
   wg_pubkey: "IXjFALJFTr24HAhXKDsCnTRXmlc3kJHJiR4Nr44l5Uw="
   peer_v4: "172.23.196.0"
   peer_v6: "fe80::a0e:fb02"
+
+- name: dn42lax-etherar
+  port: 21678
+  remote: "207.246.110.87:51820"
+  wg_pubkey: "mLtZwEvIVfvaChb9BWYeY3psxWr0q1ZElBciq+OGHVo="
+  peer_v4: "172.21.99.225"
+  peer_v6: null
