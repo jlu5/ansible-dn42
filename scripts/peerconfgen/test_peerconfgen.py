@@ -446,7 +446,7 @@ class PeerConfWriteTest(unittest.TestCase):
         }
         self.assertEqual({
             'name': 'dn42-somelongna',
-            'port': '28888',
+            'port': 28888,
             'remote': 'test.null.invalid:21080',
             'wg_pubkey': 'dn42' * 10 + 'dn4=',
             'peer_v4': '172.22.108.88',
@@ -464,7 +464,7 @@ class PeerConfWriteTest(unittest.TestCase):
         }
         self.assertEqual({
             'name': 'dn42-abcdef',
-            'port': '28888',
+            'port': 28888,
             'remote': None,
             'wg_pubkey': 'dn42' * 10 + 'dn4=',
             'peer_v4': '172.22.108.88',
