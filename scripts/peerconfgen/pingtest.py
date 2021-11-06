@@ -11,6 +11,8 @@ def remote_ping(node, target):
         # when running remote ssh commands
         'ssh', f'dn42-{node}.jlu5.com', 'ping', f'-c{PING_COUNT}', '-q', '-n', shlex.quote(target)
     ], encoding='utf-8')
+    print("Ping output:")
+    print(output)
     return output
 
 RTT_RE = re.compile(r'rtt min\/avg\/max\/mdev = (?P<min>[0-9.]+)\/(?P<avg>[0-9.]+)\/(?P<max>[0-9.]+)\/(?P<mdev>[0-9.]+) ms')

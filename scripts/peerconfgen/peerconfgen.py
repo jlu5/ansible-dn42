@@ -150,12 +150,16 @@ def main(args):
     # so a round trip is lossy, and I don't want to depend on multiple yaml libs in one project
     yaml_str = '\n'.join(yaml_str.splitlines()[1:])
     with open(wg_config_path, 'a') as f:
-        f.write('\n')
-        f.write(yaml_str)
-        f.write('\n')
+        count = 0
+        count += f.write('\n')
+        count += f.write(yaml_str)
+        count += f.write('\n')
+        print(f"Wrote {count} bytes to {wg_config_path}")
 
-    with open(bird_config_dir / f'{args.peername}.conf', 'w') as f:
-        f.write(bird_peer_config)
+    bird_config_path = bird_config_dir / f'{args.peername}.conf'
+    with open(bird_config_path, 'w') as f:
+        count = f.write(bird_peer_config)
+        print(f"Wrote {count} bytes to {bird_config_path}")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
@@ -167,4 +171,4 @@ if __name__ == '__main__':
     rootdir = pathlib.Path(os.path.dirname(__file__)) / ".." / ".."
     #print('cd to', rootdir)
     os.chdir(rootdir)
-    print(main(args))
+    main(args)

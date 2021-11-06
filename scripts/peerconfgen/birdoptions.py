@@ -17,7 +17,8 @@ def fill_bird_options(node, completed_config):
     if completed_config['peer_v4'] and completed_config['peer_v6']:
         # Dual stack. Check if we want mp_bgp and enh
         mp_bgp = prompt_bool("Enable MP-BGP?")
-        extended_next_hop = prompt_bool("Enable extended next hop?")
+        if mp_bgp:
+            extended_next_hop = prompt_bool("Enable extended next hop?")
 
     latency = None
     remote = completed_config['remote']

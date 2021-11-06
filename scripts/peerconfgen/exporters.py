@@ -13,7 +13,7 @@ def gen_wg_config(peername, completed_config):
         # Opting not to include the location code anymore
         'name': get_iface_name(peername),
         # 20000 + last 4 digits of ASN
-        'port': '2' + completed_config['asn'][-4:],
+        'port': int('2' + completed_config['asn'][-4:]),
         'remote': remote,
         'wg_pubkey': completed_config['wg_pubkey'],
         'peer_v4': completed_config['peer_v4'],
