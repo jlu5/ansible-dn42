@@ -19,3 +19,10 @@ wg_peers:
   wg_pubkey: "zQKdKiappowslCIbEyCiqLwrwUc6APcyEBIkIvzA6nw="
   peer_v4: "172.20.28.224"
   peer_v6: "fda5:a8a8:9989:4242::1"
+
+- name: dn42zrh-melty
+  port: 23632
+  remote: "cantaloupe.link.melty.land:21080"
+  wg_pubkey: "7ibAFc93/KY1/Wd+ydxm4uMHaGPXKf2gBsK4CZVr2Wo="
+  peer_v4: "172.23.36.36"
+  peer_v6: "fe80::3632"

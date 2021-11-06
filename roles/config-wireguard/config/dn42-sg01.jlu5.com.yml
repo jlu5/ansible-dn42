@@ -130,3 +130,10 @@ wg_peers:
   wg_pubkey: "BfN1CpQJZKe12g3lQsZQ9A0oD520RSgtP+mne5TIYgU="
   peer_v4: "172.20.41.49"
   peer_v6: "fe80::3410"
+
+- name: dn42sgp-melty
+  port: 23632
+  remote: "ilama.link.melty.land:21080"
+  wg_pubkey: "9jmYu2YVnYc0zHTkFojzBQgVALUrIiYhq93TCb5qXDY="
+  peer_v4: "172.23.36.33"
+  peer_v6: "fe80::3632"

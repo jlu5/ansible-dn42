@@ -37,3 +37,10 @@ wg_peers:
   wg_pubkey: "Jr3oK2dDhDXr3GEIYjSMeBeny7buh/XIDhPDa6she0c="
   peer_v4: "172.23.183.32"
   peer_v6: "fd71:244:9983::1"
+
+- name: dn42dal-melty
+  port: 23632
+  remote: "chokeberry.link.melty.land:21080"
+  wg_pubkey: "oCgzClTd8nECzDqS20/dKaitAHUN1TgIIeVZKAsJ1FA="
+  peer_v4: "172.23.36.35"
+  peer_v6: "fe80::3632"

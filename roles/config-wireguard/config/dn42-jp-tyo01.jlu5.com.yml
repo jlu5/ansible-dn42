@@ -141,3 +141,10 @@ wg_peers:
   peer_v4: "172.22.177.87"
   peer_v6: "fe80::639"
 
+- name: dn42tyo-melty
+  port: 23632
+  remote: "cranberry.link.melty.land:21080"
+  wg_pubkey: "uXeP5y2MP+XBcI7EU8LxqGS1r/Fu3vGIl3Q+r24J0UI="
+  peer_v4: "172.23.36.34"
+  peer_v6: "fe80::3632"
+
