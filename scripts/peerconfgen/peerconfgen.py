@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generates peer config by scraping some plain text.
+Interactively generate peering configs (WireGuard+BIRD) by scraping plain text node info and autofilling as many fields as possible.
 """
 
 import argparse
