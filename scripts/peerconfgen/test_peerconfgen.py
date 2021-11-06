@@ -157,7 +157,6 @@ class PeerConfCompleteTest(unittest.TestCase):
     @unittest.mock.patch('builtins.input', FakeInput([\
         '4242424242',
         '',  # remote
-        '',  # port
         'A' * 43 + '=',
         '',  # tunnel v4
         'fe80::1080'
@@ -177,7 +176,6 @@ class PeerConfCompleteTest(unittest.TestCase):
         'badASN',
         '4242424242',
         '',  # remote
-        '',  # port
         'A' * 43 + '=',
         '',  # tunnel v4
         'fe80::1080'
@@ -195,7 +193,6 @@ class PeerConfCompleteTest(unittest.TestCase):
     @unittest.mock.patch('builtins.input', FakeInput([
         '4242424242',
         '',  # remote
-        '',  # port
 
         # Bad key attempts
         'badKey',
@@ -220,7 +217,6 @@ class PeerConfCompleteTest(unittest.TestCase):
     @unittest.mock.patch('builtins.input', FakeInput([
         '4242424242',
         '',  # remote
-        '',  # port
         'Zz' * 21 + 'Z=',  # fake wg key
 
         # tunnel v4
@@ -243,7 +239,6 @@ class PeerConfCompleteTest(unittest.TestCase):
     @unittest.mock.patch('builtins.input', FakeInput([
         '4242424242',
         '',  # remote
-        '',  # port
         'Test' * 10 + '123=',  # fake wg key
 
         # tunnel v4
@@ -265,9 +260,32 @@ class PeerConfCompleteTest(unittest.TestCase):
         }, complete_peer_config({}))
 
     @unittest.mock.patch('builtins.input', FakeInput([
+        '4201279999',
+        'abc.local',  # remote
+        # port retries
+        'five',
+        '',    # port cannot be empty if remote is set
+        '3.1415927',
+        '8443',
+        'Test' * 10 + '123=',  # fake wg key
+        # tunnel v4
+        '172.22.108.23',
+        # tunnel v6
+        ''
+    ]))
+    def test_complete_all_retry_port(self):
+        self.assertEqual({
+            'asn': '4201279999',
+            'remote': 'abc.local',
+            'port': '8443',
+            'wg_pubkey': 'Test' * 10 + '123=',
+            'peer_v4': '172.22.108.23',
+            'peer_v6': None,
+        }, complete_peer_config({}))
+
+    @unittest.mock.patch('builtins.input', FakeInput([
         'y',   # confirm ASN
         '',    # empty remote
-        '',    # empty port
         'Y',   # confirm wg key
         'yes', # confirm IPv4
         'YES', # confirm IPv6
@@ -293,7 +311,6 @@ class PeerConfCompleteTest(unittest.TestCase):
     @unittest.mock.patch('builtins.input', FakeInput([
         'y',   # confirm ASN
         '',    # empty remote
-        '',    # empty port
         'Y',   # confirm wg key
         'yes', # confirm IPv4
         'n',   # reject first IPv6

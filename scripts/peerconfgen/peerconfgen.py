@@ -52,7 +52,7 @@ _ATTR_MAP = {
     'asn': PeerConfigField('asn', 'Peer ASN', ASN_RE, is_int),
     'remote': PeerConfigField('remote', 'Remote endpoint (IP/host only)', ENDPOINT_RE, is_valid_endpoint, optional=True),
     # No regex for port: it's always filled in manually
-    'port': PeerConfigField('port', 'Remote VPN port', validator=is_port, optional=True),
+    'port': PeerConfigField('port', 'Remote VPN port', validator=is_port),
     'wg_pubkey': PeerConfigField('wg_pubkey', 'WireGuard public key', WGKEY_RE),
     'peer_v4': PeerConfigField('peer_v4', 'Tunnel IPv4 address', TUNNEL4_RE, is_valid_peer_v4, optional=True),
     'peer_v6': PeerConfigField('peer_v6', 'Tunnel IPv6 address', TUNNEL6_RE, is_valid_peer_v6, optional=True),
@@ -92,6 +92,10 @@ def _confirm_scrape_results(scrape_results, config_field):
 def complete_peer_config(scrape_results):
     result = {}
     for attr, config_field in _ATTR_MAP.items():
+        # Special case: (remote) port is only relevant if remote is set
+        if attr == 'port' and not result.get('remote'):
+            result['port'] = None
+            continue
         prompt = f"Please input the {config_field.desc} [{config_field.name}]"
         if config_field.optional:
             prompt += ", or leave blank to skip: "
