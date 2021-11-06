@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-import math
 import subprocess
 import traceback
 
@@ -11,12 +10,6 @@ class BirdOptions:
     mp_bgp: bool
     extended_next_hop: bool
     latency: float
-
-def get_dn42_latency_value(latency):
-    for x in range(1, 10):
-        if latency < (math.e ** x):
-            return x
-    return x
 
 def fill_bird_options(node, completed_config):
     mp_bgp = False

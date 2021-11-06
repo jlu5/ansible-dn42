@@ -8,7 +8,10 @@ import io
 import os
 import pathlib
 import re
+import yaml
 
+from birdoptions import fill_bird_options
+from exporters import gen_wg_config, gen_bird_peer_config
 from utils import *
 from validators import *
 
@@ -110,12 +113,17 @@ def complete_peer_config(scrape_results):
                     break
                 print(f"Invalid input: {value}")
         result[attr] = value
+    if not (result['peer_v4'] or result['peer_v6']):
+        raise ValueError("Need either peer_v4 or peer_v6 for peers")
     return result
 
 def main(args):
     wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"dn42-{args.node}.jlu5.com.yml")
+    bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", f"dn42-{args.node}.jlu5.com")
     if not os.path.exists(wg_config_path):
         raise ValueError(f"Missing WireGuard config file {wg_config_path}")
+    if not os.path.isdir(bird_config_dir):
+        raise ValueError(f"Missing BIRD config dir {bird_config_dir}")
 
     print("Enter peer config info followed by EOF. Copy paste some text, and I'll try to guess")
     # Read string to guess from stdin
@@ -131,6 +139,23 @@ def main(args):
     scrape_results = scrape_peer_config(text.getvalue())
     completed_config = complete_peer_config(scrape_results)
     print("Config so far:", completed_config)
+    bird_options = fill_bird_options(args.node, completed_config)
+    print("BIRD peering options:", bird_options)
+
+    wg_config = gen_wg_config(args.peername, completed_config)
+    bird_peer_config = gen_bird_peer_config(args.peername, completed_config, bird_options)
+
+    yaml_str = yaml.dump({'wg_peers': [wg_config]}, indent=2)
+    # Chop off the first line for appending to the file. PyYAML doesn't support loading comments
+    # so a round trip is lossy, and I don't want to depend on multiple yaml libs in one project
+    yaml_str = '\n'.join(yaml_str.splitlines()[1:])
+    with open(wg_config_path, 'a') as f:
+        f.write('\n')
+        f.write(yaml_str)
+        f.write('\n')
+
+    with open(bird_config_dir / f'{args.peername}.conf', 'w') as f:
+        f.write(bird_peer_config)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
@@ -139,5 +164,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # cd to repo root
-    os.chdir(pathlib.Path(os.path.dirname(__file__)) / ".." / "..")
+    rootdir = pathlib.Path(os.path.dirname(__file__)) / ".." / ".."
+    #print('cd to', rootdir)
+    os.chdir(rootdir)
     print(main(args))
