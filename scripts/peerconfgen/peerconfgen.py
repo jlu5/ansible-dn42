@@ -9,6 +9,7 @@ import os
 import pathlib
 import re
 
+from utils import *
 from validators import *
 
 WGKEY_RE = re.compile(r'[0-9a-zA-Z+/]{43}=')
@@ -47,6 +48,7 @@ class PeerConfigField():
 _ATTR_MAP = {
     'asn': PeerConfigField('asn', 'Peer ASN', ASN_RE, is_int),
     'remote': PeerConfigField('remote', 'Remote endpoint (IP/host only)', ENDPOINT_RE, is_valid_endpoint, optional=True),
+    # No regex for port: it's always filled in manually
     'port': PeerConfigField('port', 'Remote VPN port', validator=is_port, optional=True),
     'wg_pubkey': PeerConfigField('wg_pubkey', 'WireGuard public key', WGKEY_RE),
     'peer_v4': PeerConfigField('peer_v4', 'Tunnel IPv4 address', TUNNEL4_RE, is_valid_peer_v4, optional=True),
@@ -72,20 +74,18 @@ def scrape_peer_config(text):
 def _confirm_scrape_results(scrape_results, config_field):
     for attr_candidate in scrape_results.get(config_field.name, []):
         tries = 0
-        while tries < 5:
-            accepted = input(f"Guess for {config_field.desc} [{config_field.name}]: {attr_candidate}\tAccept? [Y/N]").strip()
-            if accepted in _YES_RESPONSES:
+        while tries < MAX_PROMPT_TRIES:
+            accepted = prompt_bool(f"Guess for {config_field.desc} [{config_field.name}]: {attr_candidate}\tAccept?")
+            if accepted is True:
                 print(f"Set {config_field.desc} [{config_field.name}] to {attr_candidate}")
                 return attr_candidate
-            elif accepted in _NO_RESPONSES:
+            elif accepted is False:
                 break  # break out of the while, move to next loop elem
             else:
                 print("Bad input:")
                 tries += 1
     return None
 
-_NO_RESPONSES = {'n', 'N', 'no', 'No', 'NO'}
-_YES_RESPONSES = {'y', 'Y', 'yes', 'Yes', 'YES'}
 def complete_peer_config(scrape_results):
     result = {}
     for attr, config_field in _ATTR_MAP.items():
@@ -99,7 +99,7 @@ def complete_peer_config(scrape_results):
         if not value:  # Out of guesses
             tries = 0
             while True:
-                if tries > 5:  # So tests don't crash here
+                if tries >= MAX_PROMPT_TRIES:  # So tests don't crash here
                     raise ValueError(f"Too many failed tries for field {config_field.name}, aborting")
                 tries += 1
                 value = input(prompt)
@@ -129,14 +129,13 @@ def main(args):
             break
 
     scrape_results = scrape_peer_config(text.getvalue())
-    complete_config = complete_peer_config(scrape_results)
-    return complete_config
+    completed_config = complete_peer_config(scrape_results)
+    print("Config so far:", completed_config)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('node', help='Node to generate config for', type=str)
     parser.add_argument('peername', help='Short name / identifier for peer', type=str)
-    #parser.add_argument('port', help='Port number for remote endpoint', type=int)
     args = parser.parse_args()
 
     # cd to repo root
