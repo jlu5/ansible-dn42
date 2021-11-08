@@ -153,20 +153,31 @@ def main(args):
     # Chop off the first line for appending to the file. PyYAML doesn't support loading comments
     # so a round trip is lossy, and I don't want to depend on multiple yaml libs in one project
     yaml_str = '\n'.join(yaml_str.splitlines()[1:])
-    with open(wg_config_path, 'a') as f:
-        count = 0
-        count += f.write('\n')
-        count += f.write(yaml_str)
-        count += f.write('\n')
-        print(f"Wrote {count} bytes to {wg_config_path}")
+    print()
+    print("WireGuard config:")
+    print(yaml_str)
+    print()
+    if not args.dry_run:
+        with open(wg_config_path, 'a') as f:
+            count = 0
+            count += f.write('\n')
+            count += f.write(yaml_str)
+            count += f.write('\n')
+            print(f"Wrote {count} bytes to {wg_config_path}")
 
     bird_config_path = bird_config_dir / f'{args.peername}.conf'
-    with open(bird_config_path, 'w') as f:
-        count = f.write(bird_peer_config)
-        print(f"Wrote {count} bytes to {bird_config_path}")
+    print()
+    print("BIRD peer config:")
+    print(bird_peer_config)
+    print()
+    if not args.dry_run:
+        with open(bird_config_path, 'w') as f:
+            count = f.write(bird_peer_config)
+            print(f"Wrote {count} bytes to {bird_config_path}")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--dry-run', help='Only print generated output; do not write it to disk', action='store_true')
     parser.add_argument('node', help='Node to generate config for', type=str)
     parser.add_argument('peername', help='Short name / identifier for peer', type=str)
     args = parser.parse_args()
