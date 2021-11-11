@@ -27,6 +27,13 @@
     dest: "/etc/netdata/netdata.conf"
   notify: Restart netdata
 
+- name: Add Netdata notifier script stub
+  template:
+    src: "netdata-notify.sh.j2"
+    dest: "/opt/netdata-notify.sh"
+    mode: "755"
+    force: no
+
 - name: Enable/start netdata service
   systemd:
     name: netdata
