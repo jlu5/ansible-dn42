@@ -56,9 +56,6 @@ wg_peers:
   peer_v4: "172.23.89.4"
   peer_v6: "fe80::604:4"
 
-- name: dn42sjc-jerry
-  remove: true
-
 - name: dn42lax-yuetau
   port: 50925
   remote: "lax.yuetau.net:21080"
@@ -74,13 +71,6 @@ wg_peers:
   peer_v6: "fe80::1826"
 
 - name: dn42lax-fixmix
-  port: 51876
-  remote: "107.172.22.228:21080"
-  wg_pubkey: "haGUA0ZiXX0GKugLbwU3q4PL8KMBV+ktgwKxPr0xxkc="
-  peer_v4: "172.22.66.54"
-  peer_v6: "fe80::1876"
-
-- name: dn42sjc-yuuta
   remove: true
 
 - name: dn42lax-iedon
@@ -119,18 +109,10 @@ wg_peers:
   peer_v6: "fe80::1123"
 
 - name: dn42lax-nwn
-  port: 50344
-  remote: "lax1.us.node.nwn.moe:21080"
-  wg_pubkey: "3eVAIQT9T0RqjG0chqnaTYcMWaXBzwEEO5JO8j/Wxlc="
-  peer_v4: "172.23.110.97"
-  peer_v6: "fe80::cafe"
+  remove: true
 
 - name: dn42lax-naiveto
-  port: 23309
-  remote: "lax.tsinghuamakerxian.cn:21080"
-  wg_pubkey: "C9QViSndf1zga5nOoSoXXMLUWBJvEFiJDWSFCbU1Ynw="
-  peer_v4: "172.23.163.161"
-  peer_v6: "fe80::3309"
+  remove: true
 
 - name: dn42lax-tsingya
   port: 23699

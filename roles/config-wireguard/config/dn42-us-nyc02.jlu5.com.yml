@@ -35,11 +35,7 @@ wg_peers:
   peer_v6: "fe80::42:2237/128"
 
 - name: dn42bhs-aasg
-  port: 50827
-  remote: "shingebiss.lorkep.trade:51080"
-  wg_pubkey: "OwQeiRnPmE3/28I0lWP3TD9JZOSULAmnEAIbSw0wtBY="
-  peer_v4: null
-  peer_v6: "fe80::c13c:3759:4b20:e63f"
+  remove: true
 
 - name: dn42buf-cperrin
   port: 53735
@@ -107,11 +103,7 @@ wg_peers:
   peer_v6: "fe80::1876"
 
 - name: dn42nyc-eastbnd
-  port: 52633
-  remote: "lga.eastbnd.com:21080"
-  wg_pubkey: "ifJ451maK3eaEg1FrewNbgCEMjMmEinYt1Sd1pwGTDc="
-  peer_v4: "172.23.250.42"
-  peer_v6: "fe80::2633"
+  remove: true
 
 - name: dn42bhs-serverm
   port: 53770
@@ -135,11 +127,7 @@ wg_peers:
   peer_v6: "fe80::1888"
 
 - name: dn42pnj-x6c
-  port: 20588
-  remote: "ewr.l.x6c.us:21080"
-  wg_pubkey: "kbkhBKH8NUo8uUaAPn5Poif0hAsOzBpB7+xdBKSTqi8="
-  peer_v4: "172.23.110.67"
-  peer_v6: "fe80::67:1"
+  remove: true
 
 - name: dn42rio-paterno
   port: 23073
@@ -149,11 +137,7 @@ wg_peers:
   peer_v6: "fd22:ad17:8e8d:10::10c"
 
 - name: dn42nyc-alphvin
-  port: 21862
-  remote: "ny1-us.alphvino.com:21080"
-  wg_pubkey: "azbU3mQxubwZZiqZw2Z1dCUhS5W1JsUgbA7DILJpxlY="
-  peer_v4: "172.20.45.98"
-  peer_v6: "fe80::1853"
+  remove: true
 
 - name: dn42ash-kskb # autopeer ID 21080
   port: 21111

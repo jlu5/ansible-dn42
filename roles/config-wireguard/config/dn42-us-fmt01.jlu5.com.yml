@@ -28,22 +28,11 @@ wg_peers:
   peer_v4: "172.21.100.191"
   peer_v6: "fe80::3088:191"
 
-- name: dn42fmt-moecast
+- name: dn42fmt-x6c
   remove: true
 
-- name: dn42fmt-x6c
-  port: 20588
-  remote: "fnc.l.x6c.us:21080"
-  wg_pubkey: "V4Cb9Jy5evG3XTUBrDWbneEE4IkP/hE8g35i4gQ53RM="
-  peer_v4: "172.23.110.68"
-  peer_v6: "fe80::68:1"
-
 - name: dn42fmt-airgapp
-  port: 20656
-  remote: "66.248.232.199:51820"
-  wg_pubkey: "hFXydv5SUT/1iIeR8PIqaJwc5VCbyVjm4bSXSc72skA="
-  peer_v4: "172.22.51.1"
-  peer_v6: "fd00:0801:3010::1"
+  remove: true
 
 - name: dn42sjc-jerry
   port: 23618

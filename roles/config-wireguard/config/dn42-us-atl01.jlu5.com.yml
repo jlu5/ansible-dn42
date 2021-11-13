@@ -8,11 +8,7 @@ wg_peers:
   local_v6: "fd42:470:f0ef:307::2/64"
 
 - name: dn42dal-scooter
-  port: 53856
-  remote: "vpn.scooterharris.com:23858"
-  wg_pubkey: "5W5zt9TqJfPulaYvz0rY+QeqCCIjkik/5WUS/1YdhjU="
-  peer_v4: "172.23.109.169"
-  peer_v6: "fd38:cfa3:7091:a1::1"
+  remove: true
 
 - name: dn42atl-napster
   port: 51050
@@ -27,9 +23,6 @@ wg_peers:
   wg_pubkey: "IKEynXwzlR5CY+XrklI/vsH97MfY1aqnQ8oiQ6AyHGU="
   peer_v4: "172.23.193.143"
   peer_v6: "fd7c:3727:9426:193::3"
-
-- name: dn42mia-hellomo
-  remove: true
 
 - name: dn42dal-winterf
   port: 52895

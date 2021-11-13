@@ -6,18 +6,8 @@ wg_peers:
   peer_v4: "172.20.20.98/32"
   peer_v6: "fe80::b562"
 
-- name: dn42sea-kyle
-  remove: true
-
-- name: dn42sjo-sunnet
-  remove: true
-
 - name: dn42yvr-strexp
-  port: 51331
-  remote: "van1.ca.dn42.strexp.net:21080"
-  wg_pubkey: "pTgzo0VLRUaUTBGdaRY/+hpDA+C7J9NN8/Vst7JZ5RU="
-  peer_v4: "172.20.158.133"
-  peer_v6: "fe80::1331/64"
+  remove: true
 
 - name: dn42yvr-yura
   port: 52464
@@ -39,14 +29,6 @@ wg_peers:
   peer_v4: 169.254.108.17
   peer_v6: fe80::1080:17
   is_internal_node: true  # use peering LAN IP
-
-- name: igp-ca-yvr02
-  remove: true
-# - name: igp-ca-yvr02
-#   port: 55101
-#   wg_pubkey: "O6LFGZ/03W74TO/4pEEay/lWvB2N25gjIo5PEZdIAyg="
-#   peer_v4: 172.22.108.18
-#   peer_v6: fe80::1080:18
 
 - name: cl-shypre
   port: 19999
@@ -75,6 +57,3 @@ wg_peers:
   wg_pubkey: "AMmUVNOn6ZtL0+vn1tfO4c7M1Fby19lSVZpJJhML6VI="
   peer_v4: "172.20.233.153"
   peer_v6: "fe80::1288/64"
-
-- name: dn42sea-0x6
-  remove: true

@@ -34,11 +34,7 @@ wg_peers:
   peer_v6: "fe80::2526/64"
 
 - name: dn42las-tecgoo
-  port: 51306
-  remote: "las.pop.dn42.ioalzx.top:21080"
-  wg_pubkey: "0fN1syRS6NSsR9AEkJKi0rSmrFZUhFFFaJLxNH09flo="
-  peer_v4: "172.23.8.5"
-  peer_v6: "fe80::1306"
+  remove: true
 
 - name: dn42las-hinata
   port: 53724
@@ -48,11 +44,7 @@ wg_peers:
   peer_v6: "fe80::3724"
 
 - name: dn42las-naiveto
-  port: 23309
-  remote: "lav.tsinghuamakerxian.cn:21080"
-  wg_pubkey: "sahaUh1IbK9rZCFOl096QokESVGXV8Ko8wZ5m0dcdiY="
-  peer_v4: "172.23.163.163"
-  peer_v6: "fe80::3309"
+  remove: true
 
 - name: dn42las-lapisbl
   port: 22032

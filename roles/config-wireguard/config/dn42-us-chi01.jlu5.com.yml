@@ -35,9 +35,6 @@ wg_peers:
   peer_v4: "172.23.222.129"
   peer_v6: "fe80::100"
 
-- name: igp-ca-yvr01
-  remove: true
-
 - name: dn42chi-ncw
   port: 51288
   remote: "chi2.sc00.org:21080"
@@ -61,13 +58,11 @@ wg_peers:
 
 - name: dn42tor-tecgoo
   port: 51306
-  remote: "tor.pop.dn42.ioalzx.top:21080"
+  #remote: "tor.pop.dn42.ioalzx.top:21080"
+  remote: null  # unresolvable
   wg_pubkey: "+OxMTbkJPmn4CEN03bywCyy/et6NpH96xAMs//VFfG8="
   peer_v4: "172.23.8.4"
   peer_v6: "fe80::1306"
-
-- name: dn42chi-moerail
-  remove: yes
 
 - name: dn42kck-baoshuo
   port: 20247
