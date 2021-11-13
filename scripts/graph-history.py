@@ -61,7 +61,8 @@ def _read_git():
         all_filenames = [file.name for file in all_blobs]
 
         times.append(commit.authored_datetime)
-        n_ebgp_routers.append(len(peers_dir))
+        ebgp_routers = list(filter(lambda subtree: subtree.name.startswith('dn42-'), peers_dir))
+        n_ebgp_routers.append(len(ebgp_routers))
         n_ebgp_peerings.append(len(all_filenames))
         # Number of unique filenames = number of unique peers
         n_ebgp_unique.append(len(set(all_filenames)))
