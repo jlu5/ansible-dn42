@@ -29,11 +29,7 @@ wg_peers:
   peer_v6: "fe80::2464/64"
 
 - name: dn42tyo-yuetau
-  port: 50925
-  remote: "nrt.yuetau.net:21080"
-  wg_pubkey: "KcSV/4L6bHIAjZGnuYaTG9+3X0yWiXM4DKvECOJ6txI="
-  peer_v4: "172.21.68.33"
-  peer_v6: "fe80::925/64"
+  remove: true
 
 - name: dn42tyo-jrb0001
   port: 50119
@@ -128,11 +124,7 @@ wg_peers:
   peer_v6: "fe80::42:3699:10"
 
 - name: dn42tyo-x6c
-  port: 20588
-  remote: "nrt.l.x6c.us:21080"
-  wg_pubkey: "Bxl8C2QjsLKBIEVz9imulfLtVvgdwkAMaTXR/PBdQhk="
-  peer_v4: "172.23.110.72"
-  peer_v6: "fe80::72:1"
+  remove: true
 
 - name: dn42tyo-myon
   port: 20639
