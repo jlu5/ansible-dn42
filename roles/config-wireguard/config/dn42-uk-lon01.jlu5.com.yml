@@ -89,9 +89,6 @@ wg_peers:
   peer_v4: "172.20.51.120"
   peer_v6: "fe80::3618/64"
 
-- name: dn42rbx-kszczot
-  remove: true
-
 - name: dn42hel-andi
   port: 53991
   remote: "iota.h4ck.space:42029"
@@ -100,11 +97,7 @@ wg_peers:
   peer_v6: "fe80::1"
 
 - name: dn42man-tecgoo
-  port: 51306
-  remote: "mcr.pop.dn42.ioalzx.top:21080"
-  wg_pubkey: "+mH7+82rQe24UywIKnXglq0rsKWEsJit4yfTx/9NB04="
-  peer_v4: "172.23.8.1"
-  peer_v6: "fe80::1306"
+  remove: true
 
 - name: dn42rbx-serverm
   port: 53770
@@ -135,11 +128,7 @@ wg_peers:
   peer_v6: "fe80::42:3699:6"
 
 - name: dn42lon-x6c
-  port: 20588
-  remote: "lhr.l.x6c.us:21080"
-  wg_pubkey: "TXYvwzhBGoTQqes4nBA0NeJBB8QLLCTqZcSmXN+VDXk="
-  peer_v4: "172.23.110.70"
-  peer_v6: "fe80::70:1"
+  remove: true
 
 - name: dn42lon-noclip
   port: 22409

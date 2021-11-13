@@ -13,8 +13,6 @@ wg_peers:
   peer_v4: "172.23.235.1"
   peer_v6: "fe80::1299:e"
 
-- name: dn42fra-lantian
-  remove: true
 - name: dn42lux-lantian
   port: 52547
   remote: "buyvm.lantian.pub:21080"
@@ -66,11 +64,7 @@ wg_peers:
   peer_v6: "fe80::604:3"
 
 - name: dn42ath-livid
-  port: 50799
-  remote: "gr-01.livid.pw:21080"
-  wg_pubkey: "ChMatUzWx+XIpF2i2Fp5+6V2HN3M8ENOaNpxyenQpiw="
-  peer_v4: "172.20.34.161/32"
-  peer_v6: "fe80::deea/128"
+  remove: true
 
 - name: dn42fra-uffsalo
   port: 50780
@@ -87,11 +81,7 @@ wg_peers:
   peer_v6: "fe80::42:4242:2225"
 
 - name: dn42mrs-cvillis
-  port: 50308
-  remote: "46.182.6.167:21080"
-  wg_pubkey: "8TtTCaIsdmW4yVdQAZqPTPUjZR4eDIop0X+AHLmDKWg="
-  peer_v4: "172.20.149.17"
-  peer_v6: "fe80::0308:35"
+  remove: true
 
 - name: dn42nbg-rhmn
   port: 50807
@@ -213,18 +203,10 @@ wg_peers:
   peer_v6: "fe80::3770/64"
 
 - name: dn42nbg-n4gi0s
-  port: 51311
-  remote: "dn42-peer1.tnkoch.de:51080"
-  wg_pubkey: "CGtVMUg58p4aRqKG27fuzaMdkp06qzrnlVzt7NM5dyI="
-  peer_v4: "172.22.66.97"
-  peer_v6: "fe80::229"
+  remove: true
 
 - name: dn42fsn-kszczot
-  port: 53124
-  remote: "de01.dn42.kszczot.ovh:21080"
-  wg_pubkey: "7dBbLZa2s7oSsb2gh+umVhz+bs8vv5HPRvilVagl/xc="
-  peer_v4: 172.20.149.66
-  peer_v6: "fe80::3124"
+  remove: true
 
 - name: dn42nbg-plasma
   port: 52322
@@ -269,11 +251,7 @@ wg_peers:
   peer_v6: "fe80::42:3699:12"
 
 - name: dn42fra-x6c
-  port: 20588
-  remote: "fra.l.x6c.us:21080"
-  wg_pubkey: "tZ9TXziiPdFvEN+u7fICse0RnGmp6tI/zOB9uo0Fjik="
-  peer_v4: "172.23.110.73"
-  peer_v6: "fe80::73:1"
+  remove: true
 
 - name: dn42nbg-thomas
   port: 22571

@@ -21,11 +21,7 @@ wg_peers:
   peer_v6: "fe80::2575:3/64"
 
 - name: dn42lon-nab
-  port: 50781
-  remote: "dn42.nabeelomer.me:21080"
-  wg_pubkey: "5Xru3ent/00yGaW4Pg2VR+6hMhgjqzwQ5GwqJjTYq3M="
-  peer_v4: null
-  peer_v6: "fe80::beef"
+  remove: true
 
 - name: "dn42ams-tomkap"
   port: 52092
@@ -35,11 +31,7 @@ wg_peers:
   peer_v6: "fe80::42:1080:1/128"
 
 - name: dn42ams-gfa
-  port: 21097
-  remote: "dn42-nl-2.4679.ar:51821"
-  wg_pubkey: "iYvucYTTYVSketQvKkRuG5PKEE/UgpxSKZWSX0CUuzk="
-  peer_v4: "172.21.68.29"
-  peer_v6: "fe80::29:100"
+  remove: true
 
 - name: dn42ams-fixmix
   port: 51876
@@ -56,18 +48,10 @@ wg_peers:
   peer_v6: "fe80::fcde:3558"
 
 - name: dn42ams-kever
-  port: 50406
-  remote: "kever.us.to:42108"
-  wg_pubkey: "POrlh8qOwfUjL/EqB//ZozvrjLlOz0bpy47/3ZGiMSA="
-  peer_v4: "172.20.48.181"
-  peer_v6: "fe80::406"
+  remove: true
 
 - name: dn42ams-nurex
-  port: 53240
-  remote: "rosella.nrx.me:21080"
-  wg_pubkey: "6SR8Ss28Edo6hwwGL17ySay3EfK6kPFsm7EcfjUjkXA="
-  peer_v4: "172.20.32.146/32"
-  peer_v6: "fe80::3240:2/64"
+  remove: true
 
 - name: dn42ams-zeph
   port: 50801
@@ -98,11 +82,7 @@ wg_peers:
   peer_v6: "fe80::1123"
 
 - name: dn42bru-neutri
-  port: 52514
-  remote: null  # behind NAT
-  wg_pubkey: "fvGNCJm6FDS/0x92SERajCuwOsWpCk4pbTq3C6sMxyg="
-  peer_v4: "172.20.228.226"
-  peer_v6: "fda0:b455:bb86::226"
+  remove: true
 
 - name: dn42ams-camelus
   port: 21592
@@ -119,11 +99,7 @@ wg_peers:
   peer_v6: "fe80::42:3699:9"
 
 - name: dn42dus-alphvin
-  port: 21862
-  remote: "194.87.139.56:21080"
-  wg_pubkey: "Utag1F2oPnA8Omw7yvBhGk3xDMIRdhwlA7eLtAvSEnE="
-  peer_v4: "172.20.45.97"
-  peer_v6: "fe80::1862"
+  remove: true
 
 - name: dn42prg-wg
   port: 22331
