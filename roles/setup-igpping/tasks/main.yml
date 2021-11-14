@@ -11,19 +11,4 @@
     state: directory
     owner: "{{ automation_user }}"
 
-- name: Upload igpping files
-  copy:
-    src: "{{ item }}"
-    dest: "{{ automation_root_dir }}/igpping/"
-    owner: "{{ automation_user }}"
-  loop:
-    - "{{ playbook_dir }}/scripts/igpping/igpping.py"
-    - "{{ playbook_dir }}/scripts/igpping/igpping.conf"
-
-- name: Create cron job for igpping
-  cron:
-    name: igpping
-    minute: "15"
-    hour: "*/2"
-    user: "{{ automation_user }}"
-    job: "cd {{ automation_root_dir }}/igpping && python3 igpping.py >igpping.log 2>&1 && /usr/sbin/birdc configure >>igpping.log 2>&1"
+# Everything else is moved to config-igpping

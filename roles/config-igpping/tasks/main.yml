@@ -2,16 +2,23 @@
   include_vars:
     file: "global-config/igp-tunnels.yml"
 
+- name: Upload igpping script
+  copy:
+    src: "{{ playbook_dir }}/scripts/igpping/igpping.py"
+    dest: "{{ automation_root_dir }}/igpping/"
+    owner: "{{ automation_user }}"
+  register: _igpping_script
+
 - name: Template igpping hosts file
   template:
     src: "igpping-hosts.txt.j2"
     dest: "{{ automation_root_dir }}/igpping/igpping-hosts.txt"
   register: _igpping_hosts
 
-- name: Write igpping config
-  copy:
-    src: "{{ playbook_dir }}/scripts/igpping/igpping.conf"
-    dest: "{{ automation_root_dir }}/igpping/"
+- name: Template igpping config
+  template:
+    src: "igpping.conf.j2"
+    dest: "{{ automation_root_dir }}/igpping/igpping.conf"
     owner: "{{ automation_user }}"
   register: _igpping_config
 
@@ -23,4 +30,12 @@
   become_user: "{{ automation_user }}"
   register: igpping_init_result
   changed_when: "igpping_init_result.stdout | length > 0"
-  when: _igpping_hosts.changed or _igpping_config.changed
+  when: _igpping_hosts.changed or _igpping_config.changed or _igpping_script.changed
+
+- name: Create cron job for igpping
+  cron:
+    name: igpping
+    minute: "15"
+    hour: "*/2"
+    user: "{{ automation_user }}"
+    job: "cd {{ automation_root_dir }}/igpping && python3 igpping.py >igpping.log 2>&1 && /usr/sbin/birdc configure >>igpping.log 2>&1"
