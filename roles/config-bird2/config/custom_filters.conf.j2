@@ -20,6 +20,7 @@ In short, you are NOT meant to copy what's here. ESPECIALLY DON'T COPY PIECES YO
 If you just want BGP community support, look at community_filters.conf (it's based off the dn42 Wiki anyways)
 
 #}
+define OUTGOING_BGP_MED = {{ default_outgoing_bgp_med | default(0) }};
 
 # Node ID is AS4242421080-specific and used for informational communities and route pinning. You probably don't need it
 define NODEID = {{ ownip.rsplit('.', 1)[1] }};
@@ -149,6 +150,7 @@ function ebgp_export_filter() {
     if (is_anycast_network() && source = RTS_DEVICE) then {
         reject;
     }
+    bgp_med = OUTGOING_BGP_MED;
 };
 
 function ibgp_import_filter() {
