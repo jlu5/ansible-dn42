@@ -21,7 +21,8 @@ protocol babel int_babel {
 {% for host in igp_neighbours[inventory_hostname] | sort %}
 {% set nodedata = hostvars[host] %}
     interface "igp-{{ nodedata['shortname'] }}" {
-        include "{{ automation_root_dir }}/igpping/rxcost/{{ host }}.conf";
+        rxcost
+        include "{{ automation_root_dir }}/igpping/rxcost/{{ host }}.conf";;
     };
 {% endfor %}
 

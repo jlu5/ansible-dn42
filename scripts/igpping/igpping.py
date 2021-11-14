@@ -41,7 +41,9 @@ def write_costs(hosts, results, overwrite):
         if os.path.exists(output_path) and not overwrite:
             continue  # already exists
 
-        output_text = CONFIG.get(CONFIG.default_section, 'OutputTextFormat').format_map(format_args)
+        # This used to support custom output text formats but it seems that is not needed, as Bird supports
+        # nesting includes in arbitrary positions: https://bird.network.cz/?get_doc&v=20&f=bird-3.html#ss3.2
+        output_text = str(cost)
         print(f"{output_text} => {output_path}")
         with open(output_path, 'w') as f:
             f.write(output_text)
