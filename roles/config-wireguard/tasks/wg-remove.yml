@@ -8,13 +8,14 @@
   register: wg_tunnel_remove
 
 - name: "Remove obsolete WireGuard interfaces"
-  file:
-    dest: "/etc/network/interfaces.d/{{ peer_name }}"
-    state: absent
+  shell:
+    cmd: "rm -fv {{ automation_root_dir | quote }}/interfaces/??{{ peer_name | quote }}"
+    warn: false  # needed for wildcard without nested loops
   loop: "{{ _wg_to_remove }}"
   loop_control:
     loop_var: peer_name
   register: interfaces_remove
+  changed_when: interfaces_remove.stdout != ""
 
 - name: "Stop obsolete interfaces"
   command: "ip link del {{ peer_name }}"
