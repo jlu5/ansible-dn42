@@ -152,3 +152,10 @@ wg_peers:
   wg_pubkey: "54e/I/Wmzfkv1jpcH6m78shv5mxd/qJ68Qg4l5pRD3s="
   peer_v4: "172.20.128.129"
   peer_v6: "fe80::26f1"
+
+- name: dn42-sagnet
+  peer_v4: 172.23.224.1
+  peer_v6: fe80::546
+  port: 20546
+  remote: 198.98.51.101:21080
+  wg_pubkey: LsGwbeYUoBcHjiMtaoo/ySCAj0sHd/dgSDNL8v6HJXQ=
