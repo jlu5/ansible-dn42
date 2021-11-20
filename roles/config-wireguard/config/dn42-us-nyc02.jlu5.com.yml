@@ -159,3 +159,11 @@ wg_peers:
   port: 20546
   remote: 198.98.51.101:21080
   wg_pubkey: LsGwbeYUoBcHjiMtaoo/ySCAj0sHd/dgSDNL8v6HJXQ=
+
+- name: dn42-tech9
+  peer_v4: 172.20.16.143
+  peer_v6: fe80::1588
+  port: 21588
+  remote: us-qas01.dn42.tech9.io:57225
+  wg_pubkey: itmJ4Z8V1aNN368P6kMzuQM+GdzWbBKZjJiXrgSeGlw=
+  local_v6: fe80::100
