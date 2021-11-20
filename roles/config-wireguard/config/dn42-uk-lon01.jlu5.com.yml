@@ -156,3 +156,10 @@ wg_peers:
   port: 21869
   remote: null
   wg_pubkey: BlJQx6FlEsfYWJvzLdIdyKivpo/nCSp7/wJ66/H8ST4=
+
+- name: dn42-jcahill
+  peer_v4: 172.22.114.64
+  peer_v6: fe80::226
+  port: 22840
+  remote: lhr01.dn42.virtual-cloud.jcx.ovh:21853
+  wg_pubkey: Du3LCresYIb1gRxnEKF10qX+si6vml83d0ZiUQUv9CU=
