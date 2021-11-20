@@ -117,6 +117,10 @@ function handle_special_cases() {
     if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043, 64654] * =]) then {
         safe_lower_pref(20);
     }
+    # 2021-11-20 testing: what if we steer traffic away from biggest dn42 transits?
+    if (bgp_path.len >= 2 && bgp_path ~ [= * [4242421588, 4242423914] * =]) then {
+        safe_lower_pref(10);
+    }
 }
 
 define ASES_REJECT = [
