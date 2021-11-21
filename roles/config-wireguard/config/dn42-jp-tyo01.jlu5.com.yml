@@ -140,3 +140,10 @@ wg_peers:
   peer_v4: "172.23.36.34"
   peer_v6: "fe80::3632"
 
+
+- name: dn42-kskb
+  peer_v4: 10.127.111.9
+  peer_v6: fe80::aa:1111:9
+  port: 21111
+  remote: null
+  wg_pubkey: 2CxGhL9UwlCB3ybwD1OF2Or18vCPgChS0rdh3Nc8S0c=

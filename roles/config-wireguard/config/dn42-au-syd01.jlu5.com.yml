@@ -25,3 +25,10 @@ wg_peers:
 
 - name: dn42ade-dropbea
   remove: true
+
+- name: dn42-kskb
+  peer_v4: 10.127.111.81
+  peer_v6: fe80::aa:1111:51
+  port: 21111
+  remote: null
+  wg_pubkey: Q7KOnB3xhaTNpszgozEXdq1cxBpYIX1JUMNV5J5JMwo=
