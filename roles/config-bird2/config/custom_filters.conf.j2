@@ -175,7 +175,7 @@ function ibgp_import_filter() {
 
     if (bgp_path.len = 0) then {
         # Prefer locally originated iBGP routes, e.g. for anycast services
-        bgp_local_pref = DEFAULT_BGP_PREF;
+        bgp_local_pref = DEFAULT_BGP_PREF * 2;
     }
 
     # Penalize routes learned from another region that have high (>50ms) latency
