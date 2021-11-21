@@ -26,7 +26,8 @@ These are defined in `get_region_tag` of [`custom_filters.conf.j2`](roles/config
 - **1**: North America (West) - dn42 community `(64511, 44)`
 - **2**: North America (East) - dn42 community `(64511, 42..43)`
 - **3**: Europe - dn42 community `(64511, 41)`
-- **3**: Asia-Pacific - dn42 community `(64511, 51..53)`
+- **4**: Asia-Pacific - dn42 community `(64511, 51..53)`
+- **0**: Everything else (no presence in my AS)
 
 ## BGP Communities
 
