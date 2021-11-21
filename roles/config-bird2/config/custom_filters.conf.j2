@@ -84,10 +84,14 @@ function prefer_same_region_origin(int base_weight)
 {
     # Cold potato routing: add local_pref += base_weight/(bgp_path.len) to routes originating in the same
     # region tag as the current node, or routes that don't have any region community set.
-
-    # The latter tweak fixes cases when peers accidentally attach region communities to routes in transit.
+    #
+    # Applying this policy to routes without a community region fixes cases when peers accidentally attach
+    # region communities to routes in transit.
     # Without this, they will suck up all traffic for routes regardless of origin because everything
     # they export will appear to have the same region tag as the receiving node.
+    #
+    # Also, the local pref is based off BGP path length to allow more fine grained route tweaking:
+    # e.g. steer transit traffic away from peer X unless all other paths have length >= 3
     my_region_tag = get_region_tag(DN42_REGION);
     incoming_tag = 0;
 
@@ -144,6 +148,7 @@ function ebgp_import_filter() {
     # Informational communities: region of import & node ID of import
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION, 41..53)]);
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 112..127)]);
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 33..39)]);
     bgp_large_community.add((OWNAS, LC_ORIGIN_REGION, DN42_REGION));
     bgp_large_community.add((OWNAS, LC_ORIGIN_NODEID, NODEID));
 };
@@ -170,7 +175,7 @@ function ibgp_import_filter() {
 
     if (bgp_path.len = 0) then {
         # Prefer locally originated iBGP routes, e.g. for anycast services
-        bgp_local_pref = 300;
+        bgp_local_pref = DEFAULT_BGP_PREF;
     }
 
     # Penalize routes learned from another region that have high (>50ms) latency

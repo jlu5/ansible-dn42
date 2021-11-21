@@ -2,18 +2,31 @@ This page describes the Routing Policy for AS4242421080.
 
 ## Route Selection
 
-This is a rough overview, when in doubt you can check my actual filter code: [custom_filters.conf](roles/config-bird2/config/custom_filters.conf.j2)
+This is a rough overview, when in doubt you can check my actual filter code: [`custom_filters.conf.j2`](roles/config-bird2/config/custom_filters.conf.j2)
 
-1. Prefer routes originating from the same dn42 region, as marked by the [dn42 BGP community `(64511, 41..53)`](https://dn42.dev/howto/Bird-communities). This is essentially cold potato routing:
-  - Routes with no region community or the same origin value as a PoP are given `bgp_local_pref = 500 + 200/bgp_path.len`
+1. Prefer routes originating from the same AS4242421080 meta region, sourced by the [dn42 BGP community `(64511, 41..53)`](https://dn42.dev/howto/Bird-communities). This is essentially cold potato routing:
+  - Routes with no region community or the same origin region as a PoP are given `bgp_local_pref = 500 + 200/bgp_path.len`.
   - Other routes are left with a default local preference of 500
-2. Prefer routes with low (<= 20ms) inter-AS latency.
-  - Specifically this adds a penalty of `3*x` to `bgp_local_pref` for routes that have community `(64511, x)`, for all `4 <= x <= 9`
-3. When bgp_local_pref ties, prefer routes with shortest AS path
+2. Prefer routes with low (<= 50ms) inter-AS latency.
+  - This adds a penalty of `100 / bgp_path.len + 1` to high latency routes when exporting between dn42 regions.
+3. When bgp_local_pref ties, prefer routes with shortest AS path.
 4. Prefer routes with the lowest BGP MED.
 5. Prefer routes received via eBGP over iBGP.
-6. Prefer routes from edge routers closest to the current node (lowest internal distance)
-7. When latency is tied, prefer the first received route (RFC 5004)
+6. Prefer routes from edge routers closest to the current node (lowest internal distance). Internal costs are periodically recalculated from inter-node [latency](https://github.com/jlu5/ansible-dn42/tree/main/scripts/igpping).
+7. When latency is tied, prefer the first received route (RFC 5004).
+
+Routes with unusually large path lengths (> 12) are rejected as they usually signal ghost routes.
+
+Some exceptions to this policy apply (e.g. in `handle_special_cases`).
+
+### AS4242421080 meta regions
+
+These are defined in `get_region_tag` of [`custom_filters.conf.j2`](roles/config-bird2/config/custom_filters.conf.j2):
+
+- **1**: North America (West) - dn42 community `(64511, 44)`
+- **2**: North America (East) - dn42 community `(64511, 42..43)`
+- **3**: Europe - dn42 community `(64511, 41)`
+- **3**: Asia-Pacific - dn42 community `(64511, 51..53)`
 
 ## BGP Communities
 
