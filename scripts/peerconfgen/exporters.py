@@ -36,7 +36,7 @@ def gen_bird_peer_config(peername, completed_config, bird_options):
         import where dn42_import_filter({latency_community},24,34);
         export where dn42_export_filter({latency_community},24,34);
     }};"""
-    if bird_options.mp_bgp:
+    if bird_options.mp_bgp or bird_options.extended_next_hop:
         # MP-BGP over v6
         return f"""protocol bgp {peername}_{completed_config['asn'][-4:]} from dnpeers {{
     neighbor {completed_config['peer_v6']} as {completed_config['asn']};

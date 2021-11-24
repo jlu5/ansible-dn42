@@ -14,10 +14,11 @@ class BirdOptions:
 def fill_bird_options(node, completed_config):
     mp_bgp = False
     extended_next_hop = False
-    if completed_config['peer_v4'] and completed_config['peer_v6']:
+    if completed_config['peer_v6']:
         # Dual stack. Check if we want mp_bgp and enh
-        mp_bgp = prompt_bool("Enable MP-BGP?")
-        if mp_bgp:
+        if completed_config['peer_v4']:
+            mp_bgp = prompt_bool("Enable MP-BGP?")
+        if mp_bgp or not completed_config['peer_v4']:
             extended_next_hop = prompt_bool("Enable extended next hop?")
 
     latency = None

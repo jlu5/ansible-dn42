@@ -393,6 +393,7 @@ class PeerConfFillBirdTest(unittest.TestCase):
 
     @unittest.mock.patch('builtins.input', FakeInput([
         'n',  # don't auto calculate ping
+        'n',  # No extended next hop
         '5',  # manual latency value
     ]))
     def test_fill_bird_options_v6only(self):
@@ -623,6 +624,35 @@ protocol bgp myTest_0001_v6 from dnpeers {
 }
 """.strip()
         self.assertEqual(expected, gen_bird_peer_config('myTest', cfg, bird_options).strip())
+
+    def test_bird_config_v6_only_enh(self):
+        cfg = {
+            'asn': '4201080001',
+            'remote': None,
+            'port': None,
+            'wg_pubkey': 'dn42' * 10 + 'dn4=',
+            'peer_v4': None,
+            'peer_v6': 'fe80::1234',
+        }
+        bird_options = BirdOptions(mp_bgp=False, extended_next_hop=True, latency=25)
+
+        expected = """protocol bgp myTest_0001 from dnpeers {
+    neighbor fe80::1234 as 4201080001;
+    interface "dn42-myTest";
+
+    ipv4 {
+        import where dn42_import_filter(4,24,34);
+        export where dn42_export_filter(4,24,34);
+        extended next hop on;
+    };
+    ipv6 {
+        import where dn42_import_filter(4,24,34);
+        export where dn42_export_filter(4,24,34);
+    };
+}
+""".strip()
+        self.assertEqual(expected, gen_bird_peer_config('myTest', cfg, bird_options).strip())
+
 
 
 if __name__ == '__main__':
