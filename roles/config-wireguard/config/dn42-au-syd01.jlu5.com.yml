@@ -32,3 +32,10 @@ wg_peers:
   port: 21111
   remote: null
   wg_pubkey: Q7KOnB3xhaTNpszgozEXdq1cxBpYIX1JUMNV5J5JMwo=
+
+- name: dn42-peer
+  peer_v4: null
+  peer_v6: fe80::343:ade1
+  port: 20343
+  remote: 61.245.145.240:31080
+  wg_pubkey: VGQakK0CRZMZQHsDNrBMddrTpaPwwU9OyNdBLXX0W3g=
