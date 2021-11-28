@@ -21,6 +21,7 @@ $TTL 300
 28 IN PTR shypre-1.clients.highdef.dn42.
 30 IN PTR silverthing-ptp.us-sea02.highdef.dn42.
 31 IN PTR silverthing.clients.highdef.dn42.
-34 IN PTR us-fmt01.rtr.highdef.dn42.
+34 IN PTR us-sjc01.rtr.highdef.dn42.
+33 IN PTR us-dal01.rtr.highdef.dn42.
 36 IN PTR fr-par01.rtr.highdef.dn42.
 $GENERATE 2-15 $ PTR ct-${0,2,d}.yvrlab.highdef.dn42.
