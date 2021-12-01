@@ -39,9 +39,9 @@ wg_peers:
 # p2p is too hard for most wg frontends :(
 - name: cl-roam03
   port: 19998
-  wg_pubkey: "I5OjtNeH+ZfQLeoiDKGdQDPXo+sVj8fV8YxLzLeCIkc="
-  peer_v4: 172.22.108.16
-  local_v4: 172.22.108.17
+  wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
+  peer_v4: 172.22.108.17
+  local_v4: 172.22.108.16
   peer_v6: null
 
 - name: cl-roam04
