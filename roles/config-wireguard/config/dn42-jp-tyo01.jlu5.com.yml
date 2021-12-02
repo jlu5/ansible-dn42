@@ -147,3 +147,10 @@ wg_peers:
   port: 21111
   remote: null
   wg_pubkey: 2CxGhL9UwlCB3ybwD1OF2Or18vCPgChS0rdh3Nc8S0c=
+
+- name: dn42-supernoc
+  peer_v4: 172.20.163.97
+  peer_v6: fe80::3918
+  port: 23918
+  remote: v4.kr-05.public.nodes.supernoc.net:21080
+  wg_pubkey: Utkpm2nUhM/9pMe5tWBt0aFoNHfbKQjg3Ksa/nzwEwY=
