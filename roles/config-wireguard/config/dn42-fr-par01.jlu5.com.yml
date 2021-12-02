@@ -5,3 +5,10 @@ wg_peers:
   wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
   peer_v4: "172.20.53.102"
   peer_v6: "fe80::ade0"
+
+- name: dn42-androw
+  peer_v4: 172.23.186.39
+  peer_v6: fe80::2575:7
+  port: 22575
+  remote: par2.fr.androw.eu:21080
+  wg_pubkey: jlHp4FYZ69xdlaknLxBY3Uuv1xjsHoHH9qHe4b7BP2o=

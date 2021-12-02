@@ -44,3 +44,10 @@ wg_peers:
   port: 23856
   remote: atlanta.scooterharris.com:51080
   wg_pubkey: ftK6AoYE3gjRB/6cy4ZaLm/F1sDItiOl6M74V1OgJBM=
+
+- name: dn42-androw
+  peer_v4: 172.23.186.36
+  peer_v6: fe80::2575:4
+  port: 22575
+  remote: mks1.us.androw.eu:21080
+  wg_pubkey: 7tBgRZZFJWmTAy36h4saz77BxXacCzes9KXgZew7Dns=
