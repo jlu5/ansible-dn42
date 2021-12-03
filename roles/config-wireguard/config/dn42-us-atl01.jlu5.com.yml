@@ -37,3 +37,10 @@ wg_peers:
   wg_pubkey: "oCgzClTd8nECzDqS20/dKaitAHUN1TgIIeVZKAsJ1FA="
   peer_v4: "172.23.36.35"
   peer_v6: "fe80::3632"
+
+- name: dn42-scooter
+  peer_v4: 172.23.109.170
+  peer_v6: fd38:cfa3:7091:2::1
+  port: 23856
+  remote: atlanta.scooterharris.com:51080
+  wg_pubkey: ftK6AoYE3gjRB/6cy4ZaLm/F1sDItiOl6M74V1OgJBM=

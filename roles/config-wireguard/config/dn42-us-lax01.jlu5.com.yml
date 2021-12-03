@@ -130,3 +130,10 @@ wg_peers:
 
 - name: dn42lax-etherar
   remove: true
+
+- name: dn42-scooter
+  peer_v4: 172.23.109.171
+  peer_v6: fd38:cfa3:7091:3::1
+  port: 23856
+  remote: losangelas.scooterharris.com:51080
+  wg_pubkey: OmKX/Cu0jjSvounvPDgjKpwSlcIfhZjkZy/cNbYOKxY=
