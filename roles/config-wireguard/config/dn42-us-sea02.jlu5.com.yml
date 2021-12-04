@@ -51,6 +51,13 @@ wg_peers:
   local_v4: 172.22.108.30
   peer_v6: null
 
+- name: igp-ca-yvrgw
+  port: 19996
+  wg_pubkey: "2Xn6+lC+WLM5cxeKG3xPwuOcUKw2fSvve9oGMXgoeRw="
+  peer_v4: null
+  peer_v6: fe80::1080:1
+  local_v4: 169.254.108.1/30
+
 - name: dn42sea-ncw
   port: 51288
   remote: "sea1.sc00.org:21080"
