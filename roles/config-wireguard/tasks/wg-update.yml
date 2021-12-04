@@ -25,3 +25,4 @@
   loop_control:
     loop_var: peer_name
   ignore_errors: yes
+  when: 'not (skip_wg_restart | default(False))'
