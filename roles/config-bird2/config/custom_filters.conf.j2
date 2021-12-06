@@ -26,7 +26,9 @@ define OUTGOING_BGP_MED = {{ default_outgoing_bgp_med | default(0) }};
 define NODEID = {{ ownip.rsplit('.', 1)[1] }};
 
 define LC_ORIGIN_REGION = 101;
+define LC_ORIGIN_DEPREF_CROSS_REGION = 102;
 define LC_ORIGIN_NODEID = 103;
+define LC_ORIGIN_REGION_TAG = 104;
 
 # Special case for anycast services we're hosting
 # Route these through iBGP instead of IGP since they should coexist with other instances
@@ -94,6 +96,7 @@ function prefer_same_region_origin(int base_weight)
     # e.g. steer transit traffic away from peer X unless all other paths have length >= 3
     my_region_tag = get_region_tag(DN42_REGION);
     incoming_tag = 0;
+    bgp_large_community.add((OWNAS, LC_ORIGIN_REGION_TAG, my_region_tag));
 
     if (bgp_path.last ~ COLD_POTATO_IGNORE) then {
         return 0;
@@ -130,8 +133,9 @@ function handle_special_cases() {
 define ASES_REJECT = [
     0  # placeholder
 ];
-function ebgp_import_filter() {
-    handle_special_cases();
+function ebgp_import_filter()
+    int my_region_tag;
+{
 
     # Reject routes with unreasonable path lengths
     if (bgp_path.len > 12) then {
@@ -142,13 +146,17 @@ function ebgp_import_filter() {
         reject;
     }
 
+    # Strip internal communities from incoming routes before processing
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION, 41..53)]);
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION_TAG, 0..5)]);
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 112..127)]);
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 33..39)]);
+
+    handle_special_cases();
     prefer_same_region_origin(200);
     read_bgp_blackhole();
 
     # Informational communities: region of import & node ID of import
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION, 41..53)]);
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 112..127)]);
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 33..39)]);
     bgp_large_community.add((OWNAS, LC_ORIGIN_REGION, DN42_REGION));
     bgp_large_community.add((OWNAS, LC_ORIGIN_NODEID, NODEID));
 };
@@ -160,9 +168,13 @@ function ebgp_export_filter() {
         reject;
     }
     bgp_med = OUTGOING_BGP_MED;
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION_TAG, 0..5)]);
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_DEPREF_CROSS_REGION, 1)]);
 };
 
-function ibgp_import_filter() {
+function ibgp_import_filter()
+    int my_region_tag;
+{
     # Only process routes originating from BGP unless they're anycast networks
     if (source != RTS_BGP && !is_anycast_network()) then {
         reject;
@@ -177,10 +189,10 @@ function ibgp_import_filter() {
         bgp_local_pref = DEFAULT_BGP_PREF * 2;
     }
 
-    # Penalize routes learned from another region that have high (>50ms) latency
-    else if ((OWNAS, LC_ORIGIN_REGION, DN42_REGION) !~ bgp_large_community && bgp_community ~ [(64511, 5..9)]) then {
-        safe_lower_pref(100 / bgp_path.len);
-        safe_lower_pref(1);
+    my_region_tag = get_region_tag(DN42_REGION);
+    if ((OWNAS, LC_ORIGIN_DEPREF_CROSS_REGION, 1) ~ bgp_large_community &&
+        (OWNAS, LC_ORIGIN_REGION_TAG, my_region_tag) !~ bgp_large_community) then {
+        safe_lower_pref(101);
     }
 
     accept;
