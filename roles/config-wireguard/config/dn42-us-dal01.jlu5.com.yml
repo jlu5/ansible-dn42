@@ -6,3 +6,11 @@ wg_peers:
   port: 23856
   remote: dallas.scooterharris.com:51080
   wg_pubkey: BBlFjMJKOyl8SmP3Lnld5B4HM3kJ0SZ6HZ48bfuAnRg=
+
+- name: dn42-tech9
+  peer_v4: 172.20.16.140
+  peer_v6: fe80::1588
+  port: 21588
+  remote: us-dal01.dn42.tech9.io:59321
+  wg_pubkey: iEZ71NPZge6wHKb6q4o2cvCopZ7PBDqn/b3FO56+Hkc=
+  local_v6: fe80::100
