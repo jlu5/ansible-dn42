@@ -58,3 +58,10 @@ wg_peers:
   wg_pubkey: "zlIHyhapes/IwZdCZNC5nFvYjx0z1sctLYIB8HITRiI="
   peer_v4: "172.22.180.65"
   peer_v6: "fe80::2032"
+
+- name: dn42-cola
+  peer_v4: 172.22.96.65
+  peer_v6: fe80::3391
+  port: 23391
+  remote: las.kz.al:22152
+  wg_pubkey: uCrDwDvgzvirzq++JCpcMsqW6sfFBNsmEh+IWBXjHxQ=
