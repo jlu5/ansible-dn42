@@ -7,7 +7,7 @@ dns_records:
       target: dn42-us-sea02.jlu5.com
     "ping":
       type: A
-      target: 172.22.108.2
+      target: 172.22.108.3
 
     # Internal services
     "nightfall":
