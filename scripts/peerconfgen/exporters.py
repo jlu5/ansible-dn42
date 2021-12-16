@@ -41,6 +41,7 @@ def gen_bird_peer_config(peername, completed_config, bird_options):
         return f"""protocol bgp {peername}_{completed_config['asn'][-4:]} from dnpeers {{
     neighbor {completed_config['peer_v6']} as {completed_config['asn']};
     interface "{iface_name}";
+    passive { 'off' if completed_config.get('remote') else 'on' };
 
     { v4_channel }
     { v6_channel }
@@ -53,6 +54,7 @@ def gen_bird_peer_config(peername, completed_config, bird_options):
         s += f"""
 protocol bgp {peername}_{completed_config['asn'][-4:]} from dnpeers {{
     neighbor {completed_config['peer_v4']} as {completed_config['asn']};
+    passive { 'off' if completed_config.get('remote') else 'on' };
 
     { v4_channel }
 }}
@@ -63,6 +65,7 @@ protocol bgp {peername}_{completed_config['asn'][-4:]} from dnpeers {{
 protocol bgp {peername}_{completed_config['asn'][-4:]}_v6 from dnpeers {{
     neighbor {completed_config['peer_v6']} as {completed_config['asn']};
     interface "{iface_name}";
+    passive { 'off' if completed_config.get('remote') else 'on' };
 
     { v6_channel }
 }}
