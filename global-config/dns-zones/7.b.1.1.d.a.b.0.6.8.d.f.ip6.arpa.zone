@@ -8,6 +8,8 @@ $TTL 300
         86400       ; expiration
         3600        ; minimum TTL
 )
+0.6.8.5.b.0.e.f.f.f.3.0.2.c.8.3.a.a.a.a.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ping.highdef.dn42.
+6.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ping-chi.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.5.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ns.highdef.dn42.
 2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.5.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR dns.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-chi01.rtr.highdef.dn42.

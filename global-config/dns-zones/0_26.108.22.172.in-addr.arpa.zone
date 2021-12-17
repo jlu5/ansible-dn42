@@ -8,9 +8,11 @@ $TTL 300
         86400       ; expiration
         3600        ; minimum TTL
 )
-25 IN PTR mediactr.highdef.dn42.
+3 IN PTR ping.highdef.dn42.
+46 IN PTR ping-chi.highdef.dn42.
 21 IN PTR ns.highdef.dn42.
 22 IN PTR dns.highdef.dn42.
+25 IN PTR mediactr.highdef.dn42.
 16 IN PTR mobi1.clients.highdef.dn42.
 17 IN PTR mobi1-ptp.us-sea02.highdef.dn42.
 19 IN PTR mobi2.clients.highdef.dn42.
