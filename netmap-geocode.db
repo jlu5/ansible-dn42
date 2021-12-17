@@ -10,6 +10,9 @@ Beauharnois, QC, CA: !!python/tuple
 Chicago, IL, US: !!python/tuple
 - 41.8781136
 - -87.6297982
+Dallas, TX, US: !!python/tuple
+- 32.7766642
+- -96.79698789999999
 Fremont, CA, US: !!python/tuple
 - 37.5485396
 - -121.988583
@@ -37,6 +40,12 @@ New York City, NY, US: !!python/tuple
 Nuremberg, DE: !!python/tuple
 - 49.4521018
 - 11.0766654
+Paris, FR: !!python/tuple
+- 48.856614
+- 2.3522219
+San Jose, CA, US: !!python/tuple
+- 37.3382082
+- -121.8863286
 Sao Paulo, BR: !!python/tuple
 - -23.5505199
 - -46.63330939999999
