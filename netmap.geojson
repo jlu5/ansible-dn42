@@ -12,7 +12,7 @@
             },
             "properties": {
                 "title": "au-syd01",
-                "description": "Sydney, AU"
+                "description": "Sydney, AU<br>\nPeers:\nde-nbg01, jp-tyo01, sg01, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -26,7 +26,7 @@
             },
             "properties": {
                 "title": "de-nbg01",
-                "description": "Nuremberg, DE"
+                "description": "Nuremberg, DE<br>\nPeers:\nau-syd01, es-mad01, fr-par01, it-mil01, nl-ams02, sg01, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
             }
         },
         {
@@ -40,7 +40,7 @@
             },
             "properties": {
                 "title": "es-mad01",
-                "description": "Madrid, ES"
+                "description": "Madrid, ES<br>\nPeers:\nde-nbg01, it-mil01, nl-ams02, uk-lon01, us-chi01\n"
             }
         },
         {
@@ -54,7 +54,7 @@
             },
             "properties": {
                 "title": "fr-par01",
-                "description": "Paris, FR"
+                "description": "Paris, FR<br>\nPeers:\nde-nbg01, nl-ams02, uk-lon01, us-nyc02\n"
             }
         },
         {
@@ -68,7 +68,7 @@
             },
             "properties": {
                 "title": "it-mil01",
-                "description": "Milan, IT"
+                "description": "Milan, IT<br>\nPeers:\nde-nbg01, es-mad01, nl-ams02, sg01\n"
             }
         },
         {
@@ -82,7 +82,7 @@
             },
             "properties": {
                 "title": "jp-tyo01",
-                "description": "Tokyo, JP"
+                "description": "Tokyo, JP<br>\nPeers:\nau-syd01, nl-ams02, sg01, us-chi01, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -96,7 +96,7 @@
             },
             "properties": {
                 "title": "nl-ams02",
-                "description": "Amsterdam, NL"
+                "description": "Amsterdam, NL<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, it-mil01, jp-tyo01, sg01, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
             }
         },
         {
@@ -110,7 +110,7 @@
             },
             "properties": {
                 "title": "sg01",
-                "description": "Singapore, SG"
+                "description": "Singapore, SG<br>\nPeers:\nau-syd01, de-nbg01, it-mil01, jp-tyo01, nl-ams02, us-lax01\n"
             }
         },
         {
@@ -124,7 +124,7 @@
             },
             "properties": {
                 "title": "uk-lon01",
-                "description": "London, UK"
+                "description": "London, UK<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, nl-ams02, us-atl01, us-nyc02\n"
             }
         },
         {
@@ -138,7 +138,7 @@
             },
             "properties": {
                 "title": "us-atl01",
-                "description": "Atlanta, GA, US"
+                "description": "Atlanta, GA, US<br>\nPeers:\nde-nbg01, nl-ams02, uk-lon01, us-chi01, us-dal01, us-lax01, us-nyc02\n"
             }
         },
         {
@@ -152,7 +152,7 @@
             },
             "properties": {
                 "title": "us-chi01",
-                "description": "Chicago, IL, US"
+                "description": "Chicago, IL, US<br>\nPeers:\nde-nbg01, es-mad01, jp-tyo01, nl-ams02, us-atl01, us-dal01, us-las01, us-lax01, us-nyc02, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -166,7 +166,7 @@
             },
             "properties": {
                 "title": "us-dal01",
-                "description": "Dallas, TX, US"
+                "description": "Dallas, TX, US<br>\nPeers:\nus-atl01, us-chi01, us-lax01, us-sjc01\n"
             }
         },
         {
@@ -180,7 +180,7 @@
             },
             "properties": {
                 "title": "us-las01",
-                "description": "Las Vegas, NV, US"
+                "description": "Las Vegas, NV, US<br>\nPeers:\nus-chi01, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -194,7 +194,7 @@
             },
             "properties": {
                 "title": "us-lax01",
-                "description": "Los Angeles, CA, US"
+                "description": "Los Angeles, CA, US<br>\nPeers:\nau-syd01, de-nbg01, jp-tyo01, nl-ams02, sg01, us-atl01, us-chi01, us-dal01, us-las01, us-nyc02, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -208,7 +208,7 @@
             },
             "properties": {
                 "title": "us-nyc02",
-                "description": "New York City, NY, US"
+                "description": "New York City, NY, US<br>\nPeers:\nde-nbg01, fr-par01, nl-ams02, uk-lon01, us-atl01, us-chi01, us-lax01, us-sea02\n"
             }
         },
         {
@@ -222,7 +222,7 @@
             },
             "properties": {
                 "title": "us-sea02",
-                "description": "Seattle, WA, US"
+                "description": "Seattle, WA, US<br>\nPeers:\nau-syd01, jp-tyo01, us-chi01, us-las01, us-lax01, us-nyc02, us-sjc01\n"
             }
         },
         {
@@ -236,7 +236,7 @@
             },
             "properties": {
                 "title": "us-sjc01",
-                "description": "San Jose, CA, US"
+                "description": "San Jose, CA, US<br>\nPeers:\nau-syd01, jp-tyo01, us-chi01, us-dal01, us-las01, us-lax01, us-sea02\n"
             }
         },
         {

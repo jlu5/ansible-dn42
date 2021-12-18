@@ -80,9 +80,14 @@ def main():
         coords = node_coords[node_short_names[node]] = geocoder.geocode(nodedata['location'])
         # GeoJSON uses longitude and then latitude
         point = geojson.Point((coords[1], coords[0]))
+        peers = ', '.join(sorted(node_short_names[peer] for peer in tunnels['igp_neighbours'][node]))
+        description = f"""{nodedata['location']}<br>
+Peers:
+{peers}
+"""
         feature = geojson.Feature(geometry=point, properties={
             "title": node_short_names[node],
-            "description": nodedata['location'],
+            "description": description,
         })
         node_markers.append(feature)
 
