@@ -54,14 +54,6 @@ function safe_lower_pref(int x) {
     }
 }
 
-function read_bgp_blackhole() {
-    # Implement BLACKHOLE community as defined by RFC 7999
-    # Based off https://bird.network.cz/pipermail/bird-users/2016-October/010705.html
-    if (source = RTS_BGP && (65535, 666) ~ bgp_community) then {
-        dest = RTD_BLACKHOLE;
-    }
-}
-
 # These are custom region tags which group together regions that aren't efficient
 # (from my observations) to separate for cold potato routing
 function get_region_tag(int dn42_region_tag) {
@@ -128,6 +120,10 @@ function handle_special_cases() {
     if (bgp_path.len >= 2 && bgp_path ~ [= * [4242421588, 4242423914] * =]) then {
         safe_lower_pref(10);
     }
+    # 2021-12-18: ICMP rate limiting is making Smokeping very upset
+    if (bgp_path.len >= 2 && bgp_path ~ [= * [4242422601] * =]) then {
+        safe_lower_pref(10);
+    }
 }
 
 define ASES_REJECT = [
@@ -154,7 +150,12 @@ function ebgp_import_filter()
 
     handle_special_cases();
     prefer_same_region_origin(200);
-    read_bgp_blackhole();
+
+    # Implement BLACKHOLE community as defined by RFC 7999
+    # Based off https://bird.network.cz/pipermail/bird-users/2016-October/010705.html
+    if (source = RTS_BGP && (65535, 666) ~ bgp_community) then {
+        dest = RTD_BLACKHOLE;
+    }
 
     # Informational communities: region of import & node ID of import
     bgp_large_community.add((OWNAS, LC_ORIGIN_REGION, DN42_REGION));
