@@ -14,13 +14,6 @@ wg_peers:
   peer_v6: "fd10:127:7::1"
 
 - name: dn42erf-androw
-  port: 52575
-  remote: "erf1.de.androw.eu:21080"
-  wg_pubkey: "TSHrfsRayvUruE2Q9i+2GB8jo2qlBMAg1iEw4LRgRgs="
-  peer_v4: "172.23.186.35/32"
-  peer_v6: "fe80::2575:3/64"
-
-- name: dn42lon-nab
   remove: true
 
 - name: "dn42ams-tomkap"
@@ -29,9 +22,6 @@ wg_peers:
   wg_pubkey: "g4MJv6qMPwbffxNjUKmIa5Yhf5ZzRqjIMzMHCSiFQgs="
   peer_v4: 172.21.67.200/32
   peer_v6: "fe80::42:1080:1/128"
-
-- name: dn42ams-gfa
-  remove: true
 
 - name: dn42ams-fixmix
   port: 51876
@@ -46,12 +36,6 @@ wg_peers:
   wg_pubkey: "I68Jv8818pk2NX0GC8ul18095/iZ66XCxJuo/brk/Go="
   peer_v4: null
   peer_v6: "fe80::fcde:3558"
-
-- name: dn42ams-kever
-  remove: true
-
-- name: dn42ams-nurex
-  remove: true
 
 - name: dn42ams-zeph
   port: 50801
@@ -81,9 +65,6 @@ wg_peers:
   peer_v4: "172.20.47.2"
   peer_v6: "fe80::1123"
 
-- name: dn42bru-neutri
-  remove: true
-
 - name: dn42ams-camelus
   port: 21592
   remote: "nl01.dn42.trampel.org:41080"
@@ -97,9 +78,6 @@ wg_peers:
   wg_pubkey: "xyhzHBpNDQlyeNG44xaU5zz86+Qeig8v6/PTutZqCRM="
   peer_v4: "172.22.155.9"
   peer_v6: "fe80::42:3699:9"
-
-- name: dn42dus-alphvin
-  remove: true
 
 - name: dn42prg-wg
   port: 22331
