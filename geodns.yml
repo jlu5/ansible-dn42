@@ -11,16 +11,13 @@ domains:
       - aaaa: 2a0f:93c1:26:27c::1
     af.deb.geo.utopia-repository.org: *europe
 
-    as.deb.geo.utopia-repository.org: &apac
-      - a: 66.42.57.164
-      - aaaa: 2401:c080:1400:4ae7:5400:3ff:fe56:105c
-    oc.deb.geo.utopia-repository.org: *apac
-
     na.deb.geo.utopia-repository.org: &na
       - a: 199.195.248.191
       - aaaa: 2605:6400:10:da::1
     sa.deb.geo.utopia-repository.org: *na
     an.deb.geo.utopia-repository.org: *na
+    oc.deb.geo.utopia-repository.org: *na
+    as.deb.geo.utopia-repository.org: *na
 
   services:
     # I originally wanted to omit the extra "deb.", but GeoDNS on the apex domain is not yet supported:

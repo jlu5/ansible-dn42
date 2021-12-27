@@ -12,7 +12,7 @@
             },
             "properties": {
                 "title": "au-syd01",
-                "description": "Sydney, AU<br>\nPeers:\nde-nbg01, jp-tyo01, sg01, us-lax01, us-sea02, us-sjc01\n"
+                "description": "Sydney, AU<br>\nPeers:\nde-nbg01, jp-tyo01, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -26,7 +26,7 @@
             },
             "properties": {
                 "title": "de-nbg01",
-                "description": "Nuremberg, DE<br>\nPeers:\nau-syd01, es-mad01, fr-par01, it-mil01, nl-ams02, sg01, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
+                "description": "Nuremberg, DE<br>\nPeers:\nau-syd01, es-mad01, fr-par01, it-mil01, nl-ams02, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
             }
         },
         {
@@ -68,7 +68,7 @@
             },
             "properties": {
                 "title": "it-mil01",
-                "description": "Milan, IT<br>\nPeers:\nde-nbg01, es-mad01, nl-ams02, sg01\n"
+                "description": "Milan, IT<br>\nPeers:\nde-nbg01, es-mad01, nl-ams02\n"
             }
         },
         {
@@ -82,7 +82,7 @@
             },
             "properties": {
                 "title": "jp-tyo01",
-                "description": "Tokyo, JP<br>\nPeers:\nau-syd01, nl-ams02, sg01, us-chi01, us-lax01, us-sea02, us-sjc01\n"
+                "description": "Tokyo, JP<br>\nPeers:\nau-syd01, nl-ams02, us-chi01, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -96,21 +96,7 @@
             },
             "properties": {
                 "title": "nl-ams02",
-                "description": "Amsterdam, NL<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, it-mil01, jp-tyo01, sg01, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    103.819836,
-                    1.352083
-                ]
-            },
-            "properties": {
-                "title": "sg01",
-                "description": "Singapore, SG<br>\nPeers:\nau-syd01, de-nbg01, it-mil01, jp-tyo01, nl-ams02, us-lax01\n"
+                "description": "Amsterdam, NL<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, it-mil01, jp-tyo01, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
             }
         },
         {
@@ -194,7 +180,7 @@
             },
             "properties": {
                 "title": "us-lax01",
-                "description": "Los Angeles, CA, US<br>\nPeers:\nau-syd01, de-nbg01, jp-tyo01, nl-ams02, sg01, us-atl01, us-chi01, us-dal01, us-las01, us-nyc02, us-sea02, us-sjc01\n"
+                "description": "Los Angeles, CA, US<br>\nPeers:\nau-syd01, de-nbg01, jp-tyo01, nl-ams02, us-atl01, us-chi01, us-dal01, us-las01, us-nyc02, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -276,26 +262,6 @@
             },
             "properties": {
                 "title": "au-syd01 <-> jp-tyo01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        151.209295,
-                        -33.86882
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "au-syd01 <-> sg01",
                 "description": "(costs calculated dynamically)"
             }
         },
@@ -436,26 +402,6 @@
             },
             "properties": {
                 "title": "de-nbg01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        11.076665,
-                        49.452102
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "de-nbg01 <-> sg01",
                 "description": "(costs calculated dynamically)"
             }
         },
@@ -725,26 +671,6 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        9.189982,
-                        45.464204
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "it-mil01 <-> sg01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
                         139.650311,
                         35.676192
                     ],
@@ -756,26 +682,6 @@
             },
             "properties": {
                 "title": "jp-tyo01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        139.650311,
-                        35.676192
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo01 <-> sg01",
                 "description": "(costs calculated dynamically)"
             }
         },
@@ -856,26 +762,6 @@
             },
             "properties": {
                 "title": "jp-tyo01 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> sg01",
                 "description": "(costs calculated dynamically)"
             }
         },
@@ -976,26 +862,6 @@
             },
             "properties": {
                 "title": "nl-ams02 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        103.819836,
-                        1.352083
-                    ],
-                    [
-                        -118.243685,
-                        34.052234
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "sg01 <-> us-lax01",
                 "description": "(costs calculated dynamically)"
             }
         },
