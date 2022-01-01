@@ -21,4 +21,3 @@ $TTL 300
 121 IN PTR it-mil01.rtr.highdef.dn42.
 124 IN PTR jp-tyo01.rtr.highdef.dn42.
 125 IN PTR au-syd01.rtr.highdef.dn42.
-127 IN PTR sg01.rtr.highdef.dn42.

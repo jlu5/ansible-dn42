@@ -29,9 +29,6 @@ dns_records:
     "ping-tyo":
       type: ansible_host_alias
       target: dn42-jp-tyo01.jlu5.com
-    "ping-sg":
-      type: ansible_host_alias
-      target: dn42-sg01.jlu5.com
 
     # DNS services
     "ns":
@@ -67,12 +64,6 @@ dns_records:
     "mobi2.clients":
       type: host_record
       ip4: 172.22.108.19
-    "urepo-mirror-master":
-      type: host_record
-      ip4: 172.22.108.26
-    "urepo-mirror-master-ptp.us-nyc02":
-      type: host_record
-      ip4: 172.22.108.27
     "shypre-1.clients":
       type: host_record
       ip4: 172.22.108.28
