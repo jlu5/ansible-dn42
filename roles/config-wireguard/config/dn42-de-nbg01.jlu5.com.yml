@@ -273,3 +273,10 @@ wg_peers:
   port: 21817
   remote: null
   wg_pubkey: Sxn9qXnzu3gSBQFZ0vCh5t5blUJYgD+iHlCCG2hexg4=
+
+- name: dn42-alphvino
+  peer_v4: 172.20.45.97
+  peer_v6: fe80::1862
+  port: 21862
+  remote: ger1-de.alphvino.com:21080
+  wg_pubkey: 7Y4b5Rt4LGHOt0mZmpctSD1ffGnNDy+UsoeTl4vt2Qg=
