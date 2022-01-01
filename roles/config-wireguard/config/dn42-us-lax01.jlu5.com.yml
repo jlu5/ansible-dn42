@@ -137,3 +137,10 @@ wg_peers:
   port: 23856
   remote: losangelas.scooterharris.com:51080
   wg_pubkey: OmKX/Cu0jjSvounvPDgjKpwSlcIfhZjkZy/cNbYOKxY=
+
+- name: dn42-bling
+  peer_v4: 172.20.21.103
+  peer_v6: fe80::2333
+  port: 20212
+  remote: lax1.dn42.blw.moe:21080
+  wg_pubkey: ZeKLPXvGl4M4n7f8l+fZWdTMys+bzulTJsXSr6Bwx04=
