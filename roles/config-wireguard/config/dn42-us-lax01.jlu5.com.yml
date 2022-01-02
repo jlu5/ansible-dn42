@@ -144,3 +144,10 @@ wg_peers:
   port: 20212
   remote: lax1.dn42.blw.moe:21080
   wg_pubkey: ZeKLPXvGl4M4n7f8l+fZWdTMys+bzulTJsXSr6Bwx04=
+
+- name: dn42-chatnoir
+  peer_v4: 172.20.158.209
+  peer_v6: fe80::2434
+  port: 23743
+  remote: lax1-cn2.bugsur.xyz:21080
+  wg_pubkey: x8nuSiQ4B9fyV/Qe7htgsjeuPMQPziAvOigOt+FWIgs=
