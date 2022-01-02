@@ -151,3 +151,10 @@ wg_peers:
   port: 23743
   remote: lax1-cn2.bugsur.xyz:21080
   wg_pubkey: x8nuSiQ4B9fyV/Qe7htgsjeuPMQPziAvOigOt+FWIgs=
+
+- name: dn42-186526
+  peer_v4: 172.23.2.93
+  peer_v6: fe80::ade1
+  port: 23764
+  remote: us-losangls-01.edge.186526.xyz:21080
+  wg_pubkey: lqZ+0q3K+Ju2RQUOPNmAxleRUdtnsxvBu1TAtUqUAHM=

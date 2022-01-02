@@ -39,3 +39,10 @@ wg_peers:
   port: 20343
   remote: 61.245.145.240:31080
   wg_pubkey: VGQakK0CRZMZQHsDNrBMddrTpaPwwU9OyNdBLXX0W3g=
+
+- name: dn42-186526
+  peer_v4: 172.23.2.94
+  peer_v6: fe80::ade1
+  port: 23764
+  remote: au-sydney-02.edge.186526.xyz:21080
+  wg_pubkey: G7Omvtm569Rd4PtffJp2p1bM/eve87mFM6Hlu29vRBc=

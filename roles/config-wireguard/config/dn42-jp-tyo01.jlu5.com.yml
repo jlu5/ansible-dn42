@@ -161,3 +161,10 @@ wg_peers:
   port: 22575
   remote: tyo1.jp.androw.eu:21080
   wg_pubkey: yO/C6A+dSbADQp4PNbd9gaoOrlexVHEhZBvg6YtU1Sg=
+
+- name: dn42-186526
+  peer_v4: 172.23.2.95
+  peer_v6: fe80::ade1
+  port: 23764
+  remote: jp-tokyo-02.edge.186526.xyz:21080
+  wg_pubkey: p1U1flETVuiZjghZhannbcrQxdp3fiLodVqs8Xy3ZFo=

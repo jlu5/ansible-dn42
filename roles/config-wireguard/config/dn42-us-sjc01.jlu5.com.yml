@@ -54,3 +54,10 @@ wg_peers:
   wg_pubkey: "ffcWCDuBP3YdufFzOaiW2QeZLFG/GXg4QfbWTZ6LVz8="
   peer_v4: "10.127.111.33"
   peer_v6: "fe80::aa:1111:21"
+
+- name: dn42-186526
+  peer_v4: 172.23.2.76
+  peer_v6: fe80::ade1
+  port: 23764
+  remote: us-sanjose-01.edge.186526.xyz:21080
+  wg_pubkey: VTetWJK15J296W6cXNQf6d9W4VPpTa3ZJEK00GQjFT8=

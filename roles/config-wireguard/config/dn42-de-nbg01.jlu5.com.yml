@@ -280,3 +280,10 @@ wg_peers:
   port: 21862
   remote: ger1-de.alphvino.com:21080
   wg_pubkey: 7Y4b5Rt4LGHOt0mZmpctSD1ffGnNDy+UsoeTl4vt2Qg=
+
+- name: dn42-186526
+  peer_v4: 172.23.2.85
+  peer_v6: fe80::ade1
+  port: 23764
+  remote: de-frankfurt-01.edge.186526.xyz:21080
+  wg_pubkey: 1wMNeQ+QH3V7xme0P0IBbTrAuDD28iwcxBNIwhbO7Xs=

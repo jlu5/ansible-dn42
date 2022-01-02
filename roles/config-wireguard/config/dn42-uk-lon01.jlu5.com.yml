@@ -163,3 +163,10 @@ wg_peers:
   port: 22840
   remote: lhr01.dn42.virtual-cloud.jcx.ovh:21853
   wg_pubkey: Du3LCresYIb1gRxnEKF10qX+si6vml83d0ZiUQUv9CU=
+
+- name: dn42-186526
+  peer_v4: 172.23.2.84
+  peer_v6: fe80::ade1
+  port: 23764
+  remote: uk-london-01.edge.186526.xyz:21080
+  wg_pubkey: WrytfFP463sNKXpQst1oYvA2uTFbmzj9KQ4DXCyM9iA=
