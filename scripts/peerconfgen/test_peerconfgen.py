@@ -713,6 +713,18 @@ protocol bgp myTest_0001_v6 from dnpeers {
 """.strip()
         self.assertEqual(expected, gen_bird_peer_config('myTest', cfg, bird_options).strip())
 
+    def test_bird_config_prefix_numeric_peername(self):
+        cfg = {
+            'asn': '123456',
+            'port': 12345,
+            'remote': 'abcd.efgh.ijkl:21080',
+            'wg_pubkey': 'dn42' * 10 + 'dn4=',
+            'peer_v4': '172.22.108.88',
+            'peer_v6': 'fe80::1234',
+        }
+        bird_options = BirdOptions(mp_bgp=True, extended_next_hop=True, latency=10)
+
+        self.assertIn("protocol bgp _99999999_3456", gen_bird_peer_config('99999999', cfg, bird_options))
 
 
 if __name__ == '__main__':

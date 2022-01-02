@@ -1,3 +1,4 @@
+import string
 from utils import get_iface_name, get_dn42_latency_value
 
 def gen_wg_config(peername, completed_config):
@@ -27,6 +28,10 @@ def gen_bird_peer_config(peername, completed_config, bird_options):
     """
     latency_community = get_dn42_latency_value(bird_options.latency)
     iface_name = get_iface_name(peername)
+
+    if peername.startswith(tuple(string.digits)):
+        peername = "_" + peername
+
     v4_channel = f"""ipv4 {{
         import where dn42_import_filter({latency_community},24,34);
         export where dn42_export_filter({latency_community},24,34);
