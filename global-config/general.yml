@@ -12,6 +12,7 @@ ownnets6:
 stub_ifnames:
 - "igp-dummy*"
 - "cl*"
+- "igp-stub*"
 dummy_interfaces:
   igp:
     ifname: "igp-dummy0"

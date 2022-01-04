@@ -12,7 +12,7 @@
             },
             "properties": {
                 "title": "au-syd01",
-                "description": "Sydney, AU<br>\nPeers:\nde-nbg01, jp-tyo01, us-lax01, us-sea02, us-sjc01\n"
+                "description": "Sydney, AU<br>\nPeers:\njp-tyo01, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -26,7 +26,7 @@
             },
             "properties": {
                 "title": "de-nbg01",
-                "description": "Nuremberg, DE<br>\nPeers:\nau-syd01, es-mad01, fr-par01, it-mil01, nl-ams02, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
+                "description": "Nuremberg, DE<br>\nPeers:\nfr-par01, it-mil01, nl-ams02, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
             }
         },
         {
@@ -40,7 +40,7 @@
             },
             "properties": {
                 "title": "es-mad01",
-                "description": "Madrid, ES<br>\nPeers:\nde-nbg01, it-mil01, nl-ams02, uk-lon01, us-chi01\n"
+                "description": "Madrid, ES<br>\nPeers:\nfr-par01, it-mil01, nl-ams02, uk-lon01, us-nyc02\n"
             }
         },
         {
@@ -54,7 +54,7 @@
             },
             "properties": {
                 "title": "fr-par01",
-                "description": "Paris, FR<br>\nPeers:\nde-nbg01, nl-ams02, uk-lon01, us-nyc02\n"
+                "description": "Paris, FR<br>\nPeers:\nde-nbg01, es-mad01, nl-ams02, uk-lon01, us-nyc02\n"
             }
         },
         {
@@ -138,7 +138,7 @@
             },
             "properties": {
                 "title": "us-chi01",
-                "description": "Chicago, IL, US<br>\nPeers:\nde-nbg01, es-mad01, jp-tyo01, nl-ams02, us-atl01, us-dal01, us-las01, us-lax01, us-nyc02, us-sea02, us-sjc01\n"
+                "description": "Chicago, IL, US<br>\nPeers:\nde-nbg01, jp-tyo01, nl-ams02, us-atl01, us-dal01, us-las01, us-lax01, us-nyc02, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -194,7 +194,7 @@
             },
             "properties": {
                 "title": "us-nyc02",
-                "description": "New York City, NY, US<br>\nPeers:\nde-nbg01, fr-par01, nl-ams02, uk-lon01, us-atl01, us-chi01, us-lax01, us-sea02\n"
+                "description": "New York City, NY, US<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, nl-ams02, uk-lon01, us-atl01, us-chi01, us-lax01, us-sea02\n"
             }
         },
         {
@@ -223,26 +223,6 @@
             "properties": {
                 "title": "us-sjc01",
                 "description": "San Jose, CA, US<br>\nPeers:\nau-syd01, jp-tyo01, us-chi01, us-dal01, us-las01, us-lax01, us-sea02\n"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        151.209295,
-                        -33.86882
-                    ],
-                    [
-                        11.076665,
-                        49.452102
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "au-syd01 <-> de-nbg01",
-                "description": "(costs calculated dynamically)"
             }
         },
         {
@@ -322,26 +302,6 @@
             },
             "properties": {
                 "title": "au-syd01 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        11.076665,
-                        49.452102
-                    ],
-                    [
-                        -3.70379,
-                        40.416775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "de-nbg01 <-> es-mad01",
                 "description": "(costs calculated dynamically)"
             }
         },
@@ -515,6 +475,26 @@
                         40.416775
                     ],
                     [
+                        2.352222,
+                        48.856614
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "es-mad01 <-> fr-par01",
+                "description": "(costs calculated dynamically)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -3.70379,
+                        40.416775
+                    ],
+                    [
                         9.189982,
                         45.464204
                     ]
@@ -575,13 +555,13 @@
                         40.416775
                     ],
                     [
-                        -87.629798,
-                        41.878114
+                        -74.005973,
+                        40.712775
                     ]
                 ]
             },
             "properties": {
-                "title": "es-mad01 <-> us-chi01",
+                "title": "es-mad01 <-> us-nyc02",
                 "description": "(costs calculated dynamically)"
             }
         },
