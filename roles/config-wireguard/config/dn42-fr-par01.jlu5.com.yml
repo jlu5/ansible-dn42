@@ -12,3 +12,10 @@ wg_peers:
   port: 22575
   remote: par2.fr.androw.eu:21080
   wg_pubkey: jlHp4FYZ69xdlaknLxBY3Uuv1xjsHoHH9qHe4b7BP2o=
+
+- name: dn42par-tchekda
+  port: 21722
+  remote: "peer.dn42.tchekda.fr:21080"
+  wg_pubkey: "QF93Jc4mGgHvZvaY+qUeyU1vYZKW7ATwztc9oYie92k="
+  peer_v4: "172.20.4.97"
+  peer_v6: "fe80::1722:97/64"
