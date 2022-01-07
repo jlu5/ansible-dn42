@@ -13,14 +13,14 @@ protocol bgp ibgp_{{ nodedata['shortname'] | replace("-", "_") }} {
         import where ibgp_import_filter();
         export where ibgp_export_filter();
         next hop address {{ ownip }};
-        next hop self ebgp;
+        next hop self;
     };
 
     ipv6 {
         import where ibgp_import_filter();
         export where ibgp_export_filter();
         next hop address {{ ownip6 }};
-        next hop self ebgp;
+        next hop self;
     };
 }
 {%- endmacro %}
