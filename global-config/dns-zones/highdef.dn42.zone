@@ -24,6 +24,8 @@ ping-nbg IN A 172.20.229.117
 ping-nbg IN AAAA fd86:bad:11b7:117::1
 ping-tyo IN A 172.20.229.124
 ping-tyo IN AAAA fd86:bad:11b7:224::1
+ping-yvr001 IN A 172.22.108.35
+ping-yvr001 IN AAAA fd86:bad:11b7:35::1
 ns IN A 172.22.108.21
 ns IN AAAA fd86:bad:11b7:53::1
 dns IN A 172.22.108.22
@@ -70,4 +72,6 @@ jp-tyo01.rtr IN A 172.20.229.124
 jp-tyo01.rtr IN AAAA fd86:bad:11b7:224::1
 au-syd01.rtr IN A 172.20.229.125
 au-syd01.rtr IN AAAA fd86:bad:11b7:225::1
+yvr001.rtr IN A 172.22.108.35
+yvr001.rtr IN AAAA fd86:bad:11b7:35::1
 $GENERATE 1-15 ${0,1,d}.yvrlab A 172.22.108.$

@@ -22,4 +22,5 @@ $TTL 300
 34 IN PTR us-sjc01.rtr.highdef.dn42.
 33 IN PTR us-dal01.rtr.highdef.dn42.
 36 IN PTR fr-par01.rtr.highdef.dn42.
+35 IN PTR yvr001.rtr.highdef.dn42.
 $GENERATE 1-15 $ PTR ${0,2,d}.yvrlab.highdef.dn42.
