@@ -165,3 +165,10 @@ wg_peers:
   port: 22717
   remote: usw.vm.whojk.com:23005
   wg_pubkey: L4+efr10ZM0J80nDeO5mHw25nq9LC5UBrYtP8T1I9n4=
+
+- name: dn42-lantian
+  peer_v4: 172.22.76.185
+  peer_v6: fe80::2547
+  port: 22547
+  remote: hostdare.lantian.pub:21080
+  wg_pubkey: zyATu8FW392WFFNAz7ZH6+4TUutEYEooPPirwcoIiXo=
