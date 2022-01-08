@@ -105,3 +105,10 @@ wg_peers:
   wg_pubkey: "Y8E2cd2DKr7hZ3qs1WgU+2l+qWHaOxw4vFPAGevpiW0="
   peer_v4: null
   peer_v6: "fe80::826"
+
+- name: dn42-hujk
+  peer_v4: null
+  peer_v6: fe80::104:50:2030:c
+  port: 22717
+  remote: nl.vm.whojk.com:23010
+  wg_pubkey: cokP4jFBH0TlBD/m3sWCpc9nADLOhzM2+lcjAb3ynFc=

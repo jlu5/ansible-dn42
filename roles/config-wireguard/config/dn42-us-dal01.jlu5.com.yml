@@ -14,3 +14,10 @@ wg_peers:
   remote: us-dal01.dn42.tech9.io:59321
   wg_pubkey: iEZ71NPZge6wHKb6q4o2cvCopZ7PBDqn/b3FO56+Hkc=
   local_v6: fe80::100
+
+- name: dn42-hujk
+  peer_v4: null
+  peer_v6: fe80::104:50:2030:14
+  port: 22717
+  remote: us.vm.whojk.com:23001
+  wg_pubkey: lhWFk53u42PlQ+P7QkBJt1+tXTc/H0EE/FwdBYkTcGY=

@@ -158,3 +158,10 @@ wg_peers:
   port: 23764
   remote: us-losangls-01.edge.186526.xyz:21080
   wg_pubkey: lqZ+0q3K+Ju2RQUOPNmAxleRUdtnsxvBu1TAtUqUAHM=
+
+- name: dn42-hujk
+  peer_v4: null
+  peer_v6: fe80::104:50:2030:18
+  port: 22717
+  remote: usw.vm.whojk.com:23005
+  wg_pubkey: L4+efr10ZM0J80nDeO5mHw25nq9LC5UBrYtP8T1I9n4=

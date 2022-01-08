@@ -175,3 +175,10 @@ wg_peers:
   port: 22331
   remote: tw201.dn42.williamgates.info:21080
   wg_pubkey: D9O5wPiRVFUAZzqVJlfpNONAEEy/Ljj8vw5L6PXUpBo=
+
+- name: dn42-hujk
+  peer_v4: null
+  peer_v6: fe80::104:50:2030
+  port: 22717
+  remote: tw.vm.whojk.com:23014
+  wg_pubkey: ifN+KmnL5XLHG8nDi2nN9l26snGUP/1157p8mOSPE1c=
