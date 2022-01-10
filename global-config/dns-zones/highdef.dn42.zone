@@ -40,6 +40,8 @@ mobi2.clients IN A 172.22.108.19
 shypre-1.clients IN A 172.22.108.28
 silverthing-ptp.us-sea02 IN A 172.22.108.30
 silverthing.clients IN A 172.22.108.31
+GW.yvrlab IN A 172.22.108.1
+GW.yvrlab IN AAAA fd86:bad:11b7:aaaa::1
 us-chi01.rtr IN A 172.20.229.113
 us-chi01.rtr IN AAAA fd86:bad:11b7::1
 us-sea02.rtr IN A 172.20.229.114
@@ -74,4 +76,4 @@ au-syd01.rtr IN A 172.20.229.125
 au-syd01.rtr IN AAAA fd86:bad:11b7:225::1
 yvr001.rtr IN A 172.22.108.35
 yvr001.rtr IN AAAA fd86:bad:11b7:35::1
-$GENERATE 1-15 ${0,1,d}.yvrlab A 172.22.108.$
+$GENERATE 2-15 ${0,1,d}.yvrlab A 172.22.108.$
