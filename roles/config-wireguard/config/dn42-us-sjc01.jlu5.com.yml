@@ -61,3 +61,10 @@ wg_peers:
   port: 23764
   remote: us-sanjose-01.edge.186526.xyz:21080
   wg_pubkey: VTetWJK15J296W6cXNQf6d9W4VPpTa3ZJEK00GQjFT8=
+
+- name: dn42-moe233
+  peer_v4: null
+  peer_v6: fe80::253
+  port: 20253
+  remote: sfo1.dn42.moe233.net:21080
+  wg_pubkey: C3SneO68SmagisYQ3wi5tYI2R9g5xedKkB56Y7rtPUo=
