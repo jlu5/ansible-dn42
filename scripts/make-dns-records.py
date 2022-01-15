@@ -91,9 +91,13 @@ def write_forward_zone(domain, records):
                 _write_entry(fd, record_name, 'A',    data['ip4'], reverse_domain=domain)
             if 'ip6' in data:
                 _write_entry(fd, record_name, 'AAAA', data['ip6'], reverse_domain=domain)
+        elif data['type'] == 'multi':
+            for subrecord in data['records']:
+                _write_entry(fd, record_name, subrecord['type'], subrecord['target'])
         else:
             _write_entry(fd, record_name, data['type'], data['target'])
-    # Add host records onto the main domain
+
+    # Add router host records onto the main domain
     if domain == global_vars['dns_domain']:
         for router in hosts:
             router_hostname = global_vars['dns_auto_host_record_format'] % hosts[router]['shortname']
