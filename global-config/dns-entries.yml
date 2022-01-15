@@ -33,7 +33,7 @@ dns_records:
       type: ansible_host_alias
       target: yvr001.jlu5.com
 
-    # DNS services
+    # DNS & web anycast
     "ns":
       type: host_record
       ip4: "{{ dummy_interfaces.anycast_auth_dns.ip4[0] }}"
@@ -42,6 +42,16 @@ dns_records:
       type: host_record
       ip4: "{{ dummy_interfaces.anycast_recursors.ip4[0] }}"
       ip6: "{{ dummy_interfaces.anycast_recursors.ip6[0] }}"
+    "@":
+      type: multi
+      records:
+        - type: A
+          target: "{{ dummy_interfaces.anycast_recursors.ip4[0] }}"
+        - type: AAAA
+          target: "{{ dummy_interfaces.anycast_recursors.ip6[0] }}"
+    "www":
+      type: CNAME
+      target: "@"
 
     # Internal services
     "nightfall":

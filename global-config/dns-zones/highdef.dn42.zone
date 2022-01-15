@@ -30,6 +30,9 @@ ns IN A 172.22.108.21
 ns IN AAAA fd86:bad:11b7:53::1
 dns IN A 172.22.108.22
 dns IN AAAA fd86:bad:11b7:53::2
+@ IN A 172.22.108.22
+@ IN AAAA fd86:bad:11b7:53::2
+www IN CNAME @
 nightfall IN A 172.22.108.45
 mediactr IN A 172.22.108.25
 music IN CNAME mediactr

@@ -4,8 +4,10 @@
 server {
     listen 80;
     listen [::]:80;
+    server_name {{ dns_domain }};
     server_name *.{{ dns_domain }};
     server_name 172.23.0.53;
+{# Listen on all dummy interfaces #}
 {% for iface, options in dummy_interfaces.items() %}
 {% for ip in options.ip4 + options.ip6 %}
     server_name {{ ip | ipaddr('address') | ipwrap }};
