@@ -7,13 +7,11 @@ domains:
       - soa: ns1.utopia-repository.org webmaster.overdrivenetworks.com 1 7200 2400 86400 3600
 
     eu.deb.geo.utopia-repository.org: &europe
-      - a: 185.193.158.145
-      - aaaa: 2a0f:93c1:26:27c::1
+      - cname: deb2.utopia-repository.org
     af.deb.geo.utopia-repository.org: *europe
 
     na.deb.geo.utopia-repository.org: &na
-      - a: 199.195.248.191
-      - aaaa: 2605:6400:10:da::1
+      - cname: deb-master.utopia-repository.org
     sa.deb.geo.utopia-repository.org: *na
     an.deb.geo.utopia-repository.org: *na
     oc.deb.geo.utopia-repository.org: *na

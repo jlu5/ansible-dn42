@@ -100,6 +100,8 @@ def write_forward_zone(domain, records):
     # Add router host records onto the main domain
     if domain == global_vars['dns_domain']:
         for router in hosts:
+            if hosts[router].get('private'):
+                continue
             router_hostname = global_vars['dns_auto_host_record_format'] % hosts[router]['shortname']
             _write_entry(fd, router_hostname, 'A',    hosts[router]['ownip'],  reverse_domain=domain)
             _write_entry(fd, router_hostname, 'AAAA', hosts[router]['ownip6'], reverse_domain=domain)

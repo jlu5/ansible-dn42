@@ -17,5 +17,6 @@ def get_hosts(yaml_content):
         results.update(region_groups['hosts'])
     for server, server_data in yaml_content['private']['hosts'].items():
         if server_data.get('auto_tunnels'):
+            server_data['private'] = True
             results[server] = server_data
     return results
