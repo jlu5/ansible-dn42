@@ -5,7 +5,19 @@ igp_neighbours:
     dn42-us-lax01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
+  dn42-ca-yyz01.jlu5.com: !!set
+    dn42-de-nbg01.jlu5.com: null
+    dn42-es-mad01.jlu5.com: null
+    dn42-fr-par01.jlu5.com: null
+    dn42-nl-ams02.jlu5.com: null
+    dn42-uk-lon01.jlu5.com: null
+    dn42-us-atl01.jlu5.com: null
+    dn42-us-chi01.jlu5.com: null
+    dn42-us-dal01.jlu5.com: null
+    dn42-us-lax01.jlu5.com: null
+    dn42-us-sea02.jlu5.com: null
   dn42-de-nbg01.jlu5.com: !!set
+    dn42-ca-yyz01.jlu5.com: null
     dn42-fr-par01.jlu5.com: null
     dn42-it-mil01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
@@ -13,19 +25,18 @@ igp_neighbours:
     dn42-us-atl01.jlu5.com: null
     dn42-us-chi01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
   dn42-es-mad01.jlu5.com: !!set
+    dn42-ca-yyz01.jlu5.com: null
     dn42-fr-par01.jlu5.com: null
     dn42-it-mil01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
     dn42-uk-lon01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
   dn42-fr-par01.jlu5.com: !!set
+    dn42-ca-yyz01.jlu5.com: null
     dn42-de-nbg01.jlu5.com: null
     dn42-es-mad01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
     dn42-uk-lon01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
   dn42-it-mil01.jlu5.com: !!set
     dn42-de-nbg01.jlu5.com: null
     dn42-es-mad01.jlu5.com: null
@@ -38,6 +49,7 @@ igp_neighbours:
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-nl-ams02.jlu5.com: !!set
+    dn42-ca-yyz01.jlu5.com: null
     dn42-de-nbg01.jlu5.com: null
     dn42-es-mad01.jlu5.com: null
     dn42-fr-par01.jlu5.com: null
@@ -47,23 +59,23 @@ igp_neighbours:
     dn42-us-atl01.jlu5.com: null
     dn42-us-chi01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
   dn42-uk-lon01.jlu5.com: !!set
+    dn42-ca-yyz01.jlu5.com: null
     dn42-de-nbg01.jlu5.com: null
     dn42-es-mad01.jlu5.com: null
     dn42-fr-par01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
     dn42-us-atl01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
   dn42-us-atl01.jlu5.com: !!set
+    dn42-ca-yyz01.jlu5.com: null
     dn42-de-nbg01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
     dn42-uk-lon01.jlu5.com: null
     dn42-us-chi01.jlu5.com: null
     dn42-us-dal01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
   dn42-us-chi01.jlu5.com: !!set
+    dn42-ca-yyz01.jlu5.com: null
     dn42-de-nbg01.jlu5.com: null
     dn42-jp-tyo01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
@@ -71,10 +83,10 @@ igp_neighbours:
     dn42-us-dal01.jlu5.com: null
     dn42-us-las01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-us-dal01.jlu5.com: !!set
+    dn42-ca-yyz01.jlu5.com: null
     dn42-us-atl01.jlu5.com: null
     dn42-us-chi01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
@@ -84,8 +96,10 @@ igp_neighbours:
     dn42-us-lax01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
+    lax02.jlu5.com: null
   dn42-us-lax01.jlu5.com: !!set
     dn42-au-syd01.jlu5.com: null
+    dn42-ca-yyz01.jlu5.com: null
     dn42-de-nbg01.jlu5.com: null
     dn42-jp-tyo01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
@@ -93,27 +107,16 @@ igp_neighbours:
     dn42-us-chi01.jlu5.com: null
     dn42-us-dal01.jlu5.com: null
     dn42-us-las01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
     lax02.jlu5.com: null
-  dn42-us-nyc02.jlu5.com: !!set
-    dn42-de-nbg01.jlu5.com: null
-    dn42-es-mad01.jlu5.com: null
-    dn42-fr-par01.jlu5.com: null
-    dn42-nl-ams02.jlu5.com: null
-    dn42-uk-lon01.jlu5.com: null
-    dn42-us-atl01.jlu5.com: null
-    dn42-us-chi01.jlu5.com: null
-    dn42-us-lax01.jlu5.com: null
-    dn42-us-sea02.jlu5.com: null
   dn42-us-sea02.jlu5.com: !!set
     dn42-au-syd01.jlu5.com: null
+    dn42-ca-yyz01.jlu5.com: null
     dn42-jp-tyo01.jlu5.com: null
     dn42-us-chi01.jlu5.com: null
     dn42-us-las01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
-    dn42-us-nyc02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-us-sjc01.jlu5.com: !!set
     dn42-au-syd01.jlu5.com: null
@@ -125,6 +128,7 @@ igp_neighbours:
     dn42-us-sea02.jlu5.com: null
     lax02.jlu5.com: null
   lax02.jlu5.com: !!set
+    dn42-us-las01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
 igp_wg_ports:
@@ -137,11 +141,24 @@ igp_wg_ports:
     dn42-us-sea02.jlu5.com: 30036
     dn42-us-sjc01.jlu5.com: 30066
   dn42-br-sao01.jlu5.com:
+    dn42-ca-yyz01.jlu5.com: 30045
     dn42-nl-ams02.jlu5.com: 30046
     dn42-us-atl01.jlu5.com: 30047
-    dn42-us-nyc02.jlu5.com: 30045
+  dn42-ca-yyz01.jlu5.com:
+    dn42-br-sao01.jlu5.com: 30045
+    dn42-de-nbg01.jlu5.com: 30014
+    dn42-es-mad01.jlu5.com: 30074
+    dn42-fr-par01.jlu5.com: 30056
+    dn42-nl-ams02.jlu5.com: 30015
+    dn42-uk-lon01.jlu5.com: 30020
+    dn42-us-atl01.jlu5.com: 30008
+    dn42-us-chi01.jlu5.com: 30003
+    dn42-us-dal01.jlu5.com: 30078
+    dn42-us-lax01.jlu5.com: 30013
+    dn42-us-sea02.jlu5.com: 30060
   dn42-de-nbg01.jlu5.com:
     dn42-au-syd01.jlu5.com: 30035
+    dn42-ca-yyz01.jlu5.com: 30014
     dn42-es-mad01.jlu5.com: 30025
     dn42-fr-par01.jlu5.com: 30059
     dn42-it-mil01.jlu5.com: 30028
@@ -152,21 +169,20 @@ igp_wg_ports:
     dn42-us-atl01.jlu5.com: 30009
     dn42-us-chi01.jlu5.com: 30000
     dn42-us-lax01.jlu5.com: 30011
-    dn42-us-nyc02.jlu5.com: 30014
   dn42-es-mad01.jlu5.com:
+    dn42-ca-yyz01.jlu5.com: 30074
     dn42-de-nbg01.jlu5.com: 30025
     dn42-fr-par01.jlu5.com: 30073
     dn42-it-mil01.jlu5.com: 30030
     dn42-nl-ams02.jlu5.com: 30027
     dn42-uk-lon01.jlu5.com: 30026
     dn42-us-chi01.jlu5.com: 30024
-    dn42-us-nyc02.jlu5.com: 30074
   dn42-fr-par01.jlu5.com:
+    dn42-ca-yyz01.jlu5.com: 30056
     dn42-de-nbg01.jlu5.com: 30059
     dn42-es-mad01.jlu5.com: 30073
     dn42-nl-ams02.jlu5.com: 30058
     dn42-uk-lon01.jlu5.com: 30057
-    dn42-us-nyc02.jlu5.com: 30056
   dn42-it-mil01.jlu5.com:
     dn42-de-nbg01.jlu5.com: 30028
     dn42-es-mad01.jlu5.com: 30030
@@ -183,6 +199,7 @@ igp_wg_ports:
     dn42-us-sjc01.jlu5.com: 30065
   dn42-nl-ams02.jlu5.com:
     dn42-br-sao01.jlu5.com: 30046
+    dn42-ca-yyz01.jlu5.com: 30015
     dn42-de-nbg01.jlu5.com: 30023
     dn42-es-mad01.jlu5.com: 30027
     dn42-fr-par01.jlu5.com: 30058
@@ -194,7 +211,6 @@ igp_wg_ports:
     dn42-us-atl01.jlu5.com: 30010
     dn42-us-chi01.jlu5.com: 30002
     dn42-us-lax01.jlu5.com: 30012
-    dn42-us-nyc02.jlu5.com: 30015
   dn42-nl-ams03.jlu5.com:
     dn42-de-nbg01.jlu5.com: 30054
     dn42-nl-ams02.jlu5.com: 30055
@@ -206,22 +222,23 @@ igp_wg_ports:
     dn42-nl-ams02.jlu5.com: 30043
     dn42-us-lax01.jlu5.com: 30039
   dn42-uk-lon01.jlu5.com:
+    dn42-ca-yyz01.jlu5.com: 30020
     dn42-de-nbg01.jlu5.com: 30019
     dn42-es-mad01.jlu5.com: 30026
     dn42-fr-par01.jlu5.com: 30057
     dn42-nl-ams02.jlu5.com: 30021
     dn42-us-atl01.jlu5.com: 30022
-    dn42-us-nyc02.jlu5.com: 30020
   dn42-us-atl01.jlu5.com:
     dn42-br-sao01.jlu5.com: 30047
+    dn42-ca-yyz01.jlu5.com: 30008
     dn42-de-nbg01.jlu5.com: 30009
     dn42-nl-ams02.jlu5.com: 30010
     dn42-uk-lon01.jlu5.com: 30022
     dn42-us-chi01.jlu5.com: 30006
     dn42-us-dal01.jlu5.com: 30067
     dn42-us-lax01.jlu5.com: 30007
-    dn42-us-nyc02.jlu5.com: 30008
   dn42-us-chi01.jlu5.com:
+    dn42-ca-yyz01.jlu5.com: 30003
     dn42-de-nbg01.jlu5.com: 30000
     dn42-es-mad01.jlu5.com: 30024
     dn42-jp-tyo01.jlu5.com: 30031
@@ -231,10 +248,10 @@ igp_wg_ports:
     dn42-us-fmt01.jlu5.com: 30050
     dn42-us-las01.jlu5.com: 30016
     dn42-us-lax01.jlu5.com: 30001
-    dn42-us-nyc02.jlu5.com: 30003
     dn42-us-sea02.jlu5.com: 30004
     dn42-us-sjc01.jlu5.com: 30062
   dn42-us-dal01.jlu5.com:
+    dn42-ca-yyz01.jlu5.com: 30078
     dn42-us-atl01.jlu5.com: 30067
     dn42-us-chi01.jlu5.com: 30069
     dn42-us-fmt01.jlu5.com: 30070
@@ -255,8 +272,10 @@ igp_wg_ports:
     dn42-us-lax01.jlu5.com: 30018
     dn42-us-sea02.jlu5.com: 30017
     dn42-us-sjc01.jlu5.com: 30064
+    lax02.jlu5.com: 30077
   dn42-us-lax01.jlu5.com:
     dn42-au-syd01.jlu5.com: 30037
+    dn42-ca-yyz01.jlu5.com: 30013
     dn42-de-nbg01.jlu5.com: 30011
     dn42-jp-tyo01.jlu5.com: 30033
     dn42-nl-ams02.jlu5.com: 30012
@@ -266,30 +285,18 @@ igp_wg_ports:
     dn42-us-dal01.jlu5.com: 30071
     dn42-us-fmt01.jlu5.com: 30048
     dn42-us-las01.jlu5.com: 30018
-    dn42-us-nyc02.jlu5.com: 30013
     dn42-us-sea02.jlu5.com: 30005
     dn42-us-sjc01.jlu5.com: 30063
     lax02.jlu5.com: 30076
-  dn42-us-nyc02.jlu5.com:
-    dn42-br-sao01.jlu5.com: 30045
-    dn42-de-nbg01.jlu5.com: 30014
-    dn42-es-mad01.jlu5.com: 30074
-    dn42-fr-par01.jlu5.com: 30056
-    dn42-nl-ams02.jlu5.com: 30015
-    dn42-uk-lon01.jlu5.com: 30020
-    dn42-us-atl01.jlu5.com: 30008
-    dn42-us-chi01.jlu5.com: 30003
-    dn42-us-lax01.jlu5.com: 30013
-    dn42-us-sea02.jlu5.com: 30060
   dn42-us-sea02.jlu5.com:
     dn42-au-syd01.jlu5.com: 30036
+    dn42-ca-yyz01.jlu5.com: 30060
     dn42-jp-tyo01.jlu5.com: 30032
     dn42-us-chi01.jlu5.com: 30004
     dn42-us-dal01.jlu5.com: 30068
     dn42-us-fmt01.jlu5.com: 30049
     dn42-us-las01.jlu5.com: 30017
     dn42-us-lax01.jlu5.com: 30005
-    dn42-us-nyc02.jlu5.com: 30060
     dn42-us-sjc01.jlu5.com: 30061
   dn42-us-sjc01.jlu5.com:
     dn42-au-syd01.jlu5.com: 30066
@@ -301,6 +308,7 @@ igp_wg_ports:
     dn42-us-sea02.jlu5.com: 30061
     lax02.jlu5.com: 30075
   lax02.jlu5.com:
+    dn42-us-las01.jlu5.com: 30077
     dn42-us-lax01.jlu5.com: 30076
     dn42-us-sjc01.jlu5.com: 30075
-next_port: 30077
+next_port: 30079

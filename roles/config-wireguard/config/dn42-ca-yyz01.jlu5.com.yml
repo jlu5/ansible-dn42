@@ -34,9 +34,6 @@ wg_peers:
   peer_v4: null
   peer_v6: "fe80::42:2237/128"
 
-- name: dn42bhs-aasg
-  remove: true
-
 - name: dn42buf-cperrin
   port: 53735
   remote: "us1.dn42.cperrin.xyz:51080"
@@ -102,9 +99,6 @@ wg_peers:
   peer_v4: "172.22.66.53"
   peer_v6: "fe80::1876"
 
-- name: dn42nyc-eastbnd
-  remove: true
-
 - name: dn42bhs-serverm
   port: 53770
   remote: "bhs1.dn42.servermade.com:51080"
@@ -126,18 +120,12 @@ wg_peers:
   peer_v4: "172.22.68.0"
   peer_v6: "fe80::1888"
 
-- name: dn42pnj-x6c
-  remove: true
-
 - name: dn42rio-paterno
   port: 23073
   remote: "dn42.shiva.eti.br:21080"
   wg_pubkey: "ioFN575e/dD15BiD2mkXug6TKyeqYB4BC0f2NFMHYEM="
   peer_v4: null
   peer_v6: "fd22:ad17:8e8d:10::10c"
-
-- name: dn42nyc-alphvin
-  remove: true
 
 - name: dn42ash-kskb # autopeer ID 21080
   port: 21111
