@@ -12,7 +12,7 @@ $TTL 300
 114 IN PTR us-sea02.rtr.highdef.dn42.
 119 IN PTR us-atl01.rtr.highdef.dn42.
 122 IN PTR us-lax01.rtr.highdef.dn42.
-123 IN PTR us-nyc02.rtr.highdef.dn42.
+123 IN PTR ca-yyz01.rtr.highdef.dn42.
 126 IN PTR us-las01.rtr.highdef.dn42.
 116 IN PTR uk-lon01.rtr.highdef.dn42.
 117 IN PTR de-nbg01.rtr.highdef.dn42.

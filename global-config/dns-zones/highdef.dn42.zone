@@ -51,8 +51,8 @@ us-atl01.rtr IN A 172.20.229.119
 us-atl01.rtr IN AAAA fd86:bad:11b7:9::1
 us-lax01.rtr IN A 172.20.229.122
 us-lax01.rtr IN AAAA fd86:bad:11b7:22::1
-us-nyc02.rtr IN A 172.20.229.123
-us-nyc02.rtr IN AAAA fd86:bad:11b7:23::1
+ca-yyz01.rtr IN A 172.20.229.123
+ca-yyz01.rtr IN AAAA fd86:bad:11b7:23::1
 us-las01.rtr IN A 172.20.229.126
 us-las01.rtr IN AAAA fd86:bad:11b7:26::1
 us-sjc01.rtr IN A 172.22.108.34

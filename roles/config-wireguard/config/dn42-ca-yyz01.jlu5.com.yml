@@ -93,11 +93,7 @@ wg_peers:
   peer_v6: "fe80::2464"
 
 - name: dn42nyc-fixmix
-  port: 51876
-  remote: "198.98.60.147:21080"
-  wg_pubkey: "EJvoVa5DrJl1rnryF4GThX1Rf86lMBtu2sg8Huru9Gs="
-  peer_v4: "172.22.66.53"
-  peer_v6: "fe80::1876"
+  remove: true
 
 - name: dn42bhs-serverm
   port: 53770
@@ -182,3 +178,91 @@ wg_peers:
   port: 22717
   remote: use.vm.whojk.com:23006
   wg_pubkey: 1LJ2PBEUOa7uwqnHS3j2EGVW+wKv/d1L6mbnA0tOjU0=
+
+### legacy configurations from us-chi01
+- name: "dn42atl-doxz"
+  port: 50003
+  remote: "45.76.249.17:51822"
+  wg_pubkey: "2RkCWgwBkoq5jJhjDWI15nCxwgb6oQxdY9lIO18KEzs="
+  peer_v4: "172.22.159.60/32"
+  peer_v6: "fdfc:694e:234f::3/128"
+  local_v4: "172.20.229.113"
+  local_v6: "fe80::113"
+  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
+
+- name: "dn42kan-sbernau"
+  port: 51297
+  remote: "57a2c73.online-server.cloud:51080"
+  wg_pubkey: "LIpv4meXlO+aGPbujTpevJwJJllPkgKOICQ09IEf6x8="
+  peer_v4: "172.20.234.65/32"
+  peer_v6: "fe80::12:97"
+  local_v4: "172.20.229.113"
+  local_v6: "fe80::113"
+  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
+
+- name: dn42buf-kioubit
+  port: 53914
+  remote: "us2.g-load.eu:21080"
+  wg_pubkey: "6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s="
+  peer_v4: "172.20.53.98"
+  peer_v6: "fe80::ade0"
+  local_v4: "172.20.229.113"
+  local_v6: "fe80::113"
+  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
+
+- name: dn42mci-aftbit
+  port: 50822
+  remote: "dn42.aftbit.com:51080"
+  wg_pubkey: "JBj2+QjkQwFjBn/QRRVB2RWAw9mwC2Efev8AX2uMoUY="
+  peer_v4: "172.23.222.129"
+  peer_v6: "fe80::100"
+  local_v4: "172.20.229.113"
+  local_v6: "fe80::113"
+  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
+
+- name: dn42chi-ncw
+  port: 51288
+  remote: "chi2.sc00.org:21080"
+  wg_pubkey: "750WkOmYTh+gfrod2LRgKU46nkEJrWK2z6emynV+j3U="
+  peer_v4: "172.20.233.129"
+  peer_v6: "fe80::1288/64"
+  local_v4: "172.20.229.113"
+  local_v6: "fe80::113"
+  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
+
+- name: dn42oma-zane
+  port: 53315
+  remote: "63.227.145.132:51080"
+  wg_pubkey: "7SAw34vmYtgyEi05f78nc5kbEiCGvVTeqa3xdN+0034="
+  peer_v4: "172.22.167.67"
+  peer_v6: "fd62:e667:840a::2"
+  local_v4: "172.20.229.113"
+  local_v6: "fe80::113"
+  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
+
+- name: dn42chi-fixmix
+  port: 51876
+  remote: "92.38.176.67:21080"
+  wg_pubkey: "l6fUpiE0YM8lv2x7fOd+M4PahO/R5BS3qKQCyUWEGCg="
+  peer_v4: "172.22.66.56"
+  peer_v6: "fe80::1876"
+  local_v4: "172.20.229.113"
+  local_v6: "fe80::113"
+  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
+
+- name: dn42-gwd
+  peer_v4: 172.20.238.193
+  peer_v6: fdde:a627:ee2::1
+  port: 23656
+  remote: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          32363834323865366336386337313866396230323336653430633939343830353131393233346366
+          6231393037313835646237636333623331336430356234310a623138396537303038306430373438
+          37366666303261383038346235393835326665636338623132663864356335613166643239656263
+          3864386635363936330a323532383434636566393134393362343130336139303963663832306130
+          37303836363433643463626464633437633534393432386531333738306662383934
+  wg_pubkey: vGKNleHtTCKa0sDvguhajzCdK1VuLpdeeWHPyYwypSU=
+  local_v4: "172.20.229.113"
+  local_v6: "fe80::113"
+  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
+# end legacy configurations from us-chi01
