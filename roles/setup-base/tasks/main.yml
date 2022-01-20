@@ -76,6 +76,7 @@
       minute: "5"
       job: "/usr/local/bin/dn42-update-roas.sh"
       user: bird
+  when: "'private' not in group_names"
 
 - name: Create scripts dir for dn42
   file:
