@@ -7,7 +7,7 @@
   strategy: mitogen_linear
   roles:
     - role: config-iptables
-      when: "'dn42routers' in group_names"
+      when: "auto_iptables|default(True)"
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.igp }}"
     - config-wireguard
