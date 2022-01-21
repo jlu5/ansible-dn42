@@ -83,6 +83,7 @@ igp_neighbours:
     dn42-ca-yyz01.jlu5.com: null
     dn42-us-atl01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
+    dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-us-las01.jlu5.com: !!set
     dn42-ca-yyz01.jlu5.com: null
@@ -107,6 +108,7 @@ igp_neighbours:
     dn42-au-syd01.jlu5.com: null
     dn42-ca-yyz01.jlu5.com: null
     dn42-jp-tyo01.jlu5.com: null
+    dn42-us-dal01.jlu5.com: null
     dn42-us-las01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null

@@ -77,7 +77,9 @@ def main():
 
     # Create a new point for each node
     for node, nodedata in hosts.items():
-        coords = node_coords[node_short_names[node]] = geocoder.geocode(nodedata['location'])
+        if nodedata.get('private') or not nodedata.get('location'):
+            continue
+        coords = node_coords[node] = geocoder.geocode(nodedata['location'])
         # GeoJSON uses longitude and then latitude
         point = geojson.Point((coords[1], coords[0]))
         peers = ', '.join(sorted(node_short_names[peer] for peer in tunnels['igp_neighbours'][node]))
@@ -93,14 +95,10 @@ Peers:
 
     # Create a new line for each IGP tunnel
     seen_tunnels = set()
-    for node, neighbours in tunnels['igp_neighbours'].items():
-        if node not in hosts:
-            continue
-        node = node_short_names[node]
-        for neighbour in neighbours:
-            if neighbour not in hosts:
+    for node in node_coords:
+        for neighbour in tunnels['igp_neighbours'][node]:
+            if neighbour not in node_coords:
                 continue
-            neighbour = node_short_names[neighbour]
             if f'{neighbour},{node}' not in seen_tunnels:  # Only add a connection once
                 datapair = f'{node},{neighbour}'
                 seen_tunnels.add(datapair)
@@ -109,8 +107,8 @@ Peers:
                      (node_coords[neighbour][1], node_coords[neighbour][0])],
                 )
                 feature = geojson.Feature(geometry=line, properties={
-                    "title": f'{node} <-> {neighbour}',
-                    "description": '(costs calculated dynamically)',
+                    "title": f'{node_short_names[node]} <-> {node_short_names[neighbour]}',
+                    "description": '',
                 })
                 tunnel_lines.append(feature)
 

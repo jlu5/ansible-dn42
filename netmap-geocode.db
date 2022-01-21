@@ -61,3 +61,6 @@ Sydney, AU: !!python/tuple
 Tokyo, JP: !!python/tuple
 - 35.6761919
 - 139.6503106
+Toronto, ON, CA: !!python/tuple
+- 43.653226
+- -79.3831843

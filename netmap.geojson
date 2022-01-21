@@ -20,13 +20,27 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -79.383184,
+                    43.653226
+                ]
+            },
+            "properties": {
+                "title": "ca-yyz01",
+                "description": "Toronto, ON, CA<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, int-chi03, nl-ams02, uk-lon01, us-atl01, us-dal01, us-las01, us-lax01, us-sea02\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     11.076665,
                     49.452102
                 ]
             },
             "properties": {
                 "title": "de-nbg01",
-                "description": "Nuremberg, DE<br>\nPeers:\nfr-par01, it-mil01, nl-ams02, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
+                "description": "Nuremberg, DE<br>\nPeers:\nca-yyz01, fr-par01, it-mil01, nl-ams02, uk-lon01, us-atl01, us-lax01\n"
             }
         },
         {
@@ -40,7 +54,7 @@
             },
             "properties": {
                 "title": "es-mad01",
-                "description": "Madrid, ES<br>\nPeers:\nfr-par01, it-mil01, nl-ams02, uk-lon01, us-nyc02\n"
+                "description": "Madrid, ES<br>\nPeers:\nca-yyz01, fr-par01, it-mil01, nl-ams02, uk-lon01\n"
             }
         },
         {
@@ -54,7 +68,7 @@
             },
             "properties": {
                 "title": "fr-par01",
-                "description": "Paris, FR<br>\nPeers:\nde-nbg01, es-mad01, nl-ams02, uk-lon01, us-nyc02\n"
+                "description": "Paris, FR<br>\nPeers:\nca-yyz01, de-nbg01, es-mad01, nl-ams02, uk-lon01\n"
             }
         },
         {
@@ -82,7 +96,7 @@
             },
             "properties": {
                 "title": "jp-tyo01",
-                "description": "Tokyo, JP<br>\nPeers:\nau-syd01, nl-ams02, us-chi01, us-lax01, us-sea02, us-sjc01\n"
+                "description": "Tokyo, JP<br>\nPeers:\nau-syd01, nl-ams02, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -96,7 +110,7 @@
             },
             "properties": {
                 "title": "nl-ams02",
-                "description": "Amsterdam, NL<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, it-mil01, jp-tyo01, uk-lon01, us-atl01, us-chi01, us-lax01, us-nyc02\n"
+                "description": "Amsterdam, NL<br>\nPeers:\nca-yyz01, de-nbg01, es-mad01, fr-par01, it-mil01, jp-tyo01, uk-lon01, us-atl01, us-lax01\n"
             }
         },
         {
@@ -110,7 +124,7 @@
             },
             "properties": {
                 "title": "uk-lon01",
-                "description": "London, UK<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, nl-ams02, us-atl01, us-nyc02\n"
+                "description": "London, UK<br>\nPeers:\nca-yyz01, de-nbg01, es-mad01, fr-par01, nl-ams02, us-atl01\n"
             }
         },
         {
@@ -124,21 +138,7 @@
             },
             "properties": {
                 "title": "us-atl01",
-                "description": "Atlanta, GA, US<br>\nPeers:\nde-nbg01, nl-ams02, uk-lon01, us-chi01, us-dal01, us-lax01, us-nyc02\n"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -87.629798,
-                    41.878114
-                ]
-            },
-            "properties": {
-                "title": "us-chi01",
-                "description": "Chicago, IL, US<br>\nPeers:\nde-nbg01, jp-tyo01, nl-ams02, us-atl01, us-dal01, us-las01, us-lax01, us-nyc02, us-sea02, us-sjc01\n"
+                "description": "Atlanta, GA, US<br>\nPeers:\nca-yyz01, de-nbg01, int-chi03, nl-ams02, uk-lon01, us-dal01, us-lax01\n"
             }
         },
         {
@@ -152,7 +152,7 @@
             },
             "properties": {
                 "title": "us-dal01",
-                "description": "Dallas, TX, US<br>\nPeers:\nus-atl01, us-chi01, us-lax01, us-sjc01\n"
+                "description": "Dallas, TX, US<br>\nPeers:\nca-yyz01, int-chi03, us-atl01, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -166,7 +166,7 @@
             },
             "properties": {
                 "title": "us-las01",
-                "description": "Las Vegas, NV, US<br>\nPeers:\nus-chi01, us-lax01, us-sea02, us-sjc01\n"
+                "description": "Las Vegas, NV, US<br>\nPeers:\nca-yyz01, int-lax02, us-lax01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -180,21 +180,7 @@
             },
             "properties": {
                 "title": "us-lax01",
-                "description": "Los Angeles, CA, US<br>\nPeers:\nau-syd01, de-nbg01, jp-tyo01, nl-ams02, us-atl01, us-chi01, us-dal01, us-las01, us-nyc02, us-sea02, us-sjc01\n"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -74.005973,
-                    40.712775
-                ]
-            },
-            "properties": {
-                "title": "us-nyc02",
-                "description": "New York City, NY, US<br>\nPeers:\nde-nbg01, es-mad01, fr-par01, nl-ams02, uk-lon01, us-atl01, us-chi01, us-lax01, us-sea02\n"
+                "description": "Los Angeles, CA, US<br>\nPeers:\nau-syd01, ca-yyz01, de-nbg01, int-lax02, jp-tyo01, nl-ams02, us-atl01, us-dal01, us-las01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -208,7 +194,7 @@
             },
             "properties": {
                 "title": "us-sea02",
-                "description": "Seattle, WA, US<br>\nPeers:\nau-syd01, jp-tyo01, us-chi01, us-las01, us-lax01, us-nyc02, us-sjc01\n"
+                "description": "Seattle, WA, US<br>\nPeers:\nau-syd01, ca-yyz01, int-chi03, jp-tyo01, us-dal01, us-las01, us-lax01, us-sjc01\n"
             }
         },
         {
@@ -222,7 +208,7 @@
             },
             "properties": {
                 "title": "us-sjc01",
-                "description": "San Jose, CA, US<br>\nPeers:\nau-syd01, jp-tyo01, us-chi01, us-dal01, us-las01, us-lax01, us-sea02\n"
+                "description": "San Jose, CA, US<br>\nPeers:\nau-syd01, int-chi03, int-lax02, jp-tyo01, us-dal01, us-las01, us-lax01, us-sea02\n"
             }
         },
         {
@@ -231,18 +217,18 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        151.209295,
-                        -33.86882
+                        -79.383184,
+                        43.653226
                     ],
                     [
-                        139.650311,
-                        35.676192
+                        11.076665,
+                        49.452102
                     ]
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> jp-tyo01",
-                "description": "(costs calculated dynamically)"
+                "title": "ca-yyz01 <-> de-nbg01",
+                "description": ""
             }
         },
         {
@@ -251,18 +237,18 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        151.209295,
-                        -33.86882
+                        -79.383184,
+                        43.653226
                     ],
                     [
-                        -118.243685,
-                        34.052234
+                        -3.70379,
+                        40.416775
                     ]
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> us-lax01",
-                "description": "(costs calculated dynamically)"
+                "title": "ca-yyz01 <-> es-mad01",
+                "description": ""
             }
         },
         {
@@ -271,18 +257,18 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        151.209295,
-                        -33.86882
+                        -79.383184,
+                        43.653226
                     ],
                     [
-                        -122.332071,
-                        47.606209
+                        2.352222,
+                        48.856614
                     ]
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> us-sea02",
-                "description": "(costs calculated dynamically)"
+                "title": "ca-yyz01 <-> fr-par01",
+                "description": ""
             }
         },
         {
@@ -291,18 +277,78 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        151.209295,
-                        -33.86882
+                        -79.383184,
+                        43.653226
                     ],
                     [
-                        -121.886329,
-                        37.338208
+                        4.904139,
+                        52.367573
                     ]
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
+                "title": "ca-yyz01 <-> nl-ams02",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -79.383184,
+                        43.653226
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "ca-yyz01 <-> uk-lon01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -79.383184,
+                        43.653226
+                    ],
+                    [
+                        -96.796988,
+                        32.776664
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "ca-yyz01 <-> us-dal01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -79.383184,
+                        43.653226
+                    ],
+                    [
+                        -115.13983,
+                        36.169941
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "ca-yyz01 <-> us-las01",
+                "description": ""
             }
         },
         {
@@ -322,7 +368,7 @@
             },
             "properties": {
                 "title": "de-nbg01 <-> fr-par01",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -342,7 +388,7 @@
             },
             "properties": {
                 "title": "de-nbg01 <-> it-mil01",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -362,107 +408,7 @@
             },
             "properties": {
                 "title": "de-nbg01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        11.076665,
-                        49.452102
-                    ],
-                    [
-                        -0.127758,
-                        51.507351
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "de-nbg01 <-> uk-lon01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        11.076665,
-                        49.452102
-                    ],
-                    [
-                        -84.387982,
-                        33.748995
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "de-nbg01 <-> us-atl01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        11.076665,
-                        49.452102
-                    ],
-                    [
-                        -87.629798,
-                        41.878114
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "de-nbg01 <-> us-chi01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        11.076665,
-                        49.452102
-                    ],
-                    [
-                        -118.243685,
-                        34.052234
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "de-nbg01 <-> us-lax01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        11.076665,
-                        49.452102
-                    ],
-                    [
-                        -74.005973,
-                        40.712775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "de-nbg01 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -482,7 +428,7 @@
             },
             "properties": {
                 "title": "es-mad01 <-> fr-par01",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -502,7 +448,7 @@
             },
             "properties": {
                 "title": "es-mad01 <-> it-mil01",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -511,38 +457,38 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -3.70379,
-                        40.416775
+                        139.650311,
+                        35.676192
                     ],
+                    [
+                        151.209295,
+                        -33.86882
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "jp-tyo01 <-> au-syd01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
                     [
                         4.904139,
                         52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "es-mad01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
+                    ],
                     [
                         -3.70379,
                         40.416775
-                    ],
-                    [
-                        -0.127758,
-                        51.507351
                     ]
                 ]
             },
             "properties": {
-                "title": "es-mad01 <-> uk-lon01",
-                "description": "(costs calculated dynamically)"
+                "title": "nl-ams02 <-> es-mad01",
+                "description": ""
             }
         },
         {
@@ -550,59 +496,19 @@
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
-                    [
-                        -3.70379,
-                        40.416775
-                    ],
-                    [
-                        -74.005973,
-                        40.712775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "es-mad01 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        2.352222,
-                        48.856614
-                    ],
                     [
                         4.904139,
                         52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "fr-par01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
+                    ],
                     [
                         2.352222,
                         48.856614
-                    ],
-                    [
-                        -0.127758,
-                        51.507351
                     ]
                 ]
             },
             "properties": {
-                "title": "fr-par01 <-> uk-lon01",
-                "description": "(costs calculated dynamically)"
+                "title": "nl-ams02 <-> fr-par01",
+                "description": ""
             }
         },
         {
@@ -611,38 +517,18 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        2.352222,
-                        48.856614
+                        4.904139,
+                        52.367573
                     ],
-                    [
-                        -74.005973,
-                        40.712775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "fr-par01 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
                     [
                         9.189982,
                         45.464204
-                    ],
-                    [
-                        4.904139,
-                        52.367573
                     ]
                 ]
             },
             "properties": {
-                "title": "it-mil01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
+                "title": "nl-ams02 <-> it-mil01",
+                "description": ""
             }
         },
         {
@@ -650,199 +536,19 @@
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
+                    [
+                        4.904139,
+                        52.367573
+                    ],
                     [
                         139.650311,
                         35.676192
-                    ],
-                    [
-                        4.904139,
-                        52.367573
                     ]
                 ]
             },
             "properties": {
-                "title": "jp-tyo01 <-> nl-ams02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        139.650311,
-                        35.676192
-                    ],
-                    [
-                        -87.629798,
-                        41.878114
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo01 <-> us-chi01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        139.650311,
-                        35.676192
-                    ],
-                    [
-                        -118.243685,
-                        34.052234
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo01 <-> us-lax01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        139.650311,
-                        35.676192
-                    ],
-                    [
-                        -122.332071,
-                        47.606209
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo01 <-> us-sea02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        139.650311,
-                        35.676192
-                    ],
-                    [
-                        -121.886329,
-                        37.338208
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo01 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        -0.127758,
-                        51.507351
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> uk-lon01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        -84.387982,
-                        33.748995
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> us-atl01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        -87.629798,
-                        41.878114
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> us-chi01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        -118.243685,
-                        34.052234
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> us-lax01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        -74.005973,
-                        40.712775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
+                "title": "nl-ams02 <-> jp-tyo01",
+                "description": ""
             }
         },
         {
@@ -855,14 +561,14 @@
                         51.507351
                     ],
                     [
-                        -84.387982,
-                        33.748995
+                        11.076665,
+                        49.452102
                     ]
                 ]
             },
             "properties": {
-                "title": "uk-lon01 <-> us-atl01",
-                "description": "(costs calculated dynamically)"
+                "title": "uk-lon01 <-> de-nbg01",
+                "description": ""
             }
         },
         {
@@ -875,14 +581,54 @@
                         51.507351
                     ],
                     [
-                        -74.005973,
-                        40.712775
+                        -3.70379,
+                        40.416775
                     ]
                 ]
             },
             "properties": {
-                "title": "uk-lon01 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
+                "title": "uk-lon01 <-> es-mad01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.127758,
+                        51.507351
+                    ],
+                    [
+                        2.352222,
+                        48.856614
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "uk-lon01 <-> fr-par01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.127758,
+                        51.507351
+                    ],
+                    [
+                        4.904139,
+                        52.367573
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "uk-lon01 <-> nl-ams02",
+                "description": ""
             }
         },
         {
@@ -895,14 +641,74 @@
                         33.748995
                     ],
                     [
-                        -87.629798,
-                        41.878114
+                        -79.383184,
+                        43.653226
                     ]
                 ]
             },
             "properties": {
-                "title": "us-atl01 <-> us-chi01",
-                "description": "(costs calculated dynamically)"
+                "title": "us-atl01 <-> ca-yyz01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -84.387982,
+                        33.748995
+                    ],
+                    [
+                        11.076665,
+                        49.452102
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-atl01 <-> de-nbg01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -84.387982,
+                        33.748995
+                    ],
+                    [
+                        4.904139,
+                        52.367573
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-atl01 <-> nl-ams02",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -84.387982,
+                        33.748995
+                    ],
+                    [
+                        -0.127758,
+                        51.507351
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-atl01 <-> uk-lon01",
+                "description": ""
             }
         },
         {
@@ -922,7 +728,7 @@
             },
             "properties": {
                 "title": "us-atl01 <-> us-dal01",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -942,227 +748,7 @@
             },
             "properties": {
                 "title": "us-atl01 <-> us-lax01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -84.387982,
-                        33.748995
-                    ],
-                    [
-                        -74.005973,
-                        40.712775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-atl01 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
-                        -96.796988,
-                        32.776664
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi01 <-> us-dal01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
-                        -115.13983,
-                        36.169941
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi01 <-> us-las01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
-                        -118.243685,
-                        34.052234
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi01 <-> us-lax01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
-                        -74.005973,
-                        40.712775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi01 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
-                        -122.332071,
-                        47.606209
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi01 <-> us-sea02",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
-                        -121.886329,
-                        37.338208
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi01 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -96.796988,
-                        32.776664
-                    ],
-                    [
-                        -118.243685,
-                        34.052234
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-dal01 <-> us-lax01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -96.796988,
-                        32.776664
-                    ],
-                    [
-                        -121.886329,
-                        37.338208
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-dal01 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -115.13983,
-                        36.169941
-                    ],
-                    [
-                        -118.243685,
-                        34.052234
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-las01 <-> us-lax01",
-                "description": "(costs calculated dynamically)"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -115.13983,
-                        36.169941
-                    ],
-                    [
-                        -122.332071,
-                        47.606209
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-las01 <-> us-sea02",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -1182,7 +768,7 @@
             },
             "properties": {
                 "title": "us-las01 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -1195,14 +781,14 @@
                         34.052234
                     ],
                     [
-                        -74.005973,
-                        40.712775
+                        151.209295,
+                        -33.86882
                     ]
                 ]
             },
             "properties": {
-                "title": "us-lax01 <-> us-nyc02",
-                "description": "(costs calculated dynamically)"
+                "title": "us-lax01 <-> au-syd01",
+                "description": ""
             }
         },
         {
@@ -1215,14 +801,114 @@
                         34.052234
                     ],
                     [
-                        -122.332071,
-                        47.606209
+                        -79.383184,
+                        43.653226
                     ]
                 ]
             },
             "properties": {
-                "title": "us-lax01 <-> us-sea02",
-                "description": "(costs calculated dynamically)"
+                "title": "us-lax01 <-> ca-yyz01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.243685,
+                        34.052234
+                    ],
+                    [
+                        11.076665,
+                        49.452102
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-lax01 <-> de-nbg01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.243685,
+                        34.052234
+                    ],
+                    [
+                        139.650311,
+                        35.676192
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-lax01 <-> jp-tyo01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.243685,
+                        34.052234
+                    ],
+                    [
+                        4.904139,
+                        52.367573
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-lax01 <-> nl-ams02",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.243685,
+                        34.052234
+                    ],
+                    [
+                        -96.796988,
+                        32.776664
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-lax01 <-> us-dal01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.243685,
+                        34.052234
+                    ],
+                    [
+                        -115.13983,
+                        36.169941
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-lax01 <-> us-las01",
+                "description": ""
             }
         },
         {
@@ -1242,7 +928,7 @@
             },
             "properties": {
                 "title": "us-lax01 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
+                "description": ""
             }
         },
         {
@@ -1251,18 +937,118 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -74.005973,
-                        40.712775
-                    ],
-                    [
                         -122.332071,
                         47.606209
+                    ],
+                    [
+                        151.209295,
+                        -33.86882
                     ]
                 ]
             },
             "properties": {
-                "title": "us-nyc02 <-> us-sea02",
-                "description": "(costs calculated dynamically)"
+                "title": "us-sea02 <-> au-syd01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.332071,
+                        47.606209
+                    ],
+                    [
+                        -79.383184,
+                        43.653226
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sea02 <-> ca-yyz01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.332071,
+                        47.606209
+                    ],
+                    [
+                        139.650311,
+                        35.676192
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sea02 <-> jp-tyo01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.332071,
+                        47.606209
+                    ],
+                    [
+                        -96.796988,
+                        32.776664
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sea02 <-> us-dal01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.332071,
+                        47.606209
+                    ],
+                    [
+                        -115.13983,
+                        36.169941
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sea02 <-> us-las01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.332071,
+                        47.606209
+                    ],
+                    [
+                        -118.243685,
+                        34.052234
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sea02 <-> us-lax01",
+                "description": ""
             }
         },
         {
@@ -1282,7 +1068,67 @@
             },
             "properties": {
                 "title": "us-sea02 <-> us-sjc01",
-                "description": "(costs calculated dynamically)"
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.886329,
+                        37.338208
+                    ],
+                    [
+                        151.209295,
+                        -33.86882
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sjc01 <-> au-syd01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.886329,
+                        37.338208
+                    ],
+                    [
+                        139.650311,
+                        35.676192
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sjc01 <-> jp-tyo01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.886329,
+                        37.338208
+                    ],
+                    [
+                        -96.796988,
+                        32.776664
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sjc01 <-> us-dal01",
+                "description": ""
             }
         }
     ]
