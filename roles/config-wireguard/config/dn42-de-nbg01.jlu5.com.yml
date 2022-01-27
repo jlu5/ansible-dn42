@@ -290,3 +290,10 @@ wg_peers:
   port: 21078
   remote: dn42.pgnhd.moe:3947
   wg_pubkey: 72yTeL6AEAmWKNYGc14mYSjYU9qElYLSMzxaNhSua08=
+
+- name: dn42-hanlin
+  peer_v4: 172.23.163.36
+  peer_v6: fd88:1926:817:4::1
+  port: 20251
+  remote: lu.serv.hanlin.press:21080
+  wg_pubkey: lYbabe1M2z7a2xyv/pbikTRdW4FWB3CPmc4MbeDBZ0A=
