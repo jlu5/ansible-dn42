@@ -7,11 +7,7 @@ wg_peers:
   peer_v6: "fe80::1331"
 
 - name: dn42lon-bauen1
-  port: 50151
-  remote: "45.91.93.48:21080"
-  wg_pubkey: "YIcioh9MB/8fR3M5OHDaQo/15XtPlZsMEZEjAqLmDx4="
-  peer_v4: "172.20.18.225"
-  peer_v6: "fe80::eafa:46e8"
+  remove: true
 
 - name: dn42man-napster
   port: 51050

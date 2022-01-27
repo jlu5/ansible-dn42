@@ -13,9 +13,6 @@ wg_peers:
   peer_v4: "10.127.8.185"
   peer_v6: "fd10:127:7::1"
 
-- name: dn42erf-androw
-  remove: true
-
 - name: "dn42ams-tomkap"
   port: 52092
   remote: "nl0.dn42.pebkac.gr:51080"
@@ -93,11 +90,7 @@ wg_peers:
   peer_v6: "fe80::2331"
 
 - name: dn42par-neuther
-  port: 23771
-  remote: "v4.dn.neutheria.org:21080"
-  wg_pubkey: "XTWFGICtAn9WveGf9JapJJQdcQ5MTHtLkG/SfiKAgA8="
-  peer_v4: "172.23.132.97"
-  peer_v6: null
+  remove: true
 
 - name: dn42mow-dgy
   port: 20826

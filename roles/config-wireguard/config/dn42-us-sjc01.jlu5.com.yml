@@ -1,10 +1,6 @@
 wg_peers:
 - name: igp-ca-yvr01
-  port: 19999
-  wg_pubkey: "RpLCF5fR9XG/R+bop42gaJN+b5/nraCgIls2TcV2FSY="
-  peer_v4: 169.254.108.17
-  peer_v6: fe80::1080:17
-  is_internal_node: true
+  remove: true
 
 - name: dn42sjc-yuuta
   port: 22980
@@ -27,12 +23,6 @@ wg_peers:
   wg_pubkey: "G/ggwlVSy5jKWFlJM01hxcWnL8VDXsD5EXZ/S47SmhM="
   peer_v4: "172.21.100.191"
   peer_v6: "fe80::3088:191"
-
-- name: dn42fmt-x6c
-  remove: true
-
-- name: dn42fmt-airgapp
-  remove: true
 
 - name: dn42sjc-jerry
   port: 23618

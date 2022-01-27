@@ -140,11 +140,7 @@ wg_peers:
   peer_v6: "fda9:26a9:1c47:1d42:42:42:1080:1050"
 
 - name: dn42fra-dumergu
-  port: 52848
-  remote: 18.159.219.232:52848
-  wg_pubkey: "77xa/nfvRShdy2QUVAgny00oA0cwrLyaUCgn65CFexQ="
-  peer_v4: "172.22.125.194"
-  peer_v6: "fdb2:48f2:8ac5::1"
+  remove: true
 
 - name: dn42nbg-fixmix
   port: 51876
@@ -198,12 +194,6 @@ wg_peers:
   peer_v4: "172.22.118.134"
   peer_v6: "fe80::3770/64"
 
-- name: dn42nbg-n4gi0s
-  remove: true
-
-- name: dn42fsn-kszczot
-  remove: true
-
 - name: dn42nbg-plasma
   port: 52322
   remote: "85.10.202.194:42235"
@@ -226,11 +216,7 @@ wg_peers:
   peer_v6: "fe80::beef:8"
 
 - name: dn42fsn-baoshuo
-  port: 20247
-  remote: "eu1.dn42.as141776.net:41080"
-  wg_pubkey: "edTGR6Fs0rwAmGzWx/Zl6xxksYveRo+d75wWjxQYN0g="
-  peer_v4: "172.23.250.91"
-  peer_v6: "fe80::247"
+  remove: true
 
 - name: dn42fsn-foxxx0
   port: 23669
