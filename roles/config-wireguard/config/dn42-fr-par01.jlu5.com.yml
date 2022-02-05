@@ -19,3 +19,10 @@ wg_peers:
   wg_pubkey: "QF93Jc4mGgHvZvaY+qUeyU1vYZKW7ATwztc9oYie92k="
   peer_v4: "172.20.4.97"
   peer_v6: "fe80::1722:97/64"
+
+- name: dn42-lazurite
+  peer_v4: null
+  peer_v6: fe80::2032
+  port: 22032
+  remote: lu1.eu.lapinet27.com:21080
+  wg_pubkey: jAj+krN5A2EH52y7eHGavsZp8WUY79tbnJt0OjVfaF8=

@@ -178,3 +178,10 @@ wg_peers:
   port: 22717
   remote: tw.vm.whojk.com:23014
   wg_pubkey: ifN+KmnL5XLHG8nDi2nN9l26snGUP/1157p8mOSPE1c=
+
+- name: dn42-lazurite
+  peer_v4: null
+  peer_v6: fe80::2032
+  port: 22032
+  remote: tyo1.jp.lapinet27.com:21080
+  wg_pubkey: 5q4XjwqKCvRDylQwWwpTHm82Z2+UY/60wT4TRunzhwg=
