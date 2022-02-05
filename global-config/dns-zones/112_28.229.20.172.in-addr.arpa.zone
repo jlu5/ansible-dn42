@@ -8,7 +8,6 @@ $TTL 300
         86400       ; expiration
         3600        ; minimum TTL
 )
-113 IN PTR us-chi01.rtr.highdef.dn42.
 114 IN PTR us-sea02.rtr.highdef.dn42.
 119 IN PTR us-atl01.rtr.highdef.dn42.
 122 IN PTR us-lax01.rtr.highdef.dn42.

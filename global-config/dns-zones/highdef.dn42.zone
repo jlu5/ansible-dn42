@@ -14,6 +14,8 @@ ping IN A 172.22.108.3
 ping IN AAAA fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
 ping-chi IN A 172.22.108.46
 ping-chi IN AAAA fd86:bad:11b7:20::46
+ping-yyz IN A 172.20.229.123
+ping-yyz IN AAAA fd86:bad:11b7:23::1
 ping-sjc IN A 172.22.108.34
 ping-sjc IN AAAA fd86:bad:11b7:34::1
 ping-lax IN A 172.20.229.122
@@ -43,8 +45,6 @@ silverthing-ptp.us-sea02 IN A 172.22.108.30
 silverthing.clients IN A 172.22.108.31
 GW.yvrlab IN A 172.22.108.1
 GW.yvrlab IN AAAA fd86:bad:11b7:aaaa::1
-us-chi01.rtr IN A 172.20.229.113
-us-chi01.rtr IN AAAA fd86:bad:11b7::1
 us-sea02.rtr IN A 172.20.229.114
 us-sea02.rtr IN AAAA fd86:bad:11b7:1::1
 us-atl01.rtr IN A 172.20.229.119
