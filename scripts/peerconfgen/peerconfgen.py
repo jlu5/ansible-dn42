@@ -21,6 +21,12 @@ _IPV4_RE_STR = r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'
 _IPV6_RE_STR = r'\b(?:[0-9a-f]{1,4}[:]{1,2})+[0-9a-f]{1,4}\b'
 TUNNEL4_RE = re.compile(_IPV4_RE_STR, flags=re.I)
 TUNNEL6_RE = re.compile(_IPV6_RE_STR, flags=re.I)
+
+# This guesses ports in a high range (>= 20000) that are not multiples of 10000
+# (commonly listed on peering pages are strings like "20000 + last 4 ASN digits")
+# The left word boundary may be whitespace or a ":"
+WG_PORT_RE = re.compile(r'(?<=:|\s)[2-5](?!0000)[0-9]{4}\b')
+
 ENDPOINT_RE = re.compile(
     # Very loose matches for:
     r'(?:'
@@ -52,7 +58,7 @@ _ATTR_MAP = {
     'asn': PeerConfigField('asn', 'Peer ASN', ASN_RE, is_int),
     'remote': PeerConfigField('remote', 'Remote endpoint (IP/host only)', ENDPOINT_RE, is_valid_endpoint, optional=True),
     # No regex for port: it's always filled in manually
-    'port': PeerConfigField('port', 'Remote VPN port', validator=is_port),
+    'port': PeerConfigField('port', 'Remote VPN port', WG_PORT_RE, is_port),
     'wg_pubkey': PeerConfigField('wg_pubkey', 'WireGuard public key', WGKEY_RE),
     'peer_v4': PeerConfigField('peer_v4', 'Tunnel IPv4 address', TUNNEL4_RE, is_valid_peer_v4, optional=True),
     'peer_v6': PeerConfigField('peer_v6', 'Tunnel IPv6 address', TUNNEL6_RE, is_valid_peer_v6, optional=True),

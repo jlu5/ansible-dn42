@@ -46,6 +46,7 @@ dn42 IPv6 (ULA)\tfd86:bad:11b7::4242/128
             'asn': [],
             'peer_v4': ['172.20.229.112'],
             'peer_v6': ['fe80::1234', 'fd86:bad:11b7::4242'],
+            'port': [],
             'remote': ['dn42.pop.example.com', '1.2.3.4', '2605:6400:10:da::4242'],
             'wg_pubkey': ['123456789abcdefghijklmnopqrstuvwxyzABCDEFGH=']
         }, scrape_peer_config(s))
@@ -63,6 +64,7 @@ dn42 IPv6 (ULA)\tfd86:bad:11b7::4242/128
             'asn': ['4242421080'],
             'peer_v4': ['172.20.229.113'],
             'peer_v6': ['fe80::113', 'fd86:bad:11b7::1'],
+            'port': [],
             'remote': ['dn42-us-chi01.jlu5.com'],
             'wg_pubkey': ['u4WJMAoCHIOeh/+6NWMytNygp+/wrMogB+rwyVzXoEg=']
         }, scrape_peer_config(s))
@@ -81,6 +83,7 @@ ipv6: fd86:bad fd86:really:Bad FD???? fd:86:badbad::1  fd:86:bad::1 FD88::5 a:b:
             'asn': ['4242421080', '4242420000', '4201279999', '4242427777'],
             'peer_v4': ['172.20.229.113'],
             'peer_v6': ['FD88::5'],
+            'port': [],
             'remote': ['dn42-us-chi01.jlu5.com',
                        'Test.Example.Com',
                        'HELLO.WORLD',
@@ -99,6 +102,7 @@ ipv6: fd86:bad fd86:really:Bad FD???? fd:86:badbad::1  fd:86:bad::1 FD88::5 a:b:
             'asn': [],
             'peer_v4': [],
             'peer_v6': ['fe80::1234', 'fd86:bad:11b7::4242'],
+            'port': [],
             'remote': [],
             'wg_pubkey': []
         }, scrape_peer_config(s))
@@ -114,6 +118,7 @@ Tunnel IPv6: fd00::1
             'asn': ['4242429999'],
             'peer_v4': ['172.22.108.22'],
             'peer_v6': ['fd00::1'],
+            'port': [],
             'remote': ['test.example.com'],
             'wg_pubkey': ['0Y25dQSJA4xo1EPFVPsSwhZoYdJP8WHCoeYDt31N5WU=']
         }, scrape_peer_config(s))
@@ -129,6 +134,25 @@ Tunnel v6: fe80::9999
             'asn': ['4242429999'],
             'peer_v4': ['172.22.108.22'],
             'peer_v6': ['fe80::9999'],
+            'port': [],
+            'remote': ['test.example.org'],
+            'wg_pubkey': ['0Y25dQSJA4xo1EPFVPsSwhZoYdJP8WHCoeYDt31N5WU=']
+        }, scrape_peer_config(s))
+
+    def test_scrape_wireguard_port(self):
+        s = """AS4242429999
+Endpoint: test.example.org:21080
+WireGuard pubkey: 0Y25dQSJA4xo1EPFVPsSwhZoYdJP8WHCoeYDt31N5WU=
+Tunnel v4: 172.22.108.22
+Tunnel v6: fe80::9999
+
+scraping test:  33333 20000 12345 50505 test:23456
+"""
+        self.assertEqual({
+            'asn': ['4242429999'],
+            'peer_v4': ['172.22.108.22'],
+            'peer_v6': ['fe80::9999'],
+            'port': ['21080', '33333', '50505', '23456'],
             'remote': ['test.example.org'],
             'wg_pubkey': ['0Y25dQSJA4xo1EPFVPsSwhZoYdJP8WHCoeYDt31N5WU=']
         }, scrape_peer_config(s))
