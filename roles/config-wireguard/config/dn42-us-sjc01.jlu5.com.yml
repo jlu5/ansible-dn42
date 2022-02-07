@@ -65,3 +65,10 @@ wg_peers:
   port: 22189
   remote: us-sfo.dn42.kuu.moe:46697
   wg_pubkey: Sz0UhewjDk2yRKI0QL9rB+5daWpXFVlbbz9cLfVVLn4=
+
+- name: dn42-atolm
+  peer_v4: null
+  peer_v6: fe80::585
+  port: 20585
+  remote: us1.dn42.atolm.net:21080
+  wg_pubkey: 5Do/VpCFXnV5XCzRUNgIundNcPK+AUY/R1VN+4XPZlE=

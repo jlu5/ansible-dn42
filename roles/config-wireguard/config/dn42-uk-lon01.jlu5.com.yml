@@ -166,3 +166,10 @@ wg_peers:
   port: 23764
   remote: uk-london-01.edge.186526.xyz:21080
   wg_pubkey: WrytfFP463sNKXpQst1oYvA2uTFbmzj9KQ4DXCyM9iA=
+
+- name: dn42-atolm
+  peer_v4: null
+  peer_v6: fe80::585
+  port: 20585
+  remote: uk1.dn42.atolm.net:21080
+  wg_pubkey: W5tOp5Iw/uJppISGF9KSQL5/q9ykW0PUSAKDe4YPXHQ=
