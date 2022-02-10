@@ -126,3 +126,10 @@ wg_peers:
   port: 23663
   remote: nl-amsterdam-01.dn42.yunyingstudio.cn:21080
   wg_pubkey: b0SqBBmXh/A7Ksag5ZT/rtqGL3HchRXcPuHwdTfBrC0=
+
+- name: dn42-huajitech
+  peer_v4: null
+  peer_v6: fe80::458
+  port: 20458
+  remote: ru-a.huajitech.net:21080
+  wg_pubkey: dDM/rtklvpKHeIOKeLGjfYBTl+jEuhlr7dMIOdXbliU=
