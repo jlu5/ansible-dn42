@@ -192,3 +192,10 @@ wg_peers:
   port: 20585
   remote: jp1.dn42.atolm.net:21080
   wg_pubkey: UNSqegT4PRWe6507kvlMsqj5YKxdcvQe2zedDL0k8Ww=
+
+- name: dn42-haojunmei
+  peer_v4: 172.23.114.18
+  peer_v6: fe80::1145
+  port: 23663
+  remote: cn-hongkong-01.dn42.yunyingstudio.cn:21080
+  wg_pubkey: b0SqBBmXh/A7Ksag5ZT/rtqGL3HchRXcPuHwdTfBrC0=

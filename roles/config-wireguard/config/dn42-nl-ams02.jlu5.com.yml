@@ -119,3 +119,10 @@ wg_peers:
   port: 20212
   remote: ams1.dn42.blw.moe:21080
   wg_pubkey: HXF4JPhmBCYL/e/mjdvxyiII8WchPQLK8AUVwTNPe3Q=
+
+- name: dn42-haojunmei
+  peer_v4: 172.23.114.17
+  peer_v6: fe80::1145
+  port: 23663
+  remote: nl-amsterdam-01.dn42.yunyingstudio.cn:21080
+  wg_pubkey: b0SqBBmXh/A7Ksag5ZT/rtqGL3HchRXcPuHwdTfBrC0=
