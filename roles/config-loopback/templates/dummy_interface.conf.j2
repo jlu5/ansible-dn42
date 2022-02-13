@@ -15,6 +15,7 @@ iface {{ dummy_iface.ifname | mandatory }} inet static
 {% endif %}
     address {{ ip }}
 {% if not ns.has_init_line %}
+    mtu 1280
     pre-up ip link add {{ dummy_iface.ifname }} type dummy
 {% set ns.has_init_line = true %}
 {% endif %}
@@ -26,6 +27,7 @@ iface {{ dummy_iface.ifname }} inet6 static
 {% if ip | ipaddr('address') %}
 {% set ip = ip | ipaddr('host') %}
 {% endif %}
+    mtu 1280
     address {{ ip }}
 {% if not ns.has_init_line %}
     pre-up ip link add {{ dummy_iface.ifname }} type dummy
