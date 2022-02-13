@@ -283,3 +283,10 @@ wg_peers:
   port: 20251
   remote: lu.serv.hanlin.press:21080
   wg_pubkey: lYbabe1M2z7a2xyv/pbikTRdW4FWB3CPmc4MbeDBZ0A=
+
+- name: dn42-lutoma
+  peer_v4: 172.22.119.1
+  peer_v6: fe80::acab
+  port: 24719
+  remote: de-fra.dn42.lutoma.org:42433
+  wg_pubkey: uVeGQhyJZujiB7GozhV4wFuY8oeNOJ4zdRyo+qiSKyc=

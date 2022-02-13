@@ -21,3 +21,10 @@ wg_peers:
   port: 22717
   remote: us.vm.whojk.com:23001
   wg_pubkey: lhWFk53u42PlQ+P7QkBJt1+tXTc/H0EE/FwdBYkTcGY=
+
+- name: dn42-lutoma
+  peer_v4: 172.22.119.12
+  peer_v6: fe80::acab
+  port: 24719
+  remote: us-iah.dn42.lutoma.org:42401
+  wg_pubkey: mC1Vl74c9egi3Ol4JXcyuoXuCaewCa8QAbT2klbKXTw=
