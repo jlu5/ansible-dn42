@@ -172,3 +172,10 @@ wg_peers:
   port: 22547
   remote: hostdare.lantian.pub:21080
   wg_pubkey: zyATu8FW392WFFNAz7ZH6+4TUutEYEooPPirwcoIiXo=
+
+- name: dn42-edenlink
+  peer_v4: 172.23.131.226
+  peer_v6: fe80::1403
+  port: 23025
+  remote: us-lax.dn42.edenlink.cyou:21080
+  wg_pubkey: QXzmyQAa+oWA89b8Jcaolgy44j7c4TjImZqSSvZFD3g=
