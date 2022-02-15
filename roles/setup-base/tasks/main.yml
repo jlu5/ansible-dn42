@@ -56,6 +56,25 @@
     args:
       creates: "/etc/wireguard/publickey"
 
+- name: Apply Bird service overrides
+  block:
+  - name: Create Bird service.d directory
+    file:
+      path: /etc/systemd/system/bird.service.d/
+      state: directory
+      owner: root
+      group: root
+      mode: 0755
+
+  - name: Copy bird.service drop-in
+    template:
+      src: bird.service-override.conf.j2
+      dest: /etc/systemd/system/bird.service.d/override.conf
+      owner: root
+      group: root
+      mode: 0644
+    notify: Restart Bird
+
 - name: Install dn42 ROA sync script
   block:
   - name: Upload dn42 ROA sync script

@@ -1,0 +1,5 @@
+- name: Restart Bird
+  systemd:
+    service: bird
+    state: restarted
+    daemon_reload: true
