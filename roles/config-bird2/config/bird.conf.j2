@@ -130,7 +130,6 @@ protocol kernel {
     };
 }
 
-define DEFAULT_BGP_PREF = 500;
 include "/etc/bird/custom_filters.conf";
 include "/etc/bird/community_filters.conf";
 
@@ -141,7 +140,6 @@ template bgp dnpeers {
 
     enforce first as on;
     advertise hostname on;
-    default bgp_local_pref DEFAULT_BGP_PREF;
 }
 
 include "/etc/bird/babel.conf";

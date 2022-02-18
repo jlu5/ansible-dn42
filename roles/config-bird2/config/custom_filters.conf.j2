@@ -94,16 +94,35 @@ function prefer_same_region_origin(int base_weight)
         return 0;
     }
 
-{# This is really cursed but I don't want to write the get_region_tag logic twice... #}
-{# It doesn't seem possible to extract values from communities OR use clist literals (substituting the bgp_community field) #}
-{% for val in range(41, 53+1) %}
-    {{ 'else ' if val != 41 else '' }}if ((64511, {{ val }}) ~ bgp_community) then {
-        incoming_tag = get_region_tag({{ val }});
+    # TODO: replace this with native community extraction in Bird 2.0.9
+    if ((64511, 41) ~ bgp_community) then {
+        incoming_tag = get_region_tag(41);
     }
-{% endfor %}
+    else if ((64511, 42) ~ bgp_community) then {
+        incoming_tag = get_region_tag(42);
+    }
+    else if ((64511, 43) ~ bgp_community) then {
+        incoming_tag = get_region_tag(43);
+    }
+    else if ((64511, 44) ~ bgp_community) then {
+        incoming_tag = get_region_tag(44);
+    }
+    else if ((64511, 50) ~ bgp_community) then {
+        incoming_tag = get_region_tag(50);
+    }
+    else if ((64511, 51) ~ bgp_community) then {
+        incoming_tag = get_region_tag(51);
+    }
+    else if ((64511, 52) ~ bgp_community) then {
+        incoming_tag = get_region_tag(52);
+    }
+    else if ((64511, 53) ~ bgp_community) then {
+        incoming_tag = get_region_tag(53);
+    }
+
     if (incoming_tag = 0 || incoming_tag = my_region_tag) then {
         #print "Route ", net, " has incoming tag ", incoming_tag, " matching ours ", my_region_tag;
-        bgp_local_pref = bgp_local_pref + base_weight/bgp_path.len;
+        bgp_local_pref = bgp_local_pref + 50;
     }
 }
 
@@ -137,6 +156,8 @@ function ebgp_import_filter()
     if (bgp_path.len > 12) then {
         reject;
     }
+    bgp_local_pref = 1500;
+    safe_lower_pref(bgp_path.len * 100);
 
     if (bgp_path ~ [= * ASES_REJECT * =]) then {
         reject;
@@ -187,7 +208,7 @@ function ibgp_import_filter()
 
     if (bgp_path.len = 0) then {
         # Prefer locally originated iBGP routes, e.g. for anycast services
-        bgp_local_pref = DEFAULT_BGP_PREF * 2;
+        bgp_local_pref = 2000;
     }
 
     my_region_tag = get_region_tag(DN42_REGION);
