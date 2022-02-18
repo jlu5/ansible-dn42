@@ -139,10 +139,6 @@ function handle_special_cases() {
     if (bgp_path.len >= 2 && bgp_path ~ [= * [4242421588, 4242423914] * =]) then {
         safe_lower_pref(10);
     }
-    # 2021-12-18: ICMP rate limiting is making Smokeping very upset
-    if (bgp_path.len >= 2 && bgp_path ~ [= * [4242422601] * =]) then {
-        safe_lower_pref(10);
-    }
 }
 
 define ASES_REJECT = [

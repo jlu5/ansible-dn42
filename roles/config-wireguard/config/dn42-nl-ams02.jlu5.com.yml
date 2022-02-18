@@ -21,11 +21,7 @@ wg_peers:
   peer_v6: "fe80::42:1080:1/128"
 
 - name: dn42ams-fixmix
-  port: 51876
-  remote: "185.101.139.17:21080"
-  wg_pubkey: "r5cUWNrnRpe9RNDD1dGggMwbjPPcW8/aNvtsXE3VqQU="
-  peer_v4: "172.22.66.55"
-  peer_v6: "fe80::1876"
+  remove: true
 
 - name: dn42fra-welterd
   port: 54738
@@ -88,9 +84,6 @@ wg_peers:
   wg_pubkey: "22Yg+PozQDDJUufe2POaV/ron0wZ6LVznpMgrRZDAXI="
   peer_v4: null
   peer_v6: "fe80::2331"
-
-- name: dn42par-neuther
-  remove: true
 
 - name: dn42mow-dgy
   port: 20826
