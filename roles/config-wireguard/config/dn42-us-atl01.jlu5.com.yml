@@ -46,8 +46,8 @@ wg_peers:
   wg_pubkey: 7tBgRZZFJWmTAy36h4saz77BxXacCzes9KXgZew7Dns=
 
 - name: dn42-trilom
-  peer_v4: 172.22.177.1
-  peer_v6: fd42:2:dead:53::1
+  peer_v4: 172.22.144.1
+  peer_v6: fd42:2022:dead:53::1
   port: 23691
   remote: avl01.us.dn42.trailmix.me:21080
   wg_pubkey: GssRoywdsdVfbY+XyCARAr40PC2uJD3qEVEzCo8fuUY=
