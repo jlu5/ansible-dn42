@@ -10,9 +10,9 @@
 - name: Download bird-lg-go binary package
   get_url:
     # FIXME: this should probably be more flexible with architectures
-    url: https://github.com/jlu5/bird-lg-go/releases/download/0.20211222.1/bird-lg-go_0.20211222.1_linux_amd64.tar.gz
+    url: https://github.com/jlu5/bird-lg-go/releases/download/0.20220223.1/bird-lg-go_0.20220223.1_linux_amd64.tar.gz
     dest: "{{ _bird_lg_go_dir }}/bird-lg-go.tar.gz"
-    checksum: "sha256:d05eb91d36564a0d0fa89fe2e5062ee782c0473cbecf12218c7ac9ea660c5687"
+    checksum: "sha256:fb8028b569c31a9c219da2cd6bd388f14769af5ff01b08d5a2aac1b67397736d"
     mode: "0644"
 
 - name: Extract bird-lg-go binary package
