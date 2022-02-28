@@ -179,3 +179,10 @@ wg_peers:
   port: 23025
   remote: us-lax.dn42.edenlink.cyou:21080
   wg_pubkey: QXzmyQAa+oWA89b8Jcaolgy44j7c4TjImZqSSvZFD3g=
+
+- name: dn42-shypre
+  peer_v4: 172.20.236.65
+  peer_v6: null
+  port: 22466
+  remote: 45.45.218.239:21080
+  wg_pubkey: yhnrCIC6tCkAHrxyLkH8T7fjYqsBtq1mrCVehCSkHlE=
