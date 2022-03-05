@@ -28,9 +28,6 @@ wg_peers:
   peer_v4: "172.20.191.200"
   peer_v6: "fe80::2464/64"
 
-- name: dn42tyo-yuetau
-  remove: true
-
 - name: dn42tyo-jrb0001
   port: 50119
   remote: "45.32.8.10:21080"
@@ -95,9 +92,6 @@ wg_peers:
   peer_v4: "172.23.91.116/32"
   peer_v6: "fe80::2189/64"
 
-- name: dn42tyo-tecgoo
-  remove: true
-
 - name: dn42tpe-yurui
   port: 52330
   remote: "tp01.tw.node.argonauts.xyz:51080"
@@ -119,9 +113,6 @@ wg_peers:
   peer_v4: "172.22.155.10"
   peer_v6: "fe80::42:3699:10"
 
-- name: dn42tyo-x6c
-  remove: true
-
 - name: dn42tyo-myon
   port: 20639
   remote: "r42.myon98.net:21080"
@@ -135,7 +126,6 @@ wg_peers:
   wg_pubkey: "uXeP5y2MP+XBcI7EU8LxqGS1r/Fu3vGIl3Q+r24J0UI="
   peer_v4: "172.23.36.34"
   peer_v6: "fe80::3632"
-
 
 - name: dn42-kskb
   peer_v4: 10.127.111.9
@@ -176,7 +166,7 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::104:50:2030
   port: 22717
-  remote: tw.vm.whojk.com:23014
+  remote: jp.vm.whojk.com:23014
   wg_pubkey: ifN+KmnL5XLHG8nDi2nN9l26snGUP/1157p8mOSPE1c=
 
 - name: dn42-lazurite
