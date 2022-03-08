@@ -12,6 +12,8 @@ $TTL 300
 6.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ping-chi.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.5.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ns.highdef.dn42.
 2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.5.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR dns.highdef.dn42.
+1.0.0.0.7.1.1.0.0.0.0.0.0.0.0.0.0.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR de-nbg01.legacy-peerings.nl-ams02.highdef.dn42.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-chi01.legacy-peerings.ca-yyz01.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.a.a.a.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR GW.yvrlab.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-sea02.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-atl01.rtr.highdef.dn42.
@@ -21,7 +23,6 @@ $TTL 300
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-sjc01.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-dal01.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR uk-lon01.rtr.highdef.dn42.
-1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR de-nbg01.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR nl-ams02.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR es-mad01.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.2.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR it-mil01.rtr.highdef.dn42.

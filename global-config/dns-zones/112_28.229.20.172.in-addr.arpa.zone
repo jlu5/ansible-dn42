@@ -8,13 +8,15 @@ $TTL 300
         86400       ; expiration
         3600        ; minimum TTL
 )
+117 IN PTR de-nbg01.legacy-peerings.nl-ams02.highdef.dn42.
+115 IN PTR ca-bhs01.legacy-peerings.ca-yyz01.highdef.dn42.
+113 IN PTR us-chi01.legacy-peerings.ca-yyz01.highdef.dn42.
 114 IN PTR us-sea02.rtr.highdef.dn42.
 119 IN PTR us-atl01.rtr.highdef.dn42.
 122 IN PTR us-lax01.rtr.highdef.dn42.
 123 IN PTR ca-yyz01.rtr.highdef.dn42.
 126 IN PTR us-las01.rtr.highdef.dn42.
 116 IN PTR uk-lon01.rtr.highdef.dn42.
-117 IN PTR de-nbg01.rtr.highdef.dn42.
 118 IN PTR nl-ams02.rtr.highdef.dn42.
 120 IN PTR es-mad01.rtr.highdef.dn42.
 121 IN PTR it-mil01.rtr.highdef.dn42.
