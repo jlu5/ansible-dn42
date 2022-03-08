@@ -27,9 +27,6 @@ wg_peers:
   peer_v4: null
   peer_v6: "fe80::fcde:3558"
 
-- name: dn42ams-zeph
-  remove: true
-
 - name: dn42ams-yura
   port: 52464
   remote: "llix.dneo.moeternet.com:21080"
@@ -248,16 +245,6 @@ wg_peers:
   local_v6: "fe80::117"
   wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
 
-- name: dn42fra-zhaofen
-  port: 51926
-  remote: "[2a06:e881:5506::1]:21080"
-  wg_pubkey: "Y/OkiTBx7Nkg/mmG7WnHrDY/UisV/M6FyHwr7mKNmEM="
-  peer_v4: "172.20.16.2"
-  peer_v6: "fe80::1926:1"
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
-
 - name: "dn42fra-munster"
   port: 52237
   remote: "de-fra01.dn42.munsternet.eu:21080"
@@ -308,29 +295,6 @@ wg_peers:
   local_v6: "fe80::117"
   wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
 
-- name: dn42waw-filip
-  port: 51404
-  remote: "176.122.215.101:65001"
-  wg_pubkey: "oZXF/BkUUpHDxgze+pYqSvoLv2JGkkemKSGWU9t3cWk="
-  peer_v4: "172.20.178.65"
-  peer_v6: "fe80::feec:daff:fe46:d60e/64"
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
-
-- name: dn42fsn-qcore
-  port: 53847
-  remote: "de-flk-dn42.0011.de:21080"
-  wg_pubkey: "fX/ulzytJkYMxr9P1pHlRpmyQ11oQ1EfpdUDpX6UnX8="
-  peer_v4: null
-  peer_v6: "fe80::42:3847:42:1080"
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
-
-- name: dn42fra-kever
-  remove: true
-
 - name: dn42nbg-serverm
   port: 53770
   remote: "nbg1.dn42.servermade.com:51080"
@@ -361,16 +325,6 @@ wg_peers:
   local_v6: "fe80::117"
   wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
 
-- name: dn42fsn-bastel
-  port: 53668
-  remote: "router01.bastelfreak.org:1080"
-  wg_pubkey: "P9BQFIpN7LvgnqkU/1srErP1I0twhgkUgEHZfaF5vyQ="
-  peer_v4: "169.254.0.3"
-  peer_v6: "fe80::beef:8"
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
-
 - name: dn42fsn-foxxx0
   port: 23669
   remote: "valhalla.nano-srv.net:21080"
@@ -391,32 +345,12 @@ wg_peers:
   local_v6: "fe80::117"
   wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
 
-- name: dn42-claudweb
-  peer_v4: 172.23.125.33
-  peer_v6: fe80::1247
-  port: 21147
-  remote: dn42-de01.claudweb.de:21080
-  wg_pubkey: whaUeLgjEZBsf4fVdunWntucu8FEqQbWbyT5N5VBMxE=
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
-
 - name: dn42-kskb1817
   peer_v4: 172.22.77.42
   peer_v6: fe80::42:1817:a
   port: 21817
   remote: null
   wg_pubkey: Sxn9qXnzu3gSBQFZ0vCh5t5blUJYgD+iHlCCG2hexg4=
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
-
-- name: dn42-alphvino
-  peer_v4: 172.20.45.97
-  peer_v6: fe80::1862
-  port: 21862
-  remote: ger1-de.alphvino.com:21080
-  wg_pubkey: 7Y4b5Rt4LGHOt0mZmpctSD1ffGnNDy+UsoeTl4vt2Qg=
   local_v4: "172.20.229.117"
   local_v6: "fe80::117"
   wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
@@ -462,3 +396,38 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
 
 ### END peers imported from de-nbg01
+
+- name: dn42fra-zhaofen
+  port: 21926
+  remote: "[2a06:e881:5506::1]:21080"
+  wg_pubkey: "Y/OkiTBx7Nkg/mmG7WnHrDY/UisV/M6FyHwr7mKNmEM="
+  peer_v4: "172.20.16.2"
+  peer_v6: "fe80::1926:1"
+
+- name: dn42waw-filip
+  port: 21404
+  remote: "176.122.215.101:65001"
+  wg_pubkey: "oZXF/BkUUpHDxgze+pYqSvoLv2JGkkemKSGWU9t3cWk="
+  peer_v4: "172.20.178.65"
+  peer_v6: "fe80::feec:daff:fe46:d60e/64"
+
+- name: dn42fsn-qcore
+  port: 23847
+  remote: "de-flk-dn42.0011.de:21080"
+  wg_pubkey: "fX/ulzytJkYMxr9P1pHlRpmyQ11oQ1EfpdUDpX6UnX8="
+  peer_v4: null
+  peer_v6: "fe80::42:3847:42:1080"
+
+- name: dn42fsn-bastel
+  port: 23668
+  remote: "router01.bastelfreak.org:1080"
+  wg_pubkey: "P9BQFIpN7LvgnqkU/1srErP1I0twhgkUgEHZfaF5vyQ="
+  peer_v4: "169.254.0.3"
+  peer_v6: "fe80::beef:8"
+
+- name: dn42-claudweb
+  peer_v4: 172.23.125.33
+  peer_v6: fe80::1247
+  port: 21147
+  remote: dn42-de01.claudweb.de:21080
+  wg_pubkey: whaUeLgjEZBsf4fVdunWntucu8FEqQbWbyT5N5VBMxE=
