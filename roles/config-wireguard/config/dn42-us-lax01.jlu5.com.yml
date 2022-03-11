@@ -186,3 +186,10 @@ wg_peers:
   port: 22466
   remote: 45.45.218.239:21080
   wg_pubkey: yhnrCIC6tCkAHrxyLkH8T7fjYqsBtq1mrCVehCSkHlE=
+
+- name: dn42-131
+  peer_v4: 172.21.109.34
+  peer_v6: fe80::1131
+  port: 21131
+  remote: phoenix.us.dn42.yuzu.im:20247
+  wg_pubkey: abDdEXgpaUNfEVPYLv1GTA+1TjkRbk5MNUi0fczYflw=
