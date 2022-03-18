@@ -275,3 +275,10 @@ wg_peers:
   port: 24719
   remote: us-nyc.dn42.lutoma.org:42405
   wg_pubkey: nyujl5Lm7C0A+NoLO+7ctYulkCXeXp6dnnpt9+bGqi8=
+
+- name: dn42-unknownts
+  peer_v4: 172.22.157.201
+  peer_v6: fe80::add1
+  port: 23315
+  remote: 1.nyc.ny.unknownts.com:21080
+  wg_pubkey: edgbmEfm2Y5RP3VpZRWpRsGnwuMjUeGV64YsZcGSvRA=
