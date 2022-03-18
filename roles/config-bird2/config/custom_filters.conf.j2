@@ -135,8 +135,8 @@ function handle_special_cases() {
     if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043, 64654] * =]) then {
         safe_lower_pref(20);
     }
-    # 2021-11-20 testing: what if we steer traffic away from biggest dn42 transits?
-    if (bgp_path.len >= 2 && bgp_path ~ [= * [4242421588, 4242423914] * =]) then {
+    # 2022-03-17: prefer cold potato routing over densely connected autopeering transits
+    if (bgp_path.len >= 2 && bgp_path ~ [= * [4242421588, 4242423914, 4242422717, 4242422189, 4242421817, 64719, 4201271111, 4242422980] * =]) then {
         safe_lower_pref(10);
     }
 }
@@ -152,7 +152,7 @@ function ebgp_import_filter()
     if (bgp_path.len > 12) then {
         reject;
     }
-    bgp_local_pref = 1500;
+    bgp_local_pref = bgp_local_pref + 1400;
     safe_lower_pref(bgp_path.len * 100);
 
     if (bgp_path ~ [= * ASES_REJECT * =]) then {
