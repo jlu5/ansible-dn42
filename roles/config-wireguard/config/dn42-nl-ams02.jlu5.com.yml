@@ -431,3 +431,10 @@ wg_peers:
   port: 21147
   remote: dn42-de01.claudweb.de:21080
   wg_pubkey: whaUeLgjEZBsf4fVdunWntucu8FEqQbWbyT5N5VBMxE=
+
+- name: dn42-dingemans
+  peer_v4: 172.23.89.146
+  peer_v6: fe80::3:349a
+  port: 20074
+  remote: dn42.dingemans.tk:51820
+  wg_pubkey: 8qZ8e5XG6G1OE3F/yGTB7iCIvV9IouHzpf+cSyPadxY=
