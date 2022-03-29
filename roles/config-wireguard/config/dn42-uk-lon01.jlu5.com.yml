@@ -6,9 +6,6 @@ wg_peers:
   peer_v4: "172.20.158.145"
   peer_v6: "fe80::1331"
 
-- name: dn42lon-bauen1
-  remove: true
-
 - name: dn42man-napster
   port: 51050
   remote: mcr1-uk.dn42.napshome.net:51080
@@ -122,9 +119,6 @@ wg_peers:
   wg_pubkey: "V0brcpop7aLl2eFlHMQ50uGCPE+8+I8zGEOrKT17CjQ="
   peer_v4: "172.22.155.6"
   peer_v6: "fe80::42:3699:6"
-
-- name: dn42lon-x6c
-  remove: true
 
 - name: dn42lon-noclip
   port: 22409
