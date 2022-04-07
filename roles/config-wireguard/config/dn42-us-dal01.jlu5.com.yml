@@ -35,3 +35,10 @@ wg_peers:
   port: 21099
   remote: us-dal01.owensresearch.org:21080
   wg_pubkey: lVi8WDih66c4Dk+NFnNb8dOjWDuzmbWL34xtb22mYiU=
+
+- name: dn42-tackitt
+  peer_v4: 172.21.94.129
+  peer_v6: fd07:881f:a074:3::1
+  port: 21556
+  remote: 2001:19f0:6401:c89:5400:03ff:feee:ac0f:21556
+  wg_pubkey: hsvBOwWifhp8/TJCiyOs0hHDVXQMnn8AXIf+UZQGTjg=
