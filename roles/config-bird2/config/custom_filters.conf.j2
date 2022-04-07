@@ -188,6 +188,11 @@ function ebgp_export_filter() {
     bgp_med = OUTGOING_BGP_MED;
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION_TAG, 0..5)]);
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_DEPREF_CROSS_REGION, 1)]);
+
+    # Informational communities: only node ID, as origin region uses standard dn42 community
+    if (bgp_path.len = 0) then {
+        bgp_large_community.add((OWNAS, LC_ORIGIN_NODEID, NODEID));
+    }
 };
 
 function ibgp_import_filter()
