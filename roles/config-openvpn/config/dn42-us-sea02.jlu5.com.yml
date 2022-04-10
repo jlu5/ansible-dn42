@@ -1,5 +1,6 @@
 ovpn_peers:
 - name: cl-roam01
+  remove: true
   port: 21080
   remote: null
   proto: tcp-server

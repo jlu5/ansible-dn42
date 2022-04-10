@@ -25,20 +25,24 @@ wg_peers:
   wg_pubkey: "DJIy9r6kCsiArLpUKaClGkGFoT1dcrKaCQVrnn2sgDc="
   peer_v4: 172.22.108.28
   peer_v6: fd86:bad:11b7:7e3b::1
+  remove: true
 
 # p2p is too hard for most wg frontends :(
 - name: cl-roam03
-  port: 19998
-  wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
-  peer_v4: 172.22.108.17
-  local_v4: 172.22.108.16
-  peer_v6: null
-
+  remove: true
 - name: cl-roam04
-  port: 19997
-  wg_pubkey: "zy6EF1SUHRRB5U0UOad7uvz+H8Scb5IphutbHVtGaA8="
-  peer_v4: 172.22.108.31
-  local_v4: 172.22.108.30
+  remove: true
+
+- name: cl-roamxx
+  local_v4: 172.22.108.56/29
+  port: 19998
+  multi:
+    # cl-mobi
+    - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
+      wg_allowedips: "172.22.108.57/32"
+    # cl-silverth
+    - wg_pubkey: "zy6EF1SUHRRB5U0UOad7uvz+H8Scb5IphutbHVtGaA8="
+      wg_allowedips: "172.22.108.58/32"
   peer_v6: null
 
 - name: igp-ca-yvrgw
