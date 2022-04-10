@@ -2,7 +2,7 @@
 {% if 'local_v6' in peer_info %}
     {%- set local_v6 = peer_info['local_v6'] %}
 {# Automatically determine whether we're peering over link-local v6 or ULA #}
-{% elif peer_info['peer_v6'] and peer_info['peer_v6'].startswith('fe80:') %}
+{% elif peer_info.get('peer_v6') and peer_info['peer_v6'].startswith('fe80:') %}
     {%- set local_v6 = link_local_ip6 %}
 {% else %}
     {%- set local_v6 = ownip6 %}
@@ -20,7 +20,7 @@
 auto {{ ifname }}
 iface {{ ifname }} inet static
     address {{ local_v4 }}
-{% if peer_info['peer_v4'] %}
+{% if peer_info.get('peer_v4') %}
     pointopoint {{ peer_info['peer_v4'] }}
 {% endif %}
 {% if 'wg_mtu' in peer_info %}
@@ -29,7 +29,7 @@ iface {{ ifname }} inet static
     pre-up ip link add {{ ifname }} type wireguard
     pre-up timeout 3 wg setconf {{ ifname }} /etc/wireguard/{{ ifname }}.conf
     pre-up wg set {{ ifname }} private-key {{ peer_info.get('wg_privkey', "/etc/wireguard/privatekey") }}
-{% if peer_info['peer_v6'] %}
+{% if peer_info.get('peer_v6') %}
     post-up ip -6 addr add {{ local_v6 }} peer {{ peer_info['peer_v6'] }} dev {{ ifname }}
 {% endif %}
     post-down ip link del {{ ifname }}
