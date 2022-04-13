@@ -79,3 +79,10 @@ wg_peers:
           65616161353831616138626535633630386265363731333539646265383631623666
   wg_mtu: 1280
   wg_pubkey: tBCKOOk4lK+fV3+6B6o1H06Lb5iWOyWqU0bR8dgrbgM=
+
+- name: dn42-ciplc
+  peer_v4: 172.23.33.161
+  peer_v6: fe80::943e
+  port: 23021
+  remote: us1.dn42.ciplc.network:21080
+  wg_pubkey: KZXWUzmGStNRrO2vg1TbtwQKmp4gPdhOVIW4RegLVGI=
