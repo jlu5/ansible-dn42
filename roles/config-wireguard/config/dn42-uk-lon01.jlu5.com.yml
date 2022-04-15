@@ -141,11 +141,11 @@ wg_peers:
   peer_v6: "fe80::3410"
 
 - name: dn42-usman
-  peer_v4: 172.22.132.163
+  peer_v4: 172.22.132.166
   peer_v6: null
   port: 21869
   remote: null
-  wg_pubkey: BlJQx6FlEsfYWJvzLdIdyKivpo/nCSp7/wJ66/H8ST4=
+  wg_pubkey: qwjXj/6R9ThUnqeOAYN+MxM6CbIgzjS8WFDdXuyEpHY=
 
 - name: dn42-jcahill
   peer_v4: 172.22.114.64
