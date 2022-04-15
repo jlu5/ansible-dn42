@@ -10,12 +10,12 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
 # Make svg output deterministic, https://stackoverflow.com/questions/48107855/
-plt.rcParams['svg.hashsalt'] = 424242
+plt.rcParams['svg.hashsalt'] = "424242"
 
 def graph(times, n_ebgp_routers, n_ebgp_peerings, n_ebgp_unique, output="history.svg"):
     fig, ax = plt.subplots(figsize=(10, 8))
     ax.plot(times, n_ebgp_routers, label="eBGP routers", alpha=0.8)
-    ax.plot(times, n_ebgp_peerings, label="total eBGP peerings", alpha=0.8)
+    ax.plot(times, n_ebgp_peerings, label="total eBGP sessions", alpha=0.8)
     ax.plot(times, n_ebgp_unique, label="unique eBGP peers", alpha=0.8)
     for col in (n_ebgp_routers, n_ebgp_peerings, n_ebgp_unique):
         # Annotate the current value for each point (first in the results lists)
