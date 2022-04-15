@@ -288,3 +288,10 @@ wg_peers:
   port: 23315
   remote: 1.nyc.ny.unknownts.com:21080
   wg_pubkey: edgbmEfm2Y5RP3VpZRWpRsGnwuMjUeGV64YsZcGSvRA=
+
+- name: dn42-exabyte
+  peer_v4: 172.20.41.72
+  peer_v6: fd42:8978:b461::8
+  port: 23340
+  remote: ajg-spruce.dyndns.org:51836
+  wg_pubkey: SU3FTfX4+W1grQSEdJwW2pg27IRNTpHSgVMXmhUpqz8=
