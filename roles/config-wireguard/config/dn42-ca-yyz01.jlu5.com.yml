@@ -290,8 +290,8 @@ wg_peers:
   wg_pubkey: edgbmEfm2Y5RP3VpZRWpRsGnwuMjUeGV64YsZcGSvRA=
 
 - name: dn42-exabyte
-  peer_v4: 172.20.41.72
-  peer_v6: fd42:8978:b461::8
+  peer_v4: 172.20.41.100
+  peer_v6: fe80::115
   port: 23340
-  remote: ajg-spruce.dyndns.org:51836
-  wg_pubkey: SU3FTfX4+W1grQSEdJwW2pg27IRNTpHSgVMXmhUpqz8=
+  remote: dn42-us-nj01.exabyte.network:51845
+  wg_pubkey: cRHAiWRwhjnK1cNIWrh5c06Lubv8lkF0w+z4NPjRQAM=
