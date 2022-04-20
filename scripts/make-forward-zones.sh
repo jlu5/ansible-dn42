@@ -10,8 +10,6 @@ REGISTRY_ROOT=../dn42-registry/data
 # hardcoded zones 🙈
 # It might be better to parse these from icvpn-meta but these are updated pretty infrequently anyways
 declare -A HARDCODED_ZONES
-# https://github.com/freifunk/icvpn-meta/blob/master/rzl
-HARDCODED_ZONES["rzl"]="172.22.36.1"
 # https://github.com/freifunk/icvpn-meta/blob/master/chaosvpn
 HARDCODED_ZONES["hack"]="172.31.0.5,172.31.255.53"
 
