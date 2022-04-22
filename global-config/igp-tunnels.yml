@@ -22,7 +22,6 @@ igp_neighbours:
     dn42-us-las01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
-    dn42-us-sea03.jlu5.com: null
   dn42-es-mad01.jlu5.com: !!set
     dn42-ca-yyz01.jlu5.com: null
     dn42-fr-par01.jlu5.com: null
@@ -42,7 +41,6 @@ igp_neighbours:
     dn42-nl-ams02.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
-    dn42-us-sea03.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-nl-ams02.jlu5.com: !!set
     dn42-ca-yyz01.jlu5.com: null
@@ -53,7 +51,6 @@ igp_neighbours:
     dn42-uk-lon01.jlu5.com: null
     dn42-us-atl01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
-    dn42-us-sea03.jlu5.com: null
   dn42-uk-lon01.jlu5.com: !!set
     dn42-ca-yyz01.jlu5.com: null
     dn42-es-mad01.jlu5.com: null
@@ -74,13 +71,11 @@ igp_neighbours:
     dn42-us-atl01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
-    dn42-us-sea03.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-us-las01.jlu5.com: !!set
     dn42-ca-yyz01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
-    dn42-us-sea03.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
     lax02.jlu5.com: null
   dn42-us-lax01.jlu5.com: !!set
@@ -103,15 +98,6 @@ igp_neighbours:
     dn42-us-dal01.jlu5.com: null
     dn42-us-las01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
-    dn42-us-sea03.jlu5.com: null
-    dn42-us-sjc01.jlu5.com: null
-  dn42-us-sea03.jlu5.com: !!set
-    dn42-ca-yyz01.jlu5.com: null
-    dn42-jp-tyo01.jlu5.com: null
-    dn42-nl-ams02.jlu5.com: null
-    dn42-us-dal01.jlu5.com: null
-    dn42-us-las01.jlu5.com: null
-    dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-us-sjc01.jlu5.com: !!set
     chi03.jlu5.com: null
@@ -121,7 +107,6 @@ igp_neighbours:
     dn42-us-las01.jlu5.com: null
     dn42-us-lax01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
-    dn42-us-sea03.jlu5.com: null
     lax02.jlu5.com: null
   lax02.jlu5.com: !!set
     dn42-us-las01.jlu5.com: null
