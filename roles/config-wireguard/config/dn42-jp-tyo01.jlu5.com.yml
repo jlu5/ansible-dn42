@@ -141,13 +141,6 @@ wg_peers:
   remote: v4.kr-05.public.nodes.supernoc.net:21080
   wg_pubkey: Utkpm2nUhM/9pMe5tWBt0aFoNHfbKQjg3Ksa/nzwEwY=
 
-- name: dn42-androw
-  peer_v4: 172.23.186.33
-  peer_v6: fe80::2575:1
-  port: 22575
-  remote: tyo1.jp.androw.eu:21080
-  wg_pubkey: yO/C6A+dSbADQp4PNbd9gaoOrlexVHEhZBvg6YtU1Sg=
-
 - name: dn42-186526
   peer_v4: 172.23.2.95
   peer_v6: fe80::ade1
