@@ -92,9 +92,6 @@ wg_peers:
   peer_v4: "172.20.191.197"
   peer_v6: "fe80::2464"
 
-- name: dn42nyc-fixmix
-  remove: true
-
 - name: dn42bhs-serverm
   port: 53770
   remote: "bhs1.dn42.servermade.com:51080"
