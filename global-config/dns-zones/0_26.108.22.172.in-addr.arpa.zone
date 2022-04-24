@@ -13,15 +13,9 @@ $TTL 300
 21 IN PTR ns.highdef.dn42.
 22 IN PTR dns.highdef.dn42.
 25 IN PTR mediactr.highdef.dn42.
-16 IN PTR mobi1.clients.highdef.dn42.
-17 IN PTR mobi1-ptp.us-sea02.highdef.dn42.
-19 IN PTR mobi2.clients.highdef.dn42.
-28 IN PTR shypre-1.clients.highdef.dn42.
-30 IN PTR silverthing-ptp.us-sea02.highdef.dn42.
-31 IN PTR silverthing.clients.highdef.dn42.
-1 IN PTR GW.yvrlab.highdef.dn42.
 34 IN PTR us-sjc01.rtr.highdef.dn42.
 33 IN PTR us-dal01.rtr.highdef.dn42.
 36 IN PTR fr-par01.rtr.highdef.dn42.
 38 IN PTR hk01.rtr.highdef.dn42.
-$GENERATE 2-15 $ PTR ${0,2,d}.yvrlab.highdef.dn42.
+$GENERATE 1-15 $ PTR ${0,2,d}.yvrlab.highdef.dn42.
+$GENERATE 56-63 $ PTR ${0,2,d}.clients.highdef.dn42.
