@@ -1,0 +1,43 @@
+wg_peers:
+- name: dn42sgp-tech9
+  port: 51588
+  remote: "sg-sin01.dn42.tech9.io:59532"
+  wg_pubkey: "4qLIJ9zpc/Xgvy+uo90rGso75cSrT2F5tBEv+6aqDkY="
+  peer_v4: "172.20.16.142"
+  peer_v6: "fe80::1588"
+  local_v4: 172.20.229.127
+  local_v6: "fe80::100"
+
+- name: dn42hkg-kioubit
+  port: 23914  # not used
+  remote: "hk1.g-load.eu:21080"
+  wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
+  peer_v4: "172.20.53.105"
+  peer_v6: "fe80::ade0"
+  local_v4: 172.20.229.127
+  local_v6: "fe80::ade1"
+
+- name: dn42hkg-mayli
+  port: 51123
+  remote: "hkg.ccp.ovh:21080"
+  wg_pubkey: "bLysMVqew2hlvJVS17hp+qaURzZuLERLgfSbvK/mgUU="
+  peer_v4: "172.20.47.3"
+  peer_v6: "fe80::1123"
+  local_v4: 172.20.229.127
+  local_v6: "fe80::1080:127"
+
+- name: dn42sgp-moecast
+  port: 50604
+  remote: "sgp1.dn42.cas7.moe:21080"
+  wg_pubkey: "R8iyaSzF6xx/t4+1wKlYWZWyZOxJDCXlA2BE3OZnsAY="
+  peer_v4: "172.23.89.1"
+  peer_v6: "fe80::604"
+  local_v4: 172.20.229.127
+  local_v6: "fe80::1080:127"
+
+- name: dn42-lutoma
+  peer_v4: 172.22.119.20
+  peer_v6: fe80::acab
+  port: 24719
+  remote: cn-hkg.dn42.lutoma.org:42432
+  wg_pubkey: 4ky6OndMp3B3aiX/CbqIKEo9SrrxndjaDZ10hzPE0i0=
