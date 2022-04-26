@@ -7,7 +7,7 @@
     - netdata-plugins-go
     # Required for ansible htpasswd integration
     - python3-passlib
-    state: present
+    state: latest
     update_cache: true
 
 - name: Setup htpasswd for netdata
@@ -26,6 +26,18 @@
     src: netdata.conf.j2
     dest: "/etc/netdata/netdata.conf"
   notify: Restart netdata
+
+- name: Create netdata go.d config folder
+  file:
+    path: /etc/netdata/go.d/
+    state: directory
+
+- name: Push netdata go.d plugin configs
+  template:
+    src: "{{ item }}"
+    dest: "/etc/netdata/go.d/{{ item | basename }}"
+  notify: Restart netdata
+  with_fileglob: 'go.d/*.conf'
 
 - name: Add Netdata notifier script stub
   template:

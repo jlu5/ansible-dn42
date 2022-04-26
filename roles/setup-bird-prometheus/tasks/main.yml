@@ -5,9 +5,9 @@
 
 - name: Download bird-exporter binary package
   get_url:
-    url: https://github.com/czerwonk/bird_exporter/releases/download/1.2.6/bird_exporter_1.2.6_linux_amd64.tar.gz
+    url: https://github.com/czerwonk/bird_exporter/releases/download/1.4.1/bird_exporter_1.4.1_linux_amd64.tar.gz
     dest: "{{ automation_root_dir }}/bird-exporter/bird_exporter.tar.gz"
-    checksum: "sha256:9807ee500c3ecf51ec7720fd24fad4d6b640f80d9035d14f35261570c07c49b4"
+    checksum: "sha256:529c11f0f6e564b33570027a080f16c78900051c625084bd6c493b74f52ca5ba"
     mode: "0644"
 
 - name: Extract bird-exporter binary package
