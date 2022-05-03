@@ -167,3 +167,10 @@ wg_peers:
   port: 20585
   remote: uk1.dn42.atolm.net:21080
   wg_pubkey: W5tOp5Iw/uJppISGF9KSQL5/q9ykW0PUSAKDe4YPXHQ=
+
+- name: dn42-rhysperry
+  peer_v4: 172.22.76.1
+  peer_v6: null
+  port: 23665
+  remote: rhysperry.com:55505
+  wg_pubkey: I1WlxMXrSoN2g3WVJNYNG+4MsYhJwNA6UYgt5pHOGGY=
