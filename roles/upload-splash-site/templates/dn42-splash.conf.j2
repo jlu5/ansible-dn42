@@ -20,6 +20,21 @@ server {
 		return 200 "$remote_addr (you) ↔ $server_addr (me)";
 	}
 
+    location = /smokeping/ {
+        allow  10.0.0.0/8;
+        allow  172.20.0.0/14;
+        allow  172.31.0.0/16;
+        allow  fd00::/8;
+        deny   all;
+        fastcgi_pass unix:/run/smokeping-fcgi.sock;
+        include /etc/nginx/fastcgi_params;
+    }
+
+    location /smokeping/ {
+        alias /usr/share/smokeping/www/;
+        index smokeping.cgi;
+    }
+
     location / {
         root {{ automation_root_dir }}/splash;
         index index-dn42.html;
