@@ -20,18 +20,11 @@ wg_peers:
   peer_v4: "172.20.1.10"
   peer_v6: "fe80::119"
 
-- name: cl-shypre
+- name: dn42yvr-shypre
   port: 19999
   wg_pubkey: "DJIy9r6kCsiArLpUKaClGkGFoT1dcrKaCQVrnn2sgDc="
-  peer_v4: 172.22.108.28
-  peer_v6: fd86:bad:11b7:7e3b::1
-  remove: true
-
-# p2p is too hard for most wg frontends :(
-- name: cl-roam03
-  remove: true
-- name: cl-roam04
-  remove: true
+  peer_v4: 172.20.236.65
+  peer_v6: null
 
 - name: cl-roamxx
   local_v4: 172.22.108.56/29

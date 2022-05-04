@@ -45,6 +45,11 @@ function is_anycast_network() {
     }
 }
 
+function is_neighbour_network() {
+    # SHYPRE-AS
+    return net ~ [172.20.236.64/29];
+}
+
 # Subtract x from bgp_local_pref, while checking for underflow
 function safe_lower_pref(int x) {
     if (bgp_local_pref > x) then {
@@ -199,7 +204,7 @@ function ibgp_import_filter()
     int my_region_tag;
 {
     # Only process routes originating from BGP unless they're anycast networks
-    if (source != RTS_BGP && !is_anycast_network()) then {
+    if (source != RTS_BGP && !is_anycast_network() && !is_neighbour_network()) then {
         reject;
     }
     if (!is_valid_network() && !is_valid_network_v6()) then {
@@ -222,7 +227,7 @@ function ibgp_import_filter()
 }
 
 function ibgp_export_filter() {
-    if (source != RTS_BGP && !is_anycast_network()) then {
+    if (source != RTS_BGP && !is_anycast_network() && !is_neighbour_network()) then {
         reject;
     }
     # Don't export device routes for dn42 anycast networks. These will be filled in via a static route config
