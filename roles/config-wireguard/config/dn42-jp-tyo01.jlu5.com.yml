@@ -203,3 +203,10 @@ wg_peers:
   port: 20212
   remote: tyo1.dn42.blw.moe:21080
   wg_pubkey: 24mzQEumLmpneoHnUWMEWg7pSnqoW5UrK5MN19eZ2HY=
+
+- name: dn42-chimon
+  peer_v4: 172.21.65.164
+  peer_v6: fe80::3868
+  port: 23868
+  remote: kix1.dn42.cooo.cool:21080
+  wg_pubkey: a8pgJK98XGV9gFWvJv4CirkRcbeHzbevQJnci45hhTc=
