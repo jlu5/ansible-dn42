@@ -79,7 +79,7 @@ wg_peers:
   port: 53618
   remote: "nl.neo.jerryxiao.cc:50090"
   wg_pubkey: "zE9C015v2H0duvNBdXm2ToWqimoIlBqtZtFTqgLQXgs="
-  peer_v4: "172.20.51.120"
+  peer_v4: null
   peer_v6: "fe80::3618/64"
 
 - name: dn42hel-andi
