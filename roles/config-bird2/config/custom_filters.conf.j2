@@ -185,11 +185,6 @@ function ebgp_import_filter()
 };
 
 function ebgp_export_filter() {
-    # Don't export device routes for dn42 anycast networks. These will be filled in via a static route config
-    # triggered by service start/stop
-    if (is_anycast_network() && source = RTS_DEVICE) then {
-        reject;
-    }
     bgp_med = OUTGOING_BGP_MED;
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION_TAG, 0..5)]);
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_DEPREF_CROSS_REGION, 1)]);
