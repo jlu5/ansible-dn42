@@ -181,7 +181,7 @@ wg_peers:
   wg_pubkey: QXzmyQAa+oWA89b8Jcaolgy44j7c4TjImZqSSvZFD3g=
 
 - name: dn42-shypre
-  peer_v4: 172.20.236.65
+  peer_v4: 172.20.236.70
   peer_v6: null
   port: 22466
   remote: 45.45.218.239:21080
