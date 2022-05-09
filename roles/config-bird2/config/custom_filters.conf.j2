@@ -45,9 +45,9 @@ function is_anycast_network() {
     }
 }
 
+# For single-homed downstreams
 function is_neighbour_network() {
-    # SHYPRE-AS
-    return net ~ [172.20.236.64/29];
+    return false;
 }
 
 # Subtract x from bgp_local_pref, while checking for underflow
