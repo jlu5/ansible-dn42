@@ -515,7 +515,7 @@ class PeerConfWriteTest(unittest.TestCase):
 
     def test_bird_config_mpbgp(self):
         cfg = {
-            'asn': '123456',
+            'asn': '64512',
             'port': 12345,
             'remote': 'abcd.efgh.ijkl:21080',
             'wg_pubkey': 'dn42' * 10 + 'dn4=',
@@ -524,8 +524,8 @@ class PeerConfWriteTest(unittest.TestCase):
         }
         bird_options = BirdOptions(mp_bgp=True, extended_next_hop=False, latency=10)
 
-        expected = """protocol bgp testpeer_3456 from dnpeers {
-    neighbor fe80::1234 as 123456;
+        expected = """protocol bgp testpeer_64512 from dnpeers {
+    neighbor fe80::1234 as 64512;
     interface "dn42-testpeer";
     passive off;
 
@@ -553,7 +553,7 @@ class PeerConfWriteTest(unittest.TestCase):
         }
         bird_options = BirdOptions(mp_bgp=True, extended_next_hop=True, latency=10)
 
-        expected = """protocol bgp testpeer_3456 from dnpeers {
+        expected = """protocol bgp testpeer_123456 from dnpeers {
     neighbor fe80::1234 as 123456;
     interface "dn42-testpeer";
     passive off;
@@ -582,7 +582,7 @@ class PeerConfWriteTest(unittest.TestCase):
         }
         bird_options = BirdOptions(mp_bgp=True, extended_next_hop=False, latency=10)
 
-        expected = """protocol bgp testpeer_3456 from dnpeers {
+        expected = """protocol bgp testpeer_123456 from dnpeers {
     neighbor fe80::1234 as 123456;
     interface "dn42-testpeer";
     passive on;
@@ -638,7 +638,7 @@ protocol bgp myTest_0001_v6 from dnpeers {
 
     def test_bird_config_v4_only(self):
         cfg = {
-            'asn': '4242420001',
+            'asn': '4242421080',
             'remote': 'test',
             'port': 11001,
             'wg_pubkey': 'dn42' * 10 + 'dn4=',
@@ -647,8 +647,8 @@ protocol bgp myTest_0001_v6 from dnpeers {
         }
         bird_options = BirdOptions(mp_bgp=False, extended_next_hop=False, latency=1.515)
 
-        expected = """protocol bgp v4only_0001 from dnpeers {
-    neighbor 10.0.0.1 as 4242420001;
+        expected = """protocol bgp v4only_1080 from dnpeers {
+    neighbor 10.0.0.1 as 4242421080;
     passive off;
 
     ipv4 {
@@ -662,7 +662,7 @@ protocol bgp myTest_0001_v6 from dnpeers {
 
     def test_bird_config_v4_only_passive(self):
         cfg = {
-            'asn': '4242420001',
+            'asn': '4242421234',
             'remote': None,
             'port': None,
             'wg_pubkey': 'dn42' * 10 + 'dn4=',
@@ -671,8 +671,8 @@ protocol bgp myTest_0001_v6 from dnpeers {
         }
         bird_options = BirdOptions(mp_bgp=False, extended_next_hop=False, latency=1.515)
 
-        expected = """protocol bgp v4only_0001 from dnpeers {
-    neighbor 10.0.0.1 as 4242420001;
+        expected = """protocol bgp v4only_1234 from dnpeers {
+    neighbor 10.0.0.1 as 4242421234;
     passive on;
 
     ipv4 {
@@ -744,7 +744,7 @@ protocol bgp myTest_0001_v6 from dnpeers {
             'remote': 'abcd.efgh.ijkl:21080',
             'wg_pubkey': 'dn42' * 10 + 'dn4=',
             'peer_v4': '172.22.108.88',
-            'peer_v6': 'fe80::1234',
+            'peer_v6': 'fe80::9999',
         }
         bird_options = BirdOptions(mp_bgp=True, extended_next_hop=True, latency=10)
 
