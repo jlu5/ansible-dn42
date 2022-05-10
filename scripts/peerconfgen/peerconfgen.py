@@ -57,7 +57,6 @@ class PeerConfigField():
 _ATTR_MAP = {
     'asn': PeerConfigField('asn', 'Peer ASN', ASN_RE, is_int),
     'remote': PeerConfigField('remote', 'Remote endpoint (IP/host only)', ENDPOINT_RE, is_valid_endpoint, optional=True),
-    # No regex for port: it's always filled in manually
     'port': PeerConfigField('port', 'Remote VPN port', WG_PORT_RE, is_port),
     'wg_pubkey': PeerConfigField('wg_pubkey', 'WireGuard public key', WGKEY_RE),
     'peer_v4': PeerConfigField('peer_v4', 'Tunnel IPv4 address', TUNNEL4_RE, is_valid_peer_v4, optional=True),

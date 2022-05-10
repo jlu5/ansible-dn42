@@ -532,7 +532,7 @@ class PeerConfWriteTest(unittest.TestCase):
     ipv4 {
         import where dn42_import_filter(3,24,34);
         export where dn42_export_filter(3,24,34);
-        #extended next hop on;
+        extended next hop off;
     };
     ipv6 {
         import where dn42_import_filter(3,24,34);
@@ -590,7 +590,7 @@ class PeerConfWriteTest(unittest.TestCase):
     ipv4 {
         import where dn42_import_filter(3,24,34);
         export where dn42_export_filter(3,24,34);
-        #extended next hop on;
+        extended next hop off;
     };
     ipv6 {
         import where dn42_import_filter(3,24,34);
@@ -619,7 +619,7 @@ class PeerConfWriteTest(unittest.TestCase):
     ipv4 {
         import where dn42_import_filter(1,24,34);
         export where dn42_export_filter(1,24,34);
-        #extended next hop on;
+        extended next hop off;
     };
 }
 
@@ -654,7 +654,7 @@ protocol bgp myTest_0001_v6 from dnpeers {
     ipv4 {
         import where dn42_import_filter(1,24,34);
         export where dn42_export_filter(1,24,34);
-        #extended next hop on;
+        extended next hop off;
     };
 }
 """.strip()
@@ -678,7 +678,7 @@ protocol bgp myTest_0001_v6 from dnpeers {
     ipv4 {
         import where dn42_import_filter(1,24,34);
         export where dn42_export_filter(1,24,34);
-        #extended next hop on;
+        extended next hop off;
     };
 }
 """.strip()
@@ -748,7 +748,7 @@ protocol bgp myTest_0001_v6 from dnpeers {
         }
         bird_options = BirdOptions(mp_bgp=True, extended_next_hop=True, latency=10)
 
-        self.assertIn("protocol bgp _99999999_3456", gen_bird_peer_config('99999999', cfg, bird_options))
+        self.assertIn("protocol bgp _99999999_123456", gen_bird_peer_config('99999999', cfg, bird_options))
 
 
 if __name__ == '__main__':

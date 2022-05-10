@@ -1,6 +1,9 @@
 import string
 from utils import get_iface_name, get_dn42_latency_value
 
+def _format_bool_bird(value):
+    return 'on' if value else 'off'
+
 def gen_wg_config(peername, completed_config):
     """
     Generates a YAML wg_peers config entry.
@@ -35,7 +38,7 @@ def gen_bird_peer_config(peername, completed_config, bird_options):
     v4_channel = f"""ipv4 {{
         import where dn42_import_filter({latency_community},24,34);
         export where dn42_export_filter({latency_community},24,34);
-        {"#" if not bird_options.extended_next_hop else ""}extended next hop on;
+        extended next hop {_format_bool_bird(bird_options.extended_next_hop)};
     }};"""
     v6_channel = f"""ipv6 {{
         import where dn42_import_filter({latency_community},24,34);
@@ -46,7 +49,7 @@ def gen_bird_peer_config(peername, completed_config, bird_options):
         return f"""protocol bgp {peername}_{completed_config['asn'][-4:]} from dnpeers {{
     neighbor {completed_config['peer_v6']} as {completed_config['asn']};
     interface "{iface_name}";
-    passive { 'off' if completed_config.get('remote') else 'on' };
+    passive { _format_bool_bird(not completed_config.get('remote')) };
 
     { v4_channel }
     { v6_channel }
@@ -59,7 +62,7 @@ def gen_bird_peer_config(peername, completed_config, bird_options):
         s += f"""
 protocol bgp {peername}_{completed_config['asn'][-4:]} from dnpeers {{
     neighbor {completed_config['peer_v4']} as {completed_config['asn']};
-    passive { 'off' if completed_config.get('remote') else 'on' };
+    passive { _format_bool_bird(not completed_config.get('remote')) };
 
     { v4_channel }
 }}
@@ -70,7 +73,7 @@ protocol bgp {peername}_{completed_config['asn'][-4:]} from dnpeers {{
 protocol bgp {peername}_{completed_config['asn'][-4:]}_v6 from dnpeers {{
     neighbor {completed_config['peer_v6']} as {completed_config['asn']};
     interface "{iface_name}";
-    passive { 'off' if completed_config.get('remote') else 'on' };
+    passive { _format_bool_bird(not completed_config.get('remote')) };
 
     { v6_channel }
 }}
