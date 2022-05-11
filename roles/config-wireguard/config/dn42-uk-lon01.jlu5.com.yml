@@ -174,3 +174,10 @@ wg_peers:
   port: 23665
   remote: rhysperry.com:55505
   wg_pubkey: I1WlxMXrSoN2g3WVJNYNG+4MsYhJwNA6UYgt5pHOGGY=
+
+- name: dn42-htw
+  peer_v4: 172.21.78.33
+  peer_v6: fe80::1440:1080
+  port: 21440
+  remote: sco1.dn42.canidae.systems:26005
+  wg_pubkey: YoB/Tge5Teb1ycnbi/vjmcsyD8My4waVkNhupn7JnDk=
