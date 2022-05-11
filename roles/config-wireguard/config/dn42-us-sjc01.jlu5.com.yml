@@ -76,3 +76,338 @@ wg_peers:
   port: 21817
   remote: us.kskb.eu.org:21080
   wg_pubkey: dZzVdXbQPnWPpHk8QfW/p+MfGzAkMBuWpxEIXzQCggY=
+
+# begin peers imported from lax01
+- name: dn42lax-kioubit
+  port: 53914
+  remote: "us3.g-load.eu:21080"
+  wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
+  peer_v4: "172.20.53.103"
+  peer_v6: "fe80::ade0"
+  local_v6: "fe80::ade1"
+  local_v4: "172.20.229.122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-zhaofen
+  port: 51926
+  remote: "[2a06:e881:5502::1]:21080"
+  wg_pubkey: "7/7eZZGr8S5qR+bkKaQdQQBSopjcx2xLpOM7Edw4UF4="
+  peer_v4: "172.20.16.3"
+  peer_v6: "fe80::1926:1"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+# - name: dn42lax-sunnet
+#   port: 53088
+#   remote: "lax1-us.dn42.6700.cc:21080"
+#   wg_pubkey: "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo="
+#   peer_v4: "172.21.100.193"
+#   peer_v6: "fe80::3088:193/64"
+#   local_v4: "172.20.229.122"
+#   local_v6: "fe80::122"
+#   wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-ncw
+  port: 51288
+  remote: "lax2.sc00.org:21080"
+  wg_pubkey: "PGTK1pzAYtSGoaPYfpEBCwm3S3gYAra3WkSMtshFfW8="
+  peer_v4: "172.20.233.131"
+  peer_v6: "fe80::1288/64"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-jrb0001
+  port: 50119
+  remote: "[2001:19f0:6001:5416:5400:2ff:fe19:f24f]:21080"
+  wg_pubkey: "GevdxN7huUifa31ypLx1wrPb02hg3Z0BdGcMUj9E6Cw="
+  peer_v4: "172.20.1.11"
+  peer_v6: "fe80::119"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42fmt-moecast
+  port: 50604
+  remote: "fmt1.dn42.cas7.moe:21080"
+  wg_pubkey: "1dJpFLegKHKButkXqbv1KLLMTmS6KtFkWBz6GRo2uxE="
+  peer_v4: "172.23.89.4"
+  peer_v6: "fe80::604:4"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-yuetau
+  port: 50925
+  remote: "lax.yuetau.net:21080"
+  wg_pubkey: "AwOK/XdO8IDbVqebcZG2HAgO6crA9agRUKLOczQNmGU="
+  peer_v4: "172.21.68.35"
+  peer_v6: "fe80::925/64"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-lss233
+  port: 51826
+  remote: "lax.n.lss233.com:53735"
+  wg_pubkey: "okfX4nra3vEz8TdXD08142TAi9YCYXOJAbF0DAx/dnw="
+  peer_v4: "172.20.143.50"
+  peer_v6: "fe80::1826"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+# - name: dn42lax-iedon
+#   port: 52189
+#   remote: "204.44.99.106:22204"
+#   wg_pubkey: "DIw4TKAQelurK10Sh1qE6IiDKTqL1yciI5ItwBgcHFA="
+#   peer_v4: "172.23.91.114/32"
+#   peer_v6: "fe80::2189:ef/64"
+#   local_v4: "172.20.229.122"
+#   local_v6: "fe80::122"
+#   wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-ykis
+  port: 52021
+  remote: "lax-node.ykis.moe:41080"
+  wg_pubkey: "lDPGJPvwoD5PdaDhL0NgNEb1evJKr+qHworHmrCzrEE="
+  peer_v4: "172.20.51.128"
+  peer_v6: "fe80::2021"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-hertz
+  port: 51353
+  remote: "45.63.56.229:21080"
+  wg_pubkey: "KhU1i+sGJKl4VNqQeuOraos8rEkfomV9w35K8lOmgns="
+  peer_v4: "172.20.29.65"
+  peer_v6: "fe80::1353"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-testnet
+  port: 53308
+  remote: "lax01.dn42.testnet.cyou:41080"
+  wg_pubkey: "fxzL3/spstTHn0cxaAlVZHIfa1VQP06FKjJL9P/Zzgg="
+  peer_v4: "172.23.99.65"
+  peer_v6: "fe80::3308:65"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-mayli
+  port: 51123
+  remote: "dn42.ccp.ovh:51080"
+  wg_pubkey: "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI="
+  peer_v4: "172.20.47.1"
+  peer_v6: "fe80::1123"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42lax-dgy
+  port: 20826
+  remote: "la.dn42.dgy.xyz:21080"
+  wg_pubkey: "IXjFALJFTr24HAhXKDsCnTRXmlc3kJHJiR4Nr44l5Uw="
+  peer_v4: "172.23.196.0"
+  peer_v6: "fe80::a0e:fb02"
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42-scooter
+  peer_v4: 172.23.109.171
+  peer_v6: fd38:cfa3:7091:3::1
+  port: 23856
+  remote: losangelas.scooterharris.com:51080
+  wg_pubkey: OmKX/Cu0jjSvounvPDgjKpwSlcIfhZjkZy/cNbYOKxY=
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+# - name: dn42-bling
+#   peer_v4: 172.20.21.103
+#   peer_v6: fe80::2333
+#   port: 20212
+#   remote: lax1.dn42.blw.moe:21080
+#   wg_pubkey: ZeKLPXvGl4M4n7f8l+fZWdTMys+bzulTJsXSr6Bwx04=
+#   local_v4: "172.20.229.122"
+#   local_v6: "fe80::122"
+#   wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+# - name: dn42-186526
+#   peer_v4: 172.23.2.93
+#   peer_v6: fe80::ade1
+#   port: 23764
+#   remote: us-losangls-01.edge.186526.xyz:21080
+#   wg_pubkey: lqZ+0q3K+Ju2RQUOPNmAxleRUdtnsxvBu1TAtUqUAHM=
+#   local_v4: "172.20.229.122"
+#   local_v6: "fe80::122"
+#   wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42-hujk
+  peer_v4: null
+  peer_v6: fe80::104:50:2030:18
+  port: 22717
+  remote: usw.vm.whojk.com:23005
+  wg_pubkey: L4+efr10ZM0J80nDeO5mHw25nq9LC5UBrYtP8T1I9n4=
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42-lantian
+  peer_v4: 172.22.76.185
+  peer_v6: fe80::2547
+  port: 22547
+  remote: hostdare.lantian.pub:21080
+  wg_pubkey: zyATu8FW392WFFNAz7ZH6+4TUutEYEooPPirwcoIiXo=
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42-edenlink
+  peer_v4: 172.23.131.226
+  peer_v6: fe80::1403
+  port: 23025
+  remote: us-lax.dn42.edenlink.cyou:21080
+  wg_pubkey: QXzmyQAa+oWA89b8Jcaolgy44j7c4TjImZqSSvZFD3g=
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42-shypre
+  peer_v4: 172.20.236.70
+  peer_v6: null
+  port: 22466
+  remote: 45.45.218.239:21080
+  wg_pubkey: yhnrCIC6tCkAHrxyLkH8T7fjYqsBtq1mrCVehCSkHlE=
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+- name: dn42-131
+  peer_v4: 172.21.109.34
+  peer_v6: fe80::1131
+  port: 21131
+  remote: phoenix.us.dn42.yuzu.im:20247
+  wg_pubkey: abDdEXgpaUNfEVPYLv1GTA+1TjkRbk5MNUi0fczYflw=
+  local_v4: "172.20.229.122"
+  local_v6: "fe80::122"
+  wg_privkey: "/etc/wireguard/privatekey_lax01"
+
+# end peers imported from lax01
+
+# begin peers imported from lax01
+- name: dn42las-yura
+  port: 52464
+  remote: "las.dneo.moeternet.com:21080"
+  wg_pubkey: "viR4CoaJTBHROo/Bgbb27hQ2ttr8AbByGY/yOz3D3GY="
+  peer_v4: "172.20.191.194"
+  peer_v6: "fe80::2464"
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+- name: dn42las-eastbnd
+  port: 52633
+  remote: "las.eastbnd.com:21080"
+  wg_pubkey: "XQpDtLZ0/OOQgIV829vPs1SYvxQk5TlUmrTAgI5S7xg="
+  peer_v4: "172.23.250.42"
+  peer_v6: "fe80::2633"
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+- name: dn42las-miaoton
+  port: 52688
+  remote: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          65353164386130616635343036353964333039616562643134323033386531303863366162653430
+          6162366561623639366638343332633834663831303664300a346331663463336634623239646534
+          37316630396236313463376665653262663439396238363261343432346438353938373039356266
+          3161636463343238610a643039313766656431363834356533316135326334353234356237373662
+          37646332636334643139663361633766363861636138373139373135343830343863
+  wg_pubkey: "vfrrbtKAO5438daHrTD0SSS8V6yk78S/XW7DeFrYLXA="
+  peer_v4: "172.23.6.6"
+  peer_v6: "fe80::2688/64"
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+- name: dn42las-anillc
+  port: 52526
+  remote: "las.awsl.ee:21080"
+  wg_pubkey: "NQfs6evQLemuJcdcvpO4ds1wXwUHTlzlQXWTJv+WCXY="
+  peer_v4: "172.22.167.97"
+  peer_v6: "fe80::2526/64"
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+- name: dn42las-hinata
+  port: 53724
+  remote: "las01.us.42.katohinata.eu.org:21080"
+  wg_pubkey: "W8IoIklrTsWKDJEJ35kh1aHPO9CIyyfNBF/MptzX4jw="
+  peer_v4: "172.23.215.228"
+  peer_v6: "fe80::3724"
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+- name: dn42las-lapisbl
+  port: 22032
+  remote: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38376164383134633730336436306438323533363433643836633366326636326366363462333738
+          3932363932663930326633313131386266623964336630370a313937343439386131303234346263
+          33633137613632633832373061383733366462623165346333623832333430323333383665376563
+          6239613731393536340a376135636236323864636663323161323633393066623165623832383765
+          65396638326161333661316363373864323532336639646264663534393561653663
+  wg_pubkey: "zlIHyhapes/IwZdCZNC5nFvYjx0z1sctLYIB8HITRiI="
+  peer_v4: "172.22.180.65"
+  peer_v6: "fe80::2032"
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+- name: dn42-cola
+  peer_v4: 172.22.96.65
+  peer_v6: fe80::3391
+  port: 23391
+  remote: las.kz.al:22152
+  wg_pubkey: uCrDwDvgzvirzq++JCpcMsqW6sfFBNsmEh+IWBXjHxQ=
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+- name: dn42-liki4
+  peer_v4: 172.21.77.33
+  peer_v6: fd80:96c2:e41e:3dcc::1
+  port: 20927
+  remote: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          34363037646138663835623761343336333432316137323835303864393036346662323361303436
+          3766346337653938613637646236353736366633353663610a306539623534313163393464333365
+          37396433353932613031663766636636393533386437626132376637663338323132333231363264
+          3436663865666637300a623765643063636239353963326634636632336333663632323761663966
+          65616161353831616138626535633630386265363731333539646265383631623666
+  wg_mtu: 1280
+  wg_pubkey: tBCKOOk4lK+fV3+6B6o1H06Lb5iWOyWqU0bR8dgrbgM=
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+- name: dn42-ciplc
+  peer_v4: 172.23.33.161
+  peer_v6: fe80::943e
+  port: 23021
+  remote: us1.dn42.ciplc.network:21080
+  wg_pubkey: KZXWUzmGStNRrO2vg1TbtwQKmp4gPdhOVIW4RegLVGI=
+  local_v4: "172.20.229.126"
+  local_v6: "fe80::1080:126"
+  wg_privkey: "/etc/wireguard/privatekey_las02"
+
+# end peers imported from lax01
