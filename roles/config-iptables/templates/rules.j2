@@ -4,12 +4,8 @@
 # - Tunnels to plain clients start with "cl"
 
 # Restrict traffic from our network to IGP & dummy interfaces
--A INPUT  -s {{ my_cidrs }} -i lo -j ACCEPT
--A OUTPUT -d {{ my_cidrs }} -o lo -j ACCEPT
--A INPUT  -s {{ my_cidrs }} -i cl+ -j ACCEPT
--A OUTPUT -d {{ my_cidrs }} -o cl+ -j ACCEPT
--A INPUT  -s {{ my_cidrs }} ! -i igp+ -j REJECT
--A OUTPUT -d {{ my_cidrs }} ! -o igp+ -j REJECT
+-A INPUT  -s {{ my_cidrs }} -i dn42+ -j REJECT
+-A OUTPUT -d {{ my_cidrs }} -o dn42+ -j REJECT
 
 # BGP sessions
 -A INPUT -p tcp --dport 179 -i dn42+ -j ACCEPT
