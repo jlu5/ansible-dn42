@@ -14,22 +14,6 @@ dns_records:
       ip4: 172.22.108.46
       ip6: fd86:bad:11b7:20::46
 
-    "ping-yyz":
-      type: ansible_host_alias
-      target: dn42-ca-yyz01.jlu5.com
-    "ping-sjc":
-      type: ansible_host_alias
-      target: dn42-us-sjc01.jlu5.com
-    "ping-lax":
-      type: ansible_host_alias
-      target: dn42-us-lax01.jlu5.com
-    "ping-ams":
-      type: ansible_host_alias
-      target: dn42-nl-ams02.jlu5.com
-    "ping-tyo":
-      type: ansible_host_alias
-      target: dn42-jp-tyo01.jlu5.com
-
     # DNS & web anycast
     "ns":
       type: host_record
@@ -53,7 +37,7 @@ dns_records:
     # Internal services
     "nightfall":
       type: A
-      target: 172.22.108.45
+      target: 172.22.108.52
     "mediactr":
       type: host_record
       ip4: 172.22.108.25
