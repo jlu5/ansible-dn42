@@ -71,7 +71,7 @@ function is_valid_network() {
 roa4 table dn42_roa;
 roa6 table dn42_roa_v6;
 
-{% if 'dn42router' in group_names %}
+{% if 'dn42routers' in group_names %}
 protocol static {
     roa4 { table dn42_roa; };
     include "/etc/bird/roa_dn42.conf";
