@@ -30,7 +30,7 @@
   become_user: "{{ automation_user }}"
   register: igpping_init_result
   changed_when: "igpping_init_result.stdout | length > 0"
-  when: _igpping_hosts.changed or _igpping_config.changed or _igpping_script.changed
+  when: _igpping_hosts.changed or _igpping_config.changed or _igpping_script.changed or (igpping_force|default(False))
 
 - name: Create cron job for igpping
   cron:
