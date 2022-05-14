@@ -41,13 +41,6 @@ wg_peers:
   peer_v4: null
   peer_v6: "fe80::3735:1"
 
-- name: dn42ykt-yuetau
-  port: 50925
-  remote: "ykf.yuetau.net:21080"
-  wg_pubkey: "BSBEILTeZrJlg8YcOkJhfE0AGpwWLCsgo9AOUgWfBVA="
-  peer_v4: "172.21.68.34"
-  peer_v6: "fe80::925/64"
-
 - name: dn42bhs-burble
   port: 22601
   remote: "dn42-ca-bhs2.burble.com:21080"
@@ -99,9 +92,6 @@ wg_peers:
   peer_v4: "172.22.118.135"
   peer_v6: "fe80::3770/64"
 
-- name: dn42nyc-kzhao
-  remove: true
-
 - name: dn42buf-imlongh
   port: 21888
   remote: "us1.dn42.ni.sb:21080"
@@ -129,15 +119,6 @@ wg_peers:
   wg_pubkey: "54e/I/Wmzfkv1jpcH6m78shv5mxd/qJ68Qg4l5pRD3s="
   peer_v4: "172.20.128.129"
   peer_v6: "fe80::26f1"
-
-- name: dn42chi-fixmix
-  remove: true
-- name: dn42nyc-fixmix
-  port: 51876
-  remote: "198.98.60.147:21080"
-  wg_pubkey: "EJvoVa5DrJl1rnryF4GThX1Rf86lMBtu2sg8Huru9Gs="
-  peer_v4: "172.22.66.53"
-  peer_v6: "fe80::1876"
 
 - name: dn42-sagnet
   peer_v4: 172.23.224.1
@@ -192,16 +173,6 @@ wg_peers:
   local_v6: "fd86:bad:11b7::1"
   wg_privkey: "/etc/wireguard/privatekey_us-chi01"
 
-- name: "dn42kan-sbernau"
-  port: 51297
-  remote: "57a2c73.online-server.cloud:51080"
-  wg_pubkey: "LIpv4meXlO+aGPbujTpevJwJJllPkgKOICQ09IEf6x8="
-  peer_v4: "172.20.234.65/32"
-  peer_v6: "fe80::12:97"
-  local_v4: "172.20.229.113"
-  local_v6: "fe80::113"
-  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
-
 - name: dn42buf-kioubit
   port: 53914
   remote: "us2.g-load.eu:21080"
@@ -242,21 +213,6 @@ wg_peers:
   local_v6: "fe80::113"
   wg_privkey: "/etc/wireguard/privatekey_us-chi01"
 
-- name: dn42-gwd
-  peer_v4: 172.20.238.193
-  peer_v6: fdde:a627:ee2::1
-  port: 23656
-  remote: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          32363834323865366336386337313866396230323336653430633939343830353131393233346366
-          6231393037313835646237636333623331336430356234310a623138396537303038306430373438
-          37366666303261383038346235393835326665636338623132663864356335613166643239656263
-          3864386635363936330a323532383434636566393134393362343130336139303963663832306130
-          37303836363433643463626464633437633534393432386531333738306662383934
-  wg_pubkey: vGKNleHtTCKa0sDvguhajzCdK1VuLpdeeWHPyYwypSU=
-  local_v4: "172.20.229.113"
-  local_v6: "fe80::113"
-  wg_privkey: "/etc/wireguard/privatekey_us-chi01"
 # end legacy configurations from us-chi01
 
 - name: igp-ca-yvrgw

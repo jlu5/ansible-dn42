@@ -17,6 +17,7 @@ apply_rules() {
 }
 
 if [[ "$1" == "start" ]]; then
+	apply_rules "-D"  # avoid creating duplicate rules
 	apply_rules "-A"
 	echo "Configured NAT rules"
 	cat > /etc/bird/local_acs_recursors.conf << "EOF"

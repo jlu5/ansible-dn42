@@ -16,7 +16,7 @@ $TTL 300
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-chi01.legacy-peerings.ca-yyz01.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-sea02.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-atl01.rtr.highdef.dn42.
-1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ca-yyz01.rtr.highdef.dn42.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ca-ymq01.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-sjc01.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR us-dal01.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR uk-lon01.rtr.highdef.dn42.
