@@ -49,17 +49,29 @@ dns_records:
       target: 172.22.108.2
 
     # legacy peering nodes
-    "de-nbg01.legacy-peerings.nl-ams02":
-      type: host_record
-      ip4: 172.20.229.117
-      ip6: "fd86:bad:11b7::117:1"
-    "ca-bhs01.legacy-peerings.ca-yyz01":
-      type: host_record
-      ip4: 172.20.229.115
-    "us-chi01.legacy-peerings.ca-yyz01":
+    "peers-nodeid-113.ca-ymq01":
       type: host_record
       ip4: 172.20.229.113
       ip6: "fd86:bad:11b7::1"
+    "peers-nodeid-115.ca-ymq01":
+      type: host_record
+      ip4: 172.20.229.115
+    "peers-nodeid-117.nl-ams02":
+      type: host_record
+      ip4: 172.20.229.117
+      ip6: "fd86:bad:11b7:117::1"
+    "peers-nodeid-122.us-sjc01":
+      type: host_record
+      ip4: 172.20.229.122
+      ip6: "fd86:bad:11b7:22::1"
+    "peers-nodeid-126.us-sjc01":
+      type: host_record
+      ip4: 172.20.229.126
+      ip6: "fd86:bad:11b7:26::1"
+    "peers-nodeid-127.us-sjc01":
+      type: host_record
+      ip4: 172.20.229.126
+      ip6: "fd86:bad:11b7:327::1"
 
   "jlu5.dn42":
     # CNAMEs to new domain
