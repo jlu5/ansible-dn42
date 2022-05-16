@@ -68,10 +68,9 @@ dns_records:
       type: host_record
       ip4: 172.20.229.126
       ip6: "fd86:bad:11b7:26::1"
-    "peers-nodeid-127.us-sjc01":
+    "peers-nodeid-127.hk01":
       type: host_record
-      ip4: 172.20.229.126
-      ip6: "fd86:bad:11b7:327::1"
+      ip4: 172.20.229.127
 
   "jlu5.dn42":
     # CNAMEs to new domain
