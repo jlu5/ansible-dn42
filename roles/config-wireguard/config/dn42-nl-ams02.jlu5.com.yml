@@ -114,7 +114,7 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::458
   port: 20458
-  remote: ru-a.huajitech.net:21080
+  remote: eu-west1.dn42.huajitech.net:21080
   wg_pubkey: dDM/rtklvpKHeIOKeLGjfYBTl+jEuhlr7dMIOdXbliU=
 
 - name: dn42-spf

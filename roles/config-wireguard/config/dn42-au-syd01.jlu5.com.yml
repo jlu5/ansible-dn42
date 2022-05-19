@@ -29,3 +29,10 @@ wg_peers:
   port: 23764
   remote: au-sydney-02.edge.186526.xyz:21080
   wg_pubkey: G7Omvtm569Rd4PtffJp2p1bM/eve87mFM6Hlu29vRBc=
+
+- name: dn42-huajitech
+  peer_v4: null
+  peer_v6: fe80::458
+  port: 20458
+  remote: au-east1.dn42.huajitech.net:21080
+  wg_pubkey: LeNGkX12n1Dcq8eNE1HhvpnFxrPlzgWlNncFlHdi5DY=
