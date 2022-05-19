@@ -411,3 +411,10 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_las02"
 
 # end peers imported from lax01
+
+- name: dn42-baiyu
+  peer_v4: 172.23.221.68
+  peer_v6: fe80::1901:8401:1:1
+  port: 21901
+  remote: node1.vultr.sjc.america.dn42.dalao-home.com:21080
+  wg_pubkey: Kt0c0mpmA4gtRUePxC0tkKrkAZZgrulTYgC5EL/s1Hs=

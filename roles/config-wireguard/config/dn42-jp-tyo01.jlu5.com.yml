@@ -210,3 +210,10 @@ wg_peers:
   port: 23868
   remote: kix1.dn42.cooo.cool:21080
   wg_pubkey: a8pgJK98XGV9gFWvJv4CirkRcbeHzbevQJnci45hhTc=
+
+- name: dn42-baiyu
+  peer_v4: 172.23.221.69
+  peer_v6: fe80::1901:3921:0:1
+  port: 21901
+  remote: node1.vultr.nrt.asia.dn42.dalao-home.com:21080
+  wg_pubkey: KYnacNZP+hZtLsbhUhKjrREFbxKIPKZqtO8P3kaptTs=

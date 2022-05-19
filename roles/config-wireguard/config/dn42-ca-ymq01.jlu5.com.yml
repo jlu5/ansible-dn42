@@ -248,3 +248,10 @@ wg_peers:
   port: 23340
   remote: dn42-us-nj01.exabyte.network:51845
   wg_pubkey: cRHAiWRwhjnK1cNIWrh5c06Lubv8lkF0w+z4NPjRQAM=
+
+- name: dn42-baiyu
+  peer_v4: 172.23.221.66
+  peer_v6: fe80::1901:8401:0:1
+  port: 21901
+  remote: node1.vultr.jfk.america.dn42.dalao-home.com:21080
+  wg_pubkey: aH4/aJ99U2IUoUe0sUswQ74txIaTf7yb7vc9OZsqpyg=
