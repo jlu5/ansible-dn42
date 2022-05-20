@@ -20,6 +20,7 @@ igp_neighbours:
     dn42-uk-lon01.jlu5.com: null
     dn42-us-atl01.jlu5.com: null
     dn42-us-dal01.jlu5.com: null
+    dn42-us-las01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-es-mad01.jlu5.com: !!set
@@ -80,6 +81,13 @@ igp_neighbours:
     chi03.jlu5.com: null
     dn42-ca-ymq01.jlu5.com: null
     dn42-us-atl01.jlu5.com: null
+    dn42-us-las01.jlu5.com: null
+    dn42-us-sea02.jlu5.com: null
+    dn42-us-sjc01.jlu5.com: null
+    lax02.jlu5.com: null
+  dn42-us-las01.jlu5.com: !!set
+    dn42-ca-ymq01.jlu5.com: null
+    dn42-us-dal01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
     lax02.jlu5.com: null
@@ -91,6 +99,7 @@ igp_neighbours:
     dn42-jp-tyo01.jlu5.com: null
     dn42-us-atl01.jlu5.com: null
     dn42-us-dal01.jlu5.com: null
+    dn42-us-las01.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-us-sjc01.jlu5.com: !!set
     chi03.jlu5.com: null
@@ -100,10 +109,12 @@ igp_neighbours:
     dn42-jp-tyo01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
     dn42-us-dal01.jlu5.com: null
+    dn42-us-las01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     lax02.jlu5.com: null
   lax02.jlu5.com: !!set
     dn42-us-dal01.jlu5.com: null
+    dn42-us-las01.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
 igp_wg_ports:
   chi03.jlu5.com:
@@ -258,6 +269,7 @@ igp_wg_ports:
     dn42-ca-ymq01.jlu5.com: 30078
     dn42-us-atl01.jlu5.com: 30067
     dn42-us-fmt01.jlu5.com: 30070
+    dn42-us-las01.jlu5.com: 30101
     dn42-us-lax01.jlu5.com: 30071
     dn42-us-sea02.jlu5.com: 30068
     dn42-us-sea03.jlu5.com: 30083
@@ -275,6 +287,7 @@ igp_wg_ports:
     chi03.jlu5.com: 30016
     dn42-ca-ymq01.jlu5.com: 30079
     dn42-hk01.jlu5.com: 30093
+    dn42-us-dal01.jlu5.com: 30101
     dn42-us-fmt01.jlu5.com: 30053
     dn42-us-lax01.jlu5.com: 30018
     dn42-us-sea02.jlu5.com: 30017
@@ -335,4 +348,4 @@ igp_wg_ports:
     dn42-us-las01.jlu5.com: 30077
     dn42-us-lax01.jlu5.com: 30076
     dn42-us-sjc01.jlu5.com: 30075
-next_port: 30101
+next_port: 30102

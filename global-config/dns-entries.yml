@@ -64,10 +64,6 @@ dns_records:
       type: host_record
       ip4: 172.20.229.122
       ip6: "fd86:bad:11b7:22::1"
-    "peers-nodeid-126.us-sjc01":
-      type: host_record
-      ip4: 172.20.229.126
-      ip6: "fd86:bad:11b7:26::1"
     "peers-nodeid-127.hk01":
       type: host_record
       ip4: 172.20.229.127
