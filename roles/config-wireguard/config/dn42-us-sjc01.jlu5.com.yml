@@ -260,36 +260,6 @@ wg_peers:
 
 # end peers imported from lax01
 
-# begin peers imported from las02
-- name: dn42las-yura
-  remove: true
-
-- name: dn42las-eastbnd
-  remove: true
-
-- name: dn42las-miaoton
-  remove: true
-
-- name: dn42las-anillc
-  remove: true
-
-- name: dn42las-hinata
-  remove: true
-
-- name: dn42las-lapisbl
-  remove: true
-
-- name: dn42-cola
-  remove: true
-
-- name: dn42-liki4
-  remove: true
-
-- name: dn42-ciplc
-  remove: true
-
-# end peers imported from las02
-
 - name: dn42-baiyu
   peer_v4: 172.23.221.68
   peer_v6: fe80::1901:8401:1:1

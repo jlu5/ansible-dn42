@@ -10,6 +10,7 @@ igp_neighbours:
     dn42-hk01.jlu5.com: null
     dn42-it-mil01.jlu5.com: null
     dn42-jp-tyo01.jlu5.com: null
+    dn42-us-las01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-ca-ymq01.jlu5.com: !!set
@@ -39,6 +40,7 @@ igp_neighbours:
     dn42-it-mil01.jlu5.com: null
     dn42-jp-tyo01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
+    dn42-us-las01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-it-mil01.jlu5.com: !!set
@@ -52,6 +54,7 @@ igp_neighbours:
     dn42-hk01.jlu5.com: null
     dn42-it-mil01.jlu5.com: null
     dn42-nl-ams02.jlu5.com: null
+    dn42-us-las01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
   dn42-nl-ams02.jlu5.com: !!set
@@ -86,7 +89,10 @@ igp_neighbours:
     dn42-us-sjc01.jlu5.com: null
     lax02.jlu5.com: null
   dn42-us-las01.jlu5.com: !!set
+    dn42-au-syd01.jlu5.com: null
     dn42-ca-ymq01.jlu5.com: null
+    dn42-hk01.jlu5.com: null
+    dn42-jp-tyo01.jlu5.com: null
     dn42-us-dal01.jlu5.com: null
     dn42-us-sea02.jlu5.com: null
     dn42-us-sjc01.jlu5.com: null
@@ -137,6 +143,7 @@ igp_wg_ports:
     dn42-jp-tyo01.jlu5.com: 30038
     dn42-sg01.jlu5.com: 30044
     dn42-us-fmt01.jlu5.com: 30052
+    dn42-us-las01.jlu5.com: 30103
     dn42-us-lax01.jlu5.com: 30037
     dn42-us-sea02.jlu5.com: 30036
     dn42-us-sjc01.jlu5.com: 30066
@@ -214,6 +221,7 @@ igp_wg_ports:
     dn42-nl-ams02.jlu5.com: 30034
     dn42-sg01.jlu5.com: 30041
     dn42-us-fmt01.jlu5.com: 30051
+    dn42-us-las01.jlu5.com: 30102
     dn42-us-lax01.jlu5.com: 30033
     dn42-us-sea02.jlu5.com: 30032
     dn42-us-sea03.jlu5.com: 30086
@@ -285,8 +293,10 @@ igp_wg_ports:
     dn42-us-sea02.jlu5.com: 30049
   dn42-us-las01.jlu5.com:
     chi03.jlu5.com: 30016
+    dn42-au-syd01.jlu5.com: 30103
     dn42-ca-ymq01.jlu5.com: 30079
     dn42-hk01.jlu5.com: 30093
+    dn42-jp-tyo01.jlu5.com: 30102
     dn42-us-dal01.jlu5.com: 30101
     dn42-us-fmt01.jlu5.com: 30053
     dn42-us-lax01.jlu5.com: 30018
@@ -348,4 +358,4 @@ igp_wg_ports:
     dn42-us-las01.jlu5.com: 30077
     dn42-us-lax01.jlu5.com: 30076
     dn42-us-sjc01.jlu5.com: 30075
-next_port: 30102
+next_port: 30104
