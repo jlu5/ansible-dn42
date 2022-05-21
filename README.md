@@ -15,8 +15,9 @@ Here I use Ansible to configure the following components on Debian 11 hosts:
 - Wireguard ([roles/config-wireguard/](roles/config-wireguard/)) via ifupdown
 - OpenVPN 2.x
 - BIRD 2 ([roles/config-bird2/](roles/config-bird2/))
-- [bird-lg-go](https://github.com/xddxdd/bird-lg-go) (looking glass)
-- [dn42 Peerfinder](https://dn42.us/peers)
+- [bird-lg-go](https://github.com/xddxdd/bird-lg-go) looking glass
+- nginx + Let's Encrypt (certbot): frontend reverse proxy to bird-lg, Netdata, and a custom splash site
+- [dn42 Peerfinder](https://dn42.us/peers) (cron job)
 - Anycast DNS via PowerDNS:
   - Authoritative server for highdef.dn42 and PTR zones
   - Public recursive resolver (dn42, clearnet, and interconnected networks) @ **dns.highdef.dn42** / 172.23.0.53 / fd42:d42:d42:53::1
