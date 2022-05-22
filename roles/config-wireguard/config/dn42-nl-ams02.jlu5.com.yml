@@ -458,3 +458,10 @@ wg_peers:
   port: 21901
   remote: node1.vultr.fra.europe.dn42.dalao-home.com:21080
   wg_pubkey: Fq441bovZ0RAmgGPn+bbd2xLht9Mbsgw5YCa5bFgsm0=
+
+- name: dn42-techanit
+  peer_v4: null
+  peer_v6: fe80::2206
+  port: 22206
+  remote: de1.dn42.est-it.de:13237
+  wg_pubkey: QqcsQ6gRaK0ZxRskCxWoNeV2vd53/9IW/XfwjMMSjk8=
