@@ -188,3 +188,10 @@ wg_peers:
   port: 22923
   remote: p2p-node.de:51080
   wg_pubkey: 4gf9k6UUBO55geG7377qiMt/zHVuy77X60n/vNQMtj4=
+
+- name: dn42-librehouse
+  peer_v4: 10.127.8.3
+  peer_v6: fd46:e3dc:db4a:1::3
+  port: 21037
+  remote: setsuna.yukipedia.cf:51080
+  wg_pubkey: jQqFNQ/nxRSeJ/KPcRDGxswxAs59MuCc0aWX3OZ+7HA=
