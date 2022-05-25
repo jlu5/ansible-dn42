@@ -69,7 +69,7 @@ function get_region_tag(int dn42_region_tag) {
     } else if (dn42_region_tag = 41) then {
         return 3;  # Europe
     } else if (dn42_region_tag ~ [51..53]) then {
-        return 4;  # Asia E/SE + Oceania
+        return 4;  # Asia Pacific
     }
     return 0;
 }
@@ -192,6 +192,11 @@ function ebgp_export_filter() {
     # Informational communities: only node ID, as origin region uses standard dn42 community
     if (bgp_path.len = 0) then {
         bgp_large_community.add((OWNAS, LC_ORIGIN_NODEID, NODEID));
+    }
+    if source = RTS_STATIC then {
+{% for region_tag in dn42_regions[1:] %}
+        bgp_community.add((64511, {{ region_tag }}));
+{% endfor %}
     }
 };
 
