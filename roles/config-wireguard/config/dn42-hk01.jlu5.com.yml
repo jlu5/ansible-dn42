@@ -1,12 +1,6 @@
 wg_peers:
 - name: dn42sgp-tech9
-  port: 51588
-  remote: "sg-sin01.dn42.tech9.io:59532"
-  wg_pubkey: "4qLIJ9zpc/Xgvy+uo90rGso75cSrT2F5tBEv+6aqDkY="
-  peer_v4: "172.20.16.142"
-  peer_v6: "fe80::1588"
-  local_v4: 172.20.229.127
-  local_v6: "fe80::100"
+  remove: true
 
 - name: dn42hkg-kioubit
   port: 23914  # not used
