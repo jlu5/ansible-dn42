@@ -5,8 +5,8 @@ This page describes the Routing Policy for AS4242421080.
 This is a rough overview, when in doubt you can check my actual filter code: [`custom_filters.conf.j2`](roles/config-bird2/config/custom_filters.conf.j2)
 
 1. Prefer routes originating from the same AS4242421080 meta region, sourced by the [dn42 BGP community `(64511, 41..53)`](https://dn42.dev/howto/Bird-communities). This is essentially cold potato routing:
-  - Routes with no region community or the same origin region as a PoP are given `bgp_local_pref = 1500 - 12*(bgp_path.len) + 50`.
-  - Other routes are left with a local preference of `bgp_local_pref = 1500 - 12*(bgp_path.len)`
+  - Routes with no region community or the same origin region as a PoP are given `bgp_local_pref = 1500 - 100*(bgp_path.len) + 50`.
+  - Other routes are left with a local preference of `bgp_local_pref = 1500 - 100*(bgp_path.len)`
 2. When bgp_local_pref ties, prefer routes with shortest AS path.
 3. Prefer routes with the lowest BGP MED.
 4. Prefer routes received via eBGP over iBGP.
