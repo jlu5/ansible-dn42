@@ -465,3 +465,10 @@ wg_peers:
   port: 22206
   remote: de1.dn42.est-it.de:13237
   wg_pubkey: QqcsQ6gRaK0ZxRskCxWoNeV2vd53/9IW/XfwjMMSjk8=
+
+- name: dn42-arisum
+  peer_v4: 172.21.86.97
+  peer_v6: fe80::c0fe
+  port: 21557
+  remote: de-nbg01.dn42.h-k.sk:51080
+  wg_pubkey: sydPdyJNOxVlk+b5fGMXaDxTcGY/+lmlX4usMPIM9nk=
