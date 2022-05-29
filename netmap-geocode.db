@@ -37,6 +37,9 @@ Madrid, ES: !!python/tuple
 Milan, IT: !!python/tuple
 - 45.4642035
 - 9.189982
+Montreal, QC, CA: !!python/tuple
+- 45.5016889
+- -73.567256
 New York City, NY, US: !!python/tuple
 - 40.7127753
 - -74.0059728

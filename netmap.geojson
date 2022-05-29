@@ -12,7 +12,7 @@
             },
             "properties": {
                 "title": "au-syd01",
-                "description": "Sydney, AU<br>\nPeers:\nhk01, it-mil01, jp-tyo01, us-sea02, us-sjc01\n"
+                "description": "Sydney, AU<br>\nPeers:\nhk01, it-mil01, jp-tyo01, us-las01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -20,13 +20,13 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -79.383184,
-                    43.653226
+                    -73.567256,
+                    45.501689
                 ]
             },
             "properties": {
-                "title": "ca-yyz01",
-                "description": "Toronto, ON, CA<br>\nPeers:\nes-mad01, fr-par01, int-chi03, nl-ams02, uk-lon01, us-atl01, us-dal01, us-sea02, us-sjc01\n"
+                "title": "ca-ymq01",
+                "description": "Montreal, QC, CA<br>\nPeers:\nes-mad01, fr-par01, int-chi03, nl-ams02, uk-lon01, us-atl01, us-dal01, us-las01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -40,7 +40,7 @@
             },
             "properties": {
                 "title": "es-mad01",
-                "description": "Madrid, ES<br>\nPeers:\nca-yyz01, fr-par01, it-mil01, nl-ams02, uk-lon01\n"
+                "description": "Madrid, ES<br>\nPeers:\nca-ymq01, fr-par01, it-mil01, nl-ams02, uk-lon01\n"
             }
         },
         {
@@ -54,7 +54,7 @@
             },
             "properties": {
                 "title": "fr-par01",
-                "description": "Paris, FR<br>\nPeers:\nca-yyz01, es-mad01, nl-ams02, uk-lon01\n"
+                "description": "Paris, FR<br>\nPeers:\nca-ymq01, es-mad01, nl-ams02, uk-lon01\n"
             }
         },
         {
@@ -68,7 +68,7 @@
             },
             "properties": {
                 "title": "hk01",
-                "description": "Hong Kong, HK<br>\nPeers:\nau-syd01, it-mil01, jp-tyo01, nl-ams02, us-sea02, us-sjc01\n"
+                "description": "Hong Kong, HK<br>\nPeers:\nau-syd01, it-mil01, jp-tyo01, nl-ams02, us-las01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -96,7 +96,7 @@
             },
             "properties": {
                 "title": "jp-tyo01",
-                "description": "Tokyo, JP<br>\nPeers:\nau-syd01, hk01, it-mil01, nl-ams02, us-sea02, us-sjc01\n"
+                "description": "Tokyo, JP<br>\nPeers:\nau-syd01, hk01, it-mil01, nl-ams02, us-las01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -110,7 +110,7 @@
             },
             "properties": {
                 "title": "nl-ams02",
-                "description": "Amsterdam, NL<br>\nPeers:\nca-yyz01, es-mad01, fr-par01, hk01, it-mil01, jp-tyo01, uk-lon01, us-atl01, us-sjc01\n"
+                "description": "Amsterdam, NL<br>\nPeers:\nca-ymq01, es-mad01, fr-par01, hk01, it-mil01, jp-tyo01, uk-lon01, us-atl01, us-sjc01\n"
             }
         },
         {
@@ -124,7 +124,7 @@
             },
             "properties": {
                 "title": "uk-lon01",
-                "description": "London, UK<br>\nPeers:\nca-yyz01, es-mad01, fr-par01, nl-ams02, us-atl01\n"
+                "description": "London, UK<br>\nPeers:\nca-ymq01, es-mad01, fr-par01, nl-ams02, us-atl01\n"
             }
         },
         {
@@ -138,7 +138,7 @@
             },
             "properties": {
                 "title": "us-atl01",
-                "description": "Atlanta, GA, US<br>\nPeers:\nca-yyz01, int-chi03, nl-ams02, uk-lon01, us-dal01, us-sea02\n"
+                "description": "Atlanta, GA, US<br>\nPeers:\nca-ymq01, int-chi03, nl-ams02, uk-lon01, us-dal01, us-sea02\n"
             }
         },
         {
@@ -152,7 +152,21 @@
             },
             "properties": {
                 "title": "us-dal01",
-                "description": "Dallas, TX, US<br>\nPeers:\nca-yyz01, int-chi03, int-lax02, us-atl01, us-sea02, us-sjc01\n"
+                "description": "Dallas, TX, US<br>\nPeers:\nca-ymq01, int-chi03, int-lax02, us-atl01, us-las01, us-sea02, us-sjc01\n"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.13983,
+                    36.169941
+                ]
+            },
+            "properties": {
+                "title": "us-las01",
+                "description": "Las Vegas, NV, US<br>\nPeers:\nau-syd01, ca-ymq01, hk01, int-lax02, jp-tyo01, us-dal01, us-sea02, us-sjc01\n"
             }
         },
         {
@@ -166,7 +180,7 @@
             },
             "properties": {
                 "title": "us-sea02",
-                "description": "Seattle, WA, US<br>\nPeers:\nau-syd01, ca-yyz01, hk01, int-chi03, jp-tyo01, us-atl01, us-dal01, us-sjc01\n"
+                "description": "Seattle, WA, US<br>\nPeers:\nau-syd01, ca-ymq01, hk01, int-chi03, jp-tyo01, us-atl01, us-dal01, us-las01, us-sjc01\n"
             }
         },
         {
@@ -180,7 +194,7 @@
             },
             "properties": {
                 "title": "us-sjc01",
-                "description": "San Jose, CA, US<br>\nPeers:\nau-syd01, ca-yyz01, hk01, int-chi03, int-lax02, jp-tyo01, nl-ams02, us-dal01, us-sea02\n"
+                "description": "San Jose, CA, US<br>\nPeers:\nau-syd01, ca-ymq01, hk01, int-chi03, int-lax02, jp-tyo01, nl-ams02, us-dal01, us-las01, us-sea02\n"
             }
         },
         {
@@ -209,8 +223,8 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -79.383184,
-                        43.653226
+                        -73.567256,
+                        45.501689
                     ],
                     [
                         -3.70379,
@@ -219,7 +233,7 @@
                 ]
             },
             "properties": {
-                "title": "ca-yyz01 <-> es-mad01",
+                "title": "ca-ymq01 <-> es-mad01",
                 "description": ""
             }
         },
@@ -229,8 +243,8 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -79.383184,
-                        43.653226
+                        -73.567256,
+                        45.501689
                     ],
                     [
                         2.352222,
@@ -239,7 +253,7 @@
                 ]
             },
             "properties": {
-                "title": "ca-yyz01 <-> fr-par01",
+                "title": "ca-ymq01 <-> fr-par01",
                 "description": ""
             }
         },
@@ -249,8 +263,8 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -79.383184,
-                        43.653226
+                        -73.567256,
+                        45.501689
                     ],
                     [
                         4.904139,
@@ -259,7 +273,7 @@
                 ]
             },
             "properties": {
-                "title": "ca-yyz01 <-> nl-ams02",
+                "title": "ca-ymq01 <-> nl-ams02",
                 "description": ""
             }
         },
@@ -269,8 +283,8 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -79.383184,
-                        43.653226
+                        -73.567256,
+                        45.501689
                     ],
                     [
                         -0.127758,
@@ -279,7 +293,7 @@
                 ]
             },
             "properties": {
-                "title": "ca-yyz01 <-> uk-lon01",
+                "title": "ca-ymq01 <-> uk-lon01",
                 "description": ""
             }
         },
@@ -289,8 +303,8 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -79.383184,
-                        43.653226
+                        -73.567256,
+                        45.501689
                     ],
                     [
                         -96.796988,
@@ -299,7 +313,7 @@
                 ]
             },
             "properties": {
-                "title": "ca-yyz01 <-> us-dal01",
+                "title": "ca-ymq01 <-> us-dal01",
                 "description": ""
             }
         },
@@ -309,8 +323,28 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        -79.383184,
-                        43.653226
+                        -73.567256,
+                        45.501689
+                    ],
+                    [
+                        -115.13983,
+                        36.169941
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "ca-ymq01 <-> us-las01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -73.567256,
+                        45.501689
                     ],
                     [
                         -121.886329,
@@ -319,7 +353,7 @@
                 ]
             },
             "properties": {
-                "title": "ca-yyz01 <-> us-sjc01",
+                "title": "ca-ymq01 <-> us-sjc01",
                 "description": ""
             }
         },
@@ -633,13 +667,13 @@
                         33.748995
                     ],
                     [
-                        -79.383184,
-                        43.653226
+                        -73.567256,
+                        45.501689
                     ]
                 ]
             },
             "properties": {
-                "title": "us-atl01 <-> ca-yyz01",
+                "title": "us-atl01 <-> ca-ymq01",
                 "description": ""
             }
         },
@@ -709,6 +743,86 @@
                 "type": "LineString",
                 "coordinates": [
                     [
+                        -96.796988,
+                        32.776664
+                    ],
+                    [
+                        -115.13983,
+                        36.169941
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-dal01 <-> us-las01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.13983,
+                        36.169941
+                    ],
+                    [
+                        151.209295,
+                        -33.86882
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-las01 <-> au-syd01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.13983,
+                        36.169941
+                    ],
+                    [
+                        114.169361,
+                        22.319304
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-las01 <-> hk01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -115.13983,
+                        36.169941
+                    ],
+                    [
+                        139.650311,
+                        35.676192
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-las01 <-> jp-tyo01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
                         -122.332071,
                         47.606209
                     ],
@@ -733,13 +847,13 @@
                         47.606209
                     ],
                     [
-                        -79.383184,
-                        43.653226
+                        -73.567256,
+                        45.501689
                     ]
                 ]
             },
             "properties": {
-                "title": "us-sea02 <-> ca-yyz01",
+                "title": "us-sea02 <-> ca-ymq01",
                 "description": ""
             }
         },
@@ -820,6 +934,26 @@
             },
             "properties": {
                 "title": "us-sea02 <-> us-dal01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -122.332071,
+                        47.606209
+                    ],
+                    [
+                        -115.13983,
+                        36.169941
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sea02 <-> us-las01",
                 "description": ""
             }
         },
@@ -940,6 +1074,26 @@
             },
             "properties": {
                 "title": "us-sjc01 <-> us-dal01",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -121.886329,
+                        37.338208
+                    ],
+                    [
+                        -115.13983,
+                        36.169941
+                    ]
+                ]
+            },
+            "properties": {
+                "title": "us-sjc01 <-> us-las01",
                 "description": ""
             }
         }
