@@ -4,8 +4,7 @@
   roles:
   # These are optional roles only needed for nodes open to peering
   # This should run after reconfigure.yml as the dn42 dummy interfaces need to be created first.
-    - name: setup-bird-lg-go
-      when: not v6_only|default(False)
+    - setup-bird-lg-go
     - setup-peerfinder
     - setup-wg-autoreset
 

@@ -4,7 +4,7 @@
 
 Most settings in [`hosts.yml`](hosts.yml) should be self documenting. Here are some of the lesser used variables:
 
-- `v6_only`: specifies that the node is IPv6 only; this disables certain components such as bird-lg as they require access to GitHub (default `false`).
+- `v6_only`: specifies that the node is IPv6 only; this disables certain components that require GitHub access for installation (default `false`).
 - `serve_clearnet_dns`: serve GeoDNS addresses for clearnet (PowerDNS auth server), as defined in [`geodns.yml`](geodns.yml) (default `false`).
 - `auto_iptables`: configures whether `iptables` rules should be managed by the playbooks in this repo (default `true`).
 - `auto_tunnels`: for private nodes, determines whether WireGuard tunnels should be automatically managed by playbooks in this repo (default `false`).
