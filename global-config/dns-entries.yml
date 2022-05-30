@@ -69,6 +69,16 @@ dns_records:
       type: host_record
       ip4: 172.20.229.127
 
+    # IXP routers
+    "fr-nantesixp1.ix":
+      type: host_record
+      ip4: 172.22.108.40
+      ip6: fd86:bad:11b7:1140::1
+    "fr-nantesixp2.ix":
+      type: host_record
+      ip4: 172.22.108.41
+      ip6: fd86:bad:11b7:1140::2
+
   "jlu5.dn42":
     # CNAMEs to new domain
     "lg":
