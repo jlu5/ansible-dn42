@@ -75,28 +75,6 @@
       mode: 0644
     notify: Restart Bird
 
-- name: Install dn42 ROA sync script
-  block:
-  - name: Upload dn42 ROA sync script
-    copy:
-      src: dn42-update-roas.sh
-      dest: /usr/local/bin/dn42-update-roas.sh
-      owner: root
-      group: adm
-      mode: '0755'
-  - name: Run dn42 ROA sync script
-    command: "/usr/local/bin/dn42-update-roas.sh"
-    become: yes
-    become_user: bird
-    ignore_errors: "{{ ansible_check_mode }}"
-  - name: Create cron job for dn42 ROA sync script
-    cron:
-      name: "Pull dn42 ROA tables"
-      minute: "5"
-      job: "/usr/local/bin/dn42-update-roas.sh"
-      user: bird
-  when: "'private' not in group_names"
-
 - name: Create scripts dir for dn42
   file:
     path: "{{ automation_root_dir }}"
@@ -111,3 +89,25 @@
     system: true
     password: "!"
     home: "{{ automation_user_home }}"
+
+- name: Install dn42 ROA sync script
+  block:
+  - name: Upload dn42 ROA sync script
+    copy:
+      src: dn42-update-roas.sh
+      dest: "{{ automation_root_dir }}/dn42-update-roas.sh"
+      owner: root
+      group: adm
+      mode: '0755'
+  - name: Run dn42 ROA sync script
+    command: "{{ automation_root_dir }}/dn42-update-roas.sh"
+    become: yes
+    become_user: bird
+    ignore_errors: "{{ ansible_check_mode }}"
+  - name: Create cron job for dn42 ROA sync script
+    cron:
+      name: "Pull dn42 ROA tables"
+      minute: "5"
+      job: "{{ automation_root_dir }}/dn42-update-roas.sh"
+      user: bird
+  when: "'dn42routers' in group_names or import_roa|default(False)"
