@@ -4,6 +4,7 @@
 
 Most settings in [`hosts.yml`](hosts.yml) should be self documenting. Here are some of the lesser used variables:
 
+- `export_ownnets`: determines whether static routes for aggregated dn42 prefixes should be configured (default `true`)
 - `v6_only`: specifies that the node is IPv6 only; this disables certain components that require GitHub access for installation (default `false`).
 - `serve_clearnet_dns`: serve GeoDNS addresses for clearnet (PowerDNS auth server), as defined in [`geodns.yml`](geodns.yml) (default `false`).
 - `auto_iptables`: configures whether `iptables` rules should be managed by the playbooks in this repo (default `true`).

@@ -9,9 +9,11 @@ define DN42_REGION = {{ dn42_regions[0] }};
 hostname "{{ inventory_hostname }}";
 
 protocol static {
+{% if export_ownnets|default(True) %}
 {% for prefix in ownnets4 %}
     route {{ prefix }} reject;
 {% endfor %}
+{% endif %}
 {% for route in static_routes4|default([]) %}
     route {{ route }};
 {% endfor %}
@@ -23,9 +25,11 @@ protocol static {
 }
 
 protocol static {
+{% if export_ownnets|default(True) %}
 {% for prefix in ownnets6 %}
     route {{ prefix }} reject;
 {% endfor %}
+{% endif %}
 {% for route in static_routes6|default([]) %}
     route {{ route }};
 {% endfor %}
