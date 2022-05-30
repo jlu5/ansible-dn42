@@ -30,24 +30,19 @@ define LC_ORIGIN_DEPREF_CROSS_REGION = 102;
 define LC_ORIGIN_NODEID = 103;
 define LC_ORIGIN_REGION_TAG = 104;
 
-# Special case for anycast services we're hosting
-# Route these through iBGP instead of IGP since they should coexist with other instances
-define ANYCAST_IPS_4 = [172.23.0.53/32];
-define ANYCAST_IPS_6 = [fd42:d42:d42:53::/64];
+# Subnets to route through iBGP
+# This includes anycast services as well as any single-homed downstreams with agreement
+define IBGP_NETS_4 = [172.23.0.53/32, 172.22.108.40/29+];
+define IBGP_NETS_6 = [fd42:d42:d42:53::/64, fd86:bad:11b7:1100::/56+];
 
-function is_anycast_network() {
-    if net.type = NET_IP4 && net ~ ANYCAST_IPS_4 then {
+function is_ibgp_network() {
+    if net.type = NET_IP4 && net ~ IBGP_NETS_4 then {
         return true;
-    } else if net.type = NET_IP6 && net ~ ANYCAST_IPS_6 then {
+    } else if net.type = NET_IP6 && net ~ IBGP_NETS_6 then {
         return true;
     } else {
         return false;
     }
-}
-
-# For single-homed downstreams
-function is_neighbour_network() {
-    return false;
 }
 
 # Subtract x from bgp_local_pref, while checking for underflow
@@ -204,11 +199,8 @@ function ibgp_import_filter()
     int my_region_tag;
 {
     # Only process routes originating from BGP unless they're anycast networks
-    if (source != RTS_BGP && !is_anycast_network() && !is_neighbour_network()) then {
-        reject;
-    }
-    if (!is_valid_network() && !is_valid_network_v6()) then {
-        # Not routable for dn42
+    if (source != RTS_BGP && !is_ibgp_network()) then {
+        print "ibgp_import_filter: rejecting unknown prefix", net;
         reject;
     }
 
@@ -227,12 +219,12 @@ function ibgp_import_filter()
 }
 
 function ibgp_export_filter() {
-    if (source != RTS_BGP && !is_anycast_network() && !is_neighbour_network()) then {
+    if (source != RTS_BGP && !is_ibgp_network()) then {
         reject;
     }
     # Don't export device routes for dn42 anycast networks. These will be filled in via a static route config
     # triggered by service start/stop
-    if (is_anycast_network() && source = RTS_DEVICE) then {
+    if (is_ibgp_network() && source = RTS_DEVICE) then {
         reject;
     }
     accept;
