@@ -66,7 +66,7 @@
 -A FORWARD -i igp+ -o igp+ -j ACCEPT
 -A FORWARD -i igp+ -o dn42+ -j ACCEPT
 -A FORWARD -i dn42+ -o igp+ -j ACCEPT
--A FORWARD -i dn42+ -m limit --limit 5/min -j LOG --log-prefix "[dn42] iptables denied: POLICY VIOLATION" --log-level 4
+-A FORWARD -i dn42+ -m limit --limit 5/min -j LOG --log-prefix "[dn42] POLICY VIOLATION" --log-level 4
 -A FORWARD -i dn42+ -j REJECT
 
 # Clients: only allow outgoing connections to the rest of dn42
