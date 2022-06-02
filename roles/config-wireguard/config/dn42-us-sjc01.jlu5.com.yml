@@ -245,7 +245,6 @@ wg_peers:
   remote: 45.45.218.239:21080
   wg_pubkey: yhnrCIC6tCkAHrxyLkH8T7fjYqsBtq1mrCVehCSkHlE=
   local_v4: "172.20.229.122"
-  local_v6: "fe80::122"
   wg_privkey: "/etc/wireguard/privatekey_lax01"
 
 - name: dn42-131

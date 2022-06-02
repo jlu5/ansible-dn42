@@ -27,15 +27,17 @@ wg_peers:
   peer_v6: null
 
 - name: cl-roamxx
-  local_v4: 172.22.108.56/29
+  local_v4: 172.22.108.25/29
+  # SLAAC on wireguard when :'(
+  local_v6: fd86:bad:11b7:9998::1/64
   port: 19998
   multi:
     # cl-mobi
     - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
-      wg_allowedips: "172.22.108.57/32"
+      wg_allowedips: "172.22.108.26/32,fd86:bad:11b7:9998::2/128"
     # cl-silverth
     - wg_pubkey: "zy6EF1SUHRRB5U0UOad7uvz+H8Scb5IphutbHVtGaA8="
-      wg_allowedips: "172.22.108.58/32"
+      wg_allowedips: "172.22.108.27/32,fd86:bad:11b7:9998::3/128"
   peer_v6: null
 
 - name: igp-ca-yvrgw

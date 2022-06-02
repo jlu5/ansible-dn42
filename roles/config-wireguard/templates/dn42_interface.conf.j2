@@ -31,5 +31,7 @@ iface {{ ifname }} inet static
     pre-up wg set {{ ifname }} private-key {{ peer_info.get('wg_privkey', "/etc/wireguard/privatekey") }}
 {% if peer_info.get('peer_v6') %}
     post-up ip -6 addr add {{ local_v6 }} peer {{ peer_info['peer_v6'] }} dev {{ ifname }}
+{% elif peer_info.get('local_v6') %}
+    post-up ip -6 addr add {{ local_v6 }} dev {{ ifname }}
 {% endif %}
     post-down ip link del {{ ifname }}
