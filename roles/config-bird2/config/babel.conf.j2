@@ -8,6 +8,7 @@ protocol direct {
 
 {% if babel_links is defined or inventory_hostname in igp_neighbours %}
 protocol babel int_babel {
+    randomize router id on;
     ipv4 {
         import where source != RTS_BGP && is_self_net();
         export where source != RTS_BGP && is_self_net();
