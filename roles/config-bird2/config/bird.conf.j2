@@ -134,6 +134,8 @@ template bgp dnpeers {
     # When eBGP routes tie in latency, prefer older routes instead of comparing router ID
     prefer older on;
 
+    enable extended messages;
+
     enforce first as on;
     advertise hostname on;
 }
