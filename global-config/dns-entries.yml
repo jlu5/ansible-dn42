@@ -39,12 +39,9 @@ dns_records:
     "nightfall":
       type: A
       target: 172.22.108.52
-    "mediactr":
-      type: host_record
-      ip4: 172.22.108.25
     "music":
-      type: CNAME
-      target: mediactr
+      type: A
+      target: 172.22.108.53
     "jf":
       type: A
       target: 172.22.108.2

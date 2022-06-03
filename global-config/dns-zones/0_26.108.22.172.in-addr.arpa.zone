@@ -12,7 +12,6 @@ $TTL 300
 46 IN PTR ping-chi.highdef.dn42.
 21 IN PTR ns.highdef.dn42.
 22 IN PTR dns.highdef.dn42.
-25 IN PTR mediactr.highdef.dn42.
 40 IN PTR fr-nantesixp1.ix.highdef.dn42.
 41 IN PTR fr-nantesixp2.ix.highdef.dn42.
 34 IN PTR us-sjc01.rtr.highdef.dn42.
