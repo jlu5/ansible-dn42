@@ -42,3 +42,10 @@ wg_peers:
   port: 21556
   remote: us-dal01-dn42.tackitt.us:21080
   wg_pubkey: U3ge8gwHj1Cw96A813Oxu1HXpA9MtXIPWpMEDG+AuUU=
+
+- name: dn42-melty
+  peer_v4: null
+  peer_v6: fe80::3632
+  port: 23632
+  remote: chokeberry.link.melty.land:21080
+  wg_pubkey: oCgzClTd8nECzDqS20/dKaitAHUN1TgIIeVZKAsJ1FA=

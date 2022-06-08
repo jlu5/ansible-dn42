@@ -89,3 +89,10 @@ wg_peers:
   port: 22923
   remote: hkg.mk16.de:51080
   wg_pubkey: 3uFwT9QD2WVL1cDuRNnj5sqWxyoAJjZO+f83grEPDV0=
+
+- name: dn42-melty
+  peer_v4: null
+  peer_v6: fe80::3632
+  port: 23632
+  remote: achacha.link.melty.land:21080
+  wg_pubkey: 7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=
