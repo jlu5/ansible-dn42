@@ -104,3 +104,9 @@ wg_peers:
   remote: hk.dn42.tms.im:21080
   wg_pubkey: KlZg3oOjQsaQ0dNkUgHCKyOqULw8+u+llo97X1w5mV4=
 
+- name: dn42-bbpgqm
+  peer_v4: 172.20.56.2
+  peer_v6: fe80::549:3441:0:1
+  port: 20549
+  remote: hkg.dn42.bb-pgqm.com:21080
+  wg_pubkey: jtE83RMoN49bs8TOetxrGdzqywz2BI+uT1qJrGI7GVU=

@@ -217,3 +217,10 @@ wg_peers:
   port: 21901
   remote: node1.vultr.nrt.asia.dn42.dalao-home.com:21080
   wg_pubkey: KYnacNZP+hZtLsbhUhKjrREFbxKIPKZqtO8P3kaptTs=
+
+- name: dn42-bbpgqm
+  peer_v4: 172.20.56.4
+  peer_v6: fe80::549:3921:0:1
+  port: 20549
+  remote: tyo.dn42.bb-pgqm.com:21080
+  wg_pubkey: 9wF7vXyJ+uBUb3At/SODOkaBSEQSdvpdtCwRL9kiuFc=

@@ -124,3 +124,10 @@ wg_peers:
   port: 22189
   remote: us-lax.dn42.kuu.moe:58920
   wg_pubkey: DIw4TKAQelurK10Sh1qE6IiDKTqL1yciI5ItwBgcHFA=
+
+- name: dn42-bbpgqm
+  peer_v4: 172.20.56.5
+  peer_v6: fe80::549:8401:0:1
+  port: 20549
+  remote: las.dn42.bb-pgqm.com:21080
+  wg_pubkey: SRokXOA/KtaiYlwQwpEiz6liGYzJY7CtMh9YIq3P3F0=
