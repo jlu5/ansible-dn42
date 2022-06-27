@@ -29,11 +29,7 @@ wg_peers:
   peer_v6: "fe80::2464/64"
 
 - name: dn42tyo-jrb0001
-  port: 50119
-  remote: "45.32.8.10:21080"
-  wg_pubkey: "TTwRbv4nXW95PtiP26Q+QKdTCWuf5x20u/PbF0KSqV4="
-  peer_v4: "172.20.1.7"
-  peer_v6: "fe80::119"
+  remove: true
 
 - name: dn42tyo-jerry
   port: 53618

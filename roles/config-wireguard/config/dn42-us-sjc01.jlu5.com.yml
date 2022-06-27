@@ -109,14 +109,7 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_lax01"
 
 - name: dn42lax-jrb0001
-  port: 50119
-  remote: "[2001:19f0:6001:5416:5400:2ff:fe19:f24f]:21080"
-  wg_pubkey: "GevdxN7huUifa31ypLx1wrPb02hg3Z0BdGcMUj9E6Cw="
-  peer_v4: "172.20.1.11"
-  peer_v6: "fe80::119"
-  local_v4: "172.20.229.122"
-  local_v6: "fe80::122"
-  wg_privkey: "/etc/wireguard/privatekey_lax01"
+  remove: true
 
 - name: dn42fmt-moecast
   port: 50604

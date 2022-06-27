@@ -49,11 +49,7 @@ wg_peers:
   peer_v6: "fd42:4242:2601:2d::1/128"
 
 - name: dn42pnj-jrb0001
-  port: 50119
-  remote: "144.202.0.160:21080"
-  wg_pubkey: "gu8W8w4AYPETdYYGN1M1EtvpHLxGIyZR4k0DSpdUn1s="
-  peer_v4: "172.20.1.13"
-  peer_v6: "fe80::119"
+  remove: true
 
 ### legacy configurations from ca-bhs01
 - name: dn42bhs-grmml

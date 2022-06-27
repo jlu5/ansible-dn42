@@ -1,10 +1,6 @@
 wg_peers:
 - name: dn42syd-jrb0001
-  port: 50119
-  remote: "149.28.171.68:21080"
-  wg_pubkey: "sxmRisB7+VhOul3VgoQAe8arFgwMFHYWJky6FPli42w="
-  peer_v4: "172.20.1.6"
-  peer_v6: "fe80::119"
+  remove: true
 
 - name: dn42syd-narnia
   port: 52037
@@ -12,9 +8,6 @@ wg_peers:
   wg_pubkey: "0T0LUDBHnWAAg5Kz4OBF0r0+r+9WHtaUsvywKZSci2I="
   peer_v4: null
   peer_v6: "fd23:0:0:ffff::2037"
-
-- name: dn42syd-owens
-  remove: true
 
 - name: dn42-kskb
   peer_v4: 10.127.111.81

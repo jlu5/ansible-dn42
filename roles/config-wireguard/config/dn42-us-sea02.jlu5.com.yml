@@ -14,11 +14,7 @@ wg_peers:
   peer_v6: "fe80::2464"
 
 - name: dn42sea-jrb0001
-  port: 50119
-  remote: "45.32.230.118:21080"
-  wg_pubkey: "XPjYjGhP2vXeNXDki6GiHce72f4om+aUpCxY6xJ5Wjo="
-  peer_v4: "172.20.1.10"
-  peer_v6: "fe80::119"
+  remove: true
 
 - name: dn42yvr-shypre
   port: 19999
