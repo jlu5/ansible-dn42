@@ -52,3 +52,10 @@ wg_peers:
   wg_pubkey: "AMmUVNOn6ZtL0+vn1tfO4c7M1Fby19lSVZpJJhML6VI="
   peer_v4: "172.20.233.153"
   peer_v6: "fe80::1288/64"
+
+- name: dn42-nonlocalho
+  peer_v4: 172.22.98.74
+  peer_v6: fe80::2314
+  port: 23257
+  remote: us-pdx1.dn42.nonlocal.host:35007
+  wg_pubkey: /6A58QlP8JQbuIg81z1Q9HTgLsZ7wuNUVGxB9Vx8OkU=
