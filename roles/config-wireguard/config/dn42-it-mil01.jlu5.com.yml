@@ -33,3 +33,10 @@ wg_peers:
   port: 21111
   remote: null
   wg_pubkey: YnoqhBTjO0+2vj/1lXqzOmvKeCwZ4q3BJzNyxN/zQ00=
+
+- name: dn42-famfo
+  peer_v4: null
+  peer_v6: fe80::4242
+  port: 21411
+  remote: famfo.xyz:51430
+  wg_pubkey: IsKZ+XQD2fq0thj3qWIOO9CH9jKDnDQABKcBzNU8JTM=
