@@ -110,3 +110,10 @@ wg_peers:
   port: 20549
   remote: hkg.dn42.bb-pgqm.com:21080
   wg_pubkey: jtE83RMoN49bs8TOetxrGdzqywz2BI+uT1qJrGI7GVU=
+
+- name: dn42-pigeonhole
+  peer_v4: 172.22.145.18
+  peer_v6: fe80::2458
+  port: 22458
+  remote: cn-hkg-a.nodes.pigeonhole.eu.org:21080
+  wg_pubkey: 9O4ABGmh+EXPnOynhW60aByE3qorcV7UsAC9n55g6CQ=

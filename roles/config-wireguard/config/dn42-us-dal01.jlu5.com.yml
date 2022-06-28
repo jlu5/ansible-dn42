@@ -49,3 +49,10 @@ wg_peers:
   port: 23632
   remote: chokeberry.link.melty.land:21080
   wg_pubkey: oCgzClTd8nECzDqS20/dKaitAHUN1TgIIeVZKAsJ1FA=
+
+- name: dn42-pigeonhole
+  peer_v4: 172.22.145.9
+  peer_v6: fe80::2458
+  port: 22458
+  remote: us-mci-a.nodes.pigeonhole.eu.org:21080
+  wg_pubkey: XjX37H3ZYd9QuGu+M1Ut6RLlDu3J+8ib3grbanlp0Vs=
