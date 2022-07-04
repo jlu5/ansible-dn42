@@ -30,7 +30,7 @@ def _add_tunnel(data, server1, server2):
     if one does not already exist.
     """
     if server1 == server2:
-        return
+        raise ValueError("cannot link a server to itself")
     neighbours1 = data['igp_neighbours'].setdefault(server1, set())
     neighbours2 = data['igp_neighbours'].setdefault(server2, set())
     neighbours1.add(server2)
@@ -51,7 +51,6 @@ def main():
     hosts = yaml_load('hosts.yml')
 
     dn42routers = get_hosts(hosts)
-    meshrouters = set(hosts['meshrouters']['hosts'])
     # Between runs, the desired list of neighbours for a node can change, so we clear it here and rewrite it.
     # VPN port allocations however do stick around even as links are removed, in order to ensure stability.
     data['igp_neighbours'].clear()
@@ -64,17 +63,8 @@ def main():
             raise ValueError(f"Duplicate shortname {shortname}: {seen_shortnames[shortname]}, {server1}")
         seen_shortnames[shortname] = server1
 
-        if server1 in meshrouters:
-            for server2 in meshrouters:
-                _add_tunnel(data, server1, server2)
-
         # For leaf servers, add all nodes specified in igp_upstreams
         igp_upstreams = set(serverdata.get('igp_upstreams', []))
-
-        # ^ in this case is logical xor
-        if not (server1 in meshrouters) ^ bool(igp_upstreams):
-            raise ValueError(f'{server1} must either define igp_upstreams or be part of meshrouters group '
-                              '(and not both)')
 
         for server2 in igp_upstreams:
             _add_tunnel(data, server1, server2)
