@@ -34,4 +34,10 @@ iface {{ ifname }} inet static
 {% elif peer_info.get('local_v6') %}
     post-up ip -6 addr add {{ local_v6 }} dev {{ ifname }}
 {% endif %}
+{% set limit_mbit = peer_info.get('wg_ratelimit', wg_ratelimit|default(0)) | int %}
+{% if limit_mbit and not peer_info.get('is_internal_node') %}
+{# ref: https://unix.stackexchange.com/a/100797 #}
+{# burst size should be >= rate / kernel HZ, in units of bytes. This uses 2x that for a bit more room #}
+    post-up tc qdisc add dev {{ ifname }} root tbf rate {{ limit_mbit }}mbit latency 10ms burst {{ (limit_mbit / 250 * 2 * 125000) | int }}
+{% endif %}
     post-down ip link del {{ ifname }}
