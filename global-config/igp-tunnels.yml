@@ -38,6 +38,10 @@ igp_neighbours:
     us-las01: null
     us-sea02: null
     us-sjc01: null
+  int-lax02: !!set
+    us-dal01: null
+    us-las01: null
+    us-sjc01: null
   it-mil01: !!set
     au-syd01: null
     es-mad01: null
@@ -76,20 +80,20 @@ igp_neighbours:
     us-sea02: null
   us-dal01: !!set
     ca-ymq01: null
+    int-lax02: null
     us-atl01: null
     us-las01: null
     us-sea02: null
     us-sjc01: null
-    int-lax02: null
   us-las01: !!set
     au-syd01: null
     ca-ymq01: null
     hk01: null
+    int-lax02: null
     jp-tyo01: null
     us-dal01: null
     us-sea02: null
     us-sjc01: null
-    int-lax02: null
   us-sea02: !!set
     au-syd01: null
     ca-ymq01: null
@@ -103,30 +107,13 @@ igp_neighbours:
     au-syd01: null
     ca-ymq01: null
     hk01: null
+    int-lax02: null
     jp-tyo01: null
     nl-ams02: null
     us-dal01: null
     us-las01: null
     us-sea02: null
-    int-lax02: null
-  int-lax02: !!set
-    us-dal01: null
-    us-las01: null
-    us-sjc01: null
 igp_wg_ports:
-  chi03:
-    ca-ymq01: 30003
-    de-nbg01: 30000
-    es-mad01: 30024
-    jp-tyo01: 30031
-    nl-ams02: 30002
-    us-atl01: 30006
-    us-dal01: 30069
-    us-fmt01: 30050
-    us-las01: 30016
-    us-lax01: 30001
-    us-sea02: 30004
-    us-sjc01: 30062
   au-syd01:
     de-nbg01: 30035
     hk01: 30095
@@ -143,8 +130,8 @@ igp_wg_ports:
     nl-ams02: 30046
     us-atl01: 30047
   ca-ymq01:
-    chi03: 30003
     br-sao01: 30045
+    chi03: 30003
     de-nbg01: 30014
     es-mad01: 30074
     fr-par01: 30056
@@ -158,10 +145,23 @@ igp_wg_ports:
     us-sea03: 30087
     us-sjc01: 30098
     ymq01: 30104
+  chi03:
+    ca-ymq01: 30003
+    de-nbg01: 30000
+    es-mad01: 30024
+    jp-tyo01: 30031
+    nl-ams02: 30002
+    us-atl01: 30006
+    us-dal01: 30069
+    us-fmt01: 30050
+    us-las01: 30016
+    us-lax01: 30001
+    us-sea02: 30004
+    us-sjc01: 30062
   de-nbg01:
-    chi03: 30000
     au-syd01: 30035
     ca-ymq01: 30014
+    chi03: 30000
     es-mad01: 30025
     fr-par01: 30059
     it-mil01: 30028
@@ -173,8 +173,8 @@ igp_wg_ports:
     us-atl01: 30009
     us-lax01: 30011
   es-mad01:
-    chi03: 30024
     ca-ymq01: 30074
+    chi03: 30024
     de-nbg01: 30025
     fr-par01: 30073
     it-mil01: 30030
@@ -197,6 +197,11 @@ igp_wg_ports:
     us-las01: 30093
     us-sea02: 30091
     us-sjc01: 30089
+  int-lax02:
+    us-dal01: 30100
+    us-las01: 30077
+    us-lax01: 30076
+    us-sjc01: 30075
   it-mil01:
     au-syd01: 30097
     de-nbg01: 30028
@@ -206,8 +211,8 @@ igp_wg_ports:
     nl-ams02: 30029
     sg01: 30040
   jp-tyo01:
-    chi03: 30031
     au-syd01: 30038
+    chi03: 30031
     de-nbg01: 30080
     hk01: 30094
     it-mil01: 30096
@@ -220,9 +225,9 @@ igp_wg_ports:
     us-sea03: 30086
     us-sjc01: 30065
   nl-ams02:
-    chi03: 30002
     br-sao01: 30046
     ca-ymq01: 30015
+    chi03: 30002
     de-nbg01: 30023
     es-mad01: 30027
     fr-par01: 30058
@@ -255,9 +260,9 @@ igp_wg_ports:
     us-atl01: 30022
     ymq01: 30102
   us-atl01:
-    chi03: 30006
     br-sao01: 30047
     ca-ymq01: 30008
+    chi03: 30006
     de-nbg01: 30009
     nl-ams02: 30010
     uk-lon01: 30022
@@ -266,8 +271,9 @@ igp_wg_ports:
     us-sea02: 30088
     ymq01: 30103
   us-dal01:
-    chi03: 30069
     ca-ymq01: 30078
+    chi03: 30069
+    int-lax02: 30100
     us-atl01: 30067
     us-fmt01: 30070
     us-las01: 30101
@@ -275,20 +281,20 @@ igp_wg_ports:
     us-sea02: 30068
     us-sea03: 30083
     us-sjc01: 30072
-    int-lax02: 30100
   us-fmt01:
-    chi03: 30050
     au-syd01: 30052
+    chi03: 30050
     jp-tyo01: 30051
     us-dal01: 30070
     us-las01: 30053
     us-lax01: 30048
     us-sea02: 30049
   us-las01:
-    chi03: 30016
     au-syd01: 30103
     ca-ymq01: 30079
+    chi03: 30016
     hk01: 30093
+    int-lax02: 30077
     jp-tyo01: 30102
     us-dal01: 30101
     us-fmt01: 30053
@@ -296,12 +302,12 @@ igp_wg_ports:
     us-sea02: 30017
     us-sea03: 30082
     us-sjc01: 30064
-    int-lax02: 30077
   us-lax01:
-    chi03: 30001
     au-syd01: 30037
     ca-ymq01: 30013
+    chi03: 30001
     de-nbg01: 30011
+    int-lax02: 30076
     jp-tyo01: 30033
     nl-ams02: 30012
     sg01: 30039
@@ -311,11 +317,10 @@ igp_wg_ports:
     us-las01: 30018
     us-sea02: 30005
     us-sjc01: 30063
-    int-lax02: 30076
   us-sea02:
-    chi03: 30004
     au-syd01: 30036
     ca-ymq01: 30060
+    chi03: 30004
     hk01: 30091
     jp-tyo01: 30032
     us-atl01: 30088
@@ -334,10 +339,11 @@ igp_wg_ports:
     us-sea02: 30081
     us-sjc01: 30085
   us-sjc01:
-    chi03: 30062
     au-syd01: 30066
     ca-ymq01: 30098
+    chi03: 30062
     hk01: 30089
+    int-lax02: 30075
     jp-tyo01: 30065
     nl-ams02: 30099
     us-dal01: 30072
@@ -345,10 +351,4 @@ igp_wg_ports:
     us-lax01: 30063
     us-sea02: 30061
     us-sea03: 30085
-    int-lax02: 30075
-  int-lax02:
-    us-dal01: 30100
-    us-las01: 30077
-    us-lax01: 30076
-    us-sjc01: 30075
 next_port: 30105
