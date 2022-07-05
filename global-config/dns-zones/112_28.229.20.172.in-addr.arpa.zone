@@ -8,7 +8,7 @@ $TTL 300
         86400       ; expiration
         3600        ; minimum TTL
 )
-113 IN PTR peers-nodeid-113.ca-ymq01.highdef.dn42.
+113 IN PTR us-chi02.rtr.highdef.dn42.
 115 IN PTR peers-nodeid-115.ca-ymq01.highdef.dn42.
 117 IN PTR peers-nodeid-117.nl-ams02.highdef.dn42.
 122 IN PTR peers-nodeid-122.us-sjc01.highdef.dn42.
