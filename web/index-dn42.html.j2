@@ -20,7 +20,7 @@
         Server info
     </h2>
     <div id="container">
-        <p>Current server: <b>{{ shortname }}</b></p>
+        <p>Current server: <b>{{ inventory_hostname }}</b></p>
         <p>Test IPs: <b>{{ ownip }}</b> / <b>{{ ownip6 }}</b></p>
         <p>Location: <b>{{ location[-2:] | flag }} {{ location }}</b></p>
     </div>

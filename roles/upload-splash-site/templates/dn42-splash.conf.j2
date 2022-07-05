@@ -1,4 +1,4 @@
-{% set rtrname = dns_auto_host_record_format | replace("%s", shortname) %}
+{% set rtrname = dns_auto_host_record_format | replace("%s", inventory_hostname) %}
 
 # dn42 splash
 server {

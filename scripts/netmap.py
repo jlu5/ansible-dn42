@@ -70,7 +70,6 @@ def main():
 
     geocoder = NetmapGeocoder(args.geocode_cache)
     node_coords = {}
-    node_short_names = {node: data['shortname'] for node, data in hosts.items()}
 
     node_markers = []
     tunnel_lines = []
@@ -82,13 +81,13 @@ def main():
         coords = node_coords[node] = geocoder.geocode(nodedata['location'])
         # GeoJSON uses longitude and then latitude
         point = geojson.Point((coords[1], coords[0]))
-        peers = ', '.join(sorted(node_short_names[peer] for peer in tunnels['igp_neighbours'][node]))
+        peers = ', '.join(sorted(tunnels['igp_neighbours']))
         description = f"""{nodedata['location']}<br>
 Peers:
 {peers}
 """
         feature = geojson.Feature(geometry=point, properties={
-            "title": node_short_names[node],
+            "title": node,
             "description": description,
         })
         node_markers.append(feature)
@@ -107,7 +106,7 @@ Peers:
                      (node_coords[neighbour][1], node_coords[neighbour][0])],
                 )
                 feature = geojson.Feature(geometry=line, properties={
-                    "title": f'{node_short_names[node]} <-> {node_short_names[neighbour]}',
+                    "title": f'{node} <-> {neighbour}',
                     "description": '',
                 })
                 tunnel_lines.append(feature)

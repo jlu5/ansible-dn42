@@ -1,4 +1,3 @@
-import pprint
 import yaml
 # Add a stub handler to ignore Ansible specific values like !vault
 # See https://github.com/yaml/pyyaml/issues/86

@@ -6,7 +6,7 @@ define OWNIPv6 = {{ ownip6 }};
 
 define DN42_REGION = {{ dn42_regions[0] }};
 
-hostname "{{ inventory_hostname }}";
+hostname "{{ ansible_host }}";
 
 protocol static {
 {% if export_ownnets|default(True) %}

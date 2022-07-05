@@ -16,16 +16,14 @@ from _common import *
 def main():
     hosts = yaml_load('hosts.yml')
     hosts = get_hosts(hosts)
-    servers_by_name = {serverdata['shortname']: server for server, serverdata in hosts.items()}
 
     try:
-        server = sys.argv[1]
+        servername = sys.argv[1]
     except IndexError:
-        print(f"Usage: {sys.argv[0]} <shortname>")
+        print(f"Usage: {sys.argv[0]} <server name>")
         print(__doc__.strip())
         sys.exit(1)
 
-    servername = servers_by_name[server]
     serverdata = hosts[servername]
 
     loc = serverdata['location']

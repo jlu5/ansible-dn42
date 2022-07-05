@@ -54,15 +54,8 @@ def main():
     # Between runs, the desired list of neighbours for a node can change, so we clear it here and rewrite it.
     # VPN port allocations however do stick around even as links are removed, in order to ensure stability.
     data['igp_neighbours'].clear()
-    seen_shortnames = {}
 
     for server1, serverdata in dn42routers.items():
-        # Sanity check: make sure there are no duplicate shortnames
-        shortname = serverdata['shortname']
-        if shortname in seen_shortnames:
-            raise ValueError(f"Duplicate shortname {shortname}: {seen_shortnames[shortname]}, {server1}")
-        seen_shortnames[shortname] = server1
-
         # For leaf servers, add all nodes specified in igp_upstreams
         igp_upstreams = set(serverdata.get('igp_upstreams', []))
 

@@ -34,9 +34,9 @@
 
 {% macro peering_info(host) %}
 {% set serverdata = hostvars[host] %}
-<h4 id="{{ serverdata.shortname }}">
-    {{ serverdata.shortname[:2] | upper | flag }} {{ serverdata.location }}
-    <a href="#{{ serverdata.shortname }}"><i class="fa fa-link" aria-hidden="true"></i></a>
+<h4 id="{{ host }}">
+    {{ host[:2] | upper | flag }} {{ serverdata.location }}
+    <a href="#{{ host }}"><i class="fa fa-link" aria-hidden="true"></i></a>
 </h4>
 <ul>
     <li><strong>Hostname</strong>: {{ host }} {{ "(IPv6-only)" if serverdata.v6_only|default(False) }}</li>
