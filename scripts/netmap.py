@@ -81,7 +81,7 @@ def main():
         coords = node_coords[node] = geocoder.geocode(nodedata['location'])
         # GeoJSON uses longitude and then latitude
         point = geojson.Point((coords[1], coords[0]))
-        peers = ', '.join(sorted(tunnels['igp_neighbours']))
+        peers = ', '.join(sorted(tunnels['igp_neighbours'][node]))
         description = f"""{nodedata['location']}<br>
 Peers:
 {peers}

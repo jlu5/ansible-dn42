@@ -39,7 +39,7 @@
     <a href="#{{ host }}"><i class="fa fa-link" aria-hidden="true"></i></a>
 </h4>
 <ul>
-    <li><strong>Hostname</strong>: {{ host }} {{ "(IPv6-only)" if serverdata.v6_only|default(False) }}</li>
+    <li><strong>Hostname</strong>: {{ serverdata.ansible_host }} {{ "(IPv6-only)" if serverdata.v6_only|default(False) }}</li>
     <li><strong>WireGuard / OpenVPN port</strong>: 20000 + last 4 digits of your ASN</li>
     <li><strong>WireGuard pubkey</strong>: {{ serverdata.wg_pubkey }}</li>
     <li><strong>Tunneled IPv4 address</strong>: {{ serverdata.ownip }}</li>
