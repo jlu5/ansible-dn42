@@ -8,11 +8,3 @@
     - name: setup-peerfinder
       when: "'dn42routers' in group_names"
     - setup-wg-autoreset
-
-  pre_tasks:
-    - name: Disable legacy bird-lg services
-      systemd:
-        name: bird-lg-webservice
-        state: stopped
-        enabled: no
-      ignore_errors: true
