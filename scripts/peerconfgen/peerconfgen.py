@@ -127,8 +127,8 @@ def complete_peer_config(scrape_results):
     return result
 
 def main(args):
-    wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"dn42-{args.node}.jlu5.com.yml")
-    bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", f"dn42-{args.node}.jlu5.com")
+    wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{args.node}.yml")
+    bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", args.node)
     if not os.path.exists(wg_config_path):
         raise ValueError(f"Missing WireGuard config file {wg_config_path}")
     if not os.path.isdir(bird_config_dir):
