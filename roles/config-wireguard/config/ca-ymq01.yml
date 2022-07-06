@@ -158,24 +158,6 @@ wg_peers:
   remote: use.vm.whojk.com:23006
   wg_pubkey: 1LJ2PBEUOa7uwqnHS3j2EGVW+wKv/d1L6mbnA0tOjU0=
 
-### legacy configurations from us-chi01
-- name: "dn42atl-doxz"
-  remove: true
-
-- name: dn42buf-kioubit
-  remove: true
-
-- name: dn42mci-aftbit
-  remove: true
-
-- name: dn42chi-ncw
-  remove: true
-
-- name: dn42oma-zane
-  remove: true
-
-# end legacy configurations from us-chi01
-
 - name: igp-ca-yvrgw
   port: 19999
   wg_pubkey: "ZqPubFoApYZrHAzG3+jtAB+f3xzczUSNnDQkxueUbBI="
