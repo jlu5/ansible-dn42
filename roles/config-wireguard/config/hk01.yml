@@ -117,3 +117,10 @@ wg_peers:
   port: 22458
   remote: cn-hkg-a.nodes.pigeonhole.eu.org:21080
   wg_pubkey: 9O4ABGmh+EXPnOynhW60aByE3qorcV7UsAC9n55g6CQ=
+
+- name: dn42-sunnet
+  peer_v4: 172.21.100.192
+  peer_v6: fe80::3088:192
+  port: 23088
+  remote: hk1-hk.dn42.6700.cc:21080
+  wg_pubkey: rBTH+JyZB0X/DkwHByrCjCojxBKr/kEOm1dTAFGHR1w=

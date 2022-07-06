@@ -220,3 +220,10 @@ wg_peers:
   port: 20549
   remote: tyo.dn42.bb-pgqm.com:21080
   wg_pubkey: 9wF7vXyJ+uBUb3At/SODOkaBSEQSdvpdtCwRL9kiuFc=
+
+- name: dn42-sunnet
+  peer_v4: 172.21.100.190
+  peer_v6: fe80::3088:190
+  port: 23088
+  remote: tyo1-jp.dn42.6700.cc:21080
+  wg_pubkey: b3gUz8an2+wSCvXAwuxGR7AnxKDUqqQMd1+LASo93R0=
