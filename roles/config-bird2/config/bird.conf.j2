@@ -98,6 +98,8 @@ function is_valid_network_v6() {
 
 protocol kernel {
     scan time 20;
+    # use a lower priority than kernel device routes (metric 256)
+    metric 512;
 
     ipv6 {
         import none;
