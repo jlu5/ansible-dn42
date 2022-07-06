@@ -272,3 +272,10 @@ wg_peers:
   port: 22601
   remote: dn42-us-lax1.burble.com:21080
   wg_pubkey: MDjt4DyKGFumReT9pBJL6mPbDfQDfhPFyzHGDeoQVBQ=
+
+- name: dn42-lilynet
+  peer_v4: 172.23.180.2
+  peer_v6: fe80::1d90
+  port: 21877
+  remote: suzuran.lilynet.work:21080
+  wg_pubkey: E/+f5HM2EEw7CV574nYj+51bRNJDOZ6C5BKSQBpMGgw=
