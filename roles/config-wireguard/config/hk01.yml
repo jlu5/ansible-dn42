@@ -124,3 +124,10 @@ wg_peers:
   port: 23088
   remote: hk1-hk.dn42.6700.cc:21080
   wg_pubkey: rBTH+JyZB0X/DkwHByrCjCojxBKr/kEOm1dTAFGHR1w=
+
+- name: dn42-sakuranet
+  peer_v4: 172.22.162.131
+  peer_v6: fe80::8ac:6bff:fec2:e718
+  port: 23397
+  remote: dn42-hk-cn-1.ffeeco.coffee:21080
+  wg_pubkey: yz29NnFR7kYsO5VMGoU0TnLjbcymFyVfkXmhe4vwQzc=
