@@ -505,3 +505,10 @@ wg_peers:
   port: 22458
   remote: ipv4.nl-ams-a.nodes.pigeonhole.eu.org:21080
   wg_pubkey: QJnmWUnPS9wKKkLHHuWBYMGAI20MH9OEo28O4qr5DV8=
+
+- name: dn42-link2
+  peer_v4: 172.21.109.19
+  peer_v6: fe80::864:3
+  port: 20864
+  remote: nue.dn42.christine.pp.ua:21080
+  wg_pubkey: ypRGDCaVyoIJFPkRDbXm/wo8liNcbsY3PkiGBqZJzUI=

@@ -279,3 +279,10 @@ wg_peers:
   port: 21877
   remote: suzuran.lilynet.work:21080
   wg_pubkey: E/+f5HM2EEw7CV574nYj+51bRNJDOZ6C5BKSQBpMGgw=
+
+- name: dn42-link2
+  peer_v4: 172.21.109.18
+  peer_v6: fe80::864:2
+  port: 20864
+  remote: lax.dn42.christine.pp.ua:21080
+  wg_pubkey: mOQs7kIucUmSDXqRHvwfUxLAFkUDg9ssH5Gqn+6oj0s=
