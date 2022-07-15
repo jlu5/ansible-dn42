@@ -286,3 +286,10 @@ wg_peers:
   port: 20864
   remote: lax.dn42.christine.pp.ua:21080
   wg_pubkey: mOQs7kIucUmSDXqRHvwfUxLAFkUDg9ssH5Gqn+6oj0s=
+
+- name: dn42-pigeonhole
+  peer_v4: 172.22.145.8
+  peer_v6: fe80::2458
+  port: 22458
+  remote: us-lax-a.nodes.pigeonhole.eu.org:21080
+  wg_pubkey: usSOnTQKWozKiB3CM65TY3hv64dxQLnIx9ywc0J9awY=
