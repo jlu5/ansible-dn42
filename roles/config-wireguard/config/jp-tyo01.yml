@@ -234,3 +234,10 @@ wg_peers:
   port: 20864
   remote: tyo.dn42.christine.pp.ua:21080
   wg_pubkey: 6x6cydEpu7OpSy6kaMyEVSA869gmvy4OcLx2IpMZRxs=
+
+- name: dn42-pigeonhole
+  peer_v4: 172.22.145.19
+  peer_v6: fe80::2458
+  port: 22458
+  remote: jp-tyo-a.nodes.pigeonhole.eu.org:21080
+  wg_pubkey: OEjDZMJF1USPznWEf2UbbdHexNAlP1/EKkKTN95Nx0Q=
