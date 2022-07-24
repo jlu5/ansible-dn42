@@ -121,7 +121,7 @@ wg_peers:
   peer_v4: 172.23.24.35
   peer_v6: fe80::ade9
   port: 21964
-  remote: nl1.dn42.southparkfan.org:41080
+  remote: nl2.dn42.southparkfan.org:41080
   wg_pubkey: GsmcrWbFTcje5e+hmc0D6qonrkTpHksGZuk0cLBjDmY=
 
 ### BEGIN peers imported from de-nbg01
