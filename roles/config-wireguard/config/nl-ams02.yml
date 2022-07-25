@@ -118,11 +118,11 @@ wg_peers:
   wg_pubkey: dDM/rtklvpKHeIOKeLGjfYBTl+jEuhlr7dMIOdXbliU=
 
 - name: dn42-spf
-  peer_v4: 172.23.24.33
-  peer_v6: fe80::ade1
+  peer_v4: 172.23.24.35
+  peer_v6: fe80::ade0
   port: 21964
-  remote: nl1.dn42.southparkfan.org:21964
-  wg_pubkey: OBpyD/rruK4pOCgRVrWVoexBNHZadtn4qwPmrEjt0gY=
+  remote: nl2.dn42.southparkfan.org:41080
+  wg_pubkey: GsmcrWbFTcje5e+hmc0D6qonrkTpHksGZuk0cLBjDmY=
 
 ### BEGIN peers imported from de-nbg01
 - name: dn42nbg-w1kl4s
