@@ -20,8 +20,10 @@ dns IN AAAA fd86:bad:11b7:53::2
 @ IN AAAA fd86:bad:11b7:53::2
 www IN CNAME @
 nightfall IN A 172.22.108.52
+nightfall IN AAAA fd86:bad:11b7:fa7c::52
 music IN A 172.22.108.53
 jf IN A 172.22.108.2
+jf IN AAAA fd86:bad:11b7:aaaa::2
 peers-nodeid-113.ca-ymq01 IN A 172.20.229.113
 peers-nodeid-113.ca-ymq01 IN AAAA fd86:bad:11b7::1
 peers-nodeid-115.ca-ymq01 IN A 172.20.229.115
@@ -30,10 +32,10 @@ peers-nodeid-117.nl-ams02 IN AAAA fd86:bad:11b7:117::1
 peers-nodeid-122.us-sjc01 IN A 172.20.229.122
 peers-nodeid-122.us-sjc01 IN AAAA fd86:bad:11b7:22::1
 peers-nodeid-127.hk01 IN A 172.20.229.127
-fr-nantesixp1.ix IN A 172.22.108.40
-fr-nantesixp1.ix IN AAAA fd86:bad:11b7:1140::1
-fr-nantesixp2.ix IN A 172.22.108.41
-fr-nantesixp2.ix IN AAAA fd86:bad:11b7:1140::2
+fr-nantesixp1.ix IN A 172.22.108.16
+fr-nantesixp1.ix IN AAAA fd86:bad:11b7:1116::1
+fr-nantesixp2.ix IN A 172.22.108.17
+fr-nantesixp2.ix IN AAAA fd86:bad:11b7:1117::1
 us-sea02.rtr IN A 172.20.229.114
 us-sea02.rtr IN AAAA fd86:bad:11b7:1::1
 us-atl01.rtr IN A 172.20.229.119
@@ -65,4 +67,5 @@ au-syd01.rtr IN AAAA fd86:bad:11b7:225::1
 hk01.rtr IN A 172.22.108.38
 hk01.rtr IN AAAA fd86:bad:11b7:38::1
 $GENERATE 1-15 ${0,1,d}.yvrlab A 172.22.108.$
-$GENERATE 56-63 ${0,1,d}.clients A 172.22.108.$
+$GENERATE 24-31 ${0,1,d}.SEA-clients A 172.22.108.$
+$GENERATE 40-47 ${0,1,d}.YMQ-clients A 172.22.108.$

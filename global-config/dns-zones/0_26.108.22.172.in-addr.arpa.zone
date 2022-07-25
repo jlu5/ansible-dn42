@@ -11,11 +11,14 @@ $TTL 300
 3 IN PTR ping.highdef.dn42.
 21 IN PTR ns.highdef.dn42.
 22 IN PTR dns.highdef.dn42.
-40 IN PTR fr-nantesixp1.ix.highdef.dn42.
-41 IN PTR fr-nantesixp2.ix.highdef.dn42.
+52 IN PTR nightfall.highdef.dn42.
+53 IN PTR music.highdef.dn42.
+16 IN PTR fr-nantesixp1.ix.highdef.dn42.
+17 IN PTR fr-nantesixp2.ix.highdef.dn42.
 34 IN PTR us-sjc01.rtr.highdef.dn42.
 33 IN PTR us-dal01.rtr.highdef.dn42.
 36 IN PTR fr-par01.rtr.highdef.dn42.
 38 IN PTR hk01.rtr.highdef.dn42.
 $GENERATE 1-15 $ PTR ${0,2,d}.yvrlab.highdef.dn42.
-$GENERATE 56-63 $ PTR ${0,2,d}.clients.highdef.dn42.
+$GENERATE 24-31 $ PTR ${0,2,d}.SEA-clients.highdef.dn42.
+$GENERATE 40-47 $ PTR ${0,2,d}.YMQ-clients.highdef.dn42.
