@@ -56,3 +56,10 @@ wg_peers:
   port: 22458
   remote: us-mci-a.nodes.pigeonhole.eu.org:21080
   wg_pubkey: XjX37H3ZYd9QuGu+M1Ut6RLlDu3J+8ib3grbanlp0Vs=
+
+- name: dn42-c4tg
+  peer_v4: null
+  peer_v6: fe80::4242
+  port: 21411
+  remote: null
+  wg_pubkey: U8TI9G8zHFuCnzsDgclhFtNHhqfHG/1DoC8O3OFBfFo=
