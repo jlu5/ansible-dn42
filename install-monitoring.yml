@@ -1,8 +1,13 @@
-- name: Setup monitoring
-  hosts: dn42routers
+- name: Setup netdata
+  hosts: all
   become: yes
   roles:
     - config-iptables  # configures the netdata web port
+    - setup-netdata-v2
+
+- name: Setup bird-prometheus
+  hosts: dn42routers
+  become: yes
+  roles:
     - name: setup-bird-prometheus
       when: not v6_only|default(False)
-    - setup-netdata-v2
