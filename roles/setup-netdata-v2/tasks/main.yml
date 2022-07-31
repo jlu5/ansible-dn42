@@ -1,7 +1,6 @@
 - name: Install netdata
   apt:
     package:
-    # From Debian bullseye or backports @ deb.utopia-repository.org
     - netdata
     # From https://github.com/utopia-repository/netdata-go.d.plugin
     - netdata-plugins-go
@@ -27,10 +26,12 @@
     dest: "/etc/netdata/netdata.conf"
   notify: Restart netdata
 
-- name: Create netdata go.d config folder
+- name: Create netdata config subfolders
   file:
-    path: /etc/netdata/go.d/
+    path: "{{ item }}"
     state: directory
+  loop:
+  - /etc/netdata/go.d/
 
 - name: Push netdata go.d plugin configs
   template:
@@ -39,12 +40,11 @@
   notify: Restart netdata
   with_fileglob: 'go.d/*.conf'
 
-- name: Add Netdata notifier script stub
+- name: Configure netdata notifications
   template:
-    src: "netdata-notify.sh.j2"
-    dest: "/opt/netdata-notify.sh"
-    mode: "755"
-    force: no
+    src: "health_alarm_notify.conf.j2"
+    dest: "/etc/netdata/health_alarm_notify.conf"
+  notify: Restart netdata
 
 - name: Enable/start netdata service
   systemd:
