@@ -1,0 +1,13 @@
+- name: Install netdata
+  apt:
+    # From https://github.com/utopia-repository/netdata-go.d.plugin
+    package: netdata-plugins-go
+    state: latest
+    update_cache: true
+
+- name: Push netdata go.d plugin configs
+  template:
+    src: "{{ item }}"
+    dest: "/etc/netdata/go.d/{{ item | basename }}"
+  notify: Restart netdata
+  with_fileglob: 'go.d/*.conf'

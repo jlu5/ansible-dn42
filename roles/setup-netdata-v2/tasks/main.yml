@@ -2,8 +2,6 @@
   apt:
     package:
     - netdata
-    # From https://github.com/utopia-repository/netdata-go.d.plugin
-    - netdata-plugins-go
     # Required for ansible htpasswd integration
     - python3-passlib
     state: latest
@@ -40,19 +38,15 @@
   - /etc/netdata/go.d/
   - /etc/netdata/health.d/
 
-- name: Push netdata go.d plugin configs
-  template:
-    src: "{{ item }}"
-    dest: "/etc/netdata/go.d/{{ item | basename }}"
-  notify: Restart netdata
-  with_fileglob: 'go.d/*.conf'
-
 - name: Push netdata health.d configs
   template:
     src: "{{ item }}"
     dest: "/etc/netdata/health.d/{{ item | basename }}"
   notify: Restart netdata
   with_fileglob: 'health.d/*.conf'
+
+- include_tasks: bird-prometheus-integration.yml
+  when: "'dn42routers' in group_names or 'ixprouters' in group_names"
 
 - name: Enable/start netdata service
   systemd:

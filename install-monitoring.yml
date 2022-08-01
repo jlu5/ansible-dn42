@@ -2,8 +2,13 @@
   hosts: all
   become: yes
   roles:
-    - config-iptables  # configures the netdata web port
     - setup-netdata-v2
+
+- name: Setup netdata firewall rules
+  hosts: dn42routers:private
+  become: yes
+  roles:
+    - config-iptables  # configures the netdata web port
 
 - name: Setup bird-prometheus
   hosts: dn42routers
