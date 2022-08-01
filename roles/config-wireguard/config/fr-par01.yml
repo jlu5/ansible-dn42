@@ -6,13 +6,6 @@ wg_peers:
   peer_v4: "172.20.53.102"
   peer_v6: "fe80::ade0"
 
-- name: dn42-androw
-  peer_v4: 172.23.186.39
-  peer_v6: fe80::2575:7
-  port: 22575
-  remote: par2.fr.androw.eu:21080
-  wg_pubkey: jlHp4FYZ69xdlaknLxBY3Uuv1xjsHoHH9qHe4b7BP2o=
-
 - name: dn42par-tchekda
   port: 21722
   remote: "peer.dn42.tchekda.fr:21080"
@@ -34,3 +27,10 @@ wg_peers:
   remote: nantesixp1.highdef.network:19999
   wg_pubkey: vf7UBabXPLsbtpcT9S+SMHNRqZSibnwNYY198tn92lo=
   is_internal_node: true
+
+- name: dn42-androw
+  peer_v4: 172.23.186.33
+  peer_v6: fe80::2575:1
+  port: 22575
+  remote: par3.fr.androw.eu:21080
+  wg_pubkey: P7L62FCA7wdH2mr6T3mif90Ms4cImhZjFiuHgqE6yig=
