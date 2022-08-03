@@ -131,3 +131,10 @@ wg_peers:
   port: 20549
   remote: las.dn42.bb-pgqm.com:21080
   wg_pubkey: SRokXOA/KtaiYlwQwpEiz6liGYzJY7CtMh9YIq3P3F0=
+
+- name: dn42-bsdrocker
+  peer_v4: null
+  peer_v6: fe80::abe0
+  port: 21022
+  remote: null
+  wg_pubkey: rRAQjGVQGBV5YqzTkZV+exM36dcBLiDF0PSEhJWRrhE=
