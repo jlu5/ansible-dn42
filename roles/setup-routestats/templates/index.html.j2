@@ -4,14 +4,14 @@
     <title>Routestats for {{ inventory_hostname }} - highdef.network</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <style>
-.chart {
-    max-width: 900px;
-    height: 500px;
-    margin: auto;
-}
 nav {
     max-width: 900px;
     margin: auto;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 960px;
 }
     </style>
     <link href="/style.css" rel="stylesheet">
@@ -20,9 +20,9 @@ nav {
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawCharts);
 
-async function drawChart(data, netType) {
+async function drawChart(data, netType, title) {
     const dataTable = google.visualization.arrayToDataTable(
-        [['BIRD session', 'Number of preferred routes']].concat(data[netType]));
+        [['BIRD session', 'Amount']].concat(data[netType]));
 
     const slices = [];
     data[`${netType}_igp_links`].forEach((idx) => {
@@ -30,10 +30,12 @@ async function drawChart(data, netType) {
     } );
     const textColor = { color: "#eee" };
     const options = {
-        title: `Preferred routes by BIRD session (${netType}) - ${data[`${netType}_total`]} total`,
+        title: title,
         is3D: true,
         sliceVisibilityThreshold: 0.01,
         slices: slices,
+        width: 800,
+        height: 500,
 
         // options to better match dark theme
         pieResidueSliceColor: "#aaa", // colour of "other" slice
@@ -71,8 +73,10 @@ async function drawCharts() {
     let ts = new Date(data['ts']*1000);
     info.innerText = `Last update: ${ts.toUTCString()}`;
 
-    await drawChart(data, "ipv4");
-    await drawChart(data, "ipv6");
+    await drawChart(data, "ipv4", `# of preferred routes by BIRD session (IPv4) - ${data['ipv4_total']} total`);
+    await drawChart(data, "ipv6", `# of preferred routes by BIRD session (IPv6) - ${data['ipv6_total']} total`);
+    await drawChart(data, "ipv4_asns", `# of destination ASNs by BIRD session (IPv4)`);
+    await drawChart(data, "ipv6_asns", `# of destination ASNs by BIRD session (IPv6)`);
 }
     </script>
 </head>
@@ -92,7 +96,11 @@ async function drawCharts() {
 {% endfor %}
     </nav>
     <p id="info" class="largefont"><noscript>JavaScript is required for this site to work.</noscript></p>
-    <div id="chart_ipv4" class="chart"></div>
-    <div id="chart_ipv6" class="chart"></div>
+    <div class="container">
+        <div id="chart_ipv4" class="chart"></div>
+        <div id="chart_ipv6" class="chart"></div>
+        <div id="chart_ipv4_asns" class="chart"></div>
+        <div id="chart_ipv6_asns" class="chart"></div>
+    </div>
 </body>
 </html>
