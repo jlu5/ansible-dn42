@@ -3,5 +3,3 @@
   become: yes
   roles:
     - name: upload-splash-site
-      # Blocked by ssl-config.mozilla.org / GitHub Pages
-      when: not v6_only|default(False)
