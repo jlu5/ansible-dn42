@@ -35,6 +35,11 @@ server {
         index smokeping.cgi;
     }
 
+    location /routestats/ {
+        alias {{ automation_root_dir }}/routestats/;
+        index index.html;
+    }
+
     location / {
         root {{ automation_root_dir }}/splash;
         index index-dn42.html;

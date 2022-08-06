@@ -1,0 +1,35 @@
+- name: Create routestats directory
+  file:
+    path: "{{ automation_root_dir }}/routestats/"
+    state: directory
+    owner: "{{ automation_user }}"
+
+- name: Upload routestats script
+  copy:
+    src: "{{ playbook_dir }}/scripts/routestats.py"
+    dest: "{{ automation_root_dir }}/routestats/routestats.py"
+    owner: "{{ automation_user }}"
+    mode: 0755
+  register: _routestats_script
+
+- name: Template routestats site
+  template:
+    src: "index.html.j2"
+    dest: "{{ automation_root_dir }}/routestats/index.html"
+    owner: "{{ automation_user }}"
+
+- name: Set routestats command
+  set_fact:
+    _routestats_cmd: "{{ automation_root_dir }}/routestats/routestats.py > {{ automation_root_dir }}/routestats/routestats.json"
+
+- name: Routestats first run
+  shell:
+    cmd: "{{ _routestats_cmd }}"
+  when: _routestats_script.changed
+
+- name: Create cron job for routestats
+  cron:
+    name: routestats
+    minute: "*/10"
+    user: "{{ automation_user }}"
+    job: "{{ _routestats_cmd }} 2>/dev/null"

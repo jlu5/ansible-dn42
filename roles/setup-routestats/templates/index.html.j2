@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Routestats for {{ inventory_hostname }} - highdef.network</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+.chart {
+    max-width: 900px;
+    height: 500px;
+    margin: auto;
+}
+nav {
+    max-width: 900px;
+    margin: auto;
+}
+    </style>
+    <link href="/style.css" rel="stylesheet">
+    <script type="text/javascript">
+
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawCharts);
+
+async function drawChart(data, netType) {
+    const dataTable = google.visualization.arrayToDataTable(
+        [['BIRD session', 'Number of preferred routes']].concat(data[netType]));
+
+    const slices = [];
+    data[`${netType}_igp_links`].forEach((idx) => {
+        slices[idx] = {offset: 0.1};
+    } );
+    const textColor = { color: "#eee" };
+    const options = {
+        title: `Preferred routes by BIRD session (${netType}) - ${data[`${netType}_total`]} total`,
+        is3D: true,
+        sliceVisibilityThreshold: 0.01,
+        slices: slices,
+
+        // options to better match dark theme
+        pieResidueSliceColor: "#aaa", // colour of "other" slice
+        backgroundColor: { fill: "transparent" },
+        legend: {
+            textStyle: textColor,
+            // undocumented!!!! https://groups.google.com/g/google-visualization-api/c/zoK5FKV83YQ
+            pagingTextStyle: textColor,
+            scrollArrows: {
+                activeColor: "#4257f5",
+            }
+        },
+        titleTextStyle: textColor,
+
+    };
+
+    const chart = new google.visualization.PieChart(document.getElementById(`chart_${netType}`));
+    chart.draw(dataTable, options);
+}
+
+async function drawCharts() {
+    let ok = true;
+    let info = document.getElementById("info");
+    let data = await fetch("routestats.json").then(resp => {
+        if (resp.status === 200) {
+            return resp.json();
+        }
+        ok = false;
+    });
+
+    if (!ok) {
+        info.innerText = "Error loading routestats.json";
+        return;
+    }
+    let ts = new Date(data['ts']*1000);
+    info.innerText = `Last update: ${ts.toUTCString()}`;
+
+    await drawChart(data, "ipv4");
+    await drawChart(data, "ipv6");
+}
+    </script>
+</head>
+
+<body>
+    <h1>Routestats for {{ inventory_hostname }}</h1>
+    <nav>
+    <a href="/">Home</a>
+    <br>
+    Other servers:
+{% for server in groups['dn42routers'] %}
+{% if server == inventory_hostname %}
+    <b>{{ server }}</b>
+{% else %}
+    <a href="//{{ (dns_auto_host_record_format + '.' + dns_domain) | format(server) }}/routestats/">{{ server }}</a>
+{% endif %}
+{% endfor %}
+    </nav>
+    <p id="info" class="largefont"><noscript>JavaScript is required for this site to work.</noscript></p>
+    <div id="chart_ipv4" class="chart"></div>
+    <div id="chart_ipv6" class="chart"></div>
+</body>
+</html>
