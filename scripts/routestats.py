@@ -50,10 +50,10 @@ def main():
         "ipv4_total": n_prefixes4,
 
         "ipv4_asns": asns4,
-        "ipv4_asns_igp_links": _get_igp_links(stats_by_prefix4),
+        "ipv4_asns_igp_links": _get_igp_links(asns4),
 
         "ipv6": stats_by_prefix6,
-        "ipv6_igp_links": _get_igp_links(asns4),
+        "ipv6_igp_links": _get_igp_links(stats_by_prefix6),
         "ipv6_total": n_prefixes6,
 
         "ipv6_asns": asns6,
