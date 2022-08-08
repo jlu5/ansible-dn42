@@ -15,14 +15,17 @@
 {% include 'navigation.j2' %}
 <div id="container">
     <ul class="spacedlist">
-        <li><strong>2022-02-19</strong>: Peers in Nuremberg, DE {{ helpers.link_node('de-nbg01') }} are flash-cut to Amsterdam {{ helpers.link_node('nl-ams02') }}. Existing peerings will continue to work as is.</li>
-        <li><strong>2022-01-19</strong>: Peers on Chicago {{ helpers.link_node('us-chi01') }} and New York City {{ helpers.link_node('us-nyc02') }} have been moved onto a new Toronto PoP {{ helpers.link_node('ca-yyz01') }}.</li>
-        <li><strong>2021-12-27</strong>: Decommissioned Singapore, SG node ({{ helpers.link_node('sg01') }}).</li>
-        <li><strong>2021-12-05</strong>: Added new {{ helpers.link_node('us-dal01') }} PoP. us-fmt01 moved to {{ helpers.link_node('us-sjc01') }} (same key/IPs)</li>
-        <li><strong>2021-10-01</strong>: Decommissioned Sao Paulo, BR node ({{ helpers.link_node('br-sao01') }}).</li>
-        <li><strong>2021-09-04</strong>: Added a new PoP in Fremont, CA, US ({{ helpers.link_node('us-fmt01') }}).</li>
+        <li><strong>2022-08-07</strong>: Singapore, SG is live again as {{ helpers.link_node('sg02') }}.</li>
+        <li><strong>2022-05-13</strong>: Peers in New York City {{ helpers.link_node('us-nyc02') }} have been moved onto a new Montreal PoP {{ helpers.link_node('ca-ymq01') }}.</li>
+        <li><strong>2022-05-10</strong>: Peers in Los Angeles {{ helpers.link_node('us-lax01', alive=false) }} have been moved to {{ helpers.link_node('us-sjc01') }}.</li>
+        <li><strong>2022-04-23</strong>: Added new {{ helpers.link_node('hk01') }} PoP.</li>
+        <li><strong>2022-02-19</strong>: Peers in Nuremberg, DE {{ helpers.link_node('de-nbg01', alive=false) }} have been moved to Amsterdam {{ helpers.link_node('nl-ams02') }}. Existing peerings will continue to work as is.</li>
+        <li><strong>2021-12-27</strong>: Decommissioned Singapore, SG node ({{ helpers.link_node('sg01', alive=false) }}).</li>
+        <li><strong>2021-12-05</strong>: Added new {{ helpers.link_node('us-dal01') }} PoP. {{ helpers.link_node('us-fmt01', alive=false) }} moved to {{ helpers.link_node('us-sjc01') }} (same key/IPs)</li>
+        <li><strong>2021-10-01</strong>: Decommissioned Sao Paulo, BR node ({{ helpers.link_node('br-sao01', alive=false) }}).</li>
+        <li><strong>2021-09-04</strong>: Added a new PoP in Fremont, CA, US ({{ helpers.link_node('us-fmt01', alive=false) }}).</li>
         <li><strong>2021-09-04</strong>: All nodes updated to support <b>extended next hops</b>.</li>
-        <li><strong>2021-07-24</strong>: the default peering port has been moved from 5xxxx to 2xxxx to avoid conflicts with the default <a href="https://en.wikipedia.org/wiki/Ephemeral_port">ephemeral port range</a> on Linux. Existing peers are unchanged for now.</li>
+        <li><strong>2021-07-24</strong>: The default peering port has been moved from 5xxxx to 2xxxx to avoid conflicts with the default <a href="https://en.wikipedia.org/wiki/Ephemeral_port">ephemeral port range</a> on Linux. Existing peers are unchanged.</li>
     </ul>
 
 </div>

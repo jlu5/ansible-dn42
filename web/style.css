@@ -28,6 +28,11 @@ body, html {
     padding-bottom: 1em;
 }
 
+.removed {
+    color: #bbb;
+    text-decoration: line-through;
+}
+
 h1, h2 {
     font-family: 'Comfortaa', cursive;
     margin: 3vh 0;
