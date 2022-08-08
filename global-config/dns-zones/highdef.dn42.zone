@@ -66,7 +66,9 @@ jp-tyo01.rtr IN AAAA fd86:bad:11b7:224::1
 au-syd01.rtr IN A 172.20.229.125
 au-syd01.rtr IN AAAA fd86:bad:11b7:225::1
 hk01.rtr IN A 172.22.108.38
-hk01.rtr IN AAAA fd86:bad:11b7:38::1
+hk01.rtr IN AAAA fd86:bad:11b7:238::1
+sg02.rtr IN A 172.22.108.39
+sg02.rtr IN AAAA fd86:bad:11b7:239::1
 $GENERATE 1-15 ${0,1,d}.yvrlab A 172.22.108.$
 $GENERATE 24-31 ${0,1,d}.SEA-clients A 172.22.108.$
 $GENERATE 40-47 ${0,1,d}.YMQ-clients A 172.22.108.$
