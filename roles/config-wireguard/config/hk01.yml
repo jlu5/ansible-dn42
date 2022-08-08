@@ -1,7 +1,4 @@
 wg_peers:
-- name: dn42sgp-tech9
-  remove: true
-
 - name: dn42hkg-kioubit
   port: 23914  # not used
   remote: "hk1.g-load.eu:21080"

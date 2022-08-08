@@ -1,0 +1,15 @@
+wg_peers:
+- name: dn42-tech9
+  peer_v4: 172.20.16.142
+  peer_v6: fe80::1588
+  port: 21588
+  remote: sg-sin01.dn42.tech9.io:58279
+  wg_pubkey: 4qLIJ9zpc/Xgvy+uo90rGso75cSrT2F5tBEv+6aqDkY=
+  local_v6: fe80::100
+
+- name: dn42-munsternet
+  peer_v4: null
+  peer_v6: fe80::42:2237
+  port: 22237
+  remote: sg-sin01.dn42.munsternet.eu:22237
+  wg_pubkey: 09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk=
