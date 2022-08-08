@@ -16,7 +16,7 @@
 <div id="container">
     <ul class="spacedlist">
         <li><strong>2022-08-07</strong>: Singapore, SG is live again as {{ helpers.link_node('sg02') }}.</li>
-        <li><strong>2022-05-13</strong>: Peers in New York City {{ helpers.link_node('us-nyc02') }} have been moved onto a new Montreal PoP {{ helpers.link_node('ca-ymq01') }}.</li>
+        <li><strong>2022-05-13</strong>: Peers in New York City {{ helpers.link_node('us-nyc02', alive=false) }} have been moved to a new Montreal PoP {{ helpers.link_node('ca-ymq01') }}.</li>
         <li><strong>2022-05-10</strong>: Peers in Los Angeles {{ helpers.link_node('us-lax01', alive=false) }} have been moved to {{ helpers.link_node('us-sjc01') }}.</li>
         <li><strong>2022-04-23</strong>: Added new {{ helpers.link_node('hk01') }} PoP.</li>
         <li><strong>2022-02-19</strong>: Peers in Nuremberg, DE {{ helpers.link_node('de-nbg01', alive=false) }} have been moved to Amsterdam {{ helpers.link_node('nl-ams02') }}. Existing peerings will continue to work as is.</li>
