@@ -4,6 +4,7 @@ igp_neighbours:
     hk01: null
     it-mil01: null
     jp-tyo01: null
+    sg02: null
     us-las01: null
     us-sea02: null
     us-sjc01: null
@@ -36,6 +37,7 @@ igp_neighbours:
     it-mil01: null
     jp-tyo01: null
     nl-ams02: null
+    sg02: null
     us-las01: null
     us-sea02: null
     us-sjc01: null
@@ -49,11 +51,13 @@ igp_neighbours:
     hk01: null
     jp-tyo01: null
     nl-ams02: null
+    sg02: null
   jp-tyo01: !!set
     au-syd01: null
     hk01: null
     it-mil01: null
     nl-ams02: null
+    sg02: null
     us-las01: null
     us-sea02: null
     us-sjc01: null
@@ -64,9 +68,18 @@ igp_neighbours:
     hk01: null
     it-mil01: null
     jp-tyo01: null
+    sg02: null
     uk-lon01: null
     us-atl01: null
     us-chi02: null
+    us-sjc01: null
+  sg02: !!set
+    au-syd01: null
+    hk01: null
+    it-mil01: null
+    jp-tyo01: null
+    nl-ams02: null
+    us-las01: null
     us-sjc01: null
   uk-lon01: !!set
     ca-ymq01: null
@@ -104,6 +117,7 @@ igp_neighbours:
     hk01: null
     int-lax02: null
     jp-tyo01: null
+    sg02: null
     us-dal01: null
     us-sea02: null
     us-sjc01: null
@@ -124,6 +138,7 @@ igp_neighbours:
     int-lax02: null
     jp-tyo01: null
     nl-ams02: null
+    sg02: null
     us-chi02: null
     us-dal01: null
     us-las01: null
@@ -135,6 +150,7 @@ igp_wg_ports:
     it-mil01: 30097
     jp-tyo01: 30038
     sg01: 30044
+    sg02: 30112
     us-fmt01: 30052
     us-las01: 30103
     us-lax01: 30037
@@ -210,6 +226,7 @@ igp_wg_ports:
     it-mil01: 30090
     jp-tyo01: 30094
     nl-ams02: 30092
+    sg02: 30116
     us-las01: 30093
     us-sea02: 30091
     us-sjc01: 30089
@@ -226,6 +243,7 @@ igp_wg_ports:
     jp-tyo01: 30096
     nl-ams02: 30029
     sg01: 30040
+    sg02: 30117
   jp-tyo01:
     au-syd01: 30038
     chi03: 30031
@@ -234,6 +252,7 @@ igp_wg_ports:
     it-mil01: 30096
     nl-ams02: 30034
     sg01: 30041
+    sg02: 30114
     us-fmt01: 30051
     us-las01: 30102
     us-lax01: 30033
@@ -252,6 +271,7 @@ igp_wg_ports:
     jp-tyo01: 30034
     nl-ams03: 30055
     sg01: 30043
+    sg02: 30118
     uk-lon01: 30021
     us-atl01: 30010
     us-chi02: 30111
@@ -268,6 +288,14 @@ igp_wg_ports:
     jp-tyo01: 30041
     nl-ams02: 30043
     us-lax01: 30039
+  sg02:
+    au-syd01: 30112
+    hk01: 30116
+    it-mil01: 30117
+    jp-tyo01: 30114
+    nl-ams02: 30118
+    us-las01: 30115
+    us-sjc01: 30113
   uk-lon01:
     ca-ymq01: 30020
     de-nbg01: 30019
@@ -324,6 +352,7 @@ igp_wg_ports:
     hk01: 30093
     int-lax02: 30077
     jp-tyo01: 30102
+    sg02: 30115
     us-dal01: 30101
     us-fmt01: 30053
     us-lax01: 30018
@@ -375,10 +404,11 @@ igp_wg_ports:
     int-lax02: 30075
     jp-tyo01: 30065
     nl-ams02: 30099
+    sg02: 30113
     us-chi02: 30106
     us-dal01: 30072
     us-las01: 30064
     us-lax01: 30063
     us-sea02: 30061
     us-sea03: 30085
-next_port: 30112
+next_port: 30119
