@@ -13,3 +13,10 @@ wg_peers:
   port: 22237
   remote: sg-sin01.dn42.munsternet.eu:22237
   wg_pubkey: 09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk=
+
+- name: dn42-bandura
+  peer_v4: null
+  peer_v6: fe80::2925
+  port: 22923
+  remote: hkg.mk16.de:51081
+  wg_pubkey: P8B82eF//tcLwRfyyNg/5pAUz8HY1wWcBwJnbhlorxY=

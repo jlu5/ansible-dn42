@@ -81,11 +81,7 @@ wg_peers:
   wg_pubkey: WmKjRCtf9ZlIDkSuEOrjk5B7YdRZNGhhlbfz2waDAgQ=
 
 - name: dn42-bandura
-  peer_v4: null
-  peer_v6: fe80::2925
-  port: 22923
-  remote: hkg.mk16.de:51080
-  wg_pubkey: 3uFwT9QD2WVL1cDuRNnj5sqWxyoAJjZO+f83grEPDV0=
+  remove: true
 
 - name: dn42-melty
   peer_v4: null
