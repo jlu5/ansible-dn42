@@ -35,10 +35,11 @@ server {
         index smokeping.cgi;
     }
 
-    location /routestats/ {
+    location /routestats {
         alias {{ automation_root_dir }}/routestats/;
         index index.html;
-        expires 5m;
+        expires 2m;
+        add_header Cache-Control "max-age=120";
     }
 
     location / {
