@@ -3,33 +3,6 @@
     file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
   ignore_errors: true
 
-- name: Set variables for ifupdown-dn42
-  set_fact:
-    _ifupdown_dn42_iface_dir: "{{ automation_root_dir }}/interfaces"
-    _ifupdown_dn42_iface_file: "{{ automation_root_dir }}/interfaces-dn42"
-
-- name: Create ifupdown-dn42 interfaces directory
-  file:
-    path: "{{ _ifupdown_dn42_iface_dir }}"
-    state: directory
-
-- name: Create ifupdown-dn42 interfaces file
-  copy:
-    content: "source-directory {{ _ifupdown_dn42_iface_dir }}/"
-    dest: "{{ _ifupdown_dn42_iface_file }}"
-
-- name: Create ifupdown-dn42 systemd service
-  template:
-    src: ifupdown-dn42.service.j2
-    dest: "/etc/systemd/system/ifupdown-dn42.service"
-  register: _ifupdown_dn42_service
-
-- name: Enable ifupdown-dn42 systemd service
-  systemd:
-    service: ifupdown-dn42.service
-    enabled: true
-    daemon-reload: "{{ _ifupdown_dn42_service.changed }}"
-
 # This is already read in once as part of group_vars/all, but the values may have been changed
 # by scripts/enumerate-igp-tunnels.py: pre_tasks still run after enumerating facts the first time
 - name: Read IGP tunnel settings
