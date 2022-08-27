@@ -14,6 +14,11 @@
     file: "{{ playbook_dir }}/roles/config-openvpn/config/{{ inventory_hostname }}.yml"
   ignore_errors: true
 
+- name: Read GRE settings for peers
+  include_vars:
+    file: "{{ playbook_dir }}/roles/config-gre-plain/config/{{ inventory_hostname }}.yml"
+  ignore_errors: true
+
 - name: "Read iptables rules template"
   set_fact:
     iptables_rules: "{{ lookup('template', 'templates/rules.j2') }}"

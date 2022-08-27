@@ -1,0 +1,25 @@
+{%- set ifname = peer_info['name'] %}
+{%- set local_v4 = peer_info.get('local_v4', ownip) %}
+auto {{ ifname }}
+iface {{ ifname }} inet tunnel
+    mode gre
+{% if peer_info.gre_clearnet_ipv6 | default(False) %}
+{%- set dns_record_type = "AAAA" %}
+    local {{ ansible_default_ipv6.address }}
+{% else %}
+{%- set dns_record_type = "A" %}
+    local {{ ansible_default_ipv4.address }}
+{% endif %}
+{% if peer_info.remote | ipaddr %}
+    endpoint {{ peer_info.remote }}
+{% else %}
+    endpoint {{ lookup('community.general.dig', peer_info.remote, 'qtype=' + dns_record_type) }}
+{% endif %}
+    {# TODO: add pointopoint support?? #}
+    address {{ local_v4 }}
+    netmask {{ peer_info.netmask }}
+    ttl 64
+    {# post-up ip link set multicast on dev {{ ifname }} #}
+{% if peer_info.get('local_v6') %}
+    post-up ip addr add {{ peer_info.local_v6 }}/{{ peer_info.netmask_v6 }} dev {{ ifname }}
+{% endif %}

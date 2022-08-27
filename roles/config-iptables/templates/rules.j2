@@ -33,6 +33,9 @@
 -A INPUT -p {{ 'tcp' if ovpn_peer.get('proto', 'udp').startswith('tcp') else 'udp' }} --dport {{ ovpn_peer['port'] }} -i {{ ansible_default_ipv4.interface }} -j ACCEPT
 {% endif %}
 {% endfor %}
+{% if gre_peers | default([]) | length > 0 %}
+-A INPUT -p gre -j ACCEPT
+{% endif %}
 
 {% if iftype == 6 %}
 # Babel (internal only)

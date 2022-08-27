@@ -12,5 +12,6 @@
       dummy_iface: "{{ dummy_interfaces.igp }}"
     - config-wireguard
     - config-openvpn
+    - config-gre-plain
     - config-igpping
     - config-bird2

@@ -1,0 +1,19 @@
+- name: "Write GRE interface config"
+  template:
+    src: gre_interface.conf.j2
+    dest: "{{ automation_root_dir }}/interfaces/{{ peer_info.priority|default(42) }}{{ peer_info.name }}"
+  loop: "{{ _gre_to_add }}"
+  loop_control:
+    loop_var: peer_info
+  register: interfaces_tmpl
+
+# Look up only tunnels that have changed and restart those
+- name: "Restart changed GRE interfaces"
+  shell: "ifdown --force {{ peer_name }} --interfaces={{ _ifupdown_dn42_iface_file }}; ifup {{ peer_name }} --interfaces={{ _ifupdown_dn42_iface_file }}"
+  loop: "{{ (interfaces_tmpl.results)
+            | selectattr('changed', 'true')
+            | map(attribute='peer_info') | map(attribute='name') | unique | list }}"
+  loop_control:
+    loop_var: peer_name
+  ignore_errors: yes
+  when: 'not (skip_gre_restart | default(False))'

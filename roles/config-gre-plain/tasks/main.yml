@@ -1,0 +1,25 @@
+- name: Read GRE tunnel settings
+  include_vars:
+    file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
+  ignore_errors: true
+
+- name: Enumerate GRE tunnels to update
+  set_fact:
+    _gre_to_remove: "{{ (cleanup_remove_ifaces | default([]))
+                       + (gre_peers | default([]) | selectattr('remove', 'true') | map(attribute='name') | list) }}"
+    _gre_to_add: "{{ gre_peers | default([]) | selectattr('remove', 'false') | list
+                    + gre_peers | default([]) | selectattr('remove', 'undefined') | list}}"
+
+# - name: "Debug _gre_to_remove"
+#   debug:
+#     var: _gre_to_remove
+
+# - name: "Debug _gre_to_add"
+#   debug:
+#     var: _gre_to_add
+
+- name: Remove obsolete GRE tunnels
+  include_tasks: "gre-remove.yml"
+
+- name: Write updated GRE tunnels
+  include_tasks: "gre-update.yml"
