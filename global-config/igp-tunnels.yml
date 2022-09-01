@@ -11,6 +11,7 @@ igp_neighbours:
   ca-ymq01: !!set
     es-mad01: null
     fr-par01: null
+    int-heron: null
     nl-ams02: null
     uk-lon01: null
     us-atl01: null
@@ -41,6 +42,11 @@ igp_neighbours:
     us-las01: null
     us-sea02: null
     us-sjc01: null
+  int-heron: !!set
+    ca-ymq01: null
+    nl-ams02: null
+    us-atl01: null
+    us-chi02: null
   int-lax02: !!set
     us-dal01: null
     us-las01: null
@@ -66,6 +72,7 @@ igp_neighbours:
     es-mad01: null
     fr-par01: null
     hk01: null
+    int-heron: null
     it-mil01: null
     jp-tyo01: null
     sg02: null
@@ -90,6 +97,7 @@ igp_neighbours:
     us-chi02: null
   us-atl01: !!set
     ca-ymq01: null
+    int-heron: null
     nl-ams02: null
     uk-lon01: null
     us-chi02: null
@@ -97,6 +105,7 @@ igp_neighbours:
     us-sea02: null
   us-chi02: !!set
     ca-ymq01: null
+    int-heron: null
     nl-ams02: null
     uk-lon01: null
     us-atl01: null
@@ -166,6 +175,7 @@ igp_wg_ports:
     de-nbg01: 30014
     es-mad01: 30074
     fr-par01: 30056
+    int-heron: 30121
     nl-ams02: 30015
     uk-lon01: 30020
     us-atl01: 30008
@@ -230,6 +240,11 @@ igp_wg_ports:
     us-las01: 30093
     us-sea02: 30091
     us-sjc01: 30089
+  int-heron:
+    ca-ymq01: 30121
+    nl-ams02: 30119
+    us-atl01: 30120
+    us-chi02: 30122
   int-lax02:
     us-dal01: 30100
     us-las01: 30077
@@ -267,6 +282,7 @@ igp_wg_ports:
     es-mad01: 30027
     fr-par01: 30058
     hk01: 30092
+    int-heron: 30119
     it-mil01: 30029
     jp-tyo01: 30034
     nl-ams03: 30055
@@ -310,6 +326,7 @@ igp_wg_ports:
     ca-ymq01: 30008
     chi03: 30006
     de-nbg01: 30009
+    int-heron: 30120
     nl-ams02: 30010
     uk-lon01: 30022
     us-chi02: 30105
@@ -319,6 +336,7 @@ igp_wg_ports:
     ymq01: 30103
   us-chi02:
     ca-ymq01: 30107
+    int-heron: 30122
     nl-ams02: 30111
     uk-lon01: 30108
     us-atl01: 30105
@@ -411,4 +429,4 @@ igp_wg_ports:
     us-lax01: 30063
     us-sea02: 30061
     us-sea03: 30085
-next_port: 30119
+next_port: 30123
