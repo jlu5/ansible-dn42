@@ -28,9 +28,6 @@ wg_peers:
   peer_v4: "172.20.191.200"
   peer_v6: "fe80::2464/64"
 
-- name: dn42tyo-jrb0001
-  remove: true
-
 - name: dn42tyo-jerry
   port: 53618
   remote: jpn.neo.jerryxiao.cc:50101
