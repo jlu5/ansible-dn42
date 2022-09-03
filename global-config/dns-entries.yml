@@ -48,7 +48,7 @@ dns_records:
           target: fd86:bad:11b7:aaaa::2
     "mtxadmin":
       type: A
-      target: 172.22.108.55
+      target: 172.22.108.66
 
     # legacy peering nodes
     "peers-nodeid-113.ca-ymq01":

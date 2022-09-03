@@ -24,7 +24,7 @@ nightfall IN AAAA fd86:bad:11b7:fa7c::52
 music IN A 172.22.108.53
 jf IN A 172.22.108.2
 jf IN AAAA fd86:bad:11b7:aaaa::2
-mtxadmin IN A 172.22.108.55
+mtxadmin IN A 172.22.108.66
 peers-nodeid-113.ca-ymq01 IN A 172.20.229.113
 peers-nodeid-113.ca-ymq01 IN AAAA fd86:bad:11b7::1
 peers-nodeid-115.ca-ymq01 IN A 172.20.229.115
