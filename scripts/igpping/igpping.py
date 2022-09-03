@@ -68,7 +68,11 @@ def calc_costs(fping_output):
             else:
                 rtt_sum += float(rtt)
                 n_success += 1
-        rtt_avg = int(rtt_sum / n_success)
+        if n_success:
+            rtt_avg = int(rtt_sum / n_success)
+            rtt_avg += CONFIG.getint(CONFIG.default_section, "BaseCost")
+        else:
+            rtt_avg = 65535
         rtt_avg += CONFIG.getint(CONFIG.default_section, "BaseCost")
         # Clamp the result to 1-65535
         results[host] = max(1, min(65535, rtt_avg+penalty))
