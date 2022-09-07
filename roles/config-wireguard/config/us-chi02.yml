@@ -49,3 +49,10 @@ wg_peers:
   wg_pubkey: "5UUM0BZBvE5+/JDQtqPPLxPmpI+5prg/YfmvNzUbKnc="
   peer_v4: 172.22.108.1
   peer_v6: "fd86:bad:11b7:aaaa::1"
+
+- name: dn42-nullplane
+  peer_v4: 172.21.91.65
+  peer_v6: fe80::591
+  port: 20591
+  remote: rtr1.ord.nullplane.net:21080
+  wg_pubkey: oKhq3iDYFkwuyG611qCgbo6UzRm3wEiSn2CwJQn4QRA=
