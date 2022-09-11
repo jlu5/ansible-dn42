@@ -9,7 +9,7 @@
 <!-- {% import 'helpers.j2' as helpers %} -->
 </head>
 
-<body>
+<body onload="getConnectionInfo()">
 <div class="main largefont">
     <h1>highdef.network</h1>
     <h2>AS4242421080</h2>
@@ -19,7 +19,7 @@
         <i class="fa fa-server" aria-hidden="true"></i>
         Server info
     </h2>
-    <div id="container">
+    <div class="container">
         <p>Current server: <b>{{ inventory_hostname }}</b></p>
         <p>Test IPs: <b>{{ ownip }}</b> / <b>{{ ownip6 }}</b></p>
         <p>Location: <b>{{ location[-2:] | flag }} {{ location }}</b></p>
@@ -29,23 +29,45 @@
         <i class="fa fa-signal" aria-hidden="true"></i>
         Connection info
     </h2>
-    <p id="connectionInfo">
-        <noscript><a href="connectionInfo">Click to check</a></noscript>
-    </p>
+    <div class="container">
+        <noscript>
+            <p>JavaScript unavailable - Click to check manually:
+                <a href="connectionInfo">Default</a>
+                <a href="connectionInfo4">IPv4</a>
+                <a href="connectionInfo6">IPv6</a>
+            </p>
+        </noscript>
+        <p>Default: <span id="connectionInfo">
+            <span class="info-dim">Loading...</span>
+        </p>
+        <p>IPv4: <span id="connectionInfo4">
+            <span class="info-dim">Loading...</span>
+        </p>
+        <p>IPv6: <span id="connectionInfo6">
+            <span class="info-dim">Loading...</span>
+        </p>
+    </div>
 </div>
 <script>
-let req = new XMLHttpRequest();
-req.addEventListener("load", function() {
-    let textContainer = document.getElementById("connectionInfo");
-    if (this.status === 200) {
-        textContainer.innerText = this.responseText;
-    } else
-        textContainer.innerText = `[Error loading: ${this.status} ${this.statusText}]`;
+function getConnectionInfo() {
+    const outputSpans = [
+        document.getElementById("connectionInfo"),
+        document.getElementById("connectionInfo4"),
+        document.getElementById("connectionInfo6")
+    ];
+    const addresses = [
+        "connectionInfo",
+        "//{{ ownip }}/connectionInfo",
+        "//[{{ ownip6 }}]/connectionInfo"
+    ];
+    for (let i=0; i<outputSpans.length; i++) {
+        fetch(addresses[i])
+        .then((response) => response.json())
+        .then((data) => {
+            outputSpans[i].innerHTML = `<span class="info-success">${data.client}</span> (you) ↔ <span class="info-success">${data.server}</span> (me)`;
+        });
     }
-);
-req.overrideMimeType("text/plain;");
-req.open("GET", "connectionInfo");
-req.send();
+};
 </script>
 </body>
 </html>

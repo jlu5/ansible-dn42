@@ -14,18 +14,21 @@ server {
 {% endfor %}
 {% endfor %}
 
-	location /connectionInfo {
-		keepalive_requests 0;
-		default_type text/plain;
-		return 200 "$remote_addr (you) ↔ $server_addr (me)";
-	}
+    # restricted to dn42 origins only
+    allow 10.0.0.0/8;
+    allow 172.20.0.0/14;
+    allow 172.31.0.0/16;
+    allow fd00::/8;
+    deny all;
+
+    location /connectionInfo {
+        keepalive_requests 0;
+        default_type application/json;
+        add_header 'Access-Control-Allow-Origin' '*';
+        return 200 '{"client": "$remote_addr", "server": "$server_addr"}';
+    }
 
     location = /smokeping/ {
-        allow  10.0.0.0/8;
-        allow  172.20.0.0/14;
-        allow  172.31.0.0/16;
-        allow  fd00::/8;
-        deny   all;
         fastcgi_pass unix:/run/smokeping-fcgi.sock;
         include /etc/nginx/fastcgi_params;
     }

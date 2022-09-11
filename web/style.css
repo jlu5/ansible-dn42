@@ -61,7 +61,7 @@ a:visited:hover {
     color: #ffd6dd;
 }
 
-#container {
+.container {
     max-width: 1000px;
     margin: 0 auto;
     text-align: left;
@@ -77,4 +77,13 @@ a:visited:hover {
 
 hr {
     margin-bottom: 3vh;
+}
+
+.info-success {
+    color: #c3ffc3;
+    font-weight: bold;
+}
+
+.info-dim {
+    color: #a3a3a3;
 }
