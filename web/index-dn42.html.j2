@@ -62,9 +62,17 @@ function getConnectionInfo() {
     ];
     for (let i=0; i<outputSpans.length; i++) {
         fetch(addresses[i])
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        })
         .then((data) => {
             outputSpans[i].innerHTML = `<span class="info-success">${data.client}</span> (you) ↔ <span class="info-success">${data.server}</span> (me)`;
+        })
+        .catch((error) => {
+            outputSpans[i].innerHTML = `<span class="info-error">${error}</span>`;
         });
     }
 };

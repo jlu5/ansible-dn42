@@ -21,7 +21,7 @@ server {
     allow fd00::/8;
     deny all;
 
-    location /connectionInfo {
+    location = /connectionInfo {
         keepalive_requests 0;
         default_type application/json;
         add_header 'Access-Control-Allow-Origin' '*';

@@ -84,6 +84,11 @@ hr {
     font-weight: bold;
 }
 
+.info-error {
+    color: #ffc3c3;
+    font-weight: bold;
+}
+
 .info-dim {
     color: #a3a3a3;
 }
