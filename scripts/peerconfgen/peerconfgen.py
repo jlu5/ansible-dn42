@@ -8,7 +8,7 @@ import io
 import os
 import pathlib
 import re
-import yaml
+import ruamel.yaml
 
 from birdoptions import fill_bird_options
 from exporters import gen_wg_config, gen_bird_peer_config
@@ -130,53 +130,69 @@ def main(args):
     wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{args.node}.yml")
     bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", args.node)
     if not os.path.exists(wg_config_path):
-        raise ValueError(f"Missing WireGuard config file {wg_config_path}")
+        raise ValueError(f"Missing WireGuard config file {wg_config_path!r}")
     if not os.path.isdir(bird_config_dir):
-        raise ValueError(f"Missing BIRD config dir {bird_config_dir}")
-
-    print("Enter peer config info followed by EOF. Copy paste some text, and I'll try to guess")
-    # Read string to guess from stdin
-    text = io.StringIO()
-    while True:
-        try:
-            line = input()
-            text.write(line)
-            text.write("\n")
-        except EOFError:
-            break
-
-    scrape_results = scrape_peer_config(text.getvalue())
-    completed_config = complete_peer_config(scrape_results)
-    print("Config so far:", completed_config)
-    bird_options = fill_bird_options(args.node, completed_config)
-    print("BIRD peering options:", bird_options)
-
-    wg_config = gen_wg_config(args.peername, completed_config)
-    bird_peer_config = gen_bird_peer_config(args.peername, completed_config, bird_options)
-
-    yaml_str = yaml.dump({'wg_peers': [wg_config]}, indent=2)
-    # Chop off the first line for appending to the file. PyYAML doesn't support loading comments
-    # so a round trip is lossy, and I don't want to depend on multiple yaml libs in one project
-    yaml_str = '\n'.join(yaml_str.splitlines()[1:])
-    print()
-    print("WireGuard config:")
-    print(yaml_str)
-    print()
-    if not args.dry_run:
-        with open(wg_config_path, 'a') as f:
-            count = 0
-            count += f.write('\n')
-            count += f.write(yaml_str)
-            count += f.write('\n')
-            print(f"Wrote {count} bytes to {wg_config_path}")
+        raise ValueError(f"Missing BIRD config dir {bird_config_dir!r}")
 
     bird_config_path = bird_config_dir / f'{args.peername}.conf'
+    if os.path.exists(bird_config_path):
+        raise ValueError(f"A BIRD session config already exists at {bird_config_path!r}")
+
+    yaml = ruamel.yaml.YAML()
+    yaml.preserve_quotes = True
+    # preserve explicit null values https://stackoverflow.com/a/44314840
+    yaml.representer.add_representer(type(None), lambda self, data: self.represent_scalar('tag:yaml.org,2002:null', 'null'))
+
+    with open(wg_config_path, 'r+', encoding='utf-8') as f:
+        wg_config = yaml.load(f)
+
+        wg_peers = ruamel.yaml.comments.CommentedSeq(wg_config.get('wg_peers', []))
+        iface_name = get_iface_name(args.peername)
+        for wg_peer in wg_peers:
+            if wg_peer['name'] == iface_name:
+                raise ValueError(f"A WireGuard config block for {iface_name!r} already exists")
+
+        print("Enter peer config info followed by EOF. Copy paste some text, and I'll try to guess")
+        # Read string to guess from stdin
+        text = io.StringIO()
+        while True:
+            try:
+                line = input()
+                text.write(line)
+                text.write("\n")
+            except EOFError:
+                break
+
+        scrape_results = scrape_peer_config(text.getvalue())
+        completed_config = complete_peer_config(scrape_results)
+        print("Config so far:", completed_config)
+        bird_options = fill_bird_options(args.node, completed_config)
+        print("BIRD peering options:", bird_options)
+
+        wg_config_snippet = gen_wg_config(args.peername, completed_config)
+        bird_peer_config = gen_bird_peer_config(args.peername, completed_config, bird_options)
+
+        wg_peers.append(wg_config_snippet)
+        # Add an extra newline before the config block for readability
+        # https://stackoverflow.com/questions/69376943/how-can-i-insert-linebreak-in-yaml-with-ruamel-yaml
+        wg_peers.yaml_set_comment_before_after_key(len(wg_peers)-1, before='\n')
+        wg_config['wg_peers'] = wg_peers
+
+        print()
+        print("WireGuard config:")
+        print(wg_config_snippet)
+        print()
+        if not args.dry_run:
+            f.seek(0)
+            yaml.dump(wg_config, f)
+            f.truncate()
+
     print()
     print("BIRD peer config:")
     print(bird_peer_config)
     print()
     if not args.dry_run:
-        with open(bird_config_path, 'w') as f:
+        with open(bird_config_path, 'w', encoding='utf-8') as f:
             count = f.write(bird_peer_config)
             print(f"Wrote {count} bytes to {bird_config_path}")
 
