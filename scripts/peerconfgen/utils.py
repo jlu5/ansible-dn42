@@ -1,5 +1,22 @@
 import math
 
+class FakeInput():
+    """
+    A mock input() function that returns a sequence of predetermined inputs,
+    one for each successive input() call.
+    """
+    def __init__(self, inputs):
+        self.inputs = inputs
+        self.idx = 0
+        self.max_idx = len(inputs)
+
+    def __call__(self, _prompt):
+        if self.idx < self.max_idx:
+            value = self.inputs[self.idx]
+            self.idx += 1
+            return value
+        raise ValueError("Not expecting any further input() calls")
+
 _NO_RESPONSES = {'n', 'N', 'no', 'No', 'NO'}
 _YES_RESPONSES = {'y', 'Y', 'yes', 'Yes', 'YES'}
 MAX_PROMPT_TRIES = 5
