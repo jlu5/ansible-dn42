@@ -136,7 +136,10 @@ def main(args):
 
     bird_config_path = bird_config_dir / f'{args.peername}.conf'
     if os.path.exists(bird_config_path):
-        raise ValueError(f"A BIRD session config already exists at {bird_config_path!r}")
+        if args.replace:
+            print(f"Overwriting existing {bird_config_path!r}")
+        else:
+            raise ValueError(f"A BIRD session config already exists at {bird_config_path!r}")
 
     yaml = ruamel.yaml.YAML()
     yaml.preserve_quotes = True
@@ -148,9 +151,14 @@ def main(args):
 
         wg_peers = ruamel.yaml.comments.CommentedSeq(wg_config.get('wg_peers', []))
         iface_name = get_iface_name(args.peername)
-        for wg_peer in wg_peers:
+        for iface_idx, wg_peer in enumerate(wg_peers):
             if wg_peer['name'] == iface_name:
-                raise ValueError(f"A WireGuard config block for {iface_name!r} already exists")
+                if not args.replace and not wg_peer.get('remove'):
+                    raise ValueError(f"A WireGuard config block for {iface_name!r} already exists")
+                print(f"Overwriting existing WireGuard config for {iface_name!r}")
+                break
+        else:
+            iface_idx = -1
 
         print("Enter peer config info followed by EOF. Copy paste some text, and I'll try to guess")
         # Read string to guess from stdin
@@ -172,10 +180,14 @@ def main(args):
         wg_config_snippet = gen_wg_config(args.peername, completed_config)
         bird_peer_config = gen_bird_peer_config(args.peername, completed_config, bird_options)
 
-        wg_peers.append(wg_config_snippet)
-        # Add an extra newline before the config block for readability
-        # https://stackoverflow.com/questions/69376943/how-can-i-insert-linebreak-in-yaml-with-ruamel-yaml
-        wg_peers.yaml_set_comment_before_after_key(len(wg_peers)-1, before='\n')
+        if iface_idx < 0:
+            wg_peers.append(wg_config_snippet)
+            # Add an extra newline before the config block for readability
+            # https://stackoverflow.com/questions/69376943/how-can-i-insert-linebreak-in-yaml-with-ruamel-yaml
+            wg_peers.yaml_set_comment_before_after_key(len(wg_peers)-1, before='\n')
+        else:
+            wg_peers[iface_idx] = wg_config_snippet
+            wg_peers.yaml_set_comment_before_after_key(iface_idx+1, before='\n')
         wg_config['wg_peers'] = wg_peers
 
         print()
@@ -198,7 +210,8 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--dry-run', help='Only print generated output; do not write it to disk', action='store_true')
+    parser.add_argument('--dry-run', '-n', help='Only print generated output; do not write it to disk', action='store_true')
+    parser.add_argument('--replace', '-r', help='Overwrite existing config blocks', action='store_true')
     parser.add_argument('node', help='Node to generate config for', type=str)
     parser.add_argument('peername', help='Short name / identifier for peer', type=str)
     args = parser.parse_args()
