@@ -245,3 +245,11 @@ wg_peers:
   port: 21816
   remote: jp1.dn42.potat0.cc:21080
   wg_pubkey: Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=
+
+- name: dn42-tavimori
+  port: 20950
+  remote: tyo.dn42.lcblue.net:21080
+  wg_pubkey: sFw/u+6a/E3yv3UzTzZdO5oXQAqPtZ/HqaOMVaOMNmI=
+  peer_v4: 172.20.181.253
+  peer_v6: fe80::b05c:3fbb:ee9a:fc4d
+  wg_mtu: 1320
