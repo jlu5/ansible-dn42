@@ -519,3 +519,11 @@ wg_peers:
   wg_pubkey: OL2LE2feDsFV+fOC4vo4u/1enuxf3m2kydwGRE2rKVs=
   peer_v4: 172.22.125.31
   peer_v6: fe80::3035:1080
+
+- name: dn42-04dco
+  port: 20304
+  remote: gateway.04d.co:61080
+  wg_pubkey: 04dco+LqioWZmfvljxQ1G9hCDI8Et23GrvA1vsxM6Hk=
+  peer_v4: null
+  local_v4: 169.254.4.19/31
+  peer_v6: fe80::304
