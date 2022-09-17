@@ -55,6 +55,9 @@
 {% if iftype == 6 -%}
 ## Babel (internal only)
 -A INPUT -p udp --dport 6696 -i igp+ -s fe80::/10 -j ACCEPT
+
+## OSPF (internal only)
+-A INPUT -p ospf -i igp+ -j ACCEPT
 {%- endif %}
 
 # looking glass proxy (internal only)

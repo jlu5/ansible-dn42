@@ -1,0 +1,17 @@
+protocol ospf v3 int_ospf {
+    ipv4 {
+        import where source != RTS_BGP && is_self_net();
+        export where source != RTS_BGP && is_self_net();
+    };
+
+    include "/etc/bird/ospf_areas.conf";
+};
+
+protocol ospf v3 int_ospf_v6 {
+    ipv6 {
+        import where source != RTS_BGP && is_self_net_v6();
+        export where source != RTS_BGP && is_self_net_v6();
+    };
+
+    include "/etc/bird/ospf_areas.conf";
+};

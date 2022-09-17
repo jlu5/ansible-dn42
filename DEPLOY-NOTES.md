@@ -14,10 +14,10 @@ Most settings in [`hosts.yml`](hosts.yml) should be self documenting. Here are s
   - I use a convention of writing nodes that appear earlier in `hosts.yml` (US > EU > APAC > private) as *upstreams* for nodes that appear later, but doing so is not required.
   - These tunnels are enumerated with [`scripts/enumerate-igp-tunnels.py`](scripts/enumerate-igp-tunnels.py) and templated in the [`config-wireguard` role](roles/config-wireguard/tasks).
 - `ibgp_rr_upstreams`: for private nodes, configures iBGP route reflector upstreams.
-    - These sessions are needed to broadcast parts of the network that are not distributed in Babel, such as Anycast DNS
+    - These sessions are needed to broadcast parts of the network that are not distributed in an IGP, such as Anycast DNS
     - Not supported for regular nodes in the `dn42routers` group, as these use a full mesh iBGP.
 - `igpping_base_cost`/`igpping_fallback_cost`: sets base and default (unreachable) weights for igpping (defaults in [`igpping.conf.j2`](scripts/igpping/))
-- `stub_ifnames_append`: extra interfaces to import as device routes for Babel (exact name match). See also `stub_ifnames` in [`general.yml`](global-config/general.yml)
+- `stub_ifnames_append`: extra interfaces to import as device routes in the IGP. See also `stub_ifnames` in [`general.yml`](global-config/general.yml)
 
 ### Runtime flags (extra variables)
 
