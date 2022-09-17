@@ -4,7 +4,7 @@ This repository contains the configs for **AS4242421080 / HIGHDEF-AS** on [dn42]
 
 ## Network topology
 
-This iteration of the network uses the OSPFv3 and a full mesh of iBGP sessions over WireGuard. Internal costs between nodes are [periodically generated](scripts/igpping/) based off latency and packet loss.
+This iteration of the network uses OSPF (v2 + v3) and a full mesh of iBGP sessions over WireGuard. Internal costs between nodes are [periodically generated](scripts/igpping/) based off latency and packet loss.
 
 [Routing Policy](ROUTING-POLICY.md)
 

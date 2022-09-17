@@ -55,10 +55,10 @@
 {% if iftype == 6 -%}
 ## Babel (internal only)
 -A INPUT -p udp --dport 6696 -i igp+ -s fe80::/10 -j ACCEPT
+{%- endif %}
 
 ## OSPF (internal only)
 -A INPUT -p ospf -i igp+ -j ACCEPT
-{%- endif %}
 
 # looking glass proxy (internal only)
 -A INPUT -p tcp --dport 5000 -s {{ my_cidrs }} -j ACCEPT
