@@ -30,9 +30,9 @@ dummy_interfaces:
     # a locally bound address, but not sent from that interface
     # These NAT rules are coded in roles/config-iptables/templates and triggered by a
     # pdns-recursor service override
-    ip4: ["169.254.208.22", "169.254.208.53"]
-    ip4_natmap: ["172.22.108.22", "172.23.0.53"]
-    ip6: ["fd86:bad:11b7:53::2", "fd42:d42:d42:53::1/64"]
+    ip4: ["169.254.208.22", "169.254.208.53", "169.254.208.81"]
+    ip4_natmap: ["172.22.108.22", "172.23.0.53", "172.20.0.81"]
+    ip6: ["fd86:bad:11b7:53::2", "fd42:d42:d42:53::1/64", "fd42:d42:d42:81::1/64"]
 
 # Interfaces to clean up (e.g. for decommissioned nodes)
 cleanup_remove_ifaces: []

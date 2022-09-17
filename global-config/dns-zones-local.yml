@@ -5,3 +5,4 @@ dns_zones_local:
   7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa: 7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa.zone
   highdef.dn42: highdef.dn42.zone
   jlu5.dn42: jlu5.dn42.zone
+  myip.dn42: myip.dn42.zone

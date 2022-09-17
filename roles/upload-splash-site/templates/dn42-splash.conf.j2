@@ -6,7 +6,11 @@ server {
     listen [::]:80;
     server_name {{ dns_domain }};
     server_name *.{{ dns_domain }};
+
+    server_name myip.dn42;
+    server_name *.myip.dn42;
     server_name 172.23.0.53;
+
 {# Listen on all dummy interfaces #}
 {% for iface, options in dummy_interfaces.items() %}
 {% for ip in options.ip4 + options.ip6 %}
@@ -26,6 +30,20 @@ server {
         default_type application/json;
         add_header 'Access-Control-Allow-Origin' '*';
         return 200 '{"client": "$remote_addr", "server": "$server_addr"}';
+    }
+
+    # myip.dn42 endpoints (JSON + raw)
+    location = /api {
+        keepalive_requests 0;
+        default_type application/json;
+        add_header 'Access-Control-Allow-Origin' '*';
+        return 200 '{"version": "1.0", "ip": "$remote_addr", "node_asn": "{{ ownas }}", "node_location": "{{ location[-2:] }}", "node_id": "{{ inventory_hostname }}"}';
+    }
+    location = /raw {
+        keepalive_requests 0;
+        default_type text/plain;
+        add_header 'Access-Control-Allow-Origin' '*';
+        return 200 '$remote_addr\n';
     }
 
     location = /smokeping/ {

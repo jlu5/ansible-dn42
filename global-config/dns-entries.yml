@@ -89,6 +89,21 @@ dns_records:
       type: CNAME
       target: ping.highdef.dn42.
 
+  "myip.dn42":
+    "@":
+      type: multi
+      records:
+        - type: A
+          target: 172.20.0.81
+        - type: AAAA
+          target: fd42:d42:d42:81::1
+    "v4":
+      type: A
+      target: 172.20.0.81
+    "v6":
+      type: AAAA
+      target: fd42:d42:d42:81::1
+
 dns_generate_records:
   "highdef.dn42":
     - start: 1
