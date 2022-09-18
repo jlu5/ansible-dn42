@@ -6,3 +6,4 @@
   become: yes
   roles:
     - config-bird2
+    - config-bird2-autoservice

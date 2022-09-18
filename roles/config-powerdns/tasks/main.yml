@@ -62,6 +62,14 @@
     pdns_config:
       local-address: "{{ _pdns_local_address }}"
     pdns_backends: "{{ _pdns_backends }}"
+    pdns_service_overrides:
+      # Work around errors described at https://github.com/PowerDNS/pdns_recursor-ansible/issues/69
+      User: "{{ pdns_user }}"
+      Group: "{{ pdns_group }}"
+      # Start/stop
+      # XXX: 2nd arg (autoservice name) is hardcoded here
+      ExecStartPost: "+-{{ iptables_dir }}/apply-anycast start anycast_auth_dns"
+      ExecStopPost: "+-{{ iptables_dir }}/apply-anycast stop anycast_auth_dns"
 
 - name: "Synchronize DNS zones"
   synchronize:

@@ -1,0 +1,18 @@
+
+{% set service_name = dummy_iface_entry.key %}
+{% set anycast_iface = dummy_iface_entry.value %}
+protocol static autoservice_{{ service_name }}_4 {
+	ipv4;
+{% for anycast_nat_external in anycast_iface.ip4_natmap %}
+	route {{ anycast_nat_external | ipsubnet }} via "{{ anycast_iface.ifname }}";
+{% endfor %}
+}
+
+protocol static autoservice_{{ service_name }}_6 {
+	ipv6;
+{% for anycast_prefix in anycast_iface.ip6 %}
+	route {{ anycast_prefix | ipsubnet | ansible.utils.ipaddr('0') }} via "{{ anycast_iface.ifname }}" {
+		preference = 250;
+	};
+{% endfor %}
+}

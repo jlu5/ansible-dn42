@@ -47,5 +47,6 @@
       User: "{{ pdns_rec_user }}"
       Group: "{{ pdns_rec_group }}"
       # Start/stop
-      ExecStartPost: "+-{{ iptables_dir }}/apply-anycast start"
-      ExecStopPost: "+-{{ iptables_dir }}/apply-anycast stop"
+      # XXX: 2nd arg (autoservice name) is hardcoded here
+      ExecStartPost: "+-{{ iptables_dir }}/apply-anycast start anycast_recursors"
+      ExecStopPost: "+-{{ iptables_dir }}/apply-anycast stop anycast_recursors"

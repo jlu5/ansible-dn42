@@ -9,9 +9,13 @@ iptables-restore  < {{ iptables_rules_path  | quote }} && echo 'applied IPv4 rul
 ip6tables-restore < {{ ip6tables_rules_path | quote }} && echo 'applied IPv6 rules'
 
 {% if 'anycast_pool' in group_names %}
-if systemctl is-active --quiet pdns-recursor; then
-	/etc/iptables/apply-anycast start
+{% for service_name, anycast_iface in dummy_interfaces.items() %}
+{% if 'track_service' in anycast_iface %}
+if systemctl is-active --quiet "{{ anycast_iface.track_service }}"; then
+	/etc/iptables/apply-anycast start "{{ service_name }}"
 else
-	/etc/iptables/apply-anycast stop
+	/etc/iptables/apply-anycast stop "{{ service_name }}"
 fi
+{% endif %}
+{% endfor %}
 {% endif %}

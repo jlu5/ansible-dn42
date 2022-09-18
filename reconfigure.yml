@@ -15,3 +15,4 @@
     - config-gre-plain
     - config-igpping
     - config-bird2
+    - config-bird2-autoservice
