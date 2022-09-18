@@ -10,7 +10,6 @@ ownnets6:
 # To simplify IGP configuration in Bird this assumes that all dummy interface names follow a pattern
 # Note: forwarding rules are managed separately in roles/config-iptables/
 stub_ifnames:
-- "igp-dummy*"
 - "cl*"
 - "igp-stub*"
 dummy_interfaces:
@@ -18,11 +17,13 @@ dummy_interfaces:
     ifname: "igp-dummy0"
     ip4: ["{{ ownip }}"]
     ip6: ["{{ ownip6 }}"]
+    igp_announce: yes
   anycast_auth_dns:
     ifname: "igp-dummy1"
-    ip4: ["172.22.108.19"]
+    ip4: ["169.254.208.21"]
     ip4_natmap: ["172.22.108.21"]
     ip6: ["fd86:bad:11b7:53::1"]
+    igp_announce: no
   anycast_recursors:
     ifname: "igp-dummy2"
     # HACK: 169.254.208.53 et al. are internal IPs with 1-to-1 NAT to anycast service IPs. This works around
@@ -33,6 +34,7 @@ dummy_interfaces:
     ip4: ["169.254.208.22", "169.254.208.53", "169.254.208.81"]
     ip4_natmap: ["172.22.108.22", "172.23.0.53", "172.20.0.81"]
     ip6: ["fd86:bad:11b7:53::2", "fd42:d42:d42:53::1/64", "fd42:d42:d42:81::1/64"]
+    igp_announce: no
 
 # Interfaces to clean up (e.g. for decommissioned nodes)
 cleanup_remove_ifaces: []

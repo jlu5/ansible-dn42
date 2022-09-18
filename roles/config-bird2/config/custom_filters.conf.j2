@@ -32,7 +32,7 @@ define LC_ORIGIN_REGION_TAG = 104;
 
 # Subnets to route through iBGP
 # This includes anycast services as well as any single-homed downstreams with agreement
-define IBGP_NETS_4 = [172.23.0.53/32, 172.22.108.16/31+, 172.23.0.81/32];
+define IBGP_NETS_4 = [172.23.0.53/32, 172.22.108.16/31+, 172.20.0.81/32];
 define IBGP_NETS_6 = [fd42:d42:d42:53::/64, fd86:bad:11b7:1100::/56+, fd42:d42:d42:81::/64];
 
 function is_ibgp_network() {

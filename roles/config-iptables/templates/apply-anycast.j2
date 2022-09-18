@@ -23,19 +23,22 @@ if [[ "$1" == "start" ]]; then
 	cat > /etc/bird/local_acs_recursors.conf << "EOF"
 protocol static static_acs4 {
 	ipv4;
-{% for anycast_nat_external in dummy_interfaces.anycast_recursors.ip4_natmap %}
-	route {{ anycast_nat_external | ipsubnet }} via "{{ dummy_interfaces.anycast_recursors.ifname }}";
+{% for anycast_iface in (dummy_interfaces.values() | list | rejectattr("igp_announce"))%}
+{% for anycast_nat_external in anycast_iface.ip4_natmap %}
+	route {{ anycast_nat_external | ipsubnet }} via "{{ anycast_iface.ifname }}";
 {% endfor %}
-{% for anycast_nat_external in dummy_interfaces.anycast_auth_dns.ip4_natmap %}
-	route {{ anycast_nat_external | ipsubnet }} via "{{ dummy_interfaces.anycast_auth_dns.ifname }}";
 {% endfor %}
 }
 
 protocol static static_acs6 {
 	ipv6;
-	route fd42:d42:d42:53::/64 via "{{ dummy_interfaces.anycast_recursors.ifname }}" {
+{% for anycast_iface in (dummy_interfaces.values() | list | rejectattr("igp_announce"))%}
+{% for anycast_prefix in anycast_iface.ip6 %}
+	route {{ anycast_prefix | ipsubnet | ansible.utils.ipaddr('0') }} via "{{ anycast_iface.ifname }}" {
 		preference = 250;
 	};
+{% endfor %}
+{% endfor %}
 }
 EOF
 	echo "Configured static route configuration /etc/bird/local_acs_recursors.conf"

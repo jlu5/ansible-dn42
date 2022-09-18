@@ -52,7 +52,7 @@
     dest: "{{ iptables_dir }}/apply-anycast"
     mode: '755'
   notify:
-  - "Reload anycast rules"
+  - "Reload iptables rules"
   when: "'anycast_pool' in group_names"
 
 - name: "Write iptables rules for IPv4"

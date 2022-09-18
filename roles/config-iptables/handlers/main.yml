@@ -1,5 +1,2 @@
 - name: "Reload iptables rules"
-  command: "{{ iptables_dir }}/apply"
-
-- name: "Reload anycast rules"
-  shell: "{{ iptables_dir }}/apply-anycast stop; {{ iptables_dir }}/apply-anycast start"
+  shell: "iptables -F -t nat; {{ iptables_dir }}/apply"
