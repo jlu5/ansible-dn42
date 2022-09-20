@@ -47,7 +47,7 @@ cleanup_remove_ifaces: []
 dns_domain: "highdef.dn42"
 # Format to use when automatically creating host records for routers. "%s" substitutes the node shortname
 dns_auto_host_record_format: "%s.rtr"
-dns_nameserver: "ns.highdef.dn42"  # used in SOA records; substitutions not supported here
+dns_nameserver: "ns.highdef.dn42"  # used in NS, SOA records; substitutions not supported here
 dns_ttl: 300
 dns_zones_dir: "/etc/powerdns/dns-zones"
 
