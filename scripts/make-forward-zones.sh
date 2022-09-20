@@ -4,6 +4,8 @@ cd "$(dirname "$0")" || exit 1  # move to script directory
 
 OUTPUT=../global-config/pdns-recursor/forward-zones.conf
 OUTPUT_DNSSEC=../global-config/pdns-recursor/recursor.lua
+DNS_CONFIG=../global-config/general.yml
+LOCAL_ZONES_CONFIG=../global-config/dns-zones-local.yml
 NSERVER_SEPARATOR=","
 REGISTRY_ROOT=../dn42-registry/data
 
@@ -22,6 +24,9 @@ ptr_zones["23.172.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/172.23.0.0_16"
 ptr_zones["31.172.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/172.31.0.0_16"
 ptr_zones["10.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/10.0.0.0_8"
 ptr_zones["d.f.ip6.arpa"]="$REGISTRY_ROOT/inet6num/fd00::_8"
+
+local_authserver_ip4="$(yq -r .dummy_interfaces.anycast_auth_dns.ip4_natmap[0] "$DNS_CONFIG")"
+local_authserver_ip6="$(yq -r .dummy_interfaces.anycast_auth_dns.ip6[0] "$DNS_CONFIG")"
 
 addrtype() {
     if [[ "$1" == *.* ]]; then
@@ -122,3 +127,10 @@ for zonename in "${!ptr_zones[@]}"; do
     write_nservers "${ptr_zones["$zonename"]}" "$zonename"
     write_dnssec "${ptr_zones["$zonename"]}" "$zonename"
 done
+
+
+# Forward local zones to our auth server
+while IFS= read -r zone_name; do
+    echo "$zone_name=$local_authserver_ip4,$local_authserver_ip6" | tee -a "$OUTPUT"
+    echo "addNTA(\"${zone_name}\", \"No known trust anchors for zone $zone_name\")" >> "$OUTPUT_DNSSEC"
+done < <( yq -r '.dns_zones_local | keys[]' "$LOCAL_ZONES_CONFIG" )
