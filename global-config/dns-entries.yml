@@ -97,6 +97,14 @@ dns_records:
           target: 172.20.0.81
         - type: AAAA
           target: fd42:d42:d42:81::1
+        - type: NS
+          target: "ns1.lare.dn42."
+        - type: NS
+          target: "ns-auth1.svc.taavi.dn42."
+        - type: NS
+          target: "ns-auth2.svc.taavi.dn42."
+        - type: NS
+          target: "ns1.bandura.dn42."
     "v4":
       type: A
       target: 172.20.0.81
