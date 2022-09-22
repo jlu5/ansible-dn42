@@ -19,7 +19,7 @@
 {% for igp_neighbour in igp_neighbours.get(inventory_hostname, []) | sort %}
 {% set igp_wg_port = igp_wg_ports[inventory_hostname][igp_neighbour] %}
 # {{ igp_neighbour }}
--A INPUT -p udp --dport {{ igp_wg_port }} -i {{ ansible_default_ipv4.interface }} -j ACCEPT
+-A INPUT -p udp --dport {{ igp_wg_port }} -i {{ ansible_default_ipv4.interface | default(ansible_default_ipv6.interface) }} -j ACCEPT
 {% endfor %}
 
 {% macro _maybe_forward_rule(conf_block) -%}
@@ -33,7 +33,7 @@
 {% for wg_peer in wg_peers|default([]) -%}
 {%- if wg_peer.get('port') -%}
 # {{ wg_peer.name }}
--A INPUT -p udp --dport {{ wg_peer['port'] }} -i {{ ansible_default_ipv4.interface }} -j ACCEPT
+-A INPUT -p udp --dport {{ wg_peer['port'] }} -i {{ ansible_default_ipv4.interface | default(ansible_default_ipv6.interface)}} -j ACCEPT
 {% endif -%}
 {{ _maybe_forward_rule(wg_peer) }}
 {%- endfor %}
