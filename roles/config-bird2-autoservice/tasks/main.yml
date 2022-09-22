@@ -19,4 +19,4 @@
   loop: "{{ dummy_interfaces | dict2items }}"
   loop_control:
     loop_var: dummy_iface_entry
-  when: 'not dummy_iface_entry.value.igp_announce'
+  when: 'not dummy_iface_entry.value.igp_announce and "anycast_pool" in group_names'
