@@ -12,8 +12,14 @@ $TTL 300
 3 IN PTR ping.highdef.dn42.
 21 IN PTR ns.highdef.dn42.
 22 IN PTR dns.highdef.dn42.
-52 IN PTR nightfall.highdef.dn42.
 53 IN PTR music.highdef.dn42.
+19 IN PTR chi-rtr-ptp.yvrlab.highdef.dn42.
+18 IN PTR yvrlab-ptp.us-chi02.highdef.dn42.
+73 IN PTR sjc-rtr-ptp.yvrlab.highdef.dn42.
+72 IN PTR yvrlab-ptp.us-sjc01.highdef.dn42.
+75 IN PTR ymq-rtr-ptp.yvrlab.highdef.dn42.
+74 IN PTR yvrlab-ptp.ca-ymq01.highdef.dn42.
+1 IN PTR gw.yvrlab.highdef.dn42.
 16 IN PTR fr-nantesixp1.ix.highdef.dn42.
 17 IN PTR fr-nantesixp2.ix.highdef.dn42.
 34 IN PTR us-sjc01.rtr.highdef.dn42.
