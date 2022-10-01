@@ -47,10 +47,6 @@ dns_records:
       target: 172.22.108.66
 
     # Transfer networks & legacy peering IPs
-    "peers-nodeid-113.ca-ymq01":
-      type: host_record
-      ip4: 172.20.229.113
-      ip6: "fd86:bad:11b7::1"
     "peers-nodeid-115.ca-ymq01":
       type: host_record
       ip4: 172.20.229.115
