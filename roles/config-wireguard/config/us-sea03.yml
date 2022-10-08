@@ -26,11 +26,11 @@ wg_peers:
   port: 19998
   multi:
     # cl-mobi
-    - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
-      wg_allowedips: "172.22.108.26/32,fd86:bad:11b7:9998::2/128"
+  - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
+    wg_allowedips: "172.22.108.26/32,fd86:bad:11b7:9998::2/128"
     # cl-silverth
-    - wg_pubkey: "zy6EF1SUHRRB5U0UOad7uvz+H8Scb5IphutbHVtGaA8="
-      wg_allowedips: "172.22.108.27/32,fd86:bad:11b7:9998::3/128"
+  - wg_pubkey: "zy6EF1SUHRRB5U0UOad7uvz+H8Scb5IphutbHVtGaA8="
+    wg_allowedips: "172.22.108.27/32,fd86:bad:11b7:9998::3/128"
   peer_v6: null
   iptables_free_forward: true
 
@@ -54,3 +54,10 @@ wg_peers:
   port: 23257
   remote: us-pdx1.dn42.nonlocal.host:35007
   wg_pubkey: /6A58QlP8JQbuIg81z1Q9HTgLsZ7wuNUVGxB9Vx8OkU=
+
+- name: dn42-yukino
+  port: 21255
+  remote: dn42-us-sea1.acgcl.net:31080
+  wg_pubkey: 5S6ZAEZtXa5uockijxilgwhsHzeeTS/W0ws5ops8BFY=
+  peer_v4: null
+  peer_v6: fe80::1070
