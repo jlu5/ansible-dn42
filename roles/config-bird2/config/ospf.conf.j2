@@ -9,7 +9,7 @@ area 0 {
     };
 {% endfor %}
 {# In order: global stub ifname globs, local stub ifnames (appended), dummy interfaces with igp_announce=yes #}
-{% for entry in stub_ifnames + stub_ifnames_append|default([]) + (dummy_interfaces.values() | list | selectattr("igp_announce") | map(attribute='ifname') | list) %}
+{% for entry in stub_ifnames + stub_ifnames_append|default([]) + (dummy_interfaces.values() | list | selectattr("igp_announce") | map(attribute='ifname') | list | sort) %}
     interface "{{ entry }}" {
         stub on;
     };
