@@ -56,6 +56,8 @@ def main():
     data['igp_neighbours'].clear()
 
     for server1, serverdata in dn42routers.items():
+        if not serverdata.get('auto_tunnels', True):
+            continue
         # For leaf servers, add all nodes specified in igp_upstreams
         igp_upstreams = set(serverdata.get('igp_upstreams', []))
 
@@ -65,7 +67,7 @@ def main():
     for server1, serverdata in dn42routers.items():
         # Sanity check: all iBGP RR upstreams should be direct neighbours
         ibgp_upstreams = set(serverdata.get('ibgp_rr_upstreams', {}))
-        ibgp_not_direct = ibgp_upstreams - data['igp_neighbours'][server1]
+        ibgp_not_direct = ibgp_upstreams - data['igp_neighbours'].get(server1, set())
         if ibgp_not_direct:
             raise ValueError(f'{server1} defines ibgp_rr_upstreams not in neighbours: %s' % ibgp_not_direct)
 

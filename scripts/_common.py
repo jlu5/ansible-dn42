@@ -14,8 +14,5 @@ def get_hosts(yaml_content):
     results = {}
     for region_groups in yaml_content['dn42routers']['children'].values():
         results.update(region_groups['hosts'])
-    for server, server_data in yaml_content['private']['hosts'].items():
-        if server_data.get('auto_tunnels'):
-            server_data['private'] = True
-            results[server] = server_data
+    results.update(yaml_content['private']['hosts'])
     return results
