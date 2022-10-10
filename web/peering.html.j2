@@ -35,7 +35,7 @@
 {% macro peering_info(host) %}
 {% set serverdata = hostvars[host] %}
 <h4 id="{{ host }}">
-    {{ host[:2] | upper | flag }} {{ serverdata.location }}
+    {{ serverdata.location[-2:] | upper | flag }} {{ serverdata.location }}
     <a href="#{{ host }}"><i class="fa fa-link" aria-hidden="true"></i></a>
 </h4>
 <ul>
@@ -50,7 +50,7 @@
 </ul>
 {% endmacro %}
 <h3 id="americas">🌎 Americas</h3>
-{% for host in groups['us'] %}
+{% for host in groups['na'] %}
 {{ peering_info(host) }}
 {% endfor %}
 
