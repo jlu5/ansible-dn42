@@ -22,11 +22,13 @@ $TTL 300
 1 IN PTR gw.yvrlab.highdef.dn42.
 16 IN PTR fr-nantesixp1.ix.highdef.dn42.
 17 IN PTR fr-nantesixp2.ix.highdef.dn42.
+5 IN PTR yvrpeer.rtr.highdef.dn42.
 34 IN PTR us-sjc01.rtr.highdef.dn42.
 33 IN PTR us-dal01.rtr.highdef.dn42.
 36 IN PTR fr-par01.rtr.highdef.dn42.
 38 IN PTR hk01.rtr.highdef.dn42.
 39 IN PTR sg02.rtr.highdef.dn42.
-$GENERATE 1-15 $ PTR ${0,2,d}.yvrlab.highdef.dn42.
+35 IN PTR int-lax02.rtr.highdef.dn42.
+65 IN PTR ash-core.rtr.highdef.dn42.
 $GENERATE 24-31 $ PTR ${0,2,d}.SEA-clients.highdef.dn42.
 $GENERATE 40-47 $ PTR ${0,2,d}.YMQ-clients.highdef.dn42.

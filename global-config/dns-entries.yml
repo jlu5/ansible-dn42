@@ -128,11 +128,6 @@ dns_records:
 
 dns_generate_records:
   "highdef.dn42":
-    - start: 1
-      end: 15
-      template: "${0,1,d}.yvrlab"  # pad 2 to IP section
-      rtype: A
-      target: "172.22.108.$"
     - start: 24
       end: 31
       template: "${0,1,d}.SEA-clients"
@@ -144,11 +139,6 @@ dns_generate_records:
       rtype: A
       target: "172.22.108.$"
   "172.22.108.0/25":
-    - start: 1
-      end: 15
-      template: "$"
-      rtype: PTR
-      target: "${0,2,d}.yvrlab.highdef.dn42."
     - start: 24
       end: 31
       template: "$"

@@ -11,7 +11,6 @@ igp_neighbours:
     jp-tyo02: null
     sg02: null
     us-las01: null
-    us-sea03: null
     us-sjc01: null
   ca-ymq01: !!set
     ash-core: null
@@ -23,7 +22,6 @@ igp_neighbours:
     us-chi02: null
     us-dal01: null
     us-las01: null
-    us-sea03: null
     us-sjc01: null
   es-mad01: !!set
     ca-ymq01: null
@@ -45,7 +43,6 @@ igp_neighbours:
     nl-ams02: null
     sg02: null
     us-las01: null
-    us-sea03: null
     us-sjc01: null
   int-lax02: !!set
     us-dal01: null
@@ -65,7 +62,6 @@ igp_neighbours:
     nl-ams02: null
     sg02: null
     us-las01: null
-    us-sea03: null
     us-sjc01: null
   nl-ams02: !!set
     ash-core: null
@@ -102,7 +98,6 @@ igp_neighbours:
     uk-lon01: null
     us-chi02: null
     us-dal01: null
-    us-sea03: null
   us-chi02: !!set
     ash-core: null
     ca-ymq01: null
@@ -110,7 +105,6 @@ igp_neighbours:
     uk-lon01: null
     us-atl01: null
     us-dal01: null
-    us-sea03: null
     us-sjc01: null
   us-dal01: !!set
     ca-ymq01: null
@@ -118,7 +112,6 @@ igp_neighbours:
     us-atl01: null
     us-chi02: null
     us-las01: null
-    us-sea03: null
     us-sjc01: null
   us-las01: !!set
     au-syd01: null
@@ -128,17 +121,6 @@ igp_neighbours:
     jp-tyo02: null
     sg02: null
     us-dal01: null
-    us-sea03: null
-    us-sjc01: null
-  us-sea03: !!set
-    au-syd01: null
-    ca-ymq01: null
-    hk01: null
-    jp-tyo02: null
-    us-atl01: null
-    us-chi02: null
-    us-dal01: null
-    us-las01: null
     us-sjc01: null
   us-sjc01: !!set
     au-syd01: null
@@ -151,7 +133,6 @@ igp_neighbours:
     us-chi02: null
     us-dal01: null
     us-las01: null
-    us-sea03: null
 igp_wg_ports:
   ash-core:
     ca-ymq01: 30121

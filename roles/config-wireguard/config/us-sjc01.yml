@@ -108,9 +108,6 @@ wg_peers:
   local_v6: "fe80::122"
   wg_privkey: "/etc/wireguard/privatekey_lax01"
 
-- name: dn42lax-jrb0001
-  remove: true
-
 - name: dn42fmt-moecast
   port: 50604
   remote: "fmt1.dn42.cas7.moe:21080"
@@ -300,3 +297,14 @@ wg_peers:
   peer_v4: null
   local_v4: 172.22.108.72/31
   peer_v6: fe80::89f7:b22a:5452:3402
+
+# moved from us-sea03
+- name: dn42sfo-sirmyst
+  port: 51475
+  remote: "dn42-us-sfo1.sirmysterion.com:51475"
+  wg_pubkey: "S1Pm3Oqdn6flQ15WoG5n+FQhyGPPS5Xdh98VQwephjA="
+  peer_v4: "172.20.20.98/32"
+  peer_v6: "fe80::b562"
+  local_v4: 172.20.229.114
+  local_v6: fe80::114
+  wg_privkey: "/etc/wireguard/privatekey_sea02"

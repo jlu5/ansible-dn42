@@ -1,0 +1,44 @@
+wg_peers:
+- name: dn42yvr-yura
+  port: 52464
+  remote: "yvr.dneo.moeternet.com:21080"
+  wg_pubkey: "VITWVhKaL0qwuT9WTdkIVY6OE4ocIKSQguFrrbnDkBM="
+  peer_v4: "169.254.24.64"
+  peer_v6: "fe80::2464"
+  local_v4: 172.20.229.114
+  local_v6: fe80::114
+  wg_privkey: "/etc/wireguard/privatekey_sea_legacy"
+  wg_mtu: 1280
+
+- name: dn42sea-ncw
+  port: 51288
+  remote: "sea1.sc00.org:21080"
+  wg_pubkey: "AMmUVNOn6ZtL0+vn1tfO4c7M1Fby19lSVZpJJhML6VI="
+  peer_v4: "172.20.233.153"
+  peer_v6: "fe80::1288/64"
+  local_v4: 172.20.229.114
+  local_v6: fe80::114
+  wg_privkey: "/etc/wireguard/privatekey_sea_legacy"
+  wg_mtu: 1280
+
+- name: dn42-nonlocalho
+  peer_v4: 172.22.98.74
+  peer_v6: fe80::2314
+  port: 23257
+  remote: us-pdx1.dn42.nonlocal.host:35007
+  wg_pubkey: /6A58QlP8JQbuIg81z1Q9HTgLsZ7wuNUVGxB9Vx8OkU=
+  local_v4: 172.20.229.114
+  local_v6: fe80::114
+  wg_privkey: "/etc/wireguard/privatekey_sea_legacy"
+  wg_mtu: 1280
+
+- name: dn42-yukino
+  port: 21255
+  remote: dn42-us-sea1.acgcl.net:31080
+  wg_pubkey: 5S6ZAEZtXa5uockijxilgwhsHzeeTS/W0ws5ops8BFY=
+  peer_v4: null
+  peer_v6: fe80::1070
+  local_v4: 172.20.229.114
+  local_v6: fe80::114
+  wg_privkey: "/etc/wireguard/privatekey_sea_legacy"
+  wg_mtu: 1280
