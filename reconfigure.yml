@@ -10,6 +10,7 @@
       when: "auto_iptables|default(True)"
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.igp }}"
+      when: "'igp' in dummy_interfaces"
     - config-wireguard
     - config-openvpn
     - config-gre-plain
