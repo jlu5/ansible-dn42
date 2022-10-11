@@ -6,10 +6,10 @@ function initMap() {
         mapTypeId: 'hybrid'
     });
     var infoWindow = new google.maps.InfoWindow();
-    map.data.setStyle({
-       strokeColor: '#66F0F0',
-       strokeOpacity: 0.4,
-       strokeWeight: 5
+    map.data.setStyle(function(feature) {
+        return {
+            icon: feature.getProperty('icon')
+        }
     });
     map.data.loadGeoJson(
         "netmap.geojson"
@@ -17,7 +17,10 @@ function initMap() {
 
     map.data.addListener("click", (event) => {
         var feat = event.feature;
-        var content = "<span style=\"font-size:large;font-weight:500\">" + feat.getProperty('title') + "</span><br>" + feat.getProperty('description');
+        var content = "<span style=\"font-size:large;font-weight:500\">"
+            + feat.getProperty('title')
+            + "</span><br>"
+            + feat.getProperty('description').replace("\n", "<br>");
 
         infoWindow.setContent(content);
         infoWindow.setPosition(event.latLng);

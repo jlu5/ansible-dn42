@@ -70,3 +70,6 @@ Tokyo, JP: !!python/tuple
 Toronto, ON, CA: !!python/tuple
 - 43.653226
 - -79.3831843
+Vancouver, BC, CA: !!python/tuple
+- 49.2827291
+- -123.1207375

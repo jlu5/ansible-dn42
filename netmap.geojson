@@ -12,7 +12,8 @@
             },
             "properties": {
                 "title": "au-syd01",
-                "description": "Sydney, AU<br>\nPeers:\nhk01, it-mil01, jp-tyo02, sg02, us-las01, us-sea03, us-sjc01\n"
+                "description": "Sydney, AU<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -26,7 +27,8 @@
             },
             "properties": {
                 "title": "ca-ymq01",
-                "description": "Montreal, QC, CA<br>\nPeers:\nes-mad01, fr-par01, int-heron, nl-ams02, uk-lon01, us-atl01, us-chi02, us-dal01, us-las01, us-sea03, us-sjc01\n"
+                "description": "Montreal, QC, CA<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -40,7 +42,8 @@
             },
             "properties": {
                 "title": "es-mad01",
-                "description": "Madrid, ES<br>\nPeers:\nca-ymq01, fr-par01, it-mil01, nl-ams02, uk-lon01\n"
+                "description": "Madrid, ES<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -54,7 +57,8 @@
             },
             "properties": {
                 "title": "fr-par01",
-                "description": "Paris, FR<br>\nPeers:\nca-ymq01, es-mad01, hk01, nl-ams02, uk-lon01\n"
+                "description": "Paris, FR<br>- <b>LITE node, NO Anycast DNS</b><br>- <b>Peering over IPv6 only</b>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/yellow.png"
             }
         },
         {
@@ -68,7 +72,8 @@
             },
             "properties": {
                 "title": "hk01",
-                "description": "Hong Kong, HK<br>\nPeers:\nau-syd01, fr-par01, it-mil01, jp-tyo02, nl-ams02, sg02, us-las01, us-sea03, us-sjc01\n"
+                "description": "Hong Kong, HK<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -82,7 +87,8 @@
             },
             "properties": {
                 "title": "it-mil01",
-                "description": "Milan, IT<br>\nPeers:\nau-syd01, es-mad01, hk01, jp-tyo02, nl-ams02, sg02\n"
+                "description": "Milan, IT<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -96,7 +102,8 @@
             },
             "properties": {
                 "title": "jp-tyo02",
-                "description": "Tokyo, JP<br>\nPeers:\nau-syd01, hk01, it-mil01, nl-ams02, sg02, us-las01, us-sea03, us-sjc01\n"
+                "description": "Tokyo, JP<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -110,7 +117,8 @@
             },
             "properties": {
                 "title": "nl-ams02",
-                "description": "Amsterdam, NL<br>\nPeers:\nca-ymq01, es-mad01, fr-par01, hk01, int-heron, it-mil01, jp-tyo02, sg02, uk-lon01, us-atl01, us-chi02, us-sjc01\n"
+                "description": "Amsterdam, NL<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -124,7 +132,8 @@
             },
             "properties": {
                 "title": "sg02",
-                "description": "Singapore, SG<br>\nPeers:\nau-syd01, hk01, it-mil01, jp-tyo02, nl-ams02, us-las01, us-sjc01\n"
+                "description": "Singapore, SG<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -138,7 +147,8 @@
             },
             "properties": {
                 "title": "uk-lon01",
-                "description": "London, UK<br>\nPeers:\nca-ymq01, es-mad01, fr-par01, nl-ams02, us-atl01, us-chi02\n"
+                "description": "London, UK<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -152,7 +162,8 @@
             },
             "properties": {
                 "title": "us-atl01",
-                "description": "Atlanta, GA, US<br>\nPeers:\nca-ymq01, int-heron, nl-ams02, uk-lon01, us-chi02, us-dal01, us-sea03\n"
+                "description": "Atlanta, GA, US<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -166,7 +177,8 @@
             },
             "properties": {
                 "title": "us-chi02",
-                "description": "Chicago, IL, US<br>\nPeers:\nca-ymq01, int-heron, nl-ams02, uk-lon01, us-atl01, us-dal01, us-sea03, us-sjc01\n"
+                "description": "Chicago, IL, US<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -180,7 +192,8 @@
             },
             "properties": {
                 "title": "us-dal01",
-                "description": "Dallas, TX, US<br>\nPeers:\nca-ymq01, int-lax02, us-atl01, us-chi02, us-las01, us-sea03, us-sjc01\n"
+                "description": "Dallas, TX, US<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -194,21 +207,8 @@
             },
             "properties": {
                 "title": "us-las01",
-                "description": "Las Vegas, NV, US<br>\nPeers:\nau-syd01, ca-ymq01, hk01, int-lax02, jp-tyo02, sg02, us-dal01, us-sea03, us-sjc01\n"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -122.332071,
-                    47.606209
-                ]
-            },
-            "properties": {
-                "title": "us-sea03",
-                "description": "Seattle, WA, US<br>\nPeers:\nau-syd01, ca-ymq01, hk01, jp-tyo02, us-atl01, us-chi02, us-dal01, us-las01, us-sjc01\n"
+                "description": "Las Vegas, NV, US<br>- <b>LITE node, NO Anycast DNS</b>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
             }
         },
         {
@@ -222,1207 +222,23 @@
             },
             "properties": {
                 "title": "us-sjc01",
-                "description": "San Jose, CA, US<br>\nPeers:\nau-syd01, ca-ymq01, hk01, int-lax02, jp-tyo02, nl-ams02, sg02, us-chi02, us-dal01, us-las01, us-sea03\n"
+                "description": "San Jose, CA, US<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
             "type": "Feature",
             "geometry": {
-                "type": "LineString",
+                "type": "Point",
                 "coordinates": [
-                    [
-                        151.209295,
-                        -33.86882
-                    ],
-                    [
-                        114.169361,
-                        22.319304
-                    ]
+                    -123.120738,
+                    49.282729
                 ]
             },
             "properties": {
-                "title": "au-syd01 <-> hk01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        151.209295,
-                        -33.86882
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "au-syd01 <-> sg02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.567256,
-                        45.501689
-                    ],
-                    [
-                        -3.70379,
-                        40.416775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01 <-> es-mad01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.567256,
-                        45.501689
-                    ],
-                    [
-                        2.352222,
-                        48.856614
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01 <-> fr-par01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.567256,
-                        45.501689
-                    ],
-                    [
-                        4.904139,
-                        52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01 <-> nl-ams02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.567256,
-                        45.501689
-                    ],
-                    [
-                        -0.127758,
-                        51.507351
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01 <-> uk-lon01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.567256,
-                        45.501689
-                    ],
-                    [
-                        -87.629798,
-                        41.878114
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01 <-> us-chi02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.567256,
-                        45.501689
-                    ],
-                    [
-                        -96.796988,
-                        32.776664
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01 <-> us-dal01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.567256,
-                        45.501689
-                    ],
-                    [
-                        -115.13983,
-                        36.169941
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01 <-> us-las01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -73.567256,
-                        45.501689
-                    ],
-                    [
-                        -121.886329,
-                        37.338208
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01 <-> us-sjc01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.70379,
-                        40.416775
-                    ],
-                    [
-                        2.352222,
-                        48.856614
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "es-mad01 <-> fr-par01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -3.70379,
-                        40.416775
-                    ],
-                    [
-                        9.189982,
-                        45.464204
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "es-mad01 <-> it-mil01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        2.352222,
-                        48.856614
-                    ],
-                    [
-                        114.169361,
-                        22.319304
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "fr-par01 <-> hk01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        114.169361,
-                        22.319304
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "hk01 <-> sg02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        9.189982,
-                        45.464204
-                    ],
-                    [
-                        151.209295,
-                        -33.86882
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "it-mil01 <-> au-syd01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        9.189982,
-                        45.464204
-                    ],
-                    [
-                        114.169361,
-                        22.319304
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "it-mil01 <-> hk01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        9.189982,
-                        45.464204
-                    ],
-                    [
-                        139.650311,
-                        35.676192
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "it-mil01 <-> jp-tyo02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        9.189982,
-                        45.464204
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "it-mil01 <-> sg02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        139.650311,
-                        35.676192
-                    ],
-                    [
-                        151.209295,
-                        -33.86882
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo02 <-> au-syd01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        139.650311,
-                        35.676192
-                    ],
-                    [
-                        114.169361,
-                        22.319304
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo02 <-> hk01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        139.650311,
-                        35.676192
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo02 <-> sg02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        -3.70379,
-                        40.416775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> es-mad01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        2.352222,
-                        48.856614
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> fr-par01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        114.169361,
-                        22.319304
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> hk01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        9.189982,
-                        45.464204
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> it-mil01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        139.650311,
-                        35.676192
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> jp-tyo02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        4.904139,
-                        52.367573
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02 <-> sg02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -0.127758,
-                        51.507351
-                    ],
-                    [
-                        -3.70379,
-                        40.416775
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "uk-lon01 <-> es-mad01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -0.127758,
-                        51.507351
-                    ],
-                    [
-                        2.352222,
-                        48.856614
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "uk-lon01 <-> fr-par01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -0.127758,
-                        51.507351
-                    ],
-                    [
-                        4.904139,
-                        52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "uk-lon01 <-> nl-ams02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -84.387982,
-                        33.748995
-                    ],
-                    [
-                        -73.567256,
-                        45.501689
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-atl01 <-> ca-ymq01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -84.387982,
-                        33.748995
-                    ],
-                    [
-                        4.904139,
-                        52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-atl01 <-> nl-ams02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -84.387982,
-                        33.748995
-                    ],
-                    [
-                        -0.127758,
-                        51.507351
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-atl01 <-> uk-lon01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -84.387982,
-                        33.748995
-                    ],
-                    [
-                        -87.629798,
-                        41.878114
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-atl01 <-> us-chi02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -84.387982,
-                        33.748995
-                    ],
-                    [
-                        -96.796988,
-                        32.776664
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-atl01 <-> us-dal01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
-                        4.904139,
-                        52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi02 <-> nl-ams02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -87.629798,
-                        41.878114
-                    ],
-                    [
-                        -0.127758,
-                        51.507351
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-chi02 <-> uk-lon01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -96.796988,
-                        32.776664
-                    ],
-                    [
-                        -87.629798,
-                        41.878114
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-dal01 <-> us-chi02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -96.796988,
-                        32.776664
-                    ],
-                    [
-                        -115.13983,
-                        36.169941
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-dal01 <-> us-las01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -115.13983,
-                        36.169941
-                    ],
-                    [
-                        151.209295,
-                        -33.86882
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-las01 <-> au-syd01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -115.13983,
-                        36.169941
-                    ],
-                    [
-                        114.169361,
-                        22.319304
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-las01 <-> hk01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -115.13983,
-                        36.169941
-                    ],
-                    [
-                        139.650311,
-                        35.676192
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-las01 <-> jp-tyo02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -115.13983,
-                        36.169941
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-las01 <-> sg02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        151.209295,
-                        -33.86882
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> au-syd01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        -73.567256,
-                        45.501689
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> ca-ymq01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        114.169361,
-                        22.319304
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> hk01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        139.650311,
-                        35.676192
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> jp-tyo02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        -84.387982,
-                        33.748995
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> us-atl01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        -87.629798,
-                        41.878114
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> us-chi02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        -96.796988,
-                        32.776664
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> us-dal01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        -115.13983,
-                        36.169941
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> us-las01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -122.332071,
-                        47.606209
-                    ],
-                    [
-                        -121.886329,
-                        37.338208
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sea03 <-> us-sjc01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -121.886329,
-                        37.338208
-                    ],
-                    [
-                        151.209295,
-                        -33.86882
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01 <-> au-syd01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -121.886329,
-                        37.338208
-                    ],
-                    [
-                        114.169361,
-                        22.319304
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01 <-> hk01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -121.886329,
-                        37.338208
-                    ],
-                    [
-                        139.650311,
-                        35.676192
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01 <-> jp-tyo02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -121.886329,
-                        37.338208
-                    ],
-                    [
-                        4.904139,
-                        52.367573
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01 <-> nl-ams02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -121.886329,
-                        37.338208
-                    ],
-                    [
-                        103.819836,
-                        1.352083
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01 <-> sg02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -121.886329,
-                        37.338208
-                    ],
-                    [
-                        -87.629798,
-                        41.878114
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01 <-> us-chi02",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -121.886329,
-                        37.338208
-                    ],
-                    [
-                        -96.796988,
-                        32.776664
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01 <-> us-dal01",
-                "description": ""
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        -121.886329,
-                        37.338208
-                    ],
-                    [
-                        -115.13983,
-                        36.169941
-                    ]
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01 <-> us-las01",
-                "description": ""
+                "title": "yvrpeer",
+                "description": "Vancouver, BC, CA<br>- <b>LITE node, NO Anycast DNS</b><br>- <b>Peering over IPv6 only</b>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/yellow.png"
             }
         }
     ]

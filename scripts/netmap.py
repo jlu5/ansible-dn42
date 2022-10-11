@@ -4,7 +4,6 @@ Generates a GeoJSON network map of the network.
 """
 
 import argparse
-import collections
 import os
 import time
 
@@ -12,6 +11,9 @@ import geopy
 import geojson
 
 from _common import *
+
+# https://sites.google.com/site/gmapsdevelopment/
+ICON_PREFIX = "https://maps.google.com/mapfiles/ms/micons/"
 
 class NetmapGeocoder():
     """geopy wrapper that saves geocoding results to disk.
@@ -29,7 +31,7 @@ class NetmapGeocoder():
     def _init_backend(self):
         if not self.api_key:
             raise ValueError("No API key given for geocoding. Try setting the GOOGLEMAPS_API_KEY environment variable")
-        elif self._backend is None:
+        if self._backend is None:
             self._backend = geopy.geocoders.GoogleV3(api_key=self.api_key)
 
     def geocode(self, location, **kwargs):
@@ -45,7 +47,7 @@ class NetmapGeocoder():
         return self.entries[location]
 
     def save(self):
-        with open(self.db_filename, 'w') as f:
+        with open(self.db_filename, 'w', encoding='utf-8') as f:
             yaml.dump(self.entries, f)
 
 def _sort_feature_by_title(feature):
@@ -56,17 +58,14 @@ def main():
     parser.add_argument("-o", "--outfile", help="output path", default="netmap.geojson")
     parser.add_argument("-H", "--hosts", help="path to hosts configuration / inventory file",
                         type=str, default='hosts.yml')
-    parser.add_argument("-t", "--tunnels", help="path to IGP tunnels configuration",
-                        type=str, default='global-config/igp-tunnels.yml')
     parser.add_argument("-gc", "--geocode-cache", help="cache filename for geocode entries",
                         type=str, default='netmap-geocode.db')
     parser.add_argument("-dn", "--document-name", help="KML document name",
                         type=str, default="AS4242421080 network map")
     args = parser.parse_args()
 
-    hosts = yaml_load(args.hosts)
-    hosts = get_hosts(hosts)
-    tunnels = yaml_load(args.tunnels)
+    hosts_yaml = yaml_load(args.hosts)
+    hosts = get_hosts(hosts_yaml)
 
     geocoder = NetmapGeocoder(args.geocode_cache)
     node_coords = {}
@@ -79,41 +78,34 @@ def main():
         if nodedata.get('private') or not nodedata.get('location'):
             continue
         coords = node_coords[node] = geocoder.geocode(nodedata['location'])
+
         # GeoJSON uses longitude and then latitude
         point = geojson.Point((coords[1], coords[0]))
-        peers = ', '.join(sorted(tunnels['igp_neighbours'][node]))
-        description = f"""{nodedata['location']}<br>
-Peers:
-{peers}
-"""
+
+        description = f"{nodedata['location']}"
+        is_anycast = is_anycast_host(hosts_yaml, node)
+        is_v6_only = nodedata.get('v6_only')
+        icon_name = "red"
+
+        if is_anycast:
+            description += "<br>+ Anycast DNS PoP"
+            icon_name = "red-dot"
+        else:
+            description += "<br>- <b>LITE node, NO Anycast DNS</b>"
+
+        if is_v6_only:
+            icon_name = "yellow"
+            description += "<br>- <b>Peering over IPv6 only</b>"
+
         feature = geojson.Feature(geometry=point, properties={
             "title": node,
             "description": description,
+            "icon": ICON_PREFIX + icon_name + ".png"
         })
         node_markers.append(feature)
 
-    # Create a new line for each IGP tunnel
-    seen_tunnels = set()
-    for node in node_coords:
-        for neighbour in tunnels['igp_neighbours'][node]:
-            if neighbour not in node_coords:
-                continue
-            if f'{neighbour},{node}' not in seen_tunnels:  # Only add a connection once
-                datapair = f'{node},{neighbour}'
-                seen_tunnels.add(datapair)
-                line = geojson.LineString(
-                    [(node_coords[node][1], node_coords[node][0]),
-                     (node_coords[neighbour][1], node_coords[neighbour][0])],
-                )
-                feature = geojson.Feature(geometry=line, properties={
-                    "title": f'{node} <-> {neighbour}',
-                    "description": '',
-                })
-                tunnel_lines.append(feature)
-
     node_markers.sort(key=_sort_feature_by_title)
-    tunnel_lines.sort(key=_sort_feature_by_title)
-    with open(args.outfile, 'w') as f:
+    with open(args.outfile, 'w', encoding='utf-8') as f:
         feature_collection = geojson.FeatureCollection(node_markers + tunnel_lines)
         print("feature_collection errors:", feature_collection.errors())
         geojson.dump(feature_collection, f, indent=4)
