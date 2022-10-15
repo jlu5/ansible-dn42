@@ -23,6 +23,7 @@ igp_neighbours:
     us-chi02: null
     us-dal01: null
     us-las01: null
+    yvrpeer: null
   es-mad01: !!set
     ca-ymq01: null
     fr-par01: null
@@ -96,6 +97,7 @@ igp_neighbours:
     us-chi02: null
     us-dal01: null
     us-las01: null
+    yvrpeer: null
   uk-lon01: !!set
     ca-ymq01: null
     es-mad01: null
@@ -118,6 +120,7 @@ igp_neighbours:
     uk-lon01: null
     us-atl01: null
     us-dal01: null
+    yvrpeer: null
   us-dal01: !!set
     ca-ymq01: null
     int-lax02: null
@@ -135,7 +138,10 @@ igp_neighbours:
     sjcpeer: null
     us-dal01: null
   yvrpeer: !!set
+    ca-ymq01: null
     jp-tyo02: null
+    sjcpeer: null
+    us-chi02: null
 igp_wg_ports:
   ash-core:
     ca-ymq01: 30121
