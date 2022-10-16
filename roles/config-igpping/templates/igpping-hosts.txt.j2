@@ -1,3 +1,5 @@
 {% for host in igp_neighbours.get(inventory_hostname, []) | sort %}
+{% if not (igpping_override | default({})).get(host) %}
 {{ hostvars[host]['ansible_host'] }}
+{% endif %}
 {% endfor %}
