@@ -23,7 +23,7 @@ $TTL 300
 16 IN PTR fr-nantesixp1.ix.highdef.dn42.
 17 IN PTR fr-nantesixp2.ix.highdef.dn42.
 5 IN PTR yvrpeer.rtr.highdef.dn42.
-34 IN PTR sjcpeer.rtr.highdef.dn42.
+34 IN PTR sjc.rtr.highdef.dn42.
 33 IN PTR us-dal01.rtr.highdef.dn42.
 36 IN PTR fr-par01.rtr.highdef.dn42.
 38 IN PTR hk01.rtr.highdef.dn42.

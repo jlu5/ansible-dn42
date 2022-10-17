@@ -48,8 +48,8 @@ us-atl01.rtr IN A 172.20.229.119
 us-atl01.rtr IN AAAA fd86:bad:11b7:9::1
 ca-ymq01.rtr IN A 172.20.229.123
 ca-ymq01.rtr IN AAAA fd86:bad:11b7:23::1
-sjcpeer.rtr IN A 172.22.108.34
-sjcpeer.rtr IN AAAA fd86:bad:11b7:34::1
+sjc.rtr IN A 172.22.108.34
+sjc.rtr IN AAAA fd86:bad:11b7:34::1
 us-dal01.rtr IN A 172.22.108.33
 us-dal01.rtr IN AAAA fd86:bad:11b7:33::1
 us-las01.rtr IN A 172.20.229.126
