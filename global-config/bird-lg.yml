@@ -3,8 +3,8 @@ birdlg_proxy_port: 5000
 birdlg_web_port: 5001
 birdlg_branding_title: "{{ dns_domain }} looking glass"
 birdlg_branding_navbar: "{{ dns_domain }}"
-birdlg_domain: "lg.{{ dns_domain }}"
-birdlg_domain_clearnet: "lg.highdef.network"
+birdlg_domain: "{{ ((dns_auto_host_record_format + '.' + dns_domain) | format('')).lstrip('.') }}"
+birdlg_vhost: "lg.{{ dns_domain }}"
+birdlg_vhost_clearnet: "lg.highdef.network"
 # Additional IPs to allow bird-lg-proxy access, in addition to servers in the 'web' group
-birdlg_allowed_ips:
-- 172.22.108.1
+birdlg_allowed_ips: []

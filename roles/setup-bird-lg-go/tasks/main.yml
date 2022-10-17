@@ -56,7 +56,7 @@
     name: apps_nginx
   vars:
     letsencrypt_domains:
-      - "{{ birdlg_domain_clearnet }}"
+      - "{{ birdlg_vhost_clearnet }}"
     nginx_site:
       src: bird-lg-nginx.conf.j2
       dst: bird-lg-nginx.conf

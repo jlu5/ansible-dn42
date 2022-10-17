@@ -2,7 +2,7 @@
 server {
     listen 80;
     listen [::]:80;
-    server_name {{ birdlg_domain }};
+    server_name {{ birdlg_vhost }};
 
     access_log /var/log/nginx/dn42-lg-access.log;
     error_log /var/log/nginx/dn42-lg-error.log;
@@ -21,21 +21,21 @@ server {
 server {
     listen 80;
     listen [::]:80;
-    server_name {{ birdlg_domain_clearnet }};
+    server_name {{ birdlg_vhost_clearnet }};
 
-    return 301 https://{{ birdlg_domain_clearnet }}$request_uri;
+    return 301 https://{{ birdlg_vhost_clearnet }}$request_uri;
 }
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
-    server_name {{ birdlg_domain_clearnet }};
+    server_name {{ birdlg_vhost_clearnet }};
 
     access_log /var/log/nginx/dn42-lg-access.log;
     error_log /var/log/nginx/dn42-lg-error.log;
 
-    ssl_trusted_certificate /etc/letsencrypt/live/{{ birdlg_domain_clearnet }}/chain.pem;
-    ssl_certificate /etc/letsencrypt/live/{{ birdlg_domain_clearnet }}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/{{ birdlg_domain_clearnet }}/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/{{ birdlg_vhost_clearnet }}/chain.pem;
+    ssl_certificate /etc/letsencrypt/live/{{ birdlg_vhost_clearnet }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ birdlg_vhost_clearnet }}/privkey.pem;
 
     location /.well-known {
         root /var/www/html;
