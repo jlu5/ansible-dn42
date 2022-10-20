@@ -253,3 +253,10 @@ wg_peers:
   peer_v4: 172.20.181.253
   peer_v6: fe80::b05c:3fbb:ee9a:fc4d
   wg_mtu: 1320
+
+- name: dn42-lianyi
+  port: 21886
+  remote: Kr1.dn42.lianyi.me:21080
+  wg_pubkey: drzVP686qPxb/WmyPo+joJCiHXI5lyW/NEF5N206MXc=
+  peer_v4: 172.21.113.129
+  peer_v6: fe80::1886
