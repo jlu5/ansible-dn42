@@ -1,7 +1,4 @@
 wg_peers:
-- name: dn42syd-jrb0001
-  remove: true
-
 - name: dn42syd-narnia
   port: 52037
   remote: "syd2.dn42.narnia.network:42011"
