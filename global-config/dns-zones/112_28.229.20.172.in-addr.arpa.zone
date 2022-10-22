@@ -21,5 +21,5 @@ $TTL 300
 118 IN PTR nl-ams02.rtr.highdef.dn42.
 120 IN PTR es-mad01.rtr.highdef.dn42.
 121 IN PTR it-mil01.rtr.highdef.dn42.
-124 IN PTR jp-tyo02.rtr.highdef.dn42.
-125 IN PTR au-syd01.rtr.highdef.dn42.
+124 IN PTR tyo.rtr.highdef.dn42.
+125 IN PTR syd.rtr.highdef.dn42.
