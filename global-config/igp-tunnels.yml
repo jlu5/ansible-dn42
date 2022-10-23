@@ -26,25 +26,14 @@ igp_neighbours:
   fr-par01: !!set
     ca-ymq01: null
     es-mad01: null
-    hk01: null
     nl-ams02: null
     uk-lon01: null
-  hk01: !!set
-    fr-par01: null
-    it-mil01: null
-    nl-ams02: null
-    sgp: null
-    sjc: null
-    syd: null
-    tyo: null
-    us-las01: null
   int-lax02: !!set
     sjc: null
     us-dal01: null
     us-las01: null
   it-mil01: !!set
     es-mad01: null
-    hk01: null
     nl-ams02: null
     sgp: null
     syd: null
@@ -54,7 +43,6 @@ igp_neighbours:
     ca-ymq01: null
     es-mad01: null
     fr-par01: null
-    hk01: null
     it-mil01: null
     sgp: null
     sjc: null
@@ -63,7 +51,6 @@ igp_neighbours:
     us-atl01: null
     us-chi02: null
   sgp: !!set
-    hk01: null
     it-mil01: null
     nl-ams02: null
     sjc: null
@@ -72,7 +59,6 @@ igp_neighbours:
     us-las01: null
   sjc: !!set
     ca-ymq01: null
-    hk01: null
     int-lax02: null
     nl-ams02: null
     sgp: null
@@ -83,14 +69,12 @@ igp_neighbours:
     us-las01: null
     yvrpeer: null
   syd: !!set
-    hk01: null
     it-mil01: null
     sgp: null
     sjc: null
     tyo: null
     us-las01: null
   tyo: !!set
-    hk01: null
     it-mil01: null
     nl-ams02: null
     sgp: null
@@ -130,7 +114,6 @@ igp_neighbours:
     us-las01: null
   us-las01: !!set
     ca-ymq01: null
-    hk01: null
     int-lax02: null
     sgp: null
     sjc: null

@@ -6,21 +6,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    151.209295,
-                    -33.86882
-                ]
-            },
-            "properties": {
-                "title": "au-syd01",
-                "description": "Sydney, AU<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -73.567256,
                     45.501689
                 ]
@@ -66,21 +51,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    114.169361,
-                    22.319304
-                ]
-            },
-            "properties": {
-                "title": "hk01",
-                "description": "Hong Kong, HK<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     9.189982,
                     45.464204
                 ]
@@ -88,21 +58,6 @@
             "properties": {
                 "title": "it-mil01",
                 "description": "Milan, IT<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    139.650311,
-                    35.676192
-                ]
-            },
-            "properties": {
-                "title": "jp-tyo02",
-                "description": "Tokyo, JP<br>+ Anycast DNS PoP",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -131,8 +86,53 @@
                 ]
             },
             "properties": {
-                "title": "sg02",
+                "title": "sgp",
                 "description": "Singapore, SG<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.886329,
+                    37.338208
+                ]
+            },
+            "properties": {
+                "title": "sjc",
+                "description": "San Jose, CA, US<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    151.209295,
+                    -33.86882
+                ]
+            },
+            "properties": {
+                "title": "syd",
+                "description": "Sydney, AU<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    139.650311,
+                    35.676192
+                ]
+            },
+            "properties": {
+                "title": "tyo",
+                "description": "Tokyo, JP<br>+ Anycast DNS PoP",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -209,21 +209,6 @@
                 "title": "us-las01",
                 "description": "Las Vegas, NV, US<br>- <b>LITE node, NO Anycast DNS</b>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -121.886329,
-                    37.338208
-                ]
-            },
-            "properties": {
-                "title": "us-sjc01",
-                "description": "San Jose, CA, US<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {

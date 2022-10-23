@@ -1,3 +1,0 @@
-ovpn_peers:
-- name: dn42sgp-icez
-  remove: true
