@@ -25,8 +25,7 @@ $TTL 300
 5 IN PTR yvrpeer.rtr.highdef.dn42.
 34 IN PTR sjc.rtr.highdef.dn42.
 33 IN PTR us-dal01.rtr.highdef.dn42.
-36 IN PTR fr-par01.rtr.highdef.dn42.
-38 IN PTR hk01.rtr.highdef.dn42.
+36 IN PTR par.rtr.highdef.dn42.
 39 IN PTR sgp.rtr.highdef.dn42.
 35 IN PTR int-lax02.rtr.highdef.dn42.
 65 IN PTR ash-core.rtr.highdef.dn42.

@@ -17,9 +17,9 @@ $TTL 300
 123 IN PTR ca-ymq01.rtr.highdef.dn42.
 126 IN PTR us-las01.rtr.highdef.dn42.
 113 IN PTR us-chi02.rtr.highdef.dn42.
-116 IN PTR uk-lon01.rtr.highdef.dn42.
-118 IN PTR nl-ams02.rtr.highdef.dn42.
-120 IN PTR es-mad01.rtr.highdef.dn42.
-121 IN PTR it-mil01.rtr.highdef.dn42.
+116 IN PTR lon.rtr.highdef.dn42.
+118 IN PTR ams.rtr.highdef.dn42.
+120 IN PTR mad.rtr.highdef.dn42.
+121 IN PTR mil.rtr.highdef.dn42.
 124 IN PTR tyo.rtr.highdef.dn42.
 125 IN PTR syd.rtr.highdef.dn42.

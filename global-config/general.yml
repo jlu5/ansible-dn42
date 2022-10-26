@@ -39,7 +39,7 @@ dummy_interfaces:
     track_service: pdns-recursor
 
 # Interfaces to clean up (e.g. for decommissioned nodes)
-cleanup_remove_ifaces: [igp-sg02,igp-jp-tyo02,igp-au-syd01,igp-hk01]
+cleanup_remove_ifaces: [igp-uk-lon01,igp-fr-par01,igp-nl-ams02,igp-it-mil01,igp-es-mad01]
 
 # DNS related settings
 # This is the main domain used for creating host records for routers (<shortname>.<dns_domain>).

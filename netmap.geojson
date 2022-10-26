@@ -6,6 +6,21 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    4.904139,
+                    52.367573
+                ]
+            },
+            "properties": {
+                "title": "ams",
+                "description": "Amsterdam, NL<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -73.567256,
                     45.501689
                 ]
@@ -21,13 +36,43 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -0.127758,
+                    51.507351
+                ]
+            },
+            "properties": {
+                "title": "lon",
+                "description": "London, UK<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -3.70379,
                     40.416775
                 ]
             },
             "properties": {
-                "title": "es-mad01",
+                "title": "mad",
                 "description": "Madrid, ES<br>+ Anycast DNS PoP",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.189982,
+                    45.464204
+                ]
+            },
+            "properties": {
+                "title": "mil",
+                "description": "Milan, IT<br>+ Anycast DNS PoP",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -41,39 +86,9 @@
                 ]
             },
             "properties": {
-                "title": "fr-par01",
+                "title": "par",
                 "description": "Paris, FR<br>- <b>LITE node, NO Anycast DNS</b><br>- <b>Peering over IPv6 only</b>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/yellow.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.189982,
-                    45.464204
-                ]
-            },
-            "properties": {
-                "title": "it-mil01",
-                "description": "Milan, IT<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    4.904139,
-                    52.367573
-                ]
-            },
-            "properties": {
-                "title": "nl-ams02",
-                "description": "Amsterdam, NL<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -133,21 +148,6 @@
             "properties": {
                 "title": "tyo",
                 "description": "Tokyo, JP<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -0.127758,
-                    51.507351
-                ]
-            },
-            "properties": {
-                "title": "uk-lon01",
-                "description": "London, UK<br>+ Anycast DNS PoP",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
