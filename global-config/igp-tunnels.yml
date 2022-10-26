@@ -2,7 +2,8 @@
 igp_neighbours:
   ams: !!set
     ash-core: null
-    ca-ymq01: null
+    atl: null
+    chi: null
     lon: null
     mad: null
     mil: null
@@ -10,42 +11,60 @@ igp_neighbours:
     sgp: null
     sjc: null
     tyo: null
-    us-atl01: null
-    us-chi02: null
+    ymq: null
   ash-core: !!set
     ams: null
-    ca-ymq01: null
-    us-atl01: null
-    us-chi02: null
-  ca-ymq01: !!set
+    atl: null
+    chi: null
+    ymq: null
+  atl: !!set
     ams: null
     ash-core: null
+    chi: null
+    dal: null
     lon: null
-    mad: null
-    par: null
+    ymq: null
+  chi: !!set
+    ams: null
+    ash-core: null
+    atl: null
+    dal: null
+    lon: null
     sjc: null
-    us-atl01: null
-    us-chi02: null
-    us-dal01: null
-    us-las01: null
+    ymq: null
     yvrpeer: null
-  int-lax02: !!set
+  dal: !!set
+    atl: null
+    chi: null
+    las: null
+    lax-core: null
     sjc: null
-    us-dal01: null
-    us-las01: null
+    ymq: null
+  las: !!set
+    dal: null
+    lax-core: null
+    sgp: null
+    sjc: null
+    syd: null
+    tyo: null
+    ymq: null
+  lax-core: !!set
+    dal: null
+    las: null
+    sjc: null
   lon: !!set
     ams: null
-    ca-ymq01: null
+    atl: null
+    chi: null
     mad: null
     par: null
-    us-atl01: null
-    us-chi02: null
+    ymq: null
   mad: !!set
     ams: null
-    ca-ymq01: null
     lon: null
     mil: null
     par: null
+    ymq: null
   mil: !!set
     ams: null
     mad: null
@@ -54,82 +73,64 @@ igp_neighbours:
     tyo: null
   par: !!set
     ams: null
-    ca-ymq01: null
     lon: null
     mad: null
+    ymq: null
   sgp: !!set
     ams: null
+    las: null
     mil: null
     sjc: null
     syd: null
     tyo: null
-    us-las01: null
   sjc: !!set
     ams: null
-    ca-ymq01: null
-    int-lax02: null
+    chi: null
+    dal: null
+    las: null
+    lax-core: null
     sgp: null
     syd: null
     tyo: null
-    us-chi02: null
-    us-dal01: null
-    us-las01: null
+    ymq: null
     yvrpeer: null
   syd: !!set
+    las: null
     mil: null
     sgp: null
     sjc: null
     tyo: null
-    us-las01: null
   tyo: !!set
     ams: null
+    las: null
     mil: null
     sgp: null
     sjc: null
     syd: null
-    us-las01: null
     yvrpeer: null
-  us-atl01: !!set
+  ymq: !!set
     ams: null
     ash-core: null
-    ca-ymq01: null
+    atl: null
+    chi: null
+    dal: null
+    las: null
     lon: null
-    us-chi02: null
-    us-dal01: null
-  us-chi02: !!set
-    ams: null
-    ash-core: null
-    ca-ymq01: null
-    lon: null
+    mad: null
+    par: null
     sjc: null
-    us-atl01: null
-    us-dal01: null
     yvrpeer: null
-  us-dal01: !!set
-    ca-ymq01: null
-    int-lax02: null
-    sjc: null
-    us-atl01: null
-    us-chi02: null
-    us-las01: null
-  us-las01: !!set
-    ca-ymq01: null
-    int-lax02: null
-    sgp: null
-    sjc: null
-    syd: null
-    tyo: null
-    us-dal01: null
   yvrpeer: !!set
-    ca-ymq01: null
+    chi: null
     sjc: null
     tyo: null
-    us-chi02: null
+    ymq: null
 igp_wg_ports:
   ams:
     ash-core: 30119
+    atl: 30010
     br-sao01: 30046
-    ca-ymq01: 30015
+    chi: 30111
     chi03: 30002
     de-nbg01: 30023
     hk01: 30092
@@ -142,51 +143,66 @@ igp_wg_ports:
     sgp: 30118
     sjc: 30099
     tyo: 30034
-    us-atl01: 30010
-    us-chi02: 30111
     us-lax01: 30012
+    ymq: 30015
   ash-core:
     ams: 30119
-    ca-ymq01: 30121
-    us-atl01: 30120
-    us-chi02: 30122
+    atl: 30120
+    chi: 30122
+    ymq: 30121
+  atl:
+    ams: 30010
+    ash-core: 30120
+    br-sao01: 30047
+    chi: 30105
+    chi03: 30006
+    dal: 30067
+    de-nbg01: 30009
+    lon: 30022
+    us-lax01: 30007
+    ymq: 30008
+    ymq01: 30103
+    yvrpeer: 30088
   br-sao01:
     ams: 30046
-    ca-ymq01: 30045
-    us-atl01: 30047
-  ca-ymq01:
-    ams: 30015
-    ash-core: 30121
-    br-sao01: 30045
-    chi03: 30003
-    de-nbg01: 30014
-    lon: 30020
-    mad: 30074
-    par: 30056
-    sjc: 30098
-    us-atl01: 30008
-    us-chi02: 30107
-    us-dal01: 30078
-    us-las01: 30079
-    us-lax01: 30013
-    ymq01: 30104
-    yvrpeer: 30060
+    atl: 30047
+    ymq: 30045
+  chi:
+    ams: 30111
+    ash-core: 30122
+    atl: 30105
+    dal: 30109
+    lon: 30108
+    sjc: 30106
+    ymq: 30107
+    yvrpeer: 30110
   chi03:
     ams: 30002
-    ca-ymq01: 30003
+    atl: 30006
+    dal: 30069
     de-nbg01: 30000
+    las: 30016
     mad: 30024
     sjc: 30062
     tyo: 30031
-    us-atl01: 30006
-    us-dal01: 30069
     us-fmt01: 30050
-    us-las01: 30016
     us-lax01: 30001
+    ymq: 30003
     yvrpeer: 30004
+  dal:
+    atl: 30067
+    chi: 30109
+    chi03: 30069
+    las: 30101
+    lax-core: 30100
+    sjc: 30072
+    us-fmt01: 30070
+    us-lax01: 30071
+    ymq: 30078
+    yvrpeer: 30068
   de-nbg01:
     ams: 30023
-    ca-ymq01: 30014
+    atl: 30009
     chi03: 30000
     lon: 30019
     mad: 30025
@@ -196,40 +212,53 @@ igp_wg_ports:
     sg01: 30042
     syd: 30035
     tyo: 30080
-    us-atl01: 30009
     us-lax01: 30011
+    ymq: 30014
   hk01:
     ams: 30092
+    las: 30093
     mil: 30090
     par: 30104
     sgp: 30116
     sjc: 30089
     syd: 30095
     tyo: 30094
-    us-las01: 30093
     yvrpeer: 30091
-  int-lax02:
+  las:
+    chi03: 30016
+    dal: 30101
+    hk01: 30093
+    lax-core: 30077
+    sgp: 30115
+    sjc: 30064
+    syd: 30103
+    tyo: 30102
+    us-fmt01: 30053
+    us-lax01: 30018
+    ymq: 30079
+    yvrpeer: 30017
+  lax-core:
+    dal: 30100
+    las: 30077
     sjc: 30075
-    us-dal01: 30100
-    us-las01: 30077
     us-lax01: 30076
   lon:
     ams: 30021
-    ca-ymq01: 30020
+    atl: 30022
+    chi: 30108
     de-nbg01: 30019
     mad: 30026
     par: 30057
-    us-atl01: 30022
-    us-chi02: 30108
+    ymq: 30020
     ymq01: 30102
   mad:
     ams: 30027
-    ca-ymq01: 30074
     chi03: 30024
     de-nbg01: 30025
     lon: 30026
     mil: 30030
     par: 30073
+    ymq: 30074
   mil:
     ams: 30029
     de-nbg01: 30028
@@ -244,11 +273,11 @@ igp_wg_ports:
     de-nbg01: 30054
   par:
     ams: 30058
-    ca-ymq01: 30056
     de-nbg01: 30059
     hk01: 30104
     lon: 30057
     mad: 30073
+    ymq: 30056
     ymq01: 30101
   sg01:
     ams: 30043
@@ -260,35 +289,35 @@ igp_wg_ports:
   sgp:
     ams: 30118
     hk01: 30116
+    las: 30115
     mil: 30117
     sjc: 30113
     syd: 30112
     tyo: 30114
-    us-las01: 30115
   sjc:
     ams: 30099
-    ca-ymq01: 30098
+    chi: 30106
     chi03: 30062
+    dal: 30072
     hk01: 30089
-    int-lax02: 30075
+    las: 30064
+    lax-core: 30075
     sgp: 30113
     syd: 30066
     tyo: 30065
-    us-chi02: 30106
-    us-dal01: 30072
-    us-las01: 30064
     us-lax01: 30063
+    ymq: 30098
     yvrpeer: 30061
   syd:
     de-nbg01: 30035
     hk01: 30095
+    las: 30103
     mil: 30097
     sg01: 30044
     sgp: 30112
     sjc: 30066
     tyo: 30038
     us-fmt01: 30052
-    us-las01: 30103
     us-lax01: 30037
     yvrpeer: 30036
   tyo:
@@ -296,95 +325,66 @@ igp_wg_ports:
     chi03: 30031
     de-nbg01: 30080
     hk01: 30094
+    las: 30102
     mil: 30096
     sg01: 30041
     sgp: 30114
     sjc: 30065
     syd: 30038
     us-fmt01: 30051
-    us-las01: 30102
     us-lax01: 30033
     yvrpeer: 30032
-  us-atl01:
-    ams: 30010
-    ash-core: 30120
-    br-sao01: 30047
-    ca-ymq01: 30008
-    chi03: 30006
-    de-nbg01: 30009
-    lon: 30022
-    us-chi02: 30105
-    us-dal01: 30067
-    us-lax01: 30007
-    ymq01: 30103
-    yvrpeer: 30088
-  us-chi02:
-    ams: 30111
-    ash-core: 30122
-    ca-ymq01: 30107
-    lon: 30108
-    sjc: 30106
-    us-atl01: 30105
-    us-dal01: 30109
-    yvrpeer: 30110
-  us-dal01:
-    ca-ymq01: 30078
-    chi03: 30069
-    int-lax02: 30100
-    sjc: 30072
-    us-atl01: 30067
-    us-chi02: 30109
-    us-fmt01: 30070
-    us-las01: 30101
-    us-lax01: 30071
-    yvrpeer: 30068
   us-fmt01:
     chi03: 30050
+    dal: 30070
+    las: 30053
     syd: 30052
     tyo: 30051
-    us-dal01: 30070
-    us-las01: 30053
     us-lax01: 30048
     yvrpeer: 30049
-  us-las01:
-    ca-ymq01: 30079
-    chi03: 30016
-    hk01: 30093
-    int-lax02: 30077
-    sgp: 30115
-    sjc: 30064
-    syd: 30103
-    tyo: 30102
-    us-dal01: 30101
-    us-fmt01: 30053
-    us-lax01: 30018
-    yvrpeer: 30017
   us-lax01:
     ams: 30012
-    ca-ymq01: 30013
+    atl: 30007
     chi03: 30001
+    dal: 30071
     de-nbg01: 30011
-    int-lax02: 30076
+    las: 30018
+    lax-core: 30076
     sg01: 30039
     sjc: 30063
     syd: 30037
     tyo: 30033
-    us-atl01: 30007
-    us-dal01: 30071
     us-fmt01: 30048
-    us-las01: 30018
+    ymq: 30013
     yvrpeer: 30005
+  ymq:
+    ams: 30015
+    ash-core: 30121
+    atl: 30008
+    br-sao01: 30045
+    chi: 30107
+    chi03: 30003
+    dal: 30078
+    de-nbg01: 30014
+    las: 30079
+    lon: 30020
+    mad: 30074
+    par: 30056
+    sjc: 30098
+    us-lax01: 30013
+    ymq01: 30104
+    yvrpeer: 30060
   yvrpeer:
-    ca-ymq01: 30060
+    atl: 30088
+    chi: 30110
     chi03: 30004
+    dal: 30068
     hk01: 30091
+    las: 30017
     sjc: 30061
     syd: 30036
     tyo: 30032
-    us-atl01: 30088
-    us-chi02: 30110
-    us-dal01: 30068
     us-fmt01: 30049
-    us-las01: 30017
     us-lax01: 30005
+    ymq: 30060
 next_port: 30123
