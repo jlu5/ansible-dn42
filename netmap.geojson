@@ -11,143 +11,8 @@
                 ]
             },
             "properties": {
-                "title": "ams",
-                "description": "Amsterdam, NL<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -73.567256,
-                    45.501689
-                ]
-            },
-            "properties": {
-                "title": "ca-ymq01",
-                "description": "Montreal, QC, CA<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -0.127758,
-                    51.507351
-                ]
-            },
-            "properties": {
-                "title": "lon",
-                "description": "London, UK<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -3.70379,
-                    40.416775
-                ]
-            },
-            "properties": {
-                "title": "mad",
-                "description": "Madrid, ES<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.189982,
-                    45.464204
-                ]
-            },
-            "properties": {
-                "title": "mil",
-                "description": "Milan, IT<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    2.352222,
-                    48.856614
-                ]
-            },
-            "properties": {
-                "title": "par",
-                "description": "Paris, FR<br>- <b>LITE node, NO Anycast DNS</b><br>- <b>Peering over IPv6 only</b>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/yellow.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    103.819836,
-                    1.352083
-                ]
-            },
-            "properties": {
-                "title": "sgp",
-                "description": "Singapore, SG<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -121.886329,
-                    37.338208
-                ]
-            },
-            "properties": {
-                "title": "sjc",
-                "description": "San Jose, CA, US<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    151.209295,
-                    -33.86882
-                ]
-            },
-            "properties": {
-                "title": "syd",
-                "description": "Sydney, AU<br>+ Anycast DNS PoP",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    139.650311,
-                    35.676192
-                ]
-            },
-            "properties": {
-                "title": "tyo",
-                "description": "Tokyo, JP<br>+ Anycast DNS PoP",
+                "title": "Amsterdam, NL",
+                "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -161,8 +26,8 @@
                 ]
             },
             "properties": {
-                "title": "us-atl01",
-                "description": "Atlanta, GA, US<br>+ Anycast DNS PoP",
+                "title": "Atlanta, GA, US",
+                "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -176,8 +41,8 @@
                 ]
             },
             "properties": {
-                "title": "us-chi02",
-                "description": "Chicago, IL, US<br>+ Anycast DNS PoP",
+                "title": "Chicago, IL, US",
+                "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -191,8 +56,8 @@
                 ]
             },
             "properties": {
-                "title": "us-dal01",
-                "description": "Dallas, TX, US<br>+ Anycast DNS PoP",
+                "title": "Dallas, TX, US",
+                "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -206,9 +71,144 @@
                 ]
             },
             "properties": {
-                "title": "us-las01",
-                "description": "Las Vegas, NV, US<br>- <b>LITE node, NO Anycast DNS</b>",
+                "title": "Las Vegas, NV, US",
+                "description": "- LITE node, NO Anycast DNS<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.127758,
+                    51.507351
+                ]
+            },
+            "properties": {
+                "title": "London, UK",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.70379,
+                    40.416775
+                ]
+            },
+            "properties": {
+                "title": "Madrid, ES",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.189982,
+                    45.464204
+                ]
+            },
+            "properties": {
+                "title": "Milan, IT",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.567256,
+                    45.501689
+                ]
+            },
+            "properties": {
+                "title": "Montreal, QC, CA",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.352222,
+                    48.856614
+                ]
+            },
+            "properties": {
+                "title": "Paris, FR",
+                "description": "- LITE node, NO Anycast DNS<br>- Peering over IPv6 only<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/yellow.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.886329,
+                    37.338208
+                ]
+            },
+            "properties": {
+                "title": "San Jose, CA, US",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.819836,
+                    1.352083
+                ]
+            },
+            "properties": {
+                "title": "Singapore, SG",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    151.209295,
+                    -33.86882
+                ]
+            },
+            "properties": {
+                "title": "Sydney, AU",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    139.650311,
+                    35.676192
+                ]
+            },
+            "properties": {
+                "title": "Tokyo, JP",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -221,8 +221,8 @@
                 ]
             },
             "properties": {
-                "title": "yvrpeer",
-                "description": "Vancouver, BC, CA<br>- <b>LITE node, NO Anycast DNS</b><br>- <b>Peering over IPv6 only</b>",
+                "title": "Vancouver, BC, CA",
+                "description": "- LITE node, NO Anycast DNS<br>- Peering over IPv6 only<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/yellow.png"
             }
         }

@@ -82,23 +82,23 @@ def main():
         # GeoJSON uses longitude and then latitude
         point = geojson.Point((coords[1], coords[0]))
 
-        description = f"{nodedata['location']}"
+        description = ""
         is_anycast = is_anycast_host(hosts_yaml, node)
         is_v6_only = nodedata.get('v6_only')
         icon_name = "red"
 
         if is_anycast:
-            description += "<br>+ Anycast DNS PoP"
+            description += "+ Anycast DNS PoP<br>"
             icon_name = "red-dot"
         else:
-            description += "<br>- <b>LITE node, NO Anycast DNS</b>"
+            description += "- LITE node, NO Anycast DNS<br>"
 
         if is_v6_only:
             icon_name = "yellow"
-            description += "<br>- <b>Peering over IPv6 only</b>"
+            description += "- Peering over IPv6 only<br>"
 
         feature = geojson.Feature(geometry=point, properties={
-            "title": node,
+            "title": nodedata['location'],
             "description": description,
             "icon": ICON_PREFIX + icon_name + ".png"
         })
