@@ -269,3 +269,10 @@ wg_peers:
   wg_pubkey: pocfYuG45CIvYHDrLK4XV3GrdVVlK6vhKJMEAfq7Dn8=
   peer_v4: null
   peer_v6: fe80::703
+
+- name: dn42-lare
+  port: 23035
+  remote: null
+  wg_pubkey: l4/RebJ8IuNS8+TVHrckrrx0J7qWdLa6jt0n8ROLHWE=
+  peer_v4: 172.22.125.135
+  peer_v6: fe80::3035:135
