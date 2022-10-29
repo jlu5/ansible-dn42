@@ -20,8 +20,7 @@ $TTL 300
 75 IN PTR ymq-rtr-ptp.yvrlab.highdef.dn42.
 74 IN PTR yvrlab-ptp.ymq.highdef.dn42.
 1 IN PTR gw.yvrlab.highdef.dn42.
-16 IN PTR fr-nantesixp1.ix.highdef.dn42.
-17 IN PTR fr-nantesixp2.ix.highdef.dn42.
+17 IN PTR nte-ixrs.rtr.highdef.dn42.
 5 IN PTR yvrpeer.rtr.highdef.dn42.
 34 IN PTR sjc.rtr.highdef.dn42.
 33 IN PTR dal.rtr.highdef.dn42.

@@ -13,10 +13,10 @@ $TTL 300
 117 IN PTR peers-nodeid-117.ams.highdef.dn42.
 122 IN PTR peers-nodeid-122.sjc.highdef.dn42.
 127 IN PTR peers-nodeid-127.sgp.highdef.dn42.
-119 IN PTR atl.rtr.highdef.dn42.
-123 IN PTR ymq.rtr.highdef.dn42.
 126 IN PTR las.rtr.highdef.dn42.
 113 IN PTR chi.rtr.highdef.dn42.
+123 IN PTR ymq.rtr.highdef.dn42.
+119 IN PTR atl.rtr.highdef.dn42.
 116 IN PTR lon.rtr.highdef.dn42.
 118 IN PTR ams.rtr.highdef.dn42.
 120 IN PTR mad.rtr.highdef.dn42.
