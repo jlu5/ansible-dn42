@@ -45,8 +45,8 @@ cleanup_remove_ifaces: []
 # This is the main domain used for creating host records for routers (<shortname>.<dns_domain>).
 # Other domains can be specified in global-config/dns-entries.yml
 dns_domain: "highdef.dn42"
-# Format to use when automatically creating host records for routers. "%s" substitutes the node shortname
-dns_auto_host_record_format: "%s.rtr"
+# Suffix to use when automatically creating host records for routers: i.e. "<name><suffix>.<dns_domain>". Include a leading dot but no trailing dot
+dns_auto_host_record_suffix: ".rtr"
 dns_nameserver: "ns.highdef.dn42"  # used in NS, SOA records; substitutions not supported here
 dns_ttl: 300
 dns_zones_dir: "/etc/powerdns/dns-zones"
