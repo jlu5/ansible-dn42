@@ -1,0 +1,29 @@
+*** Database ***
+
+# Interval between probes, set to 10m (up from 5m)
+step     = 600
+# Number of pings on each interval
+pings    = 20
+
+# The config columns below are defined as follows:
+# column 0:    Consolidation method. (???)
+# column 1:    What part of the consolidated intervals must be known to warrant a known entry. (???)
+# column 2:    How many steps to consolidate into for each RRA entry.
+# column 3:    How many rows this RRA should have.
+
+# How long data is stored for a graph is effectively the following (in seconds):
+# step size * column 2 * column 3
+# Column 2 adjusts the granularity of data, for aggregates
+# Column 3 adjusts how much data to store, at the configured level of granularity
+
+# default: stores 5 days
+AVERAGE  0.5   1  720
+# aggregate: stores 60 days
+AVERAGE  0.5  12  720
+    MIN  0.5  12  720
+    MAX  0.5  12  720
+# aggregate: stores 360 days
+AVERAGE  0.5 144   360
+    MAX  0.5 144   360
+    MIN  0.5 144   360
+

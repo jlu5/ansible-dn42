@@ -1,0 +1,63 @@
++ reference_v6_0
+menu = Reference (IPv6)
+title = Reference Sites - IPv6
+probe = FPing6
+
+++ akamai
+menu = Akamai
+title = Akamai [www.akamai.com]
+host = www.akamai.com
+
+++ amazon-cloudfront
+menu = Amazon CloudFront
+title = Amazon CloudFront [cdn-aws.deb.debian.org]
+host = cdn-aws.deb.debian.org
+
+++ cloudflare
+menu = Cloudflare
+title = Cloudflare [cloudflare.com]
+host = cloudflare.com
+
+++ dropbox
+menu = Dropbox
+title = Dropbox [www.dropbox.com]
+host = www.dropbox.com
+
+++ facebook
+menu = Facebook
+title = Facebook [www.facebook.com]
+host = www.facebook.com
+
+++ fastly
+menu = Fastly
+title = Fastly [cdn-fastly.deb.debian.org]
+host = cdn-fastly.deb.debian.org
+
+++ google
+menu = Google
+title = Google [ipv6.google.com]
+host = ipv6.google.com
+
+++ microsoft
+menu = Microsoft O365
+title = Microsoft Office 365 [www.outlook.com]
+host = www.outlook.com
+
+++ opendns
+menu = OpenDNS
+title = OpenDNS [2620:119:35::35]
+host = 2620:119:35::35
+
+++ wikipedia
+menu = Wikipedia
+title = Wikipedia [en.wikipedia.org]
+host = en.wikipedia.org
+
+{% for region in smokeping_regions | default(smokeping_region_map[dn42_regions[0]]) %}
+{% set path = "REGIONS-6/" + region + ".conf.j2" %}
+### BEGIN CONFIG SNIPPET {{ path }}
+
+{% include path ignore missing %}
+
+### END CONFIG SNIPPET {{ path }}
+{% endfor %}

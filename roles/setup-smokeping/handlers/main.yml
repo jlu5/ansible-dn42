@@ -1,0 +1,13 @@
+- name: Reload smokeping core
+  service:
+    name: smokeping
+    state: reloaded
+  ignore_errors: "{{ ansible_check_mode }}"
+  listen: "Restart smokeping"
+
+- name: Restart smokeping-fcgi
+  service:
+    name: smokeping-fcgi
+    state: restarted
+  ignore_errors: "{{ ansible_check_mode }}"
+  listen: "Restart smokeping"

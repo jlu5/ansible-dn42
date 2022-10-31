@@ -1,0 +1,42 @@
+*** Targets ***
+
+probe = FPing
+
+menu = Top
+title = {{ inventory_hostname }} - highdef.network monitoring
+remark = highdef.network monitoring: <ul>\
+    <li>{{ inventory_hostname }}: {{ location }}</li>\
+</ul>
+
+{% if smokeping_dn42 | default(True) %}
+
++ dn42
+menu = dn42
+title = dn42 Services
+
+{# NOTE: Must have a newline between files for correct line breaks #}
+
+{% include 'targets/dn42-services.conf.j2' %}
+
+{% endif %}
+
+{# Inspired by https://tureus.github.io/devops/2015/08/28/ansible-compiling-conf.d-pattern.html #}
+{% if not (v6_only | default(False)) %}
+{% for template in lookup('fileglob', 'config/targets/reference-v4/*.conf.j2', wantlist=True) | sort %}
+### BEGIN CONFIG SNIPPET {{ template | basename }}
+
+{{ lookup('template', template) }}
+
+### END CONFIG SNIPPET {{ template | basename }}
+{% endfor %}
+{% endif %}
+
+{% if not (v4_only | default(False)) %}
+{% for template in lookup('fileglob', 'config/targets/reference-v6/*.conf.j2', wantlist=True) | sort %}
+### BEGIN CONFIG SNIPPET {{ template | basename }}
+
+{{ lookup('template', template) }}
+
+### END CONFIG SNIPPET {{ template | basename }}
+{% endfor %}
+{% endif %}

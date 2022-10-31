@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META http-equiv="Refresh" content="<##step##>">
+    <title>SmokePing Latency Page for <##title##></title>
+    <link rel="stylesheet" type="text/css" href="/smokeping/css/smokeping-print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="/smokeping/css/smokeping-screen.css" media="screen">
+<style>
+/* This is a bit of a hack. Smokeping's navbar styles don't actually include anything for misc navbar items :( */
+.hdnet-navbar-item {
+    display: inline-block;
+    vertical-align: top;
+    font-size: medium;
+    padding: 15px 10px;
+    border-right: 1px solid #afafaf;
+}
+
+/* Lazy adaptive scrolling */
+.navbar {
+    /* https://stackoverflow.com/a/15061010 */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.navbar a {
+    color: #04d;
+}
+
+.hdnet-logo {
+    font-family: 'Lato', sans-serif;
+    font-size: x-large;
+    color: #fefefe;
+}
+.hdnet-logo > a {
+    color: #9cf;
+    text-decoration: none;
+}
+.hdnet-logo > a:hover, .hdnet-logo > a:focus {
+    color: #def;
+}
+</style>
+<script>
+function post_init() {
+    for (let link of document.getElementsByClassName("hdnet-smokeping-neighbour")) {
+        // Navigate to the same page by default
+        link.href += window.location.search;
+    }
+}
+</script>
+</head>
+
+<body id="body" onload="post_init()">
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+{#
+        <div class="logo">
+            <##smokelogo##>
+        </div>
+        <div class="logo">
+            <##rrdlogo##>
+        </div>
+#}
+        <div class="hdnet-logo">
+            📡 <a href="https://highdef.network">highdef.network</a>
+        </div>
+    </div>
+
+    <div class="sidebar-menu">
+        <##menu##>
+    </div>
+</div>
+
+<div class="navbar">
+    <div class="navbar-menu"><a id="menu-button" href="#">Toggle Menu</a></div>
+    <div class="hdnet-navbar-item">Pinger sites:</div>
+{% for host in groups['smokeping'] %}
+{% set other_url = hostvars[host].smokeping_base_url | default(host + dns_auto_host_record_suffix + "." + dns_domain) %}
+{% if host == inventory_hostname %}
+    <div class="hdnet-navbar-item"><b>{{ host|upper }}</b></div>
+{% else %}
+    <div class="hdnet-navbar-item"><a class="hdnet-smokeping-neighbour" href="//{{ other_url }}/smokeping/">{{ host|upper }}</a></div>
+{% endif %}
+{% endfor %}
+</div>
+
+<div class="main">
+    <h1><##title##></h1>
+    <h2><##remark##></h2>
+
+    <div class="overview">
+        <##overview##>
+    </div>
+
+    <div class="details">
+        <##body##>
+    </div>
+</div>
+<hr>
+<div class="footer">
+    <p class="footer-right"><small>Running on <##smokeping##> by <##author##></small></p>
+    <p><small>Maintained by <##owner##></small></p>
+</div>
+
+<script src="/smokeping/js/prototype/prototype.js" type="text/javascript"></script>
+<script src="/smokeping/js/scriptaculous/scriptaculous.js?load=builder,effects,dragdrop" type="text/javascript"></script>
+<script src="/smokeping/js/cropper/cropper.js" type="text/javascript"></script>
+<script src="/smokeping/js/smokeping.js" type="text/javascript"></script>
+
+</body>
+</html>

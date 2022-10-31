@@ -1,0 +1,14 @@
+*** General ***
+
+owner    = James Lu (AS4242421080)
+contact  = james@overdrivenetworks.com
+#mailhost = my.mail.host
+# NOTE: do not put the Image Cache below cgi-bin
+# since all files under cgi-bin will be executed ... this is not
+# good for images.
+cgiurl   = http://{{ smokeping_base_url | default(inventory_hostname + dns_auto_host_record_suffix + "." + dns_domain) }}/smokeping/
+# specify this to get syslog logging
+syslogfacility = local0
+# each probe is now run in its own process
+# disable this to revert to the old behaviour
+# concurrentprobes = no

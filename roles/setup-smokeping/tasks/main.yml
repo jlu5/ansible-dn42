@@ -1,0 +1,58 @@
+- name: Install smokeping
+  apt:
+    package:
+    - smokeping
+    - spawn-fcgi
+    # Default smokeping on Debian pulls in Apache!
+    install_recommends: no
+
+- name: Install smokeping-fcgi service
+  copy:
+    src: smokeping-fcgi.service
+    dest: /etc/systemd/system/
+
+- name: Create smokeping socket directory
+  file:
+    path: /run/smokeping
+    state: directory
+
+- name: Create smokeping cache directory
+  file:
+    path: /var/cache/smokeping/images
+    mode: '0755'
+    owner: smokeping
+    group: www-data
+    state: directory
+  ignore_errors: "{{ ansible_check_mode }}"
+
+- name: Template smokeping config
+  template:
+    src: config.j2
+    dest: /etc/smokeping/config
+    validate: "/usr/sbin/smokeping --check --config %s"
+    follow: true
+  notify: Restart smokeping
+
+- name: Template smokeping basepage.html
+  template:
+    src: basepage.html.j2
+    dest: /etc/smokeping/basepage.html
+  notify: Restart smokeping-fcgi
+
+- name: Start / Enable smokeping-fcgi service
+  systemd:
+    name: smokeping-fcgi
+    enabled: yes
+    state: started
+  ignore_errors: "{{ ansible_check_mode }}"
+
+- name: Configure nginx to service smokeping
+  include_role:
+    name: apps_nginx
+  vars:
+    nginx_site:
+      src: smokeping42-nginx.j2
+      dst: smokeping42
+  ignore_errors: "{{ ansible_check_mode }}"
+  # disable this when unified splash site setup is enabled
+  when: "smokeping_base_url | default(False)"

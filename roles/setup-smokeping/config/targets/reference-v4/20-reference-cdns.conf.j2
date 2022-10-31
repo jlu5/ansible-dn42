@@ -1,0 +1,71 @@
++ reference
+menu = Reference
+title = Reference Sites
+
+++ akamai
+menu = Akamai
+title = Akamai [www.akamai.com]
+host = www.akamai.com
+
+++ amazon-cloudfront
+menu = Amazon CloudFront
+title = Amazon CloudFront [cdn-aws.deb.debian.org]
+host = cdn-aws.deb.debian.org
+
+++ cf-dns
+menu = Cloudflare DNS
+title = Cloudflare DNS [1.1.1.1]
+host = 1.1.1.1
+
+++ dropbox
+menu = Dropbox
+title = Dropbox [www.dropbox.com]
+host = www.dropbox.com
+
+++ facebook
+menu = Facebook
+title = Facebook [www.facebook.com]
+host = www.facebook.com
+
+++ fastly
+menu = Fastly
+title = Fastly [cdn-fastly.deb.debian.org]
+host = cdn-fastly.deb.debian.org
+
+++ google-dns
+menu = Google DNS
+title = Google DNS [8.8.8.8]
+host = 8.8.8.8
+
+++ github
+menu = GitHub
+title = GitHub [github.com]
+host = github.com
+
+++ microsoft
+menu = Microsoft O365
+title = Microsoft Office 365 [www.outlook.com]
+host = www.outlook.com
+
+++ opendns
+menu = OpenDNS
+title = OpenDNS [208.67.222.222]
+host = 208.67.222.222
+
+++ twitter
+menu = Twitter
+title = Twitter [twitter.com]
+host = twitter.com
+
+++ wikipedia
+menu = Wikipedia
+title = Wikipedia [en.wikipedia.org]
+host = en.wikipedia.org
+{% for region in smokeping_regions | default(smokeping_region_map[dn42_regions[0]]) %}
+{% set path = "REGIONS-4/" + region + ".conf.j2" %}
+### BEGIN CONFIG SNIPPET {{ path }}
+
+{% include path %}
+
+### END CONFIG SNIPPET {{ path }}
+{% endfor %}

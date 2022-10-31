@@ -9,7 +9,9 @@ server {
     listen [::]:{{ netdata_proxy_port }};
 
     server_name {{ ownip }};
+{% if ownip6 is defined %}
     server_name {{ ownip6 }};
+{% endif %}
 
 {% if netdata_mgmt_ips | default([]) %}
     satisfy any;

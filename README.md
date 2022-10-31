@@ -23,7 +23,8 @@ Here I use Ansible to configure the following components on Debian 11 hosts:
   - Public recursive resolver (dn42, clearnet, and interconnected networks) @ **dns.highdef.dn42** / 172.23.0.53 / fd42:d42:d42:53::1
   - For this I also use a [custom DNS zone generator](scripts/make-dns-zones.py) that reads from [YAML](global-config/dns-entries.yml) and the Ansible inventory
 - iptables firewall rules for dn42
-- [Netdata](https://www.netdata.cloud/) + [bird_exporter](https://github.com/czerwonk/bird_exporter) for monitoring
+- [Netdata](https://www.netdata.cloud/) (monitoring stack) with [bird_exporter](https://github.com/czerwonk/bird_exporter)
+- Smokeping
 
 Some components (Bird backports, etc.) pull from my personal APT repository @ https://deb.utopia-repository.org/
 

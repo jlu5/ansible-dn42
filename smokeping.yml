@@ -1,0 +1,5 @@
+- name: Setup Smokeping
+  hosts: smokeping
+  become: yes
+  roles:
+    - setup-smokeping

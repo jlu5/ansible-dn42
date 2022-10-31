@@ -1,0 +1,15 @@
+# From https://0x4a42.net/2016/smokeping-with-nginx-and-fastcgi/
+[Unit]
+Description=SmokePing FastCGI Service
+After=network.target smokeping.service
+Wants=smokeping.service
+
+[Service]
+StandardOutput=null
+StandardError=syslog
+ExecStart=/usr/bin/spawn-fcgi -u smokeping -s /run/smokeping-fcgi.sock \
+          -M 600 -n -U www-data -- /usr/share/smokeping/smokeping.cgi
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

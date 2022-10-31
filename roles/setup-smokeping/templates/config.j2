@@ -1,0 +1,6 @@
+{# Inspired by https://tureus.github.io/devops/2015/08/28/ansible-compiling-conf.d-pattern.html #}
+{% for template in lookup('fileglob', 'config/*.conf.j2', wantlist=True) | sort %}
+### BEGIN CONFIG SNIPPET {{ template | basename }}
+{{ lookup('template', template) }}
+### END CONFIG SNIPPET {{ template | basename }}
+{% endfor %}
