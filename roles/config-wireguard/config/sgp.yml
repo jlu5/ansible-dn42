@@ -169,3 +169,10 @@ wg_peers:
   wg_pubkey: F6h8b3MOOf2A7qaUipDW5LFRZESjcJ4GL1w3kNF6pgQ=
   peer_v4: 172.22.77.47
   peer_v6: fe80::1817
+
+- name: dn42-billchen
+  port: 20803
+  remote: hk.billchen.bid:21080
+  wg_pubkey: jfJLocC6s+MUvxkrrJJ010kiVvmPJ23TYjdsarc4R28=
+  peer_v4: 172.23.33.10
+  peer_v6: fe80::803
