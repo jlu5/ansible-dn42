@@ -9,7 +9,7 @@ def remote_ping(node, target):
     output = subprocess.check_output([
         # shlex.quote here should be safe, right? Don't see any obvious way to disable starting a shell
         # when running remote ssh commands
-        'ssh', f'dn42-{node}.jlu5.com', 'ping', f'-c{PING_COUNT}', '-q', '-n', shlex.quote(target)
+        'ssh', node, 'ping', f'-c{PING_COUNT}', '-q', '-n', shlex.quote(target)
     ], encoding='utf-8')
     print("Ping output:")
     print(output)
