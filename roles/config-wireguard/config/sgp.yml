@@ -176,3 +176,11 @@ wg_peers:
   wg_pubkey: jfJLocC6s+MUvxkrrJJ010kiVvmPJ23TYjdsarc4R28=
   peer_v4: 172.23.33.10
   peer_v6: fe80::803
+
+- name: dn42-sunnet
+  port: 23088
+  remote: sin1-sg.dn42.6700.cc:21080
+  wg_pubkey: rLuqS2ZQRk5ape3rHtBTXGbRbUP7lNYpufk3tt1P4z0=
+  peer_v4: 172.21.100.198
+  peer_v6: fe80::3088:198
+  local_v6: fe80::abcd
