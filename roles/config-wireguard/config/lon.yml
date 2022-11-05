@@ -202,3 +202,10 @@ wg_peers:
   wg_pubkey: 7xvugzmlWteydIZnvNls/ZwoA2Acvd7Uq5FO66KSPFg=
   peer_v4: 172.23.109.171
   peer_v6: fd38:cfa3:7091:2::1
+
+- name: dn42-nyabla
+  port: 20850
+  remote: meow.nyabla.net:21080
+  wg_pubkey: sRUVGY3OjySTLefDVYnSBItdjNZSAUdvG+P8vBNWdBg=
+  peer_v4: null
+  peer_v6: fe80::0850
