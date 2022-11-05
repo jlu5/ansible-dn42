@@ -517,7 +517,7 @@ wg_peers:
   port: 23035
   remote: de01.dn42.lare.cc:42413
   wg_pubkey: OL2LE2feDsFV+fOC4vo4u/1enuxf3m2kydwGRE2rKVs=
-  peer_v4: 172.22.125.31
+  peer_v4: 172.22.125.130
   peer_v6: fe80::3035:1080
 
 - name: dn42-04dco
