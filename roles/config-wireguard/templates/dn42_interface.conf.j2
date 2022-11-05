@@ -34,6 +34,8 @@ iface {{ ifname }} inet static
 {% elif peer_info.get('local_v6') %}
     post-up ip -6 addr add {{ local_v6 }} dev {{ ifname }}
 {% endif %}
+{# Disable Martian filtering for local addresses, as we may be forwarding responses for anycast services from another node #}
+    post-up sysctl -w net.ipv4.conf.{{ ifname }}.accept_local=1
 {% set limit_mbit = peer_info.get('wg_ratelimit', wg_ratelimit|default(0)) | int %}
 {% if limit_mbit and not peer_info.get('is_internal_node') %}
 {# ref: https://unix.stackexchange.com/a/100797 #}
