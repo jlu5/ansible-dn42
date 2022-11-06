@@ -1,4 +1,6 @@
+{% if not dummy_iface.track_service %}
 auto {{ dummy_iface.ifname | mandatory }}
+{% endif %}
 {#
 Use a namespace variable to track state across scopes: https://stackoverflow.com/a/61342337
 In particular we only want to attach the interface creation pre-up command to the first IP associated with
@@ -6,6 +8,14 @@ an interface, or that command will run multiple times and cause errors.
 Note: this requires Jinja2 2.10+
 #}
 {% set ns = namespace(has_init_line=false) %}
+{% macro init_lines(dummy_iface) %}
+{% if not ns.has_init_line %}
+{# Cap MTU at IPv6 minimum as PMTUD setup is tricky... #}
+    mtu 1280
+    pre-up ip link add {{ dummy_iface.ifname }} type dummy
+{% set ns.has_init_line = true %}
+{% endif %}
+{% endmacro %}
 
 {% for ip in dummy_iface.ip4 %}
 iface {{ dummy_iface.ifname | mandatory }} inet static
@@ -14,11 +24,7 @@ iface {{ dummy_iface.ifname | mandatory }} inet static
 {% set ip = ip | ipaddr('host') %}
 {% endif %}
     address {{ ip }}
-{% if not ns.has_init_line %}
-    mtu 1280
-    pre-up ip link add {{ dummy_iface.ifname }} type dummy
-{% set ns.has_init_line = true %}
-{% endif %}
+{{ init_lines(dummy_iface) }}
 {% endfor %}
 
 {% for ip in dummy_iface.ip6 %}
@@ -27,10 +33,6 @@ iface {{ dummy_iface.ifname }} inet6 static
 {% if ip | ipaddr('address') %}
 {% set ip = ip | ipaddr('host') %}
 {% endif %}
-    mtu 1280
     address {{ ip }}
-{% if not ns.has_init_line %}
-    pre-up ip link add {{ dummy_iface.ifname }} type dummy
-{% set ns.has_init_line = true %}
-{% endif %}
+{{ init_lines(dummy_iface) }}
 {% endfor %}

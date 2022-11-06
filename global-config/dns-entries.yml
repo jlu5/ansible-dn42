@@ -14,17 +14,17 @@ dns_records:
     # DNS & web anycast
     "ns":
       type: host_record
-      ip4: "{{ dummy_interfaces.anycast_auth_dns.ip4_natmap[0] }}"
+      ip4: "{{ dummy_interfaces.anycast_auth_dns.ip4[0] }}"
       ip6: "{{ dummy_interfaces.anycast_auth_dns.ip6[0] }}"
     "dns":
       type: host_record
-      ip4: "{{ dummy_interfaces.anycast_recursors.ip4_natmap[0] }}"
+      ip4: "{{ dummy_interfaces.anycast_recursors.ip4[0] }}"
       ip6: "{{ dummy_interfaces.anycast_recursors.ip6[0] }}"
     "@":
       type: multi
       records:
         - type: A
-          target: "{{ dummy_interfaces.anycast_recursors.ip4_natmap[0] }}"
+          target: "{{ dummy_interfaces.anycast_recursors.ip4[0] }}"
         - type: AAAA
           target: "{{ dummy_interfaces.anycast_recursors.ip6[0] }}"
     "www":

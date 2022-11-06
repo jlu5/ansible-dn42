@@ -188,7 +188,7 @@ function ebgp_export_filter() {
     if (bgp_path.len = 0) then {
         bgp_large_community.add((OWNAS, LC_ORIGIN_NODEID, NODEID));
     }
-    if source = RTS_STATIC then {
+    if source ~ [RTS_STATIC, RTS_DEVICE] then {
 {% for region_tag in dn42_regions[1:] %}
         bgp_community.add((64511, {{ region_tag }}));
 {% endfor %}
@@ -220,11 +220,6 @@ function ibgp_import_filter()
 
 function ibgp_export_filter() {
     if (source != RTS_BGP && !is_ibgp_network()) then {
-        reject;
-    }
-    # Don't export device routes for dn42 anycast networks. These will be filled in via a static route config
-    # triggered by service start/stop
-    if (is_ibgp_network() && source = RTS_DEVICE) then {
         reject;
     }
     accept;

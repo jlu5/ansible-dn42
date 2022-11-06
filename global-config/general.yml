@@ -17,26 +17,17 @@ dummy_interfaces:
     ifname: "igp-dummy0"
     ip4: ["{{ ownip }}"]
     ip6: ["{{ ownip6 }}"]
-    igp_announce: yes
+    track_service: no
   anycast_auth_dns:
     ifname: "igp-dummy1"
-    ip4: ["169.254.208.21"]
-    ip4_natmap: ["172.22.108.21"]
+    ip4: ["172.22.108.21"]
     ip6: ["fd86:bad:11b7:53::1"]
-    igp_announce: no
-    track_service: pdns
+    track_service: yes
   anycast_recursors:
     ifname: "igp-dummy2"
-    # HACK: 169.254.208.53 et al. are internal IPs with 1-to-1 NAT to anycast service IPs. This works around
-    # Linux unconditionally dropping IPv4 "Martian packets": i.e. those with a source IP matching
-    # a locally bound address, but not sent from that interface
-    # These NAT rules are coded in roles/config-iptables/templates and triggered by a
-    # pdns-recursor service override
-    ip4: ["169.254.208.22", "169.254.208.53", "169.254.208.81"]
-    ip4_natmap: ["172.22.108.22", "172.23.0.53", "172.20.0.81"]
+    ip4: ["172.22.108.22", "172.23.0.53", "172.20.0.81"]
     ip6: ["fd86:bad:11b7:53::2", "fd42:d42:d42:53::1/64", "fd42:d42:d42:81::1/64"]
-    igp_announce: no
-    track_service: pdns-recursor
+    track_service: yes
 
 # Interfaces to clean up (e.g. for decommissioned nodes)
 cleanup_remove_ifaces: []

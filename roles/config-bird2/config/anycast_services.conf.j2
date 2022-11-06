@@ -1,0 +1,9 @@
+{% if 'anycast_pool' in group_names %}
+protocol direct anycast_import {
+    ipv4;
+    ipv6;
+    interface {{ dummy_interfaces.values() | list | selectattr("track_service") | map(attribute='ifname') | map("to_json") | sort | join(", ") }};
+}
+{% else %}
+# Anycast not enabled on this node
+{% endif %}

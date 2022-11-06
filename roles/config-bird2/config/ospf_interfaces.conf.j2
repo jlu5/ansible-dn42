@@ -13,8 +13,8 @@ area 0 {
         type ptp;
     };
 {% endfor %}
-{# In order: global stub ifname globs, local stub ifnames (appended), dummy interfaces with igp_announce=yes #}
-{% for entry in stub_ifnames + stub_ifnames_append|default([]) + (dummy_interfaces.values() | list | selectattr("igp_announce") | map(attribute='ifname') | list | sort) %}
+{# In order: global stub ifname globs, local stub ifnames (appended), dummy interfaces with track_service=no #}
+{% for entry in stub_ifnames + stub_ifnames_append|default([]) + (dummy_interfaces.values() | list | rejectattr("track_service") | map(attribute='ifname') | list | sort) %}
     interface "{{ entry }}" {
         stub on;
     };

@@ -22,7 +22,6 @@
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.anycast_recursors }}"
     - role: config-iptables
-    - config-bird2-autoservice
 
     # Install & configure PowerDNS authoritative server
     - role: config-powerdns

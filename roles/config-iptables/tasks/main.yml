@@ -46,15 +46,6 @@
   notify:
   - "Reload iptables rules"
 
-- name: "Template iptables NAT support script"
-  template:
-    src: apply-anycast.j2
-    dest: "{{ iptables_dir }}/apply-anycast"
-    mode: '755'
-  notify:
-  - "Reload iptables rules"
-  when: "'anycast_pool' in group_names"
-
 - name: "Write iptables rules for IPv4"
   blockinfile:
     dest: "{{ iptables_rules_path }}"

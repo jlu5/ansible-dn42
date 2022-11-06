@@ -25,7 +25,7 @@ ptr_zones["31.172.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/172.31.0.0_16"
 ptr_zones["10.in-addr.arpa"]="$REGISTRY_ROOT/inetnum/10.0.0.0_8"
 ptr_zones["d.f.ip6.arpa"]="$REGISTRY_ROOT/inet6num/fd00::_8"
 
-local_authserver_ip4="$(yq -r .dummy_interfaces.anycast_auth_dns.ip4_natmap[0] "$DNS_CONFIG")"
+local_authserver_ip4="$(yq -r .dummy_interfaces.anycast_auth_dns.ip4[0] "$DNS_CONFIG")"
 local_authserver_ip6="$(yq -r .dummy_interfaces.anycast_auth_dns.ip6[0] "$DNS_CONFIG")"
 
 addrtype() {
