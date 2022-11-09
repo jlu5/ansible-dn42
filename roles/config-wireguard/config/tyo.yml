@@ -260,3 +260,10 @@ wg_peers:
   wg_pubkey: drzVP686qPxb/WmyPo+joJCiHXI5lyW/NEF5N206MXc=
   peer_v4: 172.21.113.129
   peer_v6: fe80::1886
+
+- name: dn42-yukino
+  port: 21255
+  remote: dn42-jp-nrt2.acgcl.net:31080
+  wg_pubkey: iRtfmmbhLn59caa8z9HTa4ZHG9L0xYWcrKmAs/ehGmo=
+  peer_v4: null
+  peer_v6: fe80::1060

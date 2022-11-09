@@ -530,7 +530,7 @@ wg_peers:
 
 - name: dn42-yukino
   port: 21255
-  remote: dn42-de-fra1.acgcl.net:31080
-  wg_pubkey: HNmUzvooD0M0B+S4Vnb3+JlxyECRjXbH1Fgci0M/L3k=
+  remote: dn42-nl-ams2.acgcl.net:31080
+  wg_pubkey: jFePS+PHWK96lvbhPo5QrC6VoPwv5qSOmsT4OVOopi0=
   peer_v4: null
-  peer_v6: fe80::1010
+  peer_v6: fe80::1080
