@@ -25,10 +25,6 @@ def graph(times, n_ebgp_routers, n_ebgp_peerings, n_ebgp_unique, output="history
     plt.xlabel("Date")
     plt.grid(alpha=0.6)
 
-    #ax.xaxis.set_major_locator(mdates.AutoDateLocator())
-    ax.xaxis.set_major_locator(mdates.MonthLocator())
-    fig.autofmt_xdate()
-
     plt.ylabel("Count")
     plt.legend()
     plt.savefig(
@@ -61,7 +57,7 @@ def _read_git():
         all_filenames = [file.name for file in all_blobs]
 
         times.append(commit.authored_datetime)
-        ebgp_routers = list(filter(lambda subtree: subtree.name.startswith('dn42-'), peers_dir))
+        ebgp_routers = list(filter(lambda subtree: subtree.type == 'tree', peers_dir))
         n_ebgp_routers.append(len(ebgp_routers))
         n_ebgp_peerings.append(len(all_filenames))
         # Number of unique filenames = number of unique peers
