@@ -267,3 +267,10 @@ wg_peers:
   wg_pubkey: iRtfmmbhLn59caa8z9HTa4ZHG9L0xYWcrKmAs/ehGmo=
   peer_v4: null
   peer_v6: fe80::1060
+
+- name: dn42-iuboy
+  port: 22582
+  remote: jp-tyo1.dn42.iamm.one:21080
+  wg_pubkey: FErX5F8VU53e7L29jGQOqg9KkRmeNXmnzvo/LBfNJwc=
+  peer_v4: null
+  peer_v6: fe80::2582:2
