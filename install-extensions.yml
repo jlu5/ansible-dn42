@@ -5,7 +5,7 @@
     # These are optional roles only needed for nodes open to peering
     # This should run after reconfigure.yml as the dn42 dummy interfaces need to be created first.
     - setup-bird-lg-go
-    - setup-wg-autoreset
+    - setup-extra-scripts
 
 - name: Setup extensions for peering routers
   hosts: dn42routers

@@ -1,8 +1,11 @@
-- name: "Upload wg-autoreset script"
+- name: "Upload extra scripts"
   copy:
-    src: "{{ playbook_dir }}/scripts/wg-autoreset.sh"
+    src: "{{ playbook_dir }}/scripts/{{ item }}"
     dest: "{{ automation_root_dir }}/"
     mode: '0755'
+  loop:
+  - wg-autoreset.sh
+  - pingcheck.sh
 
 - name: Create cron job for wg-autoreset
   cron:
