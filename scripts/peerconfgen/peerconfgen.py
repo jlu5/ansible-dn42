@@ -126,7 +126,7 @@ def complete_peer_config(scrape_results):
         raise ValueError("Need either peer_v4 or peer_v6 for peers")
     return result
 
-def _get_config_paths(node, peername, replace=False):
+def get_config_paths(node, peername, replace=False):
     wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{node}.yml")
     bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", node)
     if not os.path.exists(wg_config_path):
@@ -161,6 +161,13 @@ def _run_interactive(node):
     print("BIRD peering options:", bird_options)
     return completed_config, bird_options
 
+def get_yaml():
+    yaml = ruamel.yaml.YAML()
+    yaml.preserve_quotes = True
+    # preserve explicit null values https://stackoverflow.com/a/44314840
+    yaml.representer.add_representer(type(None), lambda self, data: self.represent_scalar('tag:yaml.org,2002:null', 'null'))
+    return yaml
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', '-n', help='Only print generated output; do not write it to disk', action='store_true')
@@ -174,12 +181,8 @@ def main():
     #print('cd to', rootdir)
     os.chdir(rootdir)
 
-    wg_config_path, bird_config_path = _get_config_paths(args.node, args.peername, replace=args.replace)
-    yaml = ruamel.yaml.YAML()
-    yaml.preserve_quotes = True
-    # preserve explicit null values https://stackoverflow.com/a/44314840
-    yaml.representer.add_representer(type(None), lambda self, data: self.represent_scalar('tag:yaml.org,2002:null', 'null'))
-
+    wg_config_path, bird_config_path = get_config_paths(args.node, args.peername, replace=args.replace)
+    yaml = get_yaml()
     with open(wg_config_path, 'r+', encoding='utf-8') as f:
         wg_config = yaml.load(f)
 
