@@ -104,11 +104,7 @@ wg_peers:
   wg_pubkey: HXF4JPhmBCYL/e/mjdvxyiII8WchPQLK8AUVwTNPe3Q=
 
 - name: dn42-haojunmei
-  peer_v4: 172.23.114.17
-  peer_v6: fe80::1145
-  port: 23663
-  remote: nl-amsterdam-01.dn42.yunyingstudio.cn:21080
-  wg_pubkey: b0SqBBmXh/A7Ksag5ZT/rtqGL3HchRXcPuHwdTfBrC0=
+  remove: true
 
 - name: dn42-huajitech
   peer_v4: null
@@ -236,14 +232,7 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
 
 - name: dn42kiv-gfa
-  port: 51097
-  remote: "dn42-md-1.4679.ar:51821"
-  wg_pubkey: "Ta3fZ2A2FVhyD6cOzXdqF5zo0mYG5x9pmFJPbI6p8X4="
-  peer_v4: "172.21.68.1"
-  peer_v6: "fe80::1:100/64"
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
+  remove: true
 
 - name: "dn42fra-munster"
   port: 52237
@@ -366,24 +355,10 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
 
 - name: dn42-pgnhd
-  peer_v4: 172.23.86.32
-  peer_v6: fe80::1078
-  port: 21078
-  remote: dn42.pgnhd.moe:3947
-  wg_pubkey: 72yTeL6AEAmWKNYGc14mYSjYU9qElYLSMzxaNhSua08=
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
+  remove: true
 
 - name: dn42-hanlin
-  peer_v4: 172.23.163.36
-  peer_v6: fd88:1926:817:4::1
-  port: 20251
-  remote: lu.serv.hanlin.press:21080
-  wg_pubkey: lYbabe1M2z7a2xyv/pbikTRdW4FWB3CPmc4MbeDBZ0A=
-  local_v4: "172.20.229.117"
-  local_v6: "fe80::117"
-  wg_privkey: "/etc/wireguard/privatekey_de-nbg01"
+  remove: true
 
 - name: dn42-lutoma
   peer_v4: 172.22.119.1
@@ -398,11 +373,7 @@ wg_peers:
 ### END peers imported from de-nbg01
 
 - name: dn42fra-zhaofen
-  port: 21926
-  remote: "[2a06:e881:5506::1]:21080"
-  wg_pubkey: "Y/OkiTBx7Nkg/mmG7WnHrDY/UisV/M6FyHwr7mKNmEM="
-  peer_v4: "172.20.16.2"
-  peer_v6: "fe80::1926:1"
+  remove: true
 
 - name: dn42waw-filip
   port: 21404
@@ -412,11 +383,7 @@ wg_peers:
   peer_v6: "fe80::feec:daff:fe46:d60e/64"
 
 - name: dn42fsn-qcore
-  port: 23847
-  remote: "de-flk-dn42.0011.de:21080"
-  wg_pubkey: "fX/ulzytJkYMxr9P1pHlRpmyQ11oQ1EfpdUDpX6UnX8="
-  peer_v4: null
-  peer_v6: "fe80::42:3847:42:1080"
+  remove: true
 
 - name: dn42fsn-bastel
   port: 23668
@@ -426,11 +393,7 @@ wg_peers:
   peer_v6: "fe80::beef:8"
 
 - name: dn42-claudweb
-  peer_v4: 172.23.125.33
-  peer_v6: fe80::1247
-  port: 21147
-  remote: dn42-de01.claudweb.de:21080
-  wg_pubkey: whaUeLgjEZBsf4fVdunWntucu8FEqQbWbyT5N5VBMxE=
+  remove: true
 
 - name: dn42-dingemans
   peer_v4: 172.23.89.146
@@ -507,11 +470,7 @@ wg_peers:
   wg_pubkey: QJnmWUnPS9wKKkLHHuWBYMGAI20MH9OEo28O4qr5DV8=
 
 - name: dn42-link2
-  peer_v4: 172.21.109.19
-  peer_v6: fe80::864:3
-  port: 20864
-  remote: nue.dn42.christine.pp.ua:21080
-  wg_pubkey: ypRGDCaVyoIJFPkRDbXm/wo8liNcbsY3PkiGBqZJzUI=
+  remove: true
 
 - name: dn42-lare
   port: 23035

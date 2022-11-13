@@ -17,8 +17,4 @@ wg_peers:
   peer_v6: "fe80::caca:120"
 
 - name: dn42mad-cafeina
-  port: 21902
-  remote: "rs1.cafeina.me:21080"
-  wg_pubkey: "F+Ok4aDFOgommSmknmpzPjRCa4Jcvv/qHXzd10Yq/CY="
-  peer_v4: "172.20.195.161"
-  peer_v6: "fe80::1902"
+  remove: true

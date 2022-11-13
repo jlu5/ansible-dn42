@@ -37,11 +37,7 @@ wg_peers:
   peer_v6: "fd42:4242:2601:35::1/128"
 
 - name: dn42lon-patryk
-  port: 50443
-  remote: "uk-lhr01.dn42.patryk.net.pl:41080"
-  wg_pubkey: "7QrVLrZ9xLpVt1zQSv6dcr6+DU8TRPxjx/hXQWECrRw="
-  peer_v4: "172.23.24.1"
-  peer_v6: "fe80::1"
+  remove: true
 
 - name: dn42lon-jrb0001
   port: 50119
@@ -114,24 +110,10 @@ wg_peers:
   peer_v6: "fe80::1592"
 
 - name: dn42lon-tsingya
-  port: 23699
-  remote: "lon-gb.tsingyao.pub:21080"
-  wg_pubkey: "V0brcpop7aLl2eFlHMQ50uGCPE+8+I8zGEOrKT17CjQ="
-  peer_v4: "172.22.155.6"
-  peer_v6: "fe80::42:3699:6"
+  remove: true
 
 - name: dn42lon-noclip
-  port: 22409
-  remote: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    36363835376435323863326164376337353237613433656536636366343437623634626532366432
-    6666383632626433303565303762373832333162616234640a393766333766393934623230383331
-    66303537613633323562616364643035656161363762303530333866643737393764323365383331
-    6139326661646563630a373461383237333638306164626634316536616631346139376263356332
-    34646664356465323263313564363961346366636131376130623732623564323533
-  wg_pubkey: "LOaG6FgBFIs2WFt6V1SJ8PX1OqF818eeXLm6izS3t3U="
-  peer_v4: "172.22.131.161"
-  peer_v6: null
+  remove: true
 
 - name: dn42lon-wcysite
   port: 23410
@@ -148,11 +130,7 @@ wg_peers:
   wg_pubkey: qwjXj/6R9ThUnqeOAYN+MxM6CbIgzjS8WFDdXuyEpHY=
 
 - name: dn42-jcahill
-  peer_v4: 172.22.114.64
-  peer_v6: fe80::226
-  port: 22840
-  remote: lhr01.dn42.virtual-cloud.jcx.ovh:21853
-  wg_pubkey: Du3LCresYIb1gRxnEKF10qX+si6vml83d0ZiUQUv9CU=
+  remove: true
 
 - name: dn42-186526
   peer_v4: 172.23.2.84
