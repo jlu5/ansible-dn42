@@ -132,11 +132,11 @@ function handle_special_cases() {
     # - AS4242420101 / CCCDA
     # - AS65043 / ICVPN-DREILAENDERECK
     # - AS64654 / ChaosVPN
-    if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043, 64654] * =]) then {
+    if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043, 64654, 4242421337] * =]) then {
         safe_lower_pref(20);
     }
     # 2022-03-17: prefer cold potato routing over densely connected autopeering transits
-    if (bgp_path.len >= 2 && bgp_path ~ [= * [4242421588, 4242423914, 4242422717, 4242422189, 4242421817, 64719, 4201271111, 4242422980] * =]) then {
+    if (bgp_path.len >= 2 && bgp_path ~ [= * [4242421588, 4242423914, 4242422189, 64719, 4201271111, 4242422980] * =]) then {
         safe_lower_pref(10);
     }
 }
