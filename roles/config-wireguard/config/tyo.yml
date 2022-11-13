@@ -43,11 +43,7 @@ wg_peers:
   peer_v6: "fd88:ee35:b221:1::100"
 
 - name: dn42tyo-fixmix
-  port: 51876
-  remote: "66.42.39.122:21080"
-  wg_pubkey: "XFuHnbtdaEEirikukkH8dfUDdTBXizhcmrTU3KnzCQs="
-  peer_v4: "172.22.66.51"
-  peer_v6: "fe80::1876"
+  remove: true
 
 - name: dn42-kskb1817
   port: 21817
@@ -72,11 +68,7 @@ wg_peers:
   peer_v6: "fe80::2980"
 
 - name: dn42tyo-librehs
-  port: 51037
-  remote: "megumi.yukipedia.cf:55080"
-  wg_pubkey: "iCzvsHAYuIuLQd83iW5A0LGtG9+yzFr0f3U6Yk1xInI="
-  peer_v4: "10.127.8.1"
-  peer_v6: "fd46:e3dc:db4a:1::1"
+  remove: true
 
 - name: dn42tyo-iedon
   port: 52189
@@ -100,11 +92,7 @@ wg_peers:
   peer_v6: "fe80::3724"
 
 - name: dn42tyo-tsingya
-  port: 23699
-  remote: "tok-jp.tsingyao.pub:21080"
-  wg_pubkey: "CtfgbThSgmw847gMd1eqRLaud3OrKI/mMwFLMZXvIHg="
-  peer_v4: "172.22.155.10"
-  peer_v6: "fe80::42:3699:10"
+  remove: true
 
 - name: dn42tyo-myon
   port: 20639
@@ -128,11 +116,7 @@ wg_peers:
   wg_pubkey: 2CxGhL9UwlCB3ybwD1OF2Or18vCPgChS0rdh3Nc8S0c=
 
 - name: dn42-supernoc
-  peer_v4: 172.20.163.97
-  peer_v6: fe80::3918
-  port: 23918
-  remote: v4.kr-05.public.nodes.supernoc.net:21080
-  wg_pubkey: Utkpm2nUhM/9pMe5tWBt0aFoNHfbKQjg3Ksa/nzwEwY=
+  remove: true
 
 - name: dn42-186526
   peer_v4: 172.23.2.95
@@ -156,11 +140,7 @@ wg_peers:
   wg_pubkey: ifN+KmnL5XLHG8nDi2nN9l26snGUP/1157p8mOSPE1c=
 
 - name: dn42-lazurite
-  peer_v4: null
-  peer_v6: fe80::2032
-  port: 22032
-  remote: tyo1.jp.lapinet27.com:21080
-  wg_pubkey: 5q4XjwqKCvRDylQwWwpTHm82Z2+UY/60wT4TRunzhwg=
+  remove: true
 
 - name: dn42-atolm
   peer_v4: null
@@ -170,11 +150,7 @@ wg_peers:
   wg_pubkey: UNSqegT4PRWe6507kvlMsqj5YKxdcvQe2zedDL0k8Ww=
 
 - name: dn42-haojunmei
-  peer_v4: 172.23.114.18
-  peer_v6: fe80::1145
-  port: 23663
-  remote: cn-hongkong-01.dn42.yunyingstudio.cn:21080
-  wg_pubkey: b0SqBBmXh/A7Ksag5ZT/rtqGL3HchRXcPuHwdTfBrC0=
+  remove: true
 
 - name: dn42-huajitech
   peer_v4: null
@@ -191,11 +167,7 @@ wg_peers:
   wg_pubkey: 7ZLEhruv0R7V9DUEv+BHLr5fszpp/B55aKFtVoIACno=
 
 - name: dn42-bling
-  peer_v4: 172.20.233.233
-  peer_v6: fe80::2333
-  port: 20212
-  remote: tyo1.dn42.blw.moe:21080
-  wg_pubkey: 24mzQEumLmpneoHnUWMEWg7pSnqoW5UrK5MN19eZ2HY=
+  remove: true
 
 - name: dn42-chimon
   peer_v4: 172.21.65.164
@@ -205,11 +177,7 @@ wg_peers:
   wg_pubkey: a8pgJK98XGV9gFWvJv4CirkRcbeHzbevQJnci45hhTc=
 
 - name: dn42-baiyu
-  peer_v4: 172.23.221.69
-  peer_v6: fe80::1901:3921:0:1
-  port: 21901
-  remote: node1.vultr.nrt.asia.dn42.dalao-home.com:21080
-  wg_pubkey: KYnacNZP+hZtLsbhUhKjrREFbxKIPKZqtO8P3kaptTs=
+  remove: true
 
 - name: dn42-bbpgqm
   peer_v4: 172.20.56.4
