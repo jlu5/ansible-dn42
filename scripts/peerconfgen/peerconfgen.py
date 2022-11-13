@@ -126,6 +126,41 @@ def complete_peer_config(scrape_results):
         raise ValueError("Need either peer_v4 or peer_v6 for peers")
     return result
 
+def _get_config_paths(node, peername, replace=False):
+    wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{node}.yml")
+    bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", node)
+    if not os.path.exists(wg_config_path):
+        raise ValueError(f"Missing WireGuard config file {wg_config_path!r}")
+    if not os.path.isdir(bird_config_dir):
+        raise ValueError(f"Missing BIRD config dir {bird_config_dir!r}")
+
+    bird_config_path = bird_config_dir / f'{peername}.conf'
+    if os.path.exists(bird_config_path):
+        if replace:
+            print(f"Overwriting existing {bird_config_path!r}")
+        else:
+            raise ValueError(f"A BIRD session config already exists at {bird_config_path!r}")
+    return wg_config_path, bird_config_path
+
+def _run_interactive(node):
+    print("Enter peer config info followed by EOF. Copy paste some text, and I'll try to guess")
+    # Read string to guess from stdin
+    text = io.StringIO()
+    while True:
+        try:
+            line = input()
+            text.write(line)
+            text.write("\n")
+        except EOFError:
+            break
+
+    scrape_results = scrape_peer_config(text.getvalue())
+    completed_config = complete_peer_config(scrape_results)
+    print("Config so far:", completed_config)
+    bird_options = fill_bird_options(node, completed_config)
+    print("BIRD peering options:", bird_options)
+    return completed_config, bird_options
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', '-n', help='Only print generated output; do not write it to disk', action='store_true')
@@ -139,20 +174,7 @@ def main():
     #print('cd to', rootdir)
     os.chdir(rootdir)
 
-    wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{args.node}.yml")
-    bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", args.node)
-    if not os.path.exists(wg_config_path):
-        raise ValueError(f"Missing WireGuard config file {wg_config_path!r}")
-    if not os.path.isdir(bird_config_dir):
-        raise ValueError(f"Missing BIRD config dir {bird_config_dir!r}")
-
-    bird_config_path = bird_config_dir / f'{args.peername}.conf'
-    if os.path.exists(bird_config_path):
-        if args.replace:
-            print(f"Overwriting existing {bird_config_path!r}")
-        else:
-            raise ValueError(f"A BIRD session config already exists at {bird_config_path!r}")
-
+    wg_config_path, bird_config_path = _get_config_paths(args.node, args.peername, replace=args.replace)
     yaml = ruamel.yaml.YAML()
     yaml.preserve_quotes = True
     # preserve explicit null values https://stackoverflow.com/a/44314840
@@ -172,26 +194,8 @@ def main():
         else:
             iface_idx = -1
 
-        print("Enter peer config info followed by EOF. Copy paste some text, and I'll try to guess")
-        # Read string to guess from stdin
-        text = io.StringIO()
-        while True:
-            try:
-                line = input()
-                text.write(line)
-                text.write("\n")
-            except EOFError:
-                break
-
-        scrape_results = scrape_peer_config(text.getvalue())
-        completed_config = complete_peer_config(scrape_results)
-        print("Config so far:", completed_config)
-        bird_options = fill_bird_options(args.node, completed_config)
-        print("BIRD peering options:", bird_options)
-
+        completed_config, bird_options = _run_interactive(args.node)
         wg_config_snippet = gen_wg_config(args.peername, completed_config)
-        bird_peer_config = gen_bird_peer_config(args.peername, completed_config, bird_options)
-
         if iface_idx < 0:
             wg_peers.append(wg_config_snippet)
             # Add an extra newline before the config block for readability
@@ -212,6 +216,7 @@ def main():
             f.truncate()
 
     print()
+    bird_peer_config = gen_bird_peer_config(args.peername, completed_config, bird_options)
     print("BIRD peer config:")
     print(bird_peer_config)
     print()
