@@ -35,11 +35,7 @@ wg_peers:
   peer_v6: "fe80::42:2237/128"
 
 - name: dn42buf-cperrin
-  port: 53735
-  remote: "us1.dn42.cperrin.xyz:51080"
-  wg_pubkey: "p3v600DE0VBgZmBXZACi9ei9FdP+6An4SZge6CicH3E="
-  peer_v4: null
-  peer_v6: "fe80::3735:1"
+  remove: true
 
 - name: dn42bhs-burble
   port: 22601
@@ -117,11 +113,7 @@ wg_peers:
   peer_v6: "fe80::26f1"
 
 - name: dn42-sagnet
-  peer_v4: 172.23.224.1
-  peer_v6: fe80::546
-  port: 20546
-  remote: 198.98.51.101:21080
-  wg_pubkey: LsGwbeYUoBcHjiMtaoo/ySCAj0sHd/dgSDNL8v6HJXQ=
+  remove: true
 
 - name: dn42-tech9
   peer_v4: 172.20.16.143
@@ -173,11 +165,7 @@ wg_peers:
   wg_pubkey: nyujl5Lm7C0A+NoLO+7ctYulkCXeXp6dnnpt9+bGqi8=
 
 - name: dn42-bitsec
-  peer_v4: null
-  peer_v6: fe80::abcd:2638
-  port: 22638
-  remote: 2001:19f0:5:68c1:4191:28fb:38f3:4074:51080
-  wg_pubkey: NoKxxRgRrCjCYN9YTvi/8JIHB+PLO1KHmeXseMPHUR8=
+  remove: true
 
 - name: dn42-unknownts
   peer_v4: 172.22.157.201
@@ -194,11 +182,7 @@ wg_peers:
   wg_pubkey: cRHAiWRwhjnK1cNIWrh5c06Lubv8lkF0w+z4NPjRQAM=
 
 - name: dn42-baiyu
-  peer_v4: 172.23.221.66
-  peer_v6: fe80::1901:8401:0:1
-  port: 21901
-  remote: node1.vultr.jfk.america.dn42.dalao-home.com:21080
-  wg_pubkey: aH4/aJ99U2IUoUe0sUswQ74txIaTf7yb7vc9OZsqpyg=
+  remove: true
 
 - name: dn42-huajitech
   peer_v4: null
@@ -215,19 +199,7 @@ wg_peers:
   wg_pubkey: jYwRBFYATL1spAlXKGI4rkY/27s9ufiD98ctzvP/1GI=
 
 - name: dn42-yuuta
-  peer_v4: 172.23.105.5
-  peer_v6: fe80::2980
-  port: 22980
-  remote: yyz1.ca.dn42.yuuta.moe:21080
-  wg_pubkey: Rdp0L+/jmiN5U0wldgeLRqHw0mrLXXC1rQxDnRsN3mo=
-  wg_presharedkey: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    35343839353839613430333362333337313933333931313232393832323730653332653765393466
-    3037623863376231316361313033376332653539336433350a363430366530323134393333316535
-    32626261666237656438393463346366333961396561356438303638353131373837343537633866
-    3332623832303532630a646134383732343830323561626530613966666131343936363261666631
-    65396166356639313666616666306437333265663837396330386262316436393031366332353737
-    6266316131373232373938616464323130333232323264643366
+  remove: true
 
 - name: cl-roam
   local_v4: 172.22.108.41/29

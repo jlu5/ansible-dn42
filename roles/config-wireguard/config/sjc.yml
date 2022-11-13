@@ -119,14 +119,7 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_lax01"
 
 - name: dn42lax-yuetau
-  port: 50925
-  remote: "lax.yuetau.net:21080"
-  wg_pubkey: "AwOK/XdO8IDbVqebcZG2HAgO6crA9agRUKLOczQNmGU="
-  peer_v4: "172.21.68.35"
-  peer_v6: "fe80::925/64"
-  local_v4: "172.20.229.122"
-  local_v6: "fe80::122"
-  wg_privkey: "/etc/wireguard/privatekey_lax01"
+  remove: true
 
 - name: dn42lax-lss233
   port: 51826
@@ -189,14 +182,7 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_lax01"
 
 - name: dn42-scooter
-  peer_v4: 172.23.109.171
-  peer_v6: fd38:cfa3:7091:3::1
-  port: 23856
-  remote: losangelas.scooterharris.com:51080
-  wg_pubkey: OmKX/Cu0jjSvounvPDgjKpwSlcIfhZjkZy/cNbYOKxY=
-  local_v4: "172.20.229.122"
-  local_v6: "fd86:bad:11b7:22::1"
-  wg_privkey: "/etc/wireguard/privatekey_lax01"
+  remove: true
 
 - name: dn42-hujk
   peer_v4: null
@@ -219,23 +205,10 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_lax01"
 
 - name: dn42-edenlink
-  peer_v4: 172.23.131.226
-  peer_v6: fe80::1403
-  port: 23025
-  remote: us-lax.dn42.edenlink.cyou:21080
-  wg_pubkey: QXzmyQAa+oWA89b8Jcaolgy44j7c4TjImZqSSvZFD3g=
-  local_v4: "172.20.229.122"
-  local_v6: "fe80::122"
-  wg_privkey: "/etc/wireguard/privatekey_lax01"
+  remove: true
 
 - name: dn42-shypre
-  peer_v4: 172.20.236.70
-  peer_v6: null
-  port: 22466
-  remote: 45.45.218.239:21080
-  wg_pubkey: yhnrCIC6tCkAHrxyLkH8T7fjYqsBtq1mrCVehCSkHlE=
-  local_v4: "172.20.229.122"
-  wg_privkey: "/etc/wireguard/privatekey_lax01"
+  remove: true
 
 - name: dn42-131
   peer_v4: 172.21.109.34
@@ -260,11 +233,7 @@ wg_peers:
 # end peers imported from lax01
 
 - name: dn42-baiyu
-  peer_v4: 172.23.221.68
-  peer_v6: fe80::1901:8401:1:1
-  port: 21901
-  remote: node1.vultr.sjc.america.dn42.dalao-home.com:21080
-  wg_pubkey: Kt0c0mpmA4gtRUePxC0tkKrkAZZgrulTYgC5EL/s1Hs=
+  remove: true
 
 - name: dn42-huajitech
   peer_v4: null

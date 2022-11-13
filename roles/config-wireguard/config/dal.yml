@@ -36,18 +36,10 @@ wg_peers:
   wg_pubkey: lVi8WDih66c4Dk+NFnNb8dOjWDuzmbWL34xtb22mYiU=
 
 - name: dn42-tackitt
-  peer_v4: null
-  peer_v6: fe80::1556
-  port: 21556
-  remote: us-dal01-dn42.tackitt.us:21080
-  wg_pubkey: U3ge8gwHj1Cw96A813Oxu1HXpA9MtXIPWpMEDG+AuUU=
+  remove: true
 
 - name: dn42-melty
-  peer_v4: null
-  peer_v6: fe80::3632
-  port: 23632
-  remote: chokeberry.link.melty.land:21080
-  wg_pubkey: oCgzClTd8nECzDqS20/dKaitAHUN1TgIIeVZKAsJ1FA=
+  remove: true
 
 - name: dn42-pigeonhole
   peer_v4: 172.22.145.9
