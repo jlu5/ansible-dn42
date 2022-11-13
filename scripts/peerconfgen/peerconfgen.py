@@ -126,7 +126,19 @@ def complete_peer_config(scrape_results):
         raise ValueError("Need either peer_v4 or peer_v6 for peers")
     return result
 
-def main(args):
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--dry-run', '-n', help='Only print generated output; do not write it to disk', action='store_true')
+    parser.add_argument('--replace', '-r', help='Overwrite existing config blocks', action='store_true')
+    parser.add_argument('node', help='Node to generate config for', type=str)
+    parser.add_argument('peername', help='Short name / identifier for peer', type=str)
+    args = parser.parse_args()
+
+    # cd to repo root
+    rootdir = pathlib.Path(os.path.dirname(__file__)) / ".." / ".."
+    #print('cd to', rootdir)
+    os.chdir(rootdir)
+
     wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{args.node}.yml")
     bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", args.node)
     if not os.path.exists(wg_config_path):
@@ -209,15 +221,4 @@ def main(args):
             print(f"Wrote {count} bytes to {bird_config_path}")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--dry-run', '-n', help='Only print generated output; do not write it to disk', action='store_true')
-    parser.add_argument('--replace', '-r', help='Overwrite existing config blocks', action='store_true')
-    parser.add_argument('node', help='Node to generate config for', type=str)
-    parser.add_argument('peername', help='Short name / identifier for peer', type=str)
-    args = parser.parse_args()
-
-    # cd to repo root
-    rootdir = pathlib.Path(os.path.dirname(__file__)) / ".." / ".."
-    #print('cd to', rootdir)
-    os.chdir(rootdir)
-    main(args)
+    main()
