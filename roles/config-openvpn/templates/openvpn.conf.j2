@@ -16,8 +16,9 @@ lport {{ peer_info['port'] }}
 nobind
 {% endif %}
 
+{% if peer_info['peer_v4'] %}
 ifconfig {{ peer_info.get('local_v4', ownip) }} {{ peer_info['peer_v4'] }}
-
+{% endif %}
 {% if peer_info['peer_v6'] %}
 tun-ipv6
 ifconfig-ipv6 {{ peer_info.get('local_v6', ownip6) }} {{ peer_info['peer_v6'] }}
