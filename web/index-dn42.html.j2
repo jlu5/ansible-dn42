@@ -74,7 +74,7 @@ function getConnectionInfo() {
             return response.json();
         })
         .then((data) => {
-            outputSpans[i].innerHTML = `<span class="info-success">${data.client}</span> (you) ↔ <span class="info-success">${data.server}</span> (me)`;
+            outputSpans[i].innerHTML = `<b><span class="info-success">${data.client}</span></b> (you) ↔ <b><span class="info-success">${data.server}</span></b> (me)`;
         })
         .catch((error) => {
             outputSpans[i].innerHTML = `<span class="info-error">${error}</span>`;

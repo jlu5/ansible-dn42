@@ -81,12 +81,14 @@ hr {
 
 .info-success {
     color: #c3ffc3;
-    font-weight: bold;
 }
 
 .info-error {
     color: #ffc3c3;
-    font-weight: bold;
+}
+
+.info-warn {
+    color: #fff4c3;
 }
 
 .info-dim {
