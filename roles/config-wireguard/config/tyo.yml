@@ -242,3 +242,10 @@ wg_peers:
   wg_pubkey: FErX5F8VU53e7L29jGQOqg9KkRmeNXmnzvo/LBfNJwc=
   peer_v4: null
   peer_v6: fe80::2582:2
+
+- name: dn42-eki
+  port: 22837
+  remote: kix1.eki.moe:21080
+  wg_pubkey: 9TQTqWU/o5lVwDyIWE0hEgXZapUR8VSldT/NgPW1zX8=
+  peer_v4: 172.23.181.4
+  peer_v6: fe80::2837
