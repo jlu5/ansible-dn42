@@ -308,3 +308,10 @@ wg_peers:
   wg_pubkey: z7UE9JYKPJ/ToVnIqJQYN4DEY3HfWx56075bh4jBQUA=
   peer_v4: null
   peer_v6: fe80::2582:2
+
+- name: dn42-jerrita
+  port: 21107
+  remote: us01.edge.yoimiya.me:21080
+  wg_pubkey: cL1Dbz1722nCV0AyqPwH/OCGpwTeQKTSBXKMhJv6KGQ=
+  peer_v4: 172.22.183.99
+  peer_v6: fe80::1107
