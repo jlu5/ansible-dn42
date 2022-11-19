@@ -51,3 +51,10 @@ wg_peers:
   wg_pubkey: DTwD5XBH13GvuMl1Xw5slbWXZUPrTmOaJoiZCPEuEXE=
   peer_v4: null
   peer_v6: fe80::2308
+
+- name: dn42-lilynet
+  port: 21877
+  remote: tairitsu.lilynet.work:21080
+  wg_pubkey: xT7N1RtKrux3j+BCkXeAglnG3zqJvaeKiVO7/6NCiGc=
+  peer_v4: 172.23.180.4
+  peer_v6: fe80::1d92
