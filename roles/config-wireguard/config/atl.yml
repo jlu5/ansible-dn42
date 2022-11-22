@@ -22,11 +22,7 @@ wg_peers:
   peer_v6: "fd7c:3727:9426:193::3"
 
 - name: dn42dal-winterf
-  port: 52895
-  remote: "161.129.153.144:51871"
-  wg_pubkey: "Jr3oK2dDhDXr3GEIYjSMeBeny7buh/XIDhPDa6she0c="
-  peer_v4: "172.23.183.32"
-  peer_v6: "fd71:244:9983::1"
+  remove: true
 
 - name: dn42dal-melty
   remove: true
@@ -39,11 +35,7 @@ wg_peers:
   wg_pubkey: 7tBgRZZFJWmTAy36h4saz77BxXacCzes9KXgZew7Dns=
 
 - name: dn42-trilom
-  peer_v4: 172.22.144.1
-  peer_v6: fd42:2022:dead:53::1
-  port: 23691
-  remote: avl01.us.dn42.trailmix.me:21080
-  wg_pubkey: GssRoywdsdVfbY+XyCARAr40PC2uJD3qEVEzCo8fuUY=
+  remove: true
 
 - name: dn42-mtzfederic
   peer_v4: 172.22.114.97
@@ -60,17 +52,7 @@ wg_peers:
   wg_pubkey: c4xijMpOqveIgv13h2N/PZ2cJxA547x586n86EZ+k0I=
 
 - name: dn42-ryuji
-  peer_v4: 172.23.193.97
-  peer_v6: fe80::952
-  port: 20952
-  remote: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          38613832343838363337646462306337653839303239376563376333643836303531323934636538
-          3166303734396335626564656137343064353435363866320a623965356363633433656236353066
-          33376535353263393931396432643735336138313962656462383530356430646130333831613863
-          3661373865353265370a393933366439636236376333386165303463663033633935653838666164
-          37653962613332626266316461326133333931643734356130346565623864343462
-  wg_pubkey: W+15XgOTXNzKJIHqe0rOhR+WjCKEXt1Mvo/Rx3ngcg8=
+  remove: true
 
 - name: dn42-nullplane
   peer_v4: 172.21.91.65
