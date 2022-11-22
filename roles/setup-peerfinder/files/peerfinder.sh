@@ -10,6 +10,7 @@
 #
 
 # Put your UUID here, and keep it secret!
+# shellcheck disable=SC2269 # Intended assignment of UUID
 UUID=${UUID}
 PEERFINDER=${PEERFINDER:-"https://dn42.us/peers"}
 NB_PINGS=${NB_PINGS:-5}
@@ -22,7 +23,9 @@ LOCKFD=${LOCKFD:-42}
 
 # This avoids synchronisation (everybody fetching jobs and running
 # measurements simultaneously)
-RANDOM_DELAY=30
+# RANDOM_DELAY=30
+# SLEEP=$((RANDOM % RANDOM_DELAY))
+# sleep "$SLEEP"
 
 function die() {
   echo "## PEERFINDER ERROR $(date) ## " \
@@ -32,24 +35,24 @@ function die() {
 
 eval "exec $LOCKFD>$LOCKFILE"
 
-flock -n $LOCKFD || die "Unable to acquire lock."
+flock -n "$LOCKFD" || die "Unable to acquire lock."
 
-VERSION=1.1.0
+VERSION=1.2.1
+# shellcheck disable=SC2046 # Intended splitting of VERSION
+# shellcheck disable=SC2183 #
 ver() { printf "%03d%03d%03d%03d" $(echo "$1" | tr '.' ' '); }
 
-[ -e $LOGFILE ] || touch $LOGFILE
-exec >> $LOGFILE
+[ -e "$LOGFILE" ] || touch "$LOGFILE"
+exec >> "$LOGFILE"
 
 echo "STARTING PEERFINDER (v. $VERSION)"
-
-SLEEP=$((RANDOM % RANDOM_DELAY))
 
 # check for IPv4 binary
 PING4=$(which ping)
 
 # check for IPv6 binary. if ping6 is missing assume 'ping -6'
 PING6=$(which ping6)
-[ -z "$PING6" -a -n "$PING4" ] && PING6="$PING4 -6"
+[ -z "$PING6" ] && [ -n "$PING4" ] && PING6="$PING4 -6"
 
 CURL=$(which curl)
 if [ -z "$CURL" ]; then
@@ -61,30 +64,30 @@ while true ; do
 
   JOB=$(mktemp)
 
-  $CURL -H 'accept: text/environment' "$PEERFINDER/pending/$UUID" | tee $JOB
+  $CURL -H 'accept: text/environment' "$PEERFINDER/pending/$UUID" | tee "$JOB"
 
-  REQ_ID=$(grep REQ_ID $JOB|cut -d'=' -f2|tr -d '[$`;><{}%|&!()]"/\\')
-  REQ_IP=$(grep REQ_IP $JOB|cut -d'=' -f2|tr -d '[$`;><{}%|&!()]"/\\')
-  REQ_FAMILY=$(grep REQ_FAMILY $JOB|cut -d'=' -f2|tr -d '[$`;><{}%|&!()]"/\\')
-  CUR_VERSION=$(grep SCRIPT_VERSION $JOB|cut -d'=' -f2|tr -d '[$`;><{}%|&!()]"/\\')
+  REQ_ID=$(grep REQ_ID "$JOB"|cut -d'=' -f2|tr -d '[$`;><{}%|&!()]"\\/')
+  REQ_IP=$(grep REQ_IP "$JOB"|cut -d'=' -f2|tr -d '[$`;><{}%|&!()]"\\/')
+  REQ_FAMILY=$(grep REQ_FAMILY "$JOB"|cut -d'=' -f2|tr -d '[$`;><{}%|&!()]"\\/')
+  CUR_VERSION=$(grep SCRIPT_VERSION "$JOB"|cut -d'=' -f2|tr -d '[$`;><{}%|&!()]"\\/')
 
   rm "$JOB"
 
-  if [ $(ver "$VERSION") -lt $(ver "$CUR_VERSION") ]; then
+  if [ "$(ver "$VERSION")" -lt "$(ver "$CUR_VERSION")" ]; then
     echo "## PEERFINDER WARN $(date) ## " \
          "Current script version is $CUR_VERSION. You are running $VERSION " \
          "Get it here: https://dn42.us/peers/script"
 
-    [ -z "$WARNLOCK" ] && touch $WARNLOCK
+    [ -z "$WARNLOCK" ] && touch "$WARNLOCK"
   else
-    [ -z "$WARNLOCK" -o -f "$WARNLOCK" ] && rm $WARNLOCK
+    [ -z "$WARNLOCK" ] || [ -f "$WARNLOCK" ] && rm "$WARNLOCK"
   fi
 
   # Avoid empty fields
-  [ -z "$REQ_ID" -a -z "$REQ_IP" ] && exit
+  [ -z "$REQ_ID" ] && [ -z "$REQ_IP" ] && exit
 
-  [ "$REQ_FAMILY" -eq "1" -a -n "$PING4" ] && PING="ping -n -q"
-  [ "$REQ_FAMILY" -eq "2" -a -n "$PING6" ] && PING="$PING6 -n -q"
+  [ "$REQ_FAMILY" -eq "1" ] && [ -n "$PING4" ] && PING="ping -n -q"
+  [ "$REQ_FAMILY" -eq "2" ] && [ -n "$PING6" ] && PING="$PING6 -n -q"
 
   if [ -z "$PING" ]; then
     die "Unable to find a suitable ping binary."
@@ -108,15 +111,15 @@ while true ; do
              args="res_latency=NULL"
              echo "Target $REQ_ID ($REQ_IP) is unreachable"
          else
-             pattern='(rtt|round-trip) min/avg/max.*= (.*)/(.*)/(.*)(/(.*))? ms'
+             pattern='(rtt|round-trip) min\/avg\/max.*= ([.0-9]+)\/([.0-9]+)\/([.0-9]+)\/?([.0-9]+)? ms'
              if [[ $output =~ $pattern ]]; then
-                 minrtt=${BASH_REMATCH[1]}
-                 avgrtt=${BASH_REMATCH[2]}
-                 maxrtt=${BASH_REMATCH[3]}
-                 jitter=${BASH_REMATCH[4]}
+                 minrtt=${BASH_REMATCH[2]}
+                 avgrtt=${BASH_REMATCH[3]}
+                 maxrtt=${BASH_REMATCH[4]}
+                 jitter=${BASH_REMATCH[5]}
                  [ -z "$avgrtt" ] && exit
                  echo "RTT to target $REQ_ID ($REQ_IP) is $avgrtt"
-                 args="res_latency=${avgrtt}"
+                 args="res_latency=${avgrtt}&res_jitter=${jitter}&res_minrtt=${minrtt}&res_maxrtt=${maxrtt}&res_sent=${sent}&res_recv=${received}"
              else
                  args="res_latency=NULL"
              fi
@@ -127,6 +130,7 @@ while true ; do
   fi
 
   # Report results back to peerfinder
+  echo "RESULT $args"
   $CURL -X POST "$PEERFINDER/req/$REQ_ID" -d "peer_id=$UUID&peer_version=$VERSION&$args" -H 'accept: text/environment'
 
 done
