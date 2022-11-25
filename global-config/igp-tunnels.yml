@@ -4,6 +4,7 @@ igp_neighbours:
     ash-core: null
     atl: null
     chi: null
+    fra: null
     lon: null
     mad: null
     mil: null
@@ -29,6 +30,7 @@ igp_neighbours:
     ash-core: null
     atl: null
     dal: null
+    fra: null
     lon: null
     sjc: null
     ymq: null
@@ -38,6 +40,14 @@ igp_neighbours:
     chi: null
     las: null
     lax-core: null
+    sjc: null
+    ymq: null
+  fra: !!set
+    ams: null
+    chi: null
+    mil: null
+    par: null
+    sgp: null
     sjc: null
     ymq: null
   las: !!set
@@ -67,17 +77,20 @@ igp_neighbours:
     ymq: null
   mil: !!set
     ams: null
+    fra: null
     mad: null
     sgp: null
     syd: null
     tyo: null
   par: !!set
     ams: null
+    fra: null
     lon: null
     mad: null
     ymq: null
   sgp: !!set
     ams: null
+    fra: null
     las: null
     mil: null
     sjc: null
@@ -87,6 +100,7 @@ igp_neighbours:
     ams: null
     chi: null
     dal: null
+    fra: null
     las: null
     lax-core: null
     sgp: null
@@ -114,6 +128,7 @@ igp_neighbours:
     atl: null
     chi: null
     dal: null
+    fra: null
     las: null
     lon: null
     mad: null
@@ -133,6 +148,7 @@ igp_wg_ports:
     chi: 30111
     chi03: 30002
     de-nbg01: 30023
+    fra: 30125
     hk01: 30092
     lon: 30021
     mad: 30027
@@ -172,6 +188,7 @@ igp_wg_ports:
     ash-core: 30122
     atl: 30105
     dal: 30109
+    fra: 30129
     lon: 30108
     sjc: 30106
     ymq: 30107
@@ -214,6 +231,14 @@ igp_wg_ports:
     tyo: 30080
     us-lax01: 30011
     ymq: 30014
+  fra:
+    ams: 30125
+    chi: 30129
+    mil: 30127
+    par: 30126
+    sgp: 30128
+    sjc: 30124
+    ymq: 30123
   hk01:
     ams: 30092
     las: 30093
@@ -262,6 +287,7 @@ igp_wg_ports:
   mil:
     ams: 30029
     de-nbg01: 30028
+    fra: 30127
     hk01: 30090
     mad: 30030
     sg01: 30040
@@ -274,6 +300,7 @@ igp_wg_ports:
   par:
     ams: 30058
     de-nbg01: 30059
+    fra: 30126
     hk01: 30104
     lon: 30057
     mad: 30073
@@ -288,6 +315,7 @@ igp_wg_ports:
     us-lax01: 30039
   sgp:
     ams: 30118
+    fra: 30128
     hk01: 30116
     las: 30115
     mil: 30117
@@ -299,6 +327,7 @@ igp_wg_ports:
     chi: 30106
     chi03: 30062
     dal: 30072
+    fra: 30124
     hk01: 30089
     las: 30064
     lax-core: 30075
@@ -366,6 +395,7 @@ igp_wg_ports:
     chi03: 30003
     dal: 30078
     de-nbg01: 30014
+    fra: 30123
     las: 30079
     lon: 30020
     mad: 30074
@@ -387,4 +417,4 @@ igp_wg_ports:
     us-fmt01: 30049
     us-lax01: 30005
     ymq: 30060
-next_port: 30123
+next_port: 30130

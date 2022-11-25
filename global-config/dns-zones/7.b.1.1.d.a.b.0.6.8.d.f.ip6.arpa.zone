@@ -12,7 +12,6 @@ $TTL 300
 3.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.a.a.a.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ping.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.5.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ns.highdef.dn42.
 2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.5.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR dns.highdef.dn42.
-1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR peers-nodeid-117.ams.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR peers-nodeid-122.sjc.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.a.a.a.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR gw.yvrlab.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.1.1.1.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR nte-ixrs.rtr.highdef.dn42.
@@ -25,6 +24,7 @@ $TTL 300
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR atl.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR lon.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ams.rtr.highdef.dn42.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR fra.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.3.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR par.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR mad.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.2.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR mil.rtr.highdef.dn42.

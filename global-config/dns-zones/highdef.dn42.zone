@@ -25,8 +25,6 @@ jf IN A 172.22.108.2
 jf IN AAAA fd86:bad:11b7:aaaa::2
 mtxadmin IN A 172.22.108.66
 peers-nodeid-115.ymq IN A 172.20.229.115
-peers-nodeid-117.ams IN A 172.20.229.117
-peers-nodeid-117.ams IN AAAA fd86:bad:11b7:117::1
 peers-nodeid-122.sjc IN A 172.20.229.122
 peers-nodeid-122.sjc IN AAAA fd86:bad:11b7:22::1
 peers-nodeid-127.sgp IN A 172.20.229.127
@@ -58,6 +56,8 @@ lon.rtr IN A 172.20.229.116
 lon.rtr IN AAAA fd86:bad:11b7:116::1
 ams.rtr IN A 172.20.229.118
 ams.rtr IN AAAA fd86:bad:11b7:118::1
+fra.rtr IN A 172.20.229.117
+fra.rtr IN AAAA fd86:bad:11b7:117::1
 par.rtr IN A 172.22.108.36
 par.rtr IN AAAA fd86:bad:11b7:136::1
 mad.rtr IN A 172.20.229.120
