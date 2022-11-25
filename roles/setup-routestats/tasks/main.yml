@@ -26,6 +26,7 @@
   shell:
     cmd: "{{ _routestats_cmd }}"
   when: _routestats_script.changed
+  become_user: "{{ automation_user }}"
 
 - name: Create cron job for routestats
   cron:
