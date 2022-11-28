@@ -1,4 +1,9 @@
-# Netdata settings (v2 playbook)
+# Netdata settings
+netdata_update_frequency: 2
+netdata_db_mode: dbengine
+netdata_metric_count: 3500
+
+# Matrix notifications
 netdata_matrix_homeserver: https://overdrivenetworks.com:8448
 netdata_matrix_token: !vault |
     $ANSIBLE_VAULT;1.1;AES256

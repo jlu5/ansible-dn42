@@ -11,7 +11,30 @@
 #
 
 [global]
-	run as user = netdata
-	web files owner = root
-	web files group = root
-	bind socket to IP = 127.0.0.1
+    run as user = netdata
+    web files owner = root
+    web files group = root
+    bind socket to IP = 127.0.0.1
+    update every = {{ netdata_update_frequency }}
+
+    # nginx tuning, see https://learn.netdata.cloud/guides/configure/performance#run-netdata-behind-nginx
+    disconnect idle web clients after seconds = 3600
+    enable web responses gzip compression = no
+
+[db]
+    mode = {{ netdata_db_mode }}
+    update every = {{ netdata_update_frequency }}
+{% if netdata_db_mode == 'dbengine' %}
+    storage tiers = 3
+    # see https://learn.netdata.cloud/guides/longer-metrics-storage/#disk-space-requirements
+
+    # Note: these time intervals are BEFORE scaling with "update every"!
+    #   qalculate expr: (1 byte/second * 3500 * 5 days, 4 byte/minute * 3500 * 1 month, 4 byte/hour * 3500 * 1 year)
+
+    # Tier 0, data every second for ~5 days (~3500 metrics)
+    dbengine multihost disk space MB = {{ netdata_metric_count // netdata_update_frequency * 3600 * 24 * 5 }}
+    # Tier 1, per minute data for a month
+    dbengine tier 1 multihost disk space MB = {{ netdata_metric_count // netdata_update_frequency * 4 * 60 * 24 * 30 }}
+    # Tier 2, per hour data for a year
+    dbengine tier 2 multihost disk space MB = {{ netdata_metric_count // netdata_update_frequency * 4 * 24 * 365 }}
+{% endif %}
