@@ -131,3 +131,10 @@ wg_peers:
   wg_pubkey: mr3GOOMU9bLYS5OBuXhllsAD3c3+SGTuYNh2q+RswEQ=
   peer_v4: 172.23.181.1
   peer_v6: fe80::2837
+
+- name: dn42-imlonghao
+  port: 21888
+  remote: us2.dn42.ni.sb:21080
+  wg_pubkey: lAs/L2XLEZALnTOJ6ZhHaKgYY+rzqRgPnmlC4v/SfQw=
+  peer_v4: 172.22.68.0
+  peer_v6: fe80::1888

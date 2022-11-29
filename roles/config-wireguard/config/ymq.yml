@@ -85,11 +85,7 @@ wg_peers:
   peer_v6: "fe80::3770/64"
 
 - name: dn42buf-imlongh
-  port: 21888
-  remote: "us1.dn42.ni.sb:21080"
-  wg_pubkey: "uVIBY5keaBLtkT7oyD/W/TgEBiXerr/IPxtH+JO0amI="
-  peer_v4: "172.22.68.0"
-  peer_v6: "fe80::1888"
+  remove: true
 
 - name: dn42rio-paterno
   port: 23073
