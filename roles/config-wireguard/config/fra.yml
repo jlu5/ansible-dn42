@@ -167,3 +167,10 @@ wg_peers:
   port: 24719
   remote: de-fra.dn42.lutoma.org:42433
   wg_pubkey: uVeGQhyJZujiB7GozhV4wFuY8oeNOJ4zdRyo+qiSKyc=
+
+- name: dn42-imlonghao
+  port: 21888
+  remote: de1.dn42.ni.sb:21080
+  wg_pubkey: k9F2akSTkbA/GiO59PNW/v0D65ioMYD4P1DqeKSL3FM=
+  peer_v4: 172.22.68.0
+  peer_v6: fe80::1888
