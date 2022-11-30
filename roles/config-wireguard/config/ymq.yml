@@ -71,10 +71,10 @@ wg_peers:
 ### end legacy configurations from ca-bhs01
 
 - name: dn42nyc-yura
-  port: 52464
+  port: 22464
   remote: "nyc.dneo.moeternet.com:21080"
   wg_pubkey: "MLVJrwrph6d0VqrAq8/rkhbkG+mrQNytqmwrNgk2qFs="
-  peer_v4: "172.20.191.197"
+  peer_v4: null
   peer_v6: "fe80::2464"
 
 - name: dn42bhs-serverm
