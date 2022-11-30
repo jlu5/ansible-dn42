@@ -1,4 +1,164 @@
 wg_peers:
+# migrated from lon
+- name: dn42lon-strexp
+  port: 51331
+  remote: "lon1.uk.dn42.strexp.net:21080"
+  wg_pubkey: "k06qY2e3mliYjPfbUUkeczvymOdLYzMRmhvqlT4jW0Y="
+  peer_v4: "172.20.158.145"
+  peer_v6: "fe80::1331"
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42fra-owens
+  port: 51099
+  remote: "95.179.250.248:1269"
+  wg_pubkey: "13NKYtCKbBw2ZzhFLSO5HaQJdVBnv8pi2cbIgDauhwE="
+  peer_v4: "172.21.99.137/32"
+  peer_v6: "fd42:4242:1099:179::69/128"
+  local_v4: 172.20.229.116
+  local_v6: fd86:bad:11b7:116::1
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42par-raito
+  port: 51457
+  remote: "[2a01:e0a:5f9:9681::2]:21080"
+  wg_pubkey: "5TxBJx9R22Du8cuoE4y59SdERwmgfmDF+9lmnIE8XD8="
+  wg_presharedkey: !vault |
+    $ANSIBLE_VAULT;1.1;AES256
+    63623763346461306535343534323664306361343234363937346362356337393230316131326164
+    6162346231316265653531316132613831326332653139610a393835383966343636363935393539
+    63373765373166383936373331623233363538383931373463303761663130633033316363303361
+    6262363136353437380a656165643835313730363136383466356331323665353661316537646335
+    63656666383139653565376539616663643766613630343634386235663733393661316566356332
+    3838613836383936323462386563643563373539353837626464
+  peer_v4: null
+  peer_v6: "fd4d:ce73:68f9:9a62::3"
+  local_v4: 172.20.229.116
+  local_v6: fd86:bad:11b7:116::1
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42ams-jerry
+  port: 53618
+  remote: "nl.neo.jerryxiao.cc:50090"
+  wg_pubkey: "zE9C015v2H0duvNBdXm2ToWqimoIlBqtZtFTqgLQXgs="
+  peer_v4: null
+  peer_v6: "fe80::3618/64"
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42hel-andi
+  port: 53991
+  remote: "iota.h4ck.space:42029"
+  wg_pubkey: "s6OL5S5GvUykOs1XVAWL2i6Mflk6niZ4BZhrHmdB5Gw="
+  peer_v4: null
+  peer_v6: "fe80::1"
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42rbx-serverm
+  port: 53770
+  remote: "rbx1.dn42.servermade.com:51080"
+  wg_pubkey: "0ndXPAg17zmVx5CfxMblRfdcDjHRDB6OKBkYvvtq1g0="
+  peer_v4: "172.22.118.129"
+  peer_v6: "fe80::3770/64"
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42lon-wcysite
+  port: 23410
+  remote: "uk.wcysite.com:11080"
+  wg_pubkey: "qbRtA56r969HCnhYUDyYk5vxQe7nFeW5VhUH3cFnElw="
+  peer_v4: "172.20.41.50"
+  peer_v6: "fe80::3410"
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42-usman
+  peer_v4: 172.22.132.166
+  peer_v6: null
+  port: 21869
+  remote: null
+  wg_pubkey: qwjXj/6R9ThUnqeOAYN+MxM6CbIgzjS8WFDdXuyEpHY=
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42-atolm
+  peer_v4: null
+  peer_v6: fe80::585
+  port: 20585
+  remote: uk1.dn42.atolm.net:21080
+  wg_pubkey: W5tOp5Iw/uJppISGF9KSQL5/q9ykW0PUSAKDe4YPXHQ=
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42-rhysperry
+  peer_v4: 172.22.76.1
+  peer_v6: null
+  port: 23665
+  remote: rhysperry.com:55505
+  wg_pubkey: I1WlxMXrSoN2g3WVJNYNG+4MsYhJwNA6UYgt5pHOGGY=
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42-htw
+  peer_v4: 172.21.78.33
+  peer_v6: fe80::1440:1080
+  port: 21440
+  remote: sco1.dn42.canidae.systems:26005
+  wg_pubkey: YoB/Tge5Teb1ycnbi/vjmcsyD8My4waVkNhupn7JnDk=
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42-bandura
+  peer_v4: 172.22.149.225
+  peer_v6: fe80::2923
+  port: 22923
+  remote: p2p-node.de:51080
+  wg_pubkey: 4gf9k6UUBO55geG7377qiMt/zHVuy77X60n/vNQMtj4=
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42-librehouse
+  peer_v4: 10.127.8.3
+  peer_v6: fd46:e3dc:db4a:1::3
+  port: 21037
+  remote: setsuna.yukipedia.cf:51080
+  wg_pubkey: jQqFNQ/nxRSeJ/KPcRDGxswxAs59MuCc0aWX3OZ+7HA=
+  local_v4: 172.20.229.116
+  local_v6: fd86:bad:11b7:116::1
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42-scooter
+  port: 23856
+  remote: lon-uk.dn42.ca:21080
+  wg_pubkey: 7xvugzmlWteydIZnvNls/ZwoA2Acvd7Uq5FO66KSPFg=
+  peer_v4: 172.23.109.171
+  peer_v6: fd38:cfa3:7091:2::1
+  local_v4: 172.20.229.116
+  local_v6: fd86:bad:11b7:116::1
+  wg_privkey: /etc/wireguard/privatekey_lon
+
+- name: dn42-nyabla
+  port: 20850
+  remote: meow.nyabla.net:21080
+  wg_pubkey: sRUVGY3OjySTLefDVYnSBItdjNZSAUdvG+P8vBNWdBg=
+  peer_v4: null
+  peer_v6: fe80::0850
+  local_v4: 172.20.229.116
+  local_v6: fe80::116
+  wg_privkey: /etc/wireguard/privatekey_lon
+# end migrated from lon
+
 - name: dn42ams-jrb0001
   port: 50119
   remote: "95.179.134.138:21080"
@@ -128,11 +288,7 @@ wg_peers:
   peer_v6: "fe80::feec:daff:fe46:d60e/64"
 
 - name: dn42fsn-bastel
-  port: 23668
-  remote: "router01.bastelfreak.org:1080"
-  wg_pubkey: "P9BQFIpN7LvgnqkU/1srErP1I0twhgkUgEHZfaF5vyQ="
-  peer_v4: "169.254.0.3"
-  peer_v6: "fe80::beef:8"
+  remove: true
 
 - name: dn42-dingemans
   peer_v4: 172.23.89.146
@@ -155,11 +311,7 @@ wg_peers:
   wg_pubkey: QRORBRZgOAhh2g4BTEx2jHrejQ3HdJYqV5yJRCUsgBw=
 
 - name: dn42-baiyu
-  peer_v4: 172.23.221.65
-  peer_v6: fe80::1901:2761:0:1
-  port: 21901
-  remote: node1.vultr.fra.europe.dn42.dalao-home.com:21080
-  wg_pubkey: Fq441bovZ0RAmgGPn+bbd2xLht9Mbsgw5YCa5bFgsm0=
+  remove: true
 
 - name: dn42-techanit
   peer_v4: null
