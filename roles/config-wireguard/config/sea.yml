@@ -1,0 +1,45 @@
+wg_peers:
+- name: dn42sea-ncw
+  port: 51288
+  remote: "sea1.sc00.org:21080"
+  wg_pubkey: "AMmUVNOn6ZtL0+vn1tfO4c7M1Fby19lSVZpJJhML6VI="
+  peer_v4: "172.20.233.153"
+  peer_v6: "fe80::1288/64"
+
+- name: dn42-nonlocalho
+  peer_v4: 172.22.98.74
+  peer_v6: fe80::2314
+  port: 23257
+  remote: us-pdx1.dn42.nonlocal.host:35007
+  wg_pubkey: /6A58QlP8JQbuIg81z1Q9HTgLsZ7wuNUVGxB9Vx8OkU=
+
+- name: dn42-yukino
+  port: 21255
+  remote: dn42-us-sea1.acgcl.net:31080
+  wg_pubkey: 5S6ZAEZtXa5uockijxilgwhsHzeeTS/W0ws5ops8BFY=
+  peer_v4: null
+  peer_v6: fe80::1070
+
+- name: dn42-bandura
+  port: 22923
+  remote: stricker.mk16.de:51080
+  wg_pubkey: zxVkfI38Yb9SBmccT7vabu8P8C6jI3faZKfSAH+1onU=
+  peer_v4: null
+  peer_v6: fe80::2923
+  wg_presharedkey: !vault |
+    $ANSIBLE_VAULT;1.1;AES256
+    64663135616235353034343439316636326333613936653337343166386434643034326134663532
+    3336623236353965356164353434306331653930346162330a663535636131313338376239356261
+    66373432353762376436303266336430343332363037393432396366653136393039643035356232
+    6334653164376162360a336561373932626334373563626132313061646261646332626366646566
+    38623737663136333734633465646631653462306661623037666432646364613930386563663961
+    3964303036316237653131383161303538386634333439633362
+
+- name: dn42-piggy
+  port: 22705
+  remote: sea1.node.piggy.moe:21080
+  wg_pubkey: DyiUEXYuE6TNhfqj4c3MZdUOrjAxs6BbRhjImF251WA=
+  peer_v4: null
+  peer_v6: fe80::4242:2705
+  local_v6: fe80::1080:5
+  wg_privkey: /etc/wireguard/privatekey_yvrpeer

@@ -16,13 +16,13 @@ $TTL 300
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.a.a.a.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR gw.yvrlab.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.1.1.1.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR nte-ixrs.rtr.highdef.dn42.
 5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.a.a.a.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR yvrpeer.rtr.highdef.dn42.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR sea.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR sjc.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR las.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.1.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR chi.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR dal.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ymq.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR atl.rtr.highdef.dn42.
-1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR lon.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ams.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR fra.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.3.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR par.rtr.highdef.dn42.
@@ -31,5 +31,4 @@ $TTL 300
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4.2.2.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR tyo.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.3.2.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR sgp.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.5.2.2.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR syd.rtr.highdef.dn42.
-1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.5.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR lax-core.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.5.6.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ash-core.rtr.highdef.dn42.

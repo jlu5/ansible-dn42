@@ -40,6 +40,8 @@ nte-ixrs.rtr IN A 172.22.108.17
 nte-ixrs.rtr IN AAAA fd86:bad:11b7:1117::1
 yvrpeer.rtr IN A 172.22.108.5
 yvrpeer.rtr IN AAAA fd86:bad:11b7:aaaa::5
+sea.rtr IN A 172.20.229.114
+sea.rtr IN AAAA fd86:bad:11b7:1::1
 sjc.rtr IN A 172.22.108.34
 sjc.rtr IN AAAA fd86:bad:11b7:34::1
 las.rtr IN A 172.20.229.126
@@ -52,8 +54,6 @@ ymq.rtr IN A 172.20.229.123
 ymq.rtr IN AAAA fd86:bad:11b7:23::1
 atl.rtr IN A 172.20.229.119
 atl.rtr IN AAAA fd86:bad:11b7:9::1
-lon.rtr IN A 172.20.229.116
-lon.rtr IN AAAA fd86:bad:11b7:116::1
 ams.rtr IN A 172.20.229.118
 ams.rtr IN AAAA fd86:bad:11b7:118::1
 fra.rtr IN A 172.20.229.117
@@ -70,8 +70,6 @@ sgp.rtr IN A 172.22.108.39
 sgp.rtr IN AAAA fd86:bad:11b7:239::1
 syd.rtr IN A 172.20.229.125
 syd.rtr IN AAAA fd86:bad:11b7:225::1
-lax-core.rtr IN A 172.22.108.35
-lax-core.rtr IN AAAA fd86:bad:11b7:35::1
 ash-core.rtr IN A 172.22.108.65
 ash-core.rtr IN AAAA fd86:bad:11b7:65::1
 $GENERATE 24-31 ${0,1,d}.SEA-clients A 172.22.108.$
