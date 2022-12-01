@@ -284,7 +284,6 @@ wg_peers:
   wg_pubkey: "S1Pm3Oqdn6flQ15WoG5n+FQhyGPPS5Xdh98VQwephjA="
   peer_v4: "172.20.20.98/32"
   peer_v6: "fe80::b562"
-  local_v4: 172.20.229.114
   local_v6: fe80::114
   wg_privkey: "/etc/wireguard/privatekey_sea02"
 
