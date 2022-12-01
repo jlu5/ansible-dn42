@@ -179,11 +179,7 @@ wg_peers:
   local_v6: fe80::abcd
 
 - name: dn42-eki
-  port: 22837
-  remote: sin1.eki.moe:21080
-  wg_pubkey: T9dt+S+irrbh2rmm+kduMmNg1ogUyYtlVmtnSCFTj0g=
-  peer_v4: 172.23.181.3
-  peer_v6: fe80::2837
+  remove: true
 
 - name: dn42-jerrita
   port: 21107
