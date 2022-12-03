@@ -76,31 +76,11 @@ wg_peers:
 
 ### imported from us-lax01
 
-- name: dn42-186526
-  remove: true
-
 - name: dn42-bling
-  peer_v4: 172.20.21.103
-  peer_v6: fe80::2333
-  port: 20212
-  remote: lax1.dn42.blw.moe:21080
-  wg_pubkey: ZeKLPXvGl4M4n7f8l+fZWdTMys+bzulTJsXSr6Bwx04=
-  local_v4: "172.20.229.122"
-  local_v6: "fe80::122"
-  wg_privkey: "/etc/wireguard/privatekey_lax01"
-
-- name: dn42lax-iedon
   remove: true
 
 - name: dn42lax-sunnet
-  port: 53088
-  remote: "lax1-us.dn42.6700.cc:21080"
-  wg_pubkey: "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo="
-  peer_v4: "172.21.100.193"
-  peer_v6: "fe80::3088:193/64"
-  local_v4: "172.20.229.122"
-  local_v6: "fe80::122"
-  wg_privkey: "/etc/wireguard/privatekey_lax01"
+  remove: true
 
 ###
 

@@ -22,6 +22,7 @@ igp_neighbours:
     ash-core: null
     chi: null
     dal: null
+    sjc2: null
     ymq: null
   chi: !!set
     ams: null
@@ -31,6 +32,7 @@ igp_neighbours:
     fra: null
     sea: null
     sjc: null
+    sjc2: null
     ymq: null
     yvrpeer: null
   dal: !!set
@@ -39,6 +41,7 @@ igp_neighbours:
     las: null
     sea: null
     sjc: null
+    sjc2: null
     ymq: null
   fra: !!set
     ams: null
@@ -46,13 +49,14 @@ igp_neighbours:
     mil: null
     par: null
     sgp: null
-    sjc: null
+    sjc2: null
     ymq: null
   las: !!set
     dal: null
     sea: null
     sgp: null
     sjc: null
+    sjc2: null
     syd: null
     tyo: null
     ymq: null
@@ -78,6 +82,7 @@ igp_neighbours:
     dal: null
     las: null
     sjc: null
+    sjc2: null
     tyo: null
     ymq: null
     yvrpeer: null
@@ -87,25 +92,39 @@ igp_neighbours:
     las: null
     mil: null
     sjc: null
+    sjc2: null
     syd: null
     tyo: null
   sjc: !!set
     ams: null
     chi: null
     dal: null
+    las: null
+    sea: null
+    sgp: null
+    sjc2: null
+    syd: null
+    tyo: null
+    ymq: null
+    yvrpeer: null
+  sjc2: !!set
+    atl: null
+    chi: null
+    dal: null
     fra: null
     las: null
     sea: null
     sgp: null
+    sjc: null
     syd: null
     tyo: null
-    ymq: null
     yvrpeer: null
   syd: !!set
     las: null
     mil: null
     sgp: null
     sjc: null
+    sjc2: null
     tyo: null
   tyo: !!set
     ams: null
@@ -114,6 +133,7 @@ igp_neighbours:
     sea: null
     sgp: null
     sjc: null
+    sjc2: null
     syd: null
   ymq: !!set
     ams: null
@@ -132,6 +152,7 @@ igp_neighbours:
     chi: null
     sea: null
     sjc: null
+    sjc2: null
     ymq: null
 igp_wg_ports:
   ams:
@@ -142,7 +163,6 @@ igp_wg_ports:
     chi2: 30002
     fra: 30125
     hkg: 30092
-    lax: 30012
     lon: 30021
     mad: 30027
     mil: 30029
@@ -152,6 +172,7 @@ igp_wg_ports:
     sg01: 30043
     sgp: 30118
     sjc: 30099
+    sjc2: 30012
     tyo: 30034
     ymq: 30015
   ams2:
@@ -168,10 +189,10 @@ igp_wg_ports:
     chi: 30105
     chi2: 30006
     dal: 30067
-    lax: 30007
     lon: 30022
     nbg: 30009
     sao: 30047
+    sjc2: 30007
     ymq: 30008
     ymq01: 30103
     yvrpeer: 30088
@@ -184,6 +205,7 @@ igp_wg_ports:
     lon: 30108
     sea: 30134
     sjc: 30106
+    sjc2: 30139
     ymq: 30107
     yvrpeer: 30110
   chi2:
@@ -191,7 +213,6 @@ igp_wg_ports:
     atl: 30006
     dal: 30069
     las: 30016
-    lax: 30001
     mad: 30024
     nbg: 30000
     sjc: 30062
@@ -204,7 +225,6 @@ igp_wg_ports:
     chi: 30109
     chi2: 30069
     las: 30101
-    lax: 30071
     lax-core: 30100
     sea: 30135
     sjc: 30072
@@ -218,6 +238,7 @@ igp_wg_ports:
     par: 30126
     sgp: 30128
     sjc: 30124
+    sjc2: 30140
     ymq: 30123
   hkg:
     ams: 30092
@@ -233,7 +254,6 @@ igp_wg_ports:
     chi2: 30016
     dal: 30101
     hkg: 30093
-    lax: 30018
     lax-core: 30077
     sea: 30133
     sgp: 30115
@@ -243,26 +263,11 @@ igp_wg_ports:
     tyo: 30102
     ymq: 30079
     yvrpeer: 30017
-  lax:
-    ams: 30012
-    atl: 30007
-    chi2: 30001
-    dal: 30071
-    las: 30018
-    lax-core: 30076
-    nbg: 30011
-    sg01: 30039
-    sjc: 30063
-    sjc2: 30048
-    syd: 30037
-    tyo: 30033
-    ymq: 30013
-    yvrpeer: 30005
   lax-core:
     dal: 30100
     las: 30077
-    lax: 30076
     sjc: 30075
+    sjc2: 30076
   lon:
     ams: 30021
     atl: 30022
@@ -295,12 +300,12 @@ igp_wg_ports:
     ams2: 30054
     atl: 30009
     chi2: 30000
-    lax: 30011
     lon: 30019
     mad: 30025
     mil: 30028
     par: 30059
     sg01: 30042
+    sjc2: 30011
     syd: 30035
     tyo: 30080
     ymq: 30014
@@ -322,14 +327,15 @@ igp_wg_ports:
     dal: 30135
     las: 30133
     sjc: 30131
+    sjc2: 30138
     tyo: 30136
     ymq: 30132
     yvrpeer: 30130
   sg01:
     ams: 30043
-    lax: 30039
     mil: 30040
     nbg: 30042
+    sjc2: 30039
     syd: 30044
     tyo: 30041
   sgp:
@@ -339,6 +345,7 @@ igp_wg_ports:
     las: 30115
     mil: 30117
     sjc: 30113
+    sjc2: 30141
     syd: 30112
     tyo: 30114
   sjc:
@@ -349,26 +356,29 @@ igp_wg_ports:
     fra: 30124
     hkg: 30089
     las: 30064
-    lax: 30063
     lax-core: 30075
     sea: 30131
     sgp: 30113
+    sjc2: 30137
     syd: 30066
     tyo: 30065
     ymq: 30098
     yvrpeer: 30061
   sjc2:
-    chi2: 30050
+    atl: 30050
+    chi: 30139
     dal: 30070
+    fra: 30140
     las: 30053
-    lax: 30048
+    sea: 30138
+    sgp: 30141
+    sjc: 30137
     syd: 30052
     tyo: 30051
     yvrpeer: 30049
   syd:
     hkg: 30095
     las: 30103
-    lax: 30037
     mil: 30097
     nbg: 30035
     sg01: 30044
@@ -382,7 +392,6 @@ igp_wg_ports:
     chi2: 30031
     hkg: 30094
     las: 30102
-    lax: 30033
     mil: 30096
     nbg: 30080
     sea: 30136
@@ -401,7 +410,6 @@ igp_wg_ports:
     dal: 30078
     fra: 30123
     las: 30079
-    lax: 30013
     lon: 30020
     mad: 30074
     nbg: 30014
@@ -409,6 +417,7 @@ igp_wg_ports:
     sao: 30045
     sea: 30132
     sjc: 30098
+    sjc2: 30013
     ymq01: 30104
     yvrpeer: 30060
   yvrpeer:
@@ -418,11 +427,10 @@ igp_wg_ports:
     dal: 30068
     hkg: 30091
     las: 30017
-    lax: 30005
     sea: 30130
     sjc: 30061
     sjc2: 30049
     syd: 30036
     tyo: 30032
     ymq: 30060
-next_port: 30137
+next_port: 30142

@@ -36,6 +36,9 @@
 {% set serverdata = hostvars[host] %}
 <h4 id="{{ host }}">
     {{ serverdata.location[-2:] | upper | flag }} {{ serverdata.location }}
+{% if serverdata.web_display_name | default('') %}
+    ({{ serverdata.web_display_name }})
+{% endif %}
     <a href="#{{ host }}"><i class="fa fa-link" aria-hidden="true"></i></a>
 </h4>
 <ul>
