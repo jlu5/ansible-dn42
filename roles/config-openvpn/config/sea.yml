@@ -1,0 +1,15 @@
+ovpn_peers:
+- name: cl-roam-sea
+  port: 21080
+  remote: null
+  proto: udp
+  ca_cert: highdef-ca.crt
+  # dhcp pool
+  server: 172.22.108.24/29
+  ovpn_cipher: CHACHA20-POLY1305
+  ovpn_options:
+  - 'push "dhcp-option DNS 172.22.108.22"'
+  - 'push "dhcp-option DNS 8.8.8.8"'
+  - 'push "dhcp-option DNS 8.8.4.4"'
+  - 'push "route 10.0.0.0 255.0.0.0"'
+  - 'push "route 172.20.0.0 255.252.0.0"'

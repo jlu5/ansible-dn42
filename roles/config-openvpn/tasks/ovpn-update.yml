@@ -7,10 +7,10 @@
     loop_var: peer_info
   register: _ovpn_conf_tmpl
 
-- name: "Write OpenVPN private key"
+- name: "Upload OpenVPN private keys"
   copy:
-    src: "{{ role_path }}/config/keys/{{ peer_info.name }}.key"
-    dest: "/etc/openvpn/dn42-keys/{{ peer_info.name }}.key"
+    src: "{{ role_path }}/config/keys/{{ peer_info.name }}.{{ 'pem' if 'ca_cert' in peer_info else 'key' }}"
+    dest: "/etc/openvpn/dn42-keys/{{ peer_info.name }}.{{ 'pem' if 'ca_cert' in peer_info else 'key' }}"
     owner: root
     group: root
     mode: '600'
@@ -19,24 +19,14 @@
     loop_var: peer_info
   register: _ovpn_key_copy
 
-- name: "Start OpenVPN instances"
+- name: "Restart OpenVPN instances"
   systemd:
-    name: "openvpn@{{ peer_info.name }}"
-    state: "started"
-    enabled: yes
-  loop: "{{ _ovpn_to_add }}"
-  loop_control:
-    loop_var: peer_info
-  ignore_errors: true  # Don't cause errors to block execution
-
-- name: "Reload OpenVPN instances"
-  systemd:
-    name: "openvpn@{{ peer_info.name }}"
-    state: "reloaded"
+    name: "openvpn@{{ peer_name }}"
+    state: "restarted"
     enabled: yes
   loop: "{{ (_ovpn_conf_tmpl.results + _ovpn_key_copy.results)
             | selectattr('changed', 'true')
             | map(attribute='peer_info') | map(attribute='name') | unique | list }}"
   loop_control:
-    loop_var: peer_info
+    loop_var: peer_name
   ignore_errors: true

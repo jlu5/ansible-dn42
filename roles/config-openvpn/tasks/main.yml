@@ -3,6 +3,18 @@
     file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
   ignore_errors: true
 
+- name: Create OpenVPN system group
+  group:
+    name: openvpn
+    system: true
+
+- name: Create OpenVPN system account
+  user:
+    name: openvpn
+    group: openvpn
+    system: true
+    password_lock: true
+
 - name: Create folder for OpenVPN keys
   file:
     path: "/etc/openvpn/dn42-keys"
@@ -10,6 +22,16 @@
     owner: root
     group: root
     mode: '750'
+
+- name: "Upload OpenVPN certificates"
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/openvpn/{{ item | basename }}"
+    owner: root
+    group: root
+    mode: '600'
+  with_fileglob:
+  - "{{ role_path }}/config/certs/*.crt"
 
 - name: Enumerate OpenVPN tunnels to update
   set_fact:

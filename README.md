@@ -13,7 +13,7 @@ This iteration of the network uses OSPF (v2 + v3) and a full mesh of iBGP sessio
 Here I use Ansible to configure the following components on Debian 11 hosts:
 
 - Wireguard ([roles/config-wireguard/](roles/config-wireguard/)) via ifupdown
-- OpenVPN 2.x
+- OpenVPN 2.5
 - BIRD 2 ([roles/config-bird2/](roles/config-bird2/))
 - [bird-lg-go](https://github.com/xddxdd/bird-lg-go) looking glass
 - nginx + Let's Encrypt (certbot): frontend reverse proxy to bird-lg, Netdata, and a custom splash site

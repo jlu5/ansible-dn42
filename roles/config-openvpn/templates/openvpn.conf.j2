@@ -1,7 +1,8 @@
 {%- set ifname = peer_info['name'] %}
 {%- set _ovpn_proto = peer_info['proto'] | default('udp') %}
+{%- set _ovpn_mode = 'server' if 'server' in peer_info else 'p2p' %}
 proto {{ _ovpn_proto }}
-mode p2p
+mode {{ _ovpn_mode }}
 
 dev {{ ifname }}
 {% if peer_info.get('remote') %}
@@ -16,6 +17,12 @@ lport {{ peer_info['port'] }}
 nobind
 {% endif %}
 
+{% if 'server' in peer_info %}
+{# Server mode #}
+topology subnet
+server {{ peer_info['server'] | ansible.utils.ipaddr('network') }} {{ peer_info['server'] | ansible.utils.ipaddr('netmask') }}
+{% else -%}
+{# P2P mode #}
 {% if peer_info['peer_v4'] %}
 ifconfig {{ peer_info.get('local_v4', ownip) }} {{ peer_info['peer_v4'] }}
 {% endif %}
@@ -24,13 +31,34 @@ tun-ipv6
 ifconfig-ipv6 {{ peer_info.get('local_v6', ownip6) }} {{ peer_info['peer_v6'] }}
 {% endif %}
 
+{%- endif %}
+
 dev-type tun
 persist-key
 persist-tun
 
+{# TODO: data-ciphers allows multiple ciphers, expose this feature in conf #}
 cipher {{ peer_info['ovpn_cipher'] }}
+data-ciphers '{{ peer_info['ovpn_cipher'] }}'
+
+{% if peer_info['ca_cert'] | default(false) %}
+{# TLS mode #}
+tls-server
+ca {{ peer_info['ca_cert'] }}
+cert /etc/openvpn/dn42-keys/{{ ifname }}.pem
+key /etc/openvpn/dn42-keys/{{ ifname }}.pem
+{# newer ECDH algorithms don't require DH #}
+dh none
+{% else %}
+{# Static key #}
 secret /etc/openvpn/dn42-keys/{{ ifname }}.key
+{% endif %}
 
 {% for option in peer_info.get('ovpn_options', []) %}
 {{ option }}
 {% endfor %}
+
+user openvpn
+group openvpn
+persist-key
+persist-tun
