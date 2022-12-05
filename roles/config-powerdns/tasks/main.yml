@@ -16,14 +16,17 @@
 
 - name: "Enumerate PowerDNS backends"
   set_fact:
-    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6) | join(', ') }}"
+    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6
+                              + [ownip+':5353', (ownip6|ipwrap)+':5353']) | join(', ') }}"
     _pdns_backends:
       bind:
         config: "/etc/powerdns/named.conf"
 
 - name: "Enumerate PowerDNS backends (GeoIP)"
   set_fact:
-    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6 + [ansible_default_ipv4.get('address', 0), ansible_default_ipv6.get('address', 0)]) | select('string') | join(', ') }}"
+    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6
+                              + [ansible_default_ipv4.get('address', 0), ansible_default_ipv6.get('address', 0),
+                                 ownip+':5353', (ownip6|ipwrap)+':5353']) | select('string') | join(', ') }}"
     _pdns_backends:
       bind:
         config: "/etc/powerdns/named.conf"
@@ -36,6 +39,14 @@
   file:
     path: "/etc/powerdns"
     state: directory
+
+- name: "Create PowerDNS secondary-zones folder"
+  file:
+    path: "/etc/powerdns/secondary-zones/"
+    state: directory
+    owner: pdns
+    group: pdns
+    mode: '0755'
 
 - name: "Upload geodns.yml for PowerDNS"
   copy:
@@ -57,10 +68,12 @@
 - import_role:
     name: PowerDNS.pdns
   vars:
-    # PowerDNS 4.3.x
-    pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
+    # Debian 11 / PowerDNS 4.4.x
+    pdns_install_repo: ""
+    #pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
     pdns_config:
       local-address: "{{ _pdns_local_address }}"
+      slave: "{{ dns_dn42_secondary_zones is defined | bool }}"
     pdns_backends: "{{ _pdns_backends }}"
     pdns_service_overrides:
       # Work around errors described at https://github.com/PowerDNS/pdns_recursor-ansible/issues/69
@@ -69,6 +82,8 @@
       # Start/stop
       ExecStartPre: "+ifup {{ dummy_interfaces.anycast_auth_dns.ifname }} --force"
       ExecStopPost: "+ip link del {{ dummy_interfaces.anycast_auth_dns.ifname }}"
+      # For secondary zone DBs
+      ReadWritePaths: "/etc/powerdns/secondary-zones"
 
 - name: "Synchronize DNS zones"
   synchronize:

@@ -137,3 +137,23 @@ dns_generate_records:
       template: "$"
       rtype: PTR
       target: "${0,2,d}.YMQ-clients.highdef.dn42."
+
+## Zone mirroring for *.delegation-servers.dn42
+dns_dn42_primary_servers:
+# b.master.delegation-servers.dn42
+- fd42:180:3de0:30::1
+# j.master.delegation-servers.dn42
+- fd42:180:3de0:10:5054:ff:fe87:ea39
+
+dns_dn42_secondary_zones:
+- dn42
+- delegation-servers.dn42
+- recursive-servers.dn42
+- registry-sync.dn42
+- 10.in-addr.arpa
+- 20.172.in-addr.arpa
+- 21.172.in-addr.arpa
+- 22.172.in-addr.arpa
+- 23.172.in-addr.arpa
+- 31.172.in-addr.arpa
+- d.f.ip6.arpa

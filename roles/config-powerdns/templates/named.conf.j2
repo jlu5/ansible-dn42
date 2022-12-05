@@ -7,3 +7,13 @@ zone "{{ zone }}" {
     file "{{ filename }}";
 };
 {% endfor %}
+
+{% if dns_dn42_primary_servers is defined and dns_dn42_secondary_zones is defined %}
+{% for zone in dns_dn42_secondary_zones %}
+zone "{{ zone }}" {
+    type slave;
+    file "/etc/powerdns/secondary-zones/{{ zone }}.db";
+    masters { {{ dns_dn42_primary_servers | join('; ') }}; };
+};
+{% endfor %}
+{% endif %}
