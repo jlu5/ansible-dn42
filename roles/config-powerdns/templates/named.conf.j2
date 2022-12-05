@@ -12,7 +12,7 @@ zone "{{ zone }}" {
 {% for zone in dns_dn42_secondary_zones %}
 zone "{{ zone }}" {
     type slave;
-    file "/etc/powerdns/secondary-zones/{{ zone }}.db";
+    file "{{ pdns_secondary_zones_dir }}/{{ zone }}.db";
     masters { {{ dns_dn42_primary_servers | join('; ') }}; };
 };
 {% endfor %}

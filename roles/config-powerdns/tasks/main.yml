@@ -1,4 +1,5 @@
 
+## GeoIP prereqs
 - name: Download GeoIP database from db-ip.com
   get_url:
     url: https://download.db-ip.com/free/dbip-country-lite-{{ ansible_date_time.year }}-{{ ansible_date_time.month }}.mmdb.gz
@@ -14,22 +15,29 @@
     creates: "{{ automation_root_dir }}/dbip-country-lite.mmdb"
   when: serve_clearnet_dns|default(False)
 
-- name: "Enumerate PowerDNS backends"
+## Build PowerDNS config
+- name: "Build PowerDNS config variables"
   set_fact:
+    _pdns_bind_dnssec_db: "{{ pdns_secondary_zones_dir }}/dnssec.db"
     _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6
-                              + [ownip+':5353', (ownip6|ipwrap)+':5353']) | join(', ') }}"
-    _pdns_backends:
-      bind:
-        config: "/etc/powerdns/named.conf"
+                              + [ownip+':5353', (ownip6|ipwrap)+':5353']) }}"
 
-- name: "Enumerate PowerDNS backends (GeoIP)"
+- name: "Build PowerDNS BIND backend config"
   set_fact:
-    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6
-                              + [ansible_default_ipv4.get('address', 0), ansible_default_ipv6.get('address', 0),
-                                 ownip+':5353', (ownip6|ipwrap)+':5353']) | select('string') | join(', ') }}"
+    _pdns_backends:
+      bind: &bind_backend_config
+        config: "/etc/powerdns/named.conf"
+        dnssec-db: "{{ _pdns_bind_dnssec_db }}"
+
+## Clearnet auth-DNS servers enable GeoIP and have additional bind IPs
+- name: "Build PowerDNS GeoIP backend config"
+  set_fact:
+    _pdns_local_address: "{{ _pdns_local_address
+                             + ([ansible_default_ipv4.get('address', 0), ansible_default_ipv6.get('address', 0)]
+                                | select('string')) }}"
     _pdns_backends:
       bind:
-        config: "/etc/powerdns/named.conf"
+        <<: *bind_backend_config
       geoip:
         zones-file: "/etc/powerdns/geodns.yml"
         database-files: "{{ automation_root_dir }}/dbip-country-lite.mmdb"
@@ -40,13 +48,22 @@
     path: "/etc/powerdns"
     state: directory
 
-- name: "Create PowerDNS secondary-zones folder"
+## Create a writeable data dir for receiving secondary zones from *.master.delegation-servers.dn42
+- name: "Create PowerDNS secondary zones folder"
   file:
-    path: "/etc/powerdns/secondary-zones/"
+    path: "{{ pdns_secondary_zones_dir }}/"
     state: directory
     owner: pdns
     group: pdns
     mode: '0755'
+
+- name: "Create DNSSEC DB for PowerDNS secondary zones"
+  command:
+    cmd: pdnsutil create-bind-db {{ _pdns_bind_dnssec_db }}
+    creates: "{{ _pdns_bind_dnssec_db }}"
+  become_user: pdns
+  notify:
+    - Reconfigure PowerDNS
 
 - name: "Upload geodns.yml for PowerDNS"
   copy:
@@ -72,7 +89,7 @@
     pdns_install_repo: ""
     #pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
     pdns_config:
-      local-address: "{{ _pdns_local_address }}"
+      local-address: "{{ _pdns_local_address | join(', ') }}"
       slave: "{{ dns_dn42_secondary_zones is defined | bool }}"
     pdns_backends: "{{ _pdns_backends }}"
     pdns_service_overrides:
@@ -83,7 +100,7 @@
       ExecStartPre: "+ifup {{ dummy_interfaces.anycast_auth_dns.ifname }} --force"
       ExecStopPost: "+ip link del {{ dummy_interfaces.anycast_auth_dns.ifname }}"
       # For secondary zone DBs
-      ReadWritePaths: "/etc/powerdns/secondary-zones"
+      ReadWritePaths: "{{ pdns_secondary_zones_dir }}"
 
 - name: "Synchronize DNS zones"
   synchronize:
