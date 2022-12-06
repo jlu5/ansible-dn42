@@ -91,6 +91,8 @@
     pdns_config:
       local-address: "{{ _pdns_local_address | join(', ') }}"
       slave: "{{ dns_dn42_secondary_zones is defined | bool }}"
+      allow-notify-from: "{{ dns_dn42_primary_servers | join(', ') }}"
+      allow-axfr-ips: "172.20.0.0/14, 10.0.0.0/8, 172.31.0.0/16, fd00::/8"
     pdns_backends: "{{ _pdns_backends }}"
     pdns_service_overrides:
       # Work around errors described at https://github.com/PowerDNS/pdns_recursor-ansible/issues/69
