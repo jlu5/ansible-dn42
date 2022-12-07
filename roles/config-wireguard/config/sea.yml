@@ -51,3 +51,26 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::3088:215
   local_v6: fe80::abcd
+
+- name: cl-roam
+  local_v4: 172.22.108.25/29
+  local_v6: fd86:bad:11b7:1:2::1/80
+  port: 21080
+  multi:
+    # sixel
+  - wg_pubkey: "b0B59Xx/mPbj13GSh5BUaw2Hh4oKd9UuIDcX/wwuYg4="
+    wg_allowedips: "172.22.108.26/32,fd86:bad:11b7:1:2::2/128"
+    # silverthing
+  - wg_pubkey: "jSb/GMN0S46JzENLIZeeC/jyfKZXg5wAYPhnecohegE="
+    wg_allowedips: "172.22.108.27/32,fd86:bad:11b7:1:2::3/128"
+  peer_v6: null
+
+- name: cl-gamenet
+  local_v4: 172.22.108.89/29
+  port: 21081
+  multi:
+  - wg_pubkey: "9Eq6x9xANmDa6rwvUeOX/VbJI7FexMqByBkWIrHGyA0="
+    wg_allowedips: "172.22.108.90/32"
+  - wg_pubkey: "fKs/XbykQQeMHWM64g8hH2c1vPc+w3Qqorg4YZHzyiw="
+    wg_allowedips: "172.22.108.91/32"
+  wg_privatekey: /etc/wireguard/privatekey_gamenetwest
