@@ -174,3 +174,10 @@ wg_peers:
   wg_pubkey: k9F2akSTkbA/GiO59PNW/v0D65ioMYD4P1DqeKSL3FM=
   peer_v4: 172.22.68.0
   peer_v6: fe80::1888
+
+- name: dn42-yura
+  port: 22464
+  remote: lux.dneo.moeternet.com:21080
+  wg_pubkey: qIhJZf6mTruzO4GTCUrJnLqs9ID4TI1GctRhaRilBkg=
+  peer_v4: null
+  peer_v6: fe80::2464
