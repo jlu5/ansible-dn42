@@ -181,3 +181,10 @@ wg_peers:
   wg_pubkey: qIhJZf6mTruzO4GTCUrJnLqs9ID4TI1GctRhaRilBkg=
   peer_v4: null
   peer_v6: fe80::2464
+
+- name: dn42-matwolf
+  port: 20688
+  remote: dn42-it-fe01.wolf.network:41080
+  wg_pubkey: pHGGXwEX3JBPt+Fs0hMHcnbHaGsd3hPk7EMAf+EJqj0=
+  peer_v4: 172.20.28.225
+  peer_v6: fe80::42:0688:42:1080
