@@ -13,6 +13,9 @@ Chicago, IL, US: !!python/tuple
 Dallas, TX, US: !!python/tuple
 - 32.7766642
 - -96.79698789999999
+Frankfurt, DE: !!python/tuple
+- 50.1109221
+- 8.6821267
 Fremont, CA, US: !!python/tuple
 - 37.5485396
 - -121.988583
