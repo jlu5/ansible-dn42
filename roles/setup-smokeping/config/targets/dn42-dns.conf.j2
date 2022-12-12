@@ -1,0 +1,29 @@
+++ dns
+menu = > DNS
+title = dn42 DNS Services
+
+{% import 'smokeping-helpers.j2' as helpers %}
+
+{% set _delegation_servers = {
+    'b': '4242422601',
+    'j': '4242420119',
+    'k': '4242423914'
+} %}
+{% set _recursive_servers = {
+    'b': '4242422601',
+    'j': '4242420119',
+    'k': '4242423914',
+    't': '4242422547'
+} %}
+
+{% for dns_server_letter, asn in _delegation_servers.items() %}
+{% set _host = dns_server_letter + '.delegation-servers.dn42' %}
+{{ helpers.smokeping_dn42_target('dns_delegation_' + dns_server_letter, _host, dns_server_letter+'.delegation', asn, level=3) }}
+{{ helpers.smokeping_dn42_target('dns_delegation_' + dns_server_letter + '_v6', _host, dns_server_letter+'.delegation', asn, level=3, ipv6=true) }}
+{% endfor %}
+
+{% for dns_server_letter, asn in _recursive_servers.items() %}
+{% set _host = dns_server_letter + '.recursive-servers.dn42' %}
+{{ helpers.smokeping_dn42_target('dns_recursive_' + dns_server_letter, _host, dns_server_letter+'.recursive', asn, level=3) }}
+{{ helpers.smokeping_dn42_target('dns_recursive_' + dns_server_letter + '_v6', _host, dns_server_letter+'.recursive', asn, level=3, ipv6=true) }}
+{% endfor %}

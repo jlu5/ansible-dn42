@@ -1,5 +1,7 @@
 {% include 'targets/dn42-anycast.conf.j2' %}
 
+{% include 'targets/dn42-dns.conf.j2' %}
+
 ++ chaosvpn_index
 menu = AS64654 ChaosVPN Index
 title = ChaosVPN index at 172.31.2.1 [AS64654]
@@ -95,49 +97,30 @@ menu = AS4242421955 www.nop.dn42 (IPv6)
 title = www.nop.dn42 whatismyip site (IPv6) [AS4242421955]
 host = www.nop.dn42
 
-++ p3bk4c_gamesrv
-menu = AS4242422092 P3BK4C games
-title = P3BK4C game servers [valheim.pebkac.dn42] [AS4242422092]
-host = valheim.pebkac.dn42
-
-++ p3bk4c_gamesrv_v6
-probe = FPing6
-menu = AS4242422092 P3BK4C games (v6)
-title = P3BK4C game servers [valheim.pebkac.dn42] [AS4242422092]
-host = valheim.pebkac.dn42
-
 ++ map_dn42
 menu = AS4242422189 map.dn42
 title = map.dn42 [AS4242422189]
 host = map.dn42
-
 ++ map_dn42_v6
 probe = FPing6
 menu = AS4242422189 map.dn42 (IPv6)
 title = map.dn42 (IPv6) [AS4242422189]
 host = map.dn42
 
+++ grc_v4
+menu = AS4242422601 dn42 GRC
+title = collector.dn42 [AS4242422601]
+host = collector.dn42
 ++ grc_v6
 probe = FPing6
 menu = AS4242422601 dn42 GRC (IPv6)
 title = collector.dn42 [AS4242422601]
 host = collector.dn42
 
-++ gotroot_ntp
-menu = AS4242422700 gotroot.dn42 NTP
-title = tock.gotroot.dn42 [AS4242422700]
-host = tock.gotroot.dn42
-
-++ dmail
-menu = AS4242423315 dmail.dn42
-title = dmail.dn42 mail service [AS4242423315]
-host = dmail.dn42
-
 ++ kioubit
 menu = AS4242423914 kioubit.dn42
 title = kioubit.dn42 services [AS4242423914]
 host = kioubit.dn42
-
 ++ kioubit_v6
 probe = FPing6
 menu = AS4242423914 kioubit.dn42 (v6)
