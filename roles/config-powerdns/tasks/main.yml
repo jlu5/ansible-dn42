@@ -19,8 +19,7 @@
 - name: "Build PowerDNS config variables"
   set_fact:
     _pdns_bind_dnssec_db: "{{ pdns_secondary_zones_dir }}/dnssec.db"
-    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6
-                              + [ownip+':5353', (ownip6|ipwrap)+':5353']) }}"
+    _pdns_local_address: "{{ (dummy_interfaces.anycast_auth_dns.ip4 + dummy_interfaces.anycast_auth_dns.ip6) }}"
 
 - name: "Build PowerDNS BIND backend config"
   set_fact:

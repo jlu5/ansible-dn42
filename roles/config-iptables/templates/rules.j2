@@ -81,12 +81,6 @@
 -A INPUT -p udp --dport 53 -i cl+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i cl+ -j ACCEPT
 {% endif %}
--A INPUT -p udp --dport 5353 -i dn42+ -j ACCEPT
--A INPUT -p tcp --dport 5353 -i dn42+ -j ACCEPT
--A INPUT -p udp --dport 5353 -i igp+ -j ACCEPT
--A INPUT -p tcp --dport 5353 -i igp+ -j ACCEPT
--A INPUT -p udp --dport 5353 -i cl+ -j ACCEPT
--A INPUT -p tcp --dport 5353 -i cl+ -j ACCEPT
 
 # Allow forwarding between dn42 and IGP links
 -A FORWARD -i dn42+ -o dn42+ -j ACCEPT
