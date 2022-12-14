@@ -149,14 +149,14 @@ function ebgp_import_filter()
 {
 
     # Reject routes with unreasonable path lengths
-    if (bgp_path.len > 12) then {
-        reject;
+    if (bgp_path.len > 8) then {
+        reject "Rejected route for ", net, " with too long ", bgp_path;
     }
     bgp_local_pref = bgp_local_pref + 1400;
     safe_lower_pref(bgp_path.len * 100);
 
     if (bgp_path ~ [= * ASES_REJECT * =]) then {
-        reject;
+        reject "Rejected route for ", net, " from BLOCKED ASN";
     }
 
     # Strip internal communities from incoming routes before processing
@@ -172,6 +172,7 @@ function ebgp_import_filter()
     # Based off https://bird.network.cz/pipermail/bird-users/2016-October/010705.html
     if (source = RTS_BGP && (65535, 666) ~ bgp_community) then {
         dest = RTD_BLACKHOLE;
+        print "Adding black hole route for ", net, bgp_path;
     }
 
     # Informational communities: region of import & node ID of import
@@ -200,8 +201,7 @@ function ibgp_import_filter()
 {
     # Only process routes originating from BGP unless they're anycast networks
     if (source != RTS_BGP && !is_ibgp_network()) then {
-        print "ibgp_import_filter: rejecting unknown prefix", net;
-        reject;
+        reject "ibgp_import_filter: rejecting unknown prefix", net;
     }
 
     if (bgp_path.len = 0) then {
