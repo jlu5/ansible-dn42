@@ -135,9 +135,31 @@ function handle_special_cases() {
     if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043, 64654, 4242421337] * =]) then {
         safe_lower_pref(20);
     }
-    # 2022-03-17: prefer cold potato routing over densely connected autopeering transits
-    if (bgp_path.len >= 2 && bgp_path ~ [= * [4242421588, 4242423914, 4242422189, 64719, 4201271111, 4242422980] * =]) then {
+    # depref transit from densely connected (autopeering) transits
+    if (bgp_path ~ [= * [4242421588, 4242422717, 4242423914] ? * =]) then {
         safe_lower_pref(10);
+    }
+    # depref transit from networks with incomplete interconnects, inactive admins, or other issues
+    if (bgp_path ~ [= * [
+            4242420123,
+            4242420591,
+            4242420604,
+            4242421288,
+            4242421331,
+            4242422189,
+            4242422980,
+            4242423905
+        ] ? * =]) then {
+            safe_lower_pref(15);
+    }
+    # experimental networks with limited bandwidth / capacity
+    if (bgp_path ~ [= * [4201271111] ? * =]) then {
+        safe_lower_pref(20);
+    }
+
+    # 2022-12-13: work around ghost issues; paths to well-connected peers should not need to travel through ICVPN
+    if (bgp_path ~ [= * [65043, 65026, 65022, 65024] * [4242420101, 64719, 4242420119, 4242420197, 4242422923] * =]) then {
+        reject;
     }
 }
 
