@@ -13,6 +13,7 @@ $TTL 300
 21 IN PTR ns.highdef.dn42.
 22 IN PTR dns.highdef.dn42.
 53 IN PTR music.highdef.dn42.
+82 IN PTR git.highdef.dn42.
 19 IN PTR chi-rtr-ptp.yvrlab.highdef.dn42.
 18 IN PTR yvrlab-ptp.chi.highdef.dn42.
 73 IN PTR sjc-rtr-ptp.yvrlab.highdef.dn42.

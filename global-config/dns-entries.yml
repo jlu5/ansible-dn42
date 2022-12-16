@@ -45,11 +45,18 @@ dns_records:
     "mtxadmin":
       type: A
       target: 172.22.108.66
+    "git":
+      type: host_record
+      ip4: 172.22.108.82
+      ip6: fd86:bad:11b7:1022::2
 
     # Transfer networks & legacy peering IPs
     "peers-nodeid-115.ymq":
       type: host_record
       ip4: 172.20.229.115
+    "peers-nodeid-116.ams":
+      type: host_record
+      ip4: 172.20.229.116
     "peers-nodeid-127.sgp":
       type: host_record
       ip4: 172.20.229.127

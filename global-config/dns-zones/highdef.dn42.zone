@@ -24,7 +24,10 @@ music IN A 172.22.108.53
 jf IN A 172.22.108.2
 jf IN AAAA fd86:bad:11b7:aaaa::2
 mtxadmin IN A 172.22.108.66
+git IN A 172.22.108.82
+git IN AAAA fd86:bad:11b7:1022::2
 peers-nodeid-115.ymq IN A 172.20.229.115
+peers-nodeid-116.ams IN A 172.20.229.116
 peers-nodeid-127.sgp IN A 172.20.229.127
 chi-rtr-ptp.yvrlab IN A 172.22.108.19
 yvrlab-ptp.chi IN A 172.22.108.18

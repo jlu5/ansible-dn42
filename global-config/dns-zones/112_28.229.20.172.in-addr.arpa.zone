@@ -10,6 +10,7 @@ $TTL 300
 )
 @   IN  NS      ns.highdef.dn42.
 115 IN PTR peers-nodeid-115.ymq.highdef.dn42.
+116 IN PTR peers-nodeid-116.ams.highdef.dn42.
 127 IN PTR peers-nodeid-127.sgp.highdef.dn42.
 114 IN PTR sea.rtr.highdef.dn42.
 122 IN PTR sjc2.rtr.highdef.dn42.
