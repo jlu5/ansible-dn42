@@ -188,3 +188,10 @@ wg_peers:
   wg_pubkey: pHGGXwEX3JBPt+Fs0hMHcnbHaGsd3hPk7EMAf+EJqj0=
   peer_v4: 172.20.28.225
   peer_v6: fe80::42:0688:42:1080
+
+- name: dn42-steinex
+  port: 20297
+  remote: kuma.nognu.de:20297
+  wg_pubkey: VatdVd51Mv+m6TMooprO6Swe29IHMMfYXhtQDfx0FTU=
+  peer_v4: null
+  peer_v6: fe80::3273
