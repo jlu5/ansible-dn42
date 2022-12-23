@@ -143,16 +143,11 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_sg01"
 
 - name: dn42-pigeonhole
-  peer_v4: 172.22.145.18
-  peer_v6: fe80::2458
   port: 22458
-  remote: cn-hkg-a.nodes.pigeonhole.eu.org:21080
-  wg_pubkey: 9O4ABGmh+EXPnOynhW60aByE3qorcV7UsAC9n55g6CQ=
-  local_v4: 172.22.108.38
-  local_v6: "fe80::1080:38"
-  wg_privkey: "/etc/wireguard/privatekey_sg01"
-
-## end imported from hk01
+  remote: sg-sin-a.nodes.pigeonhole.eu.org:21080
+  wg_pubkey: H6GeJ/G0uhzrO9S/2IlEKGRUPVc5gHzIZKUjLWJKyEA=
+  peer_v4: null
+  peer_v6: fe80::2458
 
 - name: dn42-kskb
   port: 21817

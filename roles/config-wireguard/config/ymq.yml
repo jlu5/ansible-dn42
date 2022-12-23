@@ -244,3 +244,10 @@ wg_peers:
   wg_pubkey: l4/RebJ8IuNS8+TVHrckrrx0J7qWdLa6jt0n8ROLHWE=
   peer_v4: 172.22.125.135
   peer_v6: fe80::3035:135
+
+- name: dn42-pigeonhole
+  port: 22458
+  remote: us-nyc-a.nodes.pigeonhole.eu.org:21080
+  wg_pubkey: /zjI3W1HVTKcciF4Qm866EiE3LfmIQrbOlO0BZKq6n0=
+  peer_v4: null
+  peer_v6: fe80::2458
