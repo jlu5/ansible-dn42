@@ -47,6 +47,23 @@
     path: "/etc/powerdns"
     state: directory
 
+# XXX: this duplicates work, but the pdns role will fail to start the server if we don't create the bind DNSSEC DB
+# beforehand... https://github.com/PowerDNS/pdns-ansible/issues/3
+- name: Create pdns system group
+  group:
+    name: pdns
+    system: true
+- name: Create pdns system account
+  user:
+    name: pdns
+    group: pdns
+    system: true
+    password_lock: true
+- name: Install pdns-server (for pdnsutil)
+  apt:
+    name: pdns-server
+    state: present
+
 ## Create a writeable data dir for receiving secondary zones from *.master.delegation-servers.dn42
 - name: "Create PowerDNS secondary zones folder"
   file:
@@ -102,6 +119,7 @@
       ExecStopPost: "+ip link del {{ dummy_interfaces.anycast_auth_dns.ifname }}"
       # For secondary zone DBs
       ReadWritePaths: "{{ pdns_secondary_zones_dir }}"
+    pdns_disable_handlers: "{{ 'pdns' }}"
 
 - name: "Synchronize DNS zones"
   synchronize:

@@ -1,3 +1,9 @@
 - name: Reconfigure PowerDNS
   shell: pdns_control rediscover && pdns_control reload
   become_user: pdns
+  ignore_errors: true
+
+- name: Restart PowerDNS
+  systemd:
+    service: pdns
+    state: restarted
