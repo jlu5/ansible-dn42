@@ -26,6 +26,7 @@ $TTL 300
 34 IN PTR sjc.rtr.highdef.dn42.
 33 IN PTR dal.rtr.highdef.dn42.
 36 IN PTR par.rtr.highdef.dn42.
+37 IN PTR buh.rtr.highdef.dn42.
 39 IN PTR sgp.rtr.highdef.dn42.
 65 IN PTR ash-core.rtr.highdef.dn42.
 $GENERATE 24-31 $ PTR ${0,2,d}.SEA-clients.highdef.dn42.

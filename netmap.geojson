@@ -36,6 +36,21 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    26.102538,
+                    44.426767
+                ]
+            },
+            "properties": {
+                "title": "Bucharest, RO",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -87.629798,
                     41.878114
                 ]
