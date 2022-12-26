@@ -1,0 +1,8 @@
+wg_peers:
+
+- name: dn42-northrend
+  port: 23192
+  remote: ro-proxy.nodes.northrend.net:51080
+  wg_pubkey: bI13xC/6XqFJv4qDhTuRW5QEeSfCMagy0ULzBASc7BM=
+  peer_v4: 172.20.222.224
+  peer_v6: fe80::3192
