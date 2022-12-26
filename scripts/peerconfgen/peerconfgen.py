@@ -130,9 +130,10 @@ def get_config_paths(node, peername, replace=False):
     wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{node}.yml")
     bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", node)
     if not os.path.exists(wg_config_path):
-        raise ValueError(f"Missing WireGuard config file {wg_config_path!r}")
+        with open(wg_config_path, 'w', encoding='utf8') as f:
+            pass  # write an empty file
     if not os.path.isdir(bird_config_dir):
-        raise ValueError(f"Missing BIRD config dir {bird_config_dir!r}")
+        os.makedirs(bird_config_dir)
 
     bird_config_path = bird_config_dir / f'{peername}.conf'
     if os.path.exists(bird_config_path):
