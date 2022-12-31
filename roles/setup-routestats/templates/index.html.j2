@@ -20,40 +20,77 @@ nav {
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawCharts);
 
-async function drawChart(data, netType, title) {
-    const dataTable = google.visualization.arrayToDataTable(
-        [['BIRD session', 'Amount']].concat(data[netType]));
-
-    const slices = [];
-    data[`${netType}_igp_links`].forEach((idx) => {
-        slices[idx] = {offset: 0.1};
-    } );
-    const textColor = { color: "#eee" };
+const CHART_TEXT_STYLE = {color: "#eee"};
+const CHART_WIDTH = 800;
+const CHART_HEIGHT = 500;
+async function drawPieChart(dataTable, title, chartElement, slices) {
     const options = {
         title: title,
         is3D: true,
         sliceVisibilityThreshold: 0.01,
         slices: slices,
-        width: 800,
-        height: 500,
+        width: CHART_WIDTH,
+        height: CHART_HEIGHT,
 
         // options to better match dark theme
         pieResidueSliceColor: "#aaa", // colour of "other" slice
-        backgroundColor: { fill: "transparent" },
+        backgroundColor: {fill: "transparent"},
         legend: {
-            textStyle: textColor,
+            textStyle: CHART_TEXT_STYLE,
             // undocumented!!!! https://groups.google.com/g/google-visualization-api/c/zoK5FKV83YQ
-            pagingTextStyle: textColor,
+            pagingTextStyle: CHART_TEXT_STYLE,
             scrollArrows: {
                 activeColor: "#4257f5",
             }
         },
-        titleTextStyle: textColor,
+        titleTextStyle: CHART_TEXT_STYLE,
 
     };
-
-    const chart = new google.visualization.PieChart(document.getElementById(`chart_${netType}`));
+    const chart = new google.visualization.PieChart(chartElement);
     chart.draw(dataTable, options);
+}
+async function drawBarChart(dataTable, title, chartElement) {
+    const options = {
+        title: title,
+        width: CHART_WIDTH,
+        height: CHART_HEIGHT,
+        backgroundColor: {fill: "transparent"},
+
+        // options to better match dark theme
+        titleTextStyle: CHART_TEXT_STYLE,
+        hAxis: {
+            titleTextStyle: CHART_TEXT_STYLE,
+            textStyle: CHART_TEXT_STYLE,
+        },
+        vAxis: {
+            titleTextStyle: CHART_TEXT_STYLE,
+            textStyle: CHART_TEXT_STYLE,
+        },
+        legend: {
+            position: 'none',
+        }
+    };
+    const chart = new google.visualization.BarChart(chartElement);
+    chart.draw(dataTable, options);
+}
+
+async function drawChart(data, dataEntry, title, chartType) {
+    const dataTable = google.visualization.arrayToDataTable(
+        [['Key', 'Amount']].concat(data[dataEntry]));
+
+    const slices = [];
+    const igp_links_key = `${dataEntry}_igp_links`;
+    if (data[igp_links_key] != null) {
+        data[igp_links_key].forEach((idx) => {
+            slices[idx] = {offset: 0.1};
+        } );
+    }
+    chartElement = document.getElementById(`chart_${dataEntry}`);
+    if (chartType === "bar") {
+        await drawBarChart(dataTable, title, chartElement);
+    } else {
+        await drawPieChart(dataTable, title, chartElement, slices);
+    }
 }
 
 async function drawCharts() {
@@ -77,6 +114,8 @@ async function drawCharts() {
     await drawChart(data, "ipv6", `# of preferred routes by BIRD session (IPv6) - ${data['ipv6_total']} total`);
     await drawChart(data, "ipv4_asns", `# of destination ASNs by BIRD session (IPv4)`);
     await drawChart(data, "ipv6_asns", `# of destination ASNs by BIRD session (IPv6)`);
+    await drawChart(data, "ipv4_path_len_for_prefix", `BGP path len per prefix (IPv4) - ${data['ipv4_total']} total`, 'bar');
+    await drawChart(data, "ipv6_path_len_for_prefix", `BGP path len per prefix (IPv6) - ${data['ipv6_total']} total`, 'bar');
 }
     </script>
 </head>
@@ -101,6 +140,8 @@ async function drawCharts() {
         <div id="chart_ipv6" class="chart"></div>
         <div id="chart_ipv4_asns" class="chart"></div>
         <div id="chart_ipv6_asns" class="chart"></div>
+        <div id="chart_ipv4_path_len_for_prefix" class="chart"></div>
+        <div id="chart_ipv6_path_len_for_prefix" class="chart"></div>
     </div>
 </body>
 </html>
