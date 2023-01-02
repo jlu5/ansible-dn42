@@ -1,0 +1,5 @@
+gre_peers:
+- name: dn42-rhinelab
+  remote: "103.46.184.68"
+  local_v4: "172.20.232.197"
+  netmask: 30
