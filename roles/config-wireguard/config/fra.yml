@@ -195,3 +195,10 @@ wg_peers:
   wg_pubkey: VatdVd51Mv+m6TMooprO6Swe29IHMMfYXhtQDfx0FTU=
   peer_v4: null
   peer_v6: fe80::3273
+
+- name: dn42-jfy
+  port: 22399
+  remote: null
+  wg_pubkey: 6gGx1+gTKnbGOSCbb2AXdgwegei9bhkv+dKj5oRCEAg=
+  peer_v4: null
+  peer_v6: fe80::2399:5
