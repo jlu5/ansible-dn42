@@ -9,7 +9,7 @@ dns_records:
     "ping":
       type: host_record
       ip4: 172.22.108.3
-      ip6: fd86:bad:11b7:aaaa::3
+      ip6: fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
 
     # DNS & web anycast
     "ns":
