@@ -263,9 +263,6 @@ wg_peers:
   remote: ams1.dn42.blw.moe:21080
   wg_pubkey: HXF4JPhmBCYL/e/mjdvxyiII8WchPQLK8AUVwTNPe3Q=
 
-- name: dn42-haojunmei
-  remove: true
-
 - name: dn42-huajitech
   peer_v4: null
   peer_v6: fe80::458
@@ -287,9 +284,6 @@ wg_peers:
   peer_v4: "172.20.178.65"
   peer_v6: "fe80::feec:daff:fe46:d60e/64"
 
-- name: dn42fsn-bastel
-  remove: true
-
 - name: dn42-dingemans
   peer_v4: 172.23.89.146
   peer_v6: fe80::3:349a
@@ -298,19 +292,6 @@ wg_peers:
   wg_pubkey: 8qZ8e5XG6G1OE3F/yGTB7iCIvV9IouHzpf+cSyPadxY=
 
 - name: dn42-ty3r0x
-  peer_v4: 172.22.69.1
-  peer_v6: fe80::2596
-  port: 22596
-  remote: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    31343265313337316538663264656332336236643532613934373936663837326337353531633963
-    6363663365353962346332383031333639356638336335310a353230333032623831633165643434
-    63313030336331323962356238323035316134343434666539373034643535656462393062343165
-    3166646432373563650a626132393437363163346432623831613739616364356366663831313932
-    34393266363131346531306261653961336663316136306436666338393938663363
-  wg_pubkey: QRORBRZgOAhh2g4BTEx2jHrejQ3HdJYqV5yJRCUsgBw=
-
-- name: dn42-baiyu
   remove: true
 
 - name: dn42-techanit
@@ -366,9 +347,6 @@ wg_peers:
   wg_pubkey: OL2LE2feDsFV+fOC4vo4u/1enuxf3m2kydwGRE2rKVs=
   peer_v4: 172.22.125.130
   peer_v6: fe80::3035:1080
-
-- name: dn42-04dco
-  remove: true
 
 - name: dn42-yukino
   port: 21255
