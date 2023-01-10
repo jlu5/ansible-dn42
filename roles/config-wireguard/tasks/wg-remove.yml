@@ -10,7 +10,6 @@
 - name: "Remove obsolete WireGuard interfaces"
   shell:
     cmd: "rm -fv {{ automation_root_dir | quote }}/interfaces/??{{ peer_name | quote }}"
-    warn: false  # needed for wildcard without nested loops
   loop: "{{ _wg_to_remove }}"
   loop_control:
     loop_var: peer_name
