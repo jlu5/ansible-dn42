@@ -1,32 +1,32 @@
-- name: Configure anycast DNS
-  hosts: anycast_pool
-  become: yes
-  pre_tasks:
+- name: Generate DNS zones
+  hosts: anycast_auth_dns
+  become: false
+  tasks:
     - name: Update cached copy of dn42 registry
       local_action: shell cd dn42-registry && git pull
-      become: false
       run_once: true
     - name: Generate DNS zones
       local_action: command scripts/make-dns-records.py
-      become: false
       run_once: true
     - name: Generate forward-zones config
       local_action: command scripts/make-forward-zones.sh
-      become: false
       run_once: true
 
+- name: Configure authoritative DNS
+  hosts: anycast_auth_dns
+  become: yes
   roles:
-    # Configure loopbacks for anycast addresses
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.anycast_auth_dns }}"
+    - role: config-powerdns
+
+- name: Configure DNS recursors
+  hosts: anycast_recursors
+  become: yes
+  roles:
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.anycast_recursors }}"
     - role: config-iptables
-
-    # Install & configure PowerDNS authoritative server
-    - role: config-powerdns
-
-    # Install & configure PowerDNS recursor
     - role: config-powerdns-recursor
+    - role: config-resolv-conf
 
-    - config-resolv-conf

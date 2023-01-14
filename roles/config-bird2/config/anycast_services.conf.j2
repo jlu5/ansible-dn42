@@ -1,4 +1,4 @@
-{% if 'anycast_pool' in group_names %}
+{% if 'anycast_auth_dns' in group_names or 'anycast_recursors' in group_names %}
 protocol direct anycast_import {
     ipv4;
     ipv6;

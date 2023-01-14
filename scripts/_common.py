@@ -18,4 +18,5 @@ def get_hosts(yaml_content):
     return results
 
 def is_anycast_host(yaml_content, host):
-    return host in yaml_content['anycast_pool']['hosts']
+    return host in yaml_content['anycast_recursors']['hosts'] or \
+        host in yaml_content['anycast_auth_dns']['hosts']
