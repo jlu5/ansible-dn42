@@ -2,6 +2,7 @@
 netdata_update_frequency: 2
 netdata_db_mode: dbengine
 netdata_metric_count: 3500
+netdata_page_cache_size: 64
 
 # Matrix notifications
 netdata_matrix_homeserver: https://overdrivenetworks.com:8448
