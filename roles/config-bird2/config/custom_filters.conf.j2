@@ -140,7 +140,7 @@ function handle_special_cases() {
         safe_lower_pref(10);
     }
     # depref transit from networks with incomplete interconnects, inactive admins, or other issues
-    if (bgp_path ~ [= * [
+    if (bgp_path ~ [= [
             4242420123,
             4242420591,
             4242420604,
