@@ -9,5 +9,3 @@ $TTL 300
         3600        ; minimum TTL
 )
 @   IN  NS      ns.highdef.dn42.
-lg IN CNAME lg.highdef.dn42.
-ping IN CNAME ping.highdef.dn42.

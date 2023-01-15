@@ -89,14 +89,7 @@ dns_records:
       ip4: 172.22.108.17
       ip6: fd86:bad:11b7:1117::1
 
-  "jlu5.dn42":
-    # CNAMEs to new domain
-    "lg":
-      type: CNAME
-      target: lg.highdef.dn42.
-    "ping":
-      type: CNAME
-      target: ping.highdef.dn42.
+  "jlu5.dn42": {}  # hmm, this is oddly empty...
 
   "myip.dn42":
     "@":
