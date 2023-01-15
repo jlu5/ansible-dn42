@@ -68,7 +68,7 @@
 -A INPUT -p tcp --dport {{ netdata_proxy_port }} -s {{ my_cidrs }} -j ACCEPT
 {% endif %}
 
-{% if serve_clearnet_dns|default(false) %}
+{% if 'clearnet_dns' in group_names %}
 # DNS (dn42 and clearnet!!)
 -A INPUT -p udp --dport 53 -j ACCEPT
 -A INPUT -p tcp --dport 53 -j ACCEPT

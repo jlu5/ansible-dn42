@@ -5,7 +5,7 @@
     url: https://download.db-ip.com/free/dbip-country-lite-{{ ansible_date_time.year }}-{{ ansible_date_time.month }}.mmdb.gz
     dest: "{{ automation_root_dir }}/dbip-country-lite.mmdb.gz"
     mode: '0644'
-  when: serve_clearnet_dns|default(False)
+  when: "'clearnet_dns' in group_names"
   ignore_errors: true
 
 - name: Extract GeoIP database
@@ -13,7 +13,7 @@
   args:
     chdir: "{{ automation_root_dir }}"
     creates: "{{ automation_root_dir }}/dbip-country-lite.mmdb"
-  when: serve_clearnet_dns|default(False)
+  when: "'clearnet_dns' in group_names"
 
 ## Build PowerDNS config
 - name: "Build PowerDNS config variables"
@@ -40,7 +40,7 @@
       geoip:
         zones-file: "/etc/powerdns/geodns.yml"
         database-files: "{{ automation_root_dir }}/dbip-country-lite.mmdb"
-  when: serve_clearnet_dns|default(False)
+  when: "'clearnet_dns' in group_names"
 
 - name: "Create PowerDNS config folder"
   file:
@@ -88,7 +88,7 @@
     mode: '0644'
   notify:
     - Reconfigure PowerDNS
-  when: serve_clearnet_dns|default(False)
+  when: "'clearnet_dns' in group_names"
 
 - name: "Template named.conf for PowerDNS"
   template:
