@@ -342,11 +342,7 @@ wg_peers:
   wg_pubkey: QJnmWUnPS9wKKkLHHuWBYMGAI20MH9OEo28O4qr5DV8=
 
 - name: dn42-lare
-  port: 23035
-  remote: de01.dn42.lare.cc:42413
-  wg_pubkey: OL2LE2feDsFV+fOC4vo4u/1enuxf3m2kydwGRE2rKVs=
-  peer_v4: 172.22.125.130
-  peer_v6: fe80::3035:1080
+  remove: true
 
 - name: dn42-yukino
   port: 21255

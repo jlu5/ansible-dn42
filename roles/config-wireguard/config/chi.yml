@@ -57,3 +57,10 @@ wg_peers:
   port: 20591
   remote: rtr1.ord.nullplane.net:21080
   wg_pubkey: oKhq3iDYFkwuyG611qCgbo6UzRm3wEiSn2CwJQn4QRA=
+
+- name: dn42-lare
+  port: 23035
+  remote: use2.dn42.lare.cc:21080
+  wg_pubkey: AREskFoxP2cd6DXoJ7druDsiWKX+8TwrkQqfi4JxRRw=
+  peer_v4: null
+  peer_v6: fe80::3035:137
