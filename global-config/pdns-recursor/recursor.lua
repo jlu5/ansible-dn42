@@ -4,6 +4,8 @@ readTrustAnchorsFromFile("/usr/share/dns/root.key", 0)
 
 addNTA("020", "No known trust anchors for zone 020")
 addNTA("adm", "No known trust anchors for zone adm")
+addTA("crxn", "1624 15 2 CE9AE07ABC41D7A509530DEBEFFA79D42DE7167208435D3E1881BB5448ABAEAF")
+addTA("crxn", "29517 15 2 E987FC2F366AE8FE75F3EEBD160002437D5B1A8E5B17BA04AE19CCC529A579C9")
 addTA("dn42", "64441 10 2 6dadda00f5986bd26fe4f162669742cf7eba07d212b525acac9840ee06cb2799")
 addTA("dn42", "3096 10 2 b7c687a99bee60e172ea439bd2d3087b1d970916575db9c1cb591b7ee15d8cb1")
 addNTA("ff3l", "No known trust anchors for zone ff3l")

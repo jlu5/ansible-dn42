@@ -47,6 +47,7 @@ done < <(sed -n -E 's/^nserver:\s+([a-z]\.delegation-servers\.dn42) ([a-f0-9.:]+
 echo 1>&2
 
 parse_nserver() {
+    # For delegation server IPs, which are fetched in the pass above this definition
     if [[ -v nserver_ips["$nserver,4"] && -v nserver_ips["$nserver,6"] ]]; then
         echo "${nserver_ips["$nserver,4"]}${NSERVER_SEPARATOR}${nserver_ips["$nserver,6"]}"
         return;
@@ -62,6 +63,9 @@ parse_nserver() {
     elif [[ "$nserver" == *".ipv4.registry-sync.dn42" ]]; then
         # e.g. "53.255.127.10.ipv4.registry-sync.dn42"
         echo "$nserver" | sed -E 's/([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.ipv4\.registry-sync\.dn42$/\4.\3.\2.\1/'
+    elif [[ "$nserver" == *"."*" "* ]]; then
+        # Glue records including the IP, e.g. "nserver: dns.example fd00::1234"
+        cut -d ' ' -f 2 <<< "$nserver"
     fi
 }
 
@@ -84,7 +88,7 @@ write_nservers() {
         IFS="${NSERVER_SEPARATOR}" nservers_flat="${parsed_nservers[*]}"
         echo "$zone_name=$nservers_flat" | tee -a "$OUTPUT"
     else
-        echo "!!! Unknown nameservers for zone $zone_name:" 1>&2
+        echo "!!! Unknown or unparseable nameservers for zone $zone_name:" 1>&2
         echo "$raw_nservers" 1>&2
         echo "!!!" 1>&2
     fi
