@@ -11,5 +11,7 @@
     ],
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.pythonPath": "/usr/bin/python3"
+    "search.exclude": {
+        "dn42-registry": true,
+    },
 }
