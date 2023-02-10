@@ -11,7 +11,6 @@ rport {{ peer_info['remote'].rsplit(':', 1)[1] }}
 {% endif %}
 {# Follow wireguard config behaviour: if no port is specified, don't bind to anything #}
 {% if peer_info.get('port') %}
-local {{ ansible_default_ipv6.address if '6' in _ovpn_proto else ansible_default_ipv4.address }}
 lport {{ peer_info['port'] }}
 {% else %}
 nobind
@@ -27,7 +26,6 @@ server {{ peer_info['server'] | ansible.utils.ipaddr('network') }} {{ peer_info[
 ifconfig {{ peer_info.get('local_v4', ownip) }} {{ peer_info['peer_v4'] }}
 {% endif %}
 {% if peer_info['peer_v6'] %}
-tun-ipv6
 ifconfig-ipv6 {{ peer_info.get('local_v6', ownip6) }} {{ peer_info['peer_v6'] }}
 {% endif %}
 
