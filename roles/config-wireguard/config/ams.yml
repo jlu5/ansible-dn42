@@ -1,5 +1,4 @@
 wg_peers:
-# migrated from lon
 - name: dn42lon-strexp
   port: 51331
   remote: "lon1.uk.dn42.strexp.net:21080"
@@ -79,14 +78,11 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_lon
 
 - name: dn42-usman
-  peer_v4: 172.22.132.166
-  peer_v6: null
   port: 21869
-  remote: null
+  remote: fr-lil1.dn42.usman.network:21080
   wg_pubkey: qwjXj/6R9ThUnqeOAYN+MxM6CbIgzjS8WFDdXuyEpHY=
-  local_v4: 172.20.229.116
-  local_v6: fe80::116
-  wg_privkey: /etc/wireguard/privatekey_lon
+  peer_v4: null
+  peer_v6: fe80::1869
 
 - name: dn42-atolm
   peer_v4: null
