@@ -1,9 +1,13 @@
+{% set internal_hostname = inventory_hostname + dns_auto_host_record_suffix + '.' + dns_domain %}
 <nav class="largefont">
     <a href="/">Home</a>
     -
     <a href="/peering.html">Peering</a>
     -
     Looking Glass (<a href="https://lg.highdef.network">Clearnet</a> | <a href="http://lg.highdef.dn42">dn42</a>)
+    <br>
+    Internal services:
+    <a href="http://{{ internal_hostname }}/smokeping">Smokeping</a>
     -
-    <a href="http://{{ (inventory_hostname + dns_auto_host_record_suffix + '.' + dns_domain) }}/routestats">Routestats (dn42 only)</a>
+    <a href="http://{{ internal_hostname }}/routestats">Routestats</a>
 </nav>
