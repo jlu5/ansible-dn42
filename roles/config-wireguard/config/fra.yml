@@ -222,3 +222,10 @@ wg_peers:
   wg_pubkey: OL2LE2feDsFV+fOC4vo4u/1enuxf3m2kydwGRE2rKVs=
   peer_v4: 172.22.125.130
   peer_v6: fe80::3035:130
+
+- name: dn42-modzilla
+  port: 21909
+  remote: 23.88.107.9:51825
+  wg_pubkey: x1rsNq2U+DVeQCbLLlh58gE+fJbNCeDi6q+4AW3EFHY=
+  peer_v4: null
+  peer_v6: fe80::9656:d128:8652:64b7
