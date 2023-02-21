@@ -111,3 +111,10 @@ wg_peers:
   wg_pubkey: "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo="
   peer_v4: "172.21.100.193"
   peer_v6: "fe80::3088:193/64"
+
+- name: dn42-northrend
+  port: 23192
+  remote: 98.167.160.248:21080
+  wg_pubkey: ppyDp+99L1DGXLn2KU0CuEaii9OdOrFd0+M4q0w5tAs=
+  peer_v4: null
+  peer_v6: fe80::3192:45
