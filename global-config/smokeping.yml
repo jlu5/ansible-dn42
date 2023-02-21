@@ -1,8 +1,8 @@
 smokeping_region_map:
   41: [EU, MEA]
-  42: [US, CA, EU]
-  43: [US, CA]
-  44: [US, CA, AsiaEast]
+  42: [US, CA, LatAm, EU]
+  43: [US, CA, LatAm]
+  44: [US, CA, LatAm, AsiaEast]
   51: [AsiaSouth, AsiaEast, Oceania, EU, MEA]
   52: [AsiaEast, AsiaSouth, Oceania, EU]
   53: [Oceania, AsiaSouth, AsiaEast]
