@@ -33,3 +33,10 @@ wg_peers:
   wg_pubkey: B44aObkEQL8MjOiYjKzj67sADaNGIFT8AV57X8JfTTQ=
   peer_v4: null
   peer_v6: fe80::2458
+
+- name: dn42-zehka
+  port: 23467
+  remote: 185.247.225.18:51821
+  wg_pubkey: k74poVrLvIt6kXAAr1lSqThrVilGch61RWmn8hAaPFw=
+  peer_v4: 172.22.162.225
+  peer_v6: fd47:514:dbc9::1
