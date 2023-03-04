@@ -15,11 +15,14 @@ iface {{ ifname }} inet tunnel
 {% else %}
     endpoint {{ lookup('community.general.dig', peer_info.remote, 'qtype=' + dns_record_type) }}
 {% endif %}
-    {# TODO: add pointopoint support?? #}
     address {{ local_v4 }}
-    netmask {{ peer_info.netmask }}
+{% if peer_info.get('peer_v4') %}
+    dstaddr {{ peer_info.peer_v4 }}
+{% endif %}
+    netmask {{ peer_info.netmask | default(32) }}
     ttl 64
     {# post-up ip link set multicast on dev {{ ifname }} #}
 {% if peer_info.get('local_v6') %}
-    post-up ip addr add {{ peer_info.local_v6 }}/{{ peer_info.netmask_v6 }} dev {{ ifname }}
+    {# TODO: add pointopoint support?? #}
+    post-up ip addr add {{ peer_info.local_v6 }}/{{ peer_info.netmask_v6 | default(128) }} dev {{ ifname }}
 {% endif %}
