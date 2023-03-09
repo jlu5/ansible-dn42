@@ -1,7 +1,0 @@
-gre_peers:
-- name: dn42-nop
-  remote: "nop.hu"
-  local_v4: "172.21.83.74"
-  netmask: 31
-  local_v6: "fd40:cc1e:c0de::202"
-  netmask_v6: "124"
