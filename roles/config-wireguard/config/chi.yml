@@ -8,11 +8,7 @@ wg_peers:
   local_v6: "fd86:bad:11b7::1"
 
 - name: dn42buf-kioubit
-  port: 53914
-  remote: "us2.g-load.eu:21080"
-  wg_pubkey: "6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s="
-  peer_v4: "172.20.53.98"
-  peer_v6: "fe80::ade0"
+  remove: true
 
 - name: dn42mci-aftbit
   port: 50822
