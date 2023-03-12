@@ -353,3 +353,11 @@ wg_peers:
   wg_pubkey: rvzaIe2JwsZk3pgA59Xf0SNS1gB0GSgegvOoYcDVgGc=
   peer_v4: 172.23.181.2
   peer_v6: fe80::2837
+
+- name: dn42-marlinc
+  port: 23941
+  remote: 2a0b:b600:3c01:10::99c8:21080
+  wg_pubkey: cP88BzE/gser2JVw74EPi2/9ZNEsSYWx2MOANGk+YUc=
+  peer_v4: null
+  peer_v6: fd33:aba8:392:1::2
+  local_v6: fd33:aba8:392:1::3
