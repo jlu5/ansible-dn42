@@ -229,3 +229,10 @@ wg_peers:
   wg_pubkey: x1rsNq2U+DVeQCbLLlh58gE+fJbNCeDi6q+4AW3EFHY=
   peer_v4: null
   peer_v6: fe80::9656:d128:8652:64b7
+
+- name: dn42-c4tg
+  peer_v4: null
+  peer_v6: fe80::1411:1
+  port: 21411
+  remote: famfo.xyz:21080
+  wg_pubkey: IsKZ+XQD2fq0thj3qWIOO9CH9jKDnDQABKcBzNU8JTM=
