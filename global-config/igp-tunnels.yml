@@ -387,7 +387,7 @@ igp_wg_ports:
     ymq: 30098
     yvrpeer: 30061
   sjc2:
-    atl: 30050
+    atl: 30007
     chi: 30139
     dal: 30070
     fra: 30140
