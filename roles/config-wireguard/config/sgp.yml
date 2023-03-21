@@ -187,3 +187,10 @@ wg_peers:
   wg_pubkey: vBcYFxMLwcsVScQ0LqkGDEIbbykskatmqWHlPGEUrE8=
   peer_v4: 172.22.68.0
   peer_v6: fe80::1888
+
+- name: dn42-sunshine
+  port: 21660
+  remote: 129.150.38.173:21080
+  wg_pubkey: qeABaMDWz1dzPZDE+vP1IFMOrxGQFlpBVf7i3LAJ/iY=
+  peer_v4: null
+  peer_v6: fe80::1660
