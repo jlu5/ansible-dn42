@@ -236,3 +236,10 @@ wg_peers:
   port: 21411
   remote: famfo.xyz:21080
   wg_pubkey: IsKZ+XQD2fq0thj3qWIOO9CH9jKDnDQABKcBzNU8JTM=
+
+- name: dn42-caskd
+  port: 20475
+  remote: null
+  wg_pubkey: /cHmTdDk94GA19FG5oT9Q8KYSHQnNHPPyJ2iUCuVjGU=
+  peer_v4: null
+  peer_v6: fe80::2
