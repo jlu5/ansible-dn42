@@ -4,20 +4,18 @@ This page describes the Routing Policy for AS4242421080.
 
 This is a rough overview, when in doubt you can check my actual filter code: [`custom_filters.conf.j2`](roles/config-bird2/config/custom_filters.conf.j2)
 
-1. Prefer routes originating from the same AS4242421080 meta region, sourced by the [dn42 BGP community `(64511, 41..53)`](https://dn42.dev/howto/Bird-communities). This is essentially cold potato routing:
-  - Routes with no region community or the same origin region as a PoP are given `bgp_local_pref = 1500 - 100*(bgp_path.len) + 50`.
-  - Other routes are left with a local preference of `bgp_local_pref = 1500 - 100*(bgp_path.len)`
-2. When bgp_local_pref ties, prefer routes with shortest AS path.
-3. Prefer routes with the lowest BGP MED.
-4. Prefer routes received via eBGP over iBGP.
-5. Prefer routes from edge routers closest to the current node (lowest internal distance). Internal costs are periodically recalculated from inter-node [latency](https://github.com/jlu5/ansible-dn42/tree/main/scripts/igpping).
-6. When latency is tied, prefer the first received route (RFC 5004).
+1. Prefer the shortest AS path.
+2. For routes containing the [dn42 region communities](https://dn42.dev/howto/Bird-communities), prefer routes originating in the same super-region (see below) as an edge node. This is effectively cold potato routing:
+  - Routes with matching dn42 region to an edge node or no dn42 region community at all are assigned `bgp_med = 50`. Other routes are assigned `bgp_med = 100`.
+3. Prefer routes received via eBGP over iBGP.
+4. Prefer routes from edge routers closest to the current node (lowest internal distance). Internal costs are periodically recalculated from inter-node [latency](https://github.com/jlu5/ansible-dn42/tree/main/scripts/igpping).
+5. When latency is tied, prefer the first received route (RFC 5004).
 
 Routes with unusually large path lengths (> 12) are rejected as they usually signal ghost routes.
 
-Some exceptions to this policy apply (e.g. in `handle_special_cases`).
+Some exceptions apply (see in `handle_special_cases`).
 
-### AS4242421080 meta regions
+### AS4242421080 Super Regions
 
 These are defined in `get_region_tag` of [`custom_filters.conf.j2`](roles/config-bird2/config/custom_filters.conf.j2):
 

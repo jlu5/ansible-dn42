@@ -135,6 +135,8 @@ template bgp dnpeers {
     local as OWNAS;
     # When eBGP routes tie in latency, prefer older routes instead of comparing router ID
     prefer older on;
+    # Compare MED across peerings since we use that for cold potato routing
+    med metric on;
 
     enforce first as on;
     advertise hostname on;

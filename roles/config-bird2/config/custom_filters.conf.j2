@@ -45,15 +45,6 @@ function is_ibgp_network() {
     }
 }
 
-# Subtract x from bgp_local_pref, while checking for underflow
-function safe_lower_pref(int x) {
-    if (bgp_local_pref > x) then {
-        bgp_local_pref = bgp_local_pref - x;
-    } else {
-        bgp_local_pref = 0;
-    }
-}
-
 # These are custom region tags which group together regions that aren't efficient
 # (from my observations) to separate for cold potato routing
 function get_region_tag(int dn42_region_tag) {
@@ -72,20 +63,17 @@ function get_region_tag(int dn42_region_tag) {
 define COLD_POTATO_IGNORE = [
     0  # placeholder
 ];
-function prefer_same_region_origin(int base_weight)
+function prefer_cold_potato()
     int my_region_tag;
     int incoming_tag;
 {
-    # Cold potato routing: add local_pref += base_weight/(bgp_path.len) to routes originating in the same
-    # region tag as the current node, or routes that don't have any region community set.
-    #
-    # Applying this policy to routes without a community region fixes cases when peers accidentally attach
-    # region communities to routes in transit.
-    # Without this, they will suck up all traffic for routes regardless of origin because everything
-    # they export will appear to have the same region tag as the receiving node.
-    #
-    # Also, the local pref is based off BGP path length to allow more fine grained route tweaking:
-    # e.g. steer transit traffic away from peer X unless all other paths have length >= 3
+    # Cold potato routing: prefer routes originating in the same region as the current node, or routes that don't have
+    # any region community set.
+    # Applying this policy to routes without a community region fixes cases when peers accidentally attach region
+    # communities to routes in transit. Otherwise, they will suck up a lot of routes because everything they epxort will
+    # appear to have the same region tag as my (receiving) peering node.
+    # In other words: if a prefix has routes both with and without a region community, ignore the region community as
+    # it's likely to be bogus.
     my_region_tag = get_region_tag(DN42_REGION);
     incoming_tag = 0;
     bgp_large_community.add((OWNAS, LC_ORIGIN_REGION_TAG, my_region_tag));
@@ -122,7 +110,7 @@ function prefer_same_region_origin(int base_weight)
 
     if (incoming_tag = 0 || incoming_tag = my_region_tag) then {
         #print "Route ", net, " has incoming tag ", incoming_tag, " matching ours ", my_region_tag;
-        bgp_local_pref = bgp_local_pref + 50;
+        bgp_med = 50;
     }
 }
 
@@ -133,11 +121,11 @@ function handle_special_cases() {
     # - AS65043 / ICVPN-DREILAENDERECK
     # - AS64654 / ChaosVPN
     if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043, 64654, 4242421337] * =]) then {
-        safe_lower_pref(20);
+        bgp_med = bgp_med + 20;
     }
     # depref transit from densely connected (autopeering) transits
     if (bgp_path ~ [= * [4242421588, 4242422717, 4242423914] ? * =]) then {
-        safe_lower_pref(10);
+        bgp_med = bgp_med + 10;
     }
     # depref transit from networks with incomplete interconnects, inactive admins, or other issues
     if (bgp_path ~ [= [
@@ -150,14 +138,14 @@ function handle_special_cases() {
             4242422980,
             4242423905
         ] ? * =]) then {
-            safe_lower_pref(15);
+            bgp_med = bgp_med + 15;
     }
     # experimental networks with limited bandwidth / capacity
     if (bgp_path ~ [= * [4201271111] ? * =]) then {
-        safe_lower_pref(20);
+        bgp_med = bgp_med + 20;
     }
 
-    # 2022-12-13: work around ghost issues; paths to well-connected peers should not need to travel through ICVPN
+    # 2022-12-13: work around ghost routes; paths to well-connected peers should not need to travel through ICVPN
     if (bgp_path ~ [= * [65043, 65026, 65022, 65024] * [4242420101, 64719, 4242420119, 4242420197, 4242422923] * =]) then {
         reject;
     }
@@ -174,8 +162,8 @@ function ebgp_import_filter()
     if (bgp_path.len > 8) then {
         reject "Rejected route for ", net, " with too long ", bgp_path;
     }
-    bgp_local_pref = bgp_local_pref + 1400;
-    safe_lower_pref(bgp_path.len * 100);
+    # Lower is better
+    bgp_med = 100;
 
     if (bgp_path ~ [= * ASES_REJECT * =]) then {
         reject "Rejected route for ", net, " from BLOCKED ASN";
@@ -187,8 +175,8 @@ function ebgp_import_filter()
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 112..127)]);
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 33..39)]);
 
+    prefer_cold_potato();
     handle_special_cases();
-    prefer_same_region_origin(200);
 
     # Implement BLACKHOLE community as defined by RFC 7999
     # Based off https://bird.network.cz/pipermail/bird-users/2016-October/010705.html
@@ -228,13 +216,13 @@ function ibgp_import_filter()
 
     if (bgp_path.len = 0) then {
         # Prefer locally originated iBGP routes, e.g. for anycast services
-        bgp_local_pref = 2000;
+        bgp_med = 10;
     }
 
     my_region_tag = get_region_tag(DN42_REGION);
     if ((OWNAS, LC_ORIGIN_DEPREF_CROSS_REGION, 1) ~ bgp_large_community &&
         (OWNAS, LC_ORIGIN_REGION_TAG, my_region_tag) !~ bgp_large_community) then {
-        safe_lower_pref(101);
+        bgp_med = bgp_med + 20;
     }
 
     accept;
