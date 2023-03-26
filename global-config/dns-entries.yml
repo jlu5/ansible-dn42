@@ -35,16 +35,12 @@ dns_records:
     "music":
       type: host_record
       ip4: 172.22.108.53
-    "jf":
-      type: multi
-      records:
-        - type: A
-          target: 172.22.108.2
-        - type: AAAA
-          target: fd86:bad:11b7:aaaa::2
     "mtxadmin":
       type: A
-      target: 172.22.108.66
+      target: 172.22.108.100
+    "grapnel":
+      type: ansible_host_alias
+      target: dal
     "git":
       type: host_record
       ip4: 172.22.108.82
