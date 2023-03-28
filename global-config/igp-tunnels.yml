@@ -32,7 +32,6 @@ igp_neighbours:
     sjc: null
     sjc2: null
     ymq: null
-    yvrpeer: null
   dal: !!set
     atl: null
     chi: null
@@ -88,7 +87,6 @@ igp_neighbours:
     sjc2: null
     tyo: null
     ymq: null
-    yvrpeer: null
   sgp: !!set
     ams: null
     fra: null
@@ -109,7 +107,6 @@ igp_neighbours:
     syd: null
     tyo: null
     ymq: null
-    yvrpeer: null
   sjc2: !!set
     atl: null
     chi: null
@@ -121,7 +118,6 @@ igp_neighbours:
     sjc: null
     syd: null
     tyo: null
-    yvrpeer: null
   syd: !!set
     las: null
     mil: null
@@ -149,13 +145,6 @@ igp_neighbours:
     par: null
     sea: null
     sjc: null
-    yvrpeer: null
-  yvrpeer: !!set
-    chi: null
-    sea: null
-    sjc: null
-    sjc2: null
-    ymq: null
 igp_wg_ports:
   ams:
     ams2: 30055
