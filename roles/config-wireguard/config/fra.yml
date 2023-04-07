@@ -243,3 +243,27 @@ wg_peers:
   wg_pubkey: /cHmTdDk94GA19FG5oT9Q8KYSHQnNHPPyJ2iUCuVjGU=
   peer_v4: null
   peer_v6: fe80::2
+
+# BEGIN peers migrated from par.peer
+
+- name: dn42-tchekda
+  port: 21722
+  remote: "peer.dn42.tchekda.fr:21080"
+  wg_pubkey: "QF93Jc4mGgHvZvaY+qUeyU1vYZKW7ATwztc9oYie92k="
+  peer_v4: "172.20.4.97"
+  peer_v6: "fe80::1722:97/64"
+  local_v4: 172.22.108.36
+  local_v6: fe80::1080:36
+  wg_privkey: /etc/wireguard/privatekey_par
+
+- name: dn42-androw
+  peer_v4: 172.23.186.33
+  peer_v6: fe80::2575:1
+  port: 22575
+  remote: par3.fr.androw.eu:21080
+  wg_pubkey: P7L62FCA7wdH2mr6T3mif90Ms4cImhZjFiuHgqE6yig=
+  local_v4: 172.22.108.36
+  local_v6: fe80::1080:36
+  wg_privkey: /etc/wireguard/privatekey_par
+
+# END peers migrated from par.peer
