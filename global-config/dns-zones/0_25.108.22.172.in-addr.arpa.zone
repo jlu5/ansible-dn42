@@ -12,7 +12,7 @@ $TTL 300
 3 IN PTR ping.highdef.dn42.
 21 IN PTR ns.highdef.dn42.
 22 IN PTR dns.highdef.dn42.
-53 IN PTR music.highdef.dn42.
+7 IN PTR music.highdef.dn42.
 82 IN PTR git.highdef.dn42.
 19 IN PTR chi-rtr-ptp.yvrlab.highdef.dn42.
 18 IN PTR yvrlab-ptp.chi.highdef.dn42.
@@ -25,7 +25,6 @@ $TTL 300
 5 IN PTR yvrpeer.rtr.highdef.dn42.
 34 IN PTR sjc.rtr.highdef.dn42.
 33 IN PTR dal.rtr.highdef.dn42.
-36 IN PTR par.rtr.highdef.dn42.
 37 IN PTR buh.rtr.highdef.dn42.
 39 IN PTR sgp.rtr.highdef.dn42.
 $GENERATE 24-31 $ PTR ${0,2,d}.SEA-clients.highdef.dn42.

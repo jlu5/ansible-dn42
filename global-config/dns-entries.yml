@@ -34,7 +34,7 @@ dns_records:
     # Internal services
     "music":
       type: host_record
-      ip4: 172.22.108.53
+      ip4: 172.22.108.7
     "mtxadmin":
       type: A
       target: 172.22.108.100
