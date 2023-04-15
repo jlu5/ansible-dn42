@@ -361,3 +361,10 @@ wg_peers:
   peer_v4: null
   peer_v6: fd33:aba8:392:1::2
   local_v6: fd33:aba8:392:1::3
+
+- name: dn42-ventilaar
+  port: 22246
+  remote: ams01.dn42.ventilaar.net:31080
+  wg_pubkey: Z6WFjvsKIh4E92jxOYC07Dn5Q5Cc/pBFFpYlYZUr7j8=
+  peer_v4: null
+  peer_v6: fe80::2246

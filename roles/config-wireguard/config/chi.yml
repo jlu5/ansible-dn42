@@ -60,3 +60,10 @@ wg_peers:
   wg_pubkey: AREskFoxP2cd6DXoJ7druDsiWKX+8TwrkQqfi4JxRRw=
   peer_v4: null
   peer_v6: fe80::3035:137
+
+- name: dn42-ventilaar
+  port: 22246
+  remote: atl04.dn42.ventilaar.net:31080
+  wg_pubkey: qJQiON85WYvdMBHDu0T0rBKGYNexlPvQjtjkx/YNK2o=
+  peer_v4: null
+  peer_v6: fe80::2246
