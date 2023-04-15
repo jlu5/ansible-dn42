@@ -288,7 +288,11 @@ wg_peers:
   wg_pubkey: 8qZ8e5XG6G1OE3F/yGTB7iCIvV9IouHzpf+cSyPadxY=
 
 - name: dn42-ty3r0x
-  remove: true
+  port: 22596
+  remote: incognet.chaox.ro:21080
+  wg_pubkey: sxIWYIrbJKKnUjnQ/SIbcUlhYsBGZcAujnT9Xn5mdFw=
+  peer_v4: 169.254.42.5
+  peer_v6: fe80::2596:5
 
 - name: dn42-techanit
   peer_v4: null
