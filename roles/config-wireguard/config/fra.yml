@@ -267,3 +267,10 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_par
 
 # END peers migrated from par.peer
+
+- name: dn42-e1mo
+  port: 20565
+  remote: dn42-nbg1.net.dont-break.it:21080
+  wg_pubkey: 6w37ckKLGl6Bdt2PrGGqe+msMwvxniKLy4Efe1ICXi0=
+  peer_v4: null
+  peer_v6: fe80::565
