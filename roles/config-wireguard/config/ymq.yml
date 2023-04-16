@@ -181,6 +181,8 @@ wg_peers:
   local_v6_multi:
   - fd86:bad:11b7:fa7c::f1/124
   - 2607:5300:60:6e84::f1/124
+  # A dummy link local v6 is needed for BIRD to pick this up as an OSPF stub interface for IPv6
+  - "{{ link_local_ip6 }}"
   port: 19998
   multi:
     # sixel
