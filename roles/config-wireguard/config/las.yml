@@ -74,16 +74,6 @@ wg_peers:
   remote: us1.dn42.ciplc.network:21080
   wg_pubkey: KZXWUzmGStNRrO2vg1TbtwQKmp4gPdhOVIW4RegLVGI=
 
-### imported from us-lax01
-
-- name: dn42-bling
-  remove: true
-
-- name: dn42lax-sunnet
-  remove: true
-
-###
-
 - name: dn42-iedon
   peer_v4: 172.23.91.114
   peer_v6: fe80::2189:ef
@@ -118,3 +108,10 @@ wg_peers:
   wg_pubkey: lAs/L2XLEZALnTOJ6ZhHaKgYY+rzqRgPnmlC4v/SfQw=
   peer_v4: 172.22.68.0
   peer_v6: fe80::1888
+
+- name: dn42-prevarinit
+  port: 22475
+  remote: lv1.us.dn42.prevarinite.net:21080
+  wg_pubkey: KCcJKb3+/1sjrP6B5gNBS1CpsC/ur3LHGs11feJc1lQ=
+  peer_v4: null
+  peer_v6: fe80::7072:6576:6172:1
