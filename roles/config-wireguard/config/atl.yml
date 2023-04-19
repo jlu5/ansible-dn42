@@ -21,21 +21,12 @@ wg_peers:
   peer_v4: "172.23.193.143"
   peer_v6: "fd7c:3727:9426:193::3"
 
-- name: dn42dal-winterf
-  remove: true
-
-- name: dn42dal-melty
-  remove: true
-
 - name: dn42-androw
   peer_v4: 172.23.186.36
   peer_v6: fe80::2575:4
   port: 22575
   remote: mks1.us.androw.eu:21080
   wg_pubkey: 7tBgRZZFJWmTAy36h4saz77BxXacCzes9KXgZew7Dns=
-
-- name: dn42-trilom
-  remove: true
 
 - name: dn42-mtzfederic
   peer_v4: 172.22.114.97
@@ -51,9 +42,6 @@ wg_peers:
   remote: ajg-spruce.dyndns.org:51837
   wg_pubkey: c4xijMpOqveIgv13h2N/PZ2cJxA547x586n86EZ+k0I=
 
-- name: dn42-ryuji
-  remove: true
-
 - name: dn42-nullplane
   peer_v4: 172.21.91.65
   peer_v6: fe80::591
@@ -67,3 +55,10 @@ wg_peers:
   wg_pubkey: uVIBY5keaBLtkT7oyD/W/TgEBiXerr/IPxtH+JO0amI=
   peer_v4: 172.22.68.0
   peer_v6: fe80::1888
+
+- name: dn42-bri
+  port: 22825
+  remote: evo.pve.ibeep.com:21080
+  wg_pubkey: ZB4ykdUcm3vNX23qFEHSiO7eQfyC5BoGbg9fHZGe/zE=
+  peer_v4: null
+  peer_v6: fe80::2825:2
