@@ -1,6 +1,7 @@
 - name: Set configuration variables
   set_fact:
     _bird_lg_go_dir: "{{ automation_root_dir }}/bird-lg-go"
+    _bird_lg_go_version: 1.2.0
 
 - name: Create bird-lg-go directory
   file:
@@ -10,9 +11,9 @@
 - name: Download bird-lg-go binary package
   get_url:
     # FIXME: this should be more flexible with architectures
-    url: https://dl.highdef.network/bird-lg-go/0.20220223.2/bird-lg-go_0.20220223.2_linux_amd64.tar.gz
+    url: "https://github.com/xddxdd/bird-lg-go/releases/download/v{{ _bird_lg_go_version }}/bird-lg-go-v{{ _bird_lg_go_version }}-linux-amd64.tar.gz"
     dest: "{{ _bird_lg_go_dir }}/bird-lg-go.tar.gz"
-    checksum: "sha256:ea299aae1b5a4ebe2acea2f1b6b13272703a33dfb35d138d646f72af2aff28f4"
+    checksum: "md5:30ccd4b20a9f5a6ddcfe04040b7d43da"
     mode: "0644"
 
 - name: Extract bird-lg-go binary package
@@ -20,6 +21,28 @@
     src: "{{ _bird_lg_go_dir }}/bird-lg-go.tar.gz"
     dest: "{{ _bird_lg_go_dir }}/"
     remote_src: yes
+
+- name: Download bird-lgproxy-go binary package
+  get_url:
+    # FIXME: this should be more flexible with architectures
+    url: "https://github.com/xddxdd/bird-lg-go/releases/download/v{{ _bird_lg_go_version }}/bird-lgproxy-go-v{{ _bird_lg_go_version }}-linux-amd64.tar.gz"
+    dest: "{{ _bird_lg_go_dir }}/bird-lgproxy-go.tar.gz"
+    checksum: "md5:f2e18594ecd5661cf7a94461901f7024"
+    mode: "0644"
+
+- name: Extract bird-lgproxy-go binary package
+  unarchive:
+    src: "{{ _bird_lg_go_dir }}/bird-lgproxy-go.tar.gz"
+    dest: "{{ _bird_lg_go_dir }}/"
+    remote_src: yes
+
+- name: Remove obsolete bird-lg-go binaries
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+  - "{{ _bird_lg_go_dir }}/frontend"
+  - "{{ _bird_lg_go_dir }}/proxy"
 
 - name: Generate bird-lg-go configs
   template:

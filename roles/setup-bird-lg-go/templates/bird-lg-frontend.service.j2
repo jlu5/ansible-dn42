@@ -6,7 +6,7 @@ After=bird.service
 Type=simple
 User=bird
 Group=bird
-ExecStart={{ _bird_lg_go_dir }}/frontend
+ExecStart={{ _bird_lg_go_dir }}/bird-lg-go
 Restart=on-failure
 EnvironmentFile={{ _bird_lg_go_dir }}/bird-lg-frontend.env
 

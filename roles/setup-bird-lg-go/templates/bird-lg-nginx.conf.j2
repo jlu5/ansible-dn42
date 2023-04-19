@@ -8,10 +8,6 @@ server {
     error_log /var/log/nginx/dn42-lg-error.log;
 
     location /api {
-{% for ipblock in ownnets4 + ownnets6 + birdlg_allowed_ips %}
-        allow {{ ipblock }};
-{% endfor %}
-        deny  all;
         proxy_set_header HOST $host;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Real-IP $remote_addr;
@@ -58,9 +54,6 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        location /api {
-            deny all;
-        }
         proxy_pass http://127.0.0.1:{{ birdlg_web_port }};
     }
 
