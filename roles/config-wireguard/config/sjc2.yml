@@ -118,3 +118,10 @@ wg_peers:
   wg_pubkey: ppyDp+99L1DGXLn2KU0CuEaii9OdOrFd0+M4q0w5tAs=
   peer_v4: null
   peer_v6: fe80::3192:45
+
+- name: dn42-lare
+  port: 23035
+  remote: usw2.dn42.lare.cc:21080
+  wg_pubkey: oWMjftHTU+ll9PG26adiQaipQ8HC6kO4puXGakw38j8=
+  peer_v4: null
+  peer_v6: fe80::3035:139
