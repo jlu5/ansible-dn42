@@ -1,9 +1,8 @@
 from dataclasses import dataclass
-import subprocess
 import traceback
 
 from utils import prompt_bool, prompt_float
-from pingtest import remote_ping, parse_ping
+from pingtest import get_rtt, PingTestError
 
 @dataclass
 class BirdOptions:
@@ -25,10 +24,8 @@ def fill_bird_options(node, completed_config):
     remote = completed_config['remote']
     if remote and prompt_bool(f"Check latency to {remote}?"):
         try:
-            ping_raw = remote_ping(node, remote)
-            ping_parsed = parse_ping(ping_raw)
-            latency = float(ping_parsed['avg'])
-        except (subprocess.SubprocessError, ValueError, LookupError):
+            latency = get_rtt(node, remote)
+        except (OSError, ValueError, LookupError, PingTestError):
             traceback.print_exc()
     if latency is None:
         latency = prompt_float(f"Input latency value for remote {remote or '(unknown)'} (ms):")
