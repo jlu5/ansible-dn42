@@ -45,9 +45,6 @@
   notify: Restart netdata
   with_fileglob: 'health.d/*.conf'
 
-- include_tasks: bird-prometheus-integration.yml
-  when: "'dn42routers' in group_names or 'ixprouters' in group_names"
-
 - name: Enable/start netdata service
   systemd:
     name: netdata
