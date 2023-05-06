@@ -8,7 +8,7 @@
     path: "{{ _bird_lg_go_dir }}"
     state: directory
 
-- name: Download bird-lg-go binary package
+- name: Download bird-lg-go (frontend) binary package
   get_url:
     # FIXME: this should be more flexible with architectures
     url: "https://github.com/xddxdd/bird-lg-go/releases/download/v{{ _bird_lg_go_version }}/bird-lg-go-v{{ _bird_lg_go_version }}-linux-amd64.tar.gz"
@@ -16,11 +16,12 @@
     checksum: "md5:30ccd4b20a9f5a6ddcfe04040b7d43da"
     mode: "0644"
 
-- name: Extract bird-lg-go binary package
+- name: Extract bird-lg-go (frontend) binary package
   unarchive:
     src: "{{ _bird_lg_go_dir }}/bird-lg-go.tar.gz"
     dest: "{{ _bird_lg_go_dir }}/"
     remote_src: yes
+    keep_newer: true
 
 - name: Download bird-lgproxy-go binary package
   get_url:
@@ -35,6 +36,7 @@
     src: "{{ _bird_lg_go_dir }}/bird-lgproxy-go.tar.gz"
     dest: "{{ _bird_lg_go_dir }}/"
     remote_src: yes
+    keep_newer: true
 
 - name: Remove obsolete bird-lg-go binaries
   file:
