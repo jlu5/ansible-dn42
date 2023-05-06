@@ -222,7 +222,7 @@ function ibgp_import_filter()
     my_region_tag = get_region_tag(DN42_REGION);
     if ((OWNAS, LC_ORIGIN_DEPREF_CROSS_REGION, 1) ~ bgp_large_community &&
         (OWNAS, LC_ORIGIN_REGION_TAG, my_region_tag) !~ bgp_large_community) then {
-        bgp_med = bgp_med + 20;
+        bgp_local_pref = 90;
     }
 
     accept;
