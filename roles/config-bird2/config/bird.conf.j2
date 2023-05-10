@@ -142,6 +142,24 @@ template bgp dnpeers {
     advertise hostname on;
 }
 
+template bgp route_collector {
+    local as OWNAS;
+
+    multihop;
+
+    ipv4 {
+        add paths tx;
+        import none;
+        export where is_valid_network() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE];
+    };
+
+    ipv6 {
+        add paths tx;
+        import none;
+        export where is_valid_network_v6() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE];
+    };
+}
+
 include "/etc/bird/ospf.conf";
 include "/etc/bird/ibgp.conf";
 include "/etc/bird/local*.conf";
