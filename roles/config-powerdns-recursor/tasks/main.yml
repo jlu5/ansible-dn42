@@ -1,3 +1,11 @@
+- name: Create PowerDNS install dir
+  file:
+    owner: root
+    # Note: cannot assume pdns group exists at this point
+    path: "/etc/powerdns"
+    state: directory
+    mode: '0750'
+
 - name: "Upload config files for PowerDNS recursor"
   copy:
     src: "{{ playbook_dir }}/global-config/pdns-recursor/{{ item }}"

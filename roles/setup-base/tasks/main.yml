@@ -40,7 +40,7 @@
     file:
       path: "/etc/wireguard"
       state: directory
-      mode: '0755'
+      mode: '0700'
   - name: Generate Wireguard private key
     shell: "wg genkey > /etc/wireguard/privatekey"
     args:
