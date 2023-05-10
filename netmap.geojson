@@ -156,21 +156,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    2.352222,
-                    48.856614
-                ]
-            },
-            "properties": {
-                "title": "Paris, FR",
-                "description": "- LITE node, NO Anycast DNS<br>- Peering over IPv6 only<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/yellow.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -121.886329,
                     37.338208
                 ]

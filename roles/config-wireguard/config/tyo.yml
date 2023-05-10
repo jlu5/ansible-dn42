@@ -42,9 +42,6 @@ wg_peers:
   peer_v4: "172.20.184.98"
   peer_v6: "fd88:ee35:b221:1::100"
 
-- name: dn42tyo-fixmix
-  remove: true
-
 - name: dn42-kskb1817
   port: 21817
   remote: "jp.kskb.eu.org:21080"
@@ -67,9 +64,6 @@ wg_peers:
   peer_v4: "172.23.105.2"
   peer_v6: "fe80::2980"
 
-- name: dn42tyo-librehs
-  remove: true
-
 - name: dn42tyo-iedon
   port: 52189
   remote: "172.93.221.127:22203"
@@ -90,9 +84,6 @@ wg_peers:
   wg_pubkey: "zhtttxYDZtt/iIdm5HqG5G+g7iJHciJwLbLB/6Rjy1s="
   peer_v4: "172.23.215.226"
   peer_v6: "fe80::3724"
-
-- name: dn42tyo-tsingya
-  remove: true
 
 - name: dn42tyo-myon
   port: 20639
@@ -115,22 +106,12 @@ wg_peers:
   remote: null
   wg_pubkey: 2CxGhL9UwlCB3ybwD1OF2Or18vCPgChS0rdh3Nc8S0c=
 
-- name: dn42-supernoc
-  remove: true
-
 - name: dn42-186526
   peer_v4: 172.23.2.95
   peer_v6: fe80::ade1
   port: 23764
   remote: jp-tokyo-02.edge.186526.xyz:21080
   wg_pubkey: p1U1flETVuiZjghZhannbcrQxdp3fiLodVqs8Xy3ZFo=
-
-- name: dn42-wg
-  peer_v4: 172.23.131.201
-  peer_v6: fe80::2331
-  port: 22331
-  remote: tw201.dn42.williamgates.info:21080
-  wg_pubkey: D9O5wPiRVFUAZzqVJlfpNONAEEy/Ljj8vw5L6PXUpBo=
 
 - name: dn42-hujk
   peer_v4: null
@@ -139,18 +120,12 @@ wg_peers:
   remote: jp.vm.whojk.com:23014
   wg_pubkey: ifN+KmnL5XLHG8nDi2nN9l26snGUP/1157p8mOSPE1c=
 
-- name: dn42-lazurite
-  remove: true
-
 - name: dn42-atolm
   peer_v4: null
   peer_v6: fe80::585
   port: 20585
   remote: jp1.dn42.atolm.net:21080
   wg_pubkey: UNSqegT4PRWe6507kvlMsqj5YKxdcvQe2zedDL0k8Ww=
-
-- name: dn42-haojunmei
-  remove: true
 
 - name: dn42-huajitech
   peer_v4: null
@@ -166,18 +141,12 @@ wg_peers:
   remote: tokyo.japan.dn42.yuzu.im:21080
   wg_pubkey: 7ZLEhruv0R7V9DUEv+BHLr5fszpp/B55aKFtVoIACno=
 
-- name: dn42-bling
-  remove: true
-
 - name: dn42-chimon
   peer_v4: 172.21.65.164
   peer_v6: fe80::3868
   port: 23868
   remote: kix1.dn42.cooo.cool:21080
   wg_pubkey: a8pgJK98XGV9gFWvJv4CirkRcbeHzbevQJnci45hhTc=
-
-- name: dn42-baiyu
-  remove: true
 
 - name: dn42-bbpgqm
   peer_v4: 172.20.56.4
@@ -228,34 +197,6 @@ wg_peers:
   wg_pubkey: drzVP686qPxb/WmyPo+joJCiHXI5lyW/NEF5N206MXc=
   peer_v4: 172.21.113.129
   peer_v6: fe80::1886
-
-- name: dn42-yukino
-  port: 21255
-  remote: dn42-jp-nrt2.acgcl.net:31080
-  wg_pubkey: iRtfmmbhLn59caa8z9HTa4ZHG9L0xYWcrKmAs/ehGmo=
-  peer_v4: null
-  peer_v6: fe80::1060
-
-- name: dn42-iuboy
-  port: 22582
-  remote: jp-tyo1.dn42.iamm.one:21080
-  wg_pubkey: FErX5F8VU53e7L29jGQOqg9KkRmeNXmnzvo/LBfNJwc=
-  peer_v4: null
-  peer_v6: fe80::2582:2
-
-- name: dn42-eki
-  port: 22837
-  remote: kix1.eki.moe:21080
-  wg_pubkey: 9TQTqWU/o5lVwDyIWE0hEgXZapUR8VSldT/NgPW1zX8=
-  peer_v4: 172.23.181.4
-  peer_v6: fe80::2837
-
-- name: dn42-jerrita
-  port: 21107
-  remote: jp01.edge.yoimiya.me:21080
-  wg_pubkey: cL1Dbz1722nCV0AyqPwH/OCGpwTeQKTSBXKMhJv6KGQ=
-  peer_v4: 172.22.183.98
-  peer_v6: fe80::1107
 
 - name: dn42-lilynet
   peer_v4: 172.23.180.2

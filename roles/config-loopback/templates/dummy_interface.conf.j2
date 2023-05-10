@@ -20,8 +20,8 @@ Note: this requires Jinja2 2.10+
 {% for ip in dummy_iface.ip4 %}
 iface {{ dummy_iface.ifname | mandatory }} inet static
 {# Rewrite single IP addresses as a /32, but leave netblocks of other sizes as is #}
-{% if ip | ipaddr('address') %}
-{% set ip = ip | ipaddr('host') %}
+{% if ip | ansible.utils.ipaddr('address') %}
+{% set ip = ip | ansible.utils.ipaddr('host') %}
 {% endif %}
     address {{ ip }}
 {{ init_lines(dummy_iface) }}
@@ -30,8 +30,8 @@ iface {{ dummy_iface.ifname | mandatory }} inet static
 {% for ip in dummy_iface.ip6 %}
 iface {{ dummy_iface.ifname }} inet6 static
 {# Rewrite single IP addresses as a /128, but leave netblocks of other sizes as is #}
-{% if ip | ipaddr('address') %}
-{% set ip = ip | ipaddr('host') %}
+{% if ip | ansible.utils.ipaddr('address') %}
+{% set ip = ip | ansible.utils.ipaddr('host') %}
 {% endif %}
     address {{ ip }}
 {{ init_lines(dummy_iface) }}

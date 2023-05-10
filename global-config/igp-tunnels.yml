@@ -9,7 +9,6 @@ igp_neighbours:
     mil: null
     sgp: null
     sjc: null
-    tyo: null
     ymq: null
   atl: !!set
     ams: null
@@ -70,7 +69,6 @@ igp_neighbours:
     mad: null
     sgp: null
     syd: null
-    tyo: null
   sea: !!set
     chi: null
     dal: null
@@ -118,9 +116,7 @@ igp_neighbours:
     sjc2: null
     tyo: null
   tyo: !!set
-    ams: null
     las: null
-    mil: null
     sea: null
     sgp: null
     sjc: null
