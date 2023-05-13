@@ -6,6 +6,19 @@
   loop:
   - wg-autoreset.sh
   - pingcheck.sh
+  - iprules.py
+
+- name: Configure ip rules
+  template:
+    src: "iprules.txt.j2"
+    dest: "{{ automation_root_dir }}/iprules.txt"
+    mode: '0644'
+
+- name: Configure ip rules (IPv6)
+  template:
+    src: "iprules6.txt.j2"
+    dest: "{{ automation_root_dir }}/iprules6.txt"
+    mode: '0644'
 
 - name: Create cron job for wg-autoreset
   cron:
