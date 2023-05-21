@@ -1,3 +1,4 @@
 {% for prefix in ownnets4 %}
 from {{ prefix }} tos 0x04 lookup 100
 {% endfor %}
+iif lo tos 0x04 lookup 100

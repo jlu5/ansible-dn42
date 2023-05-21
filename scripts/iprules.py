@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 
 """
 Script to apply ip rules.
@@ -38,17 +38,17 @@ def remove():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['add', 'del'])
+    parser.add_argument('action', choices=['add', 'del', 'refresh'])
     parser.add_argument('path')
     parser.add_argument('path6')
     args = parser.parse_args()
 
     action = args.action.lower()
-    if action == 'add':
+    if action in {'del', 'refresh'}:
+        remove()
+    if action in {'add', 'refresh'}:
         add(args.path)
         add(args.path6, ipv6=True)
-    elif action == 'del':
-        remove()
 
 if __name__ == '__main__':
     main()
