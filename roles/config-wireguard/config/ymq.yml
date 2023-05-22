@@ -243,12 +243,7 @@ wg_peers:
   peer_v6: fe80::ade0
 
 - name: igp-stub-ymq2
-  port: 19997
-  remote: falcon.srv.jlu5.com:21080
-  wg_pubkey: "INrFsM9Q6tB6GlhlxfERWA2oVPWLYXdkvjG8zDYq4BQ="
-  peer_v4: null
-  local_v4: 172.22.108.79/31
-  peer_v6: null
+  remove: true
 
 - name: dn42-ty3r0x
   port: 22596
