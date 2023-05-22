@@ -5,8 +5,7 @@ protocol bgp ibgp_{{ host | replace("-", "_") }} {
     neighbor {{ hostvars[host]['ownip6'] }} as {{ ownas }};
     source address {{ ownip6 }};
 {% if is_rr_upstream %}
-{# Slightly confusing: this directive means that the OPPOSITE end is the rr client #}
-{# On the upstream side there is no difference between rr clients and regular peers #}
+{# The upstream marks the downstream as an rr client, not the other way around #}
     rr client;
 {% endif %}
     advertise hostname on;
