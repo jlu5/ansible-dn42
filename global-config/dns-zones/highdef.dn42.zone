@@ -13,11 +13,11 @@ lg IN A 172.20.229.123
 lg IN AAAA fd86:bad:11b7:23::1
 ping IN A 172.22.108.3
 ping IN AAAA fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
-ns IN A 172.22.108.21
+ns IN A 172.22.108.54
 ns IN AAAA fd86:bad:11b7:53::1
-dns IN A 172.22.108.22
+dns IN A 172.22.108.53
 dns IN AAAA fd86:bad:11b7:53::2
-@ IN A 172.22.108.22
+@ IN A 172.22.108.53
 @ IN AAAA fd86:bad:11b7:53::2
 www IN CNAME @
 music IN A 172.22.108.7
@@ -26,6 +26,8 @@ grapnel IN A 172.22.108.33
 grapnel IN AAAA fd86:bad:11b7:33::1
 git IN A 172.22.108.82
 git IN AAAA fd86:bad:11b7:1022::2
+nt IN A 172.22.108.19
+nt IN AAAA fd86:bad:11b7:aaaa::3466
 peers-nodeid-115.ymq IN A 172.20.229.115
 peers-nodeid-116.ams IN A 172.20.229.116
 peers-nodeid-127.sgp IN A 172.20.229.127
@@ -39,8 +41,6 @@ sea.yvrlab IN A 172.22.108.77
 yvrlab.sea IN A 172.22.108.76
 gw.yvrlab IN A 172.22.108.1
 gw.yvrlab IN AAAA fd86:bad:11b7:aaaa::1
-yvrpeer.rtr IN A 172.22.108.5
-yvrpeer.rtr IN AAAA fd86:bad:11b7:aaaa::5
 sea.rtr IN A 172.20.229.114
 sea.rtr IN AAAA fd86:bad:11b7:1::1
 sjc.rtr IN A 172.22.108.34
@@ -73,5 +73,7 @@ sgp.rtr IN A 172.22.108.39
 sgp.rtr IN AAAA fd86:bad:11b7:239::1
 syd.rtr IN A 172.20.229.125
 syd.rtr IN AAAA fd86:bad:11b7:225::1
+yvrpeer.rtr IN A 172.22.108.5
+yvrpeer.rtr IN AAAA fd86:bad:11b7:aaaa::5
 $GENERATE 24-31 ${0,1,d}.SEA-clients A 172.22.108.$
 $GENERATE 40-47 ${0,1,d}.YMQ-clients A 172.22.108.$

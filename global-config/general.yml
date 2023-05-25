@@ -20,13 +20,13 @@ dummy_interfaces:
     track_service: no
   anycast_auth_dns:
     ifname: "igp-dummy1"
-    ip4: ["172.22.108.21"]
+    ip4: ["172.22.108.54", "172.22.108.21"]
     # Note: host #21331 is ::5353
     ip6: ["fd86:bad:11b7:53::1", "{{ (ownip6 + '/64') | ansible.utils.nthhost(21331) }}"]
     track_service: yes
   anycast_recursors:
     ifname: "igp-dummy2"
-    ip4: ["172.22.108.22", "172.23.0.53", "172.20.0.81"]
+    ip4: ["172.22.108.53", "172.22.108.22", "172.23.0.53", "172.20.0.81"]
     ip6: ["fd86:bad:11b7:53::2", "fd42:d42:d42:53::1/64", "fd42:d42:d42:81::1/64"]
     track_service: yes
 

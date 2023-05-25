@@ -45,6 +45,10 @@ dns_records:
       type: host_record
       ip4: 172.22.108.82
       ip6: fd86:bad:11b7:1022::2
+    "nt":
+      type: host_record
+      ip4: 172.22.108.19
+      ip6: fd86:bad:11b7:aaaa::3466
 
     # Transfer networks & legacy peering IPs
     "peers-nodeid-115.ymq":
