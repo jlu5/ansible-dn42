@@ -13,6 +13,9 @@
     - "{{ playbook_dir }}/web/*.css"
     - "{{ playbook_dir }}/web/*.js"
     - "{{ playbook_dir }}/web/*.geojson"
+    - "{{ playbook_dir }}/web/*.mp4"
+    - "{{ playbook_dir }}/web/*.jpg"
+    - "{{ playbook_dir }}/web/*.png"
 
 - name: Template splash page files
   template:

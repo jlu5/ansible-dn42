@@ -19,13 +19,25 @@
     <i class="fa fa-random" aria-hidden="true"></i>
     Peering Info
 </h2>
-    <p>To set up peering, feel free to reach out via Matrix (<a href="https://matrix.to/#/@james:overdrivenetworks.com">@james:overdrivenetworks.com</a>), IRC (jlu5 @ hackint, libera), or <a href="mailto:james@overdrivenetworks.com">email</a>. These PoPs support WireGuard (preferred), OpenVPN, and GRE/plain tunnels.</p>
-    <p>For consistency, I prefer multiprotocol BGP sessions over IPv6. For WireGuard + BIRD users, I recommend using <strong>link-local IPv6 addresses</strong>, and <strong>ULA IPv6 addresses</strong> if you’re using OpenVPN or any other BGP daemon (there are some interoperability issues).
-    Note: <strong>I will usually set up WireGuard with link-local addresses unless you mention otherwise</strong>.</p>
-    <p>If you have multiple nodes, especially across multiple continents, I also recommend setting up multiple links to improve redundancy and allow more direct routing between regions.</p>
-    <p>Note: my publicly visible <a href="https://github.com/jlu5/ansible-dn42">config repo</a> includes the endpoint info for most of my peers. If you would like to keep this private, please let me know when submitting your peering request.</p>
-    <p>OpenVPN peers should send me their static or private keys via PGP-encrypted mail (<a href="https://keys.openpgp.org/search?q=D5D568B2D34AB32A337944D22EC3F60DE71C0B9D">D5D568B2D34AB32A337944D22EC3F60DE71C0B9D</a>) or some other secure medium.</p>
-    <p>As of 2021-09, extended next hops (IPv4 over IPv6 next hops) are also supported.</p>
+    <p>To set up peering, feel free to reach out via Matrix (<a href="https://matrix.to/#/@james:overdrivenetworks.com">@james:overdrivenetworks.com</a>), IRC (jlu5 @ hackint, libera), or <a href="mailto:james@overdrivenetworks.com">email</a>. <a href="nodes.html">My PoPs</a> support WireGuard (preferred), OpenVPN, and GRE/plain tunnels.</p>
+    <p>For consistency, I prefer multiprotocol BGP sessions over IPv6. For WireGuard + BIRD users, I recommend using link-local IPv6 addresses. For others, prefer ULA IPv6 addresses to work around various compatibility issues.</p>
+    <p>If you have multiple nodes, especially in multiple continents, <b>please set up one peering per region to avoid traffic making unnecessary detours</b>.</p>
+    <p>Note: configuration for this network is stored in a public <a href="https://github.com/jlu5/ansible-dn42">Git repository</a>. If you would like to keep your endpoint info private, please let me know when submitting your peering request, or simply leave it empty (disables outgoing connections from my end).</p>
+    <p>OpenVPN peers should send me their keys via Matrix E2EE, PGP-encrypted mail (<a href="https://keys.openpgp.org/search?q=D5D568B2D34AB32A337944D22EC3F60DE71C0B9D">D5D568B2D34AB32A337944D22EC3F60DE71C0B9D</a>), or some other secure medium.</p>
+    <p>Extended next hops (IPv4 over IPv6) are supported but <em>not</em> enabled by default.</p>
+
+<h2>
+    <i class="fa fa-code-fork" aria-hidden="true"></i>
+    peerconfgen - Submissions via Git
+</h2>
+    <p>The configuration for AS4242421080 is stored in a <a href="https://github.com/jlu5/ansible-dn42">Git repository</a>. As such, it's possible (but not necessary) to send peering requests and updates directly via GitHub pull requests.</p>
+    <p>To manage WireGuard peerings, please use the <a href="https://github.com/jlu5/ansible-dn42/tree/main/scripts/peerconfgen"><b>peerconfgen</b></a> script: this will automatically scrape peering info from any text you paste in, and template BIRD and WireGuard configurations accordingly.</p>
+    <p>Pull requests are still reviewed manually before deployment - this is not a fully self-service process.</p>
+
+    <h3>Demonstration</h3>
+    <video width="960" controls>
+        <source src="peerconfgen-demo.mp4" type="video/mp4">
+    </video>
 
 </div>
 </div>
