@@ -251,3 +251,10 @@ wg_peers:
   wg_pubkey: rZYo5BZ4D8Y5VSwCoAI+qDvtBM+HuRtG6YVvR0cZ3gs=
   peer_v4: 169.254.42.7
   peer_v6: fe80::2596:7
+
+- name: dn42-prevarinit
+  port: 22475
+  remote: bhs.ca.prevarinite.net:21080
+  wg_pubkey: GNGYwcgarxqpADRZ2E/8h1l3KiBPqsbuI5ejERvNoAs=
+  peer_v4: null
+  peer_v6: fe80::7072:6576:5
