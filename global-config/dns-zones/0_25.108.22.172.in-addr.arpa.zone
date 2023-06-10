@@ -14,8 +14,9 @@ $TTL 300
 53 IN PTR dns.highdef.dn42.
 7 IN PTR music.highdef.dn42.
 82 IN PTR git.highdef.dn42.
-19 IN PTR chi.yvrlab.highdef.dn42.
-18 IN PTR yvrlab.chi.highdef.dn42.
+19 IN PTR nt.highdef.dn42.
+78 IN PTR chi.yvrlab.highdef.dn42.
+79 IN PTR yvrlab.chi.highdef.dn42.
 73 IN PTR sjc.yvrlab.highdef.dn42.
 72 IN PTR yvrlab.sjc.highdef.dn42.
 75 IN PTR ymq.yvrlab.highdef.dn42.

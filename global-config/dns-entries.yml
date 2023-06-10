@@ -62,10 +62,10 @@ dns_records:
       ip4: 172.20.229.127
     "chi.yvrlab":
       type: host_record
-      ip4: 172.22.108.19
+      ip4: 172.22.108.78
     "yvrlab.chi":
       type: host_record
-      ip4: 172.22.108.18
+      ip4: 172.22.108.79
     "sjc.yvrlab":
       type: host_record
       ip4: 172.22.108.73

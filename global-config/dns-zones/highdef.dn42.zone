@@ -31,8 +31,8 @@ nt IN AAAA fd86:bad:11b7:aaaa::3466
 peers-nodeid-115.ymq IN A 172.20.229.115
 peers-nodeid-116.ams IN A 172.20.229.116
 peers-nodeid-127.sgp IN A 172.20.229.127
-chi.yvrlab IN A 172.22.108.19
-yvrlab.chi IN A 172.22.108.18
+chi.yvrlab IN A 172.22.108.78
+yvrlab.chi IN A 172.22.108.79
 sjc.yvrlab IN A 172.22.108.73
 yvrlab.sjc IN A 172.22.108.72
 ymq.yvrlab IN A 172.22.108.75
