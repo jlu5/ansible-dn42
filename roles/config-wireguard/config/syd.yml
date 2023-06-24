@@ -24,7 +24,7 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::458
   port: 20458
-  remote: au-east1.dn42.huajitech.net:21080
+  remote: au-east1.nodes.huajinet.org:21080
   wg_pubkey: LeNGkX12n1Dcq8eNE1HhvpnFxrPlzgWlNncFlHdi5DY=
 
 - name: dn42-lare
