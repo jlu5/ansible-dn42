@@ -116,11 +116,9 @@ function prefer_cold_potato()
 
 # Special cases I've added for route optimization, your mileage may vary
 function handle_special_cases() {
-    # Pin the following to EU:
-    # - AS4242420101 / CCCDA
-    # - AS65043 / ICVPN-DREILAENDERECK
-    # - AS64654 / ChaosVPN
-    if (DN42_REGION != 41 && bgp_path ~ [= * [4242420101, 65043, 64654, 4242421337] * =]) then {
+    # Cold potato routing for selected EU-origin nets
+    if (DN42_REGION != 41 && bgp_path ~
+            [= * [4242420101, 65043, 64654, 4242421337, 65026] * =]) then {
         bgp_med = bgp_med + 20;
     }
     # depref transit from densely connected (autopeering) transits
