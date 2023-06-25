@@ -383,3 +383,10 @@ wg_peers:
   wg_pubkey: /2PiRi0hn4ZpCX2Kfu9+/pLw6tOwC09nO1VBP/FywkM=
   peer_v4: null
   peer_v6: fe80::9680:64
+
+- name: dn42-stetsed
+  port: 23709
+  remote: dn42-nl.selfhostable.net:51080
+  wg_pubkey: cfV8qAhHcqootASac7fj86Lr6zf+3tW4Xa8tJeBxuUE=
+  peer_v4: null
+  peer_v6: fe80::3709
