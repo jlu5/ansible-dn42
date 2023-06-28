@@ -157,6 +157,8 @@ wg_peers:
   wg_pubkey: usSOnTQKWozKiB3CM65TY3hv64dxQLnIx9ywc0J9awY=
 
 - name: igp-ca-yvrgw
+  remove: true
+- name: igp-yvrlab
   port: 19999
   wg_pubkey: "ifeyKlRSNAIcyzRSUKzedU+t4bQhb1Hld3XzDCq/Yig="
   peer_v4: null

@@ -41,6 +41,8 @@ wg_peers:
   local_v6: fe80::100
 
 - name: igp-ca-yvrgw
+  remove: true
+- name: igp-yvrlab
   port: 19999
   wg_pubkey: "5UUM0BZBvE5+/JDQtqPPLxPmpI+5prg/YfmvNzUbKnc="
   peer_v4: null
