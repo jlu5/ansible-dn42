@@ -29,25 +29,13 @@ wg_peers:
   wg_pubkey: 7tBgRZZFJWmTAy36h4saz77BxXacCzes9KXgZew7Dns=
 
 - name: dn42-mtzfederic
-  peer_v4: 172.22.114.97
-  peer_v6: fe80::1234
-  port: 20262
-  remote: ash-1.fedemtz66.tech:21080
-  wg_pubkey: sV3cgz7+yiId87ei31lHVShyUAcC+f45m4wCVam0G1E=
+  remove: true
 
 - name: dn42-exabyte
-  peer_v4: 172.20.41.73
-  peer_v6: fd42:8978:b461::9
-  port: 23340
-  remote: ajg-spruce.dyndns.org:51837
-  wg_pubkey: c4xijMpOqveIgv13h2N/PZ2cJxA547x586n86EZ+k0I=
+  remove: true
 
 - name: dn42-nullplane
-  peer_v4: 172.21.91.65
-  peer_v6: fe80::591
-  port: 20591
-  remote: rtr1.ord.nullplane.net:21081
-  wg_pubkey: oKhq3iDYFkwuyG611qCgbo6UzRm3wEiSn2CwJQn4QRA=
+  remove: true
 
 - name: dn42-imlonghao
   port: 21888

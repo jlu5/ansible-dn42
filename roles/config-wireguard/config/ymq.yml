@@ -21,11 +21,7 @@ wg_peers:
   peer_v6: "fe80::2547"
 
 - name: "dn42bhs-hexanet"
-  port: 53078
-  remote: null
-  wg_pubkey: "S0kjHNnfFUn4ts9+pM/dt7LZ/7ZUjJZeVTW8KWYE3Ug="
-  peer_v4: null  # v6-only
-  peer_v6: "fe80::10:3621"
+  remove: true
 
 - name: "dn42bhs-munster"
   port: 52237
@@ -53,16 +49,7 @@ wg_peers:
   wg_privkey: "/etc/wireguard/privatekey_bhs_legacy"
 
 - name: dn42nyc-strexp
-  port: 51331
-  remote: "nyc1.us.dn42.strexp.net:21080"
-  wg_pubkey: "s00+3HRZVTFsGJyTZoF88/x4qG82M4sYOraNo4KxIXM="
-  peer_v4: "172.20.158.144"
-  peer_v6: "fe80::1331"
-  local_v4: "172.20.229.115"
-  local_v6: "fe80::115"
-  wg_privkey: "/etc/wireguard/privatekey_bhs_legacy"
-
-### end legacy configurations from ca-bhs01
+  remove: true
 
 - name: dn42nyc-yura
   port: 22464
@@ -93,11 +80,7 @@ wg_peers:
   peer_v6: "fe80::aa:1111:33"
 
 - name: dn42nyc-flyingp
-  port: 20995
-  remote: "nyc1.dn42.flyingpackets.net:21080"
-  wg_pubkey: "54e/I/Wmzfkv1jpcH6m78shv5mxd/qJ68Qg4l5pRD3s="
-  peer_v4: "172.20.128.129"
-  peer_v6: "fe80::26f1"
+  remove: true
 
 - name: dn42-tech9
   peer_v4: 172.20.16.143
@@ -108,17 +91,7 @@ wg_peers:
   local_v6: fe80::100
 
 - name: dn42-chatsubo
-  peer_v4: 172.20.207.224
-  peer_v6: 'fe80::937'
-  port: 22208
-  remote: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    39616132613838643534653764373936386536333437376335376139303230643863633765303530
-    3662303735346233306334666464383562376432373963360a653632313131313838316139333135
-    32616264616264373437663266633230636331326461393965633738653431613736333138353663
-    6631626330366334300a383033306332653134373366373635343632316533656366346539613733
-    38326332363665616161326636656563323936613333623338333535363664616136
-  wg_pubkey: dUrvI/MocLYR2XieCufOGs/zfvN08sGcA0lZQwsIn2Q=
+  remove: true
 
 - name: dn42-186526
   peer_v4: 172.23.2.75
@@ -203,18 +176,7 @@ wg_peers:
   wg_pubkey: LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=
 
 - name: dn42-deboer
-  peer_v4: null
-  peer_v6: fd48:f77d:8142:ffff:ffff:ffff:ffff:fffe
-  local_v6: fd48:f77d:8142:ffff:ffff:ffff:ffff:ffff
-  port: 23328
-  remote: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    61313931383838376537656364343035363138636562303962363530616135613464653263663965
-    6430656261653861313339346337633431353966376636390a353466636536623333393965663836
-    38386335363136353934383338646236653761313463363033666562343232626337353237333530
-    6431306165356661610a633764646238626136386265356136633934313432313464353839343566
-    34663939613731353335376332393762366438353366613532613065333434663534
-  wg_pubkey: fSlc9Phovi80eVSgxvIZYUM2Jk7s2q58i5knh5oaxWA=
+  remove: true
 
 - name: dn42-sesquialte
   port: 20703

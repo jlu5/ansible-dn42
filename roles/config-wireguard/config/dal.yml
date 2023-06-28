@@ -22,18 +22,10 @@ wg_peers:
   wg_pubkey: lhWFk53u42PlQ+P7QkBJt1+tXTc/H0EE/FwdBYkTcGY=
 
 - name: dn42-lutoma
-  peer_v4: 172.22.119.12
-  peer_v6: fe80::acab
-  port: 24719
-  remote: us-iah.dn42.lutoma.org:42401
-  wg_pubkey: mC1Vl74c9egi3Ol4JXcyuoXuCaewCa8QAbT2klbKXTw=
+  remove: true
 
 - name: dn42-owensresea
-  peer_v4: 172.21.99.143
-  peer_v6: fd42:4242:1099:179::143
-  port: 21099
-  remote: us-dal01.owensresearch.org:21080
-  wg_pubkey: lVi8WDih66c4Dk+NFnNb8dOjWDuzmbWL34xtb22mYiU=
+  remove: true
 
 - name: dn42-tackitt
   remove: true

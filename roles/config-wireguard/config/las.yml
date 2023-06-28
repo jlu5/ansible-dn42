@@ -27,11 +27,7 @@ wg_peers:
   peer_v6: "fe80::2688/64"
 
 - name: dn42las-anillc
-  port: 52526
-  remote: "las.awsl.ee:21080"
-  wg_pubkey: "NQfs6evQLemuJcdcvpO4ds1wXwUHTlzlQXWTJv+WCXY="
-  peer_v4: "172.22.167.97"
-  peer_v6: "fe80::2526/64"
+  remove: true
 
 - name: dn42las-hinata
   port: 53724
@@ -96,11 +92,7 @@ wg_peers:
   wg_pubkey: rRAQjGVQGBV5YqzTkZV+exM36dcBLiDF0PSEhJWRrhE=
 
 - name: dn42-eki
-  port: 22837
-  remote: las1.eki.moe:21080
-  wg_pubkey: mr3GOOMU9bLYS5OBuXhllsAD3c3+SGTuYNh2q+RswEQ=
-  peer_v4: 172.23.181.1
-  peer_v6: fe80::2837
+  remove: true
 
 - name: dn42-imlonghao
   port: 21888
