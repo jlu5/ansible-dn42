@@ -3,14 +3,7 @@ wg_peers:
   remove: true
 
 - name: dn42fra-owens
-  port: 51099
-  remote: "95.179.250.248:1269"
-  wg_pubkey: "13NKYtCKbBw2ZzhFLSO5HaQJdVBnv8pi2cbIgDauhwE="
-  peer_v4: "172.21.99.137/32"
-  peer_v6: "fd42:4242:1099:179::69/128"
-  local_v4: 172.20.229.116
-  local_v6: fd86:bad:11b7:116::1
-  wg_privkey: /etc/wireguard/privatekey_lon
+  remove: true
 
 - name: dn42par-raito
   port: 51457
