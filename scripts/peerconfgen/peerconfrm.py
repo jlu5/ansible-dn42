@@ -6,6 +6,7 @@ Script to automate removing old peerings.
 import argparse
 import os
 import pathlib
+import re
 
 import ruamel.yaml
 
@@ -30,13 +31,17 @@ def main():
         wg_peers = ruamel.yaml.comments.CommentedSeq(wg_config.get('wg_peers', []))
         found = False
         for idx, wg_peer in enumerate(wg_peers):
-            if wg_peer['name'].endswith('-' + args.peername):
+            # Peer names are in the form dn42XXX-peername or dn42-peername,
+            # truncated to 15 chars
+            # pylint: disable=consider-using-f-string
+            wg_peername_re = re.compile(r'^dn42(-%s|[a-zA-Z]{3}-%s)$' % (args.peername[:15-5], args.peername[:15-8]))
+            if wg_peername_re.match(wg_peer['name']):
                 wg_peers[idx] = {'name': wg_peer['name'], 'remove': True}
                 wg_peers.yaml_set_comment_before_after_key(idx+1, before='\n')
-                print(f'Disabled peer {args.peername!r} in WireGuard config')
+                print(f'Disabled peer {args.peername!r} (iface {wg_peer["name"]!r}) in WireGuard config {wg_config_path}')
                 found = True
         if not found:
-            print(f'Peer {args.peername!r} not found in WireGuard config')
+            print(f'Peer {args.peername!r} not found in WireGuard config {wg_config_path}')
 
         wg_config['wg_peers'] = wg_peers
         f.seek(0)
