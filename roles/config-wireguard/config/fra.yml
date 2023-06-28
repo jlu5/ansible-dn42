@@ -36,18 +36,10 @@ wg_peers:
   peer_v6: "fe80::ade0"
 
 - name: dn42nbg-miegl
-  port: 50181
-  remote: "de-nue01.dn42.miegl.cz:31206"
-  wg_pubkey: "gUG7Thru8TyS8pUVqBrR4Jt7AXpGMRj0VHZlb4I5GiE="
-  peer_v4: "172.20.48.129"
-  peer_v6: "fe80::181:1"
+  remove: true
 
 - name: dn42fra-moecast
-  port: 50604
-  remote: "de1.dn42.cas7.moe:21080"
-  wg_pubkey: "1dJpFLegKHKButkXqbv1KLLMTmS6KtFkWBz6GRo2uxE="
-  peer_v4: "172.23.89.3"
-  peer_v6: "fe80::604:3"
+  remove: true
 
 - name: dn42fra-uffsalo
   port: 50780
@@ -99,11 +91,7 @@ wg_peers:
   peer_v6: "fda9:26a9:1c47:1d42:42:42:1080:1050"
 
 - name: dn42nbg-fixmix
-  port: 51876
-  remote: "157.90.166.124:21080"
-  wg_pubkey: "rlfzxSL24UfKvl3cZsHcUr+i3MtG13tu8PRdDqOX3A0="
-  peer_v4: "172.22.66.59"
-  peer_v6: "fe80::1876"
+  remove: true
 
 - name: dn42rhr-n0emis
   port: 50197
@@ -184,11 +172,7 @@ wg_peers:
   peer_v6: fe80::2464
 
 - name: dn42-matwolf
-  port: 20688
-  remote: dn42-it-fe01.wolf.network:41080
-  wg_pubkey: pHGGXwEX3JBPt+Fs0hMHcnbHaGsd3hPk7EMAf+EJqj0=
-  peer_v4: 172.20.28.225
-  peer_v6: fe80::42:0688:42:1080
+  remove: true
 
 - name: dn42-steinex
   port: 20297
@@ -198,11 +182,7 @@ wg_peers:
   peer_v6: fe80::3273
 
 - name: dn42-jfy
-  port: 22399
-  remote: null
-  wg_pubkey: 6gGx1+gTKnbGOSCbb2AXdgwegei9bhkv+dKj5oRCEAg=
-  peer_v4: null
-  peer_v6: fe80::2399:5
+  remove: true
 
 - name: dn42-mirsal
   port: 22308

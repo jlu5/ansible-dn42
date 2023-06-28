@@ -1,13 +1,6 @@
 wg_peers:
 - name: dn42lon-strexp
-  port: 51331
-  remote: "lon1.uk.dn42.strexp.net:21080"
-  wg_pubkey: "k06qY2e3mliYjPfbUUkeczvymOdLYzMRmhvqlT4jW0Y="
-  peer_v4: "172.20.158.145"
-  peer_v6: "fe80::1331"
-  local_v4: 172.20.229.116
-  local_v6: fe80::116
-  wg_privkey: /etc/wireguard/privatekey_lon
+  remove: true
 
 - name: dn42fra-owens
   port: 51099
@@ -68,14 +61,7 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_lon
 
 - name: dn42lon-wcysite
-  port: 23410
-  remote: "uk.wcysite.com:11080"
-  wg_pubkey: "qbRtA56r969HCnhYUDyYk5vxQe7nFeW5VhUH3cFnElw="
-  peer_v4: "172.20.41.50"
-  peer_v6: "fe80::3410"
-  local_v4: 172.20.229.116
-  local_v6: fe80::116
-  wg_privkey: /etc/wireguard/privatekey_lon
+  remove: true
 
 - name: dn42-usman
   port: 21869
@@ -184,11 +170,7 @@ wg_peers:
   peer_v6: "fe80::fcde:3558"
 
 - name: dn42ams-yura
-  port: 52464
-  remote: "llix.dneo.moeternet.com:21080"
-  wg_pubkey: "3egMh/fpa/+YTAfIXihtNYTReh27AaS53WJyp7UT/Qg="
-  peer_v4: "172.20.191.207/32"
-  peer_v6: "fe80::2464/64"
+  remove: true
 
 - name: dn42osl-yurui
   port: 52330
@@ -302,11 +284,7 @@ wg_peers:
   wg_pubkey: QqcsQ6gRaK0ZxRskCxWoNeV2vd53/9IW/XfwjMMSjk8=
 
 - name: dn42-arisum
-  peer_v4: 172.21.86.97
-  peer_v6: fe80::c0fe
-  port: 21557
-  remote: de-nbg01.dn42.h-k.sk:51080
-  wg_pubkey: sydPdyJNOxVlk+b5fGMXaDxTcGY/+lmlX4usMPIM9nk=
+  remove: true
 
 - name: dn42-oscrx
   peer_v4: null
@@ -356,19 +334,10 @@ wg_peers:
   peer_v6: fe80::1080
 
 - name: dn42-eki
-  port: 22837
-  remote: lux1.eki.moe:21080
-  wg_pubkey: rvzaIe2JwsZk3pgA59Xf0SNS1gB0GSgegvOoYcDVgGc=
-  peer_v4: 172.23.181.2
-  peer_v6: fe80::2837
+  remove: true
 
 - name: dn42-marlinc
-  port: 23941
-  remote: 2a0b:b600:3c01:10::99c8:21080
-  wg_pubkey: cP88BzE/gser2JVw74EPi2/9ZNEsSYWx2MOANGk+YUc=
-  peer_v4: null
-  peer_v6: fd33:aba8:392:1::2
-  local_v6: fd33:aba8:392:1::3
+  remove: true
 
 - name: dn42-ventilaar
   port: 22246
