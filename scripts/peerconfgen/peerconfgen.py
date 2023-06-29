@@ -169,6 +169,7 @@ def get_yaml():
     yaml.representer.add_representer(type(None), lambda self, data: self.represent_scalar('tag:yaml.org,2002:null', 'null'))
     return yaml
 
+_PEERNAME_RE = re.compile(r'^[a-z0-9]+$')
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', '-n', help='Only print generated output; do not write it to disk', action='store_true')
@@ -182,13 +183,17 @@ def main():
     #print('cd to', rootdir)
     os.chdir(rootdir)
 
-    wg_config_path, bird_config_path = get_config_paths(args.node, args.peername, replace=args.replace)
+    peername = args.peername.lower()
+    if not _PEERNAME_RE.match(peername):
+        raise ValueError(f"Peer name {peername!r} should only contain ASCII letters and numbers")
+
+    wg_config_path, bird_config_path = get_config_paths(args.node, peername, replace=args.replace)
     yaml = get_yaml()
     with open(wg_config_path, 'r+', encoding='utf-8') as f:
         wg_config = yaml.load(f)
 
         wg_peers = ruamel.yaml.comments.CommentedSeq(wg_config.get('wg_peers', []))
-        iface_name = get_iface_name(args.peername)
+        iface_name = get_iface_name(peername)
         for iface_idx, wg_peer in enumerate(wg_peers):
             if wg_peer['name'] == iface_name:
                 if not args.replace and not wg_peer.get('remove'):
@@ -199,7 +204,7 @@ def main():
             iface_idx = -1
 
         completed_config, bird_options = _run_interactive(args.node)
-        wg_config_snippet = gen_wg_config(args.peername, completed_config)
+        wg_config_snippet = gen_wg_config(peername, completed_config)
         if iface_idx < 0:
             wg_peers.append(wg_config_snippet)
             # Add an extra newline before the config block for readability
@@ -220,7 +225,7 @@ def main():
             f.truncate()
 
     print()
-    bird_peer_config = gen_bird_peer_config(args.peername, completed_config, bird_options)
+    bird_peer_config = gen_bird_peer_config(peername, completed_config, bird_options)
     print("BIRD peer config:")
     print(bird_peer_config)
     print()

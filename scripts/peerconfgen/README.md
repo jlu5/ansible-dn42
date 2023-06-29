@@ -8,6 +8,8 @@ To run this script you need the `requests` and `ruamel.yaml` libraries (`pip ins
 
 ## Adding/updating peerings
 
+**Note that for peer name, you should only write your AS name**, not the router name (e.g. rtr1). e.g. for AS4242421080 a peer name of "highdef" would be preferable.
+
 ```
 $ peerconfgen.py --help
 usage: peerconfgen.py [-h] [--dry-run] [--replace] node peername
