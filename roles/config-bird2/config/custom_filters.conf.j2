@@ -26,9 +26,7 @@ define OUTGOING_BGP_MED = {{ default_outgoing_bgp_med | default(0) }};
 define NODEID = {{ ownip.rsplit('.', 1)[1] }};
 
 define LC_ORIGIN_REGION = 101;
-define LC_ORIGIN_DEPREF_CROSS_REGION = 102;
 define LC_ORIGIN_NODEID = 103;
-define LC_ORIGIN_REGION_TAG = 104;
 
 # Subnets to route through iBGP
 # This includes anycast services as well as any single-homed downstreams with agreement
@@ -76,7 +74,6 @@ function prefer_cold_potato()
     # it's likely to be bogus.
     my_region_tag = get_region_tag(DN42_REGION);
     incoming_tag = 0;
-    bgp_large_community.add((OWNAS, LC_ORIGIN_REGION_TAG, my_region_tag));
 
     if (bgp_path.last ~ COLD_POTATO_IGNORE) then {
         return 0;
@@ -134,11 +131,12 @@ function handle_special_cases() {
             4242421331,
             4242422189,
             4242422980,
-            4242423905
+            4242423905,
+            64719
         ] ? * =]) then {
             bgp_med = bgp_med + 15;
     }
-    # experimental networks with limited bandwidth / capacity
+    # experimental networks with limited capacity
     if (bgp_path ~ [= * [4201271111] ? * =]) then {
         bgp_med = bgp_med + 20;
     }
@@ -169,7 +167,6 @@ function ebgp_import_filter()
 
     # Strip internal communities from incoming routes before processing
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION, 41..53)]);
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION_TAG, 0..5)]);
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 112..127)]);
     bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 33..39)]);
 
@@ -190,8 +187,6 @@ function ebgp_import_filter()
 
 function ebgp_export_filter() {
     bgp_med = OUTGOING_BGP_MED;
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION_TAG, 0..5)]);
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_DEPREF_CROSS_REGION, 1)]);
 
     # Informational communities: only node ID, as origin region uses standard dn42 community
     if (bgp_path.len = 0) then {
@@ -204,9 +199,7 @@ function ebgp_export_filter() {
     }
 };
 
-function ibgp_import_filter()
-    int my_region_tag;
-{
+function ibgp_import_filter() {
     # Only process routes originating from BGP unless they're anycast networks
     if (source != RTS_BGP && !is_ibgp_network()) then {
         reject "ibgp_import_filter: rejecting unknown prefix", net;
@@ -215,12 +208,6 @@ function ibgp_import_filter()
     if (bgp_path.len = 0) then {
         # Prefer locally originated iBGP routes, e.g. for anycast services
         bgp_med = 10;
-    }
-
-    my_region_tag = get_region_tag(DN42_REGION);
-    if ((OWNAS, LC_ORIGIN_DEPREF_CROSS_REGION, 1) ~ bgp_large_community &&
-        (OWNAS, LC_ORIGIN_REGION_TAG, my_region_tag) !~ bgp_large_community) then {
-        bgp_local_pref = 90;
     }
 
     accept;
