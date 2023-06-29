@@ -36,7 +36,7 @@
       max-cache-bogus-ttl: 20
 
       # Allow sending queries over IPv6
-      query-local-address6: "::"
+      query-local-address: "0.0.0.0,::"
 
       # Translate addresses from CIDR into raw IP form as needed
       local-address: "{{ ((dummy_interfaces.anycast_recursors.ip4 | ipaddr('address')) | default([], true)
