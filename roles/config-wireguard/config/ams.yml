@@ -352,3 +352,10 @@ wg_peers:
   wg_pubkey: cfV8qAhHcqootASac7fj86Lr6zf+3tW4Xa8tJeBxuUE=
   peer_v4: null
   peer_v6: fe80::3709
+
+- name: dn42-duckl1ng
+  port: 22417
+  remote: 2001:470:60a4:a:216:3eff:fe4f:e283:53001
+  wg_pubkey: ExUi3YWUzdNR/GQeIiiGqpiVNycqJUuhx997i+frlGU=
+  peer_v4: null
+  peer_v6: fe80::1001
