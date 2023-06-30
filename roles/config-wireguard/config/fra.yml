@@ -269,3 +269,10 @@ wg_peers:
   wg_pubkey: SPfVzZHC6U+8oAJ0rd0foq0PH9xRYKGRVHLosV1WbXc=
   peer_v4: null
   peer_v6: fe80::577:1
+
+- name: dn42-camelusfer
+  port: 21592
+  remote: de01.dn42.ca.melusfer.us:41080
+  wg_pubkey: iMU/cowB17kYnBWktlT5H98J2mKRYf5v3PwsjWcNmR8=
+  peer_v4: null
+  peer_v6: fe80::1592
