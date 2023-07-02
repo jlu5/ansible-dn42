@@ -3,7 +3,7 @@
 # in the Python tutorial[2]
 # [1]: https://github.com/PyCQA/pylint/issues/2018
 # [2]: https://docs.python.org/3/tutorial/inputoutput.html
-good-names=i,f
+good-names-rgxs = "^..?$"
 max-line-length=120
 
 [MASTER]
