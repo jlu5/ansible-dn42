@@ -118,6 +118,18 @@ function handle_special_cases() {
             [= * [4242420101, 65043, 64654, 4242421337, 65026] * =]) then {
         bgp_med = bgp_med + 20;
     }
+
+    # Read "route learned in region X" communities from networks that export them
+    # This works by penalizing routes if they include such an AS and *don't* have a region community matching the current node.
+    # (Subtracting from MED on matching routes would make them preferred for all matching routes, compared to other peers)
+    if (4242422601 ~ bgp_path && (4242422601, 140, DN42_REGION) !~ bgp_large_community) then {
+        bgp_med = bgp_med + 10;
+    }
+    # not yet finalized
+    # if (DN42_REGION = 41 && 4242423914 ~ bgp_path && (4242423914, 100, 1276) !~ bgp_large_community) then {
+    #     bgp_med = bgp_med + 10;
+    # }
+
     # depref transit from densely connected (autopeering) transits
     if (bgp_path ~ [= * [4242421588, 4242422717, 4242423914] ? * =]) then {
         bgp_med = bgp_med + 10;
