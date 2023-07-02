@@ -65,11 +65,11 @@ wg_peers:
   peer_v6: "fe80::2980"
 
 - name: dn42-iedon
-  port: 52189
-  remote: "172.93.221.127:22203"
-  wg_pubkey: "TNmCdvH0DuPX0xxS6DPHw/2v3ojLa5kXIT/Z4Tpx+GY="
-  peer_v4: "172.23.91.116/32"
-  peer_v6: "fe80::2189/64"
+  port: 22189
+  remote: jp-tyo.dn42.kuu.moe:54764
+  wg_pubkey: u2ImAJn9ewce9YHN6HaqrR3Sr4Xsy5UaaJOLJ7gkSzs=
+  peer_v4: null
+  peer_v6: fe80::2189:ee
 
 - name: dn42-yurui
   port: 52330
