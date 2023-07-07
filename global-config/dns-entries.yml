@@ -30,6 +30,9 @@ dns_records:
     "www":
       type: CNAME
       target: "@"
+    "routegraphs":
+      type: ansible_host_alias
+      target: tyo
 
     # Internal services
     "music":
