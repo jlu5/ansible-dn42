@@ -35,7 +35,8 @@ body, html {
 
 h1, h2 {
     font-family: 'Comfortaa', cursive;
-    margin: 3vh 0;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     text-shadow: 2px 2px 10px #121240;
 }
 
