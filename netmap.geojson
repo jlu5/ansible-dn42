@@ -252,8 +252,8 @@
             },
             "properties": {
                 "title": "Vancouver, BC, CA",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         }
     ]
