@@ -140,6 +140,8 @@ template bgp dnpeers {
 
     enforce first as on;
     advertise hostname on;
+
+    graceful restart off;
 }
 
 template bgp route_collector {
