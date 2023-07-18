@@ -35,12 +35,6 @@ wg_peers:
   peer_v4: "172.20.53.97"
   peer_v6: "fe80::ade0"
 
-- name: dn42nbg-miegl
-  remove: true
-
-- name: dn42fra-moecast
-  remove: true
-
 - name: dn42fra-uffsalo
   port: 50780
   remote: "router.fra4.dn42.brand-web.net:41080"
@@ -89,9 +83,6 @@ wg_peers:
   wg_pubkey: "uo7tLeb1QNoRJtecjUV4TeNYgw2imd11oLx7Hftg2SM="
   peer_v4: "172.22.169.141"
   peer_v6: "fda9:26a9:1c47:1d42:42:42:1080:1050"
-
-- name: dn42nbg-fixmix
-  remove: true
 
 - name: dn42rhr-n0emis
   port: 50197
@@ -171,18 +162,12 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::2464
 
-- name: dn42-matwolf
-  remove: true
-
 - name: dn42-steinex
   port: 20297
   remote: kuma.nognu.de:20297
   wg_pubkey: VatdVd51Mv+m6TMooprO6Swe29IHMMfYXhtQDfx0FTU=
   peer_v4: null
   peer_v6: fe80::3273
-
-- name: dn42-jfy
-  remove: true
 
 - name: dn42-mirsal
   port: 22308
@@ -276,3 +261,17 @@ wg_peers:
   wg_pubkey: iMU/cowB17kYnBWktlT5H98J2mKRYf5v3PwsjWcNmR8=
   peer_v4: null
   peer_v6: fe80::1592
+
+- name: dn42-zolfa
+  port: 21042
+  remote: "lilik-dn42.firenze.net.zolfa.nl:21080"
+  wg_pubkey: "JSSVhGm8Opw944J1gXj0iNiAwsdh7vP/zBGq1Gfb0nk="
+  peer_v4: null
+  peer_v6: "fe80::c3c0:ebbb"
+
+- name: dn42-melty
+  port: 23632
+  remote: "cantaloupe.link.melty.land:21080"
+  wg_pubkey: "7ibAFc93/KY1/Wd+ydxm4uMHaGPXKf2gBsK4CZVr2Wo="
+  peer_v4: "172.23.36.36"
+  peer_v6: "fe80::3632"

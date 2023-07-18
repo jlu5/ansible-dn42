@@ -126,21 +126,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    9.189982,
-                    45.464204
-                ]
-            },
-            "properties": {
-                "title": "Milan, IT",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -73.567256,
                     45.501689
                 ]
