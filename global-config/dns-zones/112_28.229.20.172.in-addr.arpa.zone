@@ -21,6 +21,5 @@ $TTL 300
 118 IN PTR ams.rtr.highdef.dn42.
 117 IN PTR fra.rtr.highdef.dn42.
 120 IN PTR mad.rtr.highdef.dn42.
-121 IN PTR mil.rtr.highdef.dn42.
 124 IN PTR tyo.rtr.highdef.dn42.
 125 IN PTR syd.rtr.highdef.dn42.
