@@ -48,10 +48,12 @@ h2 {
     font-size: 200%;
 }
 
-a {
+a, .link {
     color: lightblue;
+    cursor: pointer;
+    text-decoration: underline;
 }
-a:hover {
+a:hover, .link:hover {
     color: #cee7ef;
 }
 
