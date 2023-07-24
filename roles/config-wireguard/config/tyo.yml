@@ -210,3 +210,10 @@ wg_peers:
   wg_pubkey: kMrT8TeTYBnOXgpUR/Z8Vh38BZrLGCL3s2G7FaIEyyM=
   peer_v4: 172.22.109.161
   peer_v6: fe80::1423:1
+
+- name: dn42-sernet
+  port: 23947
+  remote: kr-sel1.dn42.sherpherd.top:21080
+  wg_pubkey: z3kzVGVqgqxpWGF5iKZ90+aL01hU7gZZ5ieVHJsbdS8=
+  peer_v4: null
+  peer_v6: fe80::3947:5
