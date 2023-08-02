@@ -7,9 +7,6 @@ wg_peers:
   peer_v6: "fdfc:694e:234f::3/128"
   local_v6: "fd86:bad:11b7::1"
 
-- name: dn42buf-kioubit
-  remove: true
-
 - name: dn42mci-aftbit
   port: 50822
   remote: "dn42.aftbit.com:51080"
@@ -40,17 +37,12 @@ wg_peers:
   wg_pubkey: 0kb8ffMcbx8oXZ3Ii5khOuCzmRqM2Cy0IslmrWtRGSk=
   local_v6: fe80::100
 
-- name: igp-ca-yvrgw
-  remove: true
 - name: igp-yvrlab
   port: 19999
   wg_pubkey: "5UUM0BZBvE5+/JDQtqPPLxPmpI+5prg/YfmvNzUbKnc="
   peer_v4: null
   local_v4: 172.22.108.78/31
   peer_v6: fe80::e545:cd0:1641:bc4e
-
-- name: dn42-nullplane
-  remove: true
 
 - name: dn42-lare
   port: 23035
@@ -65,3 +57,16 @@ wg_peers:
   wg_pubkey: qJQiON85WYvdMBHDu0T0rBKGYNexlPvQjtjkx/YNK2o=
   peer_v4: null
   peer_v6: fe80::2246
+
+- name: dn42-ghoul
+  port: 22975
+  remote: !vault |
+    $ANSIBLE_VAULT;1.1;AES256
+    31323433663665653336313035313362363036613162636662356563616334346431363436643136
+    3338373365643234343839373231313732616137643537300a353965613263643139396635646166
+    39333234613430613438376136383632393564326462376164633031653433313564656461643865
+    3831323139373161640a633365396462323434393364356362336436656230373562376430653362
+    3530306165383465313263306439613435653562393363636666353937303335656
+  wg_pubkey: KgG4Ycxde1/lkyIQzLPnhPofZv0lwd2r8UeLULS5tRw=
+  peer_v4: 172.23.72.33
+  peer_v6: fdb1:202a:f806:1::1
