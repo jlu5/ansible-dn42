@@ -70,3 +70,10 @@ wg_peers:
   wg_pubkey: KgG4Ycxde1/lkyIQzLPnhPofZv0lwd2r8UeLULS5tRw=
   peer_v4: 172.23.72.33
   peer_v6: fdb1:202a:f806:1::1
+
+- name: dn42-routedbits
+  port: 20207
+  remote: router.chi1.routedbits.com:51080
+  wg_pubkey: 89xUzROs3l/KNPLxDTJz4l5aEH1cmLb22bNgChhRiQo=
+  peer_v4: null
+  peer_v6: fe80::207
