@@ -183,3 +183,10 @@ wg_peers:
   wg_pubkey: c1ohwuTISEj1s9Tipo7P52EMffL6uZpCncz0/6WGzU8=
   peer_v4: null
   peer_v6: fe80::3947:1
+
+- name: dn42-routedbits
+  port: 20207
+  remote: router.sin1.routedbits.com:51080
+  wg_pubkey: 8sTnWN7ykPaDe1WIZOlnqECiGMJzwXB8TXWHcT7qnEw=
+  peer_v4: null
+  peer_v6: fe80::207
