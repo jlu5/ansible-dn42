@@ -40,3 +40,10 @@ wg_peers:
   wg_pubkey: Syd/jYnhMvDrvp1POVCLuAlagWjV9X/A5DCbEBpdFBc=
   peer_v4: 172.22.68.0
   peer_v6: fe80::1888
+
+- name: dn42-routedbits
+  port: 20207
+  remote: router.syd1.routedbits.com:51080
+  wg_pubkey: wgCrE2lSvrfctVSngdHo6iAT/RRK7gNldJcFIFKi/Go=
+  peer_v4: null
+  peer_v6: fe80::207
