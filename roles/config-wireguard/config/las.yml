@@ -26,9 +26,6 @@ wg_peers:
   peer_v4: "172.23.6.6"
   peer_v6: "fe80::2688/64"
 
-- name: dn42las-anillc
-  remove: true
-
 - name: dn42las-hinata
   port: 53724
   remote: "las01.us.42.katohinata.eu.org:21080"
@@ -91,9 +88,6 @@ wg_peers:
   remote: null
   wg_pubkey: rRAQjGVQGBV5YqzTkZV+exM36dcBLiDF0PSEhJWRrhE=
 
-- name: dn42-eki
-  remove: true
-
 - name: dn42-imlonghao
   port: 21888
   remote: us2.dn42.ni.sb:21080
@@ -114,3 +108,10 @@ wg_peers:
   wg_pubkey: Qd2XCotubH4QrQIdTZjYG4tFs57DqN7jawO9vGz+XWM=
   peer_v4: null
   peer_v6: fe80::3035:132
+
+- name: dn42-potat0
+  peer_v4: null
+  peer_v6: fe80::1816
+  port: 21816
+  remote: us1.dn42.potat0.cc:21080
+  wg_pubkey: LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=

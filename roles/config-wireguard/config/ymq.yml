@@ -169,13 +169,6 @@ wg_peers:
   peer_v6: null
 
 - name: dn42-potat0
-  peer_v4: null
-  peer_v6: fe80::1816
-  port: 21816
-  remote: us1.dn42.potat0.cc:21080
-  wg_pubkey: LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=
-
-- name: dn42-deboer
   remove: true
 
 - name: dn42-sesquialte
