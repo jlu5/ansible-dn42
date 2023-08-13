@@ -64,3 +64,10 @@ wg_peers:
   wg_pubkey: QKK4a4vZQ4sd6EdXZ2IIlXNoUVMqcWX8nGoKEfy/VGU=
   peer_v4: null
   peer_v6: fe80::207
+
+- name: dn42-zdong
+  port: 22354
+  remote: fl1-us.zdong.me:21080
+  wg_pubkey: u9NcC04pptIt8ELgSrxZjHRKARvjfiaJuVR/rsdtYHE=
+  peer_v4: 172.23.132.130
+  peer_v6: fe80::2354
