@@ -40,14 +40,16 @@ def scrape_ips(url, force_dns=False):
         ipv4 = m_ipv4.group(0)
         if ipaddress.ip_address(ipv4) in dns_results:
             ipv4 = netloc
-    m_ipv6 = IP6_RE.search(r.text)
-    if m_ipv6:
+    for m_ipv6 in IP6_RE.finditer(r.text):
         ipv6 = m_ipv6.group(0)
         try:
-            if ipaddress.ip_address(ipv6) in dns_results:
+           if ipaddress.ip_address(ipv6) in dns_results:
                 ipv6 = netloc
-        except ValueError:
+        except ValueError as e:
+            print(f'Skipping invalid v6 IP: {ipv6}, {e}')
             ipv6 = None
+        else:
+            break
     assert ipv4 or ipv6
     return ipv4, ipv6
 
