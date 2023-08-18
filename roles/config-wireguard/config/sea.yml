@@ -1,4 +1,40 @@
 wg_peers:
+- name: cl-roam
+  local_v4: 172.22.108.57/29
+  local_v6_multi:
+  - fd86:bad:11b7:1:2::1/124
+  - 2606:6680:19:140::9/125
+  # A dummy link local v6 is needed for BIRD to pick this up as an OSPF stub interface for IPv6
+  - "{{ link_local_ip6 }}"
+  port: 21080
+  multi:
+    # sixel
+  - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
+    wg_allowedips: "172.22.108.58/32,fd86:bad:11b7:1:2::2/128,2606:6680:19:140::a/128"
+    # silverthing
+  - wg_pubkey: "jSb/GMN0S46JzENLIZeeC/jyfKZXg5wAYPhnecohegE="
+    wg_allowedips: "172.22.108.59/32,fd86:bad:11b7:1:2::3/128,2606:6680:19:140::b/128"
+  peer_v6: null
+
+- name: cl-gamenet
+  local_v4: 172.22.108.89/29
+  port: 21081
+  multi:
+  - wg_pubkey: "9Eq6x9xANmDa6rwvUeOX/VbJI7FexMqByBkWIrHGyA0="
+    wg_allowedips: "172.22.108.90/32"
+  - wg_pubkey: "fKs/XbykQQeMHWM64g8hH2c1vPc+w3Qqorg4YZHzyiw="
+    wg_allowedips: "172.22.108.91/32"
+  - wg_pubkey: "x223mAF6rM9Ea3U/0TSHQEMfWJ+jpLxyO9wxAUE3qh4="
+    wg_allowedips: "172.22.108.92/32"
+  wg_privatekey: /etc/wireguard/privatekey_gamenetwest
+
+- name: igp-yvrlab
+  port: 19999
+  wg_pubkey: "2Xn6+lC+WLM5cxeKG3xPwuOcUKw2fSvve9oGMXgoeRw="
+  peer_v4: null
+  local_v4: 172.22.108.76/31
+  peer_v6: fe80::d979:fafa:50be:58b3
+
 - name: dn42sea-ncw
   port: 51288
   remote: "sea1.sc00.org:21080"
@@ -44,41 +80,6 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::3088:215
   local_v6: fe80::abcd
-
-- name: cl-roam
-  local_v4: 172.22.108.57/29
-  local_v6_multi:
-  - fd86:bad:11b7:1:2::1/124
-  # A dummy link local v6 is needed for BIRD to pick this up as an OSPF stub interface for IPv6
-  - "{{ link_local_ip6 }}"
-  port: 21080
-  multi:
-    # sixel
-  - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
-    wg_allowedips: "172.22.108.58/32,fd86:bad:11b7:1:2::2/128"
-    # silverthing
-  - wg_pubkey: "jSb/GMN0S46JzENLIZeeC/jyfKZXg5wAYPhnecohegE="
-    wg_allowedips: "172.22.108.59/32,fd86:bad:11b7:1:2::3/128"
-  peer_v6: null
-
-- name: cl-gamenet
-  local_v4: 172.22.108.89/29
-  port: 21081
-  multi:
-  - wg_pubkey: "9Eq6x9xANmDa6rwvUeOX/VbJI7FexMqByBkWIrHGyA0="
-    wg_allowedips: "172.22.108.90/32"
-  - wg_pubkey: "fKs/XbykQQeMHWM64g8hH2c1vPc+w3Qqorg4YZHzyiw="
-    wg_allowedips: "172.22.108.91/32"
-  - wg_pubkey: "x223mAF6rM9Ea3U/0TSHQEMfWJ+jpLxyO9wxAUE3qh4="
-    wg_allowedips: "172.22.108.92/32"
-  wg_privatekey: /etc/wireguard/privatekey_gamenetwest
-
-- name: igp-yvrlab
-  port: 19999
-  wg_pubkey: "2Xn6+lC+WLM5cxeKG3xPwuOcUKw2fSvve9oGMXgoeRw="
-  peer_v4: null
-  local_v4: 172.22.108.76/31
-  peer_v6: fe80::d979:fafa:50be:58b3
 
 - name: dn42-kiyomi
   port: 21350
