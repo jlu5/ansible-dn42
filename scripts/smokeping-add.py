@@ -66,8 +66,12 @@ def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
     province = province.upper()
     city = city.title()
     print(f'{hdr} {entry_name}')
+    if country == 'UK':
+        country = 'GB'
     pycountry_entry = pycountry.countries.get(alpha_2=country)
     assert pycountry_entry
+    if country == 'GB':
+        country = 'UK'
     # if ipv6:
     #     print('probe = FPing6')
     if country in _COUNTRIES_SHOW_PROVINCE:
