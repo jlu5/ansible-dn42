@@ -66,12 +66,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.796988,
-                    32.776664
+                    8.682127,
+                    50.110922
                 ]
             },
             "properties": {
-                "title": "Dallas, TX, US",
+                "title": "Frankfurt, DE",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
@@ -81,12 +81,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    8.682127,
-                    50.110922
+                    -94.578567,
+                    39.099727
                 ]
             },
             "properties": {
-                "title": "Frankfurt, DE",
+                "title": "Kansas City, MO, US",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }

@@ -1,11 +1,4 @@
 wg_peers:
-- name: dn42-scooter
-  peer_v4: 172.23.109.169
-  peer_v6: fd38:cfa3:7091:1::1
-  port: 23856
-  remote: dallas.scooterharris.com:51080
-  wg_pubkey: BBlFjMJKOyl8SmP3Lnld5B4HM3kJ0SZ6HZ48bfuAnRg=
-
 - name: dn42-tech9
   peer_v4: 172.20.16.140
   peer_v6: fe80::1588
@@ -20,25 +13,6 @@ wg_peers:
   port: 22717
   remote: us.vm.whojk.com:23001
   wg_pubkey: lhWFk53u42PlQ+P7QkBJt1+tXTc/H0EE/FwdBYkTcGY=
-
-- name: dn42-lutoma
-  remove: true
-
-- name: dn42-owensresea
-  remove: true
-
-- name: dn42-tackitt
-  remove: true
-
-- name: dn42-melty
-  remove: true
-
-- name: dn42-pigeonhole
-  peer_v4: 172.22.145.9
-  peer_v6: fe80::2458
-  port: 22458
-  remote: us-mci-a.nodes.pigeonhole.eu.org:21080
-  wg_pubkey: XjX37H3ZYd9QuGu+M1Ut6RLlDu3J+8ib3grbanlp0Vs=
 
 - name: dn42-c4tg
   peer_v4: null

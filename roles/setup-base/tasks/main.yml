@@ -1,19 +1,19 @@
-- name: Install packages for DN42 router
+- name: Install packages for dn42 router
   apt:
     name:
     - git
     - iptables
     - rsync  # for synchronize module
+    - ifupdown
+    - cron
 
     # Tools to assist troubleshooting
     - dnsutils
     - mtr-tiny
     - tcpdump
 
-    # bird2 backports from https://deb.utopia-repository.org
     - bird2
     - openvpn
-    # wireguard from buster-backports
     - wireguard
     # needed to use ansible become on an unprivileged user: https://docs.ansible.com/ansible/latest/user_guide/become.html#risks-of-becoming-an-unprivileged-user
     - acl

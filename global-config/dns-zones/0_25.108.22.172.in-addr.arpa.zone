@@ -26,7 +26,7 @@ $TTL 300
 1 IN PTR gw.yvrlab.highdef.dn42.
 35 IN PTR yvrpeer.rtr.highdef.dn42.
 34 IN PTR sjc.rtr.highdef.dn42.
-33 IN PTR dal.rtr.highdef.dn42.
+33 IN PTR mci.rtr.highdef.dn42.
 37 IN PTR buh.rtr.highdef.dn42.
 39 IN PTR sgp.rtr.highdef.dn42.
 $GENERATE 24-31 $ PTR ${0,2,d}.SEA-clients.highdef.dn42.

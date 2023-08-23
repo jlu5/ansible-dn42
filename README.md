@@ -34,10 +34,6 @@ Here I use Ansible to configure the following components:
 - Netdata: [roles/setup-netdata-v2/](roles/setup-netdata-v2/)
 - Smokeping @ [ping.highdef.dn42](http://ping.highdef.dn42): [roles/setup-smokeping/](roles/setup-smokeping/)
 
----
-
-Some components (Bird backports, etc.) pull from my personal APT repository @ https://deb.utopia-repository.org/
-
 ## Network growth over time
 
 Note that these values represent configured peers, which may or may not be up at any particular time.
