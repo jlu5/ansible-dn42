@@ -131,7 +131,7 @@ function handle_special_cases() {
     }
 
     # prefer cold potato routing over densely connected transits
-    if (bgp_path ~ [= * [4242422717, 4242422923] ? * =]) then {
+    if (bgp_path ~ [= * [4242422923] ? * =]) then {
         bgp_med = bgp_med + 10;
     }
     # depref transit from networks with incomplete interconnects, inactive admins, or other issues
@@ -143,7 +143,8 @@ function handle_special_cases() {
             4242421588,
             4242422980,
             4242423905,
-            64719
+            64719,
+            4242422717
         ] ? * =]) then {
             bgp_med = bgp_med + 15;
     }
