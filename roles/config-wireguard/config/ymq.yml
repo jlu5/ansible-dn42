@@ -20,9 +20,6 @@ wg_peers:
   peer_v4: "172.22.76.190"
   peer_v6: "fe80::2547"
 
-- name: "dn42bhs-hexanet"
-  remove: true
-
 - name: "dn42bhs-munster"
   port: 52237
   remote: "ca-bhs01.dn42.munsternet.eu:21080"
@@ -48,16 +45,6 @@ wg_peers:
   local_v6: "fe80::115"
   wg_privkey: "/etc/wireguard/privatekey_bhs_legacy"
 
-- name: dn42nyc-strexp
-  remove: true
-
-- name: dn42nyc-yura
-  port: 22464
-  remote: "nyc.dneo.moeternet.com:21080"
-  wg_pubkey: "MLVJrwrph6d0VqrAq8/rkhbkG+mrQNytqmwrNgk2qFs="
-  peer_v4: null
-  peer_v6: "fe80::2464"
-
 - name: dn42bhs-serverm
   port: 53770
   remote: "bhs1.dn42.servermade.com:51080"
@@ -79,9 +66,6 @@ wg_peers:
   peer_v4: "10.127.111.51"
   peer_v6: "fe80::aa:1111:33"
 
-- name: dn42nyc-flyingp
-  remove: true
-
 - name: dn42-tech9
   peer_v4: 172.20.16.143
   peer_v6: fe80::1588
@@ -89,9 +73,6 @@ wg_peers:
   remote: us-qas01.dn42.tech9.io:57225
   wg_pubkey: itmJ4Z8V1aNN368P6kMzuQM+GdzWbBKZjJiXrgSeGlw=
   local_v6: fe80::100
-
-- name: dn42-chatsubo
-  remove: true
 
 - name: dn42-186526
   peer_v4: 172.23.2.75
@@ -107,8 +88,6 @@ wg_peers:
   remote: use.vm.whojk.com:23006
   wg_pubkey: 1LJ2PBEUOa7uwqnHS3j2EGVW+wKv/d1L6mbnA0tOjU0=
 
-- name: igp-ca-yvrgw
-  remove: true
 - name: igp-yvrlab
   port: 19999
   wg_pubkey: "ZqPubFoApYZrHAzG3+jtAB+f3xzczUSNnDQkxueUbBI="
@@ -134,7 +113,7 @@ wg_peers:
   peer_v4: 172.20.41.100
   peer_v6: fe80::115
   port: 23340
-  remote: dn42-us-nj01.exabyte.network:51845
+  remote: null
   wg_pubkey: cRHAiWRwhjnK1cNIWrh5c06Lubv8lkF0w+z4NPjRQAM=
 
 - name: dn42-huajitech
@@ -143,13 +122,6 @@ wg_peers:
   port: 20458
   remote: us-east1.dn42.huajitech.net:21080
   wg_pubkey: jk6jHDQlnMelT7hllXZ4djmXTR2an1xUtuZsJazSzzA=
-
-- name: dn42-lilynet
-  peer_v4: 172.23.180.1
-  peer_v6: fe80::1d89
-  port: 21877
-  remote: lilie.lilynet.work:21080
-  wg_pubkey: jYwRBFYATL1spAlXKGI4rkY/27s9ufiD98ctzvP/1GI=
 
 - name: cl-roam
   local_v4: 172.22.108.41/29
@@ -167,9 +139,6 @@ wg_peers:
   - wg_pubkey: "jSb/GMN0S46JzENLIZeeC/jyfKZXg5wAYPhnecohegE="
     wg_allowedips: "172.22.108.43/32,fd86:bad:11b7:fa7c::f3/128,2607:5300:60:6e84::f3/128"
   peer_v6: null
-
-- name: dn42-potat0
-  remove: true
 
 - name: dn42-sesquialte
   port: 20703
@@ -198,9 +167,6 @@ wg_peers:
   wg_pubkey: 6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s=
   peer_v4: 172.20.53.98
   peer_v6: fe80::ade0
-
-- name: igp-stub-ymq2
-  remove: true
 
 - name: dn42-ty3r0x
   port: 22596
