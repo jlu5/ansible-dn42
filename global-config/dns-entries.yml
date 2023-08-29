@@ -1,7 +1,7 @@
 # Custom DNS entries. This is read by scripts/make-dns-entries.py to generate Bind-style zones under dns-zones/
 dns_records:
   "{{ dns_domain }}":
-    # Public-facing
+    # Public services
     "lg":
       # ansible_host_alias expands to the IPv4 & IPv6 (ownip & ownip6) of a particular node
       type: ansible_host_alias
@@ -10,6 +10,9 @@ dns_records:
       type: host_record
       ip4: 172.22.108.3
       ip6: fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
+    "routegraphs":
+      type: ansible_host_alias
+      target: tyo
 
     # DNS & web anycast
     "ns":
@@ -30,14 +33,11 @@ dns_records:
     "www":
       type: CNAME
       target: "@"
-    "routegraphs":
-      type: ansible_host_alias
-      target: tyo
 
     # Internal services
     "music":
       type: host_record
-      ip4: 172.22.108.7
+      ip4: 172.22.108.104
     "mtxadmin":
       type: A
       target: 172.22.108.100
@@ -122,29 +122,19 @@ dns_records:
       type: AAAA
       target: fd42:d42:d42:81::1
 
-dns_generate_records:
-  "highdef.dn42":
-    - start: 24
-      end: 31
-      template: "${0,1,d}.SEA-clients"
-      rtype: A
-      target: "172.22.108.$"
-    - start: 40
-      end: 47
-      template: "${0,1,d}.YMQ-clients"
-      rtype: A
-      target: "172.22.108.$"
-  "172.22.108.0/25":
-    - start: 24
-      end: 31
-      template: "$"
-      rtype: PTR
-      target: "${0,2,d}.SEA-clients.highdef.dn42."
-    - start: 40
-      end: 47
-      template: "$"
-      rtype: PTR
-      target: "${0,2,d}.YMQ-clients.highdef.dn42."
+dns_generate_records: {}
+  # "highdef.dn42":
+  #   - start: 24
+  #     end: 31
+  #     template: "${0,1,d}.SEA-clients"
+  #     rtype: A
+  #     target: "172.22.108.$"
+  # "172.22.108.0/25":
+  #   - start: 24
+  #     end: 31
+  #     template: "$"
+  #     rtype: PTR
+  #     target: "${0,2,d}.SEA-clients.highdef.dn42."
 
 ## Zone mirroring for *.delegation-servers.dn42
 dns_dn42_primary_servers:

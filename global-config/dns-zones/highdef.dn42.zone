@@ -22,7 +22,7 @@ dns IN AAAA fd86:bad:11b7:53::2
 www IN CNAME @
 routegraphs IN A 172.20.229.124
 routegraphs IN AAAA fd86:bad:11b7:224::1
-music IN A 172.22.108.7
+music IN A 172.22.108.104
 mtxadmin IN A 172.22.108.100
 grapnel IN A 172.22.108.33
 grapnel IN AAAA fd86:bad:11b7:33::1
