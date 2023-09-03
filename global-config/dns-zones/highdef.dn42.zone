@@ -13,6 +13,8 @@ lg IN A 172.20.229.123
 lg IN AAAA fd86:bad:11b7:23::1
 ping IN A 172.22.108.3
 ping IN AAAA fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
+routegraphs IN A 172.20.229.124
+routegraphs IN AAAA fd86:bad:11b7:224::1
 ns IN A 172.22.108.54
 ns IN AAAA fd86:bad:11b7:53::1
 dns IN A 172.22.108.53
@@ -20,8 +22,6 @@ dns IN AAAA fd86:bad:11b7:53::2
 @ IN A 172.22.108.53
 @ IN AAAA fd86:bad:11b7:53::2
 www IN CNAME @
-routegraphs IN A 172.20.229.124
-routegraphs IN AAAA fd86:bad:11b7:224::1
 music IN A 172.22.108.104
 mtxadmin IN A 172.22.108.100
 grapnel IN A 172.22.108.33
@@ -76,5 +76,3 @@ sgp.rtr IN A 172.22.108.39
 sgp.rtr IN AAAA fd86:bad:11b7:239::1
 syd.rtr IN A 172.20.229.125
 syd.rtr IN AAAA fd86:bad:11b7:225::1
-$GENERATE 24-31 ${0,1,d}.SEA-clients A 172.22.108.$
-$GENERATE 40-47 ${0,1,d}.YMQ-clients A 172.22.108.$
