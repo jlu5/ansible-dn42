@@ -110,11 +110,11 @@ wg_peers:
   wg_pubkey: edgbmEfm2Y5RP3VpZRWpRsGnwuMjUeGV64YsZcGSvRA=
 
 - name: dn42-exabyte
-  peer_v4: 172.20.41.100
-  peer_v6: fe80::115
   port: 23340
-  remote: null
+  remote: dn42-us-nj01.exabyte.network:51845
   wg_pubkey: cRHAiWRwhjnK1cNIWrh5c06Lubv8lkF0w+z4NPjRQAM=
+  peer_v4: 172.20.41.100
+  peer_v6: fe80::100
 
 - name: dn42-huajitech
   peer_v4: null
