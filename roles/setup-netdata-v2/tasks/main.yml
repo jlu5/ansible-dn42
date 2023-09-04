@@ -28,6 +28,8 @@
   template:
     src: "health_alarm_notify.conf.j2"
     dest: "/etc/netdata/health_alarm_notify.conf"
+    mode: 0640
+    group: netdata
   notify: Restart netdata
 
 - name: Create netdata config subfolders
