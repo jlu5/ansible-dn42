@@ -1,0 +1,51 @@
++ highdef-anycast
+menu = AS4242421080 Anycast DNS
+title = AS4242421080 Anycast DNS
+probe = AnotherDNS
+
+{% set _v4_rec_dns = dummy_interfaces.anycast_recursors.ip4[0] %}
+{% set _v6_rec_dns = dummy_interfaces.anycast_recursors.ip6[0] %}
+{% set _v4_auth_dns = dummy_interfaces.anycast_auth_dns.ip4[0] %}
+{% set _v6_auth_dns = dummy_interfaces.anycast_auth_dns.ip6[0] %}
+{% set _clearnet_query = 'google.com' %}
+{% set _dn42_query = 'a3.recursive-servers.dn42' %}
+{% set _auth_dns_query = 'highdef.dn42' %}
+
+++ recursor_test_clearnet
+menu = Clearnet @ {{ _v4_rec_dns }}
+host = {{ _v4_rec_dns }}
+title = Clearnet query ({{ _clearnet_query }}) @ {{ _v4_rec_dns }}
+lookup = {{ _clearnet_query }}
+
+++ recursor_test_clearnet_6
+menu = Clearnet @ {{ _v6_rec_dns }}
+host = {{ _v6_rec_dns }}
+title = Clearnet query ({{ _clearnet_query }}) @ {{ _v6_rec_dns }}
+lookup = {{ _clearnet_query }}
+ipversion = 6
+
+++ recursor_test_dn42
+menu = dn42 @ {{ _v4_rec_dns }}
+host = {{ _v4_rec_dns }}
+title = dn42 query ({{ _dn42_query }}) @ {{ _v4_rec_dns }}
+lookup = {{ _dn42_query }}
+
+++ recursor_test_dn42_6
+menu = dn42 @ {{ _v6_rec_dns }}
+host = {{ _v6_rec_dns }}
+title = dn42 query ({{ _dn42_query }}) @ {{ _v6_rec_dns }}
+lookup = {{ _dn42_query }}
+ipversion = 6
+
+++ auth_dns_test
+menu = Auth DNS @ {{ _v4_auth_dns }}
+host = {{ _v4_auth_dns }}
+title = Auth DNS query ({{ _auth_dns_query }}) @ {{ _v4_auth_dns }}
+lookup = {{ _auth_dns_query }}
+
+++ auth_dns_test_6
+menu = Auth DNS @ {{ _v6_auth_dns }}
+host = {{ _v6_auth_dns }}
+title = Auth DNS query ({{ _auth_dns_query }}) @ {{ _v6_auth_dns }}
+lookup = {{ _auth_dns_query }}
+ipversion = 6

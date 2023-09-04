@@ -10,11 +10,9 @@ remark = highdef.network monitoring: <ul>\
 
 {% if smokeping_dn42 | default(True) %}
 
-+ dn42
-menu = dn42
-title = dn42 Services
-
 {# NOTE: Must have a newline between files for correct line breaks #}
+
+{% include 'targets/anycast-dns.conf.j2' %}
 
 {% include 'targets/dn42-services.conf.j2' %}
 

@@ -3,6 +3,9 @@
     package:
     - smokeping
     - spawn-fcgi
+    # For AnotherDNS probe
+    - libnet-dns-perl
+    - libio-socket-inet6-perl
     # Default smokeping on Debian pulls in Apache!
     install_recommends: no
 
