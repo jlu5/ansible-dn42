@@ -13,7 +13,7 @@ import requests
 # https://stackoverflow.com/a/36760050
 IP4_RE = re.compile(r'((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}')
 IP6_RE = re.compile(
-    r'[0-9a-fA-F:]{5,50}' # lazy check
+    r'[a-fA-F0-9]{1,4}:[a-fA-f0-9:]+' # lazy check
 )
 def scrape_ips(url, force_dns=False):
     url_parts = urllib.parse.urlparse(url)
@@ -35,15 +35,21 @@ def scrape_ips(url, force_dns=False):
                 ipv6 = netloc
         return ipv4, ipv6
 
-    m_ipv4 = IP4_RE.search(r.text)
-    if m_ipv4:
+    for m_ipv4 in IP4_RE.finditer(r.text):
         ipv4 = m_ipv4.group(0)
-        if ipaddress.ip_address(ipv4) in dns_results:
+        ipaddr = ipaddress.ip_address(ipv4)
+        if not ipaddr.is_global:
+            continue
+        if ipaddr in dns_results:
             ipv4 = netloc
+        break
     for m_ipv6 in IP6_RE.finditer(r.text):
         ipv6 = m_ipv6.group(0)
         try:
-           if ipaddress.ip_address(ipv6) in dns_results:
+            ipaddr = ipaddress.ip_address(ipv6)
+            if not ipaddr.is_global:
+                continue
+            if ipaddr in dns_results:
                 ipv6 = netloc
         except ValueError as e:
             print(f'Skipping invalid v6 IP: {ipv6}, {e}')
