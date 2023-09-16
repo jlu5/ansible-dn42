@@ -188,3 +188,10 @@ wg_peers:
   wg_pubkey: +5TlmsmGyXgIAv4Ej8yTum0sHQ+PWNkhcznnC+lv12M=
   peer_v4: null
   peer_v6: fe80::207
+
+- name: dn42-smyers119
+  port: 23411
+  remote: useast.dn42.goldlineit.org:3415
+  wg_pubkey: HM35mEe6q1WcQG9UHd2n4xrHuXyBGuYpOjzbRz2kD00=
+  peer_v4: null
+  peer_v6: fe80::3411
