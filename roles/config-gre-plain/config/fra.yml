@@ -4,3 +4,7 @@ gre_peers:
   peer_v4: 198.18.37.71
   local_v6: "fd86:bad:11b7:117:42:1080:3772:0"
   netmask_v6: "127"
+
+- name: dn42-berik
+  remote: 62.84.34.61
+  peer_v4: 172.23.183.64
