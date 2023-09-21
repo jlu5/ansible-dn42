@@ -34,3 +34,10 @@ wg_peers:
   wg_pubkey: k74poVrLvIt6kXAAr1lSqThrVilGch61RWmn8hAaPFw=
   peer_v4: 172.22.162.225
   peer_v6: fd47:514:dbc9::1
+
+- name: dn42-khoa
+  port: 20868
+  remote: 94.72.143.3:8682
+  wg_pubkey: t0vzWiegfkzpSLyQZ0tQOlVB/lFVci+rBgPxB4888zU=
+  peer_v4: 172.21.68.222
+  peer_v6: null
