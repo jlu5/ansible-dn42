@@ -19,7 +19,7 @@ protocol bgp ibgp_{{ host | replace("-", "_") }} {
         export where ibgp_export_filter();
 {% endif %}
         next hop address {{ ownip }};
-        next hop self;
+        next hop self ebgp;
     };
 
     ipv6 {
@@ -30,7 +30,7 @@ protocol bgp ibgp_{{ host | replace("-", "_") }} {
         export where ibgp_export_filter();
 {% endif %}
         next hop address {{ ownip6 }};
-        next hop self;
+        next hop self ebgp;
     };
 }
 {%- endmacro %}
