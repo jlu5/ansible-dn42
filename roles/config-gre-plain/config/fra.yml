@@ -7,4 +7,5 @@ gre_peers:
 
 - name: dn42-berik
   remote: 62.84.34.61
-  peer_v4: 172.23.183.64
+  local_v4: 169.254.88.2
+  peer_v4: 169.254.88.1
