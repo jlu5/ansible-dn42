@@ -94,3 +94,10 @@ wg_peers:
   wg_pubkey: /aY73VNAGQ7W+GersZUSO6PqHJV8nWKb12Op9EQzY3k=
   peer_v4: null
   peer_v6: fe80::207
+
+- name: dn42-dixon
+  port: 21329
+  remote: hades.andydixon.com:65500
+  wg_pubkey: DkAGcccVOPxTV3+1tqKdhh0JM3BFH/uEnQD27Dz93Ro=
+  peer_v4: 172.22.157.161
+  peer_v6: fdac:f7ec:efa7 
