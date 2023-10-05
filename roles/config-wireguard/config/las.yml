@@ -115,3 +115,10 @@ wg_peers:
   port: 21816
   remote: us1.dn42.potat0.cc:21080
   wg_pubkey: LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=
+
+- name: dn42-akihi
+  port: 20398
+  remote: lax.dn42.akihi.me:21080
+  wg_pubkey: oAPy0U2qVuSR8PyPLmVLEgWLBKrOq4kcLNLAOVZL10M=
+  peer_v4: null
+  peer_v6: fe80::426f
