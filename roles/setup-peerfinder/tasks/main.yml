@@ -12,5 +12,6 @@
       minute: "*/5"
       user: "{{ automation_user }}"
       job: "env UUID={{ peerfinder_uuid }} LOGFILE={{ automation_user_home }}/peerfinder.log {{ automation_root_dir }}/peerfinder.sh"
-      disabled: "{{ not (open_to_peers | default(true)) }}"
+      #disabled: "{{ not (open_to_peers | default(true)) }}"
+      disabled: yes # 2023-10-07: backend is broken
   when: peerfinder_uuid is defined
