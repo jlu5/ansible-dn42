@@ -35,6 +35,13 @@ wg_peers:
   local_v4: 172.22.108.76/31
   peer_v6: fe80::d979:fafa:50be:58b3
 
+- name: dn42-sirmysteri
+  port: 51475
+  remote: "dn42-us-sfo1.sirmysterion.com:51475"
+  wg_pubkey: "S1Pm3Oqdn6flQ15WoG5n+FQhyGPPS5Xdh98VQwephjA="
+  peer_v4: "172.20.20.98/32"
+  peer_v6: "fe80::b562"
+
 - name: dn42sea-ncw
   port: 51288
   remote: "sea1.sc00.org:21080"

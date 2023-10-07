@@ -21,12 +21,6 @@ wg_peers:
   peer_v4: "172.20.233.131"
   peer_v6: "fe80::1288/64"
 
-- name: dn42fmt-moecast
-  remove: true
-
-- name: dn42lax-lss233
-  remove: true
-
 - name: dn42lax-ykis
   port: 52021
   remote: "lax-node.ykis.moe:41080"
@@ -87,11 +81,7 @@ wg_peers:
   peer_v6: "fe80::3309"
 
 - name: dn42-bling
-  peer_v4: 172.20.21.103
-  peer_v6: fe80::2333
-  port: 20212
-  remote: lax1.dn42.blw.moe:21080
-  wg_pubkey: ZeKLPXvGl4M4n7f8l+fZWdTMys+bzulTJsXSr6Bwx04=
+  remove: true
 
 - name: dn42lax-sunnet
   port: 53088

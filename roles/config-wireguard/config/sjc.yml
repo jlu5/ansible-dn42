@@ -77,50 +77,6 @@ wg_peers:
   remote: us.kskb.eu.org:21080
   wg_pubkey: dZzVdXbQPnWPpHk8QfW/p+MfGzAkMBuWpxEIXzQCggY=
 
-# begin peers imported from lax01
-- name: dn42lax-kioubit
-  remove: true
-
-- name: dn42lax-zhaofen
-  remove: true
-
-- name: dn42lax-ncw
-  remove: true
-
-- name: dn42fmt-moecast
-  remove: true
-
-- name: dn42lax-lss233
-  remove: true
-
-- name: dn42lax-ykis
-  remove: true
-
-- name: dn42lax-hertz
-  remove: true
-
-- name: dn42lax-testnet
-  remove: true
-
-- name: dn42lax-mayli
-  remove: true
-
-- name: dn42lax-dgy
-  remove: true
-
-- name: dn42-hujk
-  remove: true
-
-- name: dn42-lantian
-  remove: true
-
-- name: dn42-131
-  remove: true
-
-- name: dn42lax-naiveto
-  remove: true
-# end peers imported from lax01
-
 - name: dn42-huajitech
   peer_v4: null
   peer_v6: fe80::458
@@ -134,13 +90,6 @@ wg_peers:
   port: 22601
   remote: dn42-us-lax1.burble.com:21080
   wg_pubkey: MDjt4DyKGFumReT9pBJL6mPbDfQDfhPFyzHGDeoQVBQ=
-
-- name: dn42-lilynet
-  port: 21877
-  remote: tempest.lilynet.work:21080
-  wg_pubkey: Q3bcZbuR0NfyFVMvmv5CWTvLysrRMLwPE45DHbfAyhc=
-  peer_v4: 172.23.180.6
-  peer_v6: fe80::1d89
 
 - name: dn42-link2
   peer_v4: 172.21.109.18
@@ -156,8 +105,6 @@ wg_peers:
   remote: us-lax-a.nodes.pigeonhole.eu.org:21080
   wg_pubkey: usSOnTQKWozKiB3CM65TY3hv64dxQLnIx9ywc0J9awY=
 
-- name: igp-ca-yvrgw
-  remove: true
 - name: igp-yvrlab
   port: 19999
   wg_pubkey: "ifeyKlRSNAIcyzRSUKzedU+t4bQhb1Hld3XzDCq/Yig="
@@ -165,39 +112,12 @@ wg_peers:
   local_v4: 172.22.108.72/31
   peer_v6: fe80::89f7:b22a:5452:3402
 
-# moved from us-sea03
-- name: dn42sfo-sirmyst
-  port: 51475
-  remote: "dn42-us-sfo1.sirmysterion.com:51475"
-  wg_pubkey: "S1Pm3Oqdn6flQ15WoG5n+FQhyGPPS5Xdh98VQwephjA="
-  peer_v4: "172.20.20.98/32"
-  peer_v6: "fe80::b562"
-  local_v6: fe80::114
-  wg_privkey: "/etc/wireguard/privatekey_sea02"
-
-- name: dn42-lare
-  remove: true
-
-- name: dn42-yukino
-  port: 21255
-  remote: dn42-us-sfo1.acgcl.net:31080
-  wg_pubkey: pNPgR9AWp/nz3oGw0XnqDzWV2IVSjhqOGSFKQHdurA4=
-  peer_v4: null
-  peer_v6: fe80::10b0
-
 - name: dn42-iuboy
   port: 22582
   remote: us-los1.dn42.iamm.one:21080
   wg_pubkey: z7UE9JYKPJ/ToVnIqJQYN4DEY3HfWx56075bh4jBQUA=
   peer_v4: null
   peer_v6: fe80::2582:2
-
-- name: dn42-jerrita
-  port: 21107
-  remote: us01.edge.yoimiya.me:21080
-  wg_pubkey: cL1Dbz1722nCV0AyqPwH/OCGpwTeQKTSBXKMhJv6KGQ=
-  peer_v4: 172.22.183.99
-  peer_v6: fe80::1107
 
 - name: dn42-sernet
   port: 23947
