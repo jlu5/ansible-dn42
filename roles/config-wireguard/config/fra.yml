@@ -304,3 +304,10 @@ wg_peers:
     6261366461636438373134653236373330636233353966313938
   peer_v4: null
   peer_v6: fe80::0129:93
+
+- name: dn42-vr18
+  port: 20705
+  remote: 151.250.94.244:709
+  wg_pubkey: O3fc+s3ZxJ0G2hYPV4PVMFaV5VWJtcvfNnmgrHAfSVc=
+  peer_v4: 172.23.203.193
+  peer_v6: null
