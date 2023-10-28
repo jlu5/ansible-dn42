@@ -64,13 +64,14 @@ define COLD_POTATO_IGNORE = [
 function prefer_cold_potato()
     int my_region_tag;
     int incoming_tag;
+    pair incoming_region_community;
 {
     # Cold potato routing: prefer routes originating in the same region as the current node, or routes that don't have
     # any region community set.
     # Applying this policy to routes without a community region fixes cases when peers accidentally attach region
-    # communities to routes in transit. Otherwise, they will suck up a lot of routes because everything they epxort will
-    # appear to have the same region tag as my (receiving) peering node.
-    # In other words: if a prefix has routes both with and without a region community, ignore the region community as
+    # communities to routes in transit. Otherwise, they will suck up a lot of routes because everything they export will
+    # appear to have the same region tag as my (receiving) node.
+    # In other words: if any prefix has routes both with and without a region community, ignore the region community as
     # it's likely to be bogus.
     my_region_tag = get_region_tag(DN42_REGION);
     incoming_tag = 0;
@@ -79,34 +80,13 @@ function prefer_cold_potato()
         return 0;
     }
 
-    # TODO: replace this with native community extraction in Bird 2.0.9
-    if ((64511, 41) ~ bgp_community) then {
-        incoming_tag = get_region_tag(41);
-    }
-    else if ((64511, 42) ~ bgp_community) then {
-        incoming_tag = get_region_tag(42);
-    }
-    else if ((64511, 43) ~ bgp_community) then {
-        incoming_tag = get_region_tag(43);
-    }
-    else if ((64511, 44) ~ bgp_community) then {
-        incoming_tag = get_region_tag(44);
-    }
-    else if ((64511, 50) ~ bgp_community) then {
-        incoming_tag = get_region_tag(50);
-    }
-    else if ((64511, 51) ~ bgp_community) then {
-        incoming_tag = get_region_tag(51);
-    }
-    else if ((64511, 52) ~ bgp_community) then {
-        incoming_tag = get_region_tag(52);
-    }
-    else if ((64511, 53) ~ bgp_community) then {
-        incoming_tag = get_region_tag(53);
-    }
+    # This will be set to (0, 0) if no matching community exists
+    incoming_region_community = filter(bgp_community, [(64511, 41..53)]).min;
 
+    # Note: reading community values requires Bird >= 2.0.9
+    #print "Reading region tag ", incoming_region_community.data, " for route ", net, " from ", bgp_path.first;
+    incoming_tag = get_region_tag(incoming_region_community.data);
     if (incoming_tag = 0 || incoming_tag = my_region_tag) then {
-        #print "Route ", net, " has incoming tag ", incoming_tag, " matching ours ", my_region_tag;
         bgp_med = 50;
     }
 }
