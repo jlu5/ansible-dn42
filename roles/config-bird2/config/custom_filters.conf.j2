@@ -92,11 +92,19 @@ function prefer_cold_potato()
 }
 
 # Special cases I've added for route optimization, your mileage may vary
-function handle_special_cases() {
+function handle_special_cases()
+    bool is_anycast;
+{
+    is_anycast = (net.type = NET_IP4 && net.len = 32) || (net.type = NET_IP6 && net.len = 64);
     # Cold potato routing for selected EU-origin nets
     if (DN42_REGION != 41 && bgp_path ~
             [= * [4242420101, 65043, 64654, 4242421337, 65026] * =]) then {
         bgp_med = bgp_med + 20;
+    }
+
+    # Pin non-transit, non-anycast routes for certain networks to EU
+    if (!is_anycast && DN42_REGION != 41 && bgp_path ~ [= * [4242421411] =]) then {
+         bgp_med = bgp_med + 20;
     }
 
     # Read "route learned in region X" communities from networks that export them
