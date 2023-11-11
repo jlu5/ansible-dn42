@@ -7,8 +7,24 @@ import re
 import socket
 import urllib.parse
 
+import dns.exception
+import dns.resolver
 import pycountry
 import requests
+
+def get_ipinfo(ip):
+    ip = ipaddress.ip_address(ip)
+    if ip.version == 4:
+        dns_query = ip.reverse_pointer.replace(
+            'in-addr.arpa', 'origin.asn.cymru.com' )
+    else:
+        dns_query = ip.reverse_pointer.replace(
+            'ip6.arpa', 'origin6.asn.cymru.com' )
+    try:
+        dns_result = dns.resolver.resolve(dns_query, 'TXT')
+    except dns.exception.DNSException as e:
+        return f'{e.__class__}: {e}'
+    return dns_result[0].to_text()
 
 # https://stackoverflow.com/a/36760050
 IP4_RE = re.compile(r'((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}')
@@ -40,6 +56,7 @@ def scrape_ips(url, force_dns=False):
         ipaddr = ipaddress.ip_address(ipv4)
         if not ipaddr.is_global:
             continue
+        print(f'{ipv4} ASN info:', get_ipinfo(ipv4))
         if ipaddr in dns_results:
             ipv4 = netloc
         break
@@ -49,6 +66,7 @@ def scrape_ips(url, force_dns=False):
             ipaddr = ipaddress.ip_address(ipv6)
             if not ipaddr.is_global:
                 continue
+            print(f'{ipv6} ASN info:', get_ipinfo(ipv6))
             if ipaddr in dns_results:
                 ipv6 = netloc
         except ValueError as e:
@@ -80,12 +98,13 @@ def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
         country = 'UK'
     # if ipv6:
     #     print('probe = FPing6')
+    isp_short = isp.split('@')[0].strip()
     if country in _COUNTRIES_SHOW_PROVINCE:
-        print(f'menu = [{country}/{province}] {isp}')
+        print(f'menu = [{country}/{province}] {isp_short}')
         loc = f'{city}, {province}, {country}'
         print(f'title = [{country}/{province}] {isp} - {loc} [{address}]')
     else:
-        print(f'menu = [{country}] {isp}')
+        print(f'menu = [{country}] {isp_short}')
         loc = f'{city}, {pycountry_entry.name}'
         print(f'title = [{country}] {isp} - {loc} [{address}]')
     print(f'host = {address}')
