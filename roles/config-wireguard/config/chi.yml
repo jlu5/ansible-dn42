@@ -1,4 +1,21 @@
 wg_peers:
+- name: igp-yvrlab
+  port: 19999
+  wg_pubkey: "5UUM0BZBvE5+/JDQtqPPLxPmpI+5prg/YfmvNzUbKnc="
+  peer_v4: null
+  local_v4: 172.22.108.78/31
+  peer_v6: fe80::e545:cd0:1641:bc4e
+
+- name: igp-glass
+  remove: true
+- name: igp-stub-glass
+  port: 19998
+  wg_pubkey: qqFf8jOa55jQT5R013iOStnaklrB9mHrVNCerLXhcg0=
+  remote: glass.srv.jlu5.com:19998
+  peer_v4: null
+  local_v4: 172.22.108.65/30
+  peer_v6: fe80::1080:1080
+
 - name: "dn42atl-doxz"
   port: 50003
   remote: "45.76.249.17:51822"
@@ -36,13 +53,6 @@ wg_peers:
   remote: us-chi01.dn42.tech9.io:51933
   wg_pubkey: 0kb8ffMcbx8oXZ3Ii5khOuCzmRqM2Cy0IslmrWtRGSk=
   local_v6: fe80::100
-
-- name: igp-yvrlab
-  port: 19999
-  wg_pubkey: "5UUM0BZBvE5+/JDQtqPPLxPmpI+5prg/YfmvNzUbKnc="
-  peer_v4: null
-  local_v4: 172.22.108.78/31
-  peer_v6: fe80::e545:cd0:1641:bc4e
 
 - name: dn42-lare
   port: 23035
