@@ -1,3 +1,6 @@
+{# FIXME: does jinja2 have a re.escape filter? #}
+{% set webtrace_supported_servers_re = '(' + '|'.join(groups['webtrace']) + ')' %}
+{% set multi_traceroute_error = "Sorry, multi-server traceroute is no longer supported. Please select a single server and you'll be redirected to the new webtrace interface."%}
 # dn42
 server {
     listen 80;
@@ -7,12 +10,13 @@ server {
     access_log /var/log/nginx/dn42-lg-access.log;
     error_log /var/log/nginx/dn42-lg-error.log;
 
-    location /api {
-        proxy_set_header HOST $host;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_pass http://127.0.0.1:{{ birdlg_web_port }};
+    location ~ ^/traceroute/(.*?)\+(.*?)/ {
+        add_header Content-Type text/plain;
+        {# FIXME: returning an error code doesn't seem to display the page content #}
+        return 200 "{{ multi_traceroute_error }}";
+    }
+    location ~ ^/traceroute/{{ webtrace_supported_servers_re }}/([^/]+) {
+        return http://$1{{ dns_auto_host_record_suffix }}.{{ dns_domain }}/webtrace/?target=$2;
     }
 
     location / {
@@ -33,6 +37,7 @@ server {
 
     return 301 https://{{ birdlg_vhost_clearnet }}$request_uri;
 }
+
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -47,6 +52,15 @@ server {
 
     location /.well-known {
         root /var/www/html;
+    }
+
+    location ~ ^/traceroute/(.*?)\+(.*?)/ {
+        add_header Content-Type text/plain;
+        return 200 "{{ multi_traceroute_error }}";
+    }
+    location ~ ^/traceroute/{{ webtrace_supported_servers_re }}/([^/]+) {
+        {# FIXME: this hardcodes the server suffix #}
+        return https://$1.peer.highdef.network/webtrace/?target=$2;
     }
 
     location / {
