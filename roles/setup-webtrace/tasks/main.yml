@@ -1,0 +1,61 @@
+- name: Install webtrace dependencies
+  ansible.builtin.apt:
+    package:
+    - python3
+    - python3-pip
+    - python3-virtualenv
+    - mtr-tiny
+    state: present
+  become: yes
+
+- name: Enumerate git clone directory
+  set_fact:
+    webtrace_repo_path: "{{ automation_user_home }}/webtrace-src"
+
+- name: Clone webtrace Git repo
+  ansible.builtin.git:
+    repo: 'https://github.com/jlu5/webtrace'
+    dest: "{{ webtrace_repo_path }}"
+    update: yes
+  become: yes
+  become_user: "{{ automation_user }}"
+  notify: Restart webtrace
+
+- name: Create webtrace virtualenv dir
+  ansible.builtin.file:
+    name: "{{ webtrace_venv_dir }}"
+    state: directory
+    owner: "{{ automation_user }}"
+  become: yes
+
+- name: Set up virtualenv
+  ansible.builtin.pip:
+    requirements: "{{ webtrace_repo_path }}/requirements-prod.txt"
+    virtualenv: "{{ webtrace_venv_dir }}"
+    virtualenv_python: python3
+  become: yes
+  become_user: "{{ automation_user }}"
+
+- name: Template webtrace systemd service
+  ansible.builtin.template:
+    src: "webtrace.service.j2"
+    dest: "/etc/systemd/system/webtrace.service"
+  become: yes
+  notify: Restart webtrace
+
+- name: Template webtrace systemd socket
+  ansible.builtin.template:
+    src: "webtrace.socket.j2"
+    dest: "/etc/systemd/system/webtrace.socket"
+  become: yes
+  notify: Restart webtrace
+
+- name: Configure webtrace in nginx
+  include_role:
+    name: apps_nginx
+  vars:
+    letsencrypt_domains:
+      - "{{ ansible_host }}"
+    nginx_site:
+      src: webtrace-nginx.conf.j2
+      dst: webtrace-nginx.conf

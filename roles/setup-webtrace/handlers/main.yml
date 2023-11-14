@@ -1,0 +1,7 @@
+- name: Restart webtrace
+  service:
+    name: webtrace
+    state: restarted
+    daemon-reload: yes
+  ignore_errors: "{{ ansible_check_mode }}"
+  listen: "Restart webtrace"

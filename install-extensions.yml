@@ -7,9 +7,15 @@
     - setup-bird-lg-go
     - setup-extra-scripts
 
-- name: Setup extensions for peering routers
+- name: Setup extensions for dn42 core routers
   hosts: dn42routers
   become: yes
   roles:
     - setup-peerfinder
     - setup-routestats
+
+- name: Setup webtrace
+  hosts: webtrace
+  become: yes
+  roles:
+    - setup-webtrace

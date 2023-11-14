@@ -1,0 +1,1 @@
+webtrace_venv_dir: "{{ automation_root_dir }}/webtrace-venv"

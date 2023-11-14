@@ -1,0 +1,23 @@
+{# From https://docs.gunicorn.org/en/stable/deploy.html#systemd #}
+[Unit]
+Description=webtrace gunicorn
+Requires=webtrace.socket
+After=network.target
+
+[Service]
+Type=notify
+User={{ automation_user }}
+Group=nogroup
+RuntimeDirectory=gunicorn
+WorkingDirectory={{ webtrace_repo_path }}
+{# async workers are required for streams #}
+ExecStart={{ webtrace_venv_dir }}/bin/gunicorn -k gevent --pythonpath=. app:app
+ExecReload=/bin/kill -s HUP $MAINPID
+Environment=WEBTRACE_SERVERINFO="{{ inventory_hostname }} - {{ location }}"
+Environment=WEBTRACE_TITLE="{{ inventory_hostname }} - webtrace"
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
