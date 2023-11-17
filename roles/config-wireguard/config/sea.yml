@@ -26,7 +26,7 @@ wg_peers:
     wg_allowedips: "172.22.108.91/32"
   - wg_pubkey: "x223mAF6rM9Ea3U/0TSHQEMfWJ+jpLxyO9wxAUE3qh4="
     wg_allowedips: "172.22.108.92/32"
-  wg_privatekey: /etc/wireguard/privatekey_gamenetwest
+  wg_privkey: /etc/wireguard/privatekey_gamenetwest
 
 - name: igp-yvrlab
   port: 19999
