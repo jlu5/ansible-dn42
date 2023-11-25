@@ -22,9 +22,11 @@ def fill_bird_options(node, completed_config):
 
     latency = None
     remote = completed_config['remote']
+    # FIXME: unhardcode this
+    api_url = f'https://{node}.peer.highdef.network/webtrace/'
     if remote and prompt_bool(f"Check latency to {remote}?"):
         try:
-            latency = get_rtt(node, remote)
+            latency = get_rtt(api_url, remote)
         except (OSError, ValueError, LookupError, PingTestError):
             traceback.print_exc()
     if latency is None:

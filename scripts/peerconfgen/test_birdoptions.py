@@ -69,12 +69,7 @@ class PeerConfFillBirdTest(unittest.TestCase):
             'peer_v4': '172.22.108.88',
             'peer_v6': 'fe80::1234',
         }
-        mock_ping_text = """PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-
---- 8.8.8.8 ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3030ms
-rtt min/avg/max/mdev = 0.874/0.909/0.995/0.050 ms"""
-        with unittest.mock.patch('birdoptions.remote_ping', return_value=mock_ping_text):
+        with unittest.mock.patch('birdoptions.get_rtt', return_value=0.909):
             self.assertEqual(BirdOptions(True, True, 0.909),
                              fill_bird_options('DUMMYINVALID', cfg))
 
