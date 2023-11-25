@@ -1,10 +1,4 @@
 wg_peers:
-- name: dn42lon-strexp
-  remove: true
-
-- name: dn42fra-owens
-  remove: true
-
 - name: dn42par-raito
   port: 51457
   remote: "[2a01:e0a:5f9:9681::2]:21080"
@@ -52,9 +46,6 @@ wg_peers:
   local_v4: 172.20.229.116
   local_v6: fe80::116
   wg_privkey: /etc/wireguard/privatekey_lon
-
-- name: dn42lon-wcysite
-  remove: true
 
 - name: dn42-usman
   port: 21869
@@ -161,9 +152,6 @@ wg_peers:
   wg_pubkey: "I68Jv8818pk2NX0GC8ul18095/iZ66XCxJuo/brk/Go="
   peer_v4: null
   peer_v6: "fe80::fcde:3558"
-
-- name: dn42ams-yura
-  remove: true
 
 - name: dn42osl-yurui
   port: 52330
@@ -276,9 +264,6 @@ wg_peers:
   remote: de1.dn42.est-it.de:13237
   wg_pubkey: QqcsQ6gRaK0ZxRskCxWoNeV2vd53/9IW/XfwjMMSjk8=
 
-- name: dn42-arisum
-  remove: true
-
 - name: dn42-oscrx
   peer_v4: null
   peer_v6: fd69:420:cafe::1
@@ -326,12 +311,6 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::1080
 
-- name: dn42-eki
-  remove: true
-
-- name: dn42-marlinc
-  remove: true
-
 - name: dn42-ventilaar
   port: 22246
   remote: ams01.dn42.ventilaar.net:31080
@@ -374,3 +353,10 @@ wg_peers:
     6632646632353339626132396236656434623437343739306630
   peer_v4: null
   peer_v6: fe80::0129:92
+
+- name: dn42-mirsal
+  port: 22308
+  remote: nl-ams2.dn42.mirsal.fr:21080
+  wg_pubkey: SbClSKsHH7k95zwmMhSL5ob76CUpZhIt5IYn8H5tEi8=
+  peer_v4: null
+  peer_v6: fe80::2308

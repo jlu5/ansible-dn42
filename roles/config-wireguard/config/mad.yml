@@ -12,3 +12,10 @@ wg_peers:
   wg_pubkey: "yV8UG5MJoVQ648Gi/Ff5KEquCRGEKYwG/ePqL5yIGyM="
   peer_v4: "169.254.10.80"
   peer_v6: "fe80::caca:1080"
+
+- name: dn42-mirsal
+  port: 22308
+  remote: es-mad1.dn42.mirsal.fr:21080
+  wg_pubkey: ZXgXyUqc4j8nJ9+q4XENJ5a7E1DrzuF5OQHyWndIgHY=
+  peer_v4: null
+  peer_v6: fe80::2308
