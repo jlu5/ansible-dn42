@@ -22,6 +22,9 @@
 {% if serverdata.web_display_name | default('') %}
     ({{ serverdata.web_display_name }})
 {% endif %}
+{% if host in groups['webtrace'] %}
+[<a href="https://{{serverdata.ansible_host}}/webtrace/">webtrace</a>]
+{% endif %}
     <a href="#{{ host }}"><i class="fa fa-link" aria-hidden="true"></i></a>
 </h4>
 <ul>
