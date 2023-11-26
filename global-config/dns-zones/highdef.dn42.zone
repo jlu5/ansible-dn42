@@ -24,8 +24,8 @@ dns IN AAAA fd86:bad:11b7:53::2
 www IN CNAME @
 music IN A 172.22.108.104
 mtxadmin IN A 172.22.108.100
-grapnel IN A 172.22.108.33
-grapnel IN AAAA fd86:bad:11b7:33::1
+grapnel IN A 172.20.229.117
+grapnel IN AAAA fd86:bad:11b7:117::1
 git IN A 172.22.108.82
 git IN AAAA fd86:bad:11b7:1022::2
 nt IN A 172.22.108.19
@@ -56,12 +56,12 @@ las.rtr IN A 172.20.229.126
 las.rtr IN AAAA fd86:bad:11b7:26::1
 chi.rtr IN A 172.20.229.113
 chi.rtr IN AAAA fd86:bad:11b7:13::1
-mci.rtr IN A 172.22.108.33
-mci.rtr IN AAAA fd86:bad:11b7:33::1
+dal.rtr IN A 172.22.108.33
+dal.rtr IN AAAA fd86:bad:11b7:33::1
 ymq.rtr IN A 172.20.229.123
 ymq.rtr IN AAAA fd86:bad:11b7:23::1
-atl.rtr IN A 172.20.229.119
-atl.rtr IN AAAA fd86:bad:11b7:9::1
+tpa.rtr IN A 172.20.229.119
+tpa.rtr IN AAAA fd86:bad:11b7:9::1
 ams.rtr IN A 172.20.229.118
 ams.rtr IN AAAA fd86:bad:11b7:118::1
 fra.rtr IN A 172.20.229.117

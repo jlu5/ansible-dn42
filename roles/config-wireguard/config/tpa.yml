@@ -28,15 +28,6 @@ wg_peers:
   remote: mks1.us.androw.eu:21080
   wg_pubkey: 7tBgRZZFJWmTAy36h4saz77BxXacCzes9KXgZew7Dns=
 
-- name: dn42-mtzfederic
-  remove: true
-
-- name: dn42-exabyte
-  remove: true
-
-- name: dn42-nullplane
-  remove: true
-
 - name: dn42-imlonghao
   port: 21888
   remote: us1.dn42.ni.sb:21080
@@ -50,13 +41,6 @@ wg_peers:
   wg_pubkey: ZB4ykdUcm3vNX23qFEHSiO7eQfyC5BoGbg9fHZGe/zE=
   peer_v4: null
   peer_v6: fe80::2825:2
-
-- name: dn42-lare
-  port: 23035
-  remote: use1.dn42.lare.cc:21080
-  wg_pubkey: FIcJb2vGsj10rUICV6Awp+/mGXi9L6lpIvQvblBVoQ0=
-  peer_v4: null
-  peer_v6: fe80::3035:136
 
 - name: dn42-routedbits
   port: 20207

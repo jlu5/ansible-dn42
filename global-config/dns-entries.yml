@@ -43,7 +43,7 @@ dns_records:
       target: 172.22.108.100
     "grapnel":
       type: ansible_host_alias
-      target: mci
+      target: fra
     "git":
       type: host_record
       ip4: 172.22.108.82
