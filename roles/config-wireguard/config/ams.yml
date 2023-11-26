@@ -38,21 +38,10 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_lon
 
 - name: dn42rbx-serverm
-  port: 53770
-  remote: "rbx1.dn42.servermade.com:51080"
-  wg_pubkey: "0ndXPAg17zmVx5CfxMblRfdcDjHRDB6OKBkYvvtq1g0="
-  peer_v4: "172.22.118.129"
-  peer_v6: "fe80::3770/64"
-  local_v4: 172.20.229.116
-  local_v6: fe80::116
-  wg_privkey: /etc/wireguard/privatekey_lon
+  remove: true
 
 - name: dn42-usman
-  port: 21869
-  remote: fr-lil1.dn42.usman.network:21080
-  wg_pubkey: qwjXj/6R9ThUnqeOAYN+MxM6CbIgzjS8WFDdXuyEpHY=
-  peer_v4: null
-  peer_v6: fe80::1869
+  remove: true
 
 - name: dn42-atolm
   peer_v4: null
@@ -105,25 +94,10 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_lon
 
 - name: dn42-scooter
-  port: 23856
-  remote: lon-uk.dn42.ca:21080
-  wg_pubkey: 7xvugzmlWteydIZnvNls/ZwoA2Acvd7Uq5FO66KSPFg=
-  peer_v4: 172.23.109.171
-  peer_v6: fd38:cfa3:7091:2::1
-  local_v4: 172.20.229.116
-  local_v6: fd86:bad:11b7:116::1
-  wg_privkey: /etc/wireguard/privatekey_lon
+  remove: true
 
 - name: dn42-nyabla
-  port: 20850
-  remote: meow.nyabla.net:21080
-  wg_pubkey: sRUVGY3OjySTLefDVYnSBItdjNZSAUdvG+P8vBNWdBg=
-  peer_v4: null
-  peer_v6: fe80::0850
-  local_v4: 172.20.229.116
-  local_v6: fe80::116
-  wg_privkey: /etc/wireguard/privatekey_lon
-# end migrated from lon
+  remove: true
 
 - name: dn42ams-jrb0001
   port: 50119
@@ -154,11 +128,7 @@ wg_peers:
   peer_v6: "fe80::fcde:3558"
 
 - name: dn42osl-yurui
-  port: 52330
-  remote: "osl01.kn.node.argonauts.xyz:51080"
-  wg_pubkey: "POZ2ZRRPbQtfcb1d0eiNeKlBVqJiYFQ4/naY/xfkfDQ="
-  peer_v4: "172.23.32.3"
-  peer_v6: "fe80::2330:1"
+  remove: true
 
 - name: dn42ams-mayli
   port: 51123
@@ -195,11 +165,7 @@ wg_peers:
   peer_v6: "fe80::2331"
 
 - name: dn42mow-dgy
-  port: 20826
-  remote: "ru.dn42.dgy.xyz:21080"
-  wg_pubkey: "Y8E2cd2DKr7hZ3qs1WgU+2l+qWHaOxw4vFPAGevpiW0="
-  peer_v4: null
-  peer_v6: "fe80::826"
+  remove: true
 
 - name: dn42-hujk
   peer_v4: null
@@ -265,17 +231,7 @@ wg_peers:
   wg_pubkey: QqcsQ6gRaK0ZxRskCxWoNeV2vd53/9IW/XfwjMMSjk8=
 
 - name: dn42-oscrx
-  peer_v4: null
-  peer_v6: fd69:420:cafe::1
-  port: 23818
-  remote: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    63333136613963363534326231666332316138653639663733333565393064613735323630383137
-    3664626230386532613166613633383162653564333032350a646563303338306564643637396333
-    38326334316236343638333866343135366163373039306636323136633534333936666361646638
-    3831356636613937610a623630613633653032333561336636623937303535393834663332353962
-    37326236393661643637356430373931396530656665386534373137326166383464
-  wg_pubkey: UDn35z45Uh9DxDL6zrHmFChjV0sYWlyPrwjUFe8ofTU=
+  remove: true
 
 - name: dn42-tmnet
   peer_v4: null
@@ -305,11 +261,7 @@ wg_peers:
   peer_v6: fe80::3035:138
 
 - name: dn42-yukino
-  port: 21255
-  remote: dn42-nl-ams2.acgcl.net:31080
-  wg_pubkey: jFePS+PHWK96lvbhPo5QrC6VoPwv5qSOmsT4OVOopi0=
-  peer_v4: null
-  peer_v6: fe80::1080
+  remove: true
 
 - name: dn42-ventilaar
   port: 22246
@@ -326,11 +278,7 @@ wg_peers:
   peer_v6: fe80::9680:64
 
 - name: dn42-stetsed
-  port: 23709
-  remote: dn42-nl.selfhostable.net:51080
-  wg_pubkey: cfV8qAhHcqootASac7fj86Lr6zf+3tW4Xa8tJeBxuUE=
-  peer_v4: null
-  peer_v6: fe80::3709
+  remove: true
 
 - name: dn42-duckl1ng
   port: 22417
