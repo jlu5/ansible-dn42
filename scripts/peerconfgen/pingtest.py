@@ -25,7 +25,7 @@ def get_rtt(api_url, target, timeout=30):
     match = _PING_RE.match(lastline)
     if not match:
         raise PingTestError(f"Could not read latency from {lastline!r}")
-    return match.group('avgrtt')
+    return float(match.group('avgrtt'))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
