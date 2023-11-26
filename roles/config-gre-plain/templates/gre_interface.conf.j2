@@ -10,7 +10,7 @@ iface {{ ifname }} inet tunnel
 {%- set dns_record_type = "A" %}
     local {{ ansible_default_ipv4.address }}
 {% endif %}
-{% if peer_info.remote | ipaddr %}
+{% if peer_info.remote | ansible.utils.ipaddr %}
     endpoint {{ peer_info.remote }}
 {% else %}
     endpoint {{ lookup('community.general.dig', peer_info.remote, 'qtype=' + dns_record_type) }}

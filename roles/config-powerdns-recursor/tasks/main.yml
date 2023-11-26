@@ -39,8 +39,8 @@
       query-local-address: "0.0.0.0,::"
 
       # Translate addresses from CIDR into raw IP form as needed
-      local-address: "{{ ((dummy_interfaces.anycast_recursors.ip4 | ipaddr('address')) | default([], true)
-                          + (dummy_interfaces.anycast_recursors.ip6 | ipaddr('address')) | default([], true)
+      local-address: "{{ ((dummy_interfaces.anycast_recursors.ip4 | ansible.utils.ipaddr('address')) | default([], true)
+                          + (dummy_interfaces.anycast_recursors.ip6 | ansible.utils.ipaddr('address')) | default([], true)
                           + ['127.0.0.1', '[0::1]', ownip, ownip6])
                           | join(', ') }}"
 

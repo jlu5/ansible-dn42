@@ -13,8 +13,8 @@
 {%- set local_v4 = link_local_ip4 %}
 {% endif %}
 {# Rewrite single IP addresses as a /32, but leave netblocks of other sizes as is #}
-{% if local_v4 | ipaddr('address') %}
-{% set local_v4 = local_v4 | ipaddr('host') %}
+{% if local_v4 | ansible.utils.ipaddr('address') %}
+{% set local_v4 = local_v4 | ansible.utils.ipaddr('host') %}
 {% endif %}
 
 auto {{ ifname }}
