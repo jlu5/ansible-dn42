@@ -360,3 +360,11 @@ wg_peers:
   wg_pubkey: SbClSKsHH7k95zwmMhSL5ob76CUpZhIt5IYn8H5tEi8=
   peer_v4: null
   peer_v6: fe80::2308
+
+- name: dn42-sunnet
+  port: 23088
+  remote: ams1-nl.dn42.6700.cc:23088
+  wg_pubkey: AgXewx4akBG9QI9ClbJMcflmDY1rsdOslRTI/CL4PHk=
+  peer_v4: null
+  peer_v6: fe80::3088:204
+  local_v6: fe80::abcd
