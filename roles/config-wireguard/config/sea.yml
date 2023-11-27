@@ -90,7 +90,7 @@ wg_peers:
 
 - name: dn42-kiyomi
   port: 21350
-  remote: sea.jvav.life:21080
+  remote: sea.jvav.tech:21080
   wg_pubkey: k6RlAqY+CXvC7Kogys1U9solqYhFmXt+Ykzdmiat0W8=
   peer_v4: 172.20.39.81
   peer_v6: fe80::1350
