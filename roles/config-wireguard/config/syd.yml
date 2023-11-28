@@ -47,3 +47,10 @@ wg_peers:
   wg_pubkey: wgCrE2lSvrfctVSngdHo6iAT/RRK7gNldJcFIFKi/Go=
   peer_v4: null
   peer_v6: fe80::207
+
+- name: dn42-jack
+  port: 22971
+  remote: syd01.dn42.jackscott.xyz:51080
+  wg_pubkey: 5b/QZxY2406E+it3M7k1r7jOzs7a0sogz47faHfCblc=
+  peer_v4: 172.23.159.65
+  peer_v6: fe80::2971:1
