@@ -82,12 +82,31 @@
 -A INPUT -p tcp --dport 53 -i cl+ -j ACCEPT
 {% endif %}
 
+{% if iftype == 6 -%}
+{% set _allowed_ips = 'fd00::/8,ff00::/8,fe80::/64' %}
+{% else %}
+{% set _allowed_ips = '172.20.0.0/14,10.0.0.0/8,172.31.0.0/16' %}
+{% endif -%}
+
+# Block non-dn42 source IPs from going through tunnels (prevent IP spoofing)
+-N DN42INGRESSFILTER
+-A INPUT -i dn42+ -j DN42INGRESSFILTER
+-A INPUT -i igp+ -j DN42INGRESSFILTER
+-A INPUT -i cl+ -j DN42INGRESSFILTER
+-A FORWARD -i dn42+ -j DN42INGRESSFILTER
+-A FORWARD -i igp+ -j DN42INGRESSFILTER
+-A FORWARD -i cl+ -j DN42INGRESSFILTER
+
+-A DN42INGRESSFILTER -s {{ _allowed_ips }} -j RETURN
+-A DN42INGRESSFILTER -m limit --limit 5/min -j LOG --log-prefix "[dn42] BAD SRC IP " --log-level 4
+-A DN42INGRESSFILTER -j REJECT
+
 # Allow forwarding between dn42 and IGP links
 -A FORWARD -i dn42+ -o dn42+ -j ACCEPT
 -A FORWARD -i igp+ -o igp+ -j ACCEPT
 -A FORWARD -i igp+ -o dn42+ -j ACCEPT
 -A FORWARD -i dn42+ -o igp+ -j ACCEPT
--A FORWARD -i dn42+ -m limit --limit 5/min -j LOG --log-prefix "[dn42] POLICY VIOLATION" --log-level 4
+-A FORWARD -i dn42+ -m limit --limit 5/min -j LOG --log-prefix "[dn42] BAD DST IFACE " --log-level 4
 -A FORWARD -i dn42+ -j REJECT
 
 # Clients: only allow outgoing connections to the rest of dn42
