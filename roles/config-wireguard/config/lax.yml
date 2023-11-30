@@ -1,5 +1,5 @@
 wg_peers:
-- name: dn42lax-kioubit
+- name: dn42-kioubit
   port: 53914
   remote: "us3.g-load.eu:21080"
   wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
@@ -7,45 +7,35 @@ wg_peers:
   peer_v6: "fe80::ade0"
   local_v6: "fe80::ade1"
 
-- name: dn42lax-zhaofen
+- name: dn42-zhaofeng
   port: 51926
   remote: "[2a06:e881:5502::1]:21080"
   wg_pubkey: "7/7eZZGr8S5qR+bkKaQdQQBSopjcx2xLpOM7Edw4UF4="
   peer_v4: "172.20.16.3"
   peer_v6: "fe80::1926:1"
 
-- name: dn42lax-ncw
+- name: dn42-nicholascw
   port: 51288
   remote: "lax2.sc00.org:21080"
   wg_pubkey: "PGTK1pzAYtSGoaPYfpEBCwm3S3gYAra3WkSMtshFfW8="
   peer_v4: "172.20.233.131"
   peer_v6: "fe80::1288/64"
 
-- name: dn42lax-ykis
+- name: dn42-ykis
   port: 52021
   remote: "lax-node.ykis.moe:41080"
   wg_pubkey: "lDPGJPvwoD5PdaDhL0NgNEb1evJKr+qHworHmrCzrEE="
   peer_v4: "172.20.51.128"
   peer_v6: "fe80::2021"
 
-- name: dn42lax-hertz
-  port: 51353
-  remote: "45.63.56.229:21080"
-  wg_pubkey: "KhU1i+sGJKl4VNqQeuOraos8rEkfomV9w35K8lOmgns="
-  peer_v4: "172.20.29.65"
-  peer_v6: "fe80::1353"
-
-- name: dn42lax-testnet
-  remove: true
-
-- name: dn42lax-mayli
+- name: dn42-mayli
   port: 51123
   remote: "dn42.ccp.ovh:51080"
   wg_pubkey: "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI="
   peer_v4: "172.20.47.1"
   peer_v6: "fe80::1123"
 
-- name: dn42lax-dgy
+- name: dn42-dgy
   port: 20826
   remote: "la.dn42.dgy.xyz:21080"
   wg_pubkey: "IXjFALJFTr24HAhXKDsCnTRXmlc3kJHJiR4Nr44l5Uw="
@@ -73,29 +63,19 @@ wg_peers:
   remote: phoenix.us.dn42.yuzu.im:20247
   wg_pubkey: abDdEXgpaUNfEVPYLv1GTA+1TjkRbk5MNUi0fczYflw=
 
-- name: dn42lax-naiveto
+- name: dn42-naivetomca
   port: 23309
   remote: "lax.tsinghuamakerxian.cn:21080"
   wg_pubkey: "C9QViSndf1zga5nOoSoXXMLUWBJvEFiJDWSFCbU1Ynw="
   peer_v4: "172.23.163.161"
   peer_v6: "fe80::3309"
 
-- name: dn42-bling
-  remove: true
-
-- name: dn42lax-sunnet
+- name: dn42-sunnet
   port: 53088
   remote: "lax1-us.dn42.6700.cc:21080"
   wg_pubkey: "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo="
   peer_v4: "172.21.100.193"
   peer_v6: "fe80::3088:193/64"
-
-- name: dn42-northrend
-  port: 23192
-  remote: 98.167.160.248:21080
-  wg_pubkey: ppyDp+99L1DGXLn2KU0CuEaii9OdOrFd0+M4q0w5tAs=
-  peer_v4: null
-  peer_v6: fe80::3192:45
 
 - name: dn42-lare
   port: 23035
