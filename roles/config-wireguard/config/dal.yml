@@ -42,3 +42,11 @@ wg_peers:
   wg_pubkey: 8clbJPxK5ylOhFDNGdn/CL5zRWQdf7rXbLeF7j8czFI=
   peer_v4: null
   peer_v6: fe80::207
+
+- name: dn42-gatuno
+  port: 20180
+  remote: "bokbok.gatuno.mx:50180"
+  wg_pubkey: "sORFj7pR8ZO1U4vZxmgq0ue9gGGNf8wdrgr7kb+CTBA="
+  peer_v4: "172.22.122.15"
+  peer_v6: "fd42:470:f0ef:307::1/64"
+  local_v6: "fd42:470:f0ef:307::2/64"
