@@ -1,9 +1,3 @@
 ovpn_peers:
 - name: dn42-scoopta
-  port: 21197
-  proto: udp6
-  peer_v4: null
-  peer_v6: fd2e:9fea:c7ed:ffff::3
-  local_v6: fd2e:9fea:c7ed:ffff::2
-  ovpn_cipher: aes-256-cbc
-  ovpn_options: []
+  remove: true
