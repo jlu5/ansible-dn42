@@ -21,21 +21,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -84.387982,
-                    33.748995
-                ]
-            },
-            "properties": {
-                "title": "Atlanta, GA, US",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     26.102538,
                     44.426767
                 ]
@@ -66,6 +51,21 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.796988,
+                    32.776664
+                ]
+            },
+            "properties": {
+                "title": "Dallas, TX, US",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     8.682127,
                     50.110922
                 ]
@@ -81,14 +81,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -94.578567,
-                    39.099727
+                    -115.13983,
+                    36.169941
                 ]
             },
             "properties": {
-                "title": "Kansas City, MO, US",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+                "title": "Las Vegas, NV, US",
+                "description": "- LITE node, NO Anycast DNS<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
             }
         },
         {
@@ -96,12 +96,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -115.13983,
-                    36.169941
+                    -118.243685,
+                    34.052234
                 ]
             },
             "properties": {
-                "title": "Las Vegas, NV, US",
+                "title": "Los Angeles, CA, US",
                 "description": "- LITE node, NO Anycast DNS<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
             }
@@ -132,21 +132,6 @@
             },
             "properties": {
                 "title": "Montreal, QC, CA",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -121.886329,
-                    37.338208
-                ]
-            },
-            "properties": {
-                "title": "San Jose, CA, US",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
@@ -207,6 +192,21 @@
             },
             "properties": {
                 "title": "Sydney, AU",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.458753,
+                    27.95169
+                ]
+            },
+            "properties": {
+                "title": "Tampa, FL, US",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
