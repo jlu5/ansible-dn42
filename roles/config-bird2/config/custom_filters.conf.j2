@@ -104,7 +104,11 @@ function handle_special_cases()
 
     # Pin non-transit, non-anycast routes for certain networks to EU
     if (!is_anycast && DN42_REGION != 41 && bgp_path ~ [= * [4242421411] =]) then {
-         bgp_med = bgp_med + 20;
+        bgp_med = bgp_med + 20;
+    }
+    # Pin non-transit routes for certain networks to APAC
+    if (DN42_REGION != 52 && DN42_REGION != 51 && bgp_path ~ [= * [4201270000] =]) then {
+        bgp_med = bgp_med + 20;
     }
 
     # Read "route learned in region X" communities from networks that export them
