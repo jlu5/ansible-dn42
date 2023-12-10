@@ -14,7 +14,6 @@ $TTL 300
 127 IN PTR peers-nodeid-127.sgp.highdef.dn42.
 114 IN PTR sea.rtr.highdef.dn42.
 122 IN PTR lax.rtr.highdef.dn42.
-126 IN PTR las.rtr.highdef.dn42.
 113 IN PTR chi.rtr.highdef.dn42.
 123 IN PTR ymq.rtr.highdef.dn42.
 119 IN PTR tpa.rtr.highdef.dn42.

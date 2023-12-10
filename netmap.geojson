@@ -81,29 +81,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -115.13983,
-                    36.169941
-                ]
-            },
-            "properties": {
-                "title": "Las Vegas, NV, US",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -118.243685,
                     34.052234
                 ]
             },
             "properties": {
                 "title": "Los Angeles, CA, US",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {

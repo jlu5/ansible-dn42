@@ -6,8 +6,6 @@ wg_peers:
   local_v4: 172.22.108.78/31
   peer_v6: fe80::e545:cd0:1641:bc4e
 
-- name: igp-glass
-  remove: true
 - name: igp-stub-glass
   port: 19998
   wg_pubkey: qqFf8jOa55jQT5R013iOStnaklrB9mHrVNCerLXhcg0=
@@ -87,9 +85,3 @@ wg_peers:
   wg_pubkey: 89xUzROs3l/KNPLxDTJz4l5aEH1cmLb22bNgChhRiQo=
   peer_v4: null
   peer_v6: fe80::207
-
-- name: dn42-c4tg
-  remove: true
-
-- name: dn42-bandura
-  remove: true
