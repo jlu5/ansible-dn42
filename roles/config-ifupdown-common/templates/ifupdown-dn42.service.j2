@@ -9,8 +9,6 @@ WantedBy=multi-user.target
 [Service]
 Type=oneshot
 ExecStart=/sbin/ifup -a --ignore-errors --interfaces={{ _ifupdown_dn42_iface_file }}
-ExecStartPost=-/opt/dn42/iprules.py add /opt/dn42/iprules.txt /opt/dn42/iprules6.txt
 ExecStop=/sbin/ifdown -a --ignore-errors --interfaces={{ _ifupdown_dn42_iface_file }}
-ExecStopPost=-/opt/dn42/iprules.py del /opt/dn42/iprules.txt /opt/dn42/iprules6.txt
 RemainAfterExit=true
 TimeoutStartSec=5min
