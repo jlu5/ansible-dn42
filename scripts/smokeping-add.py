@@ -38,7 +38,6 @@ def scrape_ips(url, force_dns=False):
         url = 'http://' + url
     dns_results = {ipaddress.ip_address(entry[-1][0]) for entry in socket.getaddrinfo(netloc, 80)}
     print(dns_results)
-    r = requests.get(url, timeout=10)
 
     ipv4 = ipv6 = None
     if force_dns:
@@ -51,6 +50,7 @@ def scrape_ips(url, force_dns=False):
                 ipv6 = netloc
         return ipv4, ipv6
 
+    r = requests.get(url, timeout=10)
     for m_ipv4 in IP4_RE.finditer(r.text):
         ipv4 = m_ipv4.group(0)
         ipaddr = ipaddress.ip_address(ipv4)
