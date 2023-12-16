@@ -231,3 +231,10 @@ wg_peers:
   wg_pubkey: /EDDHZQrfLv9XeKMYOp8XdEFEB9ml3BE/YwV5UhN5W0=
   peer_v4: null
   peer_v6: fe80::426f
+
+- name: dn42-c4tg
+  port: 21411
+  remote: kaeru.catgirls.systems:21080
+  wg_pubkey: o5li7EO9pSR0DaUoykcsnOlw8nhOQWJNFVCyJ7Z66CI=
+  peer_v4: null
+  peer_v6: fe80::1411:6
