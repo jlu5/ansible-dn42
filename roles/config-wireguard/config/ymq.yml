@@ -29,10 +29,10 @@ wg_peers:
 
 - name: dn42bhs-burble
   port: 22601
-  remote: "dn42-ca-bhs2.burble.com:21080"
-  wg_pubkey: "gBePwGDpyxzsehvP9TZVB/XHgmS8tgv7oWtAru4K8iQ="
-  peer_v4: "172.20.129.167"
-  peer_v6: "fd42:4242:2601:2d::1/128"
+  remote: "dn42-us-nyc1.burble.com:21080"
+  wg_pubkey: "2mKKhhA5gz/rtIPtbz9b5wG6g5r4cdIYC/3/6My1SAw="
+  peer_v4: null
+  peer_v6: "fe80::42:2601:29:1"
 
 ### legacy configurations from ca-bhs01
 - name: dn42bhs-grmml
