@@ -5,19 +5,30 @@ domains:
   records:
     geo.utopia-repository.org:
       - soa: ns1.utopia-repository.org webmaster.overdrivenetworks.com 1 7200 2400 86400 3600
+      # TODO add NS records here
 
     eu.deb.geo.utopia-repository.org: &europe
       - cname: deb2.utopia-repository.org
     af.deb.geo.utopia-repository.org: *europe
 
-    na.deb.geo.utopia-repository.org: &na
-      - cname: deb-master.utopia-repository.org
-    sa.deb.geo.utopia-repository.org: *na
-    an.deb.geo.utopia-repository.org: *na
-    oc.deb.geo.utopia-repository.org: *na
-    as.deb.geo.utopia-repository.org: *na
+    na.deb.geo.utopia-repository.org: &na-round-robin
+      - cname:
+          content: deb0.utopia-repository.org
+          weight: 50
+      - cname:
+          content: deb1.utopia-repository.org
+          weight: 50
+    sa.deb.geo.utopia-repository.org: &na-east
+      - cname: deb1.utopia-repository.org
+    oc.deb.geo.utopia-repository.org: &na-west
+      - cname: deb0.utopia-repository.org
+    sg.as.deb.geo.utopia-repository.org: *europe
+    as.deb.geo.utopia-repository.org: *na-west
+    an.deb.geo.utopia-repository.org: *na-west
 
   services:
     # I originally wanted to omit the extra "deb.", but GeoDNS on the apex domain is not yet supported:
     # see https://github.com/PowerDNS/pdns/issues/9341
-    deb.geo.utopia-repository.org: '%cn.deb.geo.utopia-repository.org'
+    deb.geo.utopia-repository.org:
+    - '%cc.%cn.deb.geo.utopia-repository.org'
+    - '%cn.deb.geo.utopia-repository.org'
