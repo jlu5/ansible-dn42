@@ -53,7 +53,7 @@ wg_peers:
 
 - name: dn42-imlonghao
   port: 21888
-  remote: us3.dn42.ni.sb:21080
+  remote: null
   wg_pubkey: dAL/VWmLLXKhum3S82INvBmXizID6/51RgdGBkD/M1g=
   wg_mtu: 1296
   peer_v4: 172.22.68.0
