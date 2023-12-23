@@ -50,3 +50,10 @@ wg_peers:
   wg_pubkey: u9NcC04pptIt8ELgSrxZjHRKARvjfiaJuVR/rsdtYHE=
   peer_v4: 172.23.132.130
   peer_v6: fe80::2354
+
+- name: dn42-jmliber
+  port: 22282
+  remote: gw-endpoint.jksandbox.co:51820
+  wg_pubkey: GBGufdJ6cOgIN8qc9SfJ/vp0KmZRA7U4fOAImTft7lI=
+  peer_v4: null
+  peer_v6: fe80::fd01
