@@ -81,6 +81,21 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    114.169361,
+                    22.319304
+                ]
+            },
+            "properties": {
+                "title": "Hong Kong, HK",
+                "description": "- LITE node, NO Anycast DNS<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -118.243685,
                     34.052234
                 ]
