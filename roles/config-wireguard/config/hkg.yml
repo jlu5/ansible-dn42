@@ -50,3 +50,10 @@ wg_peers:
   port: 23632
   remote: achacha.link.melty.land:21080
   wg_pubkey: 7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=
+
+- name: dn42-sernet
+  port: 23947
+  remote: ipv4.hk1.sherpherd.top:21080
+  wg_pubkey: c1ohwuTISEj1s9Tipo7P52EMffL6uZpCncz0/6WGzU8=
+  peer_v4: null
+  peer_v6: fe80::3947:1
