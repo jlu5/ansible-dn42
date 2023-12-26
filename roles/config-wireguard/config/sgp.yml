@@ -115,11 +115,7 @@ wg_peers:
   peer_v6: fe80::1660
 
 - name: dn42-sernet
-  port: 23947
-  remote: 47.242.165.101:21080
-  wg_pubkey: c1ohwuTISEj1s9Tipo7P52EMffL6uZpCncz0/6WGzU8=
-  peer_v4: null
-  peer_v6: fe80::3947:1
+  remove: true
 
 - name: dn42-routedbits
   port: 20207
