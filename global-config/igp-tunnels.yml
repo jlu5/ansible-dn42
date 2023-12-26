@@ -74,6 +74,7 @@ igp_neighbours:
     hkg: null
     lax: null
     sjc: null
+    syd: null
     tyo: null
   sjc: !!set
     ams: null
@@ -89,6 +90,7 @@ igp_neighbours:
     hkg: null
     lax: null
     sea: null
+    sgp: null
     sjc: null
     tyo: null
   tpa: !!set
