@@ -316,3 +316,10 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::3088:204
   local_v6: fe80::abcd
+
+- name: dn42-colby
+  port: 22558
+  remote: nl-ams1.dn42.derix.au:21080
+  wg_pubkey: aEnSuSUB3ZCrryPAIJxBtH6ZcNgCSeW+dMEceEbiflo=
+  peer_v4: null
+  peer_v6: fe80::2558:4

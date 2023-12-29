@@ -54,3 +54,10 @@ wg_peers:
   wg_pubkey: 5b/QZxY2406E+it3M7k1r7jOzs7a0sogz47faHfCblc=
   peer_v4: 172.23.159.65
   peer_v6: fe80::2971:1
+
+- name: dn42-colby
+  port: 22558
+  remote: au-syd1.dn42.derix.au:21080
+  wg_pubkey: Lhg2KWIFATOatdf/qLyTmAs0XEImX2oPzqoZKCMMlw8=
+  peer_v4: null
+  peer_v6: fe80::2558:1
