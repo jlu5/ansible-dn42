@@ -26,7 +26,9 @@ server {{ peer_info['server'] | ansible.utils.ipaddr('network') }} {{ peer_info[
 ifconfig {{ peer_info.get('local_v4', ownip) }} {{ peer_info['peer_v4'] }}
 {% endif %}
 {% if peer_info['peer_v6'] %}
-ifconfig-ipv6 {{ peer_info.get('local_v6', ownip6) }} {{ peer_info['peer_v6'] }}
+{% set _use_link_local_v6 = peer_info['peer_v6'].lower().startswith('fe80:') %}
+{% set _default_local_v6 = link_local_ip6 if _use_link_local_v6 else ownip6 %}
+ifconfig-ipv6 {{ peer_info.get('local_v6', _default_local_v6) }} {{ peer_info['peer_v6'] }}
 {% endif %}
 
 {%- endif %}
