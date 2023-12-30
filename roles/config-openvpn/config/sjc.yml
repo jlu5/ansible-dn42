@@ -3,7 +3,6 @@ ovpn_peers:
   port: 21197
   proto: udp6
   peer_v4: null
-  peer_v6: fd2e:9fea:c7ed:ffff::3
-  local_v6: fd2e:9fea:c7ed:ffff::2
+  peer_v6: fe80::1197
   ovpn_cipher: aes-256-cbc
   ovpn_options: []
