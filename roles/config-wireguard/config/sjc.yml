@@ -132,3 +132,10 @@ wg_peers:
   wg_pubkey: yZvBa83e7ywrZearK1nuAL37gVY1vbVBWbRdIj7HVEo=
   peer_v4: null
   peer_v6: fe80::207
+
+- name: dn42-gshapiro
+  port: 22446
+  remote: null
+  wg_pubkey: UKNt4zqqUR4hYVlst5sGYMi/pQDETUn6/fFG94mmU0w=
+  local_v4: 169.254.42.9/30
+  peer_v6: fe80::2e2:69ff:fe51:12f7
