@@ -323,3 +323,10 @@ wg_peers:
   wg_pubkey: aEnSuSUB3ZCrryPAIJxBtH6ZcNgCSeW+dMEceEbiflo=
   peer_v4: null
   peer_v6: fe80::2558:4
+
+- name: dn42-mubibai
+  port: 22358
+  remote: nl.dn42.mubibai.com:21080
+  wg_pubkey: m0jX4ToX8EaPc+wpAhekDisuW4j6TOIc7doukrXStTU=
+  peer_v4: 172.23.199.162
+  peer_v6: fe80::1:2358
