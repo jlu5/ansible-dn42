@@ -74,3 +74,19 @@ server {
         index index-dn42.html;
     }
 }
+
+{% if inventory_hostname in groups['webtrace'] %}
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    ssl_trusted_certificate /etc/letsencrypt/live/{{ ansible_host }}/chain.pem;
+    ssl_certificate /etc/letsencrypt/live/{{ ansible_host }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ ansible_host }}/privkey.pem;
+
+    server_name {{ dns_domain }};
+    server_name *.{{ dns_domain }};
+
+    return 302 http://$host$request_uri;
+}
+{% endif %}
