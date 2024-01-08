@@ -77,20 +77,33 @@ menu = AS64719 search.dn42 (IPv6)
 title = search.dn42 [AS64719]
 host = search.dn42
 
-++ ff3l_dns
+++ ff3l_dns-0
 menu = AS65043 ff3l DNS
-title = ff3l DNS [10.119.0.5] [AS65043]
-host = 10.119.0.5
+title = ff3l DNS [10.119.0.4] [AS65043]
+host = 10.119.0.4
 
 ++ xuu_ca_dn42
 menu = AS64737 ca.dn42
-title = ca.dn42 [AS64752]
+title = ca.dn42 [AS64737]
 host = ca.dn42
 ++ xuu_ca_dn42_v6
 probe = FPing6
 menu = AS64737 ca.dn42 (IPv6)
-title = ca.dn42 (IPv6) [AS64752]
+title = ca.dn42 (IPv6) [AS64737]
 host = ca.dn42
+
+{% for server in ['rakta.fra', 'lavana.sjc', 'kapha.mtr'] %}
+{% set _server_name = server.split('.')[0] %}
+++ xuu_dns_{{ _server_name }}
+menu = AS64737 XUU DNS ({{ _server_name }})
+title = {{ server }}.xuu.dn42 [AS64737]
+host = {{ server }}.xuu.dn42
+++ xuu_dns_{{ _server_name }}_v6
+probe = FPing6
+menu = AS64737 XUU DNS ({{ _server_name }}) (IPv6)
+title = {{ server }}.xuu.dn42 (IPv6) [AS64737]
+host = {{ server }}.xuu.dn42
+{% endfor %}
 
 ++ hackint_irc
 menu = AS4242420101 hackint IRC
@@ -112,6 +125,33 @@ menu = AS4242420197 acme.dn42 (IPv6)
 title = acme.dn42 [AS4242420197]
 host = acme.dn42
 
+++ vr18
+menu = AS4242420705 vr18 radio
+title = radio.vr18.dn42 [AS4242420705]
+host = radio.vr18.dn42
+
+++ social_dn42
+menu = AS4242420949 social.dn42
+title = social.dn42 [AS4242420949]
+host = social.dn42
+
+++ social_dn42_v6
+probe = FPing6
+menu = AS4242420949 social.dn42 (IPv6)
+title = social.dn42 Pleroma (IPv6) [AS4242420949]
+host = social.dn42
+
+++ urandom_catgirls_dn42
+menu = AS4242421411 urandom.catgirls.dn42
+title = urandom.catgirls.dn42 message board [AS4242421411]
+host = urandom.catgirls.dn42
+
+++ urandom_catgirls_dn42_v6
+probe = FPing6
+menu = AS4242421411 urandom.catgirls.dn42 (IPv6)
+title = urandom.catgirls.dn42 message board (IPv6) [AS4242421411]
+host = urandom.catgirls.dn42
+
 ++ map_dn42
 menu = AS4242422189 map.dn42
 title = map.dn42 [AS4242422189]
@@ -121,6 +161,11 @@ probe = FPing6
 menu = AS4242422189 map.dn42 (IPv6)
 title = map.dn42 (IPv6) [AS4242422189]
 host = map.dn42
+
+++ munsternet
+menu = AS4242422237 munsternet
+title = munsternet jellyfin [j.munsternet.dn42]
+host = j.munsternet.dn42
 
 ++ grc_v4
 menu = AS4242422601 dn42 GRC
