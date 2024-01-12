@@ -4,210 +4,158 @@ title = dn42 Services
 
 {% include 'targets/dn42-dns.conf.j2' %}
 
-++ wiki_dn42
-menu = ANYCAST dn42 Wiki
-title = dn42 Wiki [wiki.dn42] [anycast]
-host = wiki.dn42
+{% import 'smokeping-helpers.j2' as helpers %}
+{% set dn42_dests = {
+    'wiki_dn42': {
+        'desc': 'dn42 Wiki',
+        'host': 'wiki.dn42'
+    },
+    'wiki-ng': {
+        'host': 'wiki-ng.dn42'
+    },
+    'whois': {
+        'host': 'whois.dn42'
+    },
+    'neo_dns': {
+        'desc': 'NeoNetwork DNS',
+        'host4': '10.127.255.54',
+        'host6': 'fd10:127:53:53::'
+    },
+    'myip': {
+        'host': 'myip.dn42'
+    },
+    'chaosvpn_index': {
+        'asn': 64654,
+        'desc': 'ChaosVPN Index',
+        'host4': '172.31.2.1',
+    },
+    'chaosvpn_dns': {
+        'asn': 64654,
+        'desc': 'ChaosVPN DNS',
+        'host4': '172.31.0.5',
+    },
+    'search_dn42': {
+        'asn': 64719,
+        'host': 'search.dn42',
+    },
+    'ff3l_dns-0': {
+        'asn': 65043,
+        'desc': 'ff3l DNS',
+        'host4': '10.119.0.4',
+    },
+    'xuu_ca_dn42': {
+        'asn': 64737,
+        'host': 'ca.dn42',
+    },
+    'xuu_dns_rakta': {
+        'asn': 64737,
+        'desc': 'XUU DNS (rakta)',
+        'host': 'rakta.fra.xuu.dn42',
+    },
+    'xuu_dns_lavana': {
+        'asn': 64737,
+        'desc': 'XUU DNS (lavana)',
+        'host': 'lavana.sjc.xuu.dn42',
+    },
+    'xuu_dns_kapha': {
+        'asn': 64737,
+        'desc': 'XUU DNS (kapha)',
+        'host': 'kapha.mtr.xuu.dn42',
+    },
+    'hackint_irc': {
+        'asn': 4242420101,
+        'desc': 'hackint IRC',
+        'host4': '172.20.66.67',
+        'host6': 'fd42:d42:d42:6667::1',
+    },
+    'acme_dn42': {
+        'asn': 4242420197,
+        'host': 'acme.dn42',
+    },
+    'vr18': {
+        'asn': 4242420705,
+        'desc': 'vr18 radio',
+        'host4': 'radio.vr18.dn42',
+    },
+    'social_dn42': {
+        'asn': 4242420949,
+        'host': 'social.dn42',
+    },
+    'urandom': {
+        'asn': 4242421411,
+        'desc': 'urandom msg board',
+        'host': 'urandom.catgirls.dn42',
+    },
+    'tech9': {
+        'asn': 4242421588,
+        'desc': 'tech9 LG',
+        'host': 'lg.tech9computers.dn42',
+    },
+    'kskb': {
+        'asn': 4242421817,
+        'host': 'ns.kskb.dn42',
+    },
+    'map_dn42': {
+        'asn': 4242422189,
+        'host': 'map.dn42',
+    },
+    'munsternet-j': {
+        'asn': 4242422237,
+        'desc': 'munsternet',
+        'host6': 'j.munsternet.dn42',
+    },
+    'grc': {
+        'asn': 4242422601,
+        'desc': 'dn42 GRC',
+        'host': 'collector.dn42',
+    },
+    'hujk': {
+        'asn': 4242422717,
+        'host': 'ns.hujk.dn42',
+    },
+    'bandura': {
+        'asn': 4242422923,
+        'desc': 'bgplookup',
+        'host': 'bgplookup.bandura.dn42',
+    },
+    'crxn_dns': {
+        'asn': 4242423182,
+        'desc': 'CRXN DNS',
+        'host6': 'fd92:58b6:2b2::54',
+    },
+    'kioubit': {
+        'asn': 4242423914,
+        'host': 'kioubit.dn42',
+    },
+    'jerry_map': {
+        'asn': 4242423618,
+        'host': 'map.jerry.dn42',
+    },
+} %}
 
-++ wiki_dn42_v6
-probe = FPing6
-menu = ANYCAST dn42 Wiki (IPv6)
-title = dn42 Wiki (IPv6) [wiki.dn42] [anycast]
-host = wiki.dn42
+{% for entry_name, entry in dn42_dests.items() %}
+{% set _host4 = entry.get('host') or entry.get('host4') %}
+{% set _host6 = entry.get('host') or entry.get('host6') -%}
 
-++ wiki-ng
-menu = ANYCAST wiki-ng
-title = wiki-ng.dn42 [anycast]
-host = wiki-ng.dn42
-++ wiki-ng_v6
-probe = FPing6
-menu = ANYCAST wiki-ng (IPv6)
-title = wiki-ng.dn42 (IPv6) [anycast]
-host = wiki-ng.dn42
+{% if _host4 %}
+{{ helpers.smokeping_dn42_target(
+    entry_name,
+    _host4,
+    entry.get('desc', _host4),
+    entry.get('asn'),
+    false,
+    long_description=entry.get('desc'))
+}}
+{% endif -%}
 
-++ whois
-menu = ANYCAST whois.dn42
-title = whois.dn42 [anycast]
-host = whois.dn42
-
-++ whois_v6
-probe = FPing6
-menu = ANYCAST whois.dn42 (IPv6)
-title = whois.dn42 (IPv6) [anycast]
-host = whois.dn42
-
-++ neo_dns
-menu = ANYCAST NeoNetwork DNS
-title = NeoNetwork Recursive DNS [10.127.255.54] [anycast]
-host = 10.127.255.54
-
-++ neo_dns_v6_0
-probe = FPing6
-menu = ANYCAST NeoNetwork DNS (IPv6)
-title = NeoNetwork Recursive DNS [fd10:127:53:53::] [anycast]
-host = fd10:127:53:53::
-
-++ myip
-menu = ANYCAST myip.dn42
-title = myip.dn42 [anycast]
-host = myip.dn42
-++ myip_v6
-probe = FPing6
-menu = ANYCAST myip.dn42 (IPv6)
-title = myip.dn42 (IPv6) [anycast]
-host = myip.dn42
-
-++ chaosvpn_index
-menu = AS64654 ChaosVPN Index
-title = ChaosVPN index at 172.31.2.1 [AS64654]
-host = 172.31.2.1
-
-++ chaosvpn_dns
-menu = AS64654 ChaosVPN DNS
-title = ChaosVPN DNS [172.31.0.5] [AS64654]
-host = 172.31.0.5
-
-++ search_dn42
-menu = AS64719 search.dn42
-title = search.dn42 [AS64719]
-host = search.dn42
-++ search_dn42_v6
-probe = FPing6
-menu = AS64719 search.dn42 (IPv6)
-title = search.dn42 [AS64719]
-host = search.dn42
-
-++ ff3l_dns-0
-menu = AS65043 ff3l DNS
-title = ff3l DNS [10.119.0.4] [AS65043]
-host = 10.119.0.4
-
-++ xuu_ca_dn42
-menu = AS64737 ca.dn42
-title = ca.dn42 [AS64737]
-host = ca.dn42
-++ xuu_ca_dn42_v6
-probe = FPing6
-menu = AS64737 ca.dn42 (IPv6)
-title = ca.dn42 (IPv6) [AS64737]
-host = ca.dn42
-
-{% for server in ['rakta.fra', 'lavana.sjc', 'kapha.mtr'] %}
-{% set _server_name = server.split('.')[0] %}
-++ xuu_dns_{{ _server_name }}
-menu = AS64737 XUU DNS ({{ _server_name }})
-title = {{ server }}.xuu.dn42 [AS64737]
-host = {{ server }}.xuu.dn42
-++ xuu_dns_{{ _server_name }}_v6
-probe = FPing6
-menu = AS64737 XUU DNS ({{ _server_name }}) (IPv6)
-title = {{ server }}.xuu.dn42 (IPv6) [AS64737]
-host = {{ server }}.xuu.dn42
+{% if _host6 %}
+{{ helpers.smokeping_dn42_target(
+    entry_name + ('_v6' if _host4 else ''),
+    _host6,
+    entry.get('desc', _host6),
+    entry.get('asn'),
+    true,
+    long_description=entry.get('desc'))
+}}
+{% endif %}
 {% endfor %}
-
-++ hackint_irc
-menu = AS4242420101 hackint IRC
-title = hackint IRC [172.20.66.67] [AS4242420101]
-host = 172.20.66.67
-++ hackint_irc_v6
-probe = FPing6
-menu = AS4242420101 hackint IRC (IPv6)
-title = hackint IRC [fd42:d42:d42:6667::1] [AS4242420101]
-host = fd42:d42:d42:6667::1
-
-++ acme_dn42
-menu = AS4242420197 acme.dn42
-title = acme.dn42 [AS4242420197]
-host = acme.dn42
-++ acme_dn42_v6
-probe = FPing6
-menu = AS4242420197 acme.dn42 (IPv6)
-title = acme.dn42 [AS4242420197]
-host = acme.dn42
-
-++ vr18
-menu = AS4242420705 vr18 radio
-title = radio.vr18.dn42 [AS4242420705]
-host = radio.vr18.dn42
-
-++ social_dn42
-menu = AS4242420949 social.dn42
-title = social.dn42 [AS4242420949]
-host = social.dn42
-
-++ social_dn42_v6
-probe = FPing6
-menu = AS4242420949 social.dn42 (IPv6)
-title = social.dn42 Pleroma (IPv6) [AS4242420949]
-host = social.dn42
-
-++ urandom_catgirls_dn42
-menu = AS4242421411 urandom.catgirls.dn42
-title = urandom.catgirls.dn42 message board [AS4242421411]
-host = urandom.catgirls.dn42
-
-++ urandom_catgirls_dn42_v6
-probe = FPing6
-menu = AS4242421411 urandom.catgirls.dn42 (IPv6)
-title = urandom.catgirls.dn42 message board (IPv6) [AS4242421411]
-host = urandom.catgirls.dn42
-
-++ map_dn42
-menu = AS4242422189 map.dn42
-title = map.dn42 [AS4242422189]
-host = map.dn42
-++ map_dn42_v6
-probe = FPing6
-menu = AS4242422189 map.dn42 (IPv6)
-title = map.dn42 (IPv6) [AS4242422189]
-host = map.dn42
-
-++ munsternet
-menu = AS4242422237 munsternet
-title = munsternet jellyfin [j.munsternet.dn42]
-host = j.munsternet.dn42
-
-++ grc_v4
-menu = AS4242422601 dn42 GRC
-title = collector.dn42 [AS4242422601]
-host = collector.dn42
-++ grc_v6
-probe = FPing6
-menu = AS4242422601 dn42 GRC (IPv6)
-title = collector.dn42 [AS4242422601]
-host = collector.dn42
-
-++ bandura
-menu = AS4242422923 bgplookup
-title = bgplookup.bandura.dn42 [AS4242422923]
-host = bgplookup.bandura.dn42
-++ bandura_v6
-menu = AS4242422923 bgplookup (IPv6)
-title = bgplookup.bandura.dn42 (IPv6) [AS4242422923]
-host = bgplookup.bandura.dn42
-
-++ crxn_dns
-probe = FPing6
-menu = AS4242423182 CRXN DNS (IPv6)
-title = CRXN DNS (IPv6) [fd92:58b6:2b2::54] [AS4242423182]
-host = fd92:58b6:2b2::54
-
-++ kioubit
-menu = AS4242423914 kioubit.dn42
-title = kioubit.dn42 services [AS4242423914]
-host = kioubit.dn42
-++ kioubit_v6
-probe = FPing6
-menu = AS4242423914 kioubit.dn42 (v6)
-title = kioubit.dn42 services (IPv6) [AS4242423914]
-host = kioubit.dn42
-
-++ jerry_map
-menu = AS4242423618 map.jerry.dn42
-title = map.jerry.dn42 [AS4242423618]
-host = map.jerry.dn42
-++ jerry_map_v6
-probe = FPing6
-menu = AS4242423618 map.jerry.dn42 (v6)
-title = map.jerry.dn42 (IPv6) [AS4242423618]
-host = map.jerry.dn42

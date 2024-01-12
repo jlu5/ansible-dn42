@@ -1,9 +1,10 @@
-{% macro smokeping_dn42_target(name, host, short_description, asn, ipv6=false, level=2) %}
+{% macro smokeping_dn42_target(name, host, short_description=none, asn=none, ipv6=false, level=2, long_description=none) %}
 {{ "+" * level }} {{ name }}
 {% if ipv6 %}
 probe = FPing6
 {% endif %}
-menu = AS{{ asn }} {{ short_description }}{{ " (v6)" if ipv6 else "" }}
-title = {{ host }} {{ "(IPv6)" if ipv6 else "(IPv4)" }} [{{ asn }}]
+{% set asn_string = ('AS' + (asn | string)) if asn else 'ANYCAST' %}
+menu = {{ asn_string }} {{ short_description or host }}{{ " (v6)" if ipv6 else "" }}
+title = {{ '%s [%s]' % (long_description, host) if long_description else host }} {{ "(IPv6)" if ipv6 else "(IPv4)" }} [{{ asn_string }}]
 host = {{ host }}
 {% endmacro %}
