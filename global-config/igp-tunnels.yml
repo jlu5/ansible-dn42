@@ -86,6 +86,7 @@ igp_neighbours:
     syd: null
     tyo: null
     ymq: null
+    yvrpeer: null
   syd: !!set
     hkg: null
     lax: null
@@ -118,6 +119,7 @@ igp_neighbours:
     chi: null
     lax: null
     sea: null
+    sjc: null
 igp_wg_ports:
   ams:
     ams2: 30055
