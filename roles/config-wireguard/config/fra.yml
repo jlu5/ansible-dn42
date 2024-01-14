@@ -318,3 +318,10 @@ wg_peers:
   wg_pubkey: ElrOV7yaC9rCvMQfynsYpwM7yugWN0G9e0ToYMRk8i4=
   peer_v4: null
   peer_v6: fe80::620:1
+
+- name: dn42-oznoelr
+  port: 20816
+  remote: alpha.cassiopea-network.oznoelr.dev:51080
+  wg_pubkey: fOME1okgO4Gf689wQ7GhwazSgWhYnwItf0tScc9lgwA=
+  peer_v4: 172.21.114.129
+  peer_v6: fe80::118
