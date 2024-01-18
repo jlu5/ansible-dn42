@@ -143,6 +143,6 @@ wg_peers:
 - name: dn42-moraxyc
   port: 23011
   remote: us-sj1.dn42.moraxyc.com:21080
-  wg_pubkey: wVlbFGy+/9st41jvuICvAM56zVgGvDV5QXR+KigclBE=
+  wg_pubkey: eFZBQnpapXIAqkLq3s4x47M1ZE1b9cceqV1HiTbYlQI=
   peer_v4: null
   peer_v6: fe80::3011:12
