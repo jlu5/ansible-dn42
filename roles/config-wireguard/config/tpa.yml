@@ -1,7 +1,4 @@
 wg_peers:
-- name: dn42dal-gatuno
-  remove: true
-
 - name: dn42atl-napster
   port: 51050
   remote: atl1-us.dn42.napshome.net:51080

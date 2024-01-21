@@ -27,8 +27,6 @@ wg_peers:
   peer_v4: null
   peer_v6: "fe80::42:2237/128"
 
-- name: dn42bhs-burble
-  remove: true
 - name: dn42-burble
   port: 22601
   remote: "dn42-us-nyc1.burble.com:21080"

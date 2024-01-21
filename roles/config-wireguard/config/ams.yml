@@ -37,12 +37,6 @@ wg_peers:
   local_v6: fe80::116
   wg_privkey: /etc/wireguard/privatekey_lon
 
-- name: dn42rbx-serverm
-  remove: true
-
-- name: dn42-usman
-  remove: true
-
 - name: dn42-atolm
   peer_v4: null
   peer_v6: fe80::585
@@ -92,13 +86,6 @@ wg_peers:
   local_v4: 172.20.229.116
   local_v6: fd86:bad:11b7:116::1
   wg_privkey: /etc/wireguard/privatekey_lon
-
-- name: dn42-scooter
-  remove: true
-
-- name: dn42-nyabla
-  remove: true
-
 - name: dn42ams-jrb0001
   port: 50119
   remote: "95.179.134.138:21080"
@@ -126,9 +113,6 @@ wg_peers:
   wg_pubkey: "I68Jv8818pk2NX0GC8ul18095/iZ66XCxJuo/brk/Go="
   peer_v4: null
   peer_v6: "fe80::fcde:3558"
-
-- name: dn42osl-yurui
-  remove: true
 
 - name: dn42ams-mayli
   port: 51123
@@ -163,9 +147,6 @@ wg_peers:
   wg_pubkey: "22Yg+PozQDDJUufe2POaV/ron0wZ6LVznpMgrRZDAXI="
   peer_v4: null
   peer_v6: "fe80::2331"
-
-- name: dn42mow-dgy
-  remove: true
 
 - name: dn42-hujk
   peer_v4: null
@@ -230,9 +211,6 @@ wg_peers:
   remote: de1.dn42.est-it.de:13237
   wg_pubkey: QqcsQ6gRaK0ZxRskCxWoNeV2vd53/9IW/XfwjMMSjk8=
 
-- name: dn42-oscrx
-  remove: true
-
 - name: dn42-tmnet
   peer_v4: null
   peer_v6: fe80::cafe
@@ -260,9 +238,6 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::3035:138
 
-- name: dn42-yukino
-  remove: true
-
 - name: dn42-ventilaar
   port: 22246
   remote: ams01.dn42.ventilaar.net:31080
@@ -276,9 +251,6 @@ wg_peers:
   wg_pubkey: /2PiRi0hn4ZpCX2Kfu9+/pLw6tOwC09nO1VBP/FywkM=
   peer_v4: null
   peer_v6: fe80::9680:64
-
-- name: dn42-stetsed
-  remove: true
 
 - name: dn42-duckl1ng
   port: 22417

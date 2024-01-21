@@ -14,9 +14,6 @@ wg_peers:
   remote: sg-sin01.dn42.munsternet.eu:22237
   wg_pubkey: 09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk=
 
-- name: dn42-bandura
-  remove: true
-
 - name: dn42-yukino
   port: 21255
   remote: dn42-sg-sin4.acgcl.net:31080
@@ -34,15 +31,6 @@ wg_peers:
   local_v6: "fe80::1080:127"
   wg_privkey: "/etc/wireguard/privatekey_sg01"
 
-- name: dn42hkg-kioubit
-  remove: true
-
-- name: dn42hkg-mayli
-  remove: true
-
-- name: dn42-jerryxiao
-  remove: true
-
 - name: dn42-hujk
   port: 22717
   remote: sg.vm.whojk.com:24105
@@ -51,12 +39,6 @@ wg_peers:
   peer_v6: fe80::2717
   wg_mtu: 1376
 
-- name: dn42-huajitech
-  remove: true
-
-- name: dn42-melty
-  remove: true
-
 # TODO needs IP update 20231223
 - name: dn42-tms
   peer_v4: 172.23.31.1
@@ -64,9 +46,6 @@ wg_peers:
   port: 20831
   remote: sg.dn42.tms.im:21080
   wg_pubkey: KlZg3oOjQsaQ0dNkUgHCKyOqULw8+u+llo97X1w5mV4=
-
-- name: dn42-bbpgqm
-  remove: true
 
 - name: dn42-pigeonhole
   port: 22458
@@ -109,9 +88,6 @@ wg_peers:
   wg_pubkey: qeABaMDWz1dzPZDE+vP1IFMOrxGQFlpBVf7i3LAJ/iY=
   peer_v4: null
   peer_v6: fe80::1660
-
-- name: dn42-sernet
-  remove: true
 
 - name: dn42-routedbits
   port: 20207
