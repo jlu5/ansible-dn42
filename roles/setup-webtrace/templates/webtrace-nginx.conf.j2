@@ -18,6 +18,7 @@ server {
         root /var/www/html;
     }
 
+{% if webtrace_auto_socket | default(True) %}
     location /webtrace/ {
         proxy_pass http://webtrace-backend/;
         # Important since we use HTTP streaming!
@@ -25,4 +26,5 @@ server {
         access_log /var/log/nginx/webtrace-access.log;
         error_log /var/log/nginx/webtrace-error.log;
     }
+{% endif %}
 }

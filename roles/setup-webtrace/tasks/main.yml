@@ -49,6 +49,7 @@
     dest: "/etc/systemd/system/webtrace.socket"
   become: yes
   notify: Restart webtrace
+  when: webtrace_auto_socket | default(True)
 
 - name: Configure webtrace in nginx
   include_role:
@@ -59,3 +60,4 @@
     nginx_site:
       src: webtrace-nginx.conf.j2
       dst: webtrace-nginx.conf
+  when: webtrace_auto_socket | default(True)
