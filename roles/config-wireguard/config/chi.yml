@@ -7,12 +7,7 @@ wg_peers:
   peer_v6: fe80::e545:cd0:1641:bc4e
 
 - name: igp-stub-glass
-  port: 19998
-  wg_pubkey: qqFf8jOa55jQT5R013iOStnaklrB9mHrVNCerLXhcg0=
-  remote: glass.srv.jlu5.com:19998
-  peer_v4: null
-  local_v4: 172.22.108.65/30
-  peer_v6: fe80::1080:1080
+  remove: true
 
 - name: "dn42atl-doxz"
   port: 50003
