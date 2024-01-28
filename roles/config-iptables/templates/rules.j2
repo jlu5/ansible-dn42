@@ -85,7 +85,7 @@
 {% if iftype == 6 -%}
 {% set _allowed_ips = 'fd00::/8,ff00::/8,fe80::/64' %}
 {% else %}
-{% set _allowed_ips = '172.20.0.0/14,10.0.0.0/8,172.31.0.0/16' %}
+{% set _allowed_ips = '172.20.0.0/14,10.0.0.0/8,172.31.0.0/16,169.254.0.0/16' %}
 {% endif -%}
 
 # Block non-dn42 source IPs from going through tunnels (prevent IP spoofing)

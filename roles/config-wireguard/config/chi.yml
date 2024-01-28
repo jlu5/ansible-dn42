@@ -3,7 +3,7 @@ wg_peers:
   port: 19999
   wg_pubkey: "5UUM0BZBvE5+/JDQtqPPLxPmpI+5prg/YfmvNzUbKnc="
   peer_v4: null
-  local_v4: 172.22.108.78/31
+  local_v4: 169.254.108.78/31
   peer_v6: fe80::e545:cd0:1641:bc4e
 
 - name: igp-stub-glass

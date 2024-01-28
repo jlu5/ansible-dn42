@@ -109,7 +109,7 @@ wg_peers:
   port: 19999
   wg_pubkey: "ifeyKlRSNAIcyzRSUKzedU+t4bQhb1Hld3XzDCq/Yig="
   peer_v4: null
-  local_v4: 172.22.108.72/31
+  local_v4: 169.254.108.72/31
   peer_v6: fe80::89f7:b22a:5452:3402
 
 - name: dn42-iuboy

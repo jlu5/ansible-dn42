@@ -66,30 +66,6 @@ dns_records:
     "peers-nodeid-127.sgp":
       type: host_record
       ip4: 172.20.229.127
-    "chi.yvrlab":
-      type: host_record
-      ip4: 172.22.108.78
-    "yvrlab.chi":
-      type: host_record
-      ip4: 172.22.108.79
-    "sjc.yvrlab":
-      type: host_record
-      ip4: 172.22.108.73
-    "yvrlab.sjc":
-      type: host_record
-      ip4: 172.22.108.72
-    "ymq.yvrlab":
-      type: host_record
-      ip4: 172.22.108.75
-    "yvrlab.ymq":
-      type: host_record
-      ip4: 172.22.108.74
-    "sea.yvrlab":
-      type: host_record
-      ip4: 172.22.108.77
-    "yvrlab.sea":
-      type: host_record
-      ip4: 172.22.108.76
 
     # Misc routers
     "gw.yvrlab":
