@@ -222,3 +222,10 @@ wg_peers:
   wg_pubkey: UILRrlUwHZE4NWdV7RvF5Jit5G1eLwZ2V5p3sFYbk3M=
   peer_v4: null
   peer_v6: fe80::2558:3
+
+- name: dn42-tibs
+  port: 23383
+  remote: null
+  wg_pubkey: TkOlaPE+4n3WFuYOMAPdIaHSMFry2LMLYzxVfVk1izs=
+  peer_v4: 172.23.89.225
+  peer_v6: null
