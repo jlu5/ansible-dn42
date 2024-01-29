@@ -15,14 +15,6 @@ $TTL 300
 104 IN PTR music.highdef.dn42.
 82 IN PTR git.highdef.dn42.
 19 IN PTR nt.highdef.dn42.
-78 IN PTR chi.yvrlab.highdef.dn42.
-79 IN PTR yvrlab.chi.highdef.dn42.
-73 IN PTR sjc.yvrlab.highdef.dn42.
-72 IN PTR yvrlab.sjc.highdef.dn42.
-75 IN PTR ymq.yvrlab.highdef.dn42.
-74 IN PTR yvrlab.ymq.highdef.dn42.
-77 IN PTR sea.yvrlab.highdef.dn42.
-76 IN PTR yvrlab.sea.highdef.dn42.
 1 IN PTR gw.yvrlab.highdef.dn42.
 35 IN PTR yvrpeer.rtr.highdef.dn42.
 34 IN PTR sjc.rtr.highdef.dn42.

@@ -16,7 +16,6 @@ $TTL 300
 6.6.4.3.0.0.0.0.0.0.0.0.0.0.0.0.a.a.a.a.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR nt.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.a.a.a.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR gw.yvrlab.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.5.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR yvrpeer.rtr.highdef.dn42.
-1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR sea.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR sjc.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR lax.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.1.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR chi.rtr.highdef.dn42.
