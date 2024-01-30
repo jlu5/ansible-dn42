@@ -10,23 +10,32 @@
 /* This is a bit of a hack. Smokeping's navbar styles don't actually include anything for misc navbar items :( */
 .hdnet-navbar-item {
     display: inline-block;
-    vertical-align: top;
     font-size: medium;
-    padding: 15px 10px;
+    padding: 0 10px;
     border-right: 1px solid #afafaf;
+    line-height: 50px;
 }
-
 /* Lazy adaptive scrolling */
-.navbar {
+.navbar, .navbar-ext {
+    white-space: nowrap;
+}
+.navbar-menu {
+    vertical-align: top;
+}
+.navbar-ext {
     /* https://stackoverflow.com/a/15061010 */
     overflow-x: scroll;
     overflow-y: hidden;
-    white-space: nowrap;
+    display: inline-block;
+    width: 100%;
+    scrollbar-width: thin;
 }
 .navbar a {
     color: #04d;
 }
-
+.sidebar-header {
+    border-bottom: none;
+}
 .hdnet-logo {
     font-family: 'Lato', sans-serif;
     font-size: x-large;
@@ -45,6 +54,11 @@ function post_init() {
     for (let link of document.getElementsByClassName("hdnet-smokeping-neighbour")) {
         // Navigate to the same page by default
         link.href += window.location.search;
+    }
+    const current = document.getElementById("hdnet-navbar-current");
+    if (current) {
+        // Scroll to make the current router visible in navbar
+        current.scrollIntoView({inline: 'center'});
     }
 }
 </script>
@@ -73,15 +87,16 @@ function post_init() {
 
 <div class="navbar">
     <div class="navbar-menu"><a id="menu-button" href="#">Toggle Menu</a></div>
-    <div class="hdnet-navbar-item">Pinger sites:</div>
+<div class="navbar-ext">
 {% for host in groups['smokeping'] %}
 {% set other_url = hostvars[host].smokeping_base_url | default(host + dns_auto_host_record_suffix + "." + dns_domain) %}
 {% if host == inventory_hostname %}
-    <div class="hdnet-navbar-item"><b>{{ host|upper }}</b></div>
+    <div class="hdnet-navbar-item" id="hdnet-navbar-current"><b>{{ host|upper }}</b></div>
 {% else %}
     <div class="hdnet-navbar-item"><a class="hdnet-smokeping-neighbour" href="//{{ other_url }}/smokeping/">{{ host|upper }}</a></div>
 {% endif %}
 {% endfor %}
+</div>
 </div>
 
 <div class="main">

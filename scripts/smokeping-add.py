@@ -31,7 +31,10 @@ IP4_RE = re.compile(r'((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}')
 IP6_RE = re.compile(
     r'[a-fA-F0-9]{1,4}:[a-fA-f0-9:]+' # lazy check
 )
-def scrape_ips(url, force_dns=False):
+REQUESTS_HEADERS = {
+    'Accept': 'text/*'
+}
+def scrape_ips(url, force_dns=False, maxsize=4096):
     url_parts = urllib.parse.urlparse(url)
     netloc = url_parts.netloc or url
     if not url_parts.scheme:
@@ -50,8 +53,14 @@ def scrape_ips(url, force_dns=False):
                 ipv6 = netloc
         return ipv4, ipv6
 
-    r = requests.get(url, timeout=10)
-    for m_ipv4 in IP4_RE.finditer(r.text):
+    r = requests.get(url, timeout=10, stream=True, headers=REQUESTS_HEADERS)
+    r.raise_for_status()
+    content_length = int(r.headers.get('Content-Length', 0))
+    if content_length > maxsize:
+        raise ValueError(f'HTTP response too large ({content_length} > {maxsize})')
+    text = next(r.iter_content(maxsize)).decode('utf-8', 'ignore')
+
+    for m_ipv4 in IP4_RE.finditer(text):
         ipv4 = m_ipv4.group(0)
         ipaddr = ipaddress.ip_address(ipv4)
         if not ipaddr.is_global:
@@ -60,7 +69,7 @@ def scrape_ips(url, force_dns=False):
         if ipaddr in dns_results:
             ipv4 = netloc
         break
-    for m_ipv6 in IP6_RE.finditer(r.text):
+    for m_ipv6 in IP6_RE.finditer(text):
         ipv6 = m_ipv6.group(0)
         try:
             ipaddr = ipaddress.ip_address(ipv6)
