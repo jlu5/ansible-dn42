@@ -64,3 +64,10 @@ wg_peers:
   port: 22923
   remote: herzstein.mk16.de:51080
   wg_pubkey: 3uFwT9QD2WVL1cDuRNnj5sqWxyoAJjZO+f83grEPDV0=
+
+- name: dn42-tomk
+  port: 23478
+  remote: null
+  wg_pubkey: dn42/oEh8sJ6oWz9uesySQEu9FdV3A5ponZWbD4VsQA=
+  peer_v4: null
+  peer_v6: fe80::3478
