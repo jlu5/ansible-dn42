@@ -13,9 +13,9 @@ wg_peers:
   peer_v4: 172.21.67.200/32
   peer_v6: "fe80::42:1080:1/128"
 
-- name: dn42buf-lantian
+- name: dn42-lantian
   port: 52547
-  remote: "107.172.134.89:21080"
+  remote: "45.42.214.121:21080"
   wg_pubkey: "a+zL2tDWjwxBXd2bho2OjR/BEmRe2tJF9DHFmZIE+Rk="
   peer_v4: "172.22.76.190"
   peer_v6: "fe80::2547"
@@ -45,13 +45,6 @@ wg_peers:
   local_v6: "fe80::115"
   wg_privkey: "/etc/wireguard/privatekey_bhs_legacy"
 
-- name: dn42bhs-serverm
-  port: 53770
-  remote: "bhs1.dn42.servermade.com:51080"
-  wg_pubkey: "6YKlRpiqLJb9C8esZjUS0RbC9Bh7aTo5M5F3cUAcZ2o="
-  peer_v4: "172.22.118.135"
-  peer_v6: "fe80::3770/64"
-
 - name: dn42rio-paterno
   port: 23073
   remote: "dn42.shiva.eti.br:21080"
@@ -73,13 +66,6 @@ wg_peers:
   remote: us-qas01.dn42.tech9.io:57225
   wg_pubkey: itmJ4Z8V1aNN368P6kMzuQM+GdzWbBKZjJiXrgSeGlw=
   local_v6: fe80::100
-
-- name: dn42-186526
-  peer_v4: 172.23.2.75
-  peer_v6: fe80::ade1
-  port: 23764
-  remote: us-ashburn-01.edge.186526.xyz:21080
-  wg_pubkey: 1l9tMGFXsBz/hJ6Rqz6fch95inL/QvGuPSj2sxc0MgE=
 
 - name: dn42-hujk
   peer_v4: null
@@ -116,13 +102,6 @@ wg_peers:
   peer_v4: 172.20.41.100
   peer_v6: fe80::100
 
-- name: dn42-huajitech
-  peer_v4: null
-  peer_v6: fe80::458
-  port: 20458
-  remote: us-east1.dn42.huajitech.net:21080
-  wg_pubkey: jk6jHDQlnMelT7hllXZ4djmXTR2an1xUtuZsJazSzzA=
-
 - name: cl-roam
   local_v4: 172.22.108.41/29
   local_v6_multi:
@@ -147,13 +126,6 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::703
 
-- name: dn42-lare
-  port: 23035
-  remote: null
-  wg_pubkey: l4/RebJ8IuNS8+TVHrckrrx0J7qWdLa6jt0n8ROLHWE=
-  peer_v4: 172.22.125.135
-  peer_v6: fe80::3035:135
-
 - name: dn42-pigeonhole
   port: 22458
   remote: us-nyc-a.nodes.pigeonhole.eu.org:21080
@@ -167,13 +139,6 @@ wg_peers:
   wg_pubkey: 6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s=
   peer_v4: 172.20.53.98
   peer_v6: fe80::ade0
-
-- name: dn42-ty3r0x
-  port: 22596
-  remote: racknerd.chaox.ro:21080
-  wg_pubkey: rZYo5BZ4D8Y5VSwCoAI+qDvtBM+HuRtG6YVvR0cZ3gs=
-  peer_v4: 169.254.42.7
-  peer_v6: fe80::2596:7
 
 - name: dn42-prevarinit
   port: 22475
@@ -195,19 +160,6 @@ wg_peers:
   wg_pubkey: HM35mEe6q1WcQG9UHd2n4xrHuXyBGuYpOjzbRz2kD00=
   peer_v4: null
   peer_v6: fe80::3411
-
-- name: dn42-peanuts
-  port: 21465
-  remote: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    36643466366634346364353831626537353138656631333935303435633862613763626261633764
-    6135383135316536303763306535663630623665633433310a316562653965623130346666396636
-    66316164646337353433373063336637616662303536373137386630333565623637326637613165
-    6436396233363639640a396561326534626362316561383562623365333565386166336539623635
-    65616366653734343735386234356630343563333734643764643336323663653536
-  wg_pubkey: wQVKl4wcK4m+eS7HPIk1zEVUSPCzd9DGpxBbBMIDkUs=
-  peer_v4: null
-  peer_v6: fe80::556
 
 - name: dn42-sernet
   port: 23947
