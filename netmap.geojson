@@ -156,12 +156,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -122.332071,
-                    47.606209
+                    -46.633309,
+                    -23.55052
                 ]
             },
             "properties": {
-                "title": "Seattle, WA, US",
+                "title": "Sao Paulo, BR",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }

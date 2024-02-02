@@ -3,6 +3,7 @@ smokeping_region_map:
   42: [NAEast, NAWest, LatAm, EU]
   43: [NAEast, NAWest, LatAm, EU]
   44: [NAWest, NAEast, APAC]
+  46: [LatAm, NAEast]
   51: [APAC, NAWest, EU, MEA]
   52: [APAC, NAWest, EU]
   53: [APAC, NAWest]

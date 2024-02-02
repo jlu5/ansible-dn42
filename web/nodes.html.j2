@@ -52,6 +52,10 @@
 {{ peering_info(host) }}
 {% endfor %}
 
+{% for host in groups['sa'] %}
+{{ peering_info(host) }}
+{% endfor %}
+
 <h2 id="europe">🌍 Europe</h2>
 {% for host in groups['eu'] %}
 {{ peering_info(host) }}

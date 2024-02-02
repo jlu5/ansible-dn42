@@ -66,3 +66,5 @@ syd.rtr IN A 172.20.229.125
 syd.rtr IN AAAA fd86:bad:11b7:225::1
 hkg.rtr IN A 172.22.108.38
 hkg.rtr IN AAAA fd86:bad:11b7:238::1
+sao.rtr IN A 172.22.108.32
+sao.rtr IN AAAA fd86:bad:11b7:332::1
