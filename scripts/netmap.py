@@ -97,8 +97,10 @@ def main():
             icon_name = "yellow"
             description += "- Peering over IPv6 only<br>"
 
+        title = f'<a href="nodes.html#{node}" class="netmap-server-link">{nodedata["location"]}</a>'
+
         feature = geojson.Feature(geometry=point, properties={
-            "title": nodedata['location'],
+            "title": title,
             "description": description,
             "icon": ICON_PREFIX + icon_name + ".png"
         })

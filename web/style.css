@@ -64,6 +64,13 @@ a:visited:hover {
     color: #ffd6dd;
 }
 
+a.netmap-server-link {
+    color: #0055aa;
+}
+a.netmap-server-link:hover {
+    color: #4da6ff;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
