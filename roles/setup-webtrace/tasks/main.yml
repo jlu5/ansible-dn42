@@ -51,6 +51,11 @@
   notify: Restart webtrace
   when: webtrace_auto_socket | default(True)
 
+- name: Enable webtrace service
+  ansible.builtin.systemd:
+    name: "webtrace"
+    enabled: true
+
 - name: Configure webtrace in nginx
   include_role:
     name: apps_nginx
