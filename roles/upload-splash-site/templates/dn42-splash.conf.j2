@@ -60,7 +60,7 @@ server {
         add_header Cache-Control "max-age=120";
     }
 
-{% if inventory_hostname in groups['webtrace'] %}
+{% if inventory_hostname in groups['webtrace'] and (webtrace_auto_socket | default(True)) %}
     location /webtrace/ {
         proxy_pass http://webtrace-backend/;
         # Important since we use HTTP streaming!
@@ -75,7 +75,7 @@ server {
     }
 }
 
-{% if inventory_hostname in groups['webtrace'] %}
+{% if inventory_hostname in groups['webtrace'] and (webtrace_auto_socket | default(True)) %}
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
