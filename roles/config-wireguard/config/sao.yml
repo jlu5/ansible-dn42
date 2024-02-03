@@ -1,0 +1,8 @@
+wg_peers:
+
+- name: dn42-routedbits
+  port: 20207
+  remote: router.gru1.routedbits.com:51080
+  wg_pubkey: VubXB1F3BSY27FPm/bU1bC38qYJd6Cg9sqdCX4A3ZXI=
+  peer_v4: 172.20.19.72
+  peer_v6: fe80::207
