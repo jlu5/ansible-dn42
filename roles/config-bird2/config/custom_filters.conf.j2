@@ -108,28 +108,23 @@ function handle_special_cases()
     }
 
     # Read "route learned in region X" communities from networks that export them
-    # This works by penalizing routes if they include such an AS and *don't* have a region community matching the current node.
-    # (Subtracting from MED on matching routes would make them preferred for all matching routes, compared to other peers)
-    if (bgp_path ~ [= * [4242422601] ? * =] && (4242422601, 140, DN42_REGION) !~ bgp_large_community) then {
-        bgp_med = bgp_med + 10;
+    # Prefer paths from transits sending us region info, for cold potato routing
+    if (bgp_path ~ [= * [4242422601] ? * =] && (4242422601, 140, DN42_REGION) ~ bgp_large_community) then {
+        bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= * [4242423914] ? * =] && (4242423914, 100, DN42_REGION) !~ bgp_large_community) then {
-        bgp_med = bgp_med + 10;
+    if (bgp_path ~ [= * [4242423914] ? * =] && (4242423914, 100, DN42_REGION) ~ bgp_large_community) then {
+        bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= * [4242420207] ? * =] && (4242420207, 140, DN42_REGION) !~ bgp_large_community) then {
-        bgp_med = bgp_med + 10;
+    if (bgp_path ~ [= * [4242420207] ? * =] && (4242420207, 140, DN42_REGION) ~ bgp_large_community) then {
+        bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= * [4242422464] ? * =] && (4242422464, 64511, DN42_REGION) !~ bgp_large_community) then {
-        bgp_med = bgp_med + 10;
+    if (bgp_path ~ [= * [4242422464] ? * =] && (4242422464, 64511, DN42_REGION) ~ bgp_large_community) then {
+        bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= * [4242421888] ? * =] && (4242421888, 100, DN42_REGION) !~ bgp_large_community) then {
-        bgp_med = bgp_med + 10;
+    if (bgp_path ~ [= * [4242421888] ? * =] && (4242421888, 100, DN42_REGION) ~ bgp_large_community) then {
+        bgp_med = bgp_med - 10;
     }
 
-    # prefer cold potato routing over densely connected transits
-    if (bgp_path ~ [= * [4242422923] ? * =]) then {
-        bgp_med = bgp_med + 10;
-    }
     # depref transit from networks with incomplete interconnects or other issues
     if (bgp_path ~ [= [
             4242420123,
