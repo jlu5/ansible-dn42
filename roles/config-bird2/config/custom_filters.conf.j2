@@ -113,8 +113,16 @@ function handle_special_cases()
     if (bgp_path ~ [= * [4242422601] ? * =] && (4242422601, 140, DN42_REGION) !~ bgp_large_community) then {
         bgp_med = bgp_med + 10;
     }
-    # note: not enabled for APAC
     if (bgp_path ~ [= * [4242423914] ? * =] && (4242423914, 100, DN42_REGION) !~ bgp_large_community) then {
+        bgp_med = bgp_med + 10;
+    }
+    if (bgp_path ~ [= * [4242420207] ? * =] && (4242420207, 140, DN42_REGION) !~ bgp_large_community) then {
+        bgp_med = bgp_med + 10;
+    }
+    if (bgp_path ~ [= * [4242422464] ? * =] && (4242422464, 64511, DN42_REGION) !~ bgp_large_community) then {
+        bgp_med = bgp_med + 10;
+    }
+    if (bgp_path ~ [= * [4242421888] ? * =] && (4242421888, 100, DN42_REGION) !~ bgp_large_community) then {
         bgp_med = bgp_med + 10;
     }
 
