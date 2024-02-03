@@ -5,6 +5,7 @@ igp_neighbours:
     chi: null
     fra: null
     mad: null
+    sao: null
     sgp: null
     sjc: null
     tpa: null
@@ -59,6 +60,7 @@ igp_neighbours:
     fra: null
     ymq: null
   sao: !!set
+    ams: null
     chi: null
     dal: null
     tpa: null
