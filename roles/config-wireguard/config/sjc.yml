@@ -85,11 +85,7 @@ wg_peers:
   wg_pubkey: Y13v0Xzf6zJQGtL2qJSwVyLNSxipYoGpq4y/5aU7omg=
 
 - name: dn42-burble
-  peer_v4: null
-  peer_v6: fe80::42:2601:2a:1
-  port: 22601
-  remote: dn42-us-lax1.burble.com:21080
-  wg_pubkey: MDjt4DyKGFumReT9pBJL6mPbDfQDfhPFyzHGDeoQVBQ=
+  remove: true
 
 - name: dn42-link2
   peer_v4: 172.21.109.18
