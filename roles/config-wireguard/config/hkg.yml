@@ -71,3 +71,10 @@ wg_peers:
   wg_pubkey: dn42/oEh8sJ6oWz9uesySQEu9FdV3A5ponZWbD4VsQA=
   peer_v4: null
   peer_v6: fe80::3478
+
+- name: dn42-potat0
+  port: 21816
+  remote: hk1.dn42.potat0.cc:21080
+  wg_pubkey: Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=
+  peer_v4: null
+  peer_v6: fe80::1816
