@@ -78,3 +78,10 @@ wg_peers:
   wg_pubkey: Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=
   peer_v4: null
   peer_v6: fe80::1816
+
+- name: dn42-zezhiya
+  port: 22744
+  remote: 45.149.92.139:21080
+  wg_pubkey: stSxV454ZV2VPPwXqUvmPTwz1LU98xtw2Fu4U+s+QFU=
+  peer_v4: 172.21.79.192
+  peer_v6: 'fde5:d799:678::'
