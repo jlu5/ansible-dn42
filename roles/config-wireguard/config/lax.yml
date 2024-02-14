@@ -239,3 +239,10 @@ wg_peers:
   port: 22601
   remote: dn42-us-lax1.burble.com:21080
   wg_pubkey: MDjt4DyKGFumReT9pBJL6mPbDfQDfhPFyzHGDeoQVBQ=
+
+- name: dn42-jasonxu
+  port: 23658
+  remote: 74.48.219.8:21080
+  wg_pubkey: js2ZHPXaL5xscxQdqlD6qteqmsfKscPaBwP4XNL3QzI=
+  peer_v4: 172.20.193.161
+  peer_v6: fd4e:d0:d38d::1

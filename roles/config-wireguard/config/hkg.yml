@@ -85,3 +85,10 @@ wg_peers:
   wg_pubkey: stSxV454ZV2VPPwXqUvmPTwz1LU98xtw2Fu4U+s+QFU=
   peer_v4: 172.21.79.192
   peer_v6: 'fde5:d799:678::'
+
+- name: dn42-jasonxu
+  port: 23658
+  remote: 123.254.109.25:21080
+  wg_pubkey: DiFXOjt1vOsisPKx7ncUwLvvxfvWF4VLqNOGO6TQMAw=
+  peer_v4: 172.20.193.162
+  peer_v6: fd4e:d0:d38d::2
