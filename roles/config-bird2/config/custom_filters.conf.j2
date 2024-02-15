@@ -30,8 +30,8 @@ define LC_ORIGIN_NODEID = 103;
 
 # Subnets to route through iBGP
 # This includes anycast services as well as any single-homed downstreams with agreement
-define IBGP_NETS_4 = [172.23.0.53/32, 172.22.108.16/31+, 172.20.0.81/32];
-define IBGP_NETS_6 = [fd42:d42:d42:53::/64, fd86:bad:11b7:1100::/56+, fd42:d42:d42:81::/64];
+define IBGP_NETS_4 = [172.23.0.53/32, 172.20.0.81/32];
+define IBGP_NETS_6 = [fd42:d42:d42:53::/64, fd42:d42:d42:81::/64];
 
 function is_ibgp_network() {
     if net.type = NET_IP4 && net ~ IBGP_NETS_4 then {
@@ -54,6 +54,8 @@ function get_region_tag(int dn42_region_tag) {
         return 3;  # Europe
     } else if (dn42_region_tag ~ [51..53]) then {
         return 4;  # Asia Pacific
+    } else if (dn42_region_tag = 46) then {
+        return 5;  # South America
     }
     return 0;
 }
@@ -109,19 +111,26 @@ function handle_special_cases()
 
     # Read "route learned in region X" communities from networks that export them
     # Prefer paths from transits sending us region info, for cold potato routing
-    if (bgp_path ~ [= * [4242422601] ? * =] && (4242422601, 140, DN42_REGION) ~ bgp_large_community) then {
+    if (bgp_path ~ [= [4242422601] ? * =] && (4242422601, 140, DN42_REGION) ~ bgp_large_community) then {
         bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= * [4242423914] ? * =] && (4242423914, 100, DN42_REGION) ~ bgp_large_community) then {
+    if (bgp_path ~ [= [4242423914] ? * =] && (4242423914, 100, DN42_REGION) ~ bgp_large_community) then {
         bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= * [4242420207] ? * =] && (4242420207, 140, DN42_REGION) ~ bgp_large_community) then {
+    if (bgp_path ~ [= [4242420207] ? * =] && (4242420207, 140, DN42_REGION) ~ bgp_large_community) then {
         bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= * [4242422464] ? * =] && (4242422464, 64511, DN42_REGION) ~ bgp_large_community) then {
+    if (bgp_path ~ [= [4242422464] ? * =] && (4242422464, 64511, DN42_REGION) ~ bgp_large_community) then {
         bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= * [4242421888] ? * =] && (4242421888, 100, DN42_REGION) ~ bgp_large_community) then {
+    if (bgp_path ~ [= [4242421888] ? * =] && (4242421888, 100, DN42_REGION) ~ bgp_large_community) then {
+        bgp_med = bgp_med - 10;
+    }
+    if (bgp_path ~ [= [4242421816] ? * =] && (4242421816, 10000, DN42_REGION) ~ bgp_large_community) then {
+        bgp_med = bgp_med - 10;
+    }
+    # Large single region networks also satisfy this, I guess
+    if (bgp_path ~ [= [76190] ? * =]) then {
         bgp_med = bgp_med - 10;
     }
 
