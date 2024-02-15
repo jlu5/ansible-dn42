@@ -58,3 +58,10 @@ wg_peers:
   wg_mtu: 1296
   peer_v4: 172.22.68.0
   peer_v6: fe80::1888
+
+- name: dn42-amc
+  port: 21146
+  remote: null
+  wg_pubkey: /SMD8YbgCtJ0iinMzRmeTfwv9GX4XxK/lCQCAnusu04=
+  peer_v4: 172.20.171.225
+  peer_v6: fe80::1146
