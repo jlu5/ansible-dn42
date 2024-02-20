@@ -316,3 +316,10 @@ wg_peers:
   wg_pubkey: HWjDZhdwgM6BPXDFmZH1+PskdvnP87EpazZUnV6cwwk=
   peer_v4: null
   peer_v6: fe80::2592
+
+- name: dn42-divinet
+  port: 21409
+  remote: ams.dn42.join.yt:23002
+  wg_pubkey: h/wiLWhZgRZUQAiWfpoV7va3hnvdJqeJK2ZoRgCcFkM=
+  peer_v4: null
+  peer_v6: fe80::1409:201
