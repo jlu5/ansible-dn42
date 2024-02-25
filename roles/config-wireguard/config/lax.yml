@@ -246,3 +246,10 @@ wg_peers:
   wg_pubkey: js2ZHPXaL5xscxQdqlD6qteqmsfKscPaBwP4XNL3QzI=
   peer_v4: 172.20.193.161
   peer_v6: fd4e:d0:d38d::1
+
+- name: dn42-rubick
+  port: 23451
+  remote: v4-la.zub.pub:21080
+  wg_pubkey: 3RiYYcOW4AJeO5RRMezDHjDCOGKjUz/1lmdpVHcdSkc=
+  peer_v4: null
+  peer_v6: fe80::3451
