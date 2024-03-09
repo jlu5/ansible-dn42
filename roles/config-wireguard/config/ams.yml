@@ -328,5 +328,5 @@ wg_peers:
   port: 21525
   remote: uk1.alemal.se:51080
   wg_pubkey: 1JwYl6O6Y94PiKe5dXcgwMYjDxRK3im8mqvbZIeMSDE=
-  peer_v4: None
+  peer_v4: null
   peer_v6: fe80::1525
