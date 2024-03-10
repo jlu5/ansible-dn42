@@ -191,11 +191,11 @@ wg_peers:
   peer_v6: "fe80::feec:daff:fe46:d60e/64"
 
 - name: dn42-dingemans
+  port: 20074
+  remote: dn42.dingemans.cc:51820
+  wg_pubkey: 8qZ8e5XG6G1OE3F/yGTB7iCIvV9IouHzpf+cSyPadxY=
   peer_v4: 172.23.89.146
   peer_v6: fe80::3:349a
-  port: 20074
-  remote: dn42.dingemans.tk:51820
-  wg_pubkey: 8qZ8e5XG6G1OE3F/yGTB7iCIvV9IouHzpf+cSyPadxY=
 
 - name: dn42-ty3r0x
   port: 22596
