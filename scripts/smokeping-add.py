@@ -34,7 +34,7 @@ IP6_RE = re.compile(
 REQUESTS_HEADERS = {
     'Accept': 'text/*'
 }
-def scrape_ips(url, force_dns=False, maxsize=4096):
+def scrape_ips(url, force_dns=False, maxsize=8192):
     url_parts = urllib.parse.urlparse(url)
     netloc = url_parts.netloc or url
     if not url_parts.scheme:
