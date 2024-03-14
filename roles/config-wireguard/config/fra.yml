@@ -332,3 +332,10 @@ wg_peers:
   wg_pubkey: 7gbJe7eeFxHdZnHnlBA1H33HHLqnmGjgSWwsOLimtlM=
   peer_v4: 172.20.193.163
   peer_v6: fd4e:d0:d38d::3
+
+- name: dn42-m4rc3l
+  port: 21476
+  remote: null
+  wg_pubkey: bMTerYqi0BA5WnjgTugcXAeFIcdVqQVkstxukk5qIAA=
+  peer_v4: null
+  peer_v6: fe80::4c3
