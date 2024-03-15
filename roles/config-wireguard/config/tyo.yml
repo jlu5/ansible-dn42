@@ -36,11 +36,7 @@ wg_peers:
   peer_v6: "fe80::3618/64"
 
 - name: dn42-sheepbrew
-  port: 53679
-  remote: "rtr-jp-tyo01.sheepbrew.com:51080"
-  wg_pubkey: "soaHaPlQTbA8EVg84DdZ3tazBgr2OIadAJ3X/rTHuQQ="
-  peer_v4: "172.20.184.98"
-  peer_v6: "fd88:ee35:b221:1::100"
+  remove: true
 
 - name: dn42-kskb1817
   port: 21817
