@@ -149,3 +149,10 @@ wg_peers:
   wg_pubkey: UVm6W75mp6R8yw+C9yICPW8F5j7tUzerh2Ecmqgt0B4=
   peer_v4: null
   peer_v6: fe80::3117:1080
+
+- name: dn42-noreinx
+  port: 21580
+  remote: sfo.dn42.noreinx.me:21080
+  wg_pubkey: uUKad5JFD+Zfx/sApOcqJVrrsRS25en9ac6Tri/cZQk=
+  peer_v4: null
+  peer_v6: fe80::1580:1
