@@ -23,7 +23,7 @@
     ({{ serverdata.web_display_name }})
 {% endif %}
 {% if host in groups['webtrace'] %}
-[<a href="https://{{serverdata.ansible_host}}/webtrace/">webtrace</a>]
+[<a href="https://{{ serverdata.public_host | default(serverdata.ansible_host) }}/webtrace/">webtrace</a>]
 {% endif %}
 [<a href="https://lg.highdef.network/summary/{{ host }}/">looking glass</a>]
     <a href="#{{ host }}"><i class="fa fa-link" aria-hidden="true"></i></a>

@@ -61,7 +61,7 @@
     name: apps_nginx
   vars:
     letsencrypt_domains:
-      - "{{ ansible_host }}"
+      - "{{ public_host | default(ansible_host) }}"
     nginx_site:
       src: webtrace-nginx.conf.j2
       dst: webtrace-nginx.conf

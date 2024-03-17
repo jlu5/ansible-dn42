@@ -76,13 +76,14 @@ server {
 }
 
 {% if inventory_hostname in groups['webtrace'] and (webtrace_auto_socket | default(True)) %}
+{% set _webtrace_server_name = public_host | default(ansible_host) %}
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
 
-    ssl_trusted_certificate /etc/letsencrypt/live/{{ ansible_host }}/chain.pem;
-    ssl_certificate /etc/letsencrypt/live/{{ ansible_host }}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/{{ ansible_host }}/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/{{ _webtrace_server_name }}/chain.pem;
+    ssl_certificate /etc/letsencrypt/live/{{ _webtrace_server_name }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ _webtrace_server_name }}/privkey.pem;
 
     server_name {{ dns_domain }};
     server_name *.{{ dns_domain }};

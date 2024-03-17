@@ -3,16 +3,17 @@ upstream webtrace-backend {
     server unix:/run/webtrace.sock;
 }
 
+{% set _webtrace_server_name = public_host | default(ansible_host) %}
 # HTTPS listener (clearnet)
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
 
-    ssl_trusted_certificate /etc/letsencrypt/live/{{ ansible_host }}/chain.pem;
-    ssl_certificate /etc/letsencrypt/live/{{ ansible_host }}/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/{{ ansible_host }}/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/{{ _webtrace_server_name }}/chain.pem;
+    ssl_certificate /etc/letsencrypt/live/{{ _webtrace_server_name }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ _webtrace_server_name }}/privkey.pem;
 
-    server_name {{ ansible_host }};
+    server_name {{ _webtrace_server_name }};
 
     location /.well-known {
         root /var/www/html;

@@ -4,6 +4,7 @@
 
 Most settings in [`hosts.yml`](hosts.yml) should be self documenting. Here are some of the lesser used variables:
 
+- `public_host`: public facing hostname for services like webtrace; defaults to `ansible_host`
 - `export_ownnets`: determines whether static routes for aggregated dn42 prefixes should be configured (default `true`)
 - `v6_only`: specifies that the node is IPv6 only; this disables certain components that require GitHub access for installation (default `false`).
 - `v4_only`: specifies that the node is IPv4 only
