@@ -1,6 +1,5 @@
 - name: Setup netdata
-  # manually excluding low RAM hosts
-  hosts: all:!las
+  hosts: all:!netdata_skip
   become: yes
   roles:
     - setup-netdata-v2
