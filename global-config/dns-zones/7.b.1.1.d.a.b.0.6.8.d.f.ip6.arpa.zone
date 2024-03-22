@@ -22,13 +22,15 @@ $TTL 300
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.3.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR dal.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3.2.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ymq.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.0.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR tpa.rtr.highdef.dn42.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR lon.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ams.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.1.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR fra.rtr.highdef.dn42.
-1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR mad.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.3.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR buh.rtr.highdef.dn42.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.2.1.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR sto.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4.2.2.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR tyo.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.3.2.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR sgp.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.5.2.2.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR syd.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.3.2.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR hkg.rtr.highdef.dn42.
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2.3.3.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR sao.rtr.highdef.dn42.
 4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.d.c.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR spk.rtr.highdef.dn42.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.c.0.0.7.b.1.1.d.a.b.0.6.8.d.f.ip6.arpa. IN PTR ymq2.rtr.highdef.dn42.

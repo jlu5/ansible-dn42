@@ -52,14 +52,16 @@ ymq.rtr IN A 172.20.229.123
 ymq.rtr IN AAAA fd86:bad:11b7:23::1
 tpa.rtr IN A 172.20.229.119
 tpa.rtr IN AAAA fd86:bad:11b7:9::1
+lon.rtr IN A 172.20.229.116
+lon.rtr IN AAAA fd86:bad:11b7:116::1
 ams.rtr IN A 172.20.229.118
 ams.rtr IN AAAA fd86:bad:11b7:118::1
 fra.rtr IN A 172.20.229.117
 fra.rtr IN AAAA fd86:bad:11b7:117::1
-mad.rtr IN A 172.20.229.120
-mad.rtr IN AAAA fd86:bad:11b7:120::1
 buh.rtr IN A 172.22.108.37
 buh.rtr IN AAAA fd86:bad:11b7:137::1
+sto.rtr IN A 172.20.229.121
+sto.rtr IN AAAA fd86:bad:11b7:121::1
 tyo.rtr IN A 172.20.229.124
 tyo.rtr IN AAAA fd86:bad:11b7:224::1
 sgp.rtr IN A 172.22.108.39
@@ -72,3 +74,5 @@ sao.rtr IN A 172.22.108.32
 sao.rtr IN AAAA fd86:bad:11b7:332::1
 spk.rtr IN A 172.22.108.60
 spk.rtr IN AAAA fd86:bad:11b7:cd::4
+ymq2.rtr IN A 172.22.108.75
+ymq2.rtr IN AAAA fd86:bad:11b7:ca::1

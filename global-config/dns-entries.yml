@@ -63,9 +63,6 @@ dns_records:
     "peers-nodeid-115.ymq":
       type: host_record
       ip4: 172.20.229.115
-    "peers-nodeid-116.ams":
-      type: host_record
-      ip4: 172.20.229.116
     "peers-nodeid-127.sgp":
       type: host_record
       ip4: 172.20.229.127
