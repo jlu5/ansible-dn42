@@ -4,7 +4,6 @@
 - name: Configure dn42 routers
   hosts: dn42routers:private
   become: yes
-  strategy: mitogen_linear
   roles:
     - role: config-iptables
       when: "auto_iptables|default(True)"
