@@ -50,7 +50,7 @@ def main():
     data = _read_previous_settings()
     hosts = yaml_load('hosts.yml')
 
-    dn42routers = get_hosts(hosts)
+    dn42routers = get_hosts(hosts, include_private=True)
     # Between runs, the desired list of neighbours for a node can change, so we clear it here and rewrite it.
     # VPN port allocations however do stick around even as links are removed, in order to ensure stability.
     data['igp_neighbours'].clear()

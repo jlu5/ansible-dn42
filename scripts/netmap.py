@@ -75,7 +75,7 @@ def main():
 
     # Create a new point for each node
     for node, nodedata in hosts.items():
-        if nodedata.get('private') or not nodedata.get('location'):
+        if not nodedata.get('location'):
             continue
         coords = node_coords[node] = geocoder.geocode(nodedata['location'])
 
