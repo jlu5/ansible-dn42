@@ -23,5 +23,3 @@ $TTL 300
 39 IN PTR sgp.rtr.highdef.dn42.
 38 IN PTR hkg.rtr.highdef.dn42.
 32 IN PTR sao.rtr.highdef.dn42.
-60 IN PTR spk.rtr.highdef.dn42.
-75 IN PTR ymq2.rtr.highdef.dn42.

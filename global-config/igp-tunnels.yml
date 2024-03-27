@@ -23,7 +23,6 @@ igp_neighbours:
     lon: null
     sao: null
     sjc: null
-    spk: null
     tpa: null
     ymq: null
     ymq2: null
@@ -87,14 +86,9 @@ igp_neighbours:
     dal: null
     lax: null
     sgp: null
-    spk: null
     syd: null
     tyo: null
     ymq: null
-    yvrpeer: null
-  spk: !!set
-    chi: null
-    sjc: null
     yvrpeer: null
   sto: !!set
     ams: null
@@ -137,7 +131,6 @@ igp_neighbours:
     chi: null
     lax: null
     sjc: null
-    spk: null
     ymq2: null
 igp_wg_ports:
   ams:

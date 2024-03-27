@@ -10,9 +10,6 @@ dns_records:
       type: host_record
       ip4: 172.22.108.3
       ip6: fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
-    "ping-spk":
-      type: ansible_host_alias
-      target: spk
     "routegraphs":
       type: ansible_host_alias
       target: tyo
