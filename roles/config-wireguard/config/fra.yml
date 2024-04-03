@@ -339,3 +339,10 @@ wg_peers:
   wg_pubkey: bMTerYqi0BA5WnjgTugcXAeFIcdVqQVkstxukk5qIAA=
   peer_v4: null
   peer_v6: fe80::4c3
+
+- name: dn42-astutus
+  port: 21014
+  remote: zrh01.dn42.astutus.org:51080
+  wg_pubkey: c2bRvwMy1EqsT036Qdfhpq/5bw+TjahqIYIaqHJ98nY=
+  peer_v4: 172.23.114.157
+  peer_v6: fe80::1014
