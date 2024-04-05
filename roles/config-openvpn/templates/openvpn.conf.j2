@@ -58,6 +58,12 @@ secret /etc/openvpn/dn42-keys/{{ ifname }}.key
 {{ option }}
 {% endfor %}
 
+{% if dn42_ratelimit and ifname.startswith('dn42') %}
+script-security 2
+{# Throw away the arguments OpenVPN passes in by default #}
+up "/bin/sh -c \"/usr/sbin/tc qdisc add dev {{ ifname }} {{ dn42_ratelimit_tc_args }}; echo\""
+{% endif %}
+
 user openvpn
 group openvpn
 persist-key
