@@ -39,10 +39,7 @@ iface {{ ifname }} inet static
 {% endfor %}
 {# Disable Martian filtering for local addresses, as we may be forwarding responses for anycast services from another node #}
     post-up sysctl -w net.ipv4.conf.{{ ifname }}.accept_local=1
-{% set limit_mbit = peer_info.get('wg_ratelimit', wg_ratelimit|default(0)) | int %}
-{% if limit_mbit and not peer_info.get('is_internal_node') %}
-{# ref: https://unix.stackexchange.com/a/100797 #}
-{# burst size should be >= rate / kernel HZ, in units of bytes. This uses 2x that for a bit more room #}
-    post-up tc qdisc add dev {{ ifname }} root tbf rate {{ limit_mbit }}mbit latency 10ms burst {{ (limit_mbit / 250 * 2 * 125000) | int }}
+{% if dn42_ratelimit and ifname.startswith('dn42') %}
+    post-up tc qdisc add dev {{ ifname }} {{ dn42_ratelimit_tc_args }}
 {% endif %}
     post-down ip link del {{ ifname }}

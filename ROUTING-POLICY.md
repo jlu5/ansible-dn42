@@ -27,7 +27,7 @@ These are defined in `get_region_tag` of [`custom_filters.conf.j2`](roles/config
 
 ## BGP Communities
 
-The [standard dn42 BGP Communities](https://dn42.net/howto/Bird-communities) for max. inter-AS link latency, bandwidth, and encryption are supported. All of my nodes so far are marked as >= 100 Mbps bandwidth, as capacity varies and I cannot guarantee anything higher.
+The [standard dn42 BGP Communities](https://dn42.net/howto/Bird-communities) for max. inter-AS link latency, bandwidth, and encryption are supported. All of my nodes so far are marked as >= 10 Mbps bandwidth, as capacity varies and I cannot guarantee anything higher.
 
 ### Large communities
 

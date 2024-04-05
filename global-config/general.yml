@@ -6,6 +6,12 @@ ownnets4:
 ownnets6:
 - fd86:bad:11b7::/48
 
+# Default ratelimit (Mbps) for outgoing traffic on dn42 interfaces
+dn42_ratelimit: 15
+# ref: https://unix.stackexchange.com/a/100797
+# burst size should be >= rate / kernel HZ, in units of bytes. This uses 2x that for a bit more room
+dn42_ratelimit_tc_args: "root tbf rate {{ dn42_ratelimit }}mbit latency 10ms burst {{ (dn42_ratelimit / 250 * 2 * 125000) | int }}"
+
 # Dummy device names for IGP and Anycast services
 # To simplify IGP configuration in Bird this assumes that all dummy interface names follow a pattern
 # Note: forwarding rules are managed separately in roles/config-iptables/
