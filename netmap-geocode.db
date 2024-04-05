@@ -70,6 +70,9 @@ Seattle, WA, US: !!python/tuple
 Singapore, SG: !!python/tuple
 - 1.352083
 - 103.819836
+Stockholm, SE: !!python/tuple
+- 59.32932349999999
+- 18.0685808
 Sydney, AU: !!python/tuple
 - -33.8688197
 - 151.2092955
