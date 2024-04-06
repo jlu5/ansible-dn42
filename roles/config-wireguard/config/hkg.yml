@@ -82,9 +82,9 @@ wg_peers:
 - name: dn42-zezhiya
   port: 22744
   remote: 45.149.92.139:21080
-  wg_pubkey: stSxV454ZV2VPPwXqUvmPTwz1LU98xtw2Fu4U+s+QFU=
-  peer_v4: 172.21.79.192
-  peer_v6: 'fde5:d799:678::'
+  wg_pubkey: 2OQVoyasMCuZ4MbbG+OYMpSyYX9GRu5jl1Wcfl9nLwA=
+  peer_v4: null
+  peer_v6: fe80::2744:1
 
 - name: dn42-jasonxu
   port: 23658
