@@ -190,7 +190,7 @@ def main():
     wg_config_path, bird_config_path = get_config_paths(args.node, peername, replace=args.replace)
     yaml = get_yaml()
     with open(wg_config_path, 'r+', encoding='utf-8') as f:
-        wg_config = yaml.load(f)
+        wg_config = yaml.load(f) or {}
 
         wg_peers = ruamel.yaml.comments.CommentedSeq(wg_config.get('wg_peers', []))
         iface_name = get_iface_name(peername)
