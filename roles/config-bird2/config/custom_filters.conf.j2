@@ -135,7 +135,7 @@ function handle_special_cases()
     if (bgp_path ~ [= [4242421888] ? * =] && (4242421888, 100, DN42_REGION) ~ bgp_large_community) then {
         bgp_med = bgp_med - 10;
     }
-    if (bgp_path ~ [= [4242421816] ? * =] && (4242421816, 10000, DN42_REGION) ~ bgp_large_community) then {
+    if (bgp_path ~ [= [4242421816] ? * =] && (4242421816, 10000, DN42_REGION) ~ bgp_large_community) && DN42_REGION != 41 then {
         bgp_med = bgp_med - 10;
     }
     # Large single region networks also satisfy this, I guess
