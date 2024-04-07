@@ -90,3 +90,10 @@ wg_peers:
   port: 22923
   remote: p2p-node.de:51080
   wg_pubkey: 4gf9k6UUBO55geG7377qiMt/zHVuy77X60n/vNQMtj4=
+
+- name: dn42-kioubit
+  port: 23914
+  remote: uk1.g-load.eu:21080
+  wg_pubkey: sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8=
+  peer_v4: 172.20.53.104
+  peer_v6: fe80::ade0
