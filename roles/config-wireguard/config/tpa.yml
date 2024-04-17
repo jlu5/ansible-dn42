@@ -36,8 +36,8 @@ wg_peers:
 
 - name: dn42-routedbits
   port: 20207
-  remote: router.atl1.routedbits.com:51080
-  wg_pubkey: QKK4a4vZQ4sd6EdXZ2IIlXNoUVMqcWX8nGoKEfy/VGU=
+  remote: router.mia1.routedbits.com:51080
+  wg_pubkey: 7v+CFwv6ptPDWWBtLoSJBq8+jC+jTD8QbRtt6NCYegw=
   peer_v4: null
   peer_v6: fe80::207
 
