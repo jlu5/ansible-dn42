@@ -105,7 +105,8 @@ wg_peers:
 
 - name: dn42-heartbleed
   port: 22297
-  remote: 2001:448a:2020:906b::1:21080
-  wg_pubkey: kF7xe3Byy6kqH178N5rfhv1j1gW6cQ5MU/OpRcyqz1k=
-  peer_v4: 169.254.108.129/31
-  peer_v6: fe80::905e:f17b:7072:cba9
+  remote: 2001:470:35:1c::2:65001
+  wg_pubkey: +cJwSzBOZ+T0uJiGHELpshqyW9Bg7Za0ifEef1wEzSo=
+  local_v4: 172.23.9.130/30
+  local_v6: fdd0:b971:a0bf:1::2/64
+  wg_mtu: 1376
