@@ -346,3 +346,10 @@ wg_peers:
   wg_pubkey: c2bRvwMy1EqsT036Qdfhpq/5bw+TjahqIYIaqHJ98nY=
   peer_v4: 172.23.114.157
   peer_v6: fe80::1014
+
+- name: dn42-metakiwi
+  port: 23564
+  remote: 4.de01.dn42.metakiwi.net:21080
+  wg_pubkey: y45KBG+WDESoahZiLy8jaPZgdR98B/zO62Td1dvGljA=
+  peer_v4: null
+  peer_v6: fe80::37:ddee
