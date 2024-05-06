@@ -353,3 +353,10 @@ wg_peers:
   wg_pubkey: y45KBG+WDESoahZiLy8jaPZgdR98B/zO62Td1dvGljA=
   peer_v4: null
   peer_v6: fe80::37:ddee
+
+- name: dn42-chmod
+  port: 22665
+  remote: null
+  wg_pubkey: bZVc5oXFwY0yjXAGeA7qlpt77kHkeqF27PwMwrwxOUw=
+  peer_v4: null
+  peer_v6: fe80::2665:129
