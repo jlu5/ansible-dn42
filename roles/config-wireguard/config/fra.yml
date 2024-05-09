@@ -292,7 +292,7 @@ wg_peers:
 
 - name: dn42-pivipi
   port: 20129
-  remote: de-fra.inferior.network:21080
+  remote: de-fra.420129.xyz:21080
   wg_pubkey: u7Pes8qR8m+/4kc4sNTYani90M2MEbaxRsnXKujqik4=
   wg_presharedkey: !vault |
     $ANSIBLE_VAULT;1.1;AES256
