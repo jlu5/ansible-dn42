@@ -1,7 +1,7 @@
 smokeping_region_map:
   41: [EU, EU2, MEA, AsiaSouthCentral, AsiaCN]
-  42: [NAEast, NACentral, NAWest, LatAm, EU]
-  43: [NACentral, NAEast, NAWest, LatAm, EU]
+  42: [NAEast, NACentral, NAWest, LatAm, EU, AsiaCN]
+  43: [NACentral, NAEast, NAWest, LatAm, EU, AsiaCN]
   44: [NAWest, NACentral, NAEast, AsiaEast, AsiaCN, Oceania]
   46: [LatAm, NAEast]
   51: [AsiaSouthCentral, AsiaEast, Oceania, AsiaCN, NAWest, EU, MEA]
