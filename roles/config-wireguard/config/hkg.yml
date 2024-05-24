@@ -92,3 +92,12 @@ wg_peers:
   wg_pubkey: DiFXOjt1vOsisPKx7ncUwLvvxfvWF4VLqNOGO6TQMAw=
   peer_v4: 172.20.193.162
   peer_v6: fd4e:d0:d38d::2
+
+- name: cl-roam
+  local_v4: 172.22.108.88/31
+  local_v6: null
+  port: 19999
+  multi:
+  - wg_pubkey: "krMnDawVDAurrJqWkePFp1vE2zwK2vQy6ie6tGLcnX0="
+    wg_allowedips: "172.22.108.89/32"
+  peer_v6: null

@@ -18,6 +18,15 @@ wg_peers:
     wg_allowedips: "172.22.108.51/32,fd86:bad:11b7:35:2::2/128"
   peer_v6: null
 
+- name: cl-roam
+  local_v4: 172.22.108.90/31
+  local_v6: null
+  port: 19998
+  multi:
+  - wg_pubkey: "krMnDawVDAurrJqWkePFp1vE2zwK2vQy6ie6tGLcnX0="
+    wg_allowedips: "172.22.108.91/32"
+  peer_v6: null
+
 - name: dn42-yura
   port: 22464
   #remote: "yvr.dneo.moeternet.com:21080"
