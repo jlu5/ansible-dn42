@@ -56,6 +56,7 @@ AS4242427777 4242428888suffixes-not-accepted
 dn42-us-chi01.jlu5.com Test.Example.Com wiki.dn42 HELLO.WORLD de-nbg01.rtr.highdef.dn42 A b. CDEF
 ipv4: 8.8.8.8 172.20.229.113 172.11.1.1 172.1 172.11.1.1111
 ipv6: fd86:bad fd86:really:Bad FD???? fd:86:badbad::1  fd:86:bad::1 FD88::5 a:b:C:d e::e::e fd::BEEF
+Times: 9:00 A.M. 12:34 PM 12:34 P.M
 """
         self.assertEqual({
             'asn': ['4242421080', '4242420000', '4201279999', '4242427777'],

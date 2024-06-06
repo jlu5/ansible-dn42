@@ -30,8 +30,8 @@ WG_PORT_RE = re.compile(r'(?<=:|\s)[2-5](?!0000)[0-9]{4}\b')
 ENDPOINT_RE = re.compile(
     # Very loose matches for:
     r'(?:'
-    # DNS domain
-    r'(?:[0-9a-z-_]+\.)+[0-9a-z]+|(?:'
+    # DNS domain (as a rough heuristic, require the TLD to have >= 2 characters and begin with a letter)
+    r'(?:[0-9a-z-_]+\.)+[a-z][0-9a-z]+|(?:'
     # IPv4 address
     + _IPV4_RE_STR + r')|(?:'
     # IPv6 address
