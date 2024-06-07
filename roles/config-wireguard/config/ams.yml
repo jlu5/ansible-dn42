@@ -250,3 +250,10 @@ wg_peers:
   wg_pubkey: zajOi1myXS0VZeYdNKcK3W1ROIcGSQtQ1Ie17ZrNxiI=
   peer_v4: 172.22.128.179
   peer_v6: fe80::0225:1080
+
+- name: dn42-foxtode
+  port: 23177
+  remote: 95.130.6.48:51820
+  wg_pubkey: lCegAi9aFb06Wt1jlzmDfXjQkPhV7PvqhneWeS7ETVs=
+  peer_v4: 169.254.1.1
+  peer_v6: fe80::6c17:89a4:3e9f:e43e
