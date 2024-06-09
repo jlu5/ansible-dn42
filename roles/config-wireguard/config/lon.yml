@@ -97,3 +97,10 @@ wg_peers:
   wg_pubkey: sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8=
   peer_v4: 172.20.53.104
   peer_v6: fe80::ade0
+
+- name: dn42-sfsarfe
+  port: 21780
+  remote: null
+  wg_pubkey: 73cKStIwW3HrDepdmix6hbLPBNb2/XM92AVBv78f+FQ=
+  peer_v4: 172.22.132.80
+  peer_v6: fe80::102
