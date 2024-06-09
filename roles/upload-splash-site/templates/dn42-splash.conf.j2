@@ -11,7 +11,7 @@ server {
 {# Listen on all dummy interfaces #}
 {% for iface, options in dummy_interfaces.items() %}
 {% for ip in options.ip4 + options.ip6 %}
-    server_name {{ ip | ansible.utils.ipaddr('address') | ipwrap }};
+    server_name {{ ip | ansible.utils.ipaddr('address') | ansible.utils.ipwrap }};
 {% endfor %}
 {% endfor %}
 
