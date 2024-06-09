@@ -12,9 +12,7 @@ $TTL 300
 3 IN PTR ping.highdef.dn42.
 54 IN PTR ns.highdef.dn42.
 53 IN PTR dns.highdef.dn42.
-104 IN PTR music.highdef.dn42.
 82 IN PTR git.highdef.dn42.
-19 IN PTR nt.highdef.dn42.
 1 IN PTR gw.yvrlab.highdef.dn42.
 35 IN PTR yvrpeer.rtr.highdef.dn42.
 34 IN PTR sjc.rtr.highdef.dn42.
