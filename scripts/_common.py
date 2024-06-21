@@ -7,17 +7,27 @@ def yaml_load(filename):
     with open(filename, encoding='utf-8') as f:
         return yaml.full_load(f.read())
 
-def get_hosts(yaml_content, include_private=False):
+def get_hosts_group(yaml_group):
     """
-    Get a list of all host definitions from hosts.yml
+    Get a dict of host definitions from the given YAML host group
     """
     results = {}
-    for region_groups in yaml_content['dn42routers']['children'].values():
-        results.update(region_groups['hosts'])
+    if 'hosts' in yaml_group:
+        results.update(yaml_group['hosts'])
+    if 'children' in yaml_group:
+        for group in yaml_group['children'].values():
+            results.update(get_hosts_group(group))
+    return results
+
+def get_hosts(yaml_content, include_private=False):
+    """
+    Get a dict of all host definitions from hosts.yml
+    """
+    results = get_hosts_group(yaml_content['dn42routers'])
     if include_private:
-        results.update(yaml_content['private']['hosts'])
+        results |= get_hosts_group(yaml_content['private'])
     return results
 
 def is_anycast_host(yaml_content, host):
-    return host in yaml_content['anycast_recursors']['hosts'] or \
-        host in yaml_content['anycast_auth_dns']['hosts']
+    return host in get_hosts_group(yaml_content['anycast_recursors']) \
+        | get_hosts_group(yaml_content['anycast_auth_dns'])
