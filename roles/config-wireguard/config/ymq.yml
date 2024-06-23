@@ -180,3 +180,10 @@ wg_peers:
   wg_pubkey: TkOlaPE+4n3WFuYOMAPdIaHSMFry2LMLYzxVfVk1izs=
   peer_v4: 172.23.89.225
   peer_v6: null
+
+- name: dn42-lapisnet
+  port: 22032
+  remote: yul1.rtr42.inet6.foo:21080
+  wg_pubkey: mekHV0j+UIFlb166s3BLbult3tsJqgGxzaOv7A0dwWw=
+  peer_v4: null
+  peer_v6: fe80::2032
