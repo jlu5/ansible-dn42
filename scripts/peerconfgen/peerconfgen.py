@@ -126,13 +126,19 @@ def complete_peer_config(scrape_results):
         raise ValueError("Need either peer_v4 or peer_v6 for peers")
     return result
 
-def get_config_paths(node, peername, replace=False):
+def get_config_paths(node, peername, replace=False, create=False):
     wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{node}.yml")
     bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", node)
+
     if not os.path.exists(wg_config_path):
-        with open(wg_config_path, 'w', encoding='utf8') as f:
+        if not create:
+            raise OSError(f"Unknown node {node}: {wg_config_path} does not exist")
+        print(f'Creating new WireGuard config {wg_config_path}')
+        with open(wg_config_path, 'w', encoding='utf8') as _:
             pass  # write an empty file
+
     if not os.path.isdir(bird_config_dir):
+        assert create
         os.makedirs(bird_config_dir)
 
     bird_config_path = bird_config_dir / f'{peername}.conf'
@@ -174,20 +180,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', '-n', help='Only print generated output; do not write it to disk', action='store_true')
     parser.add_argument('--replace', '-r', help='Overwrite existing config blocks', action='store_true')
+    parser.add_argument('--create', '-c', help="Create WireGuard config file if it doesn't exist", action='store_true')
     parser.add_argument('node', help='Node to generate config for', type=str)
     parser.add_argument('peername', help='Short name / identifier for peer', type=str)
     args = parser.parse_args()
 
     # cd to repo root
     rootdir = pathlib.Path(os.path.dirname(__file__)) / ".." / ".."
-    #print('cd to', rootdir)
     os.chdir(rootdir)
 
     peername = args.peername.lower()
     if not _PEERNAME_RE.match(peername):
         raise ValueError(f"Peer name {peername!r} should only contain ASCII letters and numbers")
 
-    wg_config_path, bird_config_path = get_config_paths(args.node, peername, replace=args.replace)
+    wg_config_path, bird_config_path = get_config_paths(args.node, peername, replace=args.replace, create=args.create)
+
     yaml = get_yaml()
     with open(wg_config_path, 'r+', encoding='utf-8') as f:
         wg_config = yaml.load(f) or {}
