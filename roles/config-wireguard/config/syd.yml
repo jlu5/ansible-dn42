@@ -61,3 +61,10 @@ wg_peers:
   wg_pubkey: Lhg2KWIFATOatdf/qLyTmAs0XEImX2oPzqoZKCMMlw8=
   peer_v4: null
   peer_v6: fe80::2558:1
+
+- name: dn42-rivensbane
+  port: 21815
+  remote: au1.rivensbane.com:21080
+  wg_pubkey: R5fOFXqd3bvfCt42oe3+qaqGY7gbsYpK8wLBc1o6/Ec=
+  peer_v4: null
+  peer_v6: fe80::1815
