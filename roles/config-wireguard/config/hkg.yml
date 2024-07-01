@@ -101,3 +101,10 @@ wg_peers:
   - wg_pubkey: "krMnDawVDAurrJqWkePFp1vE2zwK2vQy6ie6tGLcnX0="
     wg_allowedips: "172.22.108.89/32"
   peer_v6: null
+
+- name: dn42-yuchow
+  port: 21260
+  remote: 405218.xyz:60105
+  wg_pubkey: 9zsuhOiSC8rKsdUNtX678wh3rTo4McJ9ueDqm1Ha8wI=
+  peer_v4: 172.20.236.161
+  peer_v6: fe80::9527
