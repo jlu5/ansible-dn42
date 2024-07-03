@@ -103,8 +103,8 @@ wg_peers:
   peer_v6: null
 
 - name: dn42-yuchow
-  port: 21260
-  remote: 405218.xyz:60105
+  port: 60105
+  remote: 405218.xyz
   wg_pubkey: 9zsuhOiSC8rKsdUNtX678wh3rTo4McJ9ueDqm1Ha8wI=
   peer_v4: 172.20.236.161
   peer_v6: fe80::9527
