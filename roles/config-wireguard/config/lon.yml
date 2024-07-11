@@ -104,3 +104,11 @@ wg_peers:
   wg_pubkey: 73cKStIwW3HrDepdmix6hbLPBNb2/XM92AVBv78f+FQ=
   peer_v4: 172.22.132.80
   peer_v6: fe80::102
+
+- name: dn42-cellardoor
+  port: 21774
+  remote: null
+  wg_pubkey: obTX3Gz9eeHsBmg1u0XwXOSwLBA70bN8Z1ww3djy+jk=
+  peer_v4: null
+  peer_v6: fdc0:b62e:4a7d:cafe:cafe:cafe:cafe:2
+  local_v6: fdc0:b62e:4a7d:cafe:cafe:cafe:cafe:1
