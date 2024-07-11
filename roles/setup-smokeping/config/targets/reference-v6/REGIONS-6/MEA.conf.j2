@@ -8,10 +8,17 @@ menu = [BH] Amazon AWS
 title = [BH] Amazon Web Services (me-south-1) - Bahrain [2a05:d01e:5f1:8a00::ec2]
 host = 2a05:d01e:5f1:8a00::ec2
 
+{% if not smokeping_lite %}
 ++ misaka-jnb
 menu = [ZA] Misaka
 title = [ZA] Misaka Network - Johannesburg, South Africa [2a0b:4342:1a91:28:5054:ff:fed7:954f]
 host = 2a0b:4342:1a91:28:5054:ff:fed7:954f
+{% endif %}
+
+++ psychz-jnb
+menu = [ZA] Psychz
+title = [ZA] Psychz - Johannesburg, South Africa [2604:6600:2010:32::4]
+host = 2604:6600:2010:32::4
 
 ++ vultr-jnb
 menu = [ZA] Vultr

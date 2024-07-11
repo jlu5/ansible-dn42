@@ -3,10 +3,12 @@ menu = [SG] Amazon AWS
 title = [SG] Amazon AWS - Singapore [2400:6500:ff00::344a:2]
 host = 2400:6500:ff00::344a:2
 
+{% if not smokeping_lite %}
 ++ hosthatch-sg
 menu = [SG] HostHatch
 title = [SG] HostHatch - Singapore [2406:ef80:2:87f1::1]
 host = 2406:ef80:2:87f1::1
+{% endif %}
 
 ++ leaseweb-sg
 menu = [SG] LeaseWeb
@@ -23,6 +25,7 @@ menu = [SG] OVH
 title = [SG] OVH - Singapore [sgp.proof.ovh.net]
 host = sgp.proof.ovh.net
 
+{% if not smokeping_lite %}
 ++ shockhosting-sg
 menu = [SG] Shock Hosting
 title = [SG] Shock Hosting - Singapore [sg-lg.shockhosting.net]
@@ -32,12 +35,14 @@ host = sg-lg.shockhosting.net
 menu = [SG] StarryDNS
 title = [SG] StarryDNS - Singapore [2403:ad80:a7:7e8::ffff]
 host = 2403:ad80:a7:7e8::ffff
+{% endif %}
 
 ++ vultr-sg
 menu = [SG] Vultr
 title = [SG] Vultr - Singapore [2001:19f0:4400:4001:5400:ff:fe32:b7e5]
 host = 2001:19f0:4400:4001:5400:ff:fe32:b7e5
 
+{% if not smokeping_lite %}
 ++ linode-cgk
 menu = [ID] Linode
 title = [ID] Linode @ Akamai - Jakarta, Indonesia [speedtest.jakarta.linode.com]
@@ -47,17 +52,19 @@ host = speedtest.jakarta.linode.com
 menu = [IN] Contabo (Mumbai)
 title = [IN] Contabo - Mumbai, India [bom.speedtest.contabo.net]
 host = bom.speedtest.contabo.net
-
-++ linode-mum
-menu = [IN] Linode (Mumbai)
-title = [IN] Linode - Mumbai, India [speedtest.mum1.linode.com]
-host = speedtest.mum1.linode.com
+{% endif %}
 
 ++ leapswitch
 menu = [IN] Leapswitch (Mumbai)
 title = [IN] Leapswitch - Mumbai, India [2001:df3:8880::1]
 host = 2001:df3:8880::1
 
+++ linode-mum
+menu = [IN] Linode (Mumbai)
+title = [IN] Linode - Mumbai, India [speedtest.mum1.linode.com]
+host = speedtest.mum1.linode.com
+
+{% if not smokeping_lite %}
 ++ melbicom-bom
 menu = [IN] Melbicom (Mumbai)
 title = [IN] Melbicom - Mumbai, India [dl.bom.melbicom.net]
@@ -72,6 +79,7 @@ host = bom.proof.ovh.net
 menu = [IN] Psychz
 title = [IN] Psychz - Mumbai, India [2604:6600:a3::3]
 host = 2604:6600:a3::3
+{% endif %}
 
 ++ vultr-blr
 menu = [IN] Vultr (Bangalore)
@@ -83,6 +91,7 @@ menu = [VN] GreenCloud (Hanoi)
 title = [VN] GreenCloud @ FPT Telecom - Hanoi, Vietnam [2404:fbc0:0:1261::5ea9]
 host = 2404:fbc0:0:1261::5ea9
 
+{% if not smokeping_lite %}
 ++ tothost-hanoi
 menu = [VN] TOTHOST @ VNPT
 title = [VN] TOTHOST @ VNPT - Hanoi, Vietnam [2400:e920:0:3::185:252]
@@ -92,3 +101,9 @@ host = 2400:e920:0:3::185:252
 menu = [VN] GreenCloud (Ho Chi Minh)
 title = [VN] GreenCloud @ FPT Telecom - Ho Chi Minh City, Vietnam [2400:6ea0:0:124d::9da5]
 host = 2400:6ea0:0:124d::9da5
+{% endif %}
+
+++ virtury
+menu = [PK] Virtury Cloud
+title = [PK] Virtury Cloud - Islamabad, Pakistan [2001:df2:d40:1::1]
+host = 2001:df2:d40:1::1

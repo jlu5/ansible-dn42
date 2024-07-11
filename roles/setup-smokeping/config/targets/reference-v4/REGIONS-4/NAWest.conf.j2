@@ -1,4 +1,4 @@
-
+{% if not smokeping_lite %}
 ++ aebc_0
 menu = [CA/BC] AEBC
 title = [CA/BC] AEBC / Cipherkey - Vancouver, BC, Canada [speedtest-6.aebc.com]
@@ -28,12 +28,14 @@ host = yvr01.lg.freerangecloud.com
 menu = [CA/BC] GTHost
 title = [CA/BC] GTHost - Vancouver, BC, Canada [158.51.122.166]
 host = 158.51.122.166
+{% endif %}
 
 ++ novus
 menu = [CA/BC] Novus
 title = [CA/BC] Novus - Vancouver, BC, CA [speedtest.novuscom.net]
 host = speedtest.novuscom.net
 
+{% if not smokeping_lite %}
 ++ pacificservers
 menu = [CA/BC] Pacific Servers
 title = [CA/BC] Pacific Servers - Vancouver, BC, CA [pacificservers.com]
@@ -43,12 +45,14 @@ host = pacificservers.com
 menu = [CA/BC] Performive / VPS.net
 title = [CA/BC] Performive / VPS.net - Vancouver, BC, Canada [192.111.132.3]
 host = 192.111.132.3
+{% endif %}
 
 ++ shaw-yvr
 menu = [CA/BC] Shaw
 title = [CA/BC] Shaw - Vancouver, BC, Canada [speedtest.vc.shawcable.net]
 host = speedtest.vc.shawcable.net
 
+{% if not smokeping_lite %}
 ++ skywaywest
 menu = [CA/BC] Skyway West
 title = [CA/BC] Skyway West - Vancouver, BC, Canada [speedtest.skywaywest.net]
@@ -58,12 +62,14 @@ host = speedtest.skywaywest.net
 menu = [CA/BC] Tech Futures
 title = [CA/BC] Tech Futures Interactive - Burnaby, BC, Canada [speedtest1.yvr1.cloudsingularity.net]
 host = speedtest1.yvr1.cloudsingularity.net
+{% endif %}
 
 ++ telus-yvr
 menu = [CA/BC] TELUS
 title = [CA/BC] TELUS - Vancouver, BC, Canada [vancouver.speedtest.telus.com]
 host = vancouver.speedtest.telus.com
 
+{% if not smokeping_lite %}
 ++ centurylink-seattle-wa
 menu = [US/WA] CenturyLink
 title = [US/WA] CenturyLink - Seattle, WA, United States [seattle.speedtest.centurylink.net]
@@ -78,22 +84,26 @@ host = sea.speedtest.contabo.net
 menu = [US/WA] GTHost
 title = [US/WA] GTHost - Seattle, WA, US [38.91.102.166]
 host = 38.91.102.166
+{% endif%}
 
 ++ linode-sea
 menu = [US/WA] Linode @ Akamai
 title = [US/WA] Linode @ Akamai - Seattle, WA, US [speedtest.seattle.linode.com]
 host = speedtest.seattle.linode.com
 
+{% if not smokeping_lite %}
 ++ misaka-seattle-wa
 menu = [US/WA] Misaka
 title = [US/WA] Misaka Network - Seattle, WA, United States [us-sea02.speed.misaka.one]
 host = us-sea02.speed.misaka.one
+{% endif %}
 
 ++ reprisehosting
 menu = [US/WA] Reprise Hosting
 title = [US/WA] Reprise Hosting - Seattle, WA, US [test.reprisehosting.com]
 host = test.reprisehosting.com
 
+{% if not smokeping_lite %}
 ++ spartanhost-sea
 menu = [US/WA] SpartanHost
 title = [US/WA] SpartanHost - Seattle, WA, US [lg.sea.spartanhost.net]
@@ -103,6 +113,7 @@ host = lg.sea.spartanhost.net
 menu = [US/WA] RamNode
 title = [US/WA] RamNode - Seattle, WA, US [lg.sea.ramnode.com]
 host = lg.sea.ramnode.com
+{% endif %}
 
 ++ vultr-sea
 menu = [US/WA] Vultr
@@ -114,10 +125,12 @@ menu = [US/WA] Wowrack
 title = [US/WA] Wowrack - Seattle, WA, US [speedtest01.wowrack.com]
 host = speedtest01.wowrack.com
 
+{% if not smokeping_lite %}
 ++ xtom-sea
 menu = [US/WA] xTom
 title = [US/WA] xTom / V.PS - Seattle, United States [sea.speedtest.v.ps]
 host = sea.speedtest.v.ps
+{% endif %}
 
 ++ crunchbits_0
 menu = [US/WA] Crunchbits (Spokane)
@@ -134,6 +147,7 @@ menu = [US/OR] Hetzner
 title = [US/OR] Hetzner - Hillsboro, OR, US [hil-speed.hetzner.com]
 host = hil-speed.hetzner.com
 
+{% if not smokeping_lite %}
 ++ hosteons-pdx
 menu = [US/OR] hostEONS
 title = [US/OR] hostEONS @ Limestone Networks - Portland, OR, US [lg.pdx.hosteons.com]
@@ -178,6 +192,7 @@ host = calgary.speedtest.telus.com
 menu = [CA/AB] Wolfpaw (Edmonton)
 title = [CA/AB] Wolfpaw Datacentres - Edmonton, AB, Canada [speedtest.wolfpaw.net]
 host = speedtest.wolfpaw.net
+{% endif %}
 
 ++ att-santa-clara-ca
 menu = [US/CA] AT&T (Santa Clara)
@@ -204,6 +219,7 @@ menu = [US/CA] Linode (Fremont)
 title = [US/CA] Linode - Fremont, CA, US [speedtest.fremont.linode.com]
 host = speedtest.fremont.linode.com
 
+{% if not smokeping_lite %}
 ++ misaka-san-jose-ca
 menu = [US/CA] Misaka (San Jose)
 title = [US/CA] Misaka Network - San Jose, CA, United States [us-sjc10.speed.misaka.one]
@@ -228,12 +244,14 @@ host = sjc.speedtest.v.ps
 menu = [US/CA] Clouvider (Los Angeles)
 title = [US/CA] Clouvider - Los Angeles, CA, US [la.mirrors.clouvider.net]
 host = la.mirrors.clouvider.net
+{% endif %}
 
 ++ colocrossing-la
 menu = [US/CA] ColoCrossing (LA)
 title = [US/CA] ColoCrossing - Los Angeles, CA, US [lg.la.colocrossing.com]
 host = lg.la.colocrossing.com
 
+{% if not smokeping_lite %}
 ++ cox-orange-county-ca
 menu = [US/CA] Cox (Orange County)
 title = [US/CA] Cox - Orange County, CA, United States [speedtest.rd.oc.cox.net]
@@ -253,12 +271,14 @@ host = speedtest.lax.hivelocity.net
 menu = [US/CA] hostEONS (Los Angeles)
 title = [US/CA] hostEONS @ Limestone Networks - Los Angeles, CA, US [lg.la.hosteons.com]
 host = lg.la.hosteons.com
+{% endif %}
 
 ++ hosthatch-lax
 menu = [US/CA] HostHatch (Los Angeles)
 title = [US/CA] HostHatch - Los Angeles, CA, US [lg.lax.hosthatch.com]
 host = lg.lax.hosthatch.com
 
+{% if not smokeping_lite %}
 ++ linode-lax
 menu = [US/CA] Linode (Los Angeles)
 title = [US/CA] Linode @ Akamai - Los Angeles, CA, US [speedtest.los-angeles.linode.com]
@@ -273,6 +293,7 @@ host = dl.lax.melbicom.net
 menu = [US/CA] Misaka (Los Angeles)
 title = [US/CA] Misaka Network - Los Angeles, CA, United States [us-lax02.speed.misaka.one]
 host = us-lax02.speed.misaka.one
+{% endif %}
 
 ++ spectrum-monterey-park-ca
 menu = [US/CA] Spectrum
@@ -289,6 +310,7 @@ menu = [US/CA] QuadraNet (Los Angeles)
 title = [US/CA] QuadraNet - Los Angeles, CA, US [repos.lax-noc.com]
 host = repos.lax-noc.com
 
+{% if not smokeping_lite %}
 ++ quickpacket-lax
 menu = [US/CA] QuickPacket (LA)
 title = [US/CA] QuickPacket - Los Angeles, CA, US [lg.lax01.quickpacket.com]
@@ -298,12 +320,14 @@ host = lg.lax01.quickpacket.com
 menu = [US/CA] Ramnode (Los Angeles)
 title = [US/CA] Ramnode - Los Angeles, CA, US [lg.la.ramnode.com]
 host = lg.la.ramnode.com
+{% endif %}
 
 ++ reliablesite-la
 menu = [US/CA] ReliableSite (Los Angeles)
 title = [US/CA] ReliableSite - Los Angeles, CA, US [los-angeles-speedtest.reliablesite.net]
 host = los-angeles-speedtest.reliablesite.net
 
+{% if not smokeping_lite %}
 ++ silicloud-lax-1
 menu = [US/CA] SiliCloud (Los Angeles)
 title = [US/CA] SiliCloud @ Zenlayer - Los Angeles, CA, US [lg-global-west01-us.silicloud.com]
@@ -323,12 +347,14 @@ host = lax-ca-us-ping.vultr.com
 menu = [US/CA] WebNX (Los Angeles)
 title = [US/CA] AlphaVPS @ WebNX - Los Angeles, CA, US [lgla.alphavps.com]
 host = lgla.alphavps.com
+{% endif %}
 
 ++ buyvm-las
 menu = [US/NV] BuyVM
 title = [US/NV] BuyVM - Las Vegas, NV, US [speedtest.lv.buyvm.net]
 host = speedtest.lv.buyvm.net
 
+{% if not smokeping_lite %}
 ++ fiberhub
 menu = [US/NV] FiberHub
 title = [US/NV] FiberHub - Las Vegas, NV, US [172.93.0.3]
@@ -343,12 +369,14 @@ host = lv.hostodo.com
 menu = [US/UT] CenturyLink
 title = [US/UT] CenturyLink - Salt Lake City, UT, United States [salt-lake-city.speedtest.centurylink.net]
 host = salt-lake-city.speedtest.centurylink.net
+{% endif %}
 
 ++ fiberstate
 menu = [US/UT] FiberState
 title = [US/UT] FiberState - Salt Lake City, UT, US [23.145.120.2]
 host = 23.145.120.2
 
+{% if not smokeping_lite %}
 ++ hosteons-slc1
 menu = [US/UT] hostEONS @ Limestone
 title = [US/UT] hostEONS @ Limestone Networks - Salt Lake City, UT, US [lg.slc1.hosteons.com]
@@ -363,12 +391,14 @@ host = 108.171.216.1
 menu = [US/UT] XMission
 title = [US/UT] XMission - Salt Lake City, Utah, US [xmission.com]
 host = xmission.com
+{% endif %}
 
 ++ clouvider-phx
 menu = [US/AZ] Clouvider
 title = [US/AZ] Clouvider - Phoenix, AZ, US [phx.mirrors.clouvider.net]
 host = phx.mirrors.clouvider.net
 
+{% if not smokeping_lite %}
 ++ 1gservers
 menu = [US/AZ] 1GServers
 title = [US/AZ] 1GServers - Phoenix, AZ, US [speedtest.1gservers.com]
@@ -378,3 +408,4 @@ host = speedtest.1gservers.com
 menu = [US/AZ] IOFLOOD
 title = [US/AZ] IOFLOOD - Phoenix, AZ, US [148.163.68.178]
 host = 148.163.68.178
+{% endif %}

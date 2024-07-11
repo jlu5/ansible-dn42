@@ -1,20 +1,21 @@
-
-
 ++ att-cicero-il
 menu = [US/IL] AT&T
 title = [US/IL] AT&T - Cicero, IL, United States [cic.speedtest.sbcglobal.net]
 host = cic.speedtest.sbcglobal.net
 
+{% if not smokeping_lite %}
 ++ atomicnetworks-chi
 menu = [US/IL] Atomic Networks
 title = [US/IL] Atomic Networks - Chicago, IL, US [lg-us-chi.atomicnetworks.co]
 host = lg-us-chi.atomicnetworks.co
+{% endif %}
 
 ++ colocrossing-chi
 menu = [US/IL] ColoCrossing
 title = [US/IL] ColoCrossing - Chicago, IL, US [lg.chi.colocrossing.com]
 host = lg.chi.colocrossing.com
 
+{% if not smokeping_lite %}
 ++ datawagon-chi
 menu = [US/IL] DataWagon
 title = [US/IL] DataWagon @ Nexeon - Chicago, IL, US [172.81.131.66]
@@ -29,6 +30,7 @@ host = lg.chi.dedicated.com
 menu = [US/IL] HostHatch
 title = [US/IL] HostHatch - Chicago, IL, US [lg.chi.hosthatch.com]
 host = lg.chi.hosthatch.com
+{% endif %}
 
 ++ linode-chi
 menu = [US/IL] Linode @ Akamai
@@ -45,6 +47,7 @@ menu = [US/IL] Psychz
 title = [US/IL] Psychz - Chicago, IL, US [lg.chi.psychz.net]
 host = lg.chi.psychz.net
 
+{% if not smokeping_lite %}
 ++ tnahosting
 menu = [US/IL] TNAHosting
 title = [US/IL] TNAHosting @ GigeNET - Chicago, IL, US [lg.chi2.tnahosting.net]
@@ -64,16 +67,23 @@ host = stl.speedtest.contabo.net
 menu = [US/MO] Joe's DC
 title = [US/MO] Joe's Datacenter - Kansas City, MO, US [lg.joesdatacenter.com]
 host = lg.joesdatacenter.com
+{% endif %}
 
 ++ nocix
 menu = [US/MO] WholesaleInternet
 title = [US/MO] Nocix / WholesaleInternet - Kansas City, MO, US [speedtest.nocix.net]
 host = speedtest.nocix.net
 
+{% if not smokeping_lite %}
 ++ freerangecloud-ywg
 menu = [CA/MB] Free Range Cloud
 title = [CA/MB] Free Range Cloud - Winnipeg, MB, CA [ywg01.lg.freerangecloud.com]
 host = ywg01.lg.freerangecloud.com
+
+++ hostodo-mi
+menu = [US/MI] Hostodo @ INCX
+title = [US/MI] Hostodo @ INCX - Detroit, MI, US [det01.hostodo.com]
+host = det01.hostodo.com
 
 ++ smarthost-mi
 menu = [US/MI] SmartHost @ 123NET
@@ -99,12 +109,14 @@ host = spt01stcdmn.stcd.mn.charter.com
 menu = [US/TX] AT&T
 title = [US/TX] AT&T - Houston, TX, United States [hst.speedtest.sbcglobal.net]
 host = hst.speedtest.sbcglobal.net
+{% endif %}
 
 ++ colocrossing-dal
 menu = [US/TX] ColoCrossing
 title = [US/TX] ColoCrossing - Dallas, TX, US [lg.dal.colocrossing.com]
 host = lg.dal.colocrossing.com
 
+{% if not smokeping_lite %}
 ++ dataideas-tx
 menu = [US/TX] DataIdeas
 title = [US/TX] DataIdeas - Spring, TX, US [spring-glass.dataideas.com]
@@ -119,22 +131,26 @@ host = dal.lg.extravm.com
 menu = [US/TX] hostEONS
 title = [US/TX] hostEONS @ Limestone Networks - Dallas, TX, US [lg.dal.hosteons.com]
 host = lg.dal.hosteons.com
+{% endif %}
 
 ++ hivelocity-dal_0
 menu = [US/TX] Hivelocity
 title = [US/TX] Hivelocity - Dallas, TX, United States [speedtest.dal.hivelocity.net]
 host = speedtest.dal.hivelocity.net
 
+{% if not smokeping_lite %}
 ++ leveloneservers-dal
 menu = [US/TX] LevelOneServers
 title = [US/TX] LevelOneServers @ Path.net - Dallas, TX, US [dal.lg.leveloneservers.com]
 host = dal.lg.leveloneservers.com
+{% endif %}
 
 ++ linode-dal
 menu = [US/TX] Linode
 title = [US/TX] Linode - Dallas, TX, US [speedtest.dallas.linode.com]
 host = speedtest.dallas.linode.com
 
+{% if not smokeping_lite %}
 ++ nexeon-dal
 menu = [US/TX] Nexeon
 title = [US/TX] Nexeon - Dallas, TX, US [lg.dal1.as20278.net]
@@ -149,32 +165,38 @@ host = lg.nexril.net
 menu = [US/TX] Oplink.net
 title = [US/TX] Oplink.net - Spring, TX, US [speedtest.oplink.net]
 host = speedtest.oplink.net
+{% endif %}
 
 ++ psychz-dal
 menu = [US/TX] Psychz
 title = [US/TX] Psychz - Dallas, TX, US [lg.texas.psychz.net]
 host = lg.texas.psychz.net
 
+{% if not smokeping_lite %}
 ++ spartanhost-dal
 menu = [US/TX] SpartanHost
 title = [US/TX] SpartanHost - Dallas, TX, US [lg.dal.spartanhost.net]
 host = lg.dal.spartanhost.net
+{% endif %}
 
 ++ spectrum-fort-worth-tx
 menu = [US/TX] Spectrum
 title = [US/TX] Spectrum - Fort Worth, TX, United States [spt01ftwotx.ftwo.tx.charter.com]
 host = spt01ftwotx.ftwo.tx.charter.com
 
+{% if not smokeping_lite %}
 ++ tiernet-dal
 menu = [US/TX] Tier.net
 title = [US/TX] Tier.net - Dallas, TX, US [lg.tx.tier.net]
 host = lg.tx.tier.net
+{% endif %}
 
 ++ vultr-dal
 menu = [US/TX] Vultr
 title = [US/TX] Vultr - Dallas, TX, US [tx-us-ping.vultr.com]
 host = tx-us-ping.vultr.com
 
+{% if not smokeping_lite %}
 ++ centurylink-denver-co
 menu = [US/CO] CenturyLink
 title = [US/CO] CenturyLink - Denver, CO, United States [denver.speedtest.centurylink.net]
@@ -184,12 +206,14 @@ host = denver.speedtest.centurylink.net
 menu = [US/CO] Nexeon
 title = [US/CO] Nexeon - Denver, CO, US [lg.den1.as20278.net]
 host = lg.den1.as20278.net
+{% endif %}
 
 ++ smarthost-co
 menu = [US/CO] SmartHost
 title = [US/CO] SmartHost @ Handy Networks - Denver, CO, US [co1.smarthost.net]
 host = co1.smarthost.net
 
+{% if not smokeping_lite %}
 ++ smarthost-nm
 menu = [US/NM] SmartHost
 title = [US/NM] SmartHost @ Brownrice Internet - Taos, NM, US [nm1.smarthost.net]
@@ -199,3 +223,4 @@ host = nm1.smarthost.net
 menu = [US/LA] Cox
 title = [US/LA] Cox - New Orleans, LA, United States [speedtest.rd.no.cox.net]
 host = speedtest.rd.no.cox.net
+{% endif %}

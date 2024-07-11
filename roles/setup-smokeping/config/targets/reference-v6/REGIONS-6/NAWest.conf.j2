@@ -1,4 +1,4 @@
-
+{% if not smokeping_lite %}
 ++ bell-yvr
 menu = [CA/BC] Bell (Vancouver)
 title = [CA/BC] Bell - Vancouver, British Columbia [vancnspd01.srvr.bell.ca]
@@ -13,6 +13,7 @@ host = 2602:fed2:fb0:19::1
 menu = [CA/BC] Pacific Servers
 title = [CA/BC] Pacific Servers - Vancouver, BC, CA [pacificservers.com]
 host = pacificservers.com
+{% endif %}
 
 ++ telus-yvr
 menu = [CA/BC] TELUS
@@ -24,6 +25,7 @@ menu = [US/WA] Linode @ Akamai
 title = [US/WA] Linode @ Akamai - Seattle, WA, US [speedtest.seattle.linode.com]
 host = speedtest.seattle.linode.com
 
+{% if not smokeping_lite %}
 ++ misaka-seattle-wa
 menu = [US/WA] Misaka
 title = [US/WA] Misaka Network - Seattle, WA, United States [us-sea02.speed.misaka.one]
@@ -33,6 +35,7 @@ host = us-sea02.speed.misaka.one
 menu = [US/WA] RamNode
 title = [US/WA] RamNode - Seattle, WA, US [lg.sea.ramnode.com]
 host = lg.sea.ramnode.com
+{% endif %}
 
 ++ vultr-sea
 menu = [US/WA] Vultr
@@ -44,10 +47,12 @@ menu = [US/WA] Wowrack
 title = [US/WA] Wowrack - Seattle, WA, US [speedtest01.wowrack.com]
 host = speedtest01.wowrack.com
 
+{% if not smokeping_lite %}
 ++ xtom-sea
 menu = [US/WA] xTom
 title = [US/WA] xTom / V.PS - Seattle, United States [sea.speedtest.v.ps]
 host = sea.speedtest.v.ps
+{% endif %}
 
 ++ crunchbits
 menu = [US/WA] Crunchbits (Spokane)
@@ -64,6 +69,7 @@ menu = [US/OR] Hetzner
 title = [US/OR] Hetzner - Hillsboro, OR, US [hil-speed.hetzner.com]
 host = hil-speed.hetzner.com
 
+{% if not smokeping_lite %}
 ++ hosteons-pdx
 menu = [US/OR] hostEONS
 title = [US/OR] hostEONS @ Limestone Networks - Portland, OR, US [2402:d0c0:16:1d::1]
@@ -88,6 +94,7 @@ host = 2600:1f1a:448e:2200::ec2
 menu = [CA/AB] TELUS (Calgary)
 title = [CA/AB] TELUS - Calgary, AB, Canada [calgary.speedtest.telus.com]
 host = calgary.speedtest.telus.com
+{% endif %}
 
 ++ greencloud-sjc
 menu = [US/CA] GreenCloud (San Jose)
@@ -104,6 +111,7 @@ menu = [US/CA] Linode (Fremont)
 title = [US/CA] Linode - Fremont, CA, US [speedtest.fremont.linode.com]
 host = speedtest.fremont.linode.com
 
+{% if not smokeping_lite %}
 ++ misaka-san-jose-ca
 menu = [US/CA] Misaka (San Jose)
 title = [US/CA] Misaka Network - San Jose, CA, United States [us-sjc10.speed.misaka.one]
@@ -133,12 +141,14 @@ host = la.mirrors.clouvider.net
 menu = [US/CA] hostEONS (Los Angeles)
 title = [US/CA] hostEONS @ Limestone Networks - Los Angeles, CA, US [2402:d0c0:11:6::1]
 host = 2402:d0c0:11:6::1
+{% endif %}
 
 ++ hosthatch-lax
 menu = [US/CA] HostHatch (Los Angeles)
 title = [US/CA] HostHatch - Los Angeles, CA, US [2a04:bdc7:100::1]
 host = 2a04:bdc7:100::1
 
+{% if not smokeping_lite %}
 ++ linode-lax
 menu = [US/CA] Linode (Los Angeles)
 title = [US/CA] Linode @ Akamai - Los Angeles, CA, US [speedtest.los-angeles.linode.com]
@@ -153,6 +163,7 @@ host = us-lax02.speed.misaka.one
 menu = [US/CA] QuickPacket (LA)
 title = [US/CA] QuickPacket - Los Angeles, CA, US [lg.lax01.quickpacket.com]
 host = lg.lax01.quickpacket.com
+{% endif %}
 
 ++ reliablesite-la_0
 menu = [US/CA] ReliableSite (Los Angeles)
@@ -164,16 +175,19 @@ menu = [US/CA] QuadraNet (Los Angeles)
 title = [US/CA] QuadraNet - Los Angeles, CA, US [repos.lax-noc.com]
 host = repos.lax-noc.com
 
+{% if not smokeping_lite %}
 ++ silicloud-lax-1
 menu = [US/CA] SiliCloud (Los Angeles)
 title = [US/CA] SiliCloud @ Zenlayer - Los Angeles, CA, US [2400:38e0:0:4001::d0]
 host = 2400:38e0:0:4001::d0
+{% endif %}
 
 ++ spectrum-monterey-park-ca
 menu = [US/CA] Spectrum
 title = [US/CA] Spectrum - Monterey Park, CA, United States [spt01mtpkca.mtpk.ca.charter.com]
 host = spt01mtpkca.mtpk.ca.charter.com
 
+{% if not smokeping_lite %}
 ++ virtono-lax-us
 menu = [US/CA] Virtono @ M247 (LA)
 title = [US/CA] Virtono @ M247 - Los Angeles, CA, US [lax-us-ping.virtono.com]
@@ -183,6 +197,7 @@ host = lax-us-ping.virtono.com
 menu = [US/CA] Vultr (Los Angeles)
 title = [US/CA] Vultr - Los Angeles, CA, US [2001:19f0:6000:8002:5400:ff:fe00:5365]
 host = 2001:19f0:6000:8002:5400:ff:fe00:5365
+{% endif %}
 
 ++ webnx-lax
 menu = [US/CA] WebNX (Los Angeles)
@@ -199,6 +214,7 @@ menu = [US/UT] hostEONS @ FiberState
 title = [US/UT] hostEONS @ FiberState - Salt Lake City, UT, US [2402:d0c0:18:7::1]
 host = 2402:d0c0:18:7::1
 
+{% if not smokeping_lite %}
 ++ webnx-ogd
 menu = [US/UT] WebNX
 title = [US/UT] WebNX - Ogden, UT, US [ogd-lg.webnx.com]
@@ -208,13 +224,16 @@ host = ogd-lg.webnx.com
 menu = [US/UT] XMission
 title = [US/UT] XMission - Salt Lake City, Utah, US [xmission.com]
 host = xmission.com
+{% endif %}
 
 ++ clouvider-phx
 menu = [US/AZ] Clouvider
 title = [US/AZ] Clouvider - Phoenix, AZ, US [phx.mirrors.clouvider.net]
 host = phx.mirrors.clouvider.net
 
+{% if not smokeping_lite %}
 ++ 1gservers
 menu = [US/AZ] 1GServers
 title = [US/AZ] 1GServers - Phoenix, AZ, US [speedtest.1gservers.com]
 host = speedtest.1gservers.com
+{% endif %}

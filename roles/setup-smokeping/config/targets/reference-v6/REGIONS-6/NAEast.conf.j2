@@ -1,7 +1,9 @@
+{% if not smokeping_lite %}
 ++ accuris
 menu = [CA/ON] Accuris Hosting
 title = [CA/ON] Accuris Hosting - Ottawa, ON, CA [mirror01-pcl-ott1.accuris.ca]
 host = mirror01-pcl-ott1.accuris.ca
+{% endif %}
 
 ++ bell-yyz
 menu = [CA/ON] Bell
@@ -13,16 +15,19 @@ menu = [CA/ON] Free Range Cloud
 title = [CA/ON] Free Range Cloud - Toronto, ON, Canada [2602:fed2:fa0:8::1]
 host = 2602:fed2:fa0:8::1
 
+{% if not smokeping_lite %}
 ++ linode-tor
 menu = [CA/ON] Linode
 title = [CA/ON] Linode - Toronto, ON, Canada [speedtest.tor1.linode.com]
 host = speedtest.toronto1.linode.com
+{% endif %}
 
 ++ rogers-east
 menu = [CA/ON] Rogers Wireless
 title = [CA/ON] Rogers Wireless - Toronto, ON, Canada [sttorontowireless.rogers.com]
 host = sttorontowireless.rogers.com
 
+{% if not smokeping_lite %}
 ++ smarthost-tor
 menu = [CA/ON] SmartHost @ Nuday
 title = [CA/ON] SmartHost @ Nuday Networks - Toronto, ON, CA [2606:6680:55:1::a812:8b38]
@@ -32,12 +37,14 @@ host = 2606:6680:55:1::a812:8b38
 menu = [CA/ON] Vultr
 title = [CA/ON] Vultr - Toronto, ON, Canada [2001:19f0:b001:11:5400:1ff:fecb:8c50]
 host = 2001:19f0:b001:11:5400:1ff:fecb:8c50
+{% endif %}
 
 ++ xenyth
 menu = [CA/ON] Xenyth Cloud
 title = [CA/ON] Xenyth Cloud (GoCodeIT) - Toronto, ON, Canada [mirror.xenyth.net]
 host = mirror.xenyth.net
 
+{% if not smokeping_lite %}
 ++ amazon-ca
 menu = [CA/QC] Amazon AWS
 title = [CA/QC] Amazon Web Services (ca-central-1) [2600:1f11:b15:2000::ec2]
@@ -52,21 +59,29 @@ host = speedtest.hivedatacenter.com
 menu = [CA/QC] LeaseWeb
 title = [CA/QC] LeaseWeb - Montreal, QC, CA [debian.mirror.iweb.ca]
 host = debian.mirror.iweb.ca
+{% endif %}
 
 ++ ovh-bhs
 menu = [CA/QC] OVH
 title = [CA/QC] OVH - Beauharnois, QC, Canada [proof.ovh.ca]
 host = proof.ovh.ca
 
+{% if not smokeping_lite %}
 ++ servarica
 menu = [CA/QC] ServaRICA
 title = [CA/QC] ServaRICA - Montreal, QC, Canada [ping.servarica.com]
 host = ping.servarica.com
 
+++ linveo-oh
+menu = [US/OH] Linveo
+title = [US/OH] Linveo @ Cyxtera - Columbus, OH, US [2602:f953:6:1::a]
+host = 2602:f953:6:1::a
+
 ++ smarthost-oh
 menu = [US/OH] SmartHost @ Microtronix
 title = [US/OH] SmartHost @ Microtronix - Ottoville, OH, US [2606:6680:47:1::43b3:1c5a]
 host = 2606:6680:47:1::43b3:1c5a
+{% endif %}
 
 ++ buyvm-nyc
 menu = [US/NY] BuyVM
@@ -78,6 +93,7 @@ menu = [US/NY] Clouvider
 title = [US/NY] Clouvider - New York City, NY, US [nyc.mirrors.clouvider.net]
 host = nyc.mirrors.clouvider.net
 
+{% if not smokeping_lite %}
 ++ hosthatch-ny_0
 menu = [US/NY] HostHatch
 title = [US/NY] HostHatch - New York City, NY, US [2605:4840:2::1]
@@ -87,6 +103,7 @@ host = 2605:4840:2::1
 menu = [US/NY] Ramnode
 title = [US/NY] Ramnode - New York City, NY, US [lg.nyc.ramnode.com]
 host = lg.nyc.ramnode.com
+{% endif %}
 
 ++ reliablesite-ny
 menu = [US/NY] ReliableSite
@@ -98,6 +115,7 @@ menu = [US/NY] Spectrum
 title = [US/NY] Spectrum - New York, NY, United States [speedtest.nyc.rr.com]
 host = speedtest.nyc.rr.com
 
+{% if not smokeping_lite %}
 ++ webnx-nyc
 menu = [US/NY] WebNX
 title = [US/NY] WebNX - New York City, NY, US [nyc-lg.webnx.com]
@@ -127,6 +145,7 @@ host = 2001:1980:e00c::246:1
 menu = [US/NJ] InterServer
 title = [US/NJ] InterServer - Secaucus, NJ, US [speedtest.is.cc]
 host = speedtest.is.cc
+{% endif %}
 
 ++ linode-nj
 menu = [US/NJ] Linode
@@ -138,6 +157,7 @@ menu = [US/NJ] Vultr
 title = [US/NJ] Vultr - New Jersey, US [2001:19f0:4009:405:5400:ff:fe00:5363]
 host = 2001:19f0:4009:405:5400:ff:fe00:5363
 
+{% if not smokeping_lite %}
 ++ crunchbits-pa
 menu = [US/PA] Crunchbits
 title = [US/PA] Crunchbits - Allentown, PA, US [2606:a8c0:101:1::a]
@@ -147,12 +167,14 @@ host = 2606:a8c0:101:1::a
 menu = [US/VA] Free Range Cloud
 title = [US/VA] Free Range Cloud @ Fork Systems - Ashburn, VA, US [2602:fed2:fa0:8::1]
 host = 2620:13a:c000:6f::1
+{% endif %}
 
 ++ hetzner-va
 menu = [US/VA] Hetzner
 title = [US/VA] Hetzner - Ashburn, VA, US [ash-speed.hetzner.com]
 host = ash-speed.hetzner.com
 
+{% if not smokeping_lite %}
 ++ linode-was
 menu = [US/DC] Linode @ Akamai
 title = [US/DC] Linode @ Akamai - Washington, DC, US [speedtest.washington.linode.com]
@@ -173,16 +195,23 @@ menu = [US/WV] Reliable Hosting
 title = [US/WV] Reliable Hosting Services - Berkeley Springs, WV, US [2604:4100:1::1]
 host = 2604:4100:1::1
 
+++ greencloud-atl
+menu = [US/GA] GreenCloud
+title = [US/GA] GreenCloud @ Cyber Wurx - Atlanta, GA, US [2607:1a00:0:1a::1d:dc38]
+host = 2607:1a00:0:1a::1d:dc38
+
 ++ gsl-networks-atlanta-ga
 menu = [US/GA] GSL Networks
 title = [US/GA] GSL Networks - Atlanta, GA, United States [atl.speedtest.gslnetworks.com]
 host = atl.speedtest.gslnetworks.com
+{% endif %}
 
 ++ linode-atl
 menu = [US/GA] Linode
 title = [US/GA] Linode - Atlanta, GA, US [speedtest.atlanta.linode.com]
 host = speedtest.atlanta.linode.com
 
+{% if not smokeping_lite %}
 ++ ramnode-atl
 menu = [US/GA] Ramnode
 title = [US/GA] Ramnode - Atlanta, GA, US [lg.atl.ramnode.com]
@@ -192,6 +221,7 @@ host = lg.atl.ramnode.com
 menu = [US/GA] SmartHost
 title = [US/GA] SmartHost @ Coloblox - Atlanta, GA, US [2606:6680:43:1::5d98:1521]
 host = 2606:6680:43:1::5d98:1521
+{% endif %}
 
 ++ vultr-atl
 menu = [US/GA] Vultr
@@ -208,6 +238,7 @@ menu = [US/FL] Hivelocity (Miami)
 title = [US/FL] Hivelocity - Miami, FL, United States [speedtest.mia.hivelocity.net]
 host = speedtest.mia.hivelocity.net
 
+{% if not smokeping_lite %}
 ++ hivelocity-tpa
 menu = [US/FL] Hivelocity (Tampa)
 title = [US/FL] Hivelocity - Tampa, FL, United States [speedtest.tpa2.hivelocity.net]
@@ -222,11 +253,18 @@ host = 2402:d0c0:0015:128d:0000:0000:0000:0001
 menu = [US/FL] Linode
 title = [US/FL] Linode @ Akamai - Miami, FL, US [speedtest.miami.linode.com]
 host = speedtest.miami.linode.com
+{% endif %}
 
 ++ reliablesite-mia_0
 menu = [US/FL] ReliableSite
 title = [US/FL] ReliableSite - Miami, FL, US [miami-speedtest.reliablesite.net]
 host = miami-speedtest.reliablesite.net
+
+{% if not smokeping_lite %}
+++ nexeon-jax
+menu = [US/FL] Nexeon
+title = [US/FL] Nexeon - Jacksonville, FL, US [2602:ffc8:5:1::2]
+host = 2602:ffc8:5:1::2
 
 ++ smarthost-jax
 menu = [US/FL] SmartHost (Jacksonville)
@@ -242,3 +280,4 @@ host = tampp-speedtest-01.noc.bhn.net
 menu = [US/FL] Vultr
 title = [US/FL] Vultr - Miami, FL, US [2001:19f0:9000:8001:5400:ff:fe01:3889]
 host = 2001:19f0:9000:8001:5400:ff:fe01:3889
+{% endif %}

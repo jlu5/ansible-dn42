@@ -1,7 +1,9 @@
+{% if not smokeping_lite %}
 ++ accuris
 menu = [CA/ON] Accuris Hosting
 title = [CA/ON] Accuris Hosting - Ottawa, ON, CA [mirror01-pcl-ott1.accuris.ca]
 host = mirror01-pcl-ott1.accuris.ca
+{% endif %}
 
 ++ bell-yyz
 menu = [CA/ON] Bell
@@ -13,6 +15,7 @@ menu = [CA/ON] Free Range Cloud
 title = [CA/ON] Free Range Cloud - Toronto, ON, Canada [yyz01.lg.freerangecloud.com]
 host = yyz01.lg.freerangecloud.com
 
+{% if not smokeping_lite %}
 ++ gthost-yyz
 menu = [CA/ON] GTHost
 title = [CA/ON] GTHost - Toronto, ON, Canada [198.57.26.172]
@@ -27,12 +30,14 @@ host = speedtest.toronto1.linode.com
 menu = [CA/ON] Performive / VPS.net
 title = [CA/ON] Performive / VPS.net - Toronto, ON, Canada [172.98.73.4]
 host = 172.98.73.4
+{% endif %}
 
 ++ rogers-east
 menu = [CA/ON] Rogers Wireless
 title = [CA/ON] Rogers Wireless - Toronto, ON, Canada [sttorontowireless.rogers.com]
 host = sttorontowireless.rogers.com
 
+{% if not smokeping_lite %}
 ++ smarthost-tor
 menu = [CA/ON] SmartHost @ Nuday
 title = [CA/ON] SmartHost @ Nuday Networks - Toronto, ON, CA [tor1.smarthost.net]
@@ -42,12 +47,14 @@ host = tor1.smarthost.net
 menu = [CA/ON] Vultr
 title = [CA/ON] Vultr - Toronto, ON, Canada [tor-ca-ping.vultr.com]
 host = tor-ca-ping.vultr.com
+{% endif %}
 
 ++ xenyth
 menu = [CA/ON] Xenyth Cloud
 title = [CA/ON] Xenyth Cloud (GoCodeIT) - Toronto, ON, Canada [mirror.xenyth.net]
 host = mirror.xenyth.net
 
+{% if not smokeping_lite %}
 ++ beanfield-yto
 menu = [CA/ON] Beanfield
 title = [CA/ON] Beanfield - Toronto, ON, Canada [speedtest.beanfield.com]
@@ -72,12 +79,14 @@ host = speedtest.hivedatacenter.com
 menu = [CA/QC] LeaseWeb
 title = [CA/QC] LeaseWeb - Montreal, QC, CA [debian.mirror.iweb.ca]
 host = debian.mirror.iweb.ca
+{% endif %}
 
 ++ ovh-bhs
 menu = [CA/QC] OVH
 title = [CA/QC] OVH - Beauharnois, QC, Canada [proof.ovh.ca]
 host = proof.ovh.ca
 
+{% if not smokeping_lite %}
 ++ servarica
 menu = [CA/QC] ServaRICA
 title = [CA/QC] ServaRICA - Montreal, QC, Canada [ping.servarica.com]
@@ -88,10 +97,16 @@ menu = [CA/NS] Eastlink
 title = [CA/NS] Eastlink - Halifax, NS, Canada [speedtest-east.eastlink.ca]
 host = speedtest-east.eastlink.ca
 
+++ linveo-oh
+menu = [US/OH] Linveo
+title = [US/OH] Linveo @ Cyxtera - Columbus, OH, US [lg-ohio.linveo.com]
+host = lg-ohio.linveo.com
+
 ++ smarthost-oh
 menu = [US/OH] SmartHost @ Microtronix
 title = [US/OH] SmartHost @ Microtronix - Ottoville, OH, US [oh1.smarthost.net]
 host = oh1.smarthost.net
+{% endif %}
 
 ++ buyvm-nyc
 menu = [US/NY] BuyVM
@@ -103,6 +118,7 @@ menu = [US/NY] Clouvider
 title = [US/NY] Clouvider - New York City, NY, US [nyc.mirrors.clouvider.net]
 host = nyc.mirrors.clouvider.net
 
+{% if not smokeping_lite %}
 ++ gsl-networks-new-york-ny
 menu = [US/NY] GSL Networks
 title = [US/NY] GSL Networks - New York, NY, United States [ny2.speedtest.gslnetworks.com]
@@ -117,6 +133,7 @@ host = lg.ny.hosthatch.com
 menu = [US/NY] Ramnode
 title = [US/NY] Ramnode - New York City, NY, US [lg.nyc.ramnode.com]
 host = lg.nyc.ramnode.com
+{% endif %}
 
 ++ rsnet-ny
 menu = [US/NY] ReliableSite
@@ -128,6 +145,7 @@ menu = [US/NY] Spectrum
 title = [US/NY] Spectrum - New York, NY, United States [speedtest.nyc.rr.com]
 host = speedtest.nyc.rr.com
 
+{% if not smokeping_lite %}
 ++ webnx-nyc
 menu = [US/NY] WebNX
 title = [US/NY] WebNX - New York City, NY, US [nyc-lg.webnx.com]
@@ -137,12 +155,14 @@ host = nyc-lg.webnx.com
 menu = [US/NY] xTom
 title = [US/NY] xTom / V.PS - New York, United States [nyc.speedtest.v.ps]
 host = nyc.speedtest.v.ps
+{% endif %}
 
 ++ colocrossing-buf
 menu = [US/NY] ColoCrossing (Buffalo)
 title = [US/NY] ColoCrossing - Buffalo, NY, US [192.3.180.103]
 host = 192.3.180.103
 
+{% if not smokeping_lite %}
 ++ nexeon-buf
 menu = [US/NY] Nexeon (Buffalo)
 title = [US/NY] Nexeon - Buffalo, NY, US [lg.buf1.as20278.net]
@@ -162,6 +182,7 @@ host = lg.ny.hosteons.com
 menu = [US/NJ] Hosteroid
 title = [US/NJ] Hosteroid @ Atlantic Metro - Secaucus, NJ, US [nj-lg.hosteroid.uk]
 host = nj-lg.hosteroid.uk
+{% endif %}
 
 ++ linode-nj
 menu = [US/NJ] Linode
@@ -173,6 +194,7 @@ menu = [US/NJ] Vultr
 title = [US/NJ] Vultr - New Jersey, US [nj-us-ping.vultr.com]
 host = nj-us-ping.vultr.com
 
+{% if not smokeping_lite %}
 ++ crunchbits-pa
 menu = [US/PA] Crunchbits
 title = [US/PA] Crunchbits - Allentown, PA, US [38.175.196.2]
@@ -192,12 +214,14 @@ host = 38.123.137.253
 menu = [US/VA] Free Range Cloud
 title = [US/VA] Free Range Cloud @ Fork Systems - Ashburn, VA, US [iad01.lg.freerangecloud.com]
 host = iad01.lg.freerangecloud.com
+{% endif %}
 
 ++ hetzner-va
 menu = [US/VA] Hetzner
 title = [US/VA] Hetzner - Ashburn, VA, US [ash-speed.hetzner.com]
 host = ash-speed.hetzner.com
 
+{% if not smokeping_lite %}
 ++ linode-was
 menu = [US/DC] Linode @ Akamai
 title = [US/DC] Linode @ Akamai - Washington, DC, US [speedtest.washington.linode.com]
@@ -212,6 +236,11 @@ host = us-iad01.speed.misaka.one
 menu = [US/VA] OVH
 title = [US/VA] OVH - Vint Hill, VA, US [vin.proof.ovh.us]
 host = vin.proof.ovh.us
+
+++ psychz-ash
+menu = [US/VA] Psychz
+title = [US/VA] Psychz - Ashburn, VA, US [lg.va.psychz.net]
+host = lg.va.psychz.net
 
 ++ quickpacket-clt
 menu = [US/VA] QuickPacket
@@ -238,10 +267,16 @@ menu = [US/GA] ColoCrossing
 title = [US/GA] ColoCrossing - Atlanta, GA, US [lg.atl.colocrossing.com]
 host = lg.atl.colocrossing.com
 
+++ greencloud-atl
+menu = [US/GA] GreenCloud
+title = [US/GA] GreenCloud @ Cyber Wurx - Atlanta, GA, US [lg.ga.greencloudvps.com]
+host = lg.ga.greencloudvps.com
+
 ++ gsl-networks-atlanta-ga
 menu = [US/GA] GSL Networks
 title = [US/GA] GSL Networks - Atlanta, GA, United States [atl.speedtest.gslnetworks.com]
 host = atl.speedtest.gslnetworks.com
+{% endif %}
 
 ++ linode-atl
 menu = [US/GA] Linode
@@ -253,6 +288,7 @@ menu = [US/GA] Melbicom
 title = [US/GA] Melbicom - Atlanta, GA, US [dl.atl.melbicom.net]
 host = dl.atl.melbicom.net
 
+{% if not smokeping_lite %}
 ++ ramnode-atl
 menu = [US/GA] Ramnode
 title = [US/GA] Ramnode - Atlanta, GA, US [lg.atl.ramnode.com]
@@ -262,12 +298,14 @@ host = lg.atl.ramnode.com
 menu = [US/GA] SmartHost
 title = [US/GA] SmartHost @ Coloblox - Atlanta, GA, US [ga1.smarthost.net]
 host = ga1.smarthost.net
+{% endif %}
 
 ++ vultr-atl
 menu = [US/GA] Vultr
 title = [US/GA] Vultr - Atlanta, GA, US [ga-us-ping.vultr.com]
 host = ga-us-ping.vultr.com
 
+{% if not smokeping_lite %}
 ++ littlecreekhosting
 menu = [US/NC] Little Creek Hosting
 title = [US/NC] Little Creek Hosting @ Cogent - Durham, NC, US [38.45.64.1]
@@ -282,6 +320,7 @@ host = nc1.smarthost.net
 menu = [US/NC] Tier.net
 title = [US/NC] Tier.net - Charlotte, NC, US [lg.nc.tier.net]
 host = lg.nc.tier.net
+{% endif %}
 
 ++ buyvm-mia
 menu = [US/FL] BuyVM
@@ -298,6 +337,7 @@ menu = [US/FL] Hivelocity (Miami)
 title = [US/FL] Hivelocity - Miami, FL, United States [speedtest.mia.hivelocity.net]
 host = speedtest.mia.hivelocity.net
 
+{% if not smokeping_lite %}
 ++ hivelocity-tpa
 menu = [US/FL] Hivelocity (Tampa)
 title = [US/FL] Hivelocity - Tampa, FL, United States [speedtest.tpa2.hivelocity.net]
@@ -312,11 +352,18 @@ host = lg.mia.hosteons.com
 menu = [US/FL] Linode
 title = [US/FL] Linode @ Akamai - Miami, FL, US [speedtest.miami.linode.com]
 host = speedtest.miami.linode.com
+{% endif %}
 
 ++ reliablesite-mia
 menu = [US/FL] ReliableSite
 title = [US/FL] ReliableSite - Miami, FL, US [miami-speedtest.reliablesite.net]
 host = miami-speedtest.reliablesite.net
+
+{% if not smokeping_lite %}
+++ nexeon-jax
+menu = [US/FL] Nexeon
+title = [US/FL] Nexeon - Jacksonville, FL, US [lg.jax1.as20278.net]
+host = lg.jax1.as20278.net
 
 ++ smarthost-jax
 menu = [US/FL] SmartHost (Jacksonville)
@@ -332,3 +379,4 @@ host = tampp-speedtest-01.noc.bhn.net
 menu = [US/FL] Vultr
 title = [US/FL] Vultr - Miami, FL, US [fl-us-ping.vultr.com]
 host = fl-us-ping.vultr.com
+{% endif %}

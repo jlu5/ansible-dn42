@@ -1,3 +1,4 @@
+{% if not smokeping_lite %}
 ++ aliyun-dxb
 menu = [AE] Aliyun (Dubai)
 title = [AE] Aliyun / Alibaba Cloud - Dubai, United Arab Emirates [oss-me-east-1.aliyuncs.com]
@@ -7,6 +8,7 @@ host = oss-me-east-1.aliyuncs.com
 menu = [AE] M247 (Dubai)
 title = [AE] M247 - Dubai, United Arab Emirates [speed.uae.m247.ro]
 host = speed.uae.m247.ro
+{% endif %}
 
 ++ melbicom-fjr1
 menu = [AE] Melbicom (Fujairah)
@@ -23,6 +25,7 @@ menu = [BH] Amazon AWS
 title = [BH] Amazon Web Services (me-south-1) - Bahrain [15.185.32.254]
 host = 15.185.32.254
 
+{% if not smokeping_lite %}
 ++ melbicom-los1
 menu = [NG] Melbicom
 title = [NG] Melbicom @ Orange - Lagos, Nigeria [dl.los.melbicom.net]
@@ -32,6 +35,7 @@ host = dl.los.melbicom.net
 menu = [ZA] Misaka
 title = [ZA] Misaka Network - Johannesburg, South Africa [za-jnb01.speed.misaka.one]
 host = za-jnb01.speed.misaka.one
+{% endif %}
 
 ++ psychz-jnb
 menu = [ZA] Psychz

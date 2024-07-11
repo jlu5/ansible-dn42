@@ -3,16 +3,19 @@ menu = [CH] HostHatch
 title = [CH] HostHatch - Zurich, Switzerland [lg.zrh.hosthatch.com]
 host = lg.zrh.hosthatch.com
 
+{% if not smokeping_lite %}
 ++ infomaniak-geneva
 menu = [CH] Infomaniak
 title = [CH] Infomaniak - Geneva, Switzerland [speedtest2.infomaniak.com]
 host = speedtest2.infomaniak.com
+{% endif %}
 
 ++ alwyzon
 menu = [AT] Alwyzon
 title = [AT] Alwyzon - Vienna, Austria [86.106.182.189]
 host = 86.106.182.189
 
+{% if not smokeping_lite %}
 ++ hosteroid-vie
 menu = [AT] Hosteroid
 title = [AT] Hosteroid @ UpstreamNet / Zayo France - Vienna, Austria [vie-lg.hosteroid.uk]
@@ -27,12 +30,14 @@ host = lg.vie.hosthatch.com
 menu = [NO] HostHatch
 title = [NO] HostHatch - Oslo, Norway [lg.osl.hosthatch.com]
 host = lg.osl.hosthatch.com
+{% endif %}
 
 ++ terrahost-no
 menu = [NO] Terrahost
 title = [NO] Terrahost - Sandefjord, Norway [lg.terrahost.com]
 host = lg.terrahost.com
 
+{% if not smokeping_lite %}
 ++ virtono-cph-dk
 menu = [DK] Virtono @ M247
 title = [DK] Virtono @ M247 - Copenhagen, Denmark [cph-dk-ping.virtono.com]
@@ -52,6 +57,7 @@ host = speedtest.stockholm.linode.com
 menu = [SE] server-factory
 title = [SE] server-factory.com - Stockholm, Sweden [lg.se.server-factory.com]
 host = lg.se.server-factory.com
+{% endif %}
 
 ++ vultr-sto
 menu = [SE] Vultr
@@ -68,6 +74,7 @@ menu = [ES] GINERNET
 title = [ES] GINERNET - Madrid, Spain [lg.ginernet.com]
 host = lg.ginernet.com
 
+{% if not smokeping_lite %}
 ++ melbicom-mad
 menu = [ES] Melbicom
 title = [ES] Melbicom - Madrid, Spain [dl.mad.melbicom.net]
@@ -77,22 +84,26 @@ host = dl.mad.melbicom.net
 menu = [ES] Psychz
 title = [ES] Psychz - Barcelona, Spain [lg.bcn.psychz.net]
 host = lg.bcn.psychz.net
+{% endif %}
 
 ++ aruba-it1
 menu = [IT] Aruba (Arezzo)
 title = [IT] Aruba - Arezzo, Italy [it1.speedtest.aruba.it]
 host = it1.speedtest.aruba.it
 
+{% if not smokeping_lite %}
 ++ aruba-it3
 menu = [IT] Aruba (Bergamo)
 title = [IT] Aruba - Ponte San Pietro, Italy [it3.speedtest.aruba.it]
 host = it3.speedtest.aruba.it
+{% endif %}
 
 ++ linode-mil
 menu = [IT] Linode
 title = [IT] Linode @ Akamai - Milan, Italy [speedtest.milan.linode.com]
 host = speedtest.milan.linode.com
 
+{% if not smokeping_lite %}
 ++ melbicom-pal
 menu = [IT] Melbicom
 title = [IT] Melbicom - Palermo, Italy [dl.pal.melbicom.net]
@@ -102,16 +113,19 @@ host = dl.pal.melbicom.net
 menu = [IT] Prometeus
 title = [IT] Prometeus / CDLAN - Milan, Italy [lg-milano.prometeus.net]
 host = lg-milano.prometeus.net
+{% endif %}
 
 ++ skylonhost
 menu = [CZ] SkylonHost
 title = [CZ] SkylonHost - Prague, Czechia [lg.skylonhost.com]
 host = lg.skylonhost.com
 
+{% if not smokeping_lite %}
 ++ melbicom-waw
 menu = [PL] Melbicom
 title = [PL] Melbicom - Warsaw, Poland [dl.war.melbicom.net]
 host = dl.war.melbicom.net
+{% endif %}
 
 ++ vultr-waw
 menu = [PL] Vultr
@@ -123,6 +137,7 @@ menu = [LT] BaCloud
 title = [LT] BaCloud - Siauliai, Lithuania [lg-lt-eu.bacloud.com]
 host = lg-lt-eu.bacloud.com
 
+{% if not smokeping_lite %}
 ++ hosteroid-lt
 menu = [LT] Hosteroid
 title = [LT] Hosteroid @ Baltneta - Vilnius, Lithuania [vno-lg.hosteroid.uk]
@@ -132,7 +147,9 @@ host = vno-lg.hosteroid.uk
 menu = [LT] Melbicom (Vilnius)
 title = [LT] Melbicom - Vilnius, Lithuania [195.238.126.3]
 host = 195.238.126.3
+{% endif %}
 
+{% if not smokeping_lite %}
 ++ ultravps-lt
 menu = [LT] UltraVPS (Siauliai)
 title = [LT] UltraVPS - Siauliai, Lithuania [lg.sqq.lt.ultravps.eu]
@@ -142,6 +159,7 @@ host = lg.sqq.lt.ultravps.eu
 menu = [EE] xTom
 title = [EE] xTom / V.PS - Tallinn, Estonia [tll.speedtest.v.ps]
 host = tll.speedtest.v.ps
+{% endif %}
 
 ++ melbicom-moscow
 menu = [RU] Melbicom (Moscow)
@@ -153,16 +171,19 @@ menu = [RU] Misaka (Moscow)
 title = [RU] Misaka Network - Moscow, Russia [ru-led01.speed.misaka.one]
 host = ru-led01.speed.misaka.one
 
+{% if not smokeping_lite %}
 ++ psychz-ru
 menu = [RU] Psychz
 title = [RU] Psychz - Moscow, Russia [lg.svo.psychz.net]
 host = lg.svo.psychz.net
+{% endif %}
 
 ++ justhost-spb
 menu = [RU] JustHost (Saint Petersburg)
 title = [RU] JustHost @ RASCOM - Saint Petersburg, Russia [lg-led1.just.hosting]
 host = lg-led1.just.hosting
 
+{% if not smokeping_lite %}
 ++ justhost-ovb
 menu = [RU] JustHost (Novosibirsk)
 title = [RU] JustHost @ Rostelecom - Novosibirsk, Russia [lg-ovb2.just.hosting]
@@ -177,23 +198,28 @@ host = 5.188.6.1
 menu = [UA] VSYS Host
 title = [UA] VSYS Host - Kyiv, Ukraine [iperf.vsys.host]
 host = iperf.vsys.host
+{% endif %}
 
 ++ alphavps-bg
 menu = [BG] AlphaVPS
 title = [BG] AlphaVPS - Sofia, Bulgaria [lgbg.alphavps.bg]
 host = lgbg.alphavps.bg
 
+{% if not smokeping_lite %}
 ++ melbicom-sof1
 menu = [BG] Melbicom
 title = [BG] Melbicom - Sofia, Bulgaria [213.183.63.91]
 host = 213.183.63.91
+{% endif %}
 
 ++ m247-bucharest
 menu = [RO] M247
 title = [RO] M247 - Bucharest, Romania [speed.m247.ro]
 host = speed.m247.ro
 
+{% if not smokeping_lite %}
 ++ alexhost
 menu = [MD] Alexhost
 title = [MD] Alexhost - Chisinau, Moldova [lg.alexhost.com]
 host = lg.alexhost.com
+{% endif %}

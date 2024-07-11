@@ -3,6 +3,7 @@ menu = [JP] Amazon AWS
 title = [JP] Amazon AWS - Tokyo, Japan [18.176.0.0]
 host = 18.176.0.0
 
+{% if not smokeping_lite %}
 ++ contabo-tyo
 menu = [JP] Contabo
 title = [JP] Contabo - Tokyo, Japan [tyo.speedtest.contabo.net]
@@ -12,6 +13,7 @@ host = tyo.speedtest.contabo.net
 menu = [JP] ExtraVM
 title = [JP] ExtraVM @ Teraswitch - Tokyo, Japan [tokyo.lg.extravm.com]
 host = tokyo.lg.extravm.com
+{% endif %}
 
 ++ greencloud-tyo
 menu = [JP] GreenCloud
@@ -23,16 +25,19 @@ menu = [JP] HostHatch
 title = [JP] HostHatch - Tokyo, Japan [lg.tok.hosthatch.com]
 host = lg.tok.hosthatch.com
 
+{% if not smokeping_lite %}
 ++ kuaichedao-jp
 menu = [JP] Kuaichedao
 title = [JP] Kuaichedao @ Eons Data - Tokyo, Japan [jp-bgp.tyo.lg.kuaichedao.xyz]
 host = jp-bgp.tyo.lg.kuaichedao.xyz
+{% endif %}
 
 ++ linode-jp
 menu = [JP] Linode (Tokyo)
 title = [JP] Linode - Tokyo, Japan [speedtest.tokyo2.linode.com]
 host = speedtest.tokyo2.linode.com
 
+{% if not smokeping_lite %}
 ++ oracle-jp
 menu = [JP] Oracle Cloud
 title = [JP] Oracle Cloud - Tokyo, Japan [objectstorage.ap-tokyo-1.oci.oraclecloud.com]
@@ -57,6 +62,7 @@ host = jp4.lg.starrydns.com
 menu = [JP] Virtono @ M247
 title = [JP] Virtono @ M247 - Tokyo, Japan [tok-jp-ping.virtono.com]
 host = tok-jp-ping.virtono.com
+{% endif %}
 
 ++ vultr-jp
 menu = [JP] Vultr (Tokyo)
@@ -68,6 +74,7 @@ menu = [JP] xTom (Tokyo)
 title = [JP] xTom (V.PS) - Tokyo, Japan [nrt.speedtest.v.ps]
 host = nrt.speedtest.v.ps
 
+{% if not smokeping_lite %}
 ++ linode-osa
 menu = [JP] Linode (Osaka)
 title = [JP] Linode @ Akamai - Osaka, Japan [speedtest.osaka.linode.com]
@@ -82,12 +89,14 @@ host = jp2.lg.starrydns.com
 menu = [JP] Vultr (Osaka)
 title = [JP] Vultr - Osaka, Japan [osk-jp-ping.vultr.com]
 host = osk-jp-ping.vultr.com
+{% endif %}
 
 ++ xtom-jp-osa
 menu = [JP] xTom (Osaka)
 title = [JP] xTom (V.PS) - Osaka, Japan [kix.speedtest.v.ps]
 host = kix.speedtest.v.ps
 
+{% if not smokeping_lite %}
 ++ amazon-kr
 menu = [KR] Amazon AWS
 title = [KR] Amazon AWS - Seoul, Korea [15.164.0.0]
@@ -98,12 +107,14 @@ menu = [KR] Korea Telecom
 title = [KR] Korea Telecom - Seoul, Korea [221.144.116.1]
 # google cache
 host = 221.144.116.1
+{% endif %}
 
 ++ oracle-kr
 menu = [KR] Oracle Cloud
 title = [KR] Oracle Cloud - Seoul, Korea [objectstorage.ap-seoul-1.oci.oraclecloud.com]
 host = objectstorage.ap-seoul-1.oci.oraclecloud.com
 
+{% if not smokeping_lite %}
 ++ psychz-kr
 menu = [KR] Psychz
 title = [KR] Psychz - Seoul, Korea [lg.icn.psychz.net]
@@ -113,6 +124,7 @@ host = lg.icn.psychz.net
 menu = [KR] Vultr
 title = [KR] Vultr - Seoul, Korea [sel-kor-ping.vultr.com]
 host = sel-kor-ping.vultr.com
+{% endif %}
 
 ++ aliyun-hk
 menu = [HK] Aliyun
@@ -129,6 +141,7 @@ menu = [HK] Kuaichedao
 title = [HK] Kuaichedao @ Eons Data - Hong Kong, China [hk-bgp.hkg.lg.kuaichedao.xyz]
 host = hk-bgp.hkg.lg.kuaichedao.xyz
 
+{% if not smokeping_lite %}
 ++ leaseweb-hk
 menu = [HK] LeaseWeb
 title = [HK] LeaseWeb - Hong Kong, China [mirror.hk.leaseweb.net]
@@ -143,26 +156,24 @@ host = 45.11.104.140
 menu = [HK] StarryDNS
 title = [HK] StarryDNS - Hong Kong, China [hk4.lg.starrydns.com]
 host = hk4.lg.starrydns.com
+{% endif %}
 
 ++ tencent-hk
 menu = [HK] Tencent Cloud
 title = [HK] Tencent Cloud - Hong Kong, China [cos.ap-hongkong.myqcloud.com]
 host = cos.ap-hongkong.myqcloud.com
 
+{% if not smokeping_lite %}
 ++ virtono-hk
 menu = [HK] Virtono @ M247
 title = [HK] Virtono @ M247 - Hong Kong [hk-ping.virtono.com]
 host = hk-ping.virtono.com
+{% endif %}
 
 ++ xtom-hkg
 menu = [HK] xTom
 title = [HK] xTom / V.PS - Hong Kong, China [hkg.speedtest.v.ps]
 host = hkg.speedtest.v.ps
-
-++ yxvm-hk-volume
-menu = [HK] YXVM
-title = [HK] YXVM - Hong Kong, Hong Kong [lg.hkg-volume.beta.yxvm.com]
-host = lg.hkg-volume.beta.yxvm.com
 
 ++ psychz-tw
 menu = [TW] Psychz

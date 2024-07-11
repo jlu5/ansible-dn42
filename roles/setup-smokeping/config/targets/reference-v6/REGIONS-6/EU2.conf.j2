@@ -1,20 +1,21 @@
-
-
 ++ hosthatch-zrh
 menu = [CH] HostHatch
 title = [CH] HostHatch - Zurich, Switzerland [2a0e:dc0:6:4::1]
 host = 2a0e:dc0:6:4::1
 
+{% if not smokeping_lite %}
 ++ infomaniak-geneva
 menu = [CH] Infomaniak
 title = [CH] Infomaniak - Geneva, Switzerland [speedtest2.infomaniak.com]
 host = speedtest2.infomaniak.com
+{% endif %}
 
 ++ alwyzon
 menu = [AT] Alwyzon
 title = [AT] Alwyzon - Vienna, Austria [2a0d:f302:106::6]
 host = 2a0d:f302:106::6
 
+{% if not smokeping_lite %}
 ++ hosteroid-vie
 menu = [AT] Hosteroid
 title = [AT] Hosteroid @ UpstreamNet / Zayo France - Vienna, Austria [2a05:5504:1::4fe:1]
@@ -29,6 +30,7 @@ host = speedtest.stockholm.linode.com
 menu = [SE] server-factory
 title = [SE] server-factory.com - Stockholm, Sweden [lg.se.server-factory.com]
 host = lg.se.server-factory.com
+{% endif %}
 
 ++ vultr-sto
 menu = [SE] Vultr
@@ -40,26 +42,31 @@ menu = [FI] Hetzner
 title = [FI] Hetzner - Helsinki, Finland [hel.icmp.hetzner.com]
 host = hel.icmp.hetzner.com
 
+{% if not smokeping_lite %}
 ++ hosthatch-osl
 menu = [NO] HostHatch
 title = [NO] HostHatch - Oslo, Norway [2a0d:5600:30:40::1]
 host = 2a0d:5600:30:40::1
+{% endif %}
 
 ++ terrahost-no
 menu = [NO] Terrahost
 title = [NO] Terrahost - Sandefjord, Norway [lg.terrahost.com]
 host = lg.terrahost.com
 
+{% if not smokeping_lite %}
 ++ virtono-cph-dk
 menu = [DK] Virtono @ M247
 title = [DK] Virtono @ M247 - Copenhagen, Denmark [cph-dk-ping.virtono.com]
 host = cph-dk-ping.virtono.com
+{% endif %}
 
 ++ bacloud-lt
 menu = [LT] BaCloud
 title = [LT] BaCloud - Siauliai, Lithuania [lg-lt-eu.bacloud.com]
 host = lg-lt-eu.bacloud.com
 
+{% if not smokeping_lite %}
 ++ hosteroid-lt
 menu = [LT] Hosteroid
 title = [LT] Hosteroid @ Baltneta - Vilnius, Lithuania [2a13:9401:0:1::77a4:1]
@@ -69,6 +76,7 @@ host = 2a13:9401:0:1::77a4:1
 menu = [EE] xTom
 title = [EE] xTom / V.PS - Tallinn, Estonia [tll.speedtest.v.ps]
 host = tll.speedtest.v.ps
+{% endif %}
 
 ++ melbicom-moscow
 menu = [RU] Melbicom (Moscow)
@@ -80,10 +88,12 @@ menu = [RU] Misaka (Moscow)
 title = [RU] Misaka Network - Moscow, Russia [ru-led01.speed.misaka.one]
 host = ru-led01.speed.misaka.one
 
+{% if not smokeping_lite %}
 ++ psychz-ru
 menu = [RU] Psychz
 title = [RU] Psychz - Moscow, Russia [2604:6600:77:11::f5f3:cafe]
 host = 2604:6600:77:11::f5f3:cafe
+{% endif %}
 
 ++ rostelecom-moscow
 menu = [RU] Rostelecom (Moscow)
@@ -100,6 +110,7 @@ menu = [ES] GINERNET
 title = [ES] GINERNET - Madrid, Spain [2a03:c7c0:1:40::1]
 host = 2a03:c7c0:1:40::1
 
+{% if not smokeping_lite %}
 ++ psychz-bcn
 menu = [ES] Psychz
 title = [ES] Psychz - Barcelona, Spain [2604:6600:fdc0:1::3175:ef64]
@@ -109,16 +120,19 @@ host = 2604:6600:fdc0:1::3175:ef64
 menu = [IT] C1V Hosting
 title = [IT] C1V Hosting - Pomezia, Italy [c1vhosting.it]
 host = c1vhosting.it
+{% endif %}
 
 ++ linode-mil
 menu = [IT] Linode
 title = [IT] Linode @ Akamai - Milan, Italy [speedtest.milan.linode.com]
 host = speedtest.milan.linode.com
 
+{% if not smokeping_lite %}
 ++ prometeus-it
 menu = [IT] Prometeus
 title = [IT] Prometeus / CDLAN - Milan, Italy [2a00:dcc0:eda:3754:247:55:7e31:1243]
 host = 2a00:dcc0:eda:3754:247:55:7e31:1243
+{% endif %}
 
 ++ skylonhost
 menu = [CZ] SkylonHost
@@ -135,7 +149,9 @@ menu = [BG] AlphaVPS
 title = [BG] AlphaVPS - Sofia, Bulgaria [2a01:8740:1:76f::ea47]
 host = 2a01:8740:1:76f::ea47
 
+{% if not smokeping_lite %}
 ++ alexhost
 menu = [MD] Alexhost
 title = [MD] Alexhost - Chisinau, Moldova [lg.alexhost.com]
 host = lg.alexhost.com
+{% endif %}

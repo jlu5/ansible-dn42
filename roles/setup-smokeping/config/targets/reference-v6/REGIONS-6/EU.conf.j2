@@ -1,7 +1,9 @@
+{% if not smokeping_lite %}
 ++ amazon-lon
 menu = [UK] Amazon AWS
 title = [UK] Amazon Web Services - London, United Kingdom [2a05:d000:c000::3438:2200]
 host = 2a05:d000:c000::3438:2200
+{% endif %}
 
 ++ clouvider-lon
 menu = [UK] Clouvider
@@ -18,6 +20,7 @@ menu = [UK] OVH
 title = [UK] OVH - Erith, London, United Kingdom [eri.proof.ovh.net]
 host = eri.proof.ovh.net
 
+{% if not smokeping_lite %}
 ++ pebblehost
 menu = [UK] PebbleHost (Coventry)
 title = [UK] PebbleHost - Coventry, United Kingdom [as212027.net]
@@ -27,12 +30,14 @@ host = as212027.net
 menu = [UK] SmartHost @ VeloxServ
 title = [UK] SmartHost @ VeloxServ - Redditch, United Kingdom [2606:6680:3:1::2e41:5025]
 host = 2606:6680:3:1::2e41:5025
+{% endif %}
 
 ++ ukservers-cov
 menu = [UK] UKServers (Coventry)
 title = [UK] UKServers - Coventry, United Kingdom [iperf.as42831.net]
 host = iperf.as42831.net
 
+{% if not smokeping_lite %}
 ++ vultr-lon
 menu = [UK] Vultr
 title = [UK] Vultr - London, United Kingdom [2001:19f0:7400:8001:5400:ff:fe00:5367]
@@ -52,6 +57,7 @@ host = 2402:d0c0:22:c::1
 menu = [FR] Linode @ Akamai
 title = [FR] Linode @ Akamai - Paris, France [speedtest.paris.linode.com]
 host = speedtest.paris.linode.com
+{% endif %}
 
 ++ ovh-gra
 menu = [FR] OVH (Gravelines)
@@ -63,16 +69,19 @@ menu = [FR] OVH (Roubaix)
 title = [FR] OVH - Roubaix, France [rbx.proof.ovh.net]
 host = rbx.proof.ovh.net
 
+{% if not smokeping_lite %}
 ++ ovh-sbg
 menu = [FR] OVH (Strasbourg)
 title = [FR] OVH - Strasbourg, France [sbg.proof.ovh.net]
 host = sbg.proof.ovh.net
+{% endif %}
 
 ++ online-net-par
 menu = [FR] Scaleway
 title = [FR] Scaleway / Online.net - Paris, France [ping6.online.net]
 host = ping6.online.net
 
+{% if not smokeping_lite %}
 ++ vultr-par
 menu = [FR] Vultr
 title = [FR] Vultr - Paris, France [2001:19f0:6800:8002:5400:ff:fe00:536b]
@@ -82,16 +91,19 @@ host = 2001:19f0:6800:8002:5400:ff:fe00:536b
 menu = [NL] Clouvider
 title = [NL] Clouvider - Amsterdam, Netherlands [nl.mirrors.clouvider.net]
 host = nl.mirrors.clouvider.net
+{% endif %}
 
 ++ hosthatch-ams
 menu = [NL] HostHatch
 title = [NL] HostHatch - Amsterdam, Netherlands [2a01:6f0:ffff:aa::1]
 host = 2a01:6f0:ffff:aa::1
 
+{% if not smokeping_lite %}
 ++ hybula_0
 menu = [NL] Hybula
 title = [NL] Hybula - Amsterdam, Netherlands [lg-nl-ams.hybula.net]
 host = lg-nl-ams.hybula.net
+{% endif %}
 
 ++ liteserver
 menu = [NL] LiteServer
@@ -108,6 +120,7 @@ menu = [NL] Scaleway
 title = [NL] Scaleway / Online.net - Amsterdam, Netherlands [ping6-ams1.online.net]
 host = ping6-ams1.online.net
 
+{% if not smokeping_lite %}
 ++ server-factory-nl
 menu = [NL] server-factory
 title = [NL] server-factory.com - Eygelshoven, Netherlands [lg.nl.server-factory.com]
@@ -127,12 +140,14 @@ host = speedtest.worldstream.nl
 menu = [DE] 23M
 title = [DE] 23M - Frankfurt, Germany [fra01.lg.23m.com]
 host = fra01.lg.23m.com
+{% endif %}
 
 ++ alphavps-de
 menu = [DE] AlphaVPS
 title = [DE] AlphaVPS - Nuremberg, Germany [2a01:4f8:d1:7231::49c8]
 host = 2a01:4f8:d1:7231::49c8
 
+{% if not smokeping_lite %}
 ++ aurologic
 menu = [DE] Aurologic
 title = [DE] Aurologic - Frankfurt, Germany [lg.aurologic.com]
@@ -142,6 +157,7 @@ host = lg.aurologic.com
 menu = [DE] Clouvider
 title = [DE] Clouvider - Frankfurt, Germany [de.mirrors.clouvider.net]
 host = de.mirrors.clouvider.net
+{% endif %}
 
 ++ contabo-dus
 menu = [DE] Contabo (Dusseldorf)
@@ -158,6 +174,7 @@ menu = [DE] Hetzner (Falkenstein)
 title = [DE] Hetzner - Falkenstein, Germany [fsn.icmp.hetzner.com]
 host = fsn.icmp.hetzner.com
 
+{% if not smokeping_lite %}
 ++ ip-projects
 menu = [DE] IP-Projects (Frankfurt)
 title = [DE] IP-Projects - Frankfurt, Germany [lg.ip-projects.de]
@@ -177,6 +194,7 @@ host = speedtest.meerfarbig.net
 menu = [DE] Misaka
 title = [DE] Misaka Network - Berlin, Germany [de-ber02.speed.misaka.one]
 host = de-ber02.speed.misaka.one
+{% endif %}
 
 ++ netcup-nbg
 menu = [DE] Netcup (Nuremberg)
@@ -193,6 +211,7 @@ menu = [DE] UltraVPS (Duesseldorf)
 title = [DE] UltraVPS - Duesseldorf, Germany [2a02:e00:ffec:3a::1]
 host = 2a02:e00:ffec:3a::1
 
+{% if not smokeping_lite %}
 ++ virtono-fra-de
 menu = [DE] Virtono @ M247
 title = [DE] Virtono @ M247 - Frankfurt, Germany [fra-de-ping.virtono.com]
@@ -207,6 +226,7 @@ host = lg-ffm.vserver.site
 menu = [DE] xTom
 title = [DE] xTom / V.PS - Frankfurt, Germany [fra.speedtest.v.ps]
 host = fra.speedtest.v.ps
+{% endif %}
 
 ++ buyvm-lu
 menu = [LU] BuyVM

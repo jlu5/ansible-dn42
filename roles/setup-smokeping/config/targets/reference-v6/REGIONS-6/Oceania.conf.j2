@@ -1,4 +1,4 @@
-
+{% if not smokeping_lite %}
 ++ binarylane-syd
 menu = [AU] BinaryLane
 title = [AU] BinaryLane - Sydney, Australia [syd-lg.binarylane.cloud]
@@ -8,6 +8,7 @@ host = syd-lg.binarylane.cloud
 menu = [AU] Contabo
 title = [AU] Contabo - Sydney, Australia [syd.speedtest.contabo.net]
 host = syd.speedtest.contabo.net
+{% endif %}
 
 ++ linode-syd
 menu = [AU] Linode @ Akamai
@@ -24,10 +25,12 @@ menu = [AU] Ransom IT (Sydney)
 title = [AU] Ransom IT @ Host Universal - Sydney, Australia [sydney-lg.ransomit.com.au]
 host = sydney-lg.ransomit.com.au
 
+{% if not smokeping_lite %}
 ++ telstra-syd
 menu = [AU] Telstra (Sydney)
 title = [AU] Telstra - Sydney, Australia [syd1.speedtest.telstra.net]
 host = syd1.speedtest.telstra.net
+{% endif %}
 
 ++ vultr-syd
 menu = [AU] Vultr (Sydney)
@@ -39,7 +42,14 @@ menu = [AU] Vultr (Melbourne)
 title = [AU] Vultr - Melbourne, Australia [2401:c080:2000:1002:5400:3ff:fed8:1603]
 host = 2401:c080:2000:1002:5400:3ff:fed8:1603
 
+{% if not smokeping_lite %}
 ++ xtom-syd
 menu = [AU] xTom
 title = [AU] xTom / V.PS - Sydney, Australia [syd.speedtest.v.ps]
 host = syd.speedtest.v.ps
+{% endif %}
+
+++ zappiehost-nz
+menu = [NZ] ZappieHost (Auckland)
+title = [NZ] ZappieHost - Auckland, New Zealand [lg-nz.zappiehost.com]
+host = lg-nz.zappiehost.com

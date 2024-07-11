@@ -3,10 +3,12 @@ menu = [SG] Amazon AWS
 title = [SG] Amazon AWS - Singapore [54.254.128.1]
 host = 54.254.128.1
 
+{% if not smokeping_lite %}
 ++ contabo-sg
 menu = [SG] Contabo
 title = [SG] Contabo - Singapore [sin.speedtest.contabo.net]
 host = sin.speedtest.contabo.net
+{% endif %}
 
 ++ leaseweb-sg
 menu = [SG] LeaseWeb
@@ -18,6 +20,7 @@ menu = [SG] Linode
 title = [SG] Linode - Singapore [speedtest.singapore.linode.com]
 host = speedtest.singapore.linode.com
 
+{% if not smokeping_lite %}
 ++ melbicom-sin1
 menu = [SG] Melbicom
 title = [SG] Melbicom - Singapore [103.172.116.3]
@@ -27,12 +30,14 @@ host = 103.172.116.3
 menu = [SG] NewMedia Express
 title = [SG] NewMedia Express - Singapore [sg1.newmediaexpress.com]
 host = sg1.newmediaexpress.com
+{% endif %}
 
 ++ ovh-sgp-0
 menu = [SG] OVH
 title = [SG] OVH - Singapore [sgp.proof.ovh.net]
 host = sgp.proof.ovh.net
 
+{% if not smokeping_lite %}
 ++ shockhosting-sg
 menu = [SG] Shock Hosting
 title = [SG] Shock Hosting - Singapore [sg-lg.shockhosting.net]
@@ -47,12 +52,14 @@ host = sg1.lg.starrydns.com
 menu = [SG] Tencent Cloud
 title = [SG] Tencent Cloud - Singapore [cos.ap-singapore.myqcloud.com]
 host = cos.ap-singapore.myqcloud.com
+{% endif %}
 
 ++ vultr-sg
 menu = [SG] Vultr
 title = [SG] Vultr - Singapore [sgp-ping.vultr.com]
 host = sgp-ping.vultr.com
 
+{% if not smokeping_lite %}
 ++ linode-cgk
 menu = [ID] Linode
 title = [ID] Linode @ Akamai - Jakarta, Indonesia [speedtest.jakarta.linode.com]
@@ -62,6 +69,7 @@ host = speedtest.jakarta.linode.com
 menu = [IN] Contabo (Mumbai)
 title = [IN] Contabo - Mumbai, India [bom.speedtest.contabo.net]
 host = bom.speedtest.contabo.net
+{% endif %}
 
 ++ leapswitch
 menu = [IN] Leapswitch (Mumbai)
@@ -72,6 +80,12 @@ host = lg-bom2.advancedserverdns.com
 menu = [IN] Linode (Mumbai)
 title = [IN] Linode - Mumbai, India [speedtest.mum1.linode.com]
 host = speedtest.mum1.linode.com
+
+{% if not smokeping_lite %}
+++ melbicom-bom
+menu = [IN] Melbicom (Mumbai)
+title = [IN] Melbicom - Mumbai, India [dl.bom.melbicom.net]
+host = dl.bom.melbicom.net
 
 ++ ovh-bom
 menu = [IN] OVH (Mumbai)
@@ -87,12 +101,14 @@ host = lg.in.psychz.net
 menu = [IN] ReadyDedis (Hyderabad)
 title = [IN] ReadyDedis @ Web Werks - Hyderabad, India [170.205.54.253]
 host = 170.205.54.253
+{% endif %}
 
 ++ vultr-blr1
 menu = [IN] Vultr (Bangalore)
 title = [IN] Vultr - Bangalore, India [blr-in-ping.vultr.com]
 host = blr-in-ping.vultr.com
 
+{% if not smokeping_lite %}
 ++ vultr-del
 menu = [IN] Vultr (Delhi)
 title = [IN] Vultr - Delhi NCR, India [del-in-ping.vultr.com]
@@ -102,6 +118,7 @@ host = del-in-ping.vultr.com
 menu = [IN] Vultr (Mumbai)
 title = [IN] Vultr - Mumbai, India [bom-in-ping.vultr.com]
 host = bom-in-ping.vultr.com
+{% endif %}
 
 ++ greencloud-hanoi
 menu = [VN] GreenCloud (Hanoi)
@@ -113,6 +130,8 @@ menu = [VN] TOTHOST @ VNPT
 title = [VN] TOTHOST @ VNPT - Hanoi, Vietnam [103.197.185.252]
 host = 103.197.185.252
 
+{% if not smokeping_lite %}
+
 ++ tothost-hanoi-2
 menu = [VN] TOTHOST @ CMC
 title = [VN] TOTHOST @ CMC Telecom - Hanoi, Vietnam [103.70.115.252]
@@ -122,6 +141,7 @@ host = 103.70.115.252
 menu = [VN] GreenCloud (Ho Chi Minh)
 title = [VN] GreenCloud @ FPT Telecom - Ho Chi Minh City, Vietnam [lg.hcm.greencloudvps.com]
 host = lg.hcm.greencloudvps.com
+{% endif %}
 
 ++ virtury
 menu = [PK] Virtury Cloud
@@ -133,6 +153,7 @@ menu = [RU] EdgeCenter (Khabarovsk)
 title = [RU] EdgeCenter (ex G-Core) - Khabarovsk, Russia [92.223.80.2]
 host = 92.223.80.2
 
+{% if not smokeping_lite %}
 ++ gcore-kz
 menu = [KZ] G-Core Labs
 title = [KZ] G-Core Labs - Almaty, Kazakhstan [213.156.137.1]
@@ -142,3 +163,4 @@ host = 213.156.137.1
 menu = [KZ] OWN.TN @ Kazakhtelecom
 title = [KZ] OWN.TN @ Kazakhtelecom - Pavlodar, Kazakhstan [178.89.141.8]
 host = 178.89.141.8
+{% endif %}

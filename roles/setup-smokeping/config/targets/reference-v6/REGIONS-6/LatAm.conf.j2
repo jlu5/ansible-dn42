@@ -3,6 +3,7 @@ menu = [MX] Vultr
 title = [MX] Vultr - Mexico City, Mexico [2001:19f0:b400:101a:5400:3ff:fe99:2eb4]
 host = 2001:19f0:b400:101a:5400:3ff:fe99:2eb4
 
+{% if not smokeping_lite %}
 ++ amazon-br
 menu = [BR] Amazon AWS
 title = [BR] Amazon AWS - Sao Paulo, Brazil [2804:800:ff00::36e9:c000]
@@ -12,6 +13,7 @@ host = 2804:800:ff00::36e9:c000
 menu = [BR] EdgeUno (Fortaleza)
 title = [BR] EdgeUno - Fortaleza, Brazil [spt-for1.edgeuno.com]
 host = spt-for1.edgeuno.com
+{% endif %}
 
 ++ edgeuno-sao-paulo
 menu = [BR] EdgeUno (Sao Paulo)
@@ -43,6 +45,7 @@ menu = [CL] EdgeUno
 title = [CL] EdgeUno - Santiago, Chile [spt-scl1.edgeuno.com]
 host = spt-scl1.edgeuno.com
 
+{% if not smokeping_lite %}
 ++ vultr-scl
 menu = [CL] Vultr
 title = [CL] Vultr - Santiago, Chile [2001:19f0:c800:2025:5400:4ff:fe46:cf]
@@ -57,6 +60,7 @@ host = spt-eze1.edgeuno.com
 menu = [GT] EdgeUno
 title = [GT] EdgeUno - Guatemala City, Guatemala [spt-gua1.edgeuno.com]
 host = spt-gua1.edgeuno.com
+{% endif %}
 
 ++ edgeuno-san-juan
 menu = [PR] EdgeUno
@@ -68,6 +72,7 @@ menu = [CO] EdgeUno
 title = [CO] EdgeUno - Bogota, Colombia [spt-bog1.edgeuno.com]
 host = spt-bog1.edgeuno.com
 
+{% if not smokeping_lite %}
 ++ edgeuno-quito
 menu = [EC] EdgeUno
 title = [EC] EdgeUno - Quito, Ecuador [spt-uio.edgeuno.com]
@@ -77,3 +82,4 @@ host = spt-uio.edgeuno.com
 menu = [PE] EdgeUno
 title = [PE] EdgeUno - Lima, Peru [spt-lim.edgeuno.com]
 host = spt-lim.edgeuno.com
+{% endif %}

@@ -1,5 +1,4 @@
-
-
+{% if not smokeping_lite %}
 ++ atomicnetworks-chi
 menu = [US/IL] Atomic Networks
 title = [US/IL] Atomic Networks - Chicago, IL, US [lg-us-chi.atomicnetworks.co]
@@ -9,6 +8,7 @@ host = lg-us-chi.atomicnetworks.co
 menu = [US/IL] HostHatch
 title = [US/IL] HostHatch - Chicago, IL, US [2605:4840:3:1::1]
 host = 2605:4840:3:1::1
+{% endif %}
 
 ++ linode-chi
 menu = [US/IL] Linode @ Akamai
@@ -25,6 +25,7 @@ menu = [US/IL] Psychz
 title = [US/IL] Psychz - Chicago, IL, US [lg.chi.psychz.net]
 host = lg.chi.psychz.net
 
+{% if not smokeping_lite %}
 ++ tnahosting
 menu = [US/IL] TNAHosting
 title = [US/IL] TNAHosting @ GigeNET - Chicago, IL, US [lg.chi2.tnahosting.net]
@@ -34,12 +35,14 @@ host = lg.chi2.tnahosting.net
 menu = [US/IL] Vultr
 title = [US/IL] Vultr - Chicago, IL, US [2001:19f0:5c00:8401:5400:ff:fe00:5364]
 host = 2001:19f0:5c00:8401:5400:ff:fe00:5364
+{% endif %}
 
 ++ wholesaleinternet
 menu = [US/MO] Wholesale Internet
 title = [US/MO] Nocix / Wholesale Internet - Kansas City, MO, US [2001:4858::1]
 host = 2001:4858::1
 
+{% if not smokeping_lite %}
 ++ freerangecloud-ywg
 menu = [CA/MB] Free Range Cloud
 title = [CA/MB] Free Range Cloud - Winnipeg, MB, Canada [2602:fed2:fe0:269::1]
@@ -59,12 +62,14 @@ host = spring-glass.dataideas.com
 menu = [US/TX] ExtraVM
 title = [US/TX] ExtraVM @ Dedicated.com @ GSL Networks - Dallas, TX, US [dal.lg.extravm.com]
 host = dal.lg.extravm.com
+{% endif %}
 
 ++ hivelocity-dal_0
 menu = [US/TX] Hivelocity
 title = [US/TX] Hivelocity - Dallas, TX, United States [speedtest.dal.hivelocity.net]
 host = speedtest.dal.hivelocity.net
 
+{% if not smokeping_lite %}
 ++ hosteons-dal
 menu = [US/TX] hostEONS
 title = [US/TX] hostEONS @ Limestone Networks - Dallas, TX, US [2402:d0c0:14:d::1]
@@ -74,12 +79,14 @@ host = 2402:d0c0:14:d::1
 menu = [US/TX] LevelOneServers
 title = [US/TX] LevelOneServers @ Hivelocity - Dallas, TX, US [dal.lg.leveloneservers.com]
 host = dal.lg.leveloneservers.com
+{% endif %}
 
 ++ linode-dal
 menu = [US/TX] Linode
 title = [US/TX] Linode - Dallas, TX, US [speedtest.dallas.linode.com]
 host = speedtest.dallas.linode.com
 
+{% if not smokeping_lite %}
 ++ nexeon-dal
 menu = [US/TX] Nexeon
 title = [US/TX] Nexeon - Dallas, TX, US [2602:ffc8:4:4::2]
@@ -94,12 +101,14 @@ host = lg.nexril.net
 menu = [US/TX] Oplink.net
 title = [US/TX] Oplink.net - Spring, TX, US [2604:e880:3::1]
 host = 2604:e880:3::1
+{% endif %}
 
 ++ psychz-dal
 menu = [US/TX] Psychz
 title = [US/TX] Psychz - Dallas, TX, US [lg.texas.psychz.net]
 host = lg.texas.psychz.net
 
+{% if not smokeping_lite %}
 ++ spartanhost-dal
 menu = [US/TX] SpartanHost
 title = [US/TX] SpartanHost - Dallas, TX, US [lg.dal.spartanhost.net]
@@ -109,6 +118,7 @@ host = lg.dal.spartanhost.net
 menu = [US/TX] Spectrum
 title = [US/TX] Spectrum - Fort Worth, TX, United States [spt01ftwotx.ftwo.tx.charter.com]
 host = spt01ftwotx.ftwo.tx.charter.com
+{% endif %}
 
 ++ vultr-dal
 menu = [US/TX] Vultr
@@ -120,7 +130,9 @@ menu = [US/CO] SmartHost
 title = [US/CO] SmartHost @ Handy Networks - Denver, CO, US [2606:6680:6:1::c84c:4d58]
 host = 2606:6680:6:1::c84c:4d58
 
+{% if not smokeping_lite %}
 ++ smarthost-nm
 menu = [US/NM] SmartHost
 title = [US/NM] SmartHost @ Brownrice Internet - Taos, NM, US [2606:6680:53:1::b2ab:3d47]
 host = 2606:6680:53:1::b2ab:3d47
+{% endif %}

@@ -63,11 +63,14 @@ menu = Wikipedia
 title = Wikipedia [en.wikipedia.org]
 host = en.wikipedia.org
 
-{% for region in smokeping_regions | default(smokeping_region_map[dn42_regions[0]]) %}
+{% set smokeping_regions_lite = smokeping_regions_lite | default([]) %}
+{% for region in (smokeping_regions | default(smokeping_region_map[dn42_regions[0]])) + smokeping_regions_lite %}
 {% set path = "REGIONS-6/" + region + ".conf.j2" %}
 ### BEGIN CONFIG SNIPPET {{ path }}
 
-{% include path ignore missing %}
+{% with smokeping_lite = region in smokeping_regions_lite %}
+{% include path %}
+{% endwith %}
 
 ### END CONFIG SNIPPET {{ path }}
 {% endfor %}

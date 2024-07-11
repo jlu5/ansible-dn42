@@ -1,13 +1,16 @@
+{% if not smokeping_lite %}
 ++ amazon-lon
 menu = [UK] Amazon AWS
 title = [UK] Amazon Web Services - London, United Kingdom [3.8.0.0]
 host = 3.8.0.0
+{% endif %}
 
 ++ clouvider-lon
 menu = [UK] Clouvider
 title = [UK] Clouvider - London, United Kingdom [uk.mirrors.clouvider.net]
 host = uk.mirrors.clouvider.net
 
+{% if not smokeping_lite %}
 ++ contabo-uk
 menu = [UK] Contabo
 title = [UK] Contabo - Portsmouth, United Kingdom [pme.speedtest.contabo.net]
@@ -27,6 +30,7 @@ host = dc5speedtest.rapidswitch.com
 menu = [UK] Iomart (Gosport)
 title = [UK] Iomart - Gosport, United Kingdom [speedtest-net7.rapidswitch.co.uk]
 host = speedtest-net7.rapidswitch.co.uk
+{% endif %}
 
 ++ linode-lon
 menu = [UK] Linode
@@ -38,6 +42,7 @@ menu = [UK] OVH
 title = [UK] OVH - Erith, London, United Kingdom [eri.proof.ovh.net]
 host = eri.proof.ovh.net
 
+{% if not smokeping_lite %}
 ++ pebblehost
 menu = [UK] PebbleHost (Coventry)
 title = [UK] PebbleHost - Coventry, United Kingdom [as212027.net]
@@ -47,12 +52,14 @@ host = as212027.net
 menu = [UK] SmartHost @ VeloxServ
 title = [UK] SmartHost @ VeloxServ - Redditch, United Kingdom [uk1.smarthost.net]
 host = uk1.smarthost.net
+{% endif %}
 
 ++ ukservers-cov
 menu = [UK] UKServers (Coventry)
 title = [UK] UKServers - Coventry, United Kingdom [iperf.as42831.net]
 host = iperf.as42831.net
 
+{% if not smokeping_lite %}
 ++ xtom-lon
 menu = [UK] xTom
 title = [UK] xTom / V.PS - London, United Kingdom [lon.speedtest.v.ps]
@@ -77,6 +84,7 @@ host = lg.fr.hosteons.com
 menu = [FR] Linode @ Akamai
 title = [FR] Linode @ Akamai - Paris, France [speedtest.paris.linode.com]
 host = speedtest.paris.linode.com
+{% endif %}
 
 ++ ovh-gra
 menu = [FR] OVH (Gravelines)
@@ -88,6 +96,7 @@ menu = [FR] OVH (Roubaix)
 title = [FR] OVH - Roubaix, France [rbx.proof.ovh.net]
 host = rbx.proof.ovh.net
 
+{% if not smokeping_lite %}
 ++ ovh-sbg
 menu = [FR] OVH (Strasbourg)
 title = [FR] OVH - Strasbourg, France [sbg.proof.ovh.net]
@@ -97,12 +106,14 @@ host = sbg.proof.ovh.net
 menu = [FR] RackNerd (Strasbourg)
 title = [FR] RackNerd @ Host Europe - Strasbourg, France [lg-fr.racknerd.com]
 host = lg-fr.racknerd.com
+{% endif %}
 
 ++ online-net-par
 menu = [FR] Scaleway
 title = [FR] Scaleway / Online.net - Paris, France [ping.online.net]
 host = ping.online.net
 
+{% if not smokeping_lite %}
 ++ virtua-lille
 menu = [FR] Virtua (Lille)
 title = [FR] Virtua.Cloud - Lille, France [lg.lil01fr.vsys.cloud]
@@ -117,6 +128,7 @@ host = par-fr-ping.vultr.com
 menu = [NL] Clouvider
 title = [NL] Clouvider - Amsterdam, Netherlands [nl.mirrors.clouvider.net]
 host = nl.mirrors.clouvider.net
+{% endif %}
 
 ++ colocrossing-ams
 menu = [NL] ColoCrossing
@@ -128,20 +140,24 @@ menu = [NL] HostHatch
 title = [NL] HostHatch - Amsterdam, Netherlands [lg.ams.hosthatch.com]
 host = lg.ams.hosthatch.com
 
+{% if not smokeping_lite %}
 ++ hybula_0
 menu = [NL] Hybula
 title = [NL] Hybula - Amsterdam, Netherlands [lg-nl-ams.hybula.net]
 host = lg-nl-ams.hybula.net
+{% endif %}
 
 ++ liteserver
 menu = [NL] LiteServer
 title = [NL] LiteServer - Dronten, Netherlands [lg-drn.liteserver.nl]
 host = lg-drn.liteserver.nl
 
+{% if not smokeping_lite %}
 ++ melbicom-ams
 menu = [NL] Melbicom
 title = [NL] Melbicom - Amsterdam, Netherlands [dl.ams.melbicom.net]
 host = dl.ams.melbicom.net
+{% endif %}
 
 ++ novoserve-nl
 menu = [NL] NovoServe
@@ -153,6 +169,7 @@ menu = [NL] Scaleway
 title = [NL] Scaleway / Online.net - Amsterdam, Netherlands [ping-ams1.online.net]
 host = ping-ams1.online.net
 
+{% if not smokeping_lite %}
 ++ server-factory-nl
 menu = [NL] server-factory
 title = [NL] server-factory.com - Eygelshoven, Netherlands [lg.nl.server-factory.com]
@@ -172,12 +189,14 @@ host = speedtest.worldstream.nl
 menu = [DE] 23M
 title = [DE] 23M - Frankfurt, Germany [fra01.lg.23m.com]
 host = fra01.lg.23m.com
+{% endif %}
 
 ++ alphavps-de
 menu = [DE] AlphaVPS
 title = [DE] AlphaVPS - Nuremberg, Germany [lgde.alphavps.com]
 host = lgde.alphavps.com
 
+{% if not smokeping_lite %}
 ++ aurologic
 menu = [DE] Aurologic
 title = [DE] Aurologic - Frankfurt, Germany [lg.aurologic.com]
@@ -187,16 +206,19 @@ host = lg.aurologic.com
 menu = [DE] Clouvider
 title = [DE] Clouvider - Frankfurt, Germany [de.mirrors.clouvider.net]
 host = de.mirrors.clouvider.net
+{% endif %}
 
 ++ contabo-dus
 menu = [DE] Contabo (Dusseldorf)
 title = [DE] Contabo - Dusseldorf, Germany [dus.speedtest.contabo.net]
 host = dus.speedtest.contabo.net
 
+{% if not smokeping_lite %}
 ++ dtag-dusseldorf
 menu = [DE] DTAG (Dusseldorf)
 title = [DE] Deutsche Telekom - Dusseldorf, Germany [dus.wsqm.telekom-dienste.de]
 host = dus.wsqm.telekom-dienste.de
+{% endif %}
 
 ++ dtag-frankfurt
 menu = [DE] DTAG (Frankfurt)
@@ -213,6 +235,7 @@ menu = [DE] Hetzner (Falkenstein)
 title = [DE] Hetzner - Falkenstein, Germany [fsn.icmp.hetzner.com]
 host = fsn.icmp.hetzner.com
 
+{% if not smokeping_lite %}
 ++ ip-projects
 menu = [DE] IP-Projects (Frankfurt)
 title = [DE] IP-Projects - Frankfurt, Germany [lg.ip-projects.de]
@@ -237,6 +260,7 @@ host = dl.fra.melbicom.net
 menu = [DE] Misaka
 title = [DE] Misaka Network - Berlin, Germany [de-ber02.speed.misaka.one]
 host = de-ber02.speed.misaka.one
+{% endif %}
 
 ++ netcup-nbg
 menu = [DE] Netcup (Nuremberg)
@@ -253,6 +277,7 @@ menu = [DE] UltraVPS (Duesseldorf)
 title = [DE] UltraVPS - Duesseldorf, Germany [lg.dus.de.ultravps.eu]
 host = lg.dus.de.ultravps.eu
 
+{% if not smokeping_lite %}
 ++ vserver-site-de
 menu = [DE] vServer.site
 title = [DE] vServer.site - Frankfurt, Germany [lg-ffm.vserver.site]
@@ -272,6 +297,7 @@ host = fra-de-ping.vultr.com
 menu = [DE] xTom
 title = [DE] xTom / V.PS - Frankfurt, Germany [fra.speedtest.v.ps]
 host = fra.speedtest.v.ps
+{% endif %}
 
 ++ buyvm-lu
 menu = [LU] BuyVM
