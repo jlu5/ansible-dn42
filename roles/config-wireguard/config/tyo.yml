@@ -241,11 +241,7 @@ wg_peers:
   peer_v6: null
 
 - name: dn42-cmcc
-  port: 21686
-  remote: null
-  wg_pubkey: ocG/0wXtmuXA9OF5pMVolBIsFfE1K3JILX3MC3J5pGI=
-  peer_v4: null
-  peer_v6: fe80::1686
+  remove: true
 
 - name: dn42-cdubs
   port: 20566
