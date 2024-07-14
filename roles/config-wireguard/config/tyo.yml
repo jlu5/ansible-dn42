@@ -244,8 +244,4 @@ wg_peers:
   remove: true
 
 - name: dn42-cdubs
-  port: 20566
-  remote: dn20.jp.surgebytes.com:31080
-  wg_pubkey: WOrPyUqXnIvYlFh6K4XBjGCIpW0d23+ZFCE39jR8Dno=
-  peer_v4: null
-  peer_v6: fe80::566:20
+  remove: true

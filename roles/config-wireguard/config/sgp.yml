@@ -109,3 +109,10 @@ wg_peers:
   wg_pubkey: vRJEopLztIpuuG568/bbPQKNrbypT3Tfg12PRTeBu2Y=
   peer_v4: 172.23.9.129
   peer_v6: fe80::bd12:44a2:92f3:b48a
+
+- name: dn42-cdubs
+  port: 20566
+  remote: dn18.sin.surgebytes.com:31080
+  wg_pubkey: UCr50HzYCY57KvWCBHrXZLgUOKu8MYo1vEgqVXPzjls=
+  peer_v4: null
+  peer_v6: fe80::566:18
