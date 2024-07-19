@@ -68,11 +68,6 @@
 -A INPUT -p tcp --dport {{ netdata_proxy_port }} -s {{ my_cidrs }} -j ACCEPT
 {% endif %}
 
-{% if 'clearnet_dns' in group_names %}
-# DNS (dn42 and clearnet!!)
--A INPUT -p udp --dport 53 -j ACCEPT
--A INPUT -p tcp --dport 53 -j ACCEPT
-{% else %}
 # Anycast DNS within dn42
 -A INPUT -p udp --dport 53 -i dn42+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i dn42+ -j ACCEPT
@@ -80,7 +75,6 @@
 -A INPUT -p tcp --dport 53 -i igp+ -j ACCEPT
 -A INPUT -p udp --dport 53 -i cl+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i cl+ -j ACCEPT
-{% endif %}
 
 {% if iftype == 6 -%}
 {% set _allowed_ips = 'fd00::/8,ff00::/8,fe80::/64' %}

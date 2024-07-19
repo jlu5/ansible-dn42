@@ -1,20 +1,3 @@
-
-## GeoIP prereqs
-- name: Download GeoIP database from db-ip.com
-  get_url:
-    url: https://download.db-ip.com/free/dbip-country-lite-{{ ansible_date_time.year }}-{{ ansible_date_time.month }}.mmdb.gz
-    dest: "{{ automation_root_dir }}/dbip-country-lite.mmdb.gz"
-    mode: '0644'
-  when: "'clearnet_dns' in group_names"
-  ignore_errors: true
-
-- name: Extract GeoIP database
-  command: "gunzip -k dbip-country-lite.mmdb.gz"
-  args:
-    chdir: "{{ automation_root_dir }}"
-    creates: "{{ automation_root_dir }}/dbip-country-lite.mmdb"
-  when: "'clearnet_dns' in group_names"
-
 ## Build PowerDNS config
 - name: "Build PowerDNS config variables"
   set_fact:
@@ -27,20 +10,6 @@
       bind: &bind_backend_config
         config: "/etc/powerdns/named.conf"
         dnssec-db: "{{ _pdns_bind_dnssec_db }}"
-
-## Clearnet auth-DNS servers enable GeoIP and have additional bind IPs
-- name: "Build PowerDNS GeoIP backend config"
-  set_fact:
-    _pdns_local_address: "{{ _pdns_local_address
-                             + ([ansible_default_ipv4.get('address', 0), ansible_default_ipv6.get('address', 0)]
-                                | select('string')) }}"
-    _pdns_backends:
-      bind:
-        <<: *bind_backend_config
-      geoip:
-        zones-file: "/etc/powerdns/geodns.yml"
-        database-files: "{{ automation_root_dir }}/dbip-country-lite.mmdb"
-  when: "'clearnet_dns' in group_names"
 
 - name: "Create PowerDNS config folder"
   file:
@@ -81,15 +50,6 @@
   notify:
     - Reconfigure PowerDNS
 
-- name: "Upload geodns.yml for PowerDNS"
-  copy:
-    src: "{{ playbook_dir }}/geodns.yml"
-    dest: "/etc/powerdns/geodns.yml"
-    mode: '0644'
-  notify:
-    - Reconfigure PowerDNS
-  when: "'clearnet_dns' in group_names"
-
 - name: "Template named.conf for PowerDNS"
   template:
     src: "named.conf.j2"
@@ -101,9 +61,7 @@
 - import_role:
     name: PowerDNS.pdns
   vars:
-    # Debian 11 / PowerDNS 4.4.x
-    pdns_install_repo: ""
-    #pdns_install_repo: "{{ pdns_auth_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
+    pdns_install_repo: "" # use system default
     pdns_config:
       local-address: "{{ _pdns_local_address | join(', ') }}"
       slave: "{{ dns_dn42_secondary_zones is defined | bool }}"
