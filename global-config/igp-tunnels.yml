@@ -123,6 +123,7 @@ igp_neighbours:
     sjc: null
     tpa: null
     ymq2: null
+    yvrpeer: null
   ymq2: !!set
     ams: null
     chi: null
@@ -133,6 +134,7 @@ igp_neighbours:
     lax: null
     sjc: null
     tyo: null
+    ymq: null
     ymq2: null
 igp_wg_ports:
   ams:

@@ -98,5 +98,5 @@ netdata_proxy_port: 8080
 # IPs to allow Netdata access from
 netdata_mgmt_ips:
   - 172.22.108.0/29
-  - 172.22.108.48/30
+  - 172.22.108.96/27
   - fd86:bad:11b7:aaaa::/64

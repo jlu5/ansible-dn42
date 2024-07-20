@@ -7,7 +7,7 @@ wg_peers:
   peer_v6: fe80::364a:e89c:f980:6b2f
 
 - name: cl-roam0
-  local_v4: 172.22.108.94/31
+  local_v4: 172.22.108.98/31
   local_v6_multi:
   - fd86:bad:11b7:35:2::1/124
   # A dummy link local v6 is needed for BIRD to pick this up as an OSPF stub interface for IPv6
@@ -15,16 +15,16 @@ wg_peers:
   port: 21080
   multi:
   - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
-    wg_allowedips: "172.22.108.95/32,fd86:bad:11b7:35:2::2/128"
+    wg_allowedips: "172.22.108.99/32,fd86:bad:11b7:35:2::2/128"
   peer_v6: null
 
 - name: cl-roam
-  local_v4: 172.22.108.90/31
+  local_v4: 172.22.108.100/31
   local_v6: null
   port: 19998
   multi:
   - wg_pubkey: "krMnDawVDAurrJqWkePFp1vE2zwK2vQy6ie6tGLcnX0="
-    wg_allowedips: "172.22.108.91/32"
+    wg_allowedips: "172.22.108.101/32"
   peer_v6: null
 
 - name: dn42-yura

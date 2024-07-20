@@ -1,4 +1,11 @@
 wg_peers:
+- name: igp-stub-ymq02
+  port: 21080
+  remote: ymq02.jlu5.com:21080
+  wg_pubkey: WHbrvO3M8gEPcS0WIOOFYjiXXWinpC9Pdd9DWmX1e3Q=
+  peer_v4: "172.22.108.41"
+  peer_v6: null
+
 - name: dn42nyc-sunnet
   port: 53088
   remote: "nyc1-us.dn42.6700.cc:21080"
