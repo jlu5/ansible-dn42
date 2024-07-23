@@ -115,3 +115,64 @@ wg_peers:
   wg_pubkey: ocG/0wXtmuXA9OF5pMVolBIsFfE1K3JILX3MC3J5pGI=
   peer_v4: null
   peer_v6: fe80::1686
+
+## peers moved from hkg.peer
+- name: dn42-munsternet
+  peer_v4: null
+  peer_v6: fe80::42:2237
+  port: 22237
+  remote: sg-sin01.dn42.munsternet.eu:22237
+  wg_pubkey: 09m8ilgZ/9jQvVgsGwu2ceR8u6gKAsd+VxH8AzduOHk=
+  local_v4: 172.22.108.39
+  local_v6: "fe80::1080:39"
+  wg_privkey: "/etc/wireguard/privatekey_sgp"
+
+- name: dn42-moecast
+  port: 20604
+  remote: "sgp1.dn42.cas7.moe:21080"
+  wg_pubkey: "R8iyaSzF6xx/t4+1wKlYWZWyZOxJDCXlA2BE3OZnsAY="
+  peer_v4: "172.23.89.1"
+  peer_v6: "fe80::604"
+  local_v4: 172.20.229.127
+  local_v6: "fe80::1080:127"
+
+- name: dn42-billchen
+  port: 20803
+  remote: hk.billchen.bid:21080
+  wg_pubkey: jfJLocC6s+MUvxkrrJJ010kiVvmPJ23TYjdsarc4R28=
+  peer_v4: 172.23.33.10
+  peer_v6: fe80::803
+  local_v4: 172.22.108.39
+  local_v6: "fe80::1080:39"
+  wg_privkey: "/etc/wireguard/privatekey_sgp"
+
+- name: dn42-imlonghao
+  port: 21888
+  remote: sg1.dn42.ni.sb:21080
+  wg_pubkey: vBcYFxMLwcsVScQ0LqkGDEIbbykskatmqWHlPGEUrE8=
+  peer_v4: 172.22.68.0
+  peer_v6: fe80::1888
+  local_v4: 172.22.108.39
+  local_v6: "fe80::1080:39"
+  wg_privkey: "/etc/wireguard/privatekey_sgp"
+
+- name: dn42-heartbleed
+  port: 22297
+  remote: ileg.al:22297
+  wg_pubkey: vRJEopLztIpuuG568/bbPQKNrbypT3Tfg12PRTeBu2Y=
+  peer_v4: 172.23.9.129
+  peer_v6: fe80::bd12:44a2:92f3:b48a
+  local_v4: 172.22.108.39
+  local_v6: "fe80::1080:39"
+  wg_privkey: "/etc/wireguard/privatekey_sgp"
+
+- name: dn42-cdubs
+  port: 20566
+  remote: dn18.sin.surgebytes.com:31080
+  wg_pubkey: UCr50HzYCY57KvWCBHrXZLgUOKu8MYo1vEgqVXPzjls=
+  peer_v4: null
+  peer_v6: fe80::566:18
+  local_v4: 172.22.108.39
+  local_v6: "fe80::1080:39"
+  wg_privkey: "/etc/wireguard/privatekey_sgp"
+## end peers moved from hkg.peer
