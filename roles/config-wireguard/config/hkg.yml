@@ -160,9 +160,9 @@ wg_peers:
   port: 22297
   remote: ileg.al:22297
   wg_pubkey: vRJEopLztIpuuG568/bbPQKNrbypT3Tfg12PRTeBu2Y=
-  peer_v4: 172.23.9.129
+  peer_v4: null
   peer_v6: fe80::bd12:44a2:92f3:b48a
-  local_v4: 172.22.108.39
+  local_v4: 169.254.13.2/30
   local_v6: "fe80::1080:39"
   wg_privkey: "/etc/wireguard/privatekey_sgp"
 
