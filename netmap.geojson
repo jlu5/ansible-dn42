@@ -57,8 +57,8 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#dal\" class=\"netmap-server-link\">Dallas, TX, US</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+                "description": "- LITE node, NO Anycast DNS<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
             }
         },
         {
@@ -132,21 +132,6 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sao\" class=\"netmap-server-link\">Sao Paulo, BR</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    103.819836,
-                    1.352083
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#sgp\" class=\"netmap-server-link\">Singapore, SG</a>",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
