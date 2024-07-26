@@ -68,3 +68,10 @@ wg_peers:
   wg_pubkey: R5fOFXqd3bvfCt42oe3+qaqGY7gbsYpK8wLBc1o6/Ec=
   peer_v4: null
   peer_v6: fe80::1815
+
+- name: dn42-lucaslah
+  port: 23290
+  remote: 119.224.65.18:21080
+  wg_pubkey: XJ/JV4983nfMhns2B86nEYUyBt1FGAl0dh5THgFdwVY=
+  peer_v4: null
+  peer_v6: fe80::3290:1
