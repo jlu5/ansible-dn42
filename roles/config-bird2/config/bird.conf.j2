@@ -58,6 +58,14 @@ function is_self_net_v6() {
   ];
 }
 
+function is_self_net_aggregate() {
+  return net ~ [
+    {{ownnets4_aggr_ipset}}
+  ] || net ~ [
+    {{ownnets6_aggr_ipset}}
+  ];
+}
+
 function is_valid_network() {
   return net ~ [
     172.20.0.0/14{21,29}, # dn42
@@ -148,17 +156,18 @@ template bgp route_collector {
     local as OWNAS;
 
     multihop;
+    advertise hostname on;
 
     ipv4 {
         add paths tx;
         import none;
-        export where is_valid_network() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE];
+        export where dn42_export_filter(0, 0, 0);
     };
 
     ipv6 {
         add paths tx;
         import none;
-        export where is_valid_network_v6() && source ~ [RTS_STATIC, RTS_BGP, RTS_DEVICE];
+        export where dn42_export_filter(0, 0, 0);
     };
 }
 

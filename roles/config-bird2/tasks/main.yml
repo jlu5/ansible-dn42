@@ -22,6 +22,8 @@
   set_fact:
     ownnets4_ipset: "{{ ownnets4 | map('regex_replace', '$', '+') | join(', ') }}"
     ownnets6_ipset: "{{ ownnets6 | map('regex_replace', '$', '+') | join(', ') }}"
+    ownnets4_aggr_ipset: "{{ ownnets4 | join(', ') }}"
+    ownnets6_aggr_ipset: "{{ ownnets6 | join(', ') }}"
 
   ignore_errors: true
 
