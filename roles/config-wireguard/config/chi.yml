@@ -24,7 +24,7 @@ wg_peers:
   peer_v4: "172.23.222.129"
   peer_v6: "fe80::100"
 
-- name: dn42chi-ncw
+- name: dn42-nicholascw
   port: 51288
   remote: "chi2.sc00.org:21080"
   wg_pubkey: "750WkOmYTh+gfrod2LRgKU46nkEJrWK2z6emynV+j3U="
