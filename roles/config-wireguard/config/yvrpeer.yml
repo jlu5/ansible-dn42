@@ -84,3 +84,10 @@ wg_peers:
   wg_pubkey: u6yapIaPFRkLGBbkJkTKXydMHufLw1brDiT3t8I8eSM=
   peer_v4: null
   peer_v6: fe80::566
+
+- name: dn42-lukasbecke
+  port: 23372
+  remote: 204.83.118.148:21080
+  wg_pubkey: tho82WN6bcm89uOo00GJwHOSA2HFtB2eSWAQpykrBk0=
+  peer_v4: null
+  peer_v6: fe80::3372
