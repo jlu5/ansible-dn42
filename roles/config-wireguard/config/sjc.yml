@@ -156,3 +156,10 @@ wg_peers:
   wg_pubkey: uUKad5JFD+Zfx/sApOcqJVrrsRS25en9ac6Tri/cZQk=
   peer_v4: null
   peer_v6: fe80::1580:1
+
+- name: dn42-kemono
+  port: 20358
+  remote: 45.32.129.207:21080
+  wg_pubkey: 7HzHyeA2M7yo/zVmc+e0zG+I7j2SnIx+7ZpXOca93mg=
+  peer_v4: null
+  peer_v6: fe80::358
