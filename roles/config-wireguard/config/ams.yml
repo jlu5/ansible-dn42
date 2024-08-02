@@ -156,7 +156,7 @@ wg_peers:
   remote: ams01.dn42.ventilaar.net:31080
   wg_pubkey: Z6WFjvsKIh4E92jxOYC07Dn5Q5Cc/pBFFpYlYZUr7j8=
   peer_v4: null
-  peer_v6: fe80::224
+  peer_v6: fe80::2246
 
 - name: dn42-szczot3k
   port: 29680
