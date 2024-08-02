@@ -1,0 +1,11 @@
+---
+kind: pipeline
+name: default
+
+steps:
+- name: verify-peers
+  image: debian:bookworm
+  commands:
+    - apt-get update
+    - apt-get install -yy python3 python3-yaml
+    - scripts/ci-verify.py .
