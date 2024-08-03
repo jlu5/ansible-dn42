@@ -40,9 +40,9 @@
       priority: 10
       is_internal_node: true
 
-# - name: "Debug _wg_to_remove"
-#   debug:
-#     var: _wg_to_remove
+- name: "Debug _wg_to_remove"
+  debug:
+    var: _wg_to_remove
 
 # - name: "Debug _wg_to_add"
 #   debug:

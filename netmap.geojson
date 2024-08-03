@@ -126,21 +126,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -46.633309,
-                    -23.55052
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#sao\" class=\"netmap-server-link\">Sao Paulo, BR</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -121.886329,
                     37.338208
                 ]
@@ -236,7 +221,7 @@
                 ]
             },
             "properties": {
-                "title": "<a href=\"nodes.html#yvrpeer\" class=\"netmap-server-link\">Vancouver, BC, CA</a>",
+                "title": "<a href=\"nodes.html#yvr\" class=\"netmap-server-link\">Vancouver, BC, CA</a>",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
