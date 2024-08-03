@@ -191,3 +191,10 @@ wg_peers:
   wg_pubkey: OlUDuWkUI9pKNsNo7Vjf/GKKVSBslh9kmqjbeYA4+34=
   peer_v4: null
   peer_v6: fe80::2189:120
+
+- name: dn42-moechs
+  port: 21522
+  remote: hk01.zapto.org:23010
+  wg_pubkey: hYLBVBQafFG7alJYztjQuAzMOqO2FlvTnWcsoJZf6EE=
+  peer_v4: null
+  peer_v6: fe80::1522
