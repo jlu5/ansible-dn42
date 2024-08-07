@@ -80,3 +80,10 @@ wg_peers:
   wg_pubkey: 89xUzROs3l/KNPLxDTJz4l5aEH1cmLb22bNgChhRiQo=
   peer_v4: null
   peer_v6: fe80::207
+
+- name: dn42-kitauji
+  port: 22314
+  remote: 195.252.199.45:41080
+  wg_pubkey: 7QUBU6NIaG82IZA6ft9KGKkIQzahm1/MsJCMNQvbYGQ=
+  peer_v4: 172.22.179.97
+  peer_v6: fe80::1747
