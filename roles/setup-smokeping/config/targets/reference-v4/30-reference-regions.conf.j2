@@ -1,0 +1,13 @@
+{% set _smokeping_config = smokeping_target_regions | default(smokeping_region_map[region]) %}
+{% set _smokeping_regions_full = [region] + _smokeping_config.get('full', []) %}
+{% set _smokeping_regions_lite = _smokeping_config.get('lite', []) %}
+{% for target_region in (_smokeping_regions_full + _smokeping_regions_lite) %}
+{% set path = "REGIONS-4/" + target_region + ".conf.j2" %}
+### BEGIN CONFIG SNIPPET {{ path }}
+
+{% with smokeping_lite = target_region in _smokeping_regions_lite %}
+{% include path %}
+{% endwith %}
+
+### END CONFIG SNIPPET {{ path }}
+{% endfor %}

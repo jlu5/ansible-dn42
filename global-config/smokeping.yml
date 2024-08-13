@@ -1,19 +1,30 @@
 smokeping_region_map:
-  41: [EU, EU2, MEA]
-  42: [NAEast, NASoutheast, NACentral]
-  43: [NACentral, NAEast, NASoutheast]
-  44: [NANorthwest, NAWest, NACentral]
-  46: [LatAm]
-  51: [AsiaSouthCentral, AsiaEast]
-  52: [AsiaEast, AsiaSouthCentral]
-  53: [Oceania, AsiaSouthCentral]
-
-smokeping_region_lite_map:
-  41: [NAEast, NASoutheast, AsiaSouthCentral, AsiaCN]
-  42: [NANorthwest, NAWest, LatAm, EU, EU2, AsiaCN]
-  43: [NANorthwest, NAWest, LatAm, EU, AsiaCN]
-  44: [NAEast, NASoutheast, AsiaEast, AsiaSouthCentral, AsiaCN]
-  46: [NAEast, NASoutheast, EU]
-  51: [AsiaCN, Oceania, NANorthwest, NAWest, MEA, EU]
-  52: [AsiaCN, Oceania, NANorthwest, NAWest, EU]
-  53: [AsiaEast, AsiaCN, NANorthwest, NAWest]
+  EU:
+    full: [EU2, MEA]
+    lite: [NAEast, NASoutheast, AsiaSouthCentral, AsiaCN]
+  EU2:
+    full: [EU]
+  NAEast:
+    full: [NASoutheast, NACentral]
+    lite: [NANorthwest, NAWest, LatAm, EU, AsiaCN]
+  NASoutheast:
+    full: [NAEast, NACentral]
+    lite: [NANorthwest, NAWest, LatAm, EU]
+  NACentral:
+    full: [NAEast]
+    lite: [NASoutheast, NANorthwest, NAWest]
+  NANorthwest:
+    full: [NAWest]
+    lite: [NACentral, NAEast, NASoutheast, AsiaEast]
+  NAWest:
+    full: [NANorthwest]
+    lite: [NACentral, NASoutheast, NAEast, AsiaEast]
+  AsiaSouthCentral:
+    full: [AsiaEast]
+    lite: [AsiaCN, Oceania, NAWest, NANorthwest, EU]
+  AsiaEast:
+    full: [AsiaSouthCentral]
+    lite: [AsiaCN, Oceania, NANorthwest, NAWest, EU]
+  Oceania:
+    full: [AsiaSouthCentral]
+    lite: [AsiaCN, NAWest, NANorthwest]

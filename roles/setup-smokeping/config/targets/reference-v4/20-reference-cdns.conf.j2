@@ -81,15 +81,3 @@ host = twitter.com
 menu = Wikipedia
 title = Wikipedia [en.wikipedia.org]
 host = en.wikipedia.org
-
-{% set smokeping_regions_lite = smokeping_regions_lite | default(smokeping_region_lite_map[dn42_regions[0]]) %}
-{% for region in (smokeping_regions | default(smokeping_region_map[dn42_regions[0]])) + smokeping_regions_lite %}
-{% set path = "REGIONS-4/" + region + ".conf.j2" %}
-### BEGIN CONFIG SNIPPET {{ path }}
-
-{% with smokeping_lite = region in smokeping_regions_lite %}
-{% include path ignore missing %}
-{% endwith %}
-
-### END CONFIG SNIPPET {{ path }}
-{% endfor %}
