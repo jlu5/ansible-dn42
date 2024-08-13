@@ -8,13 +8,16 @@ title = dn42 Services
 {% set dn42_dests = {
     'wiki_dn42': {
         'desc': 'dn42 Wiki',
-        'host': 'wiki.dn42'
+        'host4': '172.23.0.80',
+        'host6': 'fd42:d42:d42:80::1'
     },
     'wiki-ng': {
         'host': 'wiki-ng.dn42'
     },
     'whois': {
-        'host': 'whois.dn42'
+        'desc': 'dn42 Whois',
+        'host4': '172.22.0.43',
+        'host6': 'fd42:d42:d42:43::1'
     },
     'neo_dns': {
         'desc': 'NeoNetwork DNS',
@@ -28,15 +31,6 @@ title = dn42 Services
         'asn': 64654,
         'desc': 'ChaosVPN Index',
         'host4': '172.31.2.1',
-    },
-    'chaosvpn_dns': {
-        'asn': 64654,
-        'desc': 'ChaosVPN DNS',
-        'host4': '172.31.0.5',
-    },
-    'search_dn42': {
-        'asn': 64719,
-        'host': 'search.dn42',
     },
     'ff3l_dns-0': {
         'asn': 65043,

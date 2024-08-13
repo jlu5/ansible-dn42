@@ -8,6 +8,8 @@
     - libio-socket-inet6-perl
     # Default smokeping on Debian pulls in Apache!
     install_recommends: no
+    state: latest
+    update_cache: yes
 
 - name: Install smokeping-fcgi service
   copy:
