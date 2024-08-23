@@ -5,6 +5,8 @@ title = dn42 Services
 {% include 'targets/dn42-dns.conf.j2' %}
 
 {% import 'smokeping-helpers.j2' as helpers %}
+{# For consistency, keep this list sorted by ASN - entries without the asn key
+are labelled as anycast and go first #}
 {% set dn42_dests = {
     'wiki_dn42': {
         'desc': 'dn42 Wiki',
@@ -61,11 +63,6 @@ title = dn42 Services
         'desc': 'urandom msg board',
         'host': 'urandom.catgirls.dn42',
     },
-    'tech9': {
-        'asn': 4242421588,
-        'desc': 'tech9 LG',
-        'host': 'lg.tech9computers.dn42',
-    },
     'kskb': {
         'asn': 4242421817,
         'host': 'ns.kskb.dn42',
@@ -92,6 +89,10 @@ title = dn42 Services
         'asn': 4242422923,
         'desc': 'bgplookup',
         'host': 'bgplookup.bandura.dn42',
+    },
+    'sunnet_ns': {
+        'asn': 4242423088,
+        'host': 'ns1.sun.dn42',
     },
     'crxn_dns': {
         'asn': 4242423182,
