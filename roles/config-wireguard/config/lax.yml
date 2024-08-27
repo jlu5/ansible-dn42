@@ -236,3 +236,10 @@ wg_peers:
   wg_pubkey: JtesX7JLjlYmZWbeMvK2Hx0Vpo5Fhr9VILlTcuonlWQ=
   peer_v4: null
   peer_v6: fe80::1522
+
+- name: dn42-sidereal
+  port: 22016
+  remote: phx1.dn42.sidereal.ca:21080
+  wg_pubkey: 3hy0FIf64sxSVLY6/CwhtMfCmQEkG5hsyKxM/Dttvz0=
+  peer_v4: null
+  peer_v6: fe80::2016

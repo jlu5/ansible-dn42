@@ -112,3 +112,10 @@ wg_peers:
   peer_v4: null
   peer_v6: fdc0:b62e:4a7d:cafe:cafe:cafe:cafe:2
   local_v6: fdc0:b62e:4a7d:cafe:cafe:cafe:cafe:1
+
+- name: dn42-sidereal
+  port: 22016
+  remote: lon1.dn42.sidereal.ca:21080
+  wg_pubkey: IsuXPz73qeUi+HfGlkkJnPxSqQKd5drx2dkjuHuuL1k=
+  peer_v4: null
+  peer_v6: fe80::2016
