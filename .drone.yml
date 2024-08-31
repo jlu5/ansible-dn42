@@ -9,3 +9,11 @@ steps:
     - apt-get update
     - apt-get install -yy python3 python3-yaml
     - scripts/ci-verify.py .
+
+steps:
+- name: test
+  image: debian:bookworm
+  commands:
+    - apt-get update
+    - apt-get install -yy python3 python3-ruamel.yaml python3-requests
+    - python3 -m unittest discover scripts/peerconfgen/ -v
