@@ -16,15 +16,18 @@ BIRD_NEIGHBOR_RE = re.compile(r'neighbor\s+([0-9a-fA-F:]+|[0-9.]+)\s+as\s+(\d+)'
 BIRD_INTERFACE_RE = re.compile(r'interface\s+"(.*?)"')
 
 ALLOWED_PEER_V4 = [
+    # link-local v4
     ipaddress.IPv4Network('169.254.0.0/16'),
+    # dn42 space
     ipaddress.IPv4Network('172.20.0.0/14'),
+    # neonetwork space
     ipaddress.IPv4Network('10.127.0.0/16'),
 ]
 ALLOWED_PEER_V6 = [
     ipaddress.IPv6Network('fd00::/8'),
-    ipaddress.IPv6Network('fe80::/64'),
+    ipaddress.IPv6Network('fe80::/64'), # NOT fe80::/10
 ]
-# These are legal but confusing because they're used as IGP tunnel IPs
+# These are legal but confusing because I use them as IGP tunnel IPs
 DISALLOWED_PEER_V6 = [
     ipaddress.IPv6Network('fe80::1080'),
     ipaddress.IPv6Network('fe80::1080:0/112'),
@@ -45,100 +48,7 @@ def is_allowed_port(port):
         (50000 <= port <= 59999)
     ) and port != 21080 # reserved
 
-def ci_verify(root):
-    root = pathlib.Path(root)
-    wg_config_dir = root / 'roles' / 'config-wireguard' / 'config'
-    for wg_config_path in wg_config_dir.glob('*.yml'):
-        print(f'Checking {wg_config_path}')
-        wg_config = yaml_load(wg_config_path)
-        for peer_config in wg_config['wg_peers']:
-            ifname = peer_config['name']
-            # Verify name
-            if not ifname:
-                raise ValidationError(
-                    'Peer name cannot be empty', wg_config_path)
-            if len(ifname) > MAX_IFACE_LENGTH:
-                raise ValidationError(
-                    f'Peer name {ifname!r} is too long (max {MAX_IFACE_LENGTH} chars)', wg_config_path)
-            ifname_match = ALLOWED_IFACE_RE.match(ifname)
-            if not ifname_match:
-                raise ValidationError(
-                    f'Peer name {ifname!r} does not match regex {ALLOWED_IFACE_RE} - '
-                    'only lowercase letters and digits are allowed',
-                    wg_config_path
-                )
-            ext_peer = ifname.startswith('dn42')
-
-            # Verify cleaned up hosts (remove: true)
-            if peer_config.get('remove'):
-                if len(peer_config.keys()) > 2:
-                    raise ValidationError(
-                        f'Peer {ifname!r} has stray options in addition to "remove: true"', wg_config_path)
-                continue
-
-            # Verify port numbers
-            if listen_port := peer_config.get('port'):
-                if ext_peer and not is_allowed_port(listen_port):
-                    raise ValidationError(
-                        f'Peer {ifname!r} has unacceptable listen port {listen_port} - '
-                        'please use 20000 + <last 4 digits of your ASN>',
-                        wg_config_path)
-
-            # Verify remote
-            remote = peer_config.get('remote')
-            if remote and not ALLOWED_REMOTE_RE.match(remote):
-                raise ValidationError(
-                    f'Peer {ifname!r} has invalid remote (host:port) {remote!r}',
-                    wg_config_path)
-
-            # Verify wg_pubkey / multi
-            wg_pubkey = peer_config.get('wg_pubkey')
-            wg_multi = peer_config.get('multi', [])
-            if not wg_pubkey and not wg_multi:
-                raise ValidationError(
-                    f'Peer {ifname!r} is missing wg_pubkey field', wg_config_path)
-            if wg_pubkey and not WGKEY_RE.match(wg_pubkey):
-                raise ValidationError(
-                    f'Peer {ifname!r} has invalid wg_pubkey {wg_pubkey!r}',
-                    wg_config_path)
-            for multi_peer in wg_multi:
-                wg_pubkey = multi_peer['wg_pubkey']
-                if not WGKEY_RE.match(wg_pubkey):
-                    raise ValidationError(
-                        f'Peer {ifname!r} has invalid wg_pubkey {wg_pubkey!r}',
-                        wg_config_path)
-                wg_allowedips = multi_peer['wg_allowedips']
-                for wg_allowedip in wg_allowedips.split(','):
-                    try:
-                        ipaddress.ip_network(wg_allowedip)
-                    except ValueError as e:
-                        raise ValidationError(
-                            f'Peer {ifname!r} has invalid wg_allowedips {wg_allowedips!r}',
-                            wg_config_path) from e
-
-            # Verify tunnel IPs
-            peer_v4 = peer_config.get('peer_v4')
-            peer_v6 = peer_config.get('peer_v6')
-            if not peer_v4 and not peer_v6 and not wg_multi:
-                raise ValidationError(
-                    f'Peer {ifname!r} has neither peer_v4 nor peer_v6 configured', wg_config_path)
-            if peer_v4:
-                ci_verify_peer_addr(peer_config, wg_config_path, peer_v4)
-            if peer_v6:
-                ci_verify_peer_addr(peer_config, wg_config_path, peer_v6)
-            if local_v4 := peer_config.get('local_v4'):
-                ci_verify_peer_addr(peer_config, wg_config_path, local_v4)
-            if local_v6 := peer_config.get('local_v6'):
-                ci_verify_peer_addr(peer_config, wg_config_path, local_v6)
-
-            # Verify that matching bird config exists
-            if ext_peer:
-                peer_name = ifname_match.group(2)
-                rtr_name = wg_config_path.stem
-                ci_verify_bird(root, rtr_name, peer_name, peer_config)
-    print('OK')
-
-def ci_verify_peer_addr(wg_peer_config, wg_config_path, candidate):
+def _ci_verify_peer_addr(wg_peer_config, wg_config_path, candidate):
     ifname = wg_peer_config["name"]
     try:
         candidate = ipaddress.ip_network(candidate, strict=False)
@@ -151,7 +61,87 @@ def ci_verify_peer_addr(wg_peer_config, wg_config_path, candidate):
         raise ValidationError(
             f'Peer {ifname!r} has out of range tunnel IP {candidate}', wg_config_path)
 
-def ci_verify_bird(root, rtr_name, peer_name, wg_peer_config):
+# pylint: disable=too-many-branches, too-many-locals
+def _ci_verify_wg_peer(wg_config_path, peer_config) -> str | None:
+    ifname = peer_config['name']
+    # Verify name
+    if not ifname:
+        raise ValidationError('Peer name cannot be empty', wg_config_path)
+    if len(ifname) > MAX_IFACE_LENGTH:
+        raise ValidationError(
+            f'Peer name {ifname!r} is too long (max {MAX_IFACE_LENGTH} chars)', wg_config_path)
+    ifname_match = ALLOWED_IFACE_RE.match(ifname)
+    if not ifname_match:
+        raise ValidationError(
+            f'Peer name {ifname!r} does not match regex {ALLOWED_IFACE_RE} - '
+            'only lowercase letters and digits are allowed',
+            wg_config_path
+        )
+    ext_peer = ifname.startswith('dn42')
+
+    # Verify cleaned up hosts (remove: true)
+    if peer_config.get('remove'):
+        if len(peer_config.keys()) > 2:
+            raise ValidationError(
+                f'Peer {ifname!r} has stray options in addition to "remove: true"', wg_config_path)
+        return None
+
+    # Verify port numbers
+    if listen_port := peer_config.get('port'):
+        if ext_peer and not is_allowed_port(listen_port):
+            raise ValidationError(
+                f'Peer {ifname!r} has unacceptable listen port {listen_port} - '
+                'please use 20000 + <last 4 digits of your ASN>',
+                wg_config_path)
+
+    # Verify remote
+    remote = peer_config.get('remote')
+    if remote and not ALLOWED_REMOTE_RE.match(remote):
+        raise ValidationError(
+            f'Peer {ifname!r} has invalid remote (host:port) {remote!r}',
+            wg_config_path)
+
+    # Verify wg_pubkey / multi
+    wg_pubkey = peer_config.get('wg_pubkey')
+    wg_multi = peer_config.get('multi', [])
+    if not wg_pubkey and not wg_multi:
+        raise ValidationError(
+            f'Peer {ifname!r} is missing wg_pubkey field', wg_config_path)
+    if wg_pubkey and not WGKEY_RE.match(wg_pubkey):
+        raise ValidationError(
+            f'Peer {ifname!r} has invalid wg_pubkey {wg_pubkey!r}', wg_config_path)
+    for multi_peer in wg_multi:
+        wg_pubkey = multi_peer['wg_pubkey']
+        if not WGKEY_RE.match(wg_pubkey):
+            raise ValidationError(
+                f'Peer {ifname!r} has invalid wg_pubkey {wg_pubkey!r}', wg_config_path)
+        wg_allowedips = multi_peer['wg_allowedips']
+        for wg_allowedip in wg_allowedips.split(','):
+            try:
+                ipaddress.ip_network(wg_allowedip)
+            except ValueError as e:
+                raise ValidationError(
+                    f'Peer {ifname!r} has invalid wg_allowedips {wg_allowedips!r}',
+                    wg_config_path) from e
+
+    # Verify tunnel IPs
+    peer_v4 = peer_config.get('peer_v4')
+    peer_v6 = peer_config.get('peer_v6')
+    if not peer_v4 and not peer_v6 and not wg_multi:
+        raise ValidationError(
+            f'Peer {ifname!r} has neither peer_v4 nor peer_v6 configured', wg_config_path)
+    if peer_v4:
+        _ci_verify_peer_addr(peer_config, wg_config_path, peer_v4)
+    if peer_v6:
+        _ci_verify_peer_addr(peer_config, wg_config_path, peer_v6)
+    if local_v4 := peer_config.get('local_v4'):
+        _ci_verify_peer_addr(peer_config, wg_config_path, local_v4)
+    if local_v6 := peer_config.get('local_v6'):
+        _ci_verify_peer_addr(peer_config, wg_config_path, local_v6)
+
+    return ifname_match.group(2) if ext_peer else None
+
+def _ci_verify_bird(root, rtr_name, peer_name, wg_peer_config):
     bird_config_paths = (root / 'roles' / 'config-bird2' / 'config' / 'peers' / rtr_name).glob(f'{peer_name}*.conf')
     bird_config_paths = sorted(bird_config_paths, key=lambda path: len(path.stem))
     ifname = wg_peer_config["name"]
@@ -190,8 +180,8 @@ def ci_verify_bird(root, rtr_name, peer_name, wg_peer_config):
         except ValueError as e:
             raise ValidationError(f'BIRD config has invalid neighbor IP {neighbor_ip!r}', bird_config_path) from e
         if not any(neighbor_ip in net for net in allowed_peer_nets):
-            raise ValidationError(f'BIRD neighbor IP {neighbor_ip!r} is not configured on interface (expected one of {allowed_peer_nets})',
-                                  bird_config_path)
+            raise ValidationError(f'BIRD neighbor IP {neighbor_ip!r} is not configured on interface (expected one of '
+                                  f'{allowed_peer_nets})', bird_config_path)
         if neighbor_ip in disallowed_peer_ips:
             raise ValidationError(f'BIRD neighbor IP {neighbor_ip} is a local address {disallowed_peer_ips})',
                                   bird_config_path)
@@ -202,7 +192,23 @@ def ci_verify_bird(root, rtr_name, peer_name, wg_peer_config):
         raise ValidationError('BIRD config uses link-local IPv6 but no "interface" directive found', bird_config_path)
     for bird_interface in interface_matches:
         if bird_interface != ifname:
-            raise ValidationError(f'BIRD config has mismatched "interface" directive {bird_interface!r}, expected {ifname!r}', bird_config_path)
+            raise ValidationError(f'BIRD config has mismatched "interface" directive {bird_interface!r}, '
+                                  f'expected {ifname!r}', bird_config_path)
+
+def ci_verify(root):
+    root = pathlib.Path(root)
+    wg_config_dir = root / 'roles' / 'config-wireguard' / 'config'
+    for wg_config_path in wg_config_dir.glob('*.yml'):
+        print(f'Checking {wg_config_path}')
+        wg_config = yaml_load(wg_config_path)
+        for peer_config in wg_config['wg_peers']:
+            external_peer_name = _ci_verify_wg_peer(wg_config_path, peer_config)
+
+            # For external peers, verify that matching bird config exists
+            if external_peer_name:
+                rtr_name = wg_config_path.stem
+                _ci_verify_bird(root, rtr_name, external_peer_name, peer_config)
+    print('OK')
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
