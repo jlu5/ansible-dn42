@@ -37,7 +37,7 @@ dummy_interfaces:
     track_service: yes
 
 # Interfaces to clean up (e.g. for decommissioned nodes)
-cleanup_remove_ifaces: []
+cleanup_remove_ifaces: [igp-tpa,igp-dal]
 
 # DNS related settings
 # This is the main domain used for creating host records for routers (<shortname>.<dns_domain>).

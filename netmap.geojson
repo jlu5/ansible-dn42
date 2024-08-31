@@ -51,21 +51,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -96.796988,
-                    32.776664
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#dal\" class=\"netmap-server-link\">Dallas, TX, US</a>",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     8.682127,
                     50.110922
                 ]
@@ -162,21 +147,6 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#syd\" class=\"netmap-server-link\">Sydney, AU</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -82.458753,
-                    27.95169
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#tpa\" class=\"netmap-server-link\">Tampa, FL, US</a>",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }

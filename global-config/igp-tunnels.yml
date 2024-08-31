@@ -7,27 +7,18 @@ igp_neighbours:
     lon: null
     sjc: null
     sto: null
-    tpa: null
     ymq: null
   buh: !!set
     ams: null
     fra: null
   chi: !!set
     ams: null
-    dal: null
     fra: null
     lax: null
     lon: null
     sjc: null
-    tpa: null
     ymq: null
     yvr: null
-  dal: !!set
-    chi: null
-    lax: null
-    sjc: null
-    tpa: null
-    ymq: null
   fra: !!set
     ams: null
     buh: null
@@ -44,7 +35,6 @@ igp_neighbours:
     tyo: null
   lax: !!set
     chi: null
-    dal: null
     fra: null
     hkg: null
     sjc: null
@@ -60,7 +50,6 @@ igp_neighbours:
   sjc: !!set
     ams: null
     chi: null
-    dal: null
     lax: null
     syd: null
     tyo: null
@@ -75,11 +64,6 @@ igp_neighbours:
     lax: null
     sjc: null
     tyo: null
-  tpa: !!set
-    ams: null
-    chi: null
-    dal: null
-    ymq: null
   tyo: !!set
     hkg: null
     lax: null
@@ -89,11 +73,9 @@ igp_neighbours:
   ymq: !!set
     ams: null
     chi: null
-    dal: null
     fra: null
     lon: null
     sjc: null
-    tpa: null
     yvr: null
   yvr: !!set
     chi: null
