@@ -1,18 +1,6 @@
 wg_peers:
 - name: dn42sjc-yuuta
-  port: 22980
-  remote: "sjc1.us.dn42.yuuta.moe:21080"
-  wg_pubkey: "amtG1Sj6Ar9ntidaa+b2DAPtDuI5mhZruTXVYSso62k="
-  wg_presharedkey: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    37343464666563326165303030656130633665663138373431633661366165613336613338623638
-    6662383835636663623864343165386365393135643861390a366433383536396131323131633637
-    64643534353863346133336635353231346133303561643262633161613762393035626461663435
-    6337383231353063620a323937373735323362323038353264396338646535383730616665353534
-    62313164323363333236663336313138326638303932333137356231376633613334306262653331
-    6461623964366533383534616362616563643238313238346339
-  peer_v4: "172.23.105.3"
-  peer_v6: "fe80::2980"
+  remove: true
 
 - name: dn42sjc-sunnet
   port: 23088
@@ -29,11 +17,7 @@ wg_peers:
   peer_v6: "fe80::3618/64"
 
 - name: dn42sfo-bling
-  port: 20212
-  remote: "sfo1.dn42.blw.moe:21080"
-  wg_pubkey: "U7PMoiNEBWVRqjs7YV9fpXZ1WOrhfpYjeg6IM77gb2k="
-  peer_v4: "172.20.21.100"
-  peer_v6: "fe80::2333"
+  remove: true
 
 - name: dn42sjc-kskb # autopeer ID 21080
   port: 21111
@@ -43,11 +27,7 @@ wg_peers:
   peer_v6: "fe80::aa:1111:21"
 
 - name: dn42-186526
-  peer_v4: 172.23.2.76
-  peer_v6: fe80::ade1
-  port: 23764
-  remote: us-sanjose-01.edge.186526.xyz:21080
-  wg_pubkey: VTetWJK15J296W6cXNQf6d9W4VPpTa3ZJEK00GQjFT8=
+  remove: true
 
 - name: dn42-moe233
   peer_v4: null
@@ -88,18 +68,10 @@ wg_peers:
   remove: true
 
 - name: dn42-link2
-  peer_v4: 172.21.109.18
-  peer_v6: fe80::864:2
-  port: 20864
-  remote: lax.dn42.christine.pp.ua:21080
-  wg_pubkey: mOQs7kIucUmSDXqRHvwfUxLAFkUDg9ssH5Gqn+6oj0s=
+  remove: true
 
 - name: dn42-pigeonhole
-  peer_v4: 172.22.145.8
-  peer_v6: fe80::2458
-  port: 22458
-  remote: us-lax-a.nodes.pigeonhole.eu.org:21080
-  wg_pubkey: usSOnTQKWozKiB3CM65TY3hv64dxQLnIx9ywc0J9awY=
+  remove: true
 
 - name: igp-yvrlab
   port: 19999
@@ -109,11 +81,7 @@ wg_peers:
   peer_v6: fe80::89f7:b22a:5452:3402
 
 - name: dn42-iuboy
-  port: 22582
-  remote: us-los1.dn42.iamm.one:21080
-  wg_pubkey: z7UE9JYKPJ/ToVnIqJQYN4DEY3HfWx56075bh4jBQUA=
-  peer_v4: null
-  peer_v6: fe80::2582:2
+  remove: true
 
 - name: dn42-sernet
   port: 23947
@@ -151,11 +119,7 @@ wg_peers:
   peer_v6: fe80::3117:1080
 
 - name: dn42-noreinx
-  port: 21580
-  remote: sfo.dn42.noreinx.me:21080
-  wg_pubkey: uUKad5JFD+Zfx/sApOcqJVrrsRS25en9ac6Tri/cZQk=
-  peer_v4: null
-  peer_v6: fe80::1580:1
+  remove: true
 
 - name: dn42-kemono
   port: 20358

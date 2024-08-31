@@ -25,11 +25,7 @@ wg_peers:
   remove: true
 
 - name: dn42-mayli
-  port: 51123
-  remote: "dn42.ccp.ovh:51080"
-  wg_pubkey: "Z6OKJSR1sxMBgUd1uXEe/UxoBsOvRgbTnexy7z/ryUI="
-  peer_v4: "172.20.47.1"
-  peer_v6: "fe80::1123"
+  remove: true
 
 - name: dn42las-yura
   port: 22464
@@ -61,26 +57,13 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_las
 
 - name: dn42las-hinata
-  port: 53724
-  remote: "las01.us.42.katohinata.eu.org:21080"
-  wg_pubkey: "W8IoIklrTsWKDJEJ35kh1aHPO9CIyyfNBF/MptzX4jw="
-  peer_v4: "172.23.215.228"
-  peer_v6: "fe80::3724"
-  local_v4: 172.20.229.126
-  local_v6: fe80::1080:126
-  wg_privkey: /etc/wireguard/privatekey_las
+  remove: true
 
 - name: dn42las-lapisbl
   remove: true
 
 - name: dn42-liki4
-  peer_v4: null
-  peer_v6: fe80::927
-  port: 20927
-  remote: lv1.dn42.liki.link:42429
-  wg_pubkey: Ek17cwq33CvzET+L5AJRhjky62RYYfC/YviQl2V3eV0=
-  local_v6: fe80::1080:126
-  wg_privkey: /etc/wireguard/privatekey_las
+  remove: true
 
 - name: dn42-iedon
   peer_v4: 172.23.91.114
@@ -93,13 +76,7 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_las
 
 - name: dn42-bsdrocker
-  peer_v4: null
-  peer_v6: fd2e:5e5e:8a3d::1022:1080
-  port: 21022
-  remote: null
-  wg_pubkey: rRAQjGVQGBV5YqzTkZV+exM36dcBLiDF0PSEhJWRrhE=
-  local_v6: fd86:bad:11b7:26::1
-  wg_privkey: /etc/wireguard/privatekey_las
+  remove: true
 
 - name: dn42-imlonghao
   port: 21888
@@ -112,13 +89,7 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_las
 
 - name: dn42-prevarinit
-  port: 22475
-  remote: lvg.us.prevarinite.net:21080
-  wg_pubkey: KCcJKb3+/1sjrP6B5gNBS1CpsC/ur3LHGs11feJc1lQ=
-  peer_v4: null
-  peer_v6: fe80::7072:6576:2
-  local_v6: fe80::1080:126
-  wg_privkey: /etc/wireguard/privatekey_las
+  remove: true
 
 - name: dn42-potat0
   peer_v4: null
@@ -139,11 +110,7 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_las
 
 - name: dn42-dgy
-  port: 20826
-  remote: "la.dn42.dgy.xyz:21080"
-  wg_pubkey: "IXjFALJFTr24HAhXKDsCnTRXmlc3kJHJiR4Nr44l5Uw="
-  peer_v4: "172.23.196.0"
-  peer_v6: "fe80::a0e:fb02"
+  remove: true
 
 - name: dn42-hujk
   peer_v4: null
@@ -217,11 +184,7 @@ wg_peers:
   wg_pubkey: MDjt4DyKGFumReT9pBJL6mPbDfQDfhPFyzHGDeoQVBQ=
 
 - name: dn42-jasonxu
-  port: 23658
-  remote: 74.48.219.8:21080
-  wg_pubkey: js2ZHPXaL5xscxQdqlD6qteqmsfKscPaBwP4XNL3QzI=
-  peer_v4: 172.20.193.161
-  peer_v6: fd4e:d0:d38d::1
+  remove: true
 
 - name: dn42-rubick
   port: 23451

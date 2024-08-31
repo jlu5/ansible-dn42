@@ -18,11 +18,7 @@ wg_peers:
   local_v6: "fd86:bad:11b7::1"
 
 - name: dn42mci-aftbit
-  port: 50822
-  remote: "dn42.aftbit.com:51080"
-  wg_pubkey: "JBj2+QjkQwFjBn/QRRVB2RWAw9mwC2Efev8AX2uMoUY="
-  peer_v4: "172.23.222.129"
-  peer_v6: "fe80::100"
+  remove: true
 
 - name: dn42-nicholascw
   port: 51288
@@ -32,12 +28,7 @@ wg_peers:
   peer_v6: "fe80::1288/64"
 
 - name: dn42oma-zane
-  port: 53315
-  remote: "63.227.145.132:51080"
-  wg_pubkey: "7SAw34vmYtgyEi05f78nc5kbEiCGvVTeqa3xdN+0034="
-  peer_v4: "172.22.167.67"
-  peer_v6: "fd62:e667:840a::2"
-  local_v6: "fd86:bad:11b7::1"
+  remove: true
 
 - name: dn42-tech9
   peer_v4: 172.20.16.139
@@ -62,17 +53,7 @@ wg_peers:
   peer_v6: fe80::2246
 
 - name: dn42-ghoul
-  port: 22975
-  remote: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    64653065633938366564383136626239336637343263646437316238633364393930616433663333
-    3434303138396538313765633239336264656166626130390a346633326365303236303064396432
-    33316537643930336166656365313564303935396130383763353163333934383032626236396239
-    3361373632336136650a303034383839623439613135393930303938323130303834653962326436
-    65656664343637313166343735336139633332323933313237666638323161386534
-  wg_pubkey: KgG4Ycxde1/lkyIQzLPnhPofZv0lwd2r8UeLULS5tRw=
-  peer_v4: 172.23.72.33
-  peer_v6: fdb1:202a:f806:1::1
+  remove: true
 
 - name: dn42-routedbits
   port: 20207

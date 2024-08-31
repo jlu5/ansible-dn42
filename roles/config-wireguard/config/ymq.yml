@@ -28,11 +28,7 @@ wg_peers:
   peer_v6: "fe80::2547"
 
 - name: "dn42bhs-munster"
-  port: 52237
-  remote: "ca-bhs01.dn42.munsternet.eu:21080"
-  wg_pubkey: "0MdSpit+qpvlUlFH/gMvTXuvNATvRUTAHVAnKeT+NhU="
-  peer_v4: null
-  peer_v6: "fe80::42:2237/128"
+  remove: true
 
 - name: dn42-burble
   port: 22601
@@ -96,11 +92,7 @@ wg_peers:
   wg_pubkey: nyujl5Lm7C0A+NoLO+7ctYulkCXeXp6dnnpt9+bGqi8=
 
 - name: dn42-unknownts
-  peer_v4: 172.22.157.201
-  peer_v6: fe80::add1
-  port: 23315
-  remote: 1.nyc.ny.unknownts.com:21080
-  wg_pubkey: edgbmEfm2Y5RP3VpZRWpRsGnwuMjUeGV64YsZcGSvRA=
+  remove: true
 
 - name: dn42-exabyte
   port: 23340
@@ -144,11 +136,7 @@ wg_peers:
   peer_v6: fe80::ade0
 
 - name: dn42-prevarinit
-  port: 22475
-  remote: bhs.ca.prevarinite.net:21080
-  wg_pubkey: GNGYwcgarxqpADRZ2E/8h1l3KiBPqsbuI5ejERvNoAs=
-  peer_v4: null
-  peer_v6: fe80::7072:6576:5
+  remove: true
 
 - name: dn42-routedbits
   port: 20207
