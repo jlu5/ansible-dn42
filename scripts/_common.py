@@ -1,7 +1,12 @@
 import yaml
+
+class VaultEncryptedDummy():
+    pass
+
+_vault_encrypted_dummy = VaultEncryptedDummy()
 # Add a stub handler to ignore Ansible specific values like !vault
 # See https://github.com/yaml/pyyaml/issues/86
-yaml.add_multi_constructor('', lambda *args: None)
+yaml.add_multi_constructor('!vault', lambda *args: _vault_encrypted_dummy)
 
 def yaml_load(filename):
     with open(filename, encoding='utf-8') as f:

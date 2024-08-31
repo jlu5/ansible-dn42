@@ -5,7 +5,7 @@ import ipaddress
 import pathlib
 import re
 
-from _common import yaml_load
+from _common import yaml_load, VaultEncryptedDummy
 
 MAX_IFACE_LENGTH = 15
 ALLOWED_IFACE_RE = re.compile(r'^(dn42(?:[0-9a-z]{3})?|cl|igp)-([0-9a-z-]+)')
@@ -14,6 +14,7 @@ ALLOWED_REMOTE_RE = re.compile(r'([a-zA-Z0-9-.]+|\[[0-9a-fA-F:]+\]):\d{1,5}')
 WGKEY_RE = re.compile(r'[0-9a-zA-Z+/]{43}=')
 BIRD_NEIGHBOR_RE = re.compile(r'neighbor\s+([0-9a-fA-F:]+|[0-9.]+)\s+as\s+(\d+)')
 BIRD_INTERFACE_RE = re.compile(r'interface\s+"(.*?)"')
+BIRD_PASSIVE_RE = re.compile(r'passive\s+on')
 
 ALLOWED_PEER_V4 = [
     # link-local v4
@@ -96,7 +97,7 @@ def _ci_verify_wg_peer(wg_config_path, peer_config) -> str | None:
 
     # Verify remote
     remote = peer_config.get('remote')
-    if remote and not ALLOWED_REMOTE_RE.match(remote):
+    if remote and not isinstance(remote, VaultEncryptedDummy) and not ALLOWED_REMOTE_RE.match(remote):
         raise ValidationError(
             f'Peer {ifname!r} has invalid remote (host:port) {remote!r}',
             wg_config_path)
@@ -194,6 +195,12 @@ def _ci_verify_bird(root, rtr_name, peer_name, wg_peer_config):
         if bird_interface != ifname:
             raise ValidationError(f'BIRD config has mismatched "interface" directive {bird_interface!r}, '
                                   f'expected {ifname!r}', bird_config_path)
+
+    is_passive_mode = BIRD_PASSIVE_RE.search(bird_config)
+    if wg_peer_config['remote'] and is_passive_mode:
+        raise ValidationError('When "remote" is set, passive mode should be disabled', bird_config_path)
+    if not wg_peer_config['remote'] and not is_passive_mode:
+        raise ValidationError('When "remote" is unset, passive mode should be enabled', bird_config_path)
 
 def ci_verify(root):
     root = pathlib.Path(root)
