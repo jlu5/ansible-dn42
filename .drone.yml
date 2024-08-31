@@ -10,7 +10,6 @@ steps:
     - apt-get install -yy python3 python3-yaml
     - scripts/ci-verify.py .
 
-steps:
 - name: test
   image: debian:bookworm
   commands:
