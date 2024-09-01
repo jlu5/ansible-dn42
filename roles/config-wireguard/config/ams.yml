@@ -76,11 +76,7 @@ wg_peers:
   wg_pubkey: FHp0OR4UpAS8/Ra0FUNffTk18soUYCa6NcvZdOgxY0k=
 
 - name: dn42-bling
-  peer_v4: 172.20.21.106
-  peer_v6: fe80::2333
-  port: 20212
-  remote: ams1.dn42.blw.moe:21080
-  wg_pubkey: HXF4JPhmBCYL/e/mjdvxyiII8WchPQLK8AUVwTNPe3Q=
+  remove: true
 
 - name: dn42-huajitech
   peer_v4: null
@@ -97,11 +93,7 @@ wg_peers:
   wg_pubkey: GsmcrWbFTcje5e+hmc0D6qonrkTpHksGZuk0cLBjDmY=
 
 - name: dn42waw-filip
-  port: 21404
-  remote: "176.122.215.101:65001"
-  wg_pubkey: "oZXF/BkUUpHDxgze+pYqSvoLv2JGkkemKSGWU9t3cWk="
-  peer_v4: "172.20.178.65"
-  peer_v6: "fe80::feec:daff:fe46:d60e/64"
+  remove: true
 
 - name: dn42-dingemans
   port: 20074
@@ -159,33 +151,13 @@ wg_peers:
   peer_v6: fe80::2246
 
 - name: dn42-szczot3k
-  port: 29680
-  remote: ams1.as199680.net:30001
-  wg_pubkey: /2PiRi0hn4ZpCX2Kfu9+/pLw6tOwC09nO1VBP/FywkM=
-  peer_v4: null
-  peer_v6: fe80::9680:64
+  remove: true
 
 - name: dn42-duckl1ng
-  port: 22417
-  remote: 2001:470:60a4:a:216:3eff:fe4f:e283:53001
-  wg_pubkey: ExUi3YWUzdNR/GQeIiiGqpiVNycqJUuhx997i+frlGU=
-  peer_v4: null
-  peer_v6: fe80::1001
+  remove: true
 
 - name: dn42-pivipi
-  port: 20129
-  remote: nl-ams.420129.xyz:21080
-  wg_pubkey: 5iGqF1Cs0r7dvHV6Juarb5ZkFDu7Mc2ke1mgQGVbEXU=
-  wg_presharedkey: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    33616131636335376561373164323566613465643263663138393163663436613534656632386430
-    6633663863316164323336353161376633333363343336370a396239316437616531336636313730
-    65393865663836633862646662313132333766663032326238393735623732393533633138383033
-    6266626433343030380a636638303231643233666135656638396666663938396539396366323738
-    64333938333731646666343766626437653839373231376534323163646336643934373935333965
-    3237613539656332343534306662336561653837383333633532
-  peer_v4: null
-  peer_v6: fe80::129:c9db
+  remove: true
 
 - name: dn42-mirsal
   port: 22308
@@ -210,11 +182,7 @@ wg_peers:
   peer_v6: fe80::2558:4
 
 - name: dn42-mubibai
-  port: 22358
-  remote: nl.dn42.mubibai.com:21080
-  wg_pubkey: m0jX4ToX8EaPc+wpAhekDisuW4j6TOIc7doukrXStTU=
-  peer_v4: 172.23.199.162
-  peer_v6: fe80::1:2358
+  remove: true
 
 - name: dn42-routedbits
   port: 20207
@@ -224,18 +192,10 @@ wg_peers:
   peer_v6: fe80::207
 
 - name: dn42-h3xnet
-  port: 22592
-  remote: nl-dro01.net.h3xco.de:21080
-  wg_pubkey: HWjDZhdwgM6BPXDFmZH1+PskdvnP87EpazZUnV6cwwk=
-  peer_v4: null
-  peer_v6: fe80::2592
+  remove: true
 
 - name: dn42-divinet
-  port: 21409
-  remote: ams.dn42.join.yt:23002
-  wg_pubkey: h/wiLWhZgRZUQAiWfpoV7va3hnvdJqeJK2ZoRgCcFkM=
-  peer_v4: null
-  peer_v6: fe80::1409:201
+  remove: true
 
 - name: dn42-alemal
   port: 21525
@@ -252,8 +212,4 @@ wg_peers:
   peer_v6: fe80::0225:1080
 
 - name: dn42-foxtode
-  port: 23177
-  remote: 95.130.6.48:51820
-  wg_pubkey: lCegAi9aFb06Wt1jlzmDfXjQkPhV7PvqhneWeS7ETVs=
-  peer_v4: 169.254.1.1
-  peer_v6: fe80::6c17:89a4:3e9f:e43e
+  remove: true

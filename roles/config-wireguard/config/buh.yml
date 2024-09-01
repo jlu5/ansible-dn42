@@ -36,11 +36,7 @@ wg_peers:
   peer_v6: fd47:514:dbc9::1
 
 - name: dn42-khoa
-  port: 20868
-  remote: 94.72.143.3:8682
-  wg_pubkey: t0vzWiegfkzpSLyQZ0tQOlVB/lFVci+rBgPxB4888zU=
-  peer_v4: 172.21.68.222
-  peer_v6: null
+  remove: true
 
 - name: dn42-eddie303
   port: 22328

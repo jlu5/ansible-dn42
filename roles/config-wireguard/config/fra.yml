@@ -85,12 +85,7 @@ wg_peers:
   peer_v6: "fda9:26a9:1c47:1d42:42:42:1080:1050"
 
 - name: dn42rhr-n0emis
-  port: 50197
-  # 2023-06-24: from himalia.dn42.n0emis.eu (v6 is broken)
-  remote: "212.227.174.29:51080"
-  wg_pubkey: "ObF+xGC6DdddJer0IUw6nzC0RqzeKWwEiQU0ieowzhg="
-  peer_v4: "172.20.190.96"
-  peer_v6: "fe80::42:42:1"
+  remove: true
 
 - name: dn42nbg-serverm
   port: 53770
@@ -135,11 +130,7 @@ wg_peers:
   peer_v6: fe80::42:1817:a
 
 - name: dn42-186526
-  peer_v4: 172.23.2.85
-  peer_v6: fe80::ade1
-  port: 23764
-  remote: de-frankfurt-01.edge.186526.xyz:21080
-  wg_pubkey: 1wMNeQ+QH3V7xme0P0IBbTrAuDD28iwcxBNIwhbO7Xs=
+  remove: true
 
 - name: dn42-lutoma
   peer_v4: 172.22.119.1
@@ -163,11 +154,7 @@ wg_peers:
   peer_v6: fe80::2464
 
 - name: dn42-steinex
-  port: 20297
-  remote: kuma.nognu.de:20297
-  wg_pubkey: VatdVd51Mv+m6TMooprO6Swe29IHMMfYXhtQDfx0FTU=
-  peer_v4: null
-  peer_v6: fe80::3273
+  remove: true
 
 - name: dn42-mirsal
   port: 22308
@@ -213,26 +200,10 @@ wg_peers:
 # BEGIN peers migrated from par.peer
 
 - name: dn42-tchekda
-  port: 21722
-  remote: "peer.dn42.tchekda.fr:21080"
-  wg_pubkey: "QF93Jc4mGgHvZvaY+qUeyU1vYZKW7ATwztc9oYie92k="
-  peer_v4: "172.20.4.97"
-  peer_v6: "fe80::1722:97/64"
-  local_v4: 172.22.108.36
-  local_v6: fe80::1080:36
-  wg_privkey: /etc/wireguard/privatekey_par
+  remove: true
 
 - name: dn42-androw
-  peer_v4: 172.23.186.39
-  peer_v6: fe80::2575:1
-  port: 22575
-  remote: par2-fr.androw.eu:21080
-  wg_pubkey: P7L62FCA7wdH2mr6T3mif90Ms4cImhZjFiuHgqE6yig=
-  local_v4: 172.22.108.36
-  local_v6: fe80::1080:36
-  wg_privkey: /etc/wireguard/privatekey_par
-
-# END peers migrated from par.peer
+  remove: true
 
 - name: dn42-e1mo
   port: 20565
@@ -245,11 +216,7 @@ wg_peers:
   remove: true
 
 - name: dn42-tobi
-  port: 20577
-  remote: null
-  wg_pubkey: SPfVzZHC6U+8oAJ0rd0foq0PH9xRYKGRVHLosV1WbXc=
-  peer_v4: null
-  peer_v6: fe80::577:1
+  remove: true
 
 - name: dn42-camelusfer
   port: 21592
@@ -259,25 +226,13 @@ wg_peers:
   peer_v6: fe80::1592
 
 - name: dn42-zolfa
-  port: 21042
-  remote: "lilik-dn42.firenze.net.zolfa.nl:21080"
-  wg_pubkey: "JSSVhGm8Opw944J1gXj0iNiAwsdh7vP/zBGq1Gfb0nk="
-  peer_v4: null
-  peer_v6: "fe80::c3c0:ebbb"
+  remove: true
 
 - name: dn42-melty
-  port: 23632
-  remote: "cantaloupe.link.melty.land:21080"
-  wg_pubkey: "7ibAFc93/KY1/Wd+ydxm4uMHaGPXKf2gBsK4CZVr2Wo="
-  peer_v4: "172.23.36.36"
-  peer_v6: "fe80::3632"
+  remove: true
 
 - name: dn42-sernet
-  port: 23947
-  remote: de-fra1.dn42.sherpherd.top:21080
-  wg_pubkey: 6atAJ4CxDEw83YOSHXcvHe9JckjhcNNHZ0LCg4vyiDI=
-  peer_v4: null
-  peer_v6: fe80::3947:6
+  remove: true
 
 - name: dn42-routedbits
   port: 20207
@@ -287,19 +242,7 @@ wg_peers:
   peer_v6: fe80::207
 
 - name: dn42-pivipi
-  port: 20129
-  remote: de-fra.420129.xyz:21080
-  wg_pubkey: u7Pes8qR8m+/4kc4sNTYani90M2MEbaxRsnXKujqik4=
-  wg_presharedkey: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    34613832623466623438343236353333626261633066376230346135366632373663616465643731
-    3930336130643366626237323134386163376566336564660a346262613063316635396131366664
-    61646364656430323839383266336434623339306531336166396631633166653432313331313939
-    3537613633613736300a306530613563653466663638643431353032396561313166646132646230
-    33643563386235396135663934646432386266613232616538363035306662306432356463646231
-    6261366461636438373134653236373330636233353966313938
-  peer_v4: null
-  peer_v6: fe80::129:93a8
+  remove: true
 
 - name: dn42-vr18
   port: 20705
@@ -316,25 +259,13 @@ wg_peers:
   peer_v6: fe80::620:1
 
 - name: dn42-oznoelr
-  port: 20816
-  remote: alpha.cassiopea-network.oznoelr.dev:51080
-  wg_pubkey: fOME1okgO4Gf689wQ7GhwazSgWhYnwItf0tScc9lgwA=
-  peer_v4: 172.21.114.129
-  peer_v6: fe80::118
+  remove: true
 
 - name: dn42-jasonxu
-  port: 23658
-  remote: 202.61.238.48:21080
-  wg_pubkey: 7gbJe7eeFxHdZnHnlBA1H33HHLqnmGjgSWwsOLimtlM=
-  peer_v4: 172.20.193.163
-  peer_v6: fd4e:d0:d38d::3
+  remove: true
 
 - name: dn42-m4rc3l
-  port: 21476
-  remote: null
-  wg_pubkey: bMTerYqi0BA5WnjgTugcXAeFIcdVqQVkstxukk5qIAA=
-  peer_v4: null
-  peer_v6: fe80::4c3
+  remove: true
 
 - name: dn42-astutus
   port: 21014
