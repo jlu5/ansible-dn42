@@ -2,10 +2,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <META http-equiv="Refresh" content="<##step##>">
+    <meta http-equiv="Refresh" content="<##step##>">
     <title>SmokePing Latency Page for <##title##></title>
     <link rel="stylesheet" type="text/css" href="/smokeping/css/smokeping-print.css" media="print">
     <link rel="stylesheet" type="text/css" href="/smokeping/css/smokeping-screen.css" media="screen">
+<script>
+    // Smokeping default options
+    window.options = {
+        step: <##step##>
+    }
+</script>
 <style>
 /* This is a bit of a hack. Smokeping's navbar styles don't actually include anything for misc navbar items :( */
 .hdnet-navbar-item {
@@ -88,6 +94,8 @@ function post_init() {
 <div class="navbar">
     <div class="navbar-menu"><a id="menu-button" href="#">Toggle Menu</a></div>
 <div class="navbar-ext">
+    <!-- This feature is currently broken in git master -->
+    <div class="hdnet-navbar-item" style="display: none"><a id="refresh-button" href="#">Auto Refresh</a></div>
 {% for host in groups['smokeping'] %}
 {% set other_url = hostvars[host].smokeping_base_url | default(host + dns_auto_host_record_suffix + "." + dns_domain) %}
 {% if host == inventory_hostname %}
