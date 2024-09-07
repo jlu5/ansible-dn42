@@ -65,12 +65,12 @@ host = la2.speedtest.gslnetworks.com
 menu = [US/CA] Hivelocity (Los Angeles)
 title = [US/CA] Hivelocity - Los Angeles, CA, United States [speedtest.lax.hivelocity.net]
 host = speedtest.lax.hivelocity.net
+{% endif %}
 
 ++ hosteons-lax
 menu = [US/CA] hostEONS (Los Angeles)
 title = [US/CA] hostEONS @ Limestone Networks - Los Angeles, CA, US [lg.la.hosteons.com]
 host = lg.la.hosteons.com
-{% endif %}
 
 ++ hosthatch-lax
 menu = [US/CA] HostHatch (Los Angeles)
@@ -87,7 +87,14 @@ host = speedtest.los-angeles.linode.com
 menu = [US/CA] Melbicom (Los Angeles)
 title = [US/CA] Melbicom - Los Angeles, CA, US [dl.lax.melbicom.net]
 host = dl.lax.melbicom.net
+{% endif %}
 
+++ multacom-la
+menu = [US/CA] CloudCone
+title = [US/CA] CloudCone @ MULTACOM - Los Angeles, CA, US [la.lg.cloudc.one]
+host = la.lg.cloudc.one
+
+{% if not smokeping_lite %}
 ++ misaka-los-angeles-ca
 menu = [US/CA] Misaka (Los Angeles)
 title = [US/CA] Misaka Network - Los Angeles, CA, United States [us-lax02.speed.misaka.one]
@@ -199,12 +206,12 @@ menu = [US/AZ] Clouvider
 title = [US/AZ] Clouvider - Phoenix, AZ, US [phx.mirrors.clouvider.net]
 host = phx.mirrors.clouvider.net
 
-{% if not smokeping_lite %}
 ++ 1gservers
 menu = [US/AZ] 1GServers
 title = [US/AZ] 1GServers - Phoenix, AZ, US [speedtest.1gservers.com]
 host = speedtest.1gservers.com
 
+{% if not smokeping_lite %}
 ++ ioflood
 menu = [US/AZ] IOFLOOD
 title = [US/AZ] IOFLOOD - Phoenix, AZ, US [148.163.68.178]

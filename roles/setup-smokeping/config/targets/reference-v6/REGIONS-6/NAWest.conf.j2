@@ -33,12 +33,12 @@ host = sjc.speedtest.v.ps
 menu = [US/CA] Clouvider (Los Angeles)
 title = [US/CA] Clouvider - Los Angeles, CA, US [la.mirrors.clouvider.net]
 host = la.mirrors.clouvider.net
+{% endif %}
 
 ++ hosteons-lax
 menu = [US/CA] hostEONS (Los Angeles)
 title = [US/CA] hostEONS @ Limestone Networks - Los Angeles, CA, US [2402:d0c0:11:6::1]
 host = 2402:d0c0:11:6::1
-{% endif %}
 
 ++ hosthatch-lax
 menu = [US/CA] HostHatch (Los Angeles)
@@ -55,7 +55,14 @@ host = speedtest.los-angeles.linode.com
 menu = [US/CA] Misaka (Los Angeles)
 title = [US/CA] Misaka Network - Los Angeles, CA, United States [us-lax02.speed.misaka.one]
 host = us-lax02.speed.misaka.one
+{% endif %}
 
+++ multacom-la
+menu = [US/CA] CloudCone
+title = [US/CA] CloudCone @ MULTACOM - Los Angeles, CA, US [2607:f130:0:ef::2]
+host = 2607:f130:0:ef::2
+
+{% if not smokeping_lite %}
 ++ quickpacket-lax
 menu = [US/CA] QuickPacket (LA)
 title = [US/CA] QuickPacket - Los Angeles, CA, US [lg.lax01.quickpacket.com]
@@ -126,9 +133,7 @@ menu = [US/AZ] Clouvider
 title = [US/AZ] Clouvider - Phoenix, AZ, US [phx.mirrors.clouvider.net]
 host = phx.mirrors.clouvider.net
 
-{% if not smokeping_lite %}
 ++ 1gservers
 menu = [US/AZ] 1GServers
 title = [US/AZ] 1GServers - Phoenix, AZ, US [speedtest.1gservers.com]
 host = speedtest.1gservers.com
-{% endif %}

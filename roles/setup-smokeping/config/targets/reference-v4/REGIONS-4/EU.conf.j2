@@ -79,7 +79,14 @@ host = ldn.lg.zare.com
 menu = [FR] hostEONS
 title = [FR] hostEONS @ Limestone Networks - Paris, France [lg.fr.hosteons.com]
 host = lg.fr.hosteons.com
+{% endif %}
 
+++ layer7-par
+menu = [FR] Layer7
+title = [FR] Layer7 @ Harmony Hosting - Paris, France [194.24.161.1]
+host = 194.24.161.1
+
+{% if not smokeping_lite %}
 ++ linode-par
 menu = [FR] Linode @ Akamai
 title = [FR] Linode @ Akamai - Paris, France [speedtest.paris.linode.com]
@@ -191,6 +198,11 @@ title = [DE] 23M - Frankfurt, Germany [fra01.lg.23m.com]
 host = fra01.lg.23m.com
 {% endif %}
 
+++ aixit
+menu = [DE] Aixit
+title = [DE] Aixit - Frankfurt, Germany [www.aixit.com]
+host = www.aixit.com
+
 ++ alphavps-de
 menu = [DE] AlphaVPS
 title = [DE] AlphaVPS - Nuremberg, Germany [lgde.alphavps.com]
@@ -212,6 +224,11 @@ host = de.mirrors.clouvider.net
 menu = [DE] Contabo (Dusseldorf)
 title = [DE] Contabo - Dusseldorf, Germany [dus.speedtest.contabo.net]
 host = dus.speedtest.contabo.net
+
+++ php-friends
+menu = [DE] dataforest
+title = [DE] dataforest / PHP-Friends / Avoro - Frankfurt, Germany [lg.php-friends.de]
+host = lg.php-friends.de
 
 {% if not smokeping_lite %}
 ++ dtag-dusseldorf
@@ -267,17 +284,17 @@ menu = [DE] Netcup (Nuremberg)
 title = [DE] Netcup / Anexia - Nuremberg, Germany [lg.netcup.net]
 host = lg.netcup.net
 
-++ php-friends
-menu = [DE] PHP-Friends
-title = [DE] PHP-Friends / dataforest / Avoro @ SYNLINQ - Frankfurt, Germany [lg.php-friends.de]
-host = lg.php-friends.de
+++ synlinq
+menu = [DE] Prepaid-Host
+title = [DE] Prepaid-Host @ SYNLINQ - Frankfurt, Germany [lg.prepaid-host.com]
+host = lg.prepaid-host.com
 
+{% if not smokeping_lite %}
 ++ ultravps-dus
 menu = [DE] UltraVPS (Duesseldorf)
 title = [DE] UltraVPS - Duesseldorf, Germany [lg.dus.de.ultravps.eu]
 host = lg.dus.de.ultravps.eu
 
-{% if not smokeping_lite %}
 ++ vserver-site-de
 menu = [DE] vServer.site
 title = [DE] vServer.site - Frankfurt, Germany [lg-ffm.vserver.site]

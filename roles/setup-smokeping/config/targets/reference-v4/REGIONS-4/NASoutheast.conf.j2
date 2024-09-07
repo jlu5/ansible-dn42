@@ -20,22 +20,26 @@ host = speedtest.washington.linode.com
 menu = [US/VA] Misaka
 title = [US/VA] Misaka Network - Ashburn, VA, United States [us-iad01.speed.misaka.one]
 host = us-iad01.speed.misaka.one
+{% endif %}
 
 ++ netactuate-iad
 menu = [US/VA] NetActuate
 title = [US/VA] NetActuate - Ashburn, VA, US [lg-iad3.netactuate.com]
 host = lg-iad3.netactuate.com
 
+{% if not smokeping_lite %}
 ++ ovh-va
 menu = [US/VA] OVH
 title = [US/VA] OVH - Vint Hill, VA, US [vin.proof.ovh.us]
 host = vin.proof.ovh.us
+{% endif %}
 
 ++ psychz-ash
 menu = [US/VA] Psychz
 title = [US/VA] Psychz - Ashburn, VA, US [lg.va.psychz.net]
 host = lg.va.psychz.net
 
+{% if not smokeping_lite %}
 ++ quickpacket-clt
 menu = [US/VA] QuickPacket
 title = [US/VA] QuickPacket - Ashburn, VA, US [lg.iad01.quickpacket.com]
