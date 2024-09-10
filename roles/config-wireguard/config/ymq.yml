@@ -193,3 +193,10 @@ wg_peers:
   wg_pubkey: 5gReh4Xjyp2spGGabBQVUBVS/IGSrIHPMNaMG5AK2Q0=
   peer_v4: null
   peer_v6: fe80::2016
+
+- name: dn42-lukasbecke
+  port: 23372
+  remote: yyz.beckerit.cc:21080
+  wg_pubkey: okxcWYCduqtZfKfZVTLc4cCMxOXBYvUEkl8OLzxe3hQ=
+  peer_v4: 172.20.212.201
+  peer_v6: fe80::3372
