@@ -9,6 +9,8 @@ LOCAL_ZONES_CONFIG=../global-config/dns-zones-local.yml
 NSERVER_SEPARATOR=","
 REGISTRY_ROOT=../dn42-registry/data
 
+CLEARNET_DNS_SERVERS=1.1.1.1,1.0.0.1,8.8.8.8,8.8.4.4
+
 # hardcoded zones 🙈
 # It might be better to parse these from icvpn-meta but these are updated pretty infrequently anyways
 declare -A HARDCODED_ZONES
@@ -132,9 +134,10 @@ for zonename in "${!ptr_zones[@]}"; do
     write_dnssec "${ptr_zones["$zonename"]}" "$zonename"
 done
 
-
 # Forward local zones to our auth server
 while IFS= read -r zone_name; do
     echo "$zone_name=$local_authserver_ip4,$local_authserver_ip6" | tee -a "$OUTPUT"
     echo "addNTA(\"${zone_name}\", \"No known trust anchors for zone $zone_name\")" >> "$OUTPUT_DNSSEC"
 done < <( yq -r '.dns_zones_local | keys[]' "$LOCAL_ZONES_CONFIG" )
+
+echo "+.=${CLEARNET_DNS_SERVERS}" | tee -a "$OUTPUT"
