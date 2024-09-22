@@ -1,6 +1,10 @@
 wg_peers:
-- name: dn42sjc-yuuta
-  remove: true
+- name: igp-yvrlab
+  port: 19999
+  wg_pubkey: "ifeyKlRSNAIcyzRSUKzedU+t4bQhb1Hld3XzDCq/Yig="
+  peer_v4: null
+  local_v4: 169.254.108.72/31
+  peer_v6: fe80::89f7:b22a:5452:3402
 
 - name: dn42sjc-sunnet
   port: 23088
@@ -16,18 +20,12 @@ wg_peers:
   peer_v4: null
   peer_v6: "fe80::3618/64"
 
-- name: dn42sfo-bling
-  remove: true
-
 - name: dn42sjc-kskb # autopeer ID 21080
   port: 21111
   remote: null
   wg_pubkey: "ffcWCDuBP3YdufFzOaiW2QeZLFG/GXg4QfbWTZ6LVz8="
   peer_v4: "10.127.111.33"
   peer_v6: "fe80::aa:1111:21"
-
-- name: dn42-186526
-  remove: true
 
 - name: dn42-moe233
   peer_v4: null
@@ -64,25 +62,6 @@ wg_peers:
   remote: us-west1.nodes.huajinet.org:21080
   wg_pubkey: Y13v0Xzf6zJQGtL2qJSwVyLNSxipYoGpq4y/5aU7omg=
 
-- name: dn42-burble
-  remove: true
-
-- name: dn42-link2
-  remove: true
-
-- name: dn42-pigeonhole
-  remove: true
-
-- name: igp-yvrlab
-  port: 19999
-  wg_pubkey: "ifeyKlRSNAIcyzRSUKzedU+t4bQhb1Hld3XzDCq/Yig="
-  peer_v4: null
-  local_v4: 169.254.108.72/31
-  peer_v6: fe80::89f7:b22a:5452:3402
-
-- name: dn42-iuboy
-  remove: true
-
 - name: dn42-sernet
   port: 23947
   remote: us-lax1.dn42.sherpherd.top:21080
@@ -117,9 +96,6 @@ wg_peers:
   wg_pubkey: UVm6W75mp6R8yw+C9yICPW8F5j7tUzerh2Ecmqgt0B4=
   peer_v4: null
   peer_v6: fe80::3117:1080
-
-- name: dn42-noreinx
-  remove: true
 
 - name: dn42-kemono
   port: 20358
