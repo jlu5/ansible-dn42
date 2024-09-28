@@ -103,3 +103,10 @@ wg_peers:
   wg_pubkey: IsuXPz73qeUi+HfGlkkJnPxSqQKd5drx2dkjuHuuL1k=
   peer_v4: null
   peer_v6: fe80::2016
+
+- name: dn42-tildegreen
+  port: 20953
+  remote: dn42peer.tilde.green:21080
+  wg_pubkey: VnkrpG4H2XwmpQvb+Wh4RVAa7r94juW4Eu4133qQnFQ=
+  peer_v4: null
+  peer_v6: fe80:0000:0000:0000:215d:4229:2c80:9b69
