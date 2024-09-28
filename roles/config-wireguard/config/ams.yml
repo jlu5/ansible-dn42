@@ -75,9 +75,6 @@ wg_peers:
   remote: de-fra.dn42.kuu.moe:58384
   wg_pubkey: FHp0OR4UpAS8/Ra0FUNffTk18soUYCa6NcvZdOgxY0k=
 
-- name: dn42-bling
-  remove: true
-
 - name: dn42-huajitech
   peer_v4: null
   peer_v6: fe80::458
@@ -91,9 +88,6 @@ wg_peers:
   port: 21964
   remote: nl2.dn42.southparkfan.org:41080
   wg_pubkey: GsmcrWbFTcje5e+hmc0D6qonrkTpHksGZuk0cLBjDmY=
-
-- name: dn42waw-filip
-  remove: true
 
 - name: dn42-dingemans
   port: 20074
@@ -150,15 +144,6 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::2246
 
-- name: dn42-szczot3k
-  remove: true
-
-- name: dn42-duckl1ng
-  remove: true
-
-- name: dn42-pivipi
-  remove: true
-
 - name: dn42-mirsal
   port: 22308
   remote: nl-ams2.dn42.mirsal.fr:21080
@@ -181,21 +166,12 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::2558:4
 
-- name: dn42-mubibai
-  remove: true
-
 - name: dn42-routedbits
   port: 20207
   remote: router.ams1.routedbits.com:51080
   wg_pubkey: JjAHDWR1CgQd1HJNvURrqUECkN++0bzYxlm57VXjlyc=
   peer_v4: null
   peer_v6: fe80::207
-
-- name: dn42-h3xnet
-  remove: true
-
-- name: dn42-divinet
-  remove: true
 
 - name: dn42-alemal
   port: 21525
@@ -210,6 +186,3 @@ wg_peers:
   wg_pubkey: zajOi1myXS0VZeYdNKcK3W1ROIcGSQtQ1Ie17ZrNxiI=
   peer_v4: 172.22.128.179
   peer_v6: fe80::0225:1080
-
-- name: dn42-foxtode
-  remove: true

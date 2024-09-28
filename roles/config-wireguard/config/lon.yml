@@ -13,12 +13,6 @@ wg_peers:
   peer_v4: "172.20.1.3"
   peer_v6: "fe80::119"
 
-- name: dn42-raito
-  remove: true
-
-- name: "dn42-munsternet"
-  remove: true
-
 - name: dn42-jerry
   port: 53618
   remote: "nl.neo.jerryxiao.cc:50090"

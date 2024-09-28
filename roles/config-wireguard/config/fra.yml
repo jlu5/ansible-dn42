@@ -84,9 +84,6 @@ wg_peers:
   peer_v4: "172.22.169.141"
   peer_v6: "fda9:26a9:1c47:1d42:42:42:1080:1050"
 
-- name: dn42rhr-n0emis
-  remove: true
-
 - name: dn42nbg-serverm
   port: 53770
   remote: "nbg1.dn42.servermade.com:51080"
@@ -129,9 +126,6 @@ wg_peers:
   peer_v4: 172.22.77.42
   peer_v6: fe80::42:1817:a
 
-- name: dn42-186526
-  remove: true
-
 - name: dn42-lutoma
   peer_v4: 172.22.119.1
   peer_v6: fe80::acab
@@ -152,9 +146,6 @@ wg_peers:
   wg_pubkey: qIhJZf6mTruzO4GTCUrJnLqs9ID4TI1GctRhaRilBkg=
   peer_v4: null
   peer_v6: fe80::2464
-
-- name: dn42-steinex
-  remove: true
 
 - name: dn42-mirsal
   port: 22308
@@ -197,14 +188,6 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::2
 
-# BEGIN peers migrated from par.peer
-
-- name: dn42-tchekda
-  remove: true
-
-- name: dn42-androw
-  remove: true
-
 - name: dn42-e1mo
   port: 20565
   remote: dn42-nbg1.net.dont-break.it:21080
@@ -212,37 +195,18 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::565
 
-- name: dn42-prevarinit
-  remove: true
-
-- name: dn42-tobi
-  remove: true
-
 - name: dn42-camelusfer
   port: 21592
   remote: de01.dn42.ca.melusfer.us:41080
   wg_pubkey: iMU/cowB17kYnBWktlT5H98J2mKRYf5v3PwsjWcNmR8=
   peer_v4: null
   peer_v6: fe80::1592
-
-- name: dn42-zolfa
-  remove: true
-
-- name: dn42-melty
-  remove: true
-
-- name: dn42-sernet
-  remove: true
-
 - name: dn42-routedbits
   port: 20207
   remote: router.fra1.routedbits.com:51080
   wg_pubkey: FIk95vqIJxf2ZH750lsV1EybfeC9+V8Bnhn8YWPy/l8=
   peer_v4: null
   peer_v6: fe80::207
-
-- name: dn42-pivipi
-  remove: true
 
 - name: dn42-vr18
   port: 20705
@@ -257,12 +221,6 @@ wg_peers:
   wg_pubkey: ElrOV7yaC9rCvMQfynsYpwM7yugWN0G9e0ToYMRk8i4=
   peer_v4: null
   peer_v6: fe80::620:1
-
-- name: dn42-oznoelr
-  remove: true
-
-- name: dn42-jasonxu
-  remove: true
 
 - name: dn42-astutus
   port: 21014
