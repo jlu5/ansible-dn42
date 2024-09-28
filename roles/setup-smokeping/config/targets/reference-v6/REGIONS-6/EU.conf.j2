@@ -115,6 +115,13 @@ menu = [NL] NovoServe
 title = [NL] NovoServe - Amsterdam, Netherlands [speedtest.novoserve.com]
 host = speedtest.novoserve.com
 
+{% if not smokeping_lite %}
+++ psychz-nl
+menu = [NL] Psychz
+title = [NL] Psychz - Amsterdam, Netherlands [2604:6600:2007:48:0:2:185f:e237]
+host = 2604:6600:2007:48:0:2:185f:e237
+{% endif %}
+
 ++ online-net-ams
 menu = [NL] Scaleway
 title = [NL] Scaleway / Online.net - Amsterdam, Netherlands [ping6-ams1.online.net]
@@ -205,11 +212,6 @@ host = de-ber02.speed.misaka.one
 menu = [DE] Netcup (Nuremberg)
 title = [DE] Netcup / Anexia - Nuremberg, Germany [lg.netcup.net]
 host = lg.netcup.net
-
-++ synlinq
-menu = [DE] Prepaid-Host
-title = [DE] Prepaid-Host @ SYNLINQ - Frankfurt, Germany [2a00:ccc1:101:5e::cafe]
-host = 2a00:ccc1:101:5e::cafe
 
 ++ ultravps-dus
 menu = [DE] UltraVPS (Duesseldorf)

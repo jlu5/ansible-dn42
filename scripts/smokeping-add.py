@@ -34,7 +34,7 @@ IP6_RE = re.compile(
 REQUESTS_HEADERS = {
     'Accept': 'text/*'
 }
-def scrape_ips(url, force_dns=False, maxsize=8192):
+def scrape_ips(url, force_dns=False, maxsize=65536):
     url_parts = urllib.parse.urlparse(url)
     netloc = url_parts.netloc or url
     if not url_parts.scheme:
@@ -58,7 +58,12 @@ def scrape_ips(url, force_dns=False, maxsize=8192):
     content_length = int(r.headers.get('Content-Length', 0))
     if content_length > maxsize:
         raise ValueError(f'HTTP response too large ({content_length} > {maxsize})')
-    text = next(r.iter_content(maxsize)).decode('utf-8', 'ignore')
+    total_length = 0
+    for chunk in r.iter_content(maxsize):
+        if total_length > maxsize:
+            break
+        text = chunk.decode('utf-8', 'ignore')
+        total_length += len(text)
 
     for m_ipv4 in IP4_RE.finditer(text):
         ipv4 = m_ipv4.group(0)
