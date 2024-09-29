@@ -63,11 +63,7 @@ wg_peers:
   wg_pubkey: YoB/Tge5Teb1ycnbi/vjmcsyD8My4waVkNhupn7JnDk=
 
 - name: dn42-bandura
-  peer_v4: 172.22.149.225
-  peer_v6: fe80::2923
-  port: 22923
-  remote: p2p-node.de:51080
-  wg_pubkey: 4gf9k6UUBO55geG7377qiMt/zHVuy77X60n/vNQMtj4=
+  remove: true
 
 - name: dn42-kioubit
   port: 23914
