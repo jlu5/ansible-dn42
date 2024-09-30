@@ -186,3 +186,10 @@ wg_peers:
   wg_pubkey: zajOi1myXS0VZeYdNKcK3W1ROIcGSQtQ1Ie17ZrNxiI=
   peer_v4: 172.22.128.179
   peer_v6: fe80::0225:1080
+
+- name: dn42-baragoon
+  port: 21732
+  remote: chr-am02.as215887.net:21080
+  wg_pubkey: OOv5anIPrk6Gsh8mbHy4mlw+t5Y5LfDBkd9C3KZenSs=
+  peer_v4: 172.23.32.152
+  peer_v6: fe80::38eb:f96a:720f:ae4e
