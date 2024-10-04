@@ -205,3 +205,10 @@ wg_peers:
   wg_pubkey: V9+Lxlqn3scNI7hkULY3NsHbI/s1weObxLy0R2SLQjI=
   peer_v4: null
   peer_v6: fe80::2016
+
+- name: dn42-goforcex
+  port: 21719
+  remote: hk1.goforcex.top:21080
+  wg_pubkey: 1GiY/gR40q1kUlMgLjWrFzDHTrRXIhNIYYVnecUTsUc=
+  peer_v4: 172.20.165.65
+  peer_v6: fe80::1719
