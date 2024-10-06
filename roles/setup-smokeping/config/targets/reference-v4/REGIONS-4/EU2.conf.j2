@@ -52,17 +52,19 @@ host = lg.sto.hosthatch.com
 menu = [SE] Linode
 title = [SE] Linode @ Akamai - Stockholm, Sweden [speedtest.stockholm.linode.com]
 host = speedtest.stockholm.linode.com
+{% endif %}
 
 ++ server-factory-se
 menu = [SE] server-factory
 title = [SE] server-factory.com - Stockholm, Sweden [lg.se.server-factory.com]
 host = lg.se.server-factory.com
-{% endif %}
 
+{% if not smokeping_lite %}
 ++ vultr-sto
 menu = [SE] Vultr
 title = [SE] Vultr - Stockholm, Sweden [sto-se-ping.vultr.com]
 host = sto-se-ping.vultr.com
+{% endif %}
 
 ++ hetzner-fi
 menu = [FI] Hetzner
