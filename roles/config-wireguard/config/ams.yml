@@ -193,3 +193,10 @@ wg_peers:
   wg_pubkey: OOv5anIPrk6Gsh8mbHy4mlw+t5Y5LfDBkd9C3KZenSs=
   peer_v4: 172.23.32.152
   peer_v6: fe80::38eb:f96a:720f:ae4e
+
+- name: dn42-iphizicmsk
+  port: 22086
+  remote: msk00.dn42.su:11080
+  wg_pubkey: Ta4/IuXDtCv7hf+UzCa73qJYmCTwofJio8CAb1Qe73M=
+  peer_v4: 172.21.107.17
+  peer_v6: fe80::2086
