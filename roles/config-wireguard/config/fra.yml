@@ -245,10 +245,10 @@ wg_peers:
 
 - name: dn42-cdubs
   port: 20566
-  remote: dn15.de.surgebytes.com:31080
-  wg_pubkey: 6aVOMEiouO9y4FaD5eMZL2SdM7jhhuKtmRmwypy7GCo=
+  remote: dn14.de.surgebytes.com:31080
+  wg_pubkey: 5bPq2lxiqdLuNPFK3YPthCFp7QxV+R0HAOosfSR4PTE=
   peer_v4: null
-  peer_v6: fe80::566
+  peer_v6: fe80::566:14
 
 - name: dn42-rivensbane
   port: 21815
