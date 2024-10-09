@@ -292,3 +292,10 @@ wg_peers:
   wg_pubkey: jF/VWbzmvus+g9lnviCNqCVzRvBpkzYyqrrKh72SSwY=
   peer_v4: 172.21.115.65
   peer_v6: fe80::c18b:023f
+
+- name: dn42-m724
+  port: 20129
+  remote: de1.420129.xyz:21080
+  wg_pubkey: N9rGceoiFcc/obnHrqMAmVlrb/E2Br55+doekTKwNF8=
+  peer_v4: null
+  peer_v6: fe80::129:2
