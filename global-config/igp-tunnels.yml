@@ -4,6 +4,7 @@ igp_neighbours:
     buh: null
     chi: null
     fra: null
+    fra2: null
     lon: null
     sjc: null
     sto: null
@@ -11,6 +12,7 @@ igp_neighbours:
   buh: !!set
     ams: null
     fra: null
+    fra2: null
   chi: !!set
     ams: null
     fra: null
@@ -23,11 +25,17 @@ igp_neighbours:
     ams: null
     buh: null
     chi: null
+    fra2: null
     hkg: null
     lax: null
     lon: null
     sto: null
     ymq: null
+  fra2: !!set
+    ams: null
+    buh: null
+    fra: null
+    lon: null
   hkg: !!set
     fra: null
     lax: null
@@ -46,6 +54,7 @@ igp_neighbours:
     ams: null
     chi: null
     fra: null
+    fra2: null
     sto: null
     ymq: null
   sjc: !!set
@@ -92,12 +101,12 @@ igp_wg_ports:
     buh: 30145
     chi: 30111
     fra: 30125
+    fra2: 30058
     hkg: 30043
     lax: 30012
     lon: 30021
     mil: 30029
     nbg: 30023
-    par: 30058
     sao: 30046
     sgp: 30118
     sjc: 30099
@@ -117,6 +126,7 @@ igp_wg_ports:
   buh:
     ams: 30145
     fra: 30146
+    fra2: 30164
     mil: 30144
   chi:
     ams: 30111
@@ -150,15 +160,26 @@ igp_wg_ports:
     ams: 30125
     buh: 30146
     chi: 30129
+    fra2: 30126
     hkg: 30155
     lax: 30140
     lon: 30162
     mil: 30127
-    par: 30126
     sgp: 30128
     sjc: 30124
     sto: 30147
     ymq: 30123
+  fra2:
+    ams: 30058
+    buh: 30164
+    fra: 30126
+    hkg: 30104
+    lon: 30057
+    mil: 30143
+    nbg: 30059
+    sto: 30073
+    ymq: 30056
+    ymq01: 30101
   hkg:
     ams: 30043
     fra: 30155
@@ -200,8 +221,8 @@ igp_wg_ports:
     ams: 30021
     chi: 30108
     fra: 30162
+    fra2: 30057
     nbg: 30019
-    par: 30057
     sto: 30026
     tpa: 30022
     ymq: 30020
@@ -210,9 +231,9 @@ igp_wg_ports:
     ams: 30029
     buh: 30144
     fra: 30127
+    fra2: 30143
     hkg: 30040
     nbg: 30028
-    par: 30143
     sgp: 30117
     sto: 30030
     syd: 30097
@@ -220,27 +241,17 @@ igp_wg_ports:
   nbg:
     ams: 30023
     ams2: 30054
+    fra2: 30059
     hkg: 30042
     lax: 30011
     lon: 30019
     mil: 30028
-    par: 30059
     sto: 30025
     syd: 30035
     tpa: 30009
     tyo: 30080
     ymq: 30014
     ymq2: 30000
-  par:
-    ams: 30058
-    fra: 30126
-    hkg: 30104
-    lon: 30057
-    mil: 30143
-    nbg: 30059
-    sto: 30073
-    ymq: 30056
-    ymq01: 30101
   sao:
     ams: 30046
     chi: 30157
@@ -294,10 +305,10 @@ igp_wg_ports:
   sto:
     ams: 30027
     fra: 30147
+    fra2: 30073
     lon: 30026
     mil: 30030
     nbg: 30025
-    par: 30073
     ymq: 30074
     ymq2: 30024
   syd:
@@ -344,11 +355,11 @@ igp_wg_ports:
     chi: 30107
     dal: 30078
     fra: 30123
+    fra2: 30056
     las: 30079
     lax: 30013
     lon: 30020
     nbg: 30014
-    par: 30056
     sao: 30045
     sea: 30132
     sjc: 30098
@@ -384,4 +395,4 @@ igp_wg_ports:
     tyo: 30032
     ymq: 30060
     ymq2: 30004
-next_port: 30164
+next_port: 30165
