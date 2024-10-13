@@ -105,5 +105,5 @@ wg_peers:
   port: 21732
   remote: chr-lo01.as215887.net:21080
   wg_pubkey: qP74cpd1BXZPnGijCHepPe7y8Kcwt3ULdpic9mzIRw0=
-  peer_v4: 172.23.32.129
+  peer_v4: 172.23.32.128
   peer_v6: fe80::a8fe:f872:9775:576
