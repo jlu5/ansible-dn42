@@ -23,8 +23,8 @@ dns IN AAAA fd86:bad:11b7:53::2
 @ IN AAAA fd86:bad:11b7:53::2
 www IN CNAME @
 mtxadmin IN A 172.22.108.59
-grapnel IN A 172.20.229.117
-grapnel IN AAAA fd86:bad:11b7:117::1
+grapnel IN A 172.22.108.83
+grapnel IN AAAA fd86:bad:11b7:1022::3
 maubot IN A 172.20.229.122
 git IN A 172.22.108.82
 git IN AAAA fd86:bad:11b7:1022::2
