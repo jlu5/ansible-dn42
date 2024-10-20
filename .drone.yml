@@ -30,12 +30,15 @@ steps:
 
     - git clone git@git.dn42.dev:dns/config.git tmp/dn42-dns-config
     - scripts/make-auth-server-list.py > tmp/dn42-dns-config/slaves/highdef
-
+    # This script shortcuts twice:
+    # 1) If no changes were to the upstream repo, we don't need to update anything
     - cd tmp/dn42-dns-config
+    - if git diff --exit-code; then echo "Exiting, no changes made"; exit 0; fi
     - git remote add fork git@git.dn42.dev:jlu5/dns-config.git
     - git fetch fork
     - git commit . -m 'Update AS4242421080 delegation servers'
-    - if ! git diff fork/ci-auto-update --exit-code; then git push -f fork HEAD:ci-auto-update; else echo "Skip pushing, no changes made"; fi
+    # 2) If the change we're making is already in the fork, also skip pushing to avoid refreshing the PR unnecessarily
+    - if ! git diff fork/ci-auto-update --exit-code; then git push -f fork HEAD:ci-auto-update; else echo "Skip pushing, remote branch is equal"; fi
   environment:
     GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=accept-new -i $HOME/.ssh/id_git_dn42
     GIT_AUTHOR_NAME: highdef.network bot
