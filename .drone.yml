@@ -23,12 +23,19 @@ steps:
   image: python:3.13
   commands:
     - pip install PyYAML
+
     - umask 077
     - mkdir -p tmp/ $HOME/.ssh
     - echo "$SSH_KEY" > $HOME/.ssh/id_git_dn42
+
     - git clone git@git.dn42.dev:dns/config.git tmp/dn42-dns-config
     - scripts/make-auth-server-list.py > tmp/dn42-dns-config/slaves/highdef
-    - cd tmp/dn42-dns-config && git commit . -m 'Update AS4242421080 delegation servers' && git push -f git@git.dn42.dev:jlu5/dns-config.git HEAD:ci-auto-update
+
+    - cd tmp/dn42-dns-config
+    - git remote add fork git@git.dn42.dev:jlu5/dns-config.git
+    - git fetch fork
+    - git commit . -m 'Update AS4242421080 delegation servers'
+    - if ! git diff fork/ci-auto-update --exit-code; then git push -f fork HEAD:ci-auto-update; else echo "Skip pushing, no changes made"; fi
   environment:
     GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=accept-new -i $HOME/.ssh/id_git_dn42
     GIT_AUTHOR_NAME: highdef.network bot
