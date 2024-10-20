@@ -42,9 +42,9 @@ steps:
     GIT_AUTHOR_EMAIL: noc@highdef.network
     SSH_KEY:
       from_secret: git-dn42-ssh-key
-  when:
-    branch:
-    - main
-    - ci-*
-    event:
-    - push
+trigger:
+  branch:
+  - main
+  - ci-*
+  event:
+  - push
