@@ -4,15 +4,13 @@ name: default
 
 steps:
 - name: verify-peers
-  image: debian:bookworm
+  image: python:3.13
   commands:
-    - apt-get update
-    - apt-get install -yy python3 python3-yaml
+    - pip install PyYAML
     - scripts/ci-verify.py .
 
 - name: test
-  image: debian:bookworm
+  image: python:3.13
   commands:
-    - apt-get update
-    - apt-get install -yy python3 python3-ruamel.yaml python3-requests
+    - pip install requests ruamel.yaml
     - python3 -m unittest discover scripts/peerconfgen/ -v
