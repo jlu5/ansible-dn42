@@ -1,16 +1,43 @@
 ---
 kind: pipeline
-name: default
+name: verify
 
 steps:
-- name: verify-peers
+- name: verify peers
   image: python:3.13
   commands:
     - pip install PyYAML
     - scripts/ci-verify.py .
 
-- name: test
+- name: unit tests
   image: python:3.13
   commands:
     - pip install requests ruamel.yaml
     - python3 -m unittest discover scripts/peerconfgen/ -v
+
+---
+kind: pipeline
+name: update dn42 git
+steps:
+- name: update dn42 DNS config
+  image: python:3.13
+  commands:
+    - pip install PyYAML
+    - umask 077
+    - mkdir -p tmp/ $HOME/.ssh
+    - echo "$SSH_KEY" > $HOME/.ssh/id_git_dn42
+    - git clone git@git.dn42.dev:dns/config.git tmp/dn42-dns-config
+    - scripts/make-auth-server-list.py > tmp/dn42-dns-config/slaves/highdef
+    - cd tmp/dn42-dns-config && git commit . -m 'Update AS4242421080 delegation servers' && git push -f git@git.dn42.dev:jlu5/dns-config.git HEAD:ci-auto-update
+  environment:
+    GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=accept-new -i $HOME/.ssh/id_git_dn42
+    GIT_AUTHOR_NAME: highdef.network bot
+    GIT_AUTHOR_EMAIL: noc@highdef.network
+    SSH_KEY:
+      from_secret: git-dn42-ssh-key
+  when:
+    branch:
+    - main
+    - ci-*
+    event:
+    - push
