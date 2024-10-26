@@ -41,14 +41,12 @@ dns_records:
     "grapnel":
       type: host_record
       ip4: 172.22.108.83
-      ip6: fd86:bad:11b7:1022::3
     "maubot":
-      type: A
-      target: 172.20.229.122
+      type: ansible_host_alias
+      target: sjc
     "git":
       type: host_record
       ip4: 172.22.108.82
-      ip6: fd86:bad:11b7:1022::2
 
     # Misc routers
     "gw.yvrlab":

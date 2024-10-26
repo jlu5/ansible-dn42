@@ -9,8 +9,6 @@ $TTL 300
         3600        ; minimum TTL
 )
 @   IN  NS      ns.highdef.dn42.
-115 IN PTR peers-nodeid-115.ymq.highdef.dn42.
-127 IN PTR peers-nodeid-127.sgp.highdef.dn42.
 122 IN PTR lax.rtr.highdef.dn42.
 113 IN PTR chi.rtr.highdef.dn42.
 123 IN PTR ymq.rtr.highdef.dn42.
