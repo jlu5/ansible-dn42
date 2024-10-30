@@ -103,3 +103,10 @@ wg_peers:
   wg_pubkey: 7HzHyeA2M7yo/zVmc+e0zG+I7j2SnIx+7ZpXOca93mg=
   peer_v4: null
   peer_v6: fe80::358
+
+- name: dn42-arcenotas
+  port: 20625
+  remote: arcenotas.com:21080
+  wg_pubkey: 8l+9N8cEygZTv/yhqb4giA230o2/DGn2P6wytYVHrHw=
+  peer_v4: null
+  peer_v6: fe80::625
