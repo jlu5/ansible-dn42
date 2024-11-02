@@ -201,7 +201,7 @@ def _ci_verify_bird(root, rtr_name, peer_name, wg_peer_config):
         raise ValidationError('When "remote" is set, passive mode should be disabled', bird_config_path)
     if not wg_peer_config['remote'] and not is_passive_mode:
         raise ValidationError('When "remote" is unset, passive mode should be enabled', bird_config_path)
-    return True
+    return bird_config_path
 
 def _ci_verify_bgp_auto_config(peer_config, wg_config_path):
     bgp_config = peer_config.get('bgp')
@@ -230,10 +230,10 @@ def _ci_verify_bgp_auto_config(peer_config, wg_config_path):
     if mp_bgp and not (ipv4_enabled and ipv6_enabled):
         raise ValidationError(f'Peer {name!r} has MP-BGP enabled but either IPv4 or IPv6 is disabled', wg_config_path)
 
-    if ipv4_enabled and not (peer_config['peer_v4'] or extended_next_hop):
+    if ipv4_enabled and not (peer_config.get('peer_v4') or extended_next_hop or peer_config.get('local_v4')):
         raise ValidationError(f'Peer {name!r} has IPv4 enabled for BGP but no IPv4 next hop', wg_config_path)
 
-    if ipv6_enabled and not peer_config['peer_v6']:
+    if ipv6_enabled and not (peer_config.get('peer_v6') or peer_config.get('local_v6')):
         raise ValidationError(f'Peer {name!r} has IPv6 enabled for BGP but no IPv6 next hop', wg_config_path)
 
     return True
@@ -255,6 +255,9 @@ def ci_verify(root):
                 if not bird_config and not bgp_auto_config:
                     raise ValidationError(
                         f'BGP config missing for peer {external_peer_name!r}', wg_config_path)
+                if bird_config and bgp_auto_config:
+                    raise ValidationError(
+                        f'Duplicate BGP config for peer {external_peer_name!r}', bird_config)
     print('OK')
 
 def main():
