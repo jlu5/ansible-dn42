@@ -1,30 +1,31 @@
 {%- set _dn42_bandwidth = (dn42_ratelimit | log(10) | int) + 22 -%}
 {# Template for ipv4 and ipv6 channels #}
-{%- macro dn42_channel_opts(_dn42_encryption) -%}
-        import where dn42_import_filter(0,{{ _dn42_bandwidth }},{{ _dn42_encryption }});
-        export where dn42_export_filter(0,{{ _dn42_bandwidth }},{{ _dn42_encryption }});
+{%- macro dn42_channel_opts(dn42_encryption, mode) -%}
+        import where dn42_import_{{ mode }}(0,{{ _dn42_bandwidth }},{{ dn42_encryption }});
+        export where dn42_export_{{ mode }}(0,{{ _dn42_bandwidth }},{{ dn42_encryption }});
 {%- endmacro -%}
 
 {# Template for per-session BGP options #}
-{%- macro dn42_session_opts(peer_config, remote_ip) -%}
+{%- macro dn42_session_opts(peer_config, af_type) -%}
 {% set _bgp_passive_flag = 'off' if peer_config.remote else 'on' %}
-    neighbor {{ remote_ip.split('/')[0] }} as {{ peer_config.bgp.asn }};
+    neighbor {{ peer_config | get_dn42_remote_ip(af_type) }} as {{ peer_config.bgp.asn }};
     interface "{{ peer_config.name }}";
     passive {{ _bgp_passive_flag }};
 {%- endmacro -%}
 
-{%- macro dn42_peer(peer_config, _dn42_encryption) %}
+{%- macro dn42_peer(peer_config, dn42_encryption) %}
+{%- set mode = peer_config.bgp.get('mode') or 'filter' -%}
 {%- set _extended_next_hop_flag = 'on' if peer_config.bgp.get('extended_next_hop') else 'off' -%}
 {% if peer_config.bgp.get('mp_bgp') and peer_config.bgp.ipv6 %}
 # session type MP-BGP
 protocol bgp AS{{ peer_config.bgp.asn }} from dnpeers {
-{{ dn42_session_opts(peer_config, peer_config.peer_v6) }}
+{{ dn42_session_opts(peer_config, 6) }}
     ipv4 {
-        {{ dn42_channel_opts(_dn42_encryption) }}
+        {{ dn42_channel_opts(dn42_encryption, mode) }}
         extended next hop {{ _extended_next_hop_flag }};
     };
     ipv6 {
-        {{ dn42_channel_opts(_dn42_encryption) }}
+        {{ dn42_channel_opts(dn42_encryption, mode) }}
     };
 }
 {% else %}
@@ -32,10 +33,10 @@ protocol bgp AS{{ peer_config.bgp.asn }} from dnpeers {
 {%- if peer_config.bgp.ipv4 %}
 # session type IPv4
 protocol bgp AS{{ peer_config.bgp.asn }}_v4 from dnpeers {
-{{ dn42_session_opts(peer_config, peer_config.peer_v4) }}
+{{ dn42_session_opts(peer_config, 4) }}
 
     ipv4 {
-        {{ dn42_channel_opts(_dn42_encryption) }}
+        {{ dn42_channel_opts(dn42_encryption, mode) }}
     };
 }
 {% endif %}
@@ -43,10 +44,10 @@ protocol bgp AS{{ peer_config.bgp.asn }}_v4 from dnpeers {
 {%- if peer_config.bgp.ipv6 %}
 # session type IPv6
 protocol bgp AS{{ peer_config.bgp.asn }}_v6 from dnpeers {
-{{ dn42_session_opts(peer_config, peer_config.peer_v6) }}
+{{ dn42_session_opts(peer_config, 6) }}
 
     ipv6 {
-        {{ dn42_channel_opts(_dn42_encryption) }}
+        {{ dn42_channel_opts(dn42_encryption, mode) }}
     };
 }
 {% endif %}
