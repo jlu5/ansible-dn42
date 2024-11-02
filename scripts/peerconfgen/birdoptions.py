@@ -8,7 +8,7 @@ from pingtest import get_rtt, PingTestError
 class BirdOptions:
     mp_bgp: bool
     extended_next_hop: bool
-    latency: float
+    latency: float | None = None
 
 def fill_bird_options(node, completed_config):
     mp_bgp = False

@@ -11,7 +11,7 @@ import re
 import ruamel.yaml
 
 from birdoptions import fill_bird_options
-from exporters import gen_wg_config, gen_bird_peer_config
+from exporters import gen_peer_config
 from utils import *
 from validators import *
 
@@ -126,9 +126,8 @@ def complete_peer_config(scrape_results):
         raise ValueError("Need either peer_v4 or peer_v6 for peers")
     return result
 
-def get_config_paths(node, peername, replace=False, create=False):
+def get_config_path(node, create=False):
     wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{node}.yml")
-    bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", node)
 
     if not os.path.exists(wg_config_path):
         if not create:
@@ -137,17 +136,7 @@ def get_config_paths(node, peername, replace=False, create=False):
         with open(wg_config_path, 'w', encoding='utf8') as _:
             pass  # write an empty file
 
-    if not os.path.isdir(bird_config_dir):
-        assert create
-        os.makedirs(bird_config_dir)
-
-    bird_config_path = bird_config_dir / f'{peername}.conf'
-    if os.path.exists(bird_config_path):
-        if replace:
-            print(f"Overwriting existing {bird_config_path!r}")
-        else:
-            raise ValueError(f"A BIRD session config already exists at {bird_config_path!r}")
-    return wg_config_path, bird_config_path
+    return wg_config_path
 
 def _run_interactive(node):
     print("Enter peer config info followed by EOF. Copy paste some text, and I'll try to guess")
@@ -193,7 +182,7 @@ def main():
     if not _PEERNAME_RE.match(peername):
         raise ValueError(f"Peer name {peername!r} should only contain ASCII letters and numbers")
 
-    wg_config_path, bird_config_path = get_config_paths(args.node, peername, replace=args.replace, create=args.create)
+    wg_config_path = get_config_path(args.node, create=args.create)
 
     yaml = get_yaml()
     with open(wg_config_path, 'r+', encoding='utf-8') as f:
@@ -211,7 +200,7 @@ def main():
             iface_idx = -1
 
         completed_config, bird_options = _run_interactive(args.node)
-        wg_config_snippet = gen_wg_config(peername, completed_config)
+        wg_config_snippet = gen_peer_config(peername, completed_config, bird_options)
         if iface_idx < 0:
             wg_peers.append(wg_config_snippet)
             # Add an extra newline before the config block for readability
@@ -232,14 +221,6 @@ def main():
             f.truncate()
 
     print()
-    bird_peer_config = gen_bird_peer_config(peername, completed_config, bird_options)
-    print("BIRD peer config:")
-    print(bird_peer_config)
-    print()
-    if not args.dry_run:
-        with open(bird_config_path, 'w', encoding='utf-8') as f:
-            count = f.write(bird_peer_config)
-            print(f"Wrote {count} bytes to {bird_config_path}")
 
 if __name__ == '__main__':
     main()
