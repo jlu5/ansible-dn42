@@ -51,11 +51,7 @@ wg_peers:
   peer_v6: fe80::207
 
 - name: dn42-kitauji
-  port: 22314
-  remote: 195.252.199.45:41080
-  wg_pubkey: 7QUBU6NIaG82IZA6ft9KGKkIQzahm1/MsJCMNQvbYGQ=
-  peer_v4: 172.22.179.97
-  peer_v6: fe80::1747
+  remove: true
 
 # BEGIN peers imported from dal.peer (202408)
 - name: dn42-hujk
@@ -115,14 +111,7 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_dal
 
 - name: dn42-amc
-  port: 21146
-  remote: null
-  wg_pubkey: /SMD8YbgCtJ0iinMzRmeTfwv9GX4XxK/lCQCAnusu04=
-  peer_v4: 172.20.171.225
-  peer_v6: fe80::1146
-  local_v4: 172.22.108.33
-  local_v6: fe80::1080:33
-  wg_privkey: /etc/wireguard/privatekey_dal
+  remove: true
 # END peers imported from dal.peer
 
 # BEGIN peers imported from tpa.peer (202408)
@@ -137,14 +126,7 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_atl
 
 - name: dn42-hfuller
-  port: 51289
-  remote: hsv-rtr.network.pixilic.com:30080
-  wg_pubkey: "IKEynXwzlR5CY+XrklI/vsH97MfY1aqnQ8oiQ6AyHGU="
-  peer_v4: "172.23.193.143"
-  peer_v6: "fd7c:3727:9426:193::3"
-  local_v4: 172.20.229.119
-  local_v6: fd86:bad:11b7:9::1
-  wg_privkey: /etc/wireguard/privatekey_atl
+  remove: true
 
 - name: dn42-bri
   port: 22825
