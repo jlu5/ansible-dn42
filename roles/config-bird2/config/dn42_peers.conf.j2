@@ -7,8 +7,8 @@
 
 {# Template for per-session BGP options #}
 {%- macro dn42_session_opts(peer_config, remote_ip) -%}
-{% set _bgp_passive_flag = 'on' if peer_config.remote else 'off' %}
-    neighbor {{ remote_ip }} as {{ peer_config.bgp.asn }};
+{% set _bgp_passive_flag = 'off' if peer_config.remote else 'on' %}
+    neighbor {{ remote_ip.split('/')[0] }} as {{ peer_config.bgp.asn }};
     interface "{{ peer_config.name }}";
     passive {{ _bgp_passive_flag }};
 {%- endmacro -%}
