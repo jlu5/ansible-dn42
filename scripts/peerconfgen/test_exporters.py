@@ -183,5 +183,34 @@ class PeerConfWriteTest(unittest.TestCase):
             }
         }, gen_peer_config('somelongname', cfg, bird_options))
 
+    def test_export_inet_asn(self):
+        cfg = {
+            'asn': '123456',
+            'remote': 'test.null.invalid',
+            'port': '21080',
+            'wg_pubkey': 'dn42' * 10 + 'dn4=',
+            'peer_v4': None,
+            'peer_v6': 'fd86:11b7:bad::4242',
+        }
+        bird_options = BirdOptions(
+            mp_bgp=False,
+            extended_next_hop=False,
+        )
+        self.assertEqual({
+            'name': 'dn42-testnet',
+            'port': 23456,
+            'remote': 'test.null.invalid:21080',
+            'wg_pubkey': 'dn42' * 10 + 'dn4=',
+            'peer_v4': None,
+            'peer_v6': 'fd86:11b7:bad::4242',
+            'bgp': {
+                'asn': 123456,
+                'ipv4': False,
+                'ipv6': True,
+                'mp_bgp': False,
+                'extended_next_hop': False,
+            }
+        }, gen_peer_config('testnet', cfg, bird_options))
+
 if __name__ == '__main__':
     unittest.main()

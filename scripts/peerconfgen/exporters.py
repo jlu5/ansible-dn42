@@ -20,7 +20,7 @@ def gen_peer_config(peername, completed_config, bird_options):
         # Opting not to include the location code anymore
         'name': get_iface_name(peername),
         # 20000 + last 4 digits of ASN
-        'port': int('2' + _format_short_asn(completed_config['asn'])),
+        'port': 20000 + int(completed_config['asn']) % 10000,
         'remote': remote,
         'wg_pubkey': completed_config['wg_pubkey'],
         'peer_v4': peer_v4,
@@ -29,7 +29,7 @@ def gen_peer_config(peername, completed_config, bird_options):
             'asn': int(completed_config['asn']),
             'ipv4': bool(peer_v4) or bird_options.extended_next_hop,
             'ipv6': bool(peer_v6),
-            'mp_bgp': bird_options.mp_bgp,
+            'mp_bgp': bird_options.mp_bgp or bird_options.extended_next_hop,
             'extended_next_hop': bird_options.extended_next_hop,
         }
     }
