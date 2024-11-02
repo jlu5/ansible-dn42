@@ -218,6 +218,8 @@ def _ci_verify_bgp_auto_config(peer_config, wg_config_path):
         raise ValidationError(f'Peer {name!r} is missing required "bgp.ipv6" attribute', wg_config_path)
     ipv4_enabled = bgp_config['ipv4']
     ipv6_enabled = bgp_config['ipv6']
+    if not ipv4_enabled and not ipv6_enabled:
+        raise ValidationError(f'Peer {name!r} has neither IPv4 nor IPv6 enabled', wg_config_path)
 
     mp_bgp = bgp_config.get('mp_bgp')
     extended_next_hop = bgp_config.get('extended_next_hop')
