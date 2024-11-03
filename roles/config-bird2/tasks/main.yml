@@ -27,6 +27,22 @@
 
   ignore_errors: true
 
+- name: Read WireGuard tunnel settings
+  include_vars:
+    # FIXME: is this a portable way to specify a role path?
+    file: "roles/config-wireguard/config/{{ inventory_hostname }}.yml"
+  ignore_errors: true
+
+- name: Read OpenVPN tunnel settings
+  include_vars:
+    file: "roles/config-openvpn/config/{{ inventory_hostname }}.yml"
+  ignore_errors: true
+
+- name: Read GRE tunnel settings
+  include_vars:
+    file: "roles/config-gre-plain/config/{{ inventory_hostname }}.yml"
+  ignore_errors: true
+
 - name: "Remove unknown bird config files"
   file:
     path: "/etc/bird/{{ item|basename }}"

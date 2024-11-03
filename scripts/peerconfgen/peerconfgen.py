@@ -11,7 +11,7 @@ import re
 import ruamel.yaml
 
 from birdoptions import fill_bird_options
-from exporters import gen_wg_config, gen_bird_peer_config
+from exporters import gen_peer_config
 from utils import *
 from validators import *
 
@@ -193,7 +193,7 @@ def main():
     if not _PEERNAME_RE.match(peername):
         raise ValueError(f"Peer name {peername!r} should only contain ASCII letters and numbers")
 
-    wg_config_path, bird_config_path = get_config_paths(args.node, peername, replace=args.replace, create=args.create)
+    wg_config_path, _ = get_config_paths(args.node, peername, create=args.create)
 
     yaml = get_yaml()
     with open(wg_config_path, 'r+', encoding='utf-8') as f:
@@ -211,7 +211,7 @@ def main():
             iface_idx = -1
 
         completed_config, bird_options = _run_interactive(args.node)
-        wg_config_snippet = gen_wg_config(peername, completed_config)
+        wg_config_snippet = gen_peer_config(peername, completed_config, bird_options)
         if iface_idx < 0:
             wg_peers.append(wg_config_snippet)
             # Add an extra newline before the config block for readability
@@ -232,14 +232,6 @@ def main():
             f.truncate()
 
     print()
-    bird_peer_config = gen_bird_peer_config(peername, completed_config, bird_options)
-    print("BIRD peer config:")
-    print(bird_peer_config)
-    print()
-    if not args.dry_run:
-        with open(bird_config_path, 'w', encoding='utf-8') as f:
-            count = f.write(bird_peer_config)
-            print(f"Wrote {count} bytes to {bird_config_path}")
 
 if __name__ == '__main__':
     main()

@@ -12,7 +12,12 @@ wg_peers:
   wg_pubkey: "2RkCWgwBkoq5jJhjDWI15nCxwgb6oQxdY9lIO18KEzs="
   peer_v4: "172.22.159.60/32"
   peer_v6: "fdfc:694e:234f::3/128"
-  local_v6: "fd86:bad:11b7::1"
+  bgp:
+    asn: 4242422904
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: false
 
 - name: dn42-nicholascw
   port: 51288
@@ -20,6 +25,12 @@ wg_peers:
   wg_pubkey: "750WkOmYTh+gfrod2LRgKU46nkEJrWK2z6emynV+j3U="
   peer_v4: "172.20.233.129"
   peer_v6: "fe80::1288/64"
+  bgp:
+    asn: 4242421288
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-tech9
   peer_v4: 172.20.16.139
@@ -28,6 +39,13 @@ wg_peers:
   remote: us-chi01.dn42.tech9.io:51933
   wg_pubkey: 0kb8ffMcbx8oXZ3Ii5khOuCzmRqM2Cy0IslmrWtRGSk=
   local_v6: fe80::100
+  bgp:
+    asn: 4242421588
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    export_mode: prepend
 
 - name: dn42-lare
   port: 23035
@@ -35,6 +53,14 @@ wg_peers:
   wg_pubkey: AREskFoxP2cd6DXoJ7druDsiWKX+8TwrkQqfi4JxRRw=
   peer_v4: null
   peer_v6: fe80::3035:137
+  bgp:
+    asn: 4242423035
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    import_mode: peer_only
+    export_mode: prepend
 
 - name: dn42-ventilaar
   port: 22246
@@ -42,6 +68,12 @@ wg_peers:
   wg_pubkey: qJQiON85WYvdMBHDu0T0rBKGYNexlPvQjtjkx/YNK2o=
   peer_v4: null
   peer_v6: fe80::2246
+  bgp:
+    asn: 4242422246
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-routedbits
   port: 20207
@@ -49,32 +81,14 @@ wg_peers:
   wg_pubkey: 89xUzROs3l/KNPLxDTJz4l5aEH1cmLb22bNgChhRiQo=
   peer_v4: null
   peer_v6: fe80::207
-
-- name: dn42-kitauji
-  port: 22314
-  remote: 195.252.199.45:41080
-  wg_pubkey: 7QUBU6NIaG82IZA6ft9KGKkIQzahm1/MsJCMNQvbYGQ=
-  peer_v4: 172.22.179.97
-  peer_v6: fe80::1747
+  bgp:
+    asn: 4242420207
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 # BEGIN peers imported from dal.peer (202408)
-- name: dn42-hujk
-  peer_v4: null
-  peer_v6: fe80::104:50:2030:14
-  port: 22717
-  remote: us.vm.whojk.com:23001
-  wg_pubkey: lhWFk53u42PlQ+P7QkBJt1+tXTc/H0EE/FwdBYkTcGY=
-  local_v6: fe80::1080:33
-  wg_privkey: /etc/wireguard/privatekey_dal
-
-- name: dn42-c4tg
-  peer_v4: null
-  peer_v6: fe80::4242
-  port: 21411
-  remote: null
-  wg_pubkey: U8TI9G8zHFuCnzsDgclhFtNHhqfHG/1DoC8O3OFBfFo=
-  local_v6: fe80::1080:33
-  wg_privkey: /etc/wireguard/privatekey_dal
 
 - name: dn42-bandura
   port: 22923
@@ -92,6 +106,12 @@ wg_peers:
     3038366232633135323634343662663835366162346464376631
   local_v6: fe80::1080:33
   wg_privkey: /etc/wireguard/privatekey_dal
+  bgp:
+    asn: 4242422923
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-gatuno
   port: 20180
@@ -102,30 +122,16 @@ wg_peers:
   local_v6: "fd42:470:f0ef:307::2/64"
   local_v4: 172.22.108.33
   wg_privkey: /etc/wireguard/privatekey_dal
+  bgp:
+    asn: 4242420180
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
-- name: dn42-imlonghao
-  port: 21888
-  remote: us3.dn42.ni.sb:21080
-  wg_pubkey: dAL/VWmLLXKhum3S82INvBmXizID6/51RgdGBkD/M1g=
-  wg_mtu: 1296
-  peer_v4: 172.22.68.0
-  peer_v6: fe80::1888
-  local_v4: 172.22.108.33
-  local_v6: fe80::1080:33
-  wg_privkey: /etc/wireguard/privatekey_dal
-
-- name: dn42-amc
-  port: 21146
-  remote: null
-  wg_pubkey: /SMD8YbgCtJ0iinMzRmeTfwv9GX4XxK/lCQCAnusu04=
-  peer_v4: 172.20.171.225
-  peer_v6: fe80::1146
-  local_v4: 172.22.108.33
-  local_v6: fe80::1080:33
-  wg_privkey: /etc/wireguard/privatekey_dal
 # END peers imported from dal.peer
 
-# BEGIN peers imported from tpa.peer (202408)
+# BEGIN peers imported from atl/tpa (202408)
 - name: dn42-napsterbat
   port: 51050
   remote: atl1-us.dn42.napshome.net:51080
@@ -135,16 +141,12 @@ wg_peers:
   local_v4: 172.20.229.119
   local_v6: fd86:bad:11b7:9::1
   wg_privkey: /etc/wireguard/privatekey_atl
-
-- name: dn42-hfuller
-  port: 51289
-  remote: hsv-rtr.network.pixilic.com:30080
-  wg_pubkey: "IKEynXwzlR5CY+XrklI/vsH97MfY1aqnQ8oiQ6AyHGU="
-  peer_v4: "172.23.193.143"
-  peer_v6: "fd7c:3727:9426:193::3"
-  local_v4: 172.20.229.119
-  local_v6: fd86:bad:11b7:9::1
-  wg_privkey: /etc/wireguard/privatekey_atl
+  bgp:
+    asn: 4242421050
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-bri
   port: 22825
@@ -154,6 +156,12 @@ wg_peers:
   peer_v6: fe80::2825:2
   local_v6: fe80::1080:119
   wg_privkey: /etc/wireguard/privatekey_atl
+  bgp:
+    asn: 4242422825
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-zdong
   port: 22354
@@ -164,4 +172,10 @@ wg_peers:
   local_v4: 172.20.229.119
   local_v6: fe80::1080:119
   wg_privkey: /etc/wireguard/privatekey_atl
+  bgp:
+    asn: 4242422354
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 # END peers imported from tpa.peer

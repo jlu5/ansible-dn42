@@ -1,0 +1,78 @@
+{%- set _dn42_bandwidth = (dn42_ratelimit | log(10) | int) + 22 -%}
+{# Template for ipv4 and ipv6 channels #}
+{%- macro dn42_channel_opts(dn42_encryption, peer_config) -%}
+{%- set import_mode = peer_config.bgp.get('import_mode') or 'filter' -%}
+{%- set export_mode = peer_config.bgp.get('export_mode') or 'filter' -%}
+        import where dn42_import_{{ import_mode }}(0,{{ _dn42_bandwidth }},{{ dn42_encryption }});
+        export where dn42_export_{{ export_mode }}(0,{{ _dn42_bandwidth }},{{ dn42_encryption }});
+{%- endmacro -%}
+
+{# Template for per-session BGP options #}
+{%- macro dn42_session_opts(peer_config, af_type) -%}
+{% set _bgp_passive_flag = 'off' if peer_config.remote else 'on' %}
+    neighbor {{ peer_config | get_dn42_remote_ip(af_type) }} as {{ peer_config.bgp.asn }};
+    interface "{{ peer_config.name }}";
+    passive {{ _bgp_passive_flag }};
+{% for line in peer_config.bgp.get('opts', []) %}
+    {{ line }}
+{% endfor -%}
+{%- endmacro -%}
+
+{%- macro dn42_peer(peer_config, dn42_encryption) %}
+{%- set _extended_next_hop_flag = 'on' if peer_config.bgp.get('extended_next_hop') else 'off' -%}
+{% if peer_config.bgp.get('mp_bgp') and peer_config.bgp.ipv6 %}
+# session type MP-BGP
+protocol bgp AS{{ peer_config.bgp.asn }} from dnpeers {
+{{ dn42_session_opts(peer_config, 6) }}
+    ipv4 {
+        {{ dn42_channel_opts(dn42_encryption, peer_config) }}
+        extended next hop {{ _extended_next_hop_flag }};
+    };
+    ipv6 {
+        {{ dn42_channel_opts(dn42_encryption, peer_config) }}
+    };
+}
+{% else %}
+
+{%- if peer_config.bgp.ipv4 %}
+# session type IPv4
+protocol bgp AS{{ peer_config.bgp.asn }}_v4 from dnpeers {
+{{ dn42_session_opts(peer_config, 4) }}
+
+    ipv4 {
+        {{ dn42_channel_opts(dn42_encryption, peer_config) }}
+    };
+}
+{% endif %}
+
+{%- if peer_config.bgp.ipv6 %}
+# session type IPv6
+protocol bgp AS{{ peer_config.bgp.asn }}_v6 from dnpeers {
+{{ dn42_session_opts(peer_config, 6) }}
+
+    ipv6 {
+        {{ dn42_channel_opts(dn42_encryption, peer_config) }}
+    };
+}
+{% endif %}
+
+{%- endif %}
+{%- endmacro %}
+
+{% for wg_peer in wg_peers|default([]) -%}
+{% if not wg_peer.get('remove') and wg_peer.get('bgp') %}
+{{ dn42_peer(wg_peer, 34) }}
+{% endif %}
+{%- endfor -%}
+
+{%- for ovpn_peer in ovpn_peers|default([]) -%}
+{% if not ovpn_peer.get('remove') and ovpn_peer.get('bgp') %}
+{{ dn42_peer(ovpn_peer, 33) }}
+{% endif %}
+{%- endfor -%}
+
+{% for gre_peer in gre_peers|default([]) -%}
+{% if not gre_peer.get('remove') and gre_peer.get('bgp') %}
+{{ dn42_peer(gre_peer, 31) }}
+{% endif %}
+{%- endfor -%}
