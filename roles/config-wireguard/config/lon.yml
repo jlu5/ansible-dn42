@@ -5,6 +5,12 @@ wg_peers:
   wg_pubkey: "eNgNR4SXD7aBnE7POW/asfsw2BiVmjEz684zC8WAITo="
   peer_v4: "172.22.169.140"
   peer_v6: "fda9:26a9:1c47:2d42:42:42:1080:1050"
+  bgp:
+    asn: 4242421050
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-jrb0001
   port: 50119
@@ -12,6 +18,12 @@ wg_peers:
   wg_pubkey: "79RlgA68KnWS7i9TarFuNBIsT4WzKGSHyJmffbOzbCg="
   peer_v4: "172.20.1.3"
   peer_v6: "fe80::119"
+  bgp:
+    asn: 4242420119
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-jerry
   port: 53618
@@ -19,6 +31,12 @@ wg_peers:
   wg_pubkey: "zE9C015v2H0duvNBdXm2ToWqimoIlBqtZtFTqgLQXgs="
   peer_v4: null
   peer_v6: "fe80::3618/64"
+  bgp:
+    asn: 4242423618
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-andi
   port: 53991
@@ -26,6 +44,12 @@ wg_peers:
   wg_pubkey: "s6OL5S5GvUykOs1XVAWL2i6Mflk6niZ4BZhrHmdB5Gw="
   peer_v4: null
   peer_v6: "fe80::1"
+  bgp:
+    asn: 4242423991
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-servermade
   port: 53770
@@ -33,6 +57,12 @@ wg_peers:
   wg_pubkey: "0ndXPAg17zmVx5CfxMblRfdcDjHRDB6OKBkYvvtq1g0="
   peer_v4: "172.22.118.129"
   peer_v6: "fe80::3770/64"
+  bgp:
+    asn: 4242423770
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-camelus
   port: 21592
@@ -40,6 +70,12 @@ wg_peers:
   wg_pubkey: "oUFScw06Qe6nyDWwbywdecgnt1QQNWe1DFAUb3QCqgU="
   peer_v4: "172.21.99.188"
   peer_v6: "fe80::1592"
+  bgp:
+    asn: 4242421592
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-atolm
   peer_v4: null
@@ -47,6 +83,12 @@ wg_peers:
   port: 20585
   remote: uk1.dn42.atolm.net:21080
   wg_pubkey: W5tOp5Iw/uJppISGF9KSQL5/q9ykW0PUSAKDe4YPXHQ=
+  bgp:
+    asn: 4242420585
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-rhysperry
   peer_v4: 172.22.76.1
@@ -54,6 +96,12 @@ wg_peers:
   port: 23665
   remote: rhysperry.com:55505
   wg_pubkey: I1WlxMXrSoN2g3WVJNYNG+4MsYhJwNA6UYgt5pHOGGY=
+  bgp:
+    asn: 4242423665
+    extended_next_hop: false
+    ipv4: true
+    ipv6: false
+    mp_bgp: false
 
 - name: dn42-htw
   peer_v4: 172.21.78.33
@@ -61,9 +109,12 @@ wg_peers:
   port: 21440
   remote: sco1.dn42.canidae.systems:26005
   wg_pubkey: YoB/Tge5Teb1ycnbi/vjmcsyD8My4waVkNhupn7JnDk=
-
-- name: dn42-bandura
-  remove: true
+  bgp:
+    asn: 4242421440
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-kioubit
   port: 23914
@@ -71,6 +122,12 @@ wg_peers:
   wg_pubkey: sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8=
   peer_v4: 172.20.53.104
   peer_v6: fe80::ade0
+  bgp:
+    asn: 4242423914
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-sfsarfe
   port: 21780
@@ -78,6 +135,12 @@ wg_peers:
   wg_pubkey: 73cKStIwW3HrDepdmix6hbLPBNb2/XM92AVBv78f+FQ=
   peer_v4: 172.22.132.80
   peer_v6: fe80::102
+  bgp:
+    asn: 4242421780
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-cellardoor
   port: 21774
@@ -86,6 +149,12 @@ wg_peers:
   peer_v4: null
   peer_v6: fdc0:b62e:4a7d:cafe:cafe:cafe:cafe:2
   local_v6: fdc0:b62e:4a7d:cafe:cafe:cafe:cafe:1
+  bgp:
+    asn: 4242421774
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-sidereal
   port: 22016
@@ -93,6 +162,12 @@ wg_peers:
   wg_pubkey: IsuXPz73qeUi+HfGlkkJnPxSqQKd5drx2dkjuHuuL1k=
   peer_v4: null
   peer_v6: fe80::2016
+  bgp:
+    asn: 4242422016
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-tildegreen
   port: 20953
@@ -100,6 +175,12 @@ wg_peers:
   wg_pubkey: VnkrpG4H2XwmpQvb+Wh4RVAa7r94juW4Eu4133qQnFQ=
   peer_v4: null
   peer_v6: fe80:0000:0000:0000:215d:4229:2c80:9b69
+  bgp:
+    asn: 4242420953
+    extended_next_hop: false
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
 
 - name: dn42-baragoon
   port: 21732
@@ -107,3 +188,9 @@ wg_peers:
   wg_pubkey: qP74cpd1BXZPnGijCHepPe7y8Kcwt3ULdpic9mzIRw0=
   peer_v4: 172.23.32.128
   peer_v6: fe80::a8fe:f872:9775:576
+  bgp:
+    asn: 4242421732
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
