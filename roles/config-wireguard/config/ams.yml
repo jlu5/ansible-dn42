@@ -5,6 +5,12 @@ wg_peers:
   wg_pubkey: "hwEFCjMf4xzaXzsmk4JdPllJjuxC3r7UPjL632A+L3M="
   peer_v4: "172.20.1.1"
   peer_v6: "fe80::119"
+  bgp:
+    asn: 4242420119
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42ams-aureus
   port: 50007
@@ -12,6 +18,12 @@ wg_peers:
   wg_pubkey: "ViMRAXJbz8rxqiXUljsx3gF0nLG9a612Qr6DllYLs3k="
   peer_v4: "10.127.8.185"
   peer_v6: "fd10:127:7::1"
+  bgp:
+    asn: 4201270007
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: "dn42ams-tomkap"
   port: 52092
@@ -19,6 +31,12 @@ wg_peers:
   wg_pubkey: "g4MJv6qMPwbffxNjUKmIa5Yhf5ZzRqjIMzMHCSiFQgs="
   peer_v4: 172.21.67.200/32
   peer_v6: "fe80::42:1080:1/128"
+  bgp:
+    asn: 4242422092
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42fra-welterd
   port: 54738
@@ -26,6 +44,12 @@ wg_peers:
   wg_pubkey: "I68Jv8818pk2NX0GC8ul18095/iZ66XCxJuo/brk/Go="
   peer_v4: null
   peer_v6: "fe80::fcde:3558"
+  bgp:
+    asn: 64738
+    extended_next_hop: false
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
 
 - name: dn42ams-mayli
   port: 51123
@@ -33,6 +57,12 @@ wg_peers:
   wg_pubkey: "e5X1ZlZUOVtTFeWi+d6cUqqNaXB0F2UHwbquAKU4z3I="
   peer_v4: "172.20.47.2"
   peer_v6: "fe80::1123"
+  bgp:
+    asn: 4242421123
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42ams-camelus
   port: 21592
@@ -40,6 +70,12 @@ wg_peers:
   wg_pubkey: "RcXm6OK+3+/sjXoivNTdjU3W5ctdohZ9GKYS25f05n8="
   peer_v4: "172.21.99.189"
   peer_v6: "fe80::1592"
+  bgp:
+    asn: 4242421592
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42dus-tsingya
   port: 23699
@@ -47,6 +83,12 @@ wg_peers:
   wg_pubkey: "xyhzHBpNDQlyeNG44xaU5zz86+Qeig8v6/PTutZqCRM="
   peer_v4: "172.22.155.9"
   peer_v6: "fe80::42:3699:9"
+  bgp:
+    asn: 4242423699
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42prg-wg
   port: 22331
@@ -60,6 +102,12 @@ wg_peers:
   wg_pubkey: "22Yg+PozQDDJUufe2POaV/ron0wZ6LVznpMgrRZDAXI="
   peer_v4: null
   peer_v6: "fe80::2331"
+  bgp:
+    asn: 4242422331
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-hujk
   peer_v4: null
@@ -67,6 +115,12 @@ wg_peers:
   port: 22717
   remote: nl.vm.whojk.com:23010
   wg_pubkey: cokP4jFBH0TlBD/m3sWCpc9nADLOhzM2+lcjAb3ynFc=
+  bgp:
+    asn: 4242422717
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-iedon
   peer_v4: 172.23.91.125
@@ -74,6 +128,12 @@ wg_peers:
   port: 22189
   remote: de-fra.dn42.kuu.moe:58384
   wg_pubkey: FHp0OR4UpAS8/Ra0FUNffTk18soUYCa6NcvZdOgxY0k=
+  bgp:
+    asn: 4242422189
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-huajitech
   peer_v4: null
@@ -81,6 +141,12 @@ wg_peers:
   port: 20458
   remote: eu-west1.nodes.huajinet.org:21080
   wg_pubkey: dDM/rtklvpKHeIOKeLGjfYBTl+jEuhlr7dMIOdXbliU=
+  bgp:
+    asn: 4242420458
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-spf
   peer_v4: 172.23.24.35
@@ -88,6 +154,12 @@ wg_peers:
   port: 21964
   remote: nl2.dn42.southparkfan.org:41080
   wg_pubkey: GsmcrWbFTcje5e+hmc0D6qonrkTpHksGZuk0cLBjDmY=
+  bgp:
+    asn: 4242421964
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-dingemans
   port: 20074
@@ -95,6 +167,12 @@ wg_peers:
   wg_pubkey: 8qZ8e5XG6G1OE3F/yGTB7iCIvV9IouHzpf+cSyPadxY=
   peer_v4: 172.23.89.146
   peer_v6: fe80::3:349a
+  bgp:
+    asn: 210074
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-ty3r0x
   port: 22596
@@ -102,6 +180,12 @@ wg_peers:
   wg_pubkey: sxIWYIrbJKKnUjnQ/SIbcUlhYsBGZcAujnT9Xn5mdFw=
   peer_v4: 169.254.42.5
   peer_v6: fe80::2596:5
+  bgp:
+    asn: 4242422596
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-techanit
   peer_v4: null
@@ -109,6 +193,12 @@ wg_peers:
   port: 22206
   remote: de1.dn42.est-it.de:13237
   wg_pubkey: QqcsQ6gRaK0ZxRskCxWoNeV2vd53/9IW/XfwjMMSjk8=
+  bgp:
+    asn: 4242422206
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-tmnet
   peer_v4: null
@@ -122,6 +212,12 @@ wg_peers:
     3530393166633661350a393130653439656665323463313565613830303734383461393639373762
     66613637636331366163363037363534393135626638376432623561333935393839
   wg_pubkey: CpZ6YCfbGVIW56OZGUlqAtMRyiR4b+vMZaoyF+rbX0Y=
+  bgp:
+    asn: 4242423089
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-pigeonhole
   peer_v4: 172.22.145.25
@@ -129,6 +225,12 @@ wg_peers:
   port: 22458
   remote: ipv4.nl-ams-a.nodes.pigeonhole.eu.org:21080
   wg_pubkey: QJnmWUnPS9wKKkLHHuWBYMGAI20MH9OEo28O4qr5DV8=
+  bgp:
+    asn: 4242422458
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-lare
   port: 23035
@@ -136,6 +238,14 @@ wg_peers:
   wg_pubkey: RJaU1kRfiOREvKihiDMFpNrEGpN8td3z+UvHxabOlR0=
   peer_v4: null
   peer_v6: fe80::3035:138
+  bgp:
+    asn: 4242423035
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    import_mode: peer_only
+    export_mode: prepend
 
 - name: dn42-ventilaar
   port: 22246
@@ -143,6 +253,12 @@ wg_peers:
   wg_pubkey: Z6WFjvsKIh4E92jxOYC07Dn5Q5Cc/pBFFpYlYZUr7j8=
   peer_v4: null
   peer_v6: fe80::2246
+  bgp:
+    asn: 4242422246
+    extended_next_hop: false
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
 
 - name: dn42-mirsal
   port: 22308
@@ -150,6 +266,12 @@ wg_peers:
   wg_pubkey: SbClSKsHH7k95zwmMhSL5ob76CUpZhIt5IYn8H5tEi8=
   peer_v4: null
   peer_v6: fe80::2308
+  bgp:
+    asn: 4242422308
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-sunnet
   port: 23088
@@ -158,6 +280,12 @@ wg_peers:
   peer_v4: null
   peer_v6: fe80::3088:204
   local_v6: fe80::abcd
+  bgp:
+    asn: 4242423088
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-colby
   port: 22558
@@ -165,6 +293,12 @@ wg_peers:
   wg_pubkey: aEnSuSUB3ZCrryPAIJxBtH6ZcNgCSeW+dMEceEbiflo=
   peer_v4: null
   peer_v6: fe80::2558:4
+  bgp:
+    asn: 4242422558
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-routedbits
   port: 20207
@@ -172,6 +306,12 @@ wg_peers:
   wg_pubkey: JjAHDWR1CgQd1HJNvURrqUECkN++0bzYxlm57VXjlyc=
   peer_v4: null
   peer_v6: fe80::207
+  bgp:
+    asn: 4242420207
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-alemal
   port: 21525
@@ -179,6 +319,12 @@ wg_peers:
   wg_pubkey: 1JwYl6O6Y94PiKe5dXcgwMYjDxRK3im8mqvbZIeMSDE=
   peer_v4: null
   peer_v6: fe80::1525
+  bgp:
+    asn: 4242421525
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-hexxnet
   port: 20225
@@ -186,6 +332,12 @@ wg_peers:
   wg_pubkey: zajOi1myXS0VZeYdNKcK3W1ROIcGSQtQ1Ie17ZrNxiI=
   peer_v4: 172.22.128.179
   peer_v6: fe80::0225:1080
+  bgp:
+    asn: 4242420225
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-baragoon
   port: 21732
@@ -193,6 +345,12 @@ wg_peers:
   wg_pubkey: OOv5anIPrk6Gsh8mbHy4mlw+t5Y5LfDBkd9C3KZenSs=
   peer_v4: 172.23.32.152
   peer_v6: fe80::38eb:f96a:720f:ae4e
+  bgp:
+    asn: 4242421732
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-iphizicmsk
   port: 22086
@@ -200,6 +358,12 @@ wg_peers:
   wg_pubkey: Ta4/IuXDtCv7hf+UzCa73qJYmCTwofJio8CAb1Qe73M=
   peer_v4: 172.21.107.17
   peer_v6: fe80::2086
+  bgp:
+    asn: 4242422086
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-m724
   port: 20129
@@ -207,3 +371,9 @@ wg_peers:
   wg_pubkey: iZfLBtF6BiQvdKXx4Yl02u+OL6ls35gSpWCRmB9q4lU=
   peer_v4: null
   peer_v6: fe80::129:1
+  bgp:
+    asn: 4242420129
+    extended_next_hop: false
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
