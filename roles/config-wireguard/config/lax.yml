@@ -6,6 +6,12 @@ wg_peers:
   peer_v4: "172.20.53.103"
   peer_v6: "fe80::ade0"
   local_v6: "fe80::ade1"
+  bgp:
+    asn: 4242423914
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: false
 
 - name: dn42-zhaofeng
   port: 51926
@@ -13,6 +19,12 @@ wg_peers:
   wg_pubkey: "7/7eZZGr8S5qR+bkKaQdQQBSopjcx2xLpOM7Edw4UF4="
   peer_v4: "172.20.16.3"
   peer_v6: "fe80::1926:1"
+  bgp:
+    asn: 4242421926
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-nicholascw
   port: 51288
@@ -20,12 +32,12 @@ wg_peers:
   wg_pubkey: "PGTK1pzAYtSGoaPYfpEBCwm3S3gYAra3WkSMtshFfW8="
   peer_v4: "172.20.233.131"
   peer_v6: "fe80::1288/64"
-
-- name: dn42-ykis
-  remove: true
-
-- name: dn42-mayli
-  remove: true
+  bgp:
+    asn: 4242421288
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42las-yura
   port: 22464
@@ -36,9 +48,12 @@ wg_peers:
   local_v4: 172.20.229.126
   local_v6: fe80::1080:126
   wg_privkey: /etc/wireguard/privatekey_las
-
-- name: dn42las-eastbnd
-  remove: true
+  bgp:
+    asn: 4242422464
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42las-miaoton
   port: 52688
@@ -55,15 +70,12 @@ wg_peers:
   local_v4: 172.20.229.126
   local_v6: fe80::1080:126
   wg_privkey: /etc/wireguard/privatekey_las
-
-- name: dn42las-hinata
-  remove: true
-
-- name: dn42las-lapisbl
-  remove: true
-
-- name: dn42-liki4
-  remove: true
+  bgp:
+    asn: 4242422688
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-iedon
   peer_v4: 172.23.91.114
@@ -74,9 +86,12 @@ wg_peers:
   local_v4: 172.20.229.126
   local_v6: fe80::1080:126
   wg_privkey: /etc/wireguard/privatekey_las
-
-- name: dn42-bsdrocker
-  remove: true
+  bgp:
+    asn: 4242422189
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-imlonghao
   port: 21888
@@ -87,9 +102,12 @@ wg_peers:
   local_v4: 172.20.229.126
   local_v6: fe80::1080:126
   wg_privkey: /etc/wireguard/privatekey_las
-
-- name: dn42-prevarinit
-  remove: true
+  bgp:
+    asn: 4242421888
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-potat0
   peer_v4: null
@@ -99,6 +117,12 @@ wg_peers:
   wg_pubkey: LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=
   local_v6: fe80::1080:126
   wg_privkey: /etc/wireguard/privatekey_las
+  bgp:
+    asn: 4242421816
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-akihi
   port: 20398
@@ -108,9 +132,12 @@ wg_peers:
   peer_v6: fe80::426f
   local_v6: fe80::1080:126
   wg_privkey: /etc/wireguard/privatekey_las
-
-- name: dn42-dgy
-  remove: true
+  bgp:
+    asn: 4242420398
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-hujk
   peer_v4: null
@@ -118,6 +145,12 @@ wg_peers:
   port: 22717
   remote: usw.vm.whojk.com:23005
   wg_pubkey: L4+efr10ZM0J80nDeO5mHw25nq9LC5UBrYtP8T1I9n4=
+  bgp:
+    asn: 4242422717
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-lantian
   peer_v4: 172.22.76.185
@@ -125,13 +158,12 @@ wg_peers:
   port: 22547
   remote: hostdare.lantian.pub:21080
   wg_pubkey: zyATu8FW392WFFNAz7ZH6+4TUutEYEooPPirwcoIiXo=
-
-- name: dn42-131
-  peer_v4: 172.21.109.34
-  peer_v6: fe80::1131
-  port: 21131
-  remote: phoenix.us.dn42.yuzu.im:20247
-  wg_pubkey: abDdEXgpaUNfEVPYLv1GTA+1TjkRbk5MNUi0fczYflw=
+  bgp:
+    asn: 4242422547
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-naivetomca
   port: 23309
@@ -139,6 +171,12 @@ wg_peers:
   wg_pubkey: "C9QViSndf1zga5nOoSoXXMLUWBJvEFiJDWSFCbU1Ynw="
   peer_v4: "172.23.163.161"
   peer_v6: "fe80::3309"
+  bgp:
+    asn: 4242423309
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-sunnet
   port: 53088
@@ -146,6 +184,12 @@ wg_peers:
   wg_pubkey: "QSAeFPotqFpF6fFe3CMrMjrpS5AL54AxWY2w1+Ot2Bo="
   peer_v4: "172.21.100.193"
   peer_v6: "fe80::3088:193/64"
+  bgp:
+    asn: 4242423088
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-lare
   port: 23035
@@ -153,6 +197,14 @@ wg_peers:
   wg_pubkey: oWMjftHTU+ll9PG26adiQaipQ8HC6kO4puXGakw38j8=
   peer_v4: null
   peer_v6: fe80::3035:139
+  bgp:
+    asn: 4242423035
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    import_mode: peer_only
+    export_mode: prepend
 
 - name: dn42-colby
   port: 22558
@@ -160,14 +212,12 @@ wg_peers:
   wg_pubkey: s3IVH2xJ3oRekd4x4Bc2H2pb0YZD11FT7Unxttc7GCU=
   peer_v4: null
   peer_v6: fe80::2558:7
-
-- name: dn42-tech9
-  port: 21588
-  remote: us-phx03.dn42.tech9.io:55968
-  wg_pubkey: bRkI8aGjwwgm1I6WeqsfL6jrxu72ifs3xSaTLCY22mw=
-  peer_v4: 172.23.220.178
-  peer_v6: fe80::1588
-  local_v6: fe80::100
+  bgp:
+    asn: 4242422558
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-moraxyc
   port: 23011
@@ -175,6 +225,12 @@ wg_peers:
   wg_pubkey: eB+NSqo26tqITGZhMdVkJ0aZ+ZANELjzstdF1MfzRRw=
   peer_v4: null
   peer_v6: fe80::3011:3
+  bgp:
+    asn: 4242423011
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-burble
   peer_v4: null
@@ -182,9 +238,12 @@ wg_peers:
   port: 22601
   remote: dn42-us-lax1.burble.com:21080
   wg_pubkey: MDjt4DyKGFumReT9pBJL6mPbDfQDfhPFyzHGDeoQVBQ=
-
-- name: dn42-jasonxu
-  remove: true
+  bgp:
+    asn: 4242422601
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-rubick
   port: 23451
@@ -192,6 +251,12 @@ wg_peers:
   wg_pubkey: 3RiYYcOW4AJeO5RRMezDHjDCOGKjUz/1lmdpVHcdSkc=
   peer_v4: null
   peer_v6: fe80::3451
+  bgp:
+    asn: 4242423451
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-moechs
   port: 21522
@@ -199,6 +264,12 @@ wg_peers:
   wg_pubkey: JtesX7JLjlYmZWbeMvK2Hx0Vpo5Fhr9VILlTcuonlWQ=
   peer_v4: null
   peer_v6: fe80::1522
+  bgp:
+    asn: 4242421522
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-sidereal
   port: 22016
@@ -206,6 +277,12 @@ wg_peers:
   wg_pubkey: 3hy0FIf64sxSVLY6/CwhtMfCmQEkG5hsyKxM/Dttvz0=
   peer_v4: null
   peer_v6: fe80::2016
+  bgp:
+    asn: 4242422016
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-goforcex
   port: 22719
@@ -213,3 +290,9 @@ wg_peers:
   wg_pubkey: 6DstUdlQmer+/xXEhuhnV4KYGqd/n6m2XxPGgk+RsBg=
   peer_v4: 172.20.165.67
   peer_v6: fe80::1719
+  bgp:
+    asn: 4242421719
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
