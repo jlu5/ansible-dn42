@@ -5,6 +5,12 @@ wg_peers:
   wg_pubkey: H6HdsuQsav9puKyo8SJaML0vPU/a2lLQjTRc7dmiqjs=
   peer_v4: null
   peer_v6: fe80::1816
+  bgp:
+    asn: 4242421816
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-hackclub
   port: 20392
@@ -12,3 +18,9 @@ wg_peers:
   wg_pubkey: BOI9J1hyFwlbjatNi9NUUMVnRXSOwBpb0f+Cgwl4p28=
   peer_v4: null
   peer_v6: fe80::392
+  bgp:
+    asn: 4242420392
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true

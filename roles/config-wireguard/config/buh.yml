@@ -1,11 +1,4 @@
 wg_peers:
-- name: dn42-northrend
-  port: 23192
-  remote: ro-proxy.nodes.northrend.net:51080
-  wg_pubkey: bI13xC/6XqFJv4qDhTuRW5QEeSfCMagy0ULzBASc7BM=
-  peer_v4: 172.20.222.224
-  peer_v6: fe80::3192
-
 - name: dn42-04dco
   port: 20304
   remote: gateway.04d.co:21080
@@ -13,20 +6,12 @@ wg_peers:
   peer_v4: null
   local_v4: 169.254.4.19/31
   peer_v6: fe80::304
-
-- name: dn42-ty3r0x
-  port: 22596
-  remote: hostmaze.chaox.ro:21080
-  wg_pubkey: UvJPPpYf1UHzf51qWyLPSGbNYFOUbdVshX9gag0+zU0=
-  peer_v4: 169.254.42.4
-  peer_v6: fe80::2596:4
-
-- name: dn42-pigeonhole
-  port: 22458
-  remote: tr-ist-a.nodes.pigeonhole.eu.org:21080
-  wg_pubkey: B44aObkEQL8MjOiYjKzj67sADaNGIFT8AV57X8JfTTQ=
-  peer_v4: null
-  peer_v6: fe80::2458
+  bgp:
+    asn: 4242420304
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-zehka
   port: 23467
@@ -34,9 +19,12 @@ wg_peers:
   wg_pubkey: k74poVrLvIt6kXAAr1lSqThrVilGch61RWmn8hAaPFw=
   peer_v4: 172.22.162.225
   peer_v6: fd47:514:dbc9::1
-
-- name: dn42-khoa
-  remove: true
+  bgp:
+    asn: 4242423467
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
 
 - name: dn42-eddie303
   port: 22328
@@ -44,3 +32,9 @@ wg_peers:
   wg_pubkey: 98AcEfdM9lMbHjxQjyxDJNOXcKfTLN1ZfztaNXGW6mU=
   peer_v4: null
   peer_v6: fe80::2328:1
+  bgp:
+    asn: 4242422328
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
