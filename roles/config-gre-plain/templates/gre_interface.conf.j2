@@ -24,7 +24,7 @@ iface {{ ifname }} inet tunnel
     {# post-up ip link set multicast on dev {{ ifname }} #}
 {% if peer_info.get('local_v6') %}
     {# TODO: add pointopoint support?? #}
-    post-up ip addr add {{ peer_info.local_v6 }}/{{ peer_info.netmask_v6 | default(128) }} dev {{ ifname }}
+    post-up ip addr add {{ peer_info.local_v6 }} dev {{ ifname }}
 {% endif %}
 {% if dn42_ratelimit and ifname.startswith('dn42') %}
     post-up tc qdisc add dev {{ ifname }} {{ dn42_ratelimit_tc_args }}
