@@ -1,9 +1,4 @@
 gre_peers:
-- name: dn42-rhinelab
-  remote: "103.46.184.68"
-  local_v4: "172.20.232.197"
-  netmask: 30
-
 - name: dn42-licson
   remote: !vault |
     $ANSIBLE_VAULT;1.1;AES256
@@ -14,3 +9,10 @@ gre_peers:
     3331
   local_v4: 10.127.14.17
   netmask: 30
+  bgp:
+    asn: 134098
+    extended_next_hop: false
+    ipv4: true
+    ipv6: false
+    mp_bgp: false
+    neighbor: 10.127.14.18
