@@ -84,13 +84,28 @@
     state: directory
     mode: '0750'
 
-- name: Write peer settings
+- name: Check whether peer settings directory exists
+  delegate_to: localhost
+  stat:
+    path: "{{ peers_config_dir }}"
+  register: peers_config_dir_stat
+  become: false
+
+- name: Write manually configured BIRD peers
   assemble:
     src: "{{ peers_config_dir }}"
     dest: /etc/bird/local_dn42peers.conf
     group: "bird"
     mode: '0644'
     remote_src: no
-  ignore_errors: true  # The peers list may be empty
+  when: peers_config_dir_stat.stat.exists
+  notify:
+    - Reconfigure bird
+
+- name: Remove manually configured BIRD peers
+  file:
+    path: /etc/bird/local_dn42peers.conf
+    state: absent
+  when: not peers_config_dir_stat.stat.exists
   notify:
     - Reconfigure bird
