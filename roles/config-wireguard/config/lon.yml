@@ -207,3 +207,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: false
+
+- name: dn42-fmepnet
+  port: 23703
+  remote: uk-lon0.fmepnet.org:51828
+  wg_pubkey: Z0o4rgqUTA5OT6BjhJBt4ClTb4rz0GsC5jvAfn+s53A=
+  peer_v4: 172.20.159.237
+  peer_v6: fe80::3703:237
+  bgp:
+    asn: 4242423703
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
