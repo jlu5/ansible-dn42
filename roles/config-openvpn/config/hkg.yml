@@ -8,3 +8,7 @@ ovpn_peers:
   ovpn_cipher: aes-256-cbc
   ovpn_options:
   - comp-lzo
+  bgp:
+    asn: 4242422244
+    ipv4: true
+    ipv6: false
