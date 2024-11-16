@@ -12,6 +12,7 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: false
+    export_mode: prepend
 
 - name: dn42-koala
   port: 51488
