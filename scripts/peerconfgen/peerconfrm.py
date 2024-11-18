@@ -48,10 +48,8 @@ def main():
         yaml.dump(wg_config, f)
         f.truncate()
 
-    try:
+    if os.path.exists(bird_config_path):
         os.remove(bird_config_path)
-    except OSError as exc:
-        print(f'Could not delete {bird_config_path}: {exc}')
 
 if __name__ == '__main__':
     main()

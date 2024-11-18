@@ -137,10 +137,6 @@ def get_config_paths(node, peername, replace=False, create=False):
         with open(wg_config_path, 'w', encoding='utf8') as _:
             pass  # write an empty file
 
-    if not os.path.isdir(bird_config_dir):
-        assert create
-        os.makedirs(bird_config_dir)
-
     bird_config_path = bird_config_dir / f'{peername}.conf'
     if os.path.exists(bird_config_path):
         if replace:
