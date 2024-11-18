@@ -6,9 +6,11 @@
 
 To run this script you need the `requests` and `ruamel.yaml` libraries (`pip install requests ruamel.yaml`)
 
-## Adding/updating peerings
+### Adding/updating peerings
 
-**Note that for peer name, you should only write your AS name**, not the router name (e.g. rtr1). e.g. for AS4242421080 a peer name of "highdef" would be preferable.
+For example, if you were AS4242421080 and wanted to peer with my "sjc" node, you would run something like: `peerconfgen.py sjc highdef` and interactively fill in the prompts.
+
+For peer name section, **you should only include your AS name**, and not any router names specific to your network (e.g. rtr1). Please only use names containing lowercase letters or numbers.
 
 ```
 $ peerconfgen.py --help
@@ -29,7 +31,7 @@ options:
 
 The `--replace` option allows you to overwrite existing configurations - otherwise doing so is an error.
 
-## Removing peerings
+### Removing peerings
 
 ```
 usage: peerconfrm.py [-h] node peername
