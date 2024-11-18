@@ -220,3 +220,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: false
+
+- name: dn42-lefay
+  port: 21495
+  remote: 2001:ba8:4015:1::1:11214
+  wg_pubkey: bBuSGihjkjkay6pt1bFacZx2OBmxt3KBQdYLXnDtJEY=
+  peer_v4: null
+  peer_v6: fe80::1
+  bgp:
+    asn: 4242421495
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
