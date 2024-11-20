@@ -4,3 +4,4 @@ __pycache__
 
 /TMP-*.yml
 tmp/
+history.db
