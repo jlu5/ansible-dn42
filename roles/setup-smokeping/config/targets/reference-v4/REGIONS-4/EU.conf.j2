@@ -131,6 +131,11 @@ menu = [FR] Vultr
 title = [FR] Vultr - Paris, France [par-fr-ping.vultr.com]
 host = par-fr-ping.vultr.com
 
+++ chunkserve
+menu = [NL] Chunkserve
+title = [NL] Chunkserve @ backbone.direct - Amsterdam, Netherlands [191.96.11.3]
+host = 191.96.11.3
+
 ++ clouvider-ams
 menu = [NL] Clouvider
 title = [NL] Clouvider - Amsterdam, Netherlands [nl.mirrors.clouvider.net]
@@ -141,6 +146,11 @@ host = nl.mirrors.clouvider.net
 menu = [NL] ColoCrossing
 title = [NL] ColoCrossing - Amsterdam, Netherlands [192.210.175.1]
 host = 192.210.175.1
+
+++ server-factory-nl
+menu = [NL] heartbeat IT
+title = [NL] heartbeat IT (server-factory) - Eygelshoven, Netherlands [lg.nl.heartbeat-it.com]
+host = lg.nl.heartbeat-it.com
 
 ++ hosthatch-ams
 menu = [NL] HostHatch
@@ -188,10 +198,12 @@ menu = [NL] Scaleway
 title = [NL] Scaleway / Online.net - Amsterdam, Netherlands [ping-ams1.online.net]
 host = ping-ams1.online.net
 
-++ server-factory-nl
-menu = [NL] server-factory
-title = [NL] server-factory.com - Eygelshoven, Netherlands [lg.nl.server-factory.com]
-host = lg.nl.server-factory.com
+{% if not smokeping_lite %}
+++ softshellweb-nl
+menu = [NL] SoftShellWeb
+title = [NL] SoftShellWeb @ REBA Communications - Amsterdam, Netherlands [ams-test.softshellhosting.com]
+host = ams-test.softshellhosting.com
+{% endif %}
 
 ++ ultravps-ams
 menu = [NL] UltraVPS
@@ -289,6 +301,11 @@ host = dl.fra.melbicom.net
 menu = [DE] Misaka
 title = [DE] Misaka Network - Berlin, Germany [de-ber02.speed.misaka.one]
 host = de-ber02.speed.misaka.one
+
+++ nohavps-fra
+menu = [DE] NohaVPS
+title = [DE] NohaVPS - Frankfurt, Germany [172.111.148.2]
+host = 172.111.148.2
 {% endif %}
 
 ++ netcup-nbg
