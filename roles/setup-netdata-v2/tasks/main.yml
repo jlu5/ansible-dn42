@@ -2,21 +2,8 @@
   apt:
     package:
     - netdata
-    # Required for ansible htpasswd integration
-    - python3-passlib
     state: latest
     update_cache: true
-
-- name: Setup htpasswd for netdata
-  community.general.htpasswd:
-    path: /etc/nginx/htpasswd-netdata
-    name: "{{ item.user }}"
-    password: "{{ item.pass }}"
-    state: "{{ item.state | default('present') }}"
-    owner: root
-    group: www-data
-    mode: 0640
-  loop: "{{ netdata_logins }}"
 
 - name: Push netdata config
   template:

@@ -1,7 +1,7 @@
 # This configuration assumes the following:
 # - Tunnels to other networks start with "dn42"
 # - Tunnels to other nodes in the same network start with "igp"
-# - Tunnels to plain clients start with "cl"
+# - Tunnels to simple clients start with "cl"
 
 # Restrict traffic from our network to IGP & dummy interfaces
 -A INPUT  -s {{ my_cidrs }} -i dn42+ -j REJECT
@@ -52,20 +52,22 @@
 -A INPUT -p gre -j ACCEPT
 {%- endif %}
 
-{% if iftype == 6 -%}
-## Babel (internal only)
--A INPUT -p udp --dport 6696 -i igp+ -s fe80::/10 -j ACCEPT
-{%- endif %}
-
 ## OSPF (internal only)
 -A INPUT -p ospf -i igp+ -j ACCEPT
 
 # looking glass proxy (internal only)
 -A INPUT -p tcp --dport 5000 -s {{ my_cidrs }} -j ACCEPT
 
-{% if netdata_proxy_port | default(0) %}
+{% if netdata_proxy_port | default(0) -%}
+{% set _netdata_v4 = netdata_ips | default([]) | ansible.utils.ipv4 -%}
+{% set _netdata_v6 = netdata_ips | default([]) | ansible.utils.ipv6 -%}
+{% if _netdata_v4 and aftype == 4 %}
 # netdata
--A INPUT -p tcp --dport {{ netdata_proxy_port }} -s {{ my_cidrs }} -j ACCEPT
+-A INPUT -p tcp --dport {{ netdata_proxy_port }} -s {{ ','.join(_netdata_v4) }} -j ACCEPT
+{% elif _netdata_v6 and aftype == 6 %}
+# netdata
+-A INPUT -p tcp --dport {{ netdata_proxy_port }} -s {{ ','.join(_netdata_v6) }} -j ACCEPT
+{% endif %}
 {% endif %}
 
 # Anycast DNS within dn42
@@ -75,8 +77,13 @@
 -A INPUT -p tcp --dport 53 -i igp+ -j ACCEPT
 -A INPUT -p udp --dport 53 -i cl+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i cl+ -j ACCEPT
+# Also allow local bridges for VMs and containers
+-A INPUT -p udp --dport 53 -i lxcbr+ -j ACCEPT
+-A INPUT -p tcp --dport 53 -i lxcbr+ -j ACCEPT
+-A INPUT -p udp --dport 53 -i vmbr+ -j ACCEPT
+-A INPUT -p tcp --dport 53 -i vmbr+ -j ACCEPT
 
-{% if iftype == 6 -%}
+{% if aftype == 6 -%}
 {% set _allowed_ips = 'fd00::/8,ff00::/8,fe80::/64' %}
 {% else %}
 {% set _allowed_ips = '172.20.0.0/14,10.0.0.0/8,172.31.0.0/16,169.254.0.0/16' %}
