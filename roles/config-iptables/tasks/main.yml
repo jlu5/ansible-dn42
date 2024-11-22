@@ -24,14 +24,14 @@
     iptables_rules: "{{ lookup('template', 'templates/rules.j2') }}"
   vars:
     my_cidrs: "{{ ownnets4 | join(',') }}"
-    iftype: 4
+    aftype: 4
 
 - name: "Read iptables rules template"
   set_fact:
     ip6tables_rules: "{{ lookup('template', 'templates/rules.j2') }}"
   vars:
     my_cidrs: "{{ ownnets6 | join(',') }}"
-    iftype: 6
+    aftype: 6
 
 - name: "Create iptables rules folder"
   file:
