@@ -213,3 +213,15 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-yuchow
+  remote: portal.405218.eu.org:60108
+  wg_pubkey: BHloE4+0aYsFeKzcAD47szCTIdCdq9EsXgjAOfarxwM=
+  peer_v4: null
+  peer_v6: fe80::abcd
+  bgp:
+    asn: 4242421260
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
