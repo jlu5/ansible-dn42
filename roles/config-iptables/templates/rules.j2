@@ -77,11 +77,14 @@
 -A INPUT -p tcp --dport 53 -i igp+ -j ACCEPT
 -A INPUT -p udp --dport 53 -i cl+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i cl+ -j ACCEPT
-# Also allow local bridges for VMs and containers
--A INPUT -p udp --dport 53 -i lxcbr+ -j ACCEPT
--A INPUT -p tcp --dport 53 -i lxcbr+ -j ACCEPT
--A INPUT -p udp --dport 53 -i vmbr+ -j ACCEPT
--A INPUT -p tcp --dport 53 -i vmbr+ -j ACCEPT
+
+# Local bridges for VMs and containers
+{% for stub_ifname in stub_ifnames_append | default([]) %}
+-A INPUT -p udp --dport 53 -i {{ stub_ifname }} -s {{ my_cidrs }} -j ACCEPT
+-A INPUT -p tcp --dport 53 -i {{ stub_ifname }} -s {{ my_cidrs }} -j ACCEPT
+-A FORWARD -i {{ stub_ifname }} -s {{ my_cidrs }} -j ACCEPT
+-A FORWARD -o {{ stub_ifname }} -d {{ my_cidrs }} -j ACCEPT
+{% endfor %}
 
 {% if aftype == 6 -%}
 {% set _allowed_ips = 'fd00::/8,ff00::/8,fe80::/64' %}
