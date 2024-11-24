@@ -49,7 +49,6 @@
     dest: "/etc/systemd/system/webtrace.socket"
   become: yes
   notify: Restart webtrace
-  when: webtrace_auto_socket | default(True)
 
 - name: Enable webtrace service
   ansible.builtin.systemd:
@@ -60,9 +59,7 @@
   include_role:
     name: apps_nginx
   vars:
-    letsencrypt_domains:
-      - "{{ public_host | default(ansible_host) }}"
+    letsencrypt_domains: "{{ [public_host | default(ansible_host)] if (webtrace_https | default(true)) else [] }}"
     nginx_site:
       src: webtrace-nginx.conf.j2
       dst: webtrace-nginx.conf
-  when: webtrace_auto_socket | default(True)

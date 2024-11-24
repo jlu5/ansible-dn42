@@ -4,14 +4,18 @@ upstream webtrace-backend {
 }
 
 {% set _webtrace_server_name = public_host | default(ansible_host) %}
-# HTTPS listener (clearnet)
+{% set _webtrace_use_https = webtrace_https | default(true) %}
 server {
+{% if _webtrace_use_https %}
     listen 443 ssl;
     listen [::]:443 ssl;
-
     ssl_trusted_certificate /etc/letsencrypt/live/{{ _webtrace_server_name }}/chain.pem;
     ssl_certificate /etc/letsencrypt/live/{{ _webtrace_server_name }}/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/{{ _webtrace_server_name }}/privkey.pem;
+{% else %}
+    listen 80;
+    listen [::]:80;
+{% endif %}
 
     server_name {{ _webtrace_server_name }};
 
@@ -19,7 +23,6 @@ server {
         root /var/www/html;
     }
 
-{% if webtrace_auto_socket | default(True) %}
     location /webtrace/ {
         proxy_pass http://webtrace-backend/;
         # Important since we use HTTP streaming!
@@ -27,5 +30,15 @@ server {
         access_log /var/log/nginx/webtrace-access.log;
         error_log /var/log/nginx/webtrace-error.log;
     }
-{% endif %}
 }
+
+{% if _webtrace_use_https %}
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name {{ _webtrace_server_name }};
+
+    return 302 https://$host$request_uri;
+}
+{% endif %}

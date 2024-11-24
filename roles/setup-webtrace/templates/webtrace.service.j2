@@ -1,9 +1,7 @@
 {# From https://docs.gunicorn.org/en/stable/deploy.html#systemd #}
 [Unit]
 Description=webtrace gunicorn
-{% if webtrace_auto_socket | default(True) %}
 Requires=webtrace.socket
-{% endif %}
 After=network.target
 
 [Service]
