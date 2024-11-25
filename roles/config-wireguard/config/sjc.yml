@@ -226,3 +226,276 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+### peers moved from lax.peer
+- name: dn42-kioubit
+  port: 53914
+  remote: "us3.g-load.eu:21080"
+  wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
+  peer_v4: "172.20.53.103"
+  peer_v6: "fe80::ade0"
+  local_v4: 172.20.229.122
+  local_v6: "fe80::ade1"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242423914
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: false
+
+- name: dn42-zhaofeng
+  port: 51926
+  remote: "[2a06:e881:5502::1]:21080"
+  wg_pubkey: "7/7eZZGr8S5qR+bkKaQdQQBSopjcx2xLpOM7Edw4UF4="
+  peer_v4: "172.20.16.3"
+  peer_v6: "fe80::1926:1"
+  local_v4: 172.20.229.122
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242421926
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-nicholascw
+  port: 51288
+  remote: "lax2.sc00.org:21080"
+  wg_pubkey: "PGTK1pzAYtSGoaPYfpEBCwm3S3gYAra3WkSMtshFfW8="
+  peer_v4: "172.20.233.131"
+  peer_v6: "fe80::1288/64"
+  local_v4: 172.20.229.122
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242421288
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-hujk
+  peer_v4: null
+  peer_v6: fe80::104:50:2030:18
+  port: 22717
+  remote: usw.vm.whojk.com:23005
+  wg_pubkey: L4+efr10ZM0J80nDeO5mHw25nq9LC5UBrYtP8T1I9n4=
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242422717
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-lantian
+  peer_v4: 172.22.76.185
+  peer_v6: fe80::2547
+  port: 22547
+  remote: hostdare.lantian.pub:21080
+  wg_pubkey: zyATu8FW392WFFNAz7ZH6+4TUutEYEooPPirwcoIiXo=
+  local_v4: 172.20.229.122
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242422547
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-naivetomca
+  port: 23309
+  remote: "lax.tsinghuamakerxian.cn:21080"
+  wg_pubkey: "C9QViSndf1zga5nOoSoXXMLUWBJvEFiJDWSFCbU1Ynw="
+  peer_v4: "172.23.163.161"
+  peer_v6: "fe80::3309"
+  local_v4: 172.20.229.122
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242423309
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-colby
+  port: 22558
+  remote: us-lax1.dn42.derix.au:21080
+  wg_pubkey: s3IVH2xJ3oRekd4x4Bc2H2pb0YZD11FT7Unxttc7GCU=
+  peer_v4: null
+  peer_v6: fe80::2558:7
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242422558
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-burble
+  peer_v4: null
+  peer_v6: fe80::42:2601:2a:1
+  port: 22601
+  remote: dn42-us-lax1.burble.com:21080
+  wg_pubkey: MDjt4DyKGFumReT9pBJL6mPbDfQDfhPFyzHGDeoQVBQ=
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242422601
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-rubick
+  port: 23451
+  remote: v4-la.zub.pub:21080
+  wg_pubkey: 3RiYYcOW4AJeO5RRMezDHjDCOGKjUz/1lmdpVHcdSkc=
+  peer_v4: null
+  peer_v6: fe80::3451
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242423451
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-moechs
+  port: 21522
+  remote: us01.myftp.org:23007
+  wg_pubkey: JtesX7JLjlYmZWbeMvK2Hx0Vpo5Fhr9VILlTcuonlWQ=
+  peer_v4: null
+  peer_v6: fe80::1522
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242421522
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-sidereal
+  port: 22016
+  remote: phx1.dn42.sidereal.ca:21080
+  wg_pubkey: 3hy0FIf64sxSVLY6/CwhtMfCmQEkG5hsyKxM/Dttvz0=
+  peer_v4: null
+  peer_v6: fe80::2016
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242422016
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-goforcex
+  port: 22719
+  remote: us1.goforcex.top:21080
+  wg_pubkey: 6DstUdlQmer+/xXEhuhnV4KYGqd/n6m2XxPGgk+RsBg=
+  peer_v4: 172.20.165.67
+  peer_v6: fe80::1719
+  local_v6: "fe80::122"
+  wg_privkey: /etc/wireguard/privatekey_lax
+  bgp:
+    asn: 4242421719
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+### end peers moved from lax.peer
+
+### peers moved from las.peer
+- name: dn42las-yura
+  port: 22464
+  remote: "las.dneo.moeternet.com:21080"
+  wg_pubkey: "viR4CoaJTBHROo/Bgbb27hQ2ttr8AbByGY/yOz3D3GY="
+  peer_v4: null
+  peer_v6: "fe80::2464"
+  local_v4: 172.20.229.126
+  local_v6: fe80::1080:126
+  wg_privkey: /etc/wireguard/privatekey_las
+  bgp:
+    asn: 4242422464
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42las-miaoton
+  port: 52688
+  remote: !vault |
+    $ANSIBLE_VAULT;1.1;AES256
+    65353164386130616635343036353964333039616562643134323033386531303863366162653430
+    6162366561623639366638343332633834663831303664300a346331663463336634623239646534
+    37316630396236313463376665653262663439396238363261343432346438353938373039356266
+    3161636463343238610a643039313766656431363834356533316135326334353234356237373662
+    37646332636334643139663361633766363861636138373139373135343830343863
+  wg_pubkey: "vfrrbtKAO5438daHrTD0SSS8V6yk78S/XW7DeFrYLXA="
+  peer_v4: "172.23.6.6"
+  peer_v6: "fe80::2688/64"
+  local_v4: 172.20.229.126
+  local_v6: fe80::1080:126
+  wg_privkey: /etc/wireguard/privatekey_las
+  bgp:
+    asn: 4242422688
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-imlonghao
+  port: 21888
+  remote: us2.dn42.ni.sb:21080
+  wg_pubkey: lAs/L2XLEZALnTOJ6ZhHaKgYY+rzqRgPnmlC4v/SfQw=
+  peer_v4: 172.22.68.0
+  peer_v6: fe80::1888
+  local_v4: 172.20.229.126
+  local_v6: fe80::1080:126
+  wg_privkey: /etc/wireguard/privatekey_las
+  bgp:
+    asn: 4242421888
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-potat0
+  peer_v4: null
+  peer_v6: fe80::1816
+  port: 21816
+  remote: las.node.potat0.cc:21080
+  wg_pubkey: LUwqKS6QrCPv510Pwt1eAIiHACYDsbMjrkrbGTJfviU=
+  local_v6: fe80::1080:126
+  wg_privkey: /etc/wireguard/privatekey_las
+  bgp:
+    asn: 4242421816
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-akihi
+  port: 20398
+  remote: null
+  wg_pubkey: oAPy0U2qVuSR8PyPLmVLEgWLBKrOq4kcLNLAOVZL10M=
+  peer_v4: null
+  peer_v6: fe80::426f
+  local_v6: fe80::1080:126
+  wg_privkey: /etc/wireguard/privatekey_las
+  bgp:
+    asn: 4242420398
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+### end peers moved from las.peer
