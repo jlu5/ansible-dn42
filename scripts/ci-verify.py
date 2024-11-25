@@ -88,6 +88,9 @@ def _ci_verify_wg_peer(wg_config_path, peer_config) -> str | None:
         return None
 
     # Verify port numbers
+    if 'port' not in peer_config:
+        raise ValidationError(
+            f'Peer {ifname!r} has missing "port" option', wg_config_path)
     if listen_port := peer_config.get('port'):
         if ext_peer and not is_allowed_port(listen_port):
             raise ValidationError(
@@ -244,11 +247,15 @@ def ci_verify(root):
     for wg_config_path in wg_config_dir.glob('*.yml'):
         print(f'Checking {wg_config_path}')
         wg_config = yaml_load(wg_config_path)
+        seen_peers = set()
         for peer_config in wg_config['wg_peers']:
             external_peer_name = _ci_verify_wg_peer(wg_config_path, peer_config)
 
             # For external peers, verify that matching BIRD config exists
             if external_peer_name:
+                if external_peer_name in seen_peers:
+                    raise ValidationError(f'Duplicate peer configuration for {external_peer_name!r}', wg_config_path)
+                seen_peers.add(external_peer_name)
                 rtr_name = wg_config_path.stem
                 bird_config = _ci_verify_bird(root, rtr_name, external_peer_name, peer_config)
                 bgp_auto_config = _ci_verify_bgp_auto_config(peer_config, wg_config_path)
