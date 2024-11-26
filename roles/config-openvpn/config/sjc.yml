@@ -1,3 +1,0 @@
-ovpn_peers:
-- name: dn42-scoopta
-  remove: true

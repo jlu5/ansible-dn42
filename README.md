@@ -15,7 +15,6 @@ Here I use Ansible to configure the following components:
 ### Peering tunnels
 
 - Wireguard via ifupdown: [roles/config-wireguard/](roles/config-wireguard/)
-- OpenVPN (2.5.x): [roles/config-openvpn/](roles/config-openvpn/)
 - GRE (plain) via ifupdown: [roles/config-gre-plain/](roles/config-gre-plain/)
 
 ### Services and daemons

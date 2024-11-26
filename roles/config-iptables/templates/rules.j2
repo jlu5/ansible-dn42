@@ -38,15 +38,6 @@
 {{ _maybe_forward_rule(wg_peer) }}
 {%- endfor %}
 
-## OpenVPN peers
-{% for ovpn_peer in ovpn_peers|default([]) -%}
-{%- if ovpn_peer.get('port') -%}
-# {{ ovpn_peer.name }}
--A INPUT -p {{ 'tcp' if ovpn_peer.get('proto', 'udp').startswith('tcp') else 'udp' }} --dport {{ ovpn_peer['port'] }} -i {{ ansible_default_ipv4.interface }} -j ACCEPT
-{% endif -%}
-{{ _maybe_forward_rule(ovpn_peer) }}
-{%- endfor %}
-
 {% if gre_peers | default([]) | length > 0 -%}
 ## GRE peers
 -A INPUT -p gre -j ACCEPT

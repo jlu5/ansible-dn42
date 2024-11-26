@@ -65,12 +65,6 @@ protocol bgp AS{{ peer_config.bgp.asn }}_v6 from dnpeers {
 {% endif %}
 {%- endfor -%}
 
-{%- for ovpn_peer in ovpn_peers|default([]) -%}
-{% if not ovpn_peer.get('remove') and ovpn_peer.get('bgp') %}
-{{ dn42_peer(ovpn_peer, 33) }}
-{% endif %}
-{%- endfor -%}
-
 {% for gre_peer in gre_peers|default([]) -%}
 {% if not gre_peer.get('remove') and gre_peer.get('bgp') %}
 {{ dn42_peer(gre_peer, 31) }}

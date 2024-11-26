@@ -38,7 +38,7 @@
     <span class="info-success">(Clearnet dual-stack)</span>
 {% endif %}
     </li>
-    <li><strong>WireGuard / OpenVPN port</strong>: 20000 + last 4 digits of your ASN</li>
+    <li><strong>WireGuard port</strong>: 20000 + last 4 digits of your ASN</li>
     <li><strong>WireGuard pubkey</strong>: {{ serverdata.wg_pubkey }}</li>
     <li><strong>Tunneled IPv4 address</strong>: {{ serverdata.ownip }}</li>
     <li><strong>Tunneled IPv6 address</strong>: {{ serverdata.link_local_ip6 }} (link-local) OR {{ serverdata.ownip6 }}</li>

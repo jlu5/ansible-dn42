@@ -13,7 +13,6 @@
     - tcpdump
 
     - bird2
-    - openvpn
     - wireguard
     # needed to use ansible become on an unprivileged user: https://docs.ansible.com/ansible/latest/user_guide/become.html#risks-of-becoming-an-unprivileged-user
     - acl
