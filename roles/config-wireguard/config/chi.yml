@@ -192,3 +192,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-scoopta
+  port: 21197
+  remote: ninym.uwu.academy:11080
+  wg_pubkey: vKYOjO3D/liyslRdvKHEwfUnAzMR19OM5gku7eKrJDc=
+  peer_v4: null
+  peer_v6: fe80::1197
+  bgp:
+    asn: 4242421197
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true

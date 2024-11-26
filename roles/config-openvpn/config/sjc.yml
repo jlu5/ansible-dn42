@@ -1,18 +1,3 @@
 ovpn_peers:
 - name: dn42-scoopta
-  port: 21197
-  remote: yui.uwu.academy:11080
-  proto: udp6
-  peer_v4: null
-  peer_v6: fe80::1197
-  ovpn_cipher: aes-256-cbc
-  ovpn_options: []
-  bgp:
-    asn: 4242421197
-    extended_next_hop: false
-    ipv4: false
-    ipv6: true
-    mp_bgp: false
-    opts:
-    # needed because stable-privacy gets turned on for OpenVPN interfaces
-    - 'source address {{ link_local_ip6 }};'
+  remove: true
