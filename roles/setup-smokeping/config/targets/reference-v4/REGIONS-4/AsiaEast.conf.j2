@@ -125,6 +125,11 @@ menu = [KR] Vultr
 title = [KR] Vultr - Seoul, Korea [sel-kor-ping.vultr.com]
 host = sel-kor-ping.vultr.com
 
+++ akile-hkl
+menu = [HK] AkileCloud (HKL)
+title = [HK] AkileCloud (HKL) - Hong Kong, China [lg.hkl.akile.io]
+host = lg.hkl.akile.io
+
 ++ akile-hks
 menu = [HK] AkileCloud (HKS)
 title = [HK] AkileCloud (HKS) - Hong Kong, China [lg.hks.akile.io]
@@ -135,6 +140,13 @@ host = lg.hks.akile.io
 menu = [HK] Aliyun
 title = [HK] Aliyun / Alibaba Cloud - Hong Kong, China [oss-cn-hongkong.aliyuncs.com]
 host = oss-cn-hongkong.aliyuncs.com
+
+{% if not smokeping_lite %}
+++ ctcsci
+menu = [HK] CTCSCI
+title = [HK] CTCSCI - Hong Kong, China [speedtest.hk210.hkg.cn.ctcsci.com]
+host = speedtet.hk210.hkg.cn.ctcsci.com
+{% endif %}
 
 ++ hosthatch-hk
 menu = [HK] HostHatch
@@ -156,7 +168,6 @@ host = mirror.hk.leaseweb.net
 menu = [HK] Misaka
 title = [HK] Misaka Network - Hong Kong, China [45.11.104.140]
 host = 45.11.104.140
-{% endif %}
 
 ++ salmoncloud-hk
 menu = [HK] SalmonCloud
@@ -168,7 +179,6 @@ menu = [HK] SpikeTel
 title = [HK] SpikeTel - Hong Kong, Hong Kong [lg-hk1.01.spiketelecom.com]
 host = lg-hk1.01.spiketelecom.com
 
-{% if not smokeping_lite %}
 ++ starrydns-hk
 menu = [HK] StarryDNS
 title = [HK] StarryDNS - Hong Kong, China [hk4.lg.starrydns.com]
