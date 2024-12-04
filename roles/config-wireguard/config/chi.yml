@@ -183,7 +183,7 @@ wg_peers:
 - name: dn42-9pfs
   port: 22002
   remote: null
-  wg_pubkey: k0OpPUTdvPt5AKpqLC8AWC3NMaSmZtuEfY589rpYTRY=
+  wg_pubkey: /ejtL+zL6PGhwczGDXiBL0PoVxLk+K3YMAArwc+tcyI=
   peer_v4: null
   peer_v6: fe80::2002:2
   bgp:
