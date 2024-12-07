@@ -1,90 +1,90 @@
-Amsterdam, NL: !!python/tuple
+Amsterdam, NL:
 - 52.3675734
 - 4.9041389
-Atlanta, GA, US: !!python/tuple
+Atlanta, GA, US:
 - 33.7489954
 - -84.3879824
-Beauharnois, QC, CA: !!python/tuple
+Beauharnois, QC, CA:
 - 45.3150817
 - -73.8779033
-Bucharest, RO: !!python/tuple
+Bucharest, RO:
 - 44.4267674
 - 26.1025384
-Chicago, IL, US: !!python/tuple
+Chicago, IL, US:
 - 41.8781136
 - -87.6297982
-Dallas, TX, US: !!python/tuple
+Dallas, TX, US:
 - 32.7766642
 - -96.79698789999999
-Frankfurt, DE: !!python/tuple
+Frankfurt, DE:
 - 50.1109221
 - 8.6821267
-Fremont, CA, US: !!python/tuple
+Fremont, CA, US:
 - 37.5485396
 - -121.988583
-Hong Kong, HK: !!python/tuple
+Hong Kong, HK:
 - 22.3193039
 - 114.1693611
-Kansas City, MO, US: !!python/tuple
+Kansas City, MO, US:
 - 39.0997265
 - -94.5785667
-Las Vegas, NV, US: !!python/tuple
+Las Vegas, NV, US:
 - 36.1699412
 - -115.1398296
-Lelystad, NL: !!python/tuple
+Lelystad, NL:
 - 52.51853699999999
 - 5.471422
-London, UK: !!python/tuple
+London, UK:
 - 51.5073509
 - -0.1277583
-Los Angeles, CA, US: !!python/tuple
+Los Angeles, CA, US:
 - 34.0522342
 - -118.2436849
-Madrid, ES: !!python/tuple
+Madrid, ES:
 - 40.4167754
 - -3.7037902
-Milan, IT: !!python/tuple
+Milan, IT:
 - 45.4642035
 - 9.189982
-Montreal, QC, CA: !!python/tuple
+Montreal, QC, CA:
 - 45.5016889
 - -73.567256
-New York City, NY, US: !!python/tuple
+New York City, NY, US:
 - 40.7127753
 - -74.0059728
-Nuremberg, DE: !!python/tuple
+Nuremberg, DE:
 - 49.4521018
 - 11.0766654
-Paris, FR: !!python/tuple
+Paris, FR:
 - 48.856614
 - 2.3522219
-San Jose, CA, US: !!python/tuple
+San Jose, CA, US:
 - 37.3382082
 - -121.8863286
-Sao Paulo, BR: !!python/tuple
+Sao Paulo, BR:
 - -23.5505199
 - -46.63330939999999
-Seattle, WA, US: !!python/tuple
+Seattle, WA, US:
 - 47.6062095
 - -122.3320708
-Singapore, SG: !!python/tuple
+Singapore, SG:
 - 1.352083
 - 103.819836
-Stockholm, SE: !!python/tuple
+Stockholm, SE:
 - 59.32932349999999
 - 18.0685808
-Sydney, AU: !!python/tuple
+Sydney, AU:
 - -33.8688197
 - 151.2092955
-Tampa, FL, US: !!python/tuple
+Tampa, FL, US:
 - 27.9516896
 - -82.45875269999999
-Tokyo, JP: !!python/tuple
+Tokyo, JP:
 - 35.6761919
 - 139.6503106
-Toronto, ON, CA: !!python/tuple
+Toronto, ON, CA:
 - 43.653226
 - -79.3831843
-Vancouver, BC, CA: !!python/tuple
+Vancouver, BC, CA:
 - 49.2827291
 - -123.1207375

@@ -21,21 +21,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    26.102538,
-                    44.426767
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#buh\" class=\"netmap-server-link\">Bucharest, RO</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -87.629798,
                     41.878114
                 ]
@@ -51,42 +36,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    8.682127,
-                    50.110922
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#fra\" class=\"netmap-server-link\">Frankfurt, DE</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     114.169361,
                     22.319304
                 ]
             },
             "properties": {
                 "title": "<a href=\"nodes.html#hkg\" class=\"netmap-server-link\">Hong Kong, HK</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -118.243685,
-                    34.052234
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#lax\" class=\"netmap-server-link\">Los Angeles, CA, US</a>",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }

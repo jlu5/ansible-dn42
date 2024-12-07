@@ -9,8 +9,9 @@ import time
 
 import geopy
 import geojson
+import yaml
 
-from _common import *
+from _common import yaml_load, is_anycast_host, get_hosts
 
 # https://sites.google.com/site/gmapsdevelopment/
 ICON_PREFIX = "https://maps.google.com/mapfiles/ms/micons/"
@@ -39,7 +40,7 @@ class NetmapGeocoder():
             self._init_backend()
             time.sleep(0.01)  # throttle our API calls slightly
             result = self._backend.geocode(location, **kwargs)
-            coords = (result.latitude, result.longitude)
+            coords = [result.latitude, result.longitude]
             print(f"Geocode: found coords {coords} for location {location}")
             self.entries[location] = coords
         else:
