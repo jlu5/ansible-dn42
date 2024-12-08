@@ -52,303 +52,53 @@ igp_neighbours:
     ymq: null
 igp_wg_ports:
   ams:
-    ams2: 30055
-    ash-core: 30119
-    buh: 30145
-    chi: 30111
-    fra: 30125
-    fra2: 30058
-    hkg: 30043
-    lax: 30012
-    lon: 30021
-    lon2: 30023
-    mil: 30029
-    sao: 30046
-    sgp: 30118
-    sjc: 30099
-    sto: 30027
-    tpa: 30010
-    tyo: 30034
-    ymq: 30015
-    ymq2: 30002
-  ams2:
-    ams: 30055
-    lon2: 30054
-  ash-core:
-    ams: 30119
-    chi: 30122
-    tpa: 30120
-    ymq: 30121
-  buh:
-    ams: 30145
-    fra: 30146
-    fra2: 30164
-    mil: 30144
+    chi: 30011
+    lon: 30008
+    lon2: 30018
+    sjc: 30002
+    sto: 30012
+    ymq: 30006
   chi:
-    ams: 30111
-    ash-core: 30122
-    dal: 30109
-    fra: 30129
-    las: 30142
-    lax: 30139
-    lon: 30108
-    sao: 30157
-    sea: 30134
-    sjc: 30106
-    spk: 30159
-    tpa: 30105
-    ymq: 30107
-    ymq2: 30161
-    yvr: 30110
-  dal:
-    chi: 30109
-    las: 30101
-    lax: 30070
-    sao: 30158
-    sea: 30135
-    sjc: 30072
-    spk: 30100
-    tpa: 30067
-    ymq: 30078
-    ymq2: 30069
-    yvr: 30068
-  fra:
-    ams: 30125
-    buh: 30146
-    chi: 30129
-    fra2: 30126
-    hkg: 30155
-    lax: 30140
-    lon: 30162
-    mil: 30127
-    sgp: 30128
-    sjc: 30124
-    sto: 30147
-    ymq: 30123
-  fra2:
-    ams: 30058
-    buh: 30164
-    fra: 30126
-    hkg: 30104
-    lon: 30057
-    lon2: 30059
-    mil: 30143
-    sto: 30073
-    ymq: 30056
-    ymq01: 30101
-  hkg:
-    ams: 30043
-    fra: 30155
-    lax: 30039
-    lon2: 30042
-    mil: 30040
-    sgp: 30156
-    sjc: 30163
-    syd: 30044
-    tyo: 30041
-  las:
-    chi: 30142
-    dal: 30101
-    hkg: 30093
-    lax: 30053
-    sea: 30133
-    sgp: 30115
-    sjc: 30064
-    spk: 30077
-    syd: 30103
-    tyo: 30102
-    ymq: 30079
-    ymq2: 30016
-    yvr: 30017
-  lax:
-    chi: 30139
-    dal: 30070
-    fra: 30140
-    hkg: 30039
-    las: 30053
-    sea: 30138
-    sgp: 30141
-    sjc: 30137
-    syd: 30052
-    tpa: 30007
-    tyo: 30051
-    yvr: 30049
+    ams: 30011
+    lon: 30010
+    sjc: 30004
+    ymq: 30005
+    yvr: 30001
   lon:
-    ams: 30021
-    chi: 30108
-    fra: 30162
-    fra2: 30057
+    ams: 30008
+    chi: 30010
     lon2: 30019
-    sto: 30026
-    tpa: 30022
-    ymq: 30020
-    ymq01: 30102
+    sto: 30013
+    ymq: 30009
   lon2:
-    ams: 30023
-    ams2: 30054
-    fra2: 30059
-    hkg: 30042
-    lax: 30011
+    ams: 30018
     lon: 30019
-    mil: 30028
-    sto: 30025
-    syd: 30035
-    tpa: 30009
-    tyo: 30080
-    ymq: 30014
-    ymq2: 30000
-  mil:
-    ams: 30029
-    buh: 30144
-    fra: 30127
-    fra2: 30143
-    hkg: 30040
-    lon2: 30028
-    sgp: 30117
-    sto: 30030
-    syd: 30097
-    tyo: 30096
-  sao:
-    ams: 30046
-    chi: 30157
-    dal: 30158
-    tpa: 30047
-    ymq: 30045
-  sea:
-    chi: 30134
-    dal: 30135
-    las: 30133
-    lax: 30138
-    sjc: 30131
-    syd: 30148
-    tyo: 30136
-    ymq: 30132
-    yvr: 30130
-  sgp:
-    ams: 30118
-    fra: 30128
-    hkg: 30156
-    las: 30115
-    lax: 30141
-    mil: 30117
-    sjc: 30113
-    syd: 30112
-    tyo: 30114
   sjc:
-    ams: 30099
-    chi: 30106
-    dal: 30072
-    fra: 30124
-    hkg: 30163
-    las: 30064
-    lax: 30137
-    sea: 30131
-    sgp: 30113
-    spk: 30075
-    syd: 30066
-    tpa: 30149
-    tyo: 30065
-    ymq: 30098
-    ymq2: 30062
-    yvr: 30061
-  spk:
-    chi: 30159
-    dal: 30100
-    las: 30077
-    lax: 30076
-    sjc: 30075
-    yvr: 30160
-  sto:
-    ams: 30027
-    fra: 30147
-    fra2: 30073
-    lon: 30026
-    lon2: 30025
-    mil: 30030
-    ymq: 30074
-    ymq2: 30024
-  syd:
-    hkg: 30044
-    las: 30103
-    lax: 30052
-    lon2: 30035
-    mil: 30097
-    sea: 30148
-    sgp: 30112
-    sjc: 30066
-    tyo: 30038
-    yvr: 30036
-  tpa:
-    ams: 30010
-    ash-core: 30120
-    chi: 30105
-    dal: 30067
-    lax: 30007
-    lon: 30022
-    lon2: 30009
-    sao: 30047
-    sjc: 30149
-    ymq: 30008
-    ymq01: 30103
-    ymq2: 30006
-    yvr: 30088
-  tyo:
-    ams: 30034
-    hkg: 30041
-    las: 30102
-    lax: 30051
-    lon2: 30080
-    mil: 30096
-    sea: 30136
-    sgp: 30114
-    sjc: 30065
-    syd: 30038
-    ymq2: 30031
-    yvr: 30032
-  ymq:
-    ams: 30015
-    ash-core: 30121
-    chi: 30107
-    dal: 30078
-    fra: 30123
-    fra2: 30056
-    las: 30079
-    lax: 30013
-    lon: 30020
-    lon2: 30014
-    sao: 30045
-    sea: 30132
-    sjc: 30098
-    sto: 30074
-    tpa: 30008
-    ymq01: 30104
-    ymq2: 30003
-    yvr: 30060
-  ymq2:
     ams: 30002
-    chi: 30161
-    dal: 30069
-    las: 30016
-    lax: 30050
-    lon2: 30000
-    sjc: 30062
-    sto: 30024
-    tpa: 30006
-    tyo: 30031
+    chi: 30004
+    syd: 30016
+    tyo: 30014
     ymq: 30003
-    yvr: 30004
+    yvr: 30000
+  sto:
+    ams: 30012
+    lon: 30013
+  syd:
+    sjc: 30016
+    tyo: 30017
+  tyo:
+    sjc: 30014
+    syd: 30017
+    yvr: 30015
+  ymq:
+    ams: 30006
+    chi: 30005
+    lon: 30009
+    sjc: 30003
+    yvr: 30007
   yvr:
-    chi: 30110
-    dal: 30068
-    hkg: 30091
-    las: 30017
-    lax: 30049
-    sea: 30130
-    sjc: 30061
-    spk: 30160
-    syd: 30036
-    tpa: 30088
-    tyo: 30032
-    ymq: 30060
-    ymq2: 30004
-next_port: 30165
+    chi: 30001
+    sjc: 30000
+    tyo: 30015
+    ymq: 30007
+next_port: 30020
