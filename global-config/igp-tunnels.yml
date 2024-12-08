@@ -6,6 +6,8 @@ igp_neighbours:
     lon2: null
     sjc: null
     sto: null
+    syd: null
+    tyo: null
     ymq: null
   chi: !!set
     ams: null
@@ -33,9 +35,11 @@ igp_neighbours:
     ams: null
     lon: null
   syd: !!set
+    ams: null
     sjc: null
     tyo: null
   tyo: !!set
+    ams: null
     sjc: null
     syd: null
     yvr: null
@@ -57,6 +61,8 @@ igp_wg_ports:
     lon2: 30018
     sjc: 30002
     sto: 30012
+    syd: 30021
+    tyo: 30020
     ymq: 30006
   chi:
     ams: 30011
@@ -84,9 +90,11 @@ igp_wg_ports:
     ams: 30012
     lon: 30013
   syd:
+    ams: 30021
     sjc: 30016
     tyo: 30017
   tyo:
+    ams: 30020
     sjc: 30014
     syd: 30017
     yvr: 30015
@@ -101,4 +109,4 @@ igp_wg_ports:
     sjc: 30000
     tyo: 30015
     ymq: 30007
-next_port: 30020
+next_port: 30022
