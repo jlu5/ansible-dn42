@@ -36,21 +36,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    114.169361,
-                    22.319304
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#hkg\" class=\"netmap-server-link\">Hong Kong, HK</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -0.127758,
                     51.507351
                 ]

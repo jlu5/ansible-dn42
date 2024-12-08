@@ -13,10 +13,6 @@ igp_neighbours:
     sjc: null
     ymq: null
     yvr: null
-  hkg: !!set
-    sjc: null
-    syd: null
-    tyo: null
   lon: !!set
     ams: null
     chi: null
@@ -29,7 +25,6 @@ igp_neighbours:
   sjc: !!set
     ams: null
     chi: null
-    hkg: null
     syd: null
     tyo: null
     ymq: null
@@ -38,11 +33,9 @@ igp_neighbours:
     ams: null
     lon: null
   syd: !!set
-    hkg: null
     sjc: null
     tyo: null
   tyo: !!set
-    hkg: null
     sjc: null
     syd: null
     yvr: null

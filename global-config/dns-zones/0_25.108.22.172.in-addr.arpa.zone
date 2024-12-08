@@ -17,5 +17,3 @@ $TTL 300
 1 IN PTR gw.yvrlab.highdef.dn42.
 35 IN PTR yvr.rtr.highdef.dn42.
 34 IN PTR sjc.rtr.highdef.dn42.
-37 IN PTR buh.rtr.highdef.dn42.
-38 IN PTR hkg.rtr.highdef.dn42.

@@ -291,3 +291,166 @@ wg_peers:
   - wg_pubkey: "krMnDawVDAurrJqWkePFp1vE2zwK2vQy6ie6tGLcnX0="
     wg_allowedips: "172.22.108.103/32"
   peer_v6: null
+
+# peers moved from hkg.peer
+- name: dn42-billchen
+  port: 20803
+  remote: hk.billchen.bid:21080
+  wg_pubkey: jfJLocC6s+MUvxkrrJJ010kiVvmPJ23TYjdsarc4R28=
+  peer_v4: 172.23.33.10
+  peer_v6: fe80::803
+  local_v4: 172.22.108.39
+  local_v6: "fe80::1080:39"
+  wg_privkey: "/etc/wireguard/privatekey_sgp"
+  bgp:
+    asn: 4242420803
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-bbpgqm
+  peer_v4: 172.20.56.2
+  peer_v6: fe80::549:3441:0:1
+  port: 20549
+  remote: hkg.dn42.bb-pgqm.com:21080
+  wg_pubkey: jtE83RMoN49bs8TOetxrGdzqywz2BI+uT1qJrGI7GVU=
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242420549
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-melty
+  peer_v4: null
+  peer_v6: fe80::3632
+  port: 23632
+  remote: achacha.link.melty.land:21080
+  wg_pubkey: 7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242423632
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-bandura
+  peer_v4: null
+  peer_v6: fe80::2925
+  port: 22923
+  remote: herzstein.mk16.de:51080
+  wg_pubkey: 3uFwT9QD2WVL1cDuRNnj5sqWxyoAJjZO+f83grEPDV0=
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242422923
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-tomk
+  port: 23478
+  remote: null
+  wg_pubkey: dn42/oEh8sJ6oWz9uesySQEu9FdV3A5ponZWbD4VsQA=
+  peer_v4: null
+  peer_v6: fe80::3478
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242423478
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-potat0
+  port: 21816
+  remote: hk1.dn42.potat0.cc:21080
+  wg_pubkey: Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=
+  peer_v4: null
+  peer_v6: fe80::1816
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242421816
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-yuchow
+  port: 21260
+  remote: 405218.xyz:60105
+  wg_pubkey: 9zsuhOiSC8rKsdUNtX678wh3rTo4McJ9ueDqm1Ha8wI=
+  peer_v4: 172.20.236.161
+  peer_v6: fe80::9527
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242421260
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-cmcc
+  port: 21686
+  remote: null
+  wg_pubkey: ocG/0wXtmuXA9OF5pMVolBIsFfE1K3JILX3MC3J5pGI=
+  peer_v4: null
+  peer_v6: fe80::1686
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242421686
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-moechs
+  port: 21522
+  remote: hk01.zapto.org:23010
+  wg_pubkey: hYLBVBQafFG7alJYztjQuAzMOqO2FlvTnWcsoJZf6EE=
+  peer_v4: null
+  peer_v6: fe80::1522
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242421522
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-goforcex
+  port: 21719
+  remote: hk1.goforcex.top:21080
+  wg_pubkey: 1GiY/gR40q1kUlMgLjWrFzDHTrRXIhNIYYVnecUTsUc=
+  peer_v4: 172.20.165.65
+  peer_v6: fe80::1719
+  local_v4: 172.22.108.38
+  local_v6: fe80::1080:38
+  wg_privkey: /etc/wireguard/privatekey_hkg
+  bgp:
+    asn: 4242421719
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+# end peers moved from hkg.peer
