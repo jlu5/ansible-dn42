@@ -321,9 +321,9 @@ wg_peers:
 - name: dn42-baragoon
   port: 21732
   remote: chr-am02.as215887.net:21080
-  wg_pubkey: OOv5anIPrk6Gsh8mbHy4mlw+t5Y5LfDBkd9C3KZenSs=
+  wg_pubkey: HL0p+0CWR35x2BVW4cdlp8F/FT+ZKyrvqDcL2LnzV3c=
   peer_v4: 172.23.32.152
-  peer_v6: fe80::38eb:f96a:720f:ae4e
+  peer_v6: fe80::1732
   local_v4: 172.20.229.118
   local_v6: fe80::118
   wg_privkey: /etc/wireguard/privatekey_ams
