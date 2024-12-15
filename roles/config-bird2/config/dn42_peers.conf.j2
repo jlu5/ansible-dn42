@@ -19,10 +19,11 @@
 {%- endmacro -%}
 
 {%- macro dn42_peer(peer_config, dn42_encryption) %}
+{%- set _session_basename = 'AS' + (peer_config.bgp.asn | string) + peer_config.bgp.get('suffix', '') %}
 {%- set _extended_next_hop_flag = 'on' if peer_config.bgp.get('extended_next_hop') else 'off' -%}
 {% if peer_config.bgp.get('mp_bgp') and peer_config.bgp.ipv6 %}
 # session type MP-BGP
-protocol bgp AS{{ peer_config.bgp.asn }} from dnpeers {
+protocol bgp {{ _session_basename }} from dnpeers {
 {{ dn42_session_opts(peer_config, 6) }}
     ipv4 {
         {{ dn42_channel_opts(dn42_encryption, peer_config) }}
@@ -36,7 +37,7 @@ protocol bgp AS{{ peer_config.bgp.asn }} from dnpeers {
 
 {%- if peer_config.bgp.ipv4 %}
 # session type IPv4
-protocol bgp AS{{ peer_config.bgp.asn }}_v4 from dnpeers {
+protocol bgp {{ _session_basename }}_v4 from dnpeers {
 {{ dn42_session_opts(peer_config, 4) }}
 
     ipv4 {
@@ -47,7 +48,7 @@ protocol bgp AS{{ peer_config.bgp.asn }}_v4 from dnpeers {
 
 {%- if peer_config.bgp.ipv6 %}
 # session type IPv6
-protocol bgp AS{{ peer_config.bgp.asn }}_v6 from dnpeers {
+protocol bgp {{ _session_basename }}_v6 from dnpeers {
 {{ dn42_session_opts(peer_config, 6) }}
 
     ipv6 {
