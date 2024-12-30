@@ -2,7 +2,7 @@ gre_peers:
 - name: dn42-adamcirill
   remote: 144.6.92.175
   local_v4: 172.22.130.193/30
-  local_v6: fd86:bad:11b7:7f42:2266::/127
+  local_v6: fd8e:9912:ad74::8/127
   bgp:
     asn: 4242422266
     extended_next_hop: false
