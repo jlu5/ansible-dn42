@@ -29,8 +29,6 @@ Here I use Ansible to configure the following components:
     - **dns.highdef.dn42** / l.recursive-servers.dn42 / 172.23.0.53 / fd42:d42:d42:53::1
 
 ### Statistics and monitoring
-
-- Netdata: [roles/setup-netdata-v2/](roles/setup-netdata-v2/)
 - Smokeping @ [ping.highdef.dn42](http://ping.highdef.dn42): [roles/setup-smokeping/](roles/setup-smokeping/)
 
 ## Network growth over time

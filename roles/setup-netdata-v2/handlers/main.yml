@@ -1,4 +1,0 @@
-- name: Restart netdata
-  systemd:
-    service: netdata
-    state: restarted

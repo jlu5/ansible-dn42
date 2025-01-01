@@ -79,18 +79,6 @@
 # looking glass proxy (internal only)
 -A INPUT -p tcp --dport 5000 -s {{ my_cidrs }} -j ACCEPT
 
-{% if netdata_proxy_port | default(0) -%}
-{% set _netdata_v4 = netdata_ips | default([]) | ansible.utils.ipv4 -%}
-{% set _netdata_v6 = netdata_ips | default([]) | ansible.utils.ipv6 -%}
-{% if _netdata_v4 and aftype == 4 %}
-# netdata
--A INPUT -p tcp --dport {{ netdata_proxy_port }} -s {{ ','.join(_netdata_v4) }} -j ACCEPT
-{% elif _netdata_v6 and aftype == 6 %}
-# netdata
--A INPUT -p tcp --dport {{ netdata_proxy_port }} -s {{ ','.join(_netdata_v6) }} -j ACCEPT
-{% endif %}
-{% endif %}
-
 # Anycast DNS within dn42
 -A INPUT -p udp --dport 53 -i dn42+ -j ACCEPT
 -A INPUT -p tcp --dport 53 -i dn42+ -j ACCEPT
