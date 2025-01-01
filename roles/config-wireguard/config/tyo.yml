@@ -460,10 +460,10 @@ wg_peers:
   remote: cowgl.xyz:51827
   wg_pubkey: j7FMDHiGTZ01YeTXyOpbY4Qi/AO0aWJLr3hUFT7vayk=
   peer_v4: 172.22.144.64
-  peer_v6: null
+  peer_v6: fd36:62be:ef51::1
   bgp:
     asn: 4242423999
     ipv4: true
-    ipv6: false
+    ipv6: true
     mp_bgp: false
     extended_next_hop: false
