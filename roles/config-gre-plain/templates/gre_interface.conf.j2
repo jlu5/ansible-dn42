@@ -20,9 +20,10 @@ iface {{ ifname }} inet static
 {% endif %}
 {% if _use_gre6 %}
 {# encaplimit none for interoperability, https://www.reddit.com/r/Juniper/comments/1d7h0yw/ #}
-    pre-up {{ _tunnel_command }} add {{ ifname }} mode {{ _tunnel_mode }} remote {{ _gre_endpoint }} local {{ ansible_default_ipv6.address }} encaplimit none
+{# TTL override is important; otherwise the inside packet's TTL will be used which will cause BGP messages to get dropped #}
+    pre-up {{ _tunnel_command }} add {{ ifname }} mode {{ _tunnel_mode }} remote {{ _gre_endpoint }} local {{ ansible_default_ipv6.address }} encaplimit none ttl 64
 {% else %}
-    pre-up {{ _tunnel_command }} add {{ ifname }} mode {{ _tunnel_mode }} remote {{ _gre_endpoint }} local {{ ansible_default_ipv4.address }}
+    pre-up {{ _tunnel_command }} add {{ ifname }} mode {{ _tunnel_mode }} remote {{ _gre_endpoint }} local {{ ansible_default_ipv4.address }} ttl 64
 {% endif %}
 {% if peer_info.get('peer_v6') %}
     post-up ip addr add {{ _local_v6 }} peer {{ peer_info.peer_v6 }} dev {{ ifname }}

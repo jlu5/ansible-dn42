@@ -1,8 +1,8 @@
 gre_peers:
 - name: dn42-ldti
   remote: "212.150.193.88"
-  peer_v4: 198.18.37.71
-  local_v6: "fd86:bad:11b7:117:42:1080:3772:0/127"
+  peer_v4: 169.254.123.2
+  local_v6: fd86:bad:11b7:7f42:3772::0/127
   bgp:
     asn: 4242423772
     extended_next_hop: false

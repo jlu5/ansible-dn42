@@ -41,9 +41,7 @@
 
 # BGP sessions
 -A INPUT -p tcp --dport 179 -i dn42+ -j ACCEPT
--A INPUT -p tcp --sport 179 -i dn42+ -j ACCEPT
 -A INPUT -p tcp --dport 179 -i igp+ -j ACCEPT
--A INPUT -p tcp --sport 179 -i igp+ -j ACCEPT
 
 {# This is dynamically generated because I don't like having larger than needed port ranges open. #}
 {# Downside: more coupling in the code here. #}
