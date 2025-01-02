@@ -1,5 +1,5 @@
 {% if 'anycast_auth_dns' in group_names or 'anycast_recursors' in group_names %}
-protocol direct anycast_import {
+protocol direct direct_anycast {
     ipv4;
     ipv6;
     interface {{ dummy_interfaces.values() | list | selectattr("track_service") | map(attribute='ifname') | map("to_json") | sort | join(", ") }};

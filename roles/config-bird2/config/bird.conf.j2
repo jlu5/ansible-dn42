@@ -8,7 +8,7 @@ define DN42_REGION = {{ dn42_regions[0] }};
 
 hostname "{{ public_host | default(ansible_host) }}";
 
-protocol static {
+protocol static static_routes4 {
 {% if export_ownnets|default(True) %}
 {% for prefix in ownnets4 %}
     route {{ prefix }} reject;
@@ -24,7 +24,7 @@ protocol static {
     };
 }
 
-protocol static {
+protocol static static_routes6 {
 {% if export_ownnets|default(True) %}
 {% for prefix in ownnets6 %}
     route {{ prefix }} reject;
@@ -84,12 +84,12 @@ roa4 table dn42_roa;
 roa6 table dn42_roa_v6;
 
 {% if 'dn42routers' in group_names or import_roa|default(False) %}
-protocol static {
+protocol static dn42_roa4 {
     roa4 { table dn42_roa; };
     include "/etc/bird/roa_dn42.conf";
 };
 
-protocol static {
+protocol static dn42_roa6 {
     roa6 { table dn42_roa_v6; };
     include "/etc/bird/roa_dn42_v6.conf";
 };
