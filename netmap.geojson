@@ -42,8 +42,8 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#lon\" class=\"netmap-server-link\">London, UK</a>",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -72,8 +72,8 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sto\" class=\"netmap-server-link\">Stockholm, SE</a>",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
