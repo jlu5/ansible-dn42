@@ -88,6 +88,19 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+- name: dn42-cdubs
+  port: 20566
+  remote: dn03.il.surgebytes.com:31080
+  wg_pubkey: 8gIe+qsImuoxkQhjyX/6BmkI+H6A8nuAg6gfDZVTV1E=
+  peer_v4: null
+  peer_v6: fe80::566:3
+  bgp:
+    asn: 4242420566
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
 # BEGIN peers imported from dal.peer (202408)
 
 - name: dn42-bandura
