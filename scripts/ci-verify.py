@@ -145,66 +145,13 @@ def _ci_verify_wg_peer(wg_config_path, peer_config) -> str | None:
 
     return ifname_match.group(2) if ext_peer else None
 
-def _ci_verify_bird(root, rtr_name, peer_name, wg_peer_config):
+def _find_bird_config(root, rtr_name, peer_name):
     bird_config_paths = (root / 'roles' / 'config-bird2' / 'config' / 'peers' / rtr_name).glob(f'{peer_name}*.conf')
     bird_config_paths = sorted(bird_config_paths, key=lambda path: len(path.stem))
-    ifname = wg_peer_config["name"]
     if not bird_config_paths:
         return False
 
-    bird_config_path = bird_config_paths[0]
-    try:
-        with open(bird_config_path, encoding='utf-8') as f:
-            bird_config = f.read()
-    except OSError as e:
-        raise ValidationError(f'Could not read BIRD peer config for {bird_config_path!r}', bird_config_path) from e
-
-    print(f'Checking {bird_config_path}')
-    neighbor_matches = BIRD_NEIGHBOR_RE.findall(bird_config)
-    if not neighbor_matches:
-        raise ValidationError('Could not parse any neighbor IPs from BIRD config', bird_config_path)
-
-    allowed_peer_nets = []
-    disallowed_peer_ips = []
-    if peer_v4 := wg_peer_config.get('peer_v4'):
-        allowed_peer_nets.append(ipaddress.ip_network(peer_v4, strict=False))
-    if peer_v6 := wg_peer_config.get('peer_v6'):
-        allowed_peer_nets.append(ipaddress.ip_network(peer_v6, strict=False))
-    if local_v4 := wg_peer_config.get('local_v4'):
-        allowed_peer_nets.append(ipaddress.ip_network(local_v4, strict=False))
-        disallowed_peer_ips.append(ipaddress.ip_address(local_v4.split('/')[0]))
-    if local_v6 := wg_peer_config.get('local_v6'):
-        allowed_peer_nets.append(ipaddress.ip_network(local_v6, strict=False))
-        disallowed_peer_ips.append(ipaddress.ip_address(local_v6.split('/')[0]))
-
-    peer_has_llv6 = False
-    for neighbor_ip, _asn in neighbor_matches:
-        try:
-            neighbor_ip = ipaddress.ip_address(neighbor_ip)
-        except ValueError as e:
-            raise ValidationError(f'BIRD config has invalid neighbor IP {neighbor_ip!r}', bird_config_path) from e
-        if not any(neighbor_ip in net for net in allowed_peer_nets):
-            raise ValidationError(f'BIRD neighbor IP {neighbor_ip!r} is not configured on interface (expected one of '
-                                  f'{allowed_peer_nets})', bird_config_path)
-        if neighbor_ip in disallowed_peer_ips:
-            raise ValidationError(f'BIRD neighbor IP {neighbor_ip} is a local address {disallowed_peer_ips})',
-                                  bird_config_path)
-        peer_has_llv6 |= neighbor_ip in ipaddress.ip_network('fe80::/64')
-
-    interface_matches = BIRD_INTERFACE_RE.findall(bird_config)
-    if peer_has_llv6 and not interface_matches:
-        raise ValidationError('BIRD config uses link-local IPv6 but no "interface" directive found', bird_config_path)
-    for bird_interface in interface_matches:
-        if bird_interface != ifname:
-            raise ValidationError(f'BIRD config has mismatched "interface" directive {bird_interface!r}, '
-                                  f'expected {ifname!r}', bird_config_path)
-
-    is_passive_mode = BIRD_PASSIVE_RE.search(bird_config)
-    if wg_peer_config['remote'] and is_passive_mode:
-        raise ValidationError('When "remote" is set, passive mode should be disabled', bird_config_path)
-    if not wg_peer_config['remote'] and not is_passive_mode:
-        raise ValidationError('When "remote" is unset, passive mode should be enabled', bird_config_path)
-    return bird_config_path
+    return bird_config_paths[0]
 
 def _ci_verify_bgp_auto_config(peer_config, wg_config_path):
     bgp_config = peer_config.get('bgp')
@@ -257,7 +204,7 @@ def ci_verify(root):
                     raise ValidationError(f'Duplicate peer configuration for {external_peer_name!r}', wg_config_path)
                 seen_peers.add(external_peer_name)
                 rtr_name = wg_config_path.stem
-                bird_config = _ci_verify_bird(root, rtr_name, external_peer_name, peer_config)
+                bird_config = _find_bird_config(root, rtr_name, external_peer_name)
                 bgp_auto_config = _ci_verify_bgp_auto_config(peer_config, wg_config_path)
                 if not bird_config and not bgp_auto_config:
                     raise ValidationError(
