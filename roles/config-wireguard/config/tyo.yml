@@ -331,7 +331,6 @@ wg_peers:
   port: 23632
   remote: achacha.link.melty.land:21080
   wg_pubkey: 7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=
-  local_v4: 172.22.108.38
   local_v6: fe80::1080:38
   wg_privkey: /etc/wireguard/privatekey_hkg
   bgp:
@@ -347,7 +346,6 @@ wg_peers:
   port: 22923
   remote: herzstein.mk16.de:51080
   wg_pubkey: 3uFwT9QD2WVL1cDuRNnj5sqWxyoAJjZO+f83grEPDV0=
-  local_v4: 172.22.108.38
   local_v6: fe80::1080:38
   wg_privkey: /etc/wireguard/privatekey_hkg
   bgp:
@@ -363,7 +361,6 @@ wg_peers:
   wg_pubkey: dn42/oEh8sJ6oWz9uesySQEu9FdV3A5ponZWbD4VsQA=
   peer_v4: null
   peer_v6: fe80::3478
-  local_v4: 172.22.108.38
   local_v6: fe80::1080:38
   wg_privkey: /etc/wireguard/privatekey_hkg
   bgp:
@@ -379,7 +376,6 @@ wg_peers:
   wg_pubkey: Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=
   peer_v4: null
   peer_v6: fe80::1816
-  local_v4: 172.22.108.38
   local_v6: fe80::1080:38
   wg_privkey: /etc/wireguard/privatekey_hkg
   bgp:
@@ -411,7 +407,6 @@ wg_peers:
   wg_pubkey: ocG/0wXtmuXA9OF5pMVolBIsFfE1K3JILX3MC3J5pGI=
   peer_v4: null
   peer_v6: fe80::1686
-  local_v4: 172.22.108.38
   local_v6: fe80::1080:38
   wg_privkey: /etc/wireguard/privatekey_hkg
   bgp:
@@ -427,7 +422,6 @@ wg_peers:
   wg_pubkey: hYLBVBQafFG7alJYztjQuAzMOqO2FlvTnWcsoJZf6EE=
   peer_v4: null
   peer_v6: fe80::1522
-  local_v4: 172.22.108.38
   local_v6: fe80::1080:38
   wg_privkey: /etc/wireguard/privatekey_hkg
   bgp:

@@ -55,8 +55,9 @@ def is_allowed_port(port):
         (50000 <= port <= 59999)
     ) and port != 21080 # reserved
 
-def _check_peer_addr(peer_config, config_path, candidate):
+def _check_peer_addr(peer_config, config_path, key, min_size=None):
     ifname = peer_config["name"]
+    candidate = peer_config[key]
     try:
         ipnet = ipaddress.ip_network(candidate, strict=False)
     except ValueError as e:
@@ -67,6 +68,9 @@ def _check_peer_addr(peer_config, config_path, candidate):
     if not any(ipnet.subnet_of(net) for net in allowed_ips):
         raise ValidationError(
             f'Peer {ifname!r} has out of range tunnel IP {ipnet}', config_path)
+    if min_size is not None and ipnet.num_addresses < min_size:
+        raise ValidationError(
+            f'Peer {ifname!r} has too small {key!r}', config_path)
 
 # pylint: disable=too-many-branches, too-many-locals
 def _check_peer_config(config_path, peer_config, peer_type) -> str | None:
@@ -145,13 +149,13 @@ def _check_peer_config(config_path, peer_config, peer_type) -> str | None:
     if not any((peer_v4, peer_v6, local_v4, local_v6, wg_multi)):
         raise ValidationError(f'Peer {ifname!r} has no tunnel IPs configured', config_path)
     if peer_v4:
-        _check_peer_addr(peer_config, config_path, peer_v4)
+        _check_peer_addr(peer_config, config_path, 'peer_v4')
     if peer_v6:
-        _check_peer_addr(peer_config, config_path, peer_v6)
+        _check_peer_addr(peer_config, config_path, 'peer_v6')
     if local_v4:
-        _check_peer_addr(peer_config, config_path, local_v4)
+        _check_peer_addr(peer_config, config_path, 'local_v4', min_size=1 if peer_v4 else 2)
     if local_v6:
-        _check_peer_addr(peer_config, config_path, local_v6)
+        _check_peer_addr(peer_config, config_path, 'local_v6', min_size=1 if peer_v6 else 2)
 
     return ifname_match.group(2) if ext_peer else None
 
@@ -219,6 +223,7 @@ def _check_peer(root, config_path, peer_config, peer_type, seen_peers):
 def ci_verify(root):
     root = pathlib.Path(root)
     wg_config_dir = root / 'roles' / 'config-wireguard' / 'config'
+    # TODO: move this state into a class
     seen_peers = collections.defaultdict(set)
     for wg_config_path in wg_config_dir.glob('*.yml'):
         print(f'Checking {wg_config_path}')

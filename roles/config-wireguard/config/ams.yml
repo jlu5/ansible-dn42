@@ -201,7 +201,6 @@ wg_peers:
     3530393166633661350a393130653439656665323463313565613830303734383461393639373762
     66613637636331366163363037363534393135626638376432623561333935393839
   wg_pubkey: CpZ6YCfbGVIW56OZGUlqAtMRyiR4b+vMZaoyF+rbX0Y=
-  local_v4: 172.20.229.118
   local_v6: fe80::118
   wg_privkey: /etc/wireguard/privatekey_ams
   bgp:
@@ -356,7 +355,6 @@ wg_peers:
   wg_pubkey: iZfLBtF6BiQvdKXx4Yl02u+OL6ls35gSpWCRmB9q4lU=
   peer_v4: null
   peer_v6: fe80::129:1
-  local_v4: 172.20.229.118
   local_v6: fe80::118
   wg_privkey: /etc/wireguard/privatekey_ams
   bgp:
@@ -860,7 +858,6 @@ wg_peers:
   wg_pubkey: 98AcEfdM9lMbHjxQjyxDJNOXcKfTLN1ZfztaNXGW6mU=
   peer_v4: null
   peer_v6: fe80::2328:1
-  local_v4: 172.22.108.37
   local_v6: fe80::1080:137
   wg_privkey: /etc/wireguard/privatekey_buh
   bgp:
