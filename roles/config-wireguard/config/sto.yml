@@ -38,3 +38,15 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+- name: dn42-m724
+  port: 20129
+  remote: ipv4.se1.420129.xyz:21080
+  wg_pubkey: tS6j+/aroaMYT/mbzv4xDGI7bc6/LAgwc/KKrw/LIVI=
+  peer_v4: null
+  peer_v6: fe80::129:5
+  bgp:
+    asn: 4242420129
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
