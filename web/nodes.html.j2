@@ -14,7 +14,8 @@
 <h1>AS4242421080 Server Info</h1>
 {% include 'navigation.j2' %}
 <div class="container">
-
+<p><b>Please note that server locations and IPs are subject to change.
+When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/tree/contrib/reresolve-dns">reresolve-dns.sh</a> instead of hardcoding IP addresses!</b></p>
 {% macro peering_info(host) %}
 {% set serverdata = hostvars[host] %}
 <h4 id="{{ host }}">

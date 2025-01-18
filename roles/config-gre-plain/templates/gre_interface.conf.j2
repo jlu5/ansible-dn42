@@ -1,14 +1,9 @@
 {%- set ifname = peer_info['name'] %}
 {# Guess address family and tunnel mode #}
-{%- set _use_gre6 = peer_info.get('gre_dns_ipv6', peer_info.remote | ansible.utils.ipv6) %}
+{%- set _use_gre6 = peer_info.remote | ansible.utils.ipv6 %}
 {%- set _tunnel_command = 'ip -6 tunnel' if _use_gre6 else 'ip tunnel' %}
 {%- set _tunnel_mode = peer_info.get('tunnel_mode', 'ip6gre' if _use_gre6 else 'gre') %}
-{# Resolve remote IP address if needed #}
-{%- if peer_info.remote | ansible.utils.ipaddr %}
 {%- set _gre_endpoint = peer_info.remote %}
-{%- else %}
-{%- set _gre_endpoint = lookup('community.general.dig', peer_info.remote, 'qtype=' + ('AAAA' if _use_gre6 else 'A')) %}
-{%- endif %}
 {%- set _local_v4 = peer_info.get('local_v4', ownip + '/32') %}
 {%- set _local_v6 = peer_info.get('local_v6', ownip6 + '/128') %}
 
