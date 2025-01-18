@@ -866,3 +866,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-potat0
+  port: 21816
+  remote: fra.node.potat0.cc:21080
+  wg_pubkey: H6HdsuQsav9puKyo8SJaML0vPU/a2lLQjTRc7dmiqjs=
+  peer_v4: null
+  peer_v6: fe80::1816
+  bgp:
+    asn: 4242421816
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
