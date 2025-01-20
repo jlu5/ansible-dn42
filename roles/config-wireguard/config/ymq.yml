@@ -364,3 +364,15 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+- name: dn42-joenet
+  port: 20157
+  remote: nyc01.ke8jwh.com:31080
+  wg_pubkey: BmbqgpKUEYp+FKIFKKDi0Sh+l7OBLzB+AJdTogk7uRU=
+  peer_v4: null
+  peer_v6: fe80::157:232
+  bgp:
+    asn: 4242420157
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true

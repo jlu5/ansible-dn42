@@ -246,3 +246,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-joenet
+  port: 20157
+  remote: ire01.ke8jwh.com:31080
+  wg_pubkey: HwnW9T5AgETDfPi4EqExeBzi0j6EeKEV/M5Nb0iUQEU=
+  peer_v4: null
+  peer_v6: fe80::157:237
+  bgp:
+    asn: 4242420157
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
