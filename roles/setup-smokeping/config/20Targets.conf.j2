@@ -8,11 +8,11 @@ remark = highdef.network monitoring: <ul>\
     <li>{{ inventory_hostname }}: {{ location }}</li>\
 </ul>
 
-{% if smokeping_dn42 | default('anycast_recursors' in group_names) %}
-
 {# NOTE: Must have a newline between files for correct line breaks #}
 
 {% include 'targets/anycast-dns.conf.j2' %}
+
+{% if smokeping_dn42 | default('anycast_recursors' in group_names) %}
 
 {% include 'targets/dn42-services.conf.j2' %}
 

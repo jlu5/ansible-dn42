@@ -55,22 +55,9 @@
     color: #def;
 }
 </style>
-<script>
-function post_init() {
-    for (let link of document.getElementsByClassName("hdnet-smokeping-neighbour")) {
-        // Navigate to the same page by default
-        link.href += window.location.search;
-    }
-    const current = document.getElementById("hdnet-navbar-current");
-    if (current) {
-        // Scroll to make the current router visible in navbar
-        current.scrollIntoView({inline: 'center'});
-    }
-}
-</script>
 </head>
 
-<body id="body" onload="post_init()">
+<body id="body">
 <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
 {#
@@ -106,6 +93,21 @@ function post_init() {
 {% endfor %}
 </div>
 </div>
+
+<script>
+function set_query_urls() {
+    for (let link of document.getElementsByClassName("hdnet-smokeping-neighbour")) {
+        // Navigate to the same page by default
+        link.href += window.location.search;
+    }
+    const current = document.getElementById("hdnet-navbar-current");
+    if (current) {
+        // Scroll to make the current router visible in navbar
+        current.scrollIntoView({inline: 'center'});
+    }
+}
+set_query_urls();
+</script>
 
 <div class="main">
     <h1><##title##></h1>
