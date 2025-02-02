@@ -9,8 +9,8 @@ $TTL 300
         3600        ; minimum TTL
 )
 @   IN  NS      ns.highdef.dn42.
-lg IN A 172.22.108.34
-lg IN AAAA fd86:bad:11b7:34::1
+lg IN A 172.20.229.117
+lg IN AAAA fd86:bad:11b7:117::1
 ping IN A 172.22.108.3
 ping IN AAAA fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
 routegraphs IN A 172.20.229.124
