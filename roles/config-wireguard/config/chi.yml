@@ -101,6 +101,19 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+- name: dn42-sdubs
+  port: 20202
+  remote: dn01.il.us.sdubs.vip:21080
+  wg_pubkey: Y9WXsLsmsSeyEIUj2ibVfQblBduMfTBej/MIzj9BrAE=
+  peer_v4: null
+  peer_v6: fe80::202:1
+  bgp:
+    asn: 4242420202
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
 # BEGIN peers imported from dal.peer (202408)
 
 - name: dn42-bandura
