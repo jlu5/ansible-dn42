@@ -37,7 +37,7 @@ dns_records:
     # Internal services
     "mtxadmin":
       type: A
-      target: 172.22.108.59
+      target: 172.22.108.67
     "grapnel":
       type: host_record
       ip4: 172.22.108.83
