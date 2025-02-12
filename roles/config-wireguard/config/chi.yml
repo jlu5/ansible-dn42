@@ -257,3 +257,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-stepnem
+  port: 21282
+  remote: us-nyc1.dn42.smrk.net:21080
+  wg_pubkey: 3oEmrr4/Wi1c46CZI1HcnJcMw4cj76AmzMvxnL6N/S8=
+  peer_v4: null
+  peer_v6: fe80::1282
+  bgp:
+    asn: 4242421282
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
