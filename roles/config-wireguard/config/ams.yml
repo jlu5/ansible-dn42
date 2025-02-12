@@ -905,3 +905,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-bernd
+  port: 23455
+  remote: fde6-a09a-b373.dynv6.net:33791
+  wg_pubkey: Ry996w9g2QeKtzdcK+/7ihliE2Y/hjOZkG/7ncFzl24=
+  peer_v4: null
+  peer_v6: fe80::63:7065
+  bgp:
+    asn: 4242423455
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
