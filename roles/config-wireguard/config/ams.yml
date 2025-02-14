@@ -918,3 +918,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-apeku
+  port: 20059
+  remote: dn42.agent-est.com:4245
+  wg_pubkey: ZwCdWfn5LCR+s6Bwq1LtxyYojei1ak0Pa2dbLVl3eA8=
+  peer_v4: 172.20.44.1
+  peer_v6: fd48:377b:4ea7::1
+  bgp:
+    asn: 4242420059
+    ipv4: true
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
