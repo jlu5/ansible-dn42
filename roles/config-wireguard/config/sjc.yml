@@ -97,31 +97,13 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-huajitech
-  peer_v4: null
-  peer_v6: fe80::458
-  port: 20458
-  remote: us-west1.nodes.huajinet.org:21080
-  wg_pubkey: Y13v0Xzf6zJQGtL2qJSwVyLNSxipYoGpq4y/5aU7omg=
-  bgp:
-    asn: 4242420458
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-sernet
-  port: 23947
-  remote: us-lax1.dn42.sherpherd.top:21080
-  wg_pubkey: 2lgq3OfUrPl28EJnnGtJcAkJp2CWwZlF2BC5K3UaFDk=
-  peer_v4: null
-  peer_v6: fe80::3947:4
-  bgp:
-    asn: 4242423947
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-routedbits
   port: 20207
@@ -244,21 +226,9 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-zhaofeng
-  port: 51926
-  remote: "[2a06:e881:5502::1]:21080"
-  wg_pubkey: "7/7eZZGr8S5qR+bkKaQdQQBSopjcx2xLpOM7Edw4UF4="
-  peer_v4: "172.20.16.3"
-  peer_v6: "fe80::1926:1"
-  local_v4: 172.20.229.122
-  local_v6: "fe80::122"
-  wg_privkey: /etc/wireguard/privatekey_lax
-  bgp:
-    asn: 4242421926
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-nicholascw
   port: 51288
@@ -368,20 +338,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-moechs
-  port: 21522
-  remote: us01.myftp.org:23007
-  wg_pubkey: JtesX7JLjlYmZWbeMvK2Hx0Vpo5Fhr9VILlTcuonlWQ=
-  peer_v4: null
-  peer_v6: fe80::1522
-  local_v6: "fe80::122"
-  wg_privkey: /etc/wireguard/privatekey_lax
-  bgp:
-    asn: 4242421522
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-sidereal
   port: 22016
@@ -398,23 +357,10 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-goforcex
-  port: 22719
-  remote: us1.goforcex.top:21080
-  wg_pubkey: 6DstUdlQmer+/xXEhuhnV4KYGqd/n6m2XxPGgk+RsBg=
-  peer_v4: 172.20.165.67
-  peer_v6: fe80::1719
-  local_v6: "fe80::122"
-  wg_privkey: /etc/wireguard/privatekey_lax
-  bgp:
-    asn: 4242421719
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-### end peers moved from lax.peer
+  remove: true
 
-### peers moved from las.peer
 - name: dn42las-yura
   port: 22464
   remote: "las.dneo.moeternet.com:21080"

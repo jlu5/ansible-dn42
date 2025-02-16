@@ -51,31 +51,13 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-servermade
-  port: 53770
-  remote: "rbx1.dn42.servermade.com:51080"
-  wg_pubkey: "0ndXPAg17zmVx5CfxMblRfdcDjHRDB6OKBkYvvtq1g0="
-  peer_v4: "172.22.118.129"
-  peer_v6: "fe80::3770/64"
-  bgp:
-    asn: 4242423770
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-camelus
-  port: 21592
-  remote: "uk01.dn42.trampel.org:41080"
-  wg_pubkey: "oUFScw06Qe6nyDWwbywdecgnt1QQNWe1DFAUb3QCqgU="
-  peer_v4: "172.21.99.188"
-  peer_v6: "fe80::1592"
-  bgp:
-    asn: 4242421592
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-atolm
   peer_v4: null

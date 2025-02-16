@@ -355,35 +355,13 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-tomk
-  port: 23478
-  remote: null
-  wg_pubkey: dn42/oEh8sJ6oWz9uesySQEu9FdV3A5ponZWbD4VsQA=
-  peer_v4: null
-  peer_v6: fe80::3478
-  local_v6: fe80::1080:38
-  wg_privkey: /etc/wireguard/privatekey_hkg
-  bgp:
-    asn: 4242423478
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-potat0
-  port: 21816
-  remote: hk1.dn42.potat0.cc:21080
-  wg_pubkey: Tv1+HniELrS4Br2i7oQgwqBJFXQKculsW8r+UOqQXH0=
-  peer_v4: null
-  peer_v6: fe80::1816
-  local_v6: fe80::1080:38
-  wg_privkey: /etc/wireguard/privatekey_hkg
-  bgp:
-    asn: 4242421816
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-yuchow
   port: 21260
@@ -416,38 +394,13 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-moechs
-  port: 21522
-  remote: hk01.zapto.org:23010
-  wg_pubkey: hYLBVBQafFG7alJYztjQuAzMOqO2FlvTnWcsoJZf6EE=
-  peer_v4: null
-  peer_v6: fe80::1522
-  local_v6: fe80::1080:38
-  wg_privkey: /etc/wireguard/privatekey_hkg
-  bgp:
-    asn: 4242421522
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-goforcex
-  port: 21719
-  remote: hk1.goforcex.top:21080
-  wg_pubkey: 1GiY/gR40q1kUlMgLjWrFzDHTrRXIhNIYYVnecUTsUc=
-  peer_v4: 172.20.165.65
-  peer_v6: fe80::1719
-  local_v4: 172.22.108.38
-  local_v6: fe80::1080:38
-  wg_privkey: /etc/wireguard/privatekey_hkg
-  bgp:
-    asn: 4242421719
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-# end peers moved from hkg.peer
+  remove: true
 
 - name: dn42-cowgl
   port: 23999

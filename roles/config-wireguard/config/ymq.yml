@@ -182,18 +182,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-pigeonhole
-  port: 22458
-  remote: us-nyc-a.nodes.pigeonhole.eu.org:21080
-  wg_pubkey: /zjI3W1HVTKcciF4Qm866EiE3LfmIQrbOlO0BZKq6n0=
-  peer_v4: null
-  peer_v6: fe80::2458
-  bgp:
-    asn: 4242422458
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-kioubit
   port: 23914
@@ -260,18 +251,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-tibs
-  port: 23383
-  remote: null
-  wg_pubkey: TkOlaPE+4n3WFuYOMAPdIaHSMFry2LMLYzxVfVk1izs=
-  peer_v4: 172.23.89.225
-  peer_v6: null
-  bgp:
-    asn: 4242423383
-    extended_next_hop: false
-    ipv4: true
-    ipv6: false
-    mp_bgp: false
+  remove: true
 
 - name: dn42-lapisnet
   port: 22032
@@ -312,18 +294,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-lukasbecke
-  port: 23372
-  remote: yyz.beckerit.cc:21080
-  wg_pubkey: okxcWYCduqtZfKfZVTLc4cCMxOXBYvUEkl8OLzxe3hQ=
-  peer_v4: 172.20.212.201
-  peer_v6: fe80::3372
-  bgp:
-    asn: 4242423372
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-peanuts
   port: 21465

@@ -47,37 +47,13 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-mayli
-  port: 51123
-  remote: "ams.ccp.ovh:21080"
-  wg_pubkey: "e5X1ZlZUOVtTFeWi+d6cUqqNaXB0F2UHwbquAKU4z3I="
-  peer_v4: "172.20.47.2"
-  peer_v6: "fe80::1123"
-  local_v4: 172.20.229.118
-  local_v6: fe80::118
-  wg_privkey: /etc/wireguard/privatekey_ams
-  bgp:
-    asn: 4242421123
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-camelus
-  port: 21592
-  remote: "nl01.dn42.trampel.org:41080"
-  wg_pubkey: "RcXm6OK+3+/sjXoivNTdjU3W5ctdohZ9GKYS25f05n8="
-  peer_v4: "172.21.99.189"
-  peer_v6: "fe80::1592"
-  local_v4: 172.20.229.118
-  local_v6: fe80::118
-  wg_privkey: /etc/wireguard/privatekey_ams
-  bgp:
-    asn: 4242421592
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-tsingyao
   port: 23699
@@ -210,21 +186,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-pigeonhole
-  peer_v4: 172.22.145.25
-  peer_v6: fe80::2458
-  port: 22458
-  remote: ipv4.nl-ams-a.nodes.pigeonhole.eu.org:21080
-  wg_pubkey: QJnmWUnPS9wKKkLHHuWBYMGAI20MH9OEo28O4qr5DV8=
-  local_v4: 172.20.229.118
-  local_v6: fe80::118
-  wg_privkey: /etc/wireguard/privatekey_ams
-  bgp:
-    asn: 4242422458
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-ventilaar
   port: 22246
@@ -301,21 +265,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-hexxnet
-  port: 20225
-  remote: dn42peering.sarkoziadam.hu:40233
-  wg_pubkey: zajOi1myXS0VZeYdNKcK3W1ROIcGSQtQ1Ie17ZrNxiI=
-  peer_v4: 172.22.128.179
-  peer_v6: fe80::0225:1080
-  local_v4: 172.20.229.118
-  local_v6: fe80::118
-  wg_privkey: /etc/wireguard/privatekey_ams
-  bgp:
-    asn: 4242420225
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-baragoon
   port: 21732
@@ -576,18 +528,9 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-kskb1817
-  port: 21817
-  remote: null
-  wg_pubkey: Sxn9qXnzu3gSBQFZ0vCh5t5blUJYgD+iHlCCG2hexg4=
-  peer_v4: 172.22.77.42
-  peer_v6: fe80::42:1817:a
-  bgp:
-    asn: 4242421817
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-lutoma
   peer_v4: 172.22.119.1
@@ -786,18 +729,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-m4rc3l
-  port: 21476
-  remote: null
-  wg_pubkey: bMTerYqi0BA5WnjgTugcXAeFIcdVqQVkstxukk5qIAA=
-  peer_v4: null
-  peer_v6: fe80::4c3
-  bgp:
-    asn: 4242421476
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-bandura
   port: 22923
@@ -820,18 +754,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-bao
-  port: 22114
-  remote: dn42bao.duckdns.org:50103
-  wg_pubkey: jF/VWbzmvus+g9lnviCNqCVzRvBpkzYyqrrKh72SSwY=
-  peer_v4: 172.21.115.65
-  peer_v6: fe80::c18b:023f
-  bgp:
-    asn: 4242422114
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-04dco
   port: 20304
@@ -849,36 +774,13 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-zehka
-  port: 23467
-  remote: 185.247.225.18:51821
-  wg_pubkey: k74poVrLvIt6kXAAr1lSqThrVilGch61RWmn8hAaPFw=
-  peer_v4: 172.22.162.225
-  peer_v6: fd47:514:dbc9::1
-  local_v4: 172.22.108.37
-  local_v6: fe80::1080:137
-  wg_privkey: /etc/wireguard/privatekey_buh
-  bgp:
-    asn: 4242423467
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-eddie303
-  port: 22328
-  remote: 94.52.19.229:33033
-  wg_pubkey: 98AcEfdM9lMbHjxQjyxDJNOXcKfTLN1ZfztaNXGW6mU=
-  peer_v4: null
-  peer_v6: fe80::2328:1
-  local_v6: fe80::1080:137
-  wg_privkey: /etc/wireguard/privatekey_buh
-  bgp:
-    asn: 4242422328
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-potat0
   port: 21816

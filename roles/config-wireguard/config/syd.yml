@@ -51,18 +51,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-lare
-  port: 23035
-  remote: null
-  wg_pubkey: OhpIfAMN/YsQrl/gMPDr8OwFkVXvREpmrfjPv3U5/Fg=
-  peer_v4: 172.22.125.134
-  peer_v6: fe80::3035:134
-  bgp:
-    asn: 4242423035
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-imlonghao
   port: 21888
@@ -90,18 +81,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-02-16 (down for >= 40 days)
 - name: dn42-jack
-  port: 22971
-  remote: syd01.dn42.jackscott.xyz:51080
-  wg_pubkey: 5b/QZxY2406E+it3M7k1r7jOzs7a0sogz47faHfCblc=
-  peer_v4: 172.23.159.65
-  peer_v6: fe80::2971:1
-  bgp:
-    asn: 4242422971
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-colby
   port: 22558
