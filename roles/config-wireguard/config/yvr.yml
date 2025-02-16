@@ -168,6 +168,7 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
     import_mode: peer_only
+    disable: true
 
 - name: dn42-joenet
   port: 20157
