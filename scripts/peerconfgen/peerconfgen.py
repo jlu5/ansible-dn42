@@ -126,9 +126,8 @@ def complete_peer_config(scrape_results):
         raise ValueError("Need either peer_v4 or peer_v6 for peers")
     return result
 
-def get_config_paths(node, peername, replace=False, create=False):
+def get_config_paths(node, create=False):
     wg_config_path = pathlib.Path("roles", "config-wireguard", "config", f"{node}.yml")
-    bird_config_dir = pathlib.Path("roles", "config-bird2", "config", "peers", node)
 
     if not os.path.exists(wg_config_path):
         if not create:
@@ -137,13 +136,7 @@ def get_config_paths(node, peername, replace=False, create=False):
         with open(wg_config_path, 'w', encoding='utf8') as _:
             pass  # write an empty file
 
-    bird_config_path = bird_config_dir / f'{peername}.conf'
-    if os.path.exists(bird_config_path):
-        if replace:
-            print(f"Overwriting existing {bird_config_path!r}")
-        else:
-            raise ValueError(f"A BIRD session config already exists at {bird_config_path!r}")
-    return wg_config_path, bird_config_path
+    return wg_config_path
 
 def _run_interactive(node):
     print("Enter peer config info followed by EOF. Copy paste some text, and I'll try to guess")
@@ -189,7 +182,7 @@ def main():
     if not _PEERNAME_RE.match(peername):
         raise ValueError(f"Peer name {peername!r} should only contain ASCII letters and numbers")
 
-    wg_config_path, _ = get_config_paths(args.node, peername, create=args.create)
+    wg_config_path = get_config_paths(args.node, create=args.create)
 
     yaml = get_yaml()
     with open(wg_config_path, 'r+', encoding='utf-8') as f:
