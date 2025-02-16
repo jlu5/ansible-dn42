@@ -59,6 +59,8 @@ class Autoprune():
             node = conffile.stem
 
             print('Reading', conffile)
+            if self.repo.is_dirty(path=conffile):
+                raise RuntimeError(f'{conffile} has uncommitted changes')
             self.line_to_mod_time[node] = self.expand_blame_mod_times(conffile)
             with open(conffile, encoding='utf-8') as f:
                 yaml_data = yaml_loader.load(f)
