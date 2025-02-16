@@ -30,6 +30,7 @@ def query_prometheus(prometheus_url, query):
     assert data['data']['resultType'] == 'vector'
     return data['data']
 
+IGNORE_DECONFIGURED_PEERS_LENGTH = '10m'
 class Autoprune():
     def __init__(self, root, threshold=40):
         self.repo = git.Repo(root)
@@ -37,7 +38,9 @@ class Autoprune():
         self.line_to_mod_time = {}
 
         # A peer is considered inactive if it was NEVER up within the last X days
-        self.query = '''max by (loc, name)(max_over_time(bird_protocol_up{name=~"AS.+"}[%dd])) == 0''' % threshold
+        self.query = '''
+max by (loc, name)(max_over_time(bird_protocol_up{name=~"AS.+"}[%dd]) and
+present_over_time(bird_protocol_up{name=~"AS.+"}[%s])) == 0''' % (threshold, IGNORE_DECONFIGURED_PEERS_LENGTH)
 
         self._read_configs()
 
