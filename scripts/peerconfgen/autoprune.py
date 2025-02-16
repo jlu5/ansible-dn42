@@ -87,7 +87,11 @@ class Autoprune():
             # Convert "AS4242421080", "AS4242421081_v6" etc. to the int
             asn = int(result['metric']['name'][2:].split('_', 1)[0])
 
-            peer_last_mod_time = max(self.line_to_mod_time[node].get(line, 0) for line in self.asn_to_conf_lines[(node, asn)])
+            if (node, asn) not in self.asn_to_conf_lines:
+                print(f'  Ignoring peer {node}/{asn} (not present in config)')
+                continue
+            peer_last_mod_time = max(self.line_to_mod_time[node].get(line, 0) for line
+                                     in self.asn_to_conf_lines[(node, asn)])
             timestamp_datetime = datetime.datetime.fromtimestamp(peer_last_mod_time)
             time_difference = datetime.datetime.now() - timestamp_datetime
             if time_difference < time_threshold:
