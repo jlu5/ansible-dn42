@@ -13,6 +13,9 @@
     neighbor {{ peer_config | get_dn42_remote_ip(af_type) }} as {{ peer_config.bgp.asn }};
     interface "{{ peer_config.name }}";
     passive {{ _bgp_passive_flag }};
+{% if peer_config.bgp.get('disable') %}
+    disabled on;
+{% endif %}
 {% for line in peer_config.bgp.get('opts', []) %}
     {{ line }}
 {% endfor -%}
