@@ -1,3 +1,10 @@
+{% if not smokeping_lite %}
+++ aliyun-jp
+menu = [JP] Aliyun / Alibaba Cloud
+title = [JP] Aliyun / Alibaba Cloud - Tokyo, Japan [oss-ap-northeast-1.aliyuncs.com]
+host = oss-ap-northeast-1.aliyuncs.com
+{% endif %}
+
 ++ amazon-jp
 menu = [JP] Amazon AWS
 title = [JP] Amazon AWS - Tokyo, Japan [18.176.0.0]
@@ -16,9 +23,9 @@ host = tokyo.lg.extravm.com
 {% endif %}
 
 ++ greencloud-tyo
-menu = [JP] GreenCloud
-title = [JP] GreenCloud @ xTom - Tokyo, Japan [103.121.210.3]
-host = 103.121.210.3
+menu = [JP] GreenCloud @ IIJ
+title = [JP] GreenCloud @ xTom (IIJ blend) - Tokyo, Japan [91.200.242.41]
+host = 91.200.242.41
 
 ++ hosthatch-tyo
 menu = [JP] HostHatch
@@ -161,12 +168,14 @@ host = 45.11.104.140
 menu = [HK] SalmonCloud
 title = [HK] SalmonCloud - Hong Kong, China [hkg.lg.salmoncloud.co.uk]
 host = hkg.lg.salmoncloud.co.uk
+{% endif %}
 
-++ spiketel
-menu = [HK] SpikeTel
-title = [HK] SpikeTel - Hong Kong, Hong Kong [lg-hk1.01.spiketelecom.com]
-host = lg-hk1.01.spiketelecom.com
+++ skywolf-hk
+menu = [HK] Skywolf Cloud
+title = [HK] Skywolf Cloud - Hong Kong, China [lg.hk.skywolf.cloud]
+host = lg.hk.skywolf.cloud
 
+{% if not smokeping_lite %}
 ++ starrydns-hk
 menu = [HK] StarryDNS
 title = [HK] StarryDNS - Hong Kong, China [hk4.lg.starrydns.com]
