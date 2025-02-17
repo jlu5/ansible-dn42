@@ -27,8 +27,23 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#chi\" class=\"netmap-server-link\">Chicago, IL, US</a>",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    114.169361,
+                    22.319304
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#hkg\" class=\"netmap-server-link\">Hong Kong, HK</a>",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
@@ -57,8 +72,8 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sjc\" class=\"netmap-server-link\">San Jose, CA, US</a>",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
