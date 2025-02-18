@@ -359,3 +359,16 @@ wg_peers:
 
 - name: dn42-saltwood
   remove: true
+
+- name: dn42-lantian
+  port: 22547
+  remote: oracle-vm1.lantian.pub:21080
+  wg_pubkey: JJUfHeE1ZgyXzo5aoE0tQfk6wZvnVU/d0V3/uSj61ns=
+  peer_v4: 172.22.76.123
+  peer_v6: fe80::2547
+  bgp:
+    asn: 4242422547
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true

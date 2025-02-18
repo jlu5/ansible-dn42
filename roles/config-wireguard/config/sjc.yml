@@ -272,7 +272,7 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_lax
   bgp:
     asn: 4242422547
-    extended_next_hop: false
+    extended_next_hop: true
     ipv4: true
     ipv6: true
     mp_bgp: true
