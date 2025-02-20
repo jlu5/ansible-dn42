@@ -190,7 +190,6 @@ wg_peers:
   wg_pubkey: UCr50HzYCY57KvWCBHrXZLgUOKu8MYo1vEgqVXPzjls=
   peer_v4: null
   peer_v6: fe80::566:18
-  local_v4: 172.22.108.39
   local_v6: "fe80::1080:39"
   wg_privkey: "/etc/wireguard/privatekey_sgp"
   bgp:
