@@ -259,7 +259,7 @@ wg_peers:
 
 - name: dn42-akihi
   port: 20398
-  remote: hnd.dn42.akihi.me:21080
+  remote: nrt.dn42.boletus.me:21080
   wg_pubkey: /EDDHZQrfLv9XeKMYOp8XdEFEB9ml3BE/YwV5UhN5W0=
   peer_v4: null
   peer_v6: fe80::426f
