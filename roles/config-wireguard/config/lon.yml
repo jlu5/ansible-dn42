@@ -241,3 +241,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+    
+- name: dn42-sdubs
+  port: 20202
+  remote: dn07.lon.uk.sdubs.vip:21080
+  wg_pubkey: NNzS8SVIMmPHaYIsdy9BkE0oG+2y+71bWLDbSp48cw0=
+  peer_v4: null
+  peer_v6: fe80::202:7
+  bgp:
+    asn: 4242420202
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true 
