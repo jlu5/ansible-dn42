@@ -299,7 +299,7 @@ wg_peers:
 
 - name: dn42-cowgl
   port: 23999
-  remote: cowgl.us.kg:31080
+  remote: cowgl.xyz:31080
   wg_pubkey: mGGBczSVKW+7UKRquI2GkbKrfxiATv9r4uF5WTP+vWI=
   peer_v4: 172.22.144.64
   peer_v6: fd36:62be:ef51::1
