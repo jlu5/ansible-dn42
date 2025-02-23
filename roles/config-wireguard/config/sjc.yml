@@ -431,7 +431,7 @@ wg_peers:
 
 - name: dn42-akihi
   port: 20398
-  remote: lax.dn42.boletus.me
+  remote: lax.dn42.boletus.me:21080
   wg_pubkey: oAPy0U2qVuSR8PyPLmVLEgWLBKrOq4kcLNLAOVZL10M=
   peer_v4: null
   peer_v6: fe80::426f
