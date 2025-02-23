@@ -1,5 +1,7 @@
 ### Misc settings & AS-specific information
 ownas: "4242421080"
+# Network name for branding
+network_name: highdef.network
 ownnets4:
 - 172.20.229.112/28
 - 172.22.108.0/25
