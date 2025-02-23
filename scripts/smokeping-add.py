@@ -104,22 +104,27 @@ def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
     province = province.upper()
     city = city.title()
     print(f'{hdr} {entry_name}')
+
+    pycountry_country = country
     if country == 'UK':
-        country = 'GB'
-    pycountry_entry = pycountry.countries.get(alpha_2=country)
+        pycountry_country = 'GB'
+    pycountry_entry = pycountry.countries.get(alpha_2=pycountry_country)
     assert pycountry_entry
-    if country == 'GB':
-        country = 'UK'
-    # if ipv6:
-    #     print('probe = FPing6')
+
     isp_short = isp.split('@')[0].strip()
     if country in _COUNTRIES_SHOW_PROVINCE:
         print(f'menu = [{country}/{province}] {isp_short}')
         loc = f'{city}, {province}, {country}'
         print(f'title = [{country}/{province}] {isp} - {loc} [{address}]')
     else:
+        if country in ('HK', 'MO'):
+            country_display = 'China'
+        elif country == 'RU':
+            country_display = 'Russia'
+        else:
+            country_display = getattr(pycountry_country, 'common_name', pycountry_entry.name)
         print(f'menu = [{country}] {isp_short}')
-        loc = f'{city}, {pycountry_entry.name}'
+        loc = f'{city}, {country_display}'
         print(f'title = [{country}] {isp} - {loc} [{address}]')
     print(f'host = {address}')
 

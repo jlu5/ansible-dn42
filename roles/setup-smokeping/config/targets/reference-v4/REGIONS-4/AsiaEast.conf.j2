@@ -148,6 +148,13 @@ menu = [HK] HostHatch
 title = [HK] HostHatch - Hong Kong, China [lg.hkg.hosthatch.com]
 host = lg.hkg.hosthatch.com
 
+{% if not smokeping_lite %}
+++ hostvds-hk
+menu = [HK] HostVDS
+title = [HK] HostVDS @ ADCDATA - Hong Kong, China [ping-hkg1.hostvds.com]
+host = ping-hkg1.hostvds.com
+{% endif %}
+
 ++ kuaichedao-hk
 menu = [HK] Kuaichedao
 title = [HK] Kuaichedao @ Eons Data - Hong Kong, China [hk-bgp.hkg.lg.kuaichedao.xyz]
