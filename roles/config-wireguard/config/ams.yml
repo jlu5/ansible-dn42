@@ -846,3 +846,16 @@ wg_peers:
     ipv6: true
     mp_bgp: false
     extended_next_hop: false
+
+- name: dn42-lefay
+  port: 21495
+  remote: vtnet0.nl-myb-1.le-fay.org:12008
+  wg_pubkey: eAb13IMYWSHTJ306y7W6B68/VUw+Mf2Tftlt/fG/HHM=
+  peer_v4: null
+  peer_v6: fe80::1
+  bgp:
+    asn: 4242421495
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
