@@ -850,7 +850,7 @@ wg_peers:
 - name: dn42-lefay
   port: 21495
   remote: vtnet0.nl-myb-1.le-fay.org:12008
-  wg_pubkey: eAb13IMYWSHTJ306y7W6B68/VUw+Mf2Tftlt/fG/HHM=
+  wg_pubkey: xA7BmPYu39BUYIj+1ImE1FAuBogAQ815H6RlGD8w8C0=
   peer_v4: null
   peer_v6: fe80::1
   bgp:
