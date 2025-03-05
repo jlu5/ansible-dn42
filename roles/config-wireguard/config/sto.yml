@@ -1,7 +1,4 @@
 wg_peers:
-- name: dn42-potat0
-  remove: true
-
 - name: dn42-hackclub
   port: 20392
   remote: hackclub.app:21080
@@ -37,6 +34,19 @@ wg_peers:
   bgp:
     asn: 4242420129
     ipv4: false
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
+
+- name: dn42-heartbleed
+  port: 22297
+  remote: rus-gw.buddy.ileg.al:52297
+  wg_pubkey: MVmUVR39SDgSGnNjGecabguru4c38wr9Y3iEpV17Ex8=
+  peer_v4: 172.23.9.130
+  peer_v6: fdd0:b971:a0bf::2
+  bgp:
+    asn: 4242422297
+    ipv4: true
     ipv6: true
     mp_bgp: false
     extended_next_hop: false

@@ -309,3 +309,16 @@ wg_peers:
     ipv6: true
     mp_bgp: false
     extended_next_hop: false
+
+- name: dn42-heartbleed
+  port: 22297
+  remote: sin-gw.buddy.ileg.al:52297
+  wg_pubkey: fgl0bDJkhGByL0HyHTBK49wWK2EEgl4utxiBbht6WDA=
+  peer_v4: 172.23.9.129
+  peer_v6: fdd0:b971:a0bf::1
+  bgp:
+    asn: 4242422297
+    ipv4: true
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
