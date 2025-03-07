@@ -486,7 +486,7 @@ wg_peers:
 
 - name: dn42-lefay
   port: 21495
-  remote: vtnet0.fre-myb-1.le-fay.org:12006
+  remote: fre-myb-1.le-fay.org:12006
   wg_pubkey: W9rI6K90WZ3fE1OQTnLQprL0/mIedOCcWs/3BDSuzQM=
   peer_v4: null
   peer_v6: fe80::1
