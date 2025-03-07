@@ -10,6 +10,7 @@ $TTL 300
 )
 @   IN  NS      ns.highdef.dn42.
 3 IN PTR ping.highdef.dn42.
+36 IN PTR ping-tyo2.highdef.dn42.
 54 IN PTR ns.highdef.dn42.
 53 IN PTR dns.highdef.dn42.
 83 IN PTR grapnel.highdef.dn42.
