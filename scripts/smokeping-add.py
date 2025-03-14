@@ -96,7 +96,6 @@ def get_field(desc, prefilled=None):
         return prefilled
     return input(f'{desc}: ')
 
-_COUNTRIES_SHOW_PROVINCE = {'CA', 'US'}
 def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
     assert levels >= 0
     hdr = '+' * levels
@@ -112,19 +111,22 @@ def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
     assert pycountry_entry
 
     isp_short = isp.split('@')[0].strip()
-    if country in _COUNTRIES_SHOW_PROVINCE:
+    if country in ('CA', 'US'):
         print(f'menu = [{country}/{province}] {isp_short}')
+        assert city
         loc = f'{city}, {province}, {country}'
         print(f'title = [{country}/{province}] {isp} - {loc} [{address}]')
     else:
         if country in ('HK', 'MO'):
+            city = pycountry_entry.name
             country_display = 'China'
         elif country == 'RU':
             country_display = 'Russia'
         else:
             country_display = getattr(pycountry_country, 'common_name', pycountry_entry.name)
+
         print(f'menu = [{country}] {isp_short}')
-        loc = f'{city}, {country_display}'
+        loc = f'{city}, {country_display}' if city else country_display
         print(f'title = [{country}] {isp} - {loc} [{address}]')
     print(f'host = {address}')
 
@@ -154,9 +156,11 @@ def main():
             ipaddress.IPv6Address(ipv6)
     country = get_field('country code (XX)', args.country).upper()
     province = ''
-    if country in {'CA', 'US'}:
+    if country in ('CA', 'US'):
         province = get_field('state/province code (XX)', args.province) or ''
-    city = get_field('city name (in full)', args.city)
+    city = ''
+    if country not in ('SG', 'HK', 'MO'):
+        city = get_field('city name (in full)', args.city)
     entry_name = get_field('Smokeping entry name', args.name)
     isp = get_field('ISP / hosting provider', args.isp)
 

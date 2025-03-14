@@ -113,6 +113,11 @@ host = 2a06:5b80:1::b67b:cd74
 menu = [NL] Hybula
 title = [NL] Hybula - Amsterdam, Netherlands [lg-nl-ams.hybula.net]
 host = lg-nl-ams.hybula.net
+
+++ leaseweb-nl
+menu = [NL] LeaseWeb
+title = [NL] LeaseWeb - Amsterdam, Netherlands [mirror.nl.leaseweb.net]
+host = mirror.nl.leaseweb.net
 {% endif %}
 
 ++ liteserver
@@ -120,17 +125,19 @@ menu = [NL] LiteServer
 title = [NL] LiteServer - Dronten, Netherlands [lg-drn.liteserver.nl]
 host = lg-drn.liteserver.nl
 
+{% if not smokeping_lite %}
+++ mirhosting-ams
+menu = [NL] MIRHosting
+title = [NL] MIRHosting - Amsterdam, Netherlands [speedtest.nl3.mirhosting.net]
+host = speedtest.nl3.mirhosting.net
+{% endif %}
+
 ++ novoserve-nl
 menu = [NL] NovoServe
 title = [NL] NovoServe - Amsterdam, Netherlands [speedtest.novoserve.com]
 host = speedtest.novoserve.com
 
 {% if not smokeping_lite %}
-++ mirhosting-ams
-menu = [NL] MIRHosting
-title = [NL] MIRHosting - Amsterdam, Netherlands [speedtest.nl3.mirhosting.net]
-host = speedtest.nl3.mirhosting.net
-
 ++ psychz-nl
 menu = [NL] Psychz
 title = [NL] Psychz - Amsterdam, Netherlands [2604:6600:2007:48:0:2:185f:e237]
@@ -211,6 +218,11 @@ host = fsn.icmp.hetzner.com
 menu = [DE] IP-Projects (Frankfurt)
 title = [DE] IP-Projects - Frankfurt, Germany [lg.ip-projects.de]
 host = lg.ip-projects.de
+
+++ leaseweb-de
+menu = [DE] LeaseWeb
+title = [DE] LeaseWeb - Frankfurt, Germany [mirror.de.leaseweb.net]
+host = mirror.de.leaseweb.net
 
 ++ linode-fra
 menu = [DE] Linode
