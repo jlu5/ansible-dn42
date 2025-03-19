@@ -855,7 +855,7 @@ wg_peers:
   peer_v6: fe80::1
   bgp:
     asn: 4242421495
-    ipv4: false
+    ipv4: true
     ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
+    mp_bgp: true
+    extended_next_hop: true
