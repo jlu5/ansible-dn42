@@ -1,0 +1,25 @@
+{# From https://docs.gunicorn.org/en/stable/deploy.html#systemd #}
+[Unit]
+Description=routegraphs
+Requires=routegraphs.socket
+After=network.target
+
+[Service]
+Type=notify
+NotifyAccess=main
+User={{ automation_user }}
+Group=nogroup
+DynamicUser=true
+RuntimeDirectory=gunicorn
+WorkingDirectory={{ routegraphs_clone_path }}
+ExecStart={{ routegraphs_venv_dir }}/bin/gunicorn --pythonpath=. app:app
+ExecReload=/bin/kill -s HUP $MAINPID
+Environment=ROUTEGRAPHS_DB={{ routegraphs_db_path }}
+Environment=ROUTEGRAPHS_BASE_URL=https://{{ routegraphs_server_name }}/
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target

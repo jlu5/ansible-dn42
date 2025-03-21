@@ -1,0 +1,6 @@
+
+- name: Install routegraphs
+  hosts: routegraphs
+  become: yes
+  roles:
+    - setup-routegraphs

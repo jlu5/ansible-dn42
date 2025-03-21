@@ -13,8 +13,8 @@ lg IN A 172.20.229.117
 lg IN AAAA fd86:bad:11b7:117::1
 ping IN A 172.22.108.3
 ping IN AAAA fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
-routegraphs IN A 172.20.229.124
-routegraphs IN AAAA fd86:bad:11b7:224::1
+routegraphs IN A 172.20.229.117
+routegraphs IN AAAA fd86:bad:11b7:117::1
 ping-tyo2 IN A 172.22.108.36
 ping-tyo2 IN AAAA fd86:bad:11b7:236::1
 ns IN A 172.22.108.54

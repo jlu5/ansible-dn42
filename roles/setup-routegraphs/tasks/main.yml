@@ -1,0 +1,104 @@
+- name: Install routegraphs dependencies
+  ansible.builtin.apt:
+    package:
+    - python3
+    - python3-pip
+    - python3-virtualenv
+    - graphviz
+    state: present
+  become: yes
+
+- name: Enumerate git clone directories
+  set_fact:
+    routegraphs_clone_path: "{{ automation_user_home }}/routegraphs"
+    dn42_registry_clone_path: "{{ automation_user_home }}/dn42-registry"
+
+- name: Enumerate DB path
+  set_fact:
+    # Note that this is hardcoded in do-update.sh
+    routegraphs_db_path: "{{ routegraphs_clone_path }}/data/dn42.db"
+
+- name: Clone routegraphs Git repo
+  ansible.builtin.git:
+    repo: 'https://github.com/jlu5/routegraphs'
+    dest: "{{ routegraphs_clone_path }}"
+    update: yes
+  become: yes
+  become_user: "{{ automation_user }}"
+  notify: Restart routegraphs
+
+- name: Clone dn42-registry repo
+  ansible.builtin.git:
+    repo: 'git@git.dn42.dev:dn42/registry.git'
+    dest: "{{ dn42_registry_clone_path }}"
+    update: yes
+    key_file: "{{ automation_user_home }}/.ssh/id_ed25519"
+  become: yes
+  become_user: "{{ automation_user }}"
+
+- name: Create routegraphs virtualenv dir
+  ansible.builtin.file:
+    name: "{{ routegraphs_venv_dir }}"
+    state: directory
+    owner: "{{ automation_user }}"
+  become: yes
+
+- name: Install dependencies in virtualenv
+  ansible.builtin.pip:
+    requirements: "{{ routegraphs_clone_path }}/requirements.txt"
+    virtualenv: "{{ routegraphs_venv_dir }}"
+    virtualenv_python: python3
+  become: yes
+  become_user: "{{ automation_user }}"
+
+- name: Template routegraphs systemd service
+  ansible.builtin.template:
+    src: "routegraphs.service.j2"
+    dest: "/etc/systemd/system/routegraphs.service"
+  become: yes
+  notify: Restart routegraphs
+
+- name: Template routegraphs systemd socket
+  ansible.builtin.template:
+    src: "routegraphs.socket.j2"
+    dest: "/etc/systemd/system/routegraphs.socket"
+  become: yes
+  notify: Restart routegraphs
+
+- name: Enable routegraphs service
+  ansible.builtin.systemd:
+    name: "routegraphs"
+    enabled: true
+
+- name: Configure routegraphs in nginx
+  include_role:
+    name: apps_nginx
+  vars:
+    letsencrypt_domains: "{{ [routegraphs_server_name] }}"
+    nginx_site:
+      src: routegraphs-nginx.conf.j2
+      dst: routegraphs-nginx.conf
+
+- name: Define routegraphs update command
+  set_fact:
+    _routegraphs_update_cmd: ". {{ routegraphs_venv_dir }}/bin/activate && {{ routegraphs_clone_path }}/do-update.sh -r {{ dn42_registry_clone_path }}"
+
+- name: Run routegraphs update
+  shell:
+    cmd: "{{ _routegraphs_update_cmd }}"
+    creates: "{{ routegraphs_db_path }}"
+
+- name: Create cron job for routegraphs update
+  cron:
+    name: "Routegraphs DB update"
+    minute: "37"
+    job: "{{ _routegraphs_update_cmd }} > routegraph-update.log 2>&1"
+    user: "{{ automation_user }}"
+
+- name: Create cron job for dn42-registry update
+  cron:
+    name: "dn42-registry update"
+    hour: "*/3"
+    minute: "28"
+    job: "cd {{ dn42_registry_clone_path }} && git pull"
+    user: "{{ automation_user }}"

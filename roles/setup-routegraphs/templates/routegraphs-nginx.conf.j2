@@ -1,0 +1,43 @@
+upstream routegraphs-backend {
+    server unix:/run/routegraphs.sock;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_trusted_certificate /etc/letsencrypt/live/{{ routegraphs_server_name }}/chain.pem;
+    ssl_certificate /etc/letsencrypt/live/{{ routegraphs_server_name }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ routegraphs_server_name }}/privkey.pem;
+
+    server_name {{ routegraphs_server_name }};
+
+    location /.well-known {
+        root /var/www/html;
+    }
+
+    location / {
+        proxy_pass http://routegraphs-backend/;
+    }
+}
+
+# redirects
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name {{ routegraphs_server_name }};
+    server_name routegraphs.{{ dns_domain }};
+
+    return 302 https://{{ routegraphs_server_name }}$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_trusted_certificate /etc/letsencrypt/live/{{ routegraphs_server_name }}/chain.pem;
+    ssl_certificate /etc/letsencrypt/live/{{ routegraphs_server_name }}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/{{ routegraphs_server_name }}/privkey.pem;
+
+    server_name routegraphs.{{ dns_domain }};
+    return 302 https://{{ routegraphs_server_name }}$request_uri;
+}

@@ -1,0 +1,3 @@
+routegraphs_venv_dir: "{{ automation_root_dir }}/routegraphs-venv"
+routegraphs_server_name: routegraphs.highdef.network
+routegraphs_server_dn42: routegraphs.highdef.network

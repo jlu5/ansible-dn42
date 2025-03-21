@@ -13,7 +13,7 @@
     hour: "*/3"
     minute: "3"   # trigger once every hour
     user: "root"  # needed to access & change wg settings
-    job: "{{ automation_root_dir }}/wg-autoreset.sh >> {{ automation_user_home }}/wg-autoreset.log 2>&1"
+    job: "{{ automation_root_dir }}/wg-autoreset.sh > {{ automation_user_home }}/wg-autoreset.log 2>&1"
 
 - name: Configure whois.conf for dn42
   ansible.builtin.blockinfile:

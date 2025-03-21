@@ -1,0 +1,7 @@
+- name: Restart routegraphs
+  service:
+    name: routegraphs
+    state: restarted
+    daemon-reload: yes
+  ignore_errors: "{{ ansible_check_mode }}"
+  listen: "Restart routegraphs"
