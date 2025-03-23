@@ -493,7 +493,7 @@ wg_peers:
   remote: dn10.lax.us.sdubs.vip:21080
   wg_pubkey: 7Iif3zxkWZXdBr4jTvTftpZ7B16LyHb4ivPnKMuhoC4=
   peer_v4: null
-  peer_v6: fe80::202:2
+  peer_v6: fe80::202:10
   bgp:
     asn: 4242420202
     extended_next_hop: true
