@@ -283,9 +283,6 @@ wg_peers:
     wg_allowedips: "172.22.108.103/32"
   peer_v6: null
 
-- name: dn42-cowgl
-  remove: true
-
 - name: dn42-cdubs
   port: 20566
   remote: dn19.tyo.surgebytes.com:31080
