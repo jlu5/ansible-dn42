@@ -859,3 +859,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-tobast
+  port: 22112
+  remote: pl-waw1.dn42.tobast.fr:21080
+  wg_pubkey: EU58pAvjXFttC1ogkP3ai0p/JcnuEwaFuXUXfekzlAg=
+  peer_v4: null
+  peer_v6: fe80::0f2e:4c84:a590:5d85
+  bgp:
+    asn: 4242422112
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
