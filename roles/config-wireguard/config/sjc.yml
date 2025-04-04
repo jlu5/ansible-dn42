@@ -500,3 +500,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-404net
+  port: 21716
+  remote: sjc.us.dn42.nngnn.com:21080
+  wg_pubkey: 9wjlepdAM+yr/G3VoI2bc6ogDUiPcE4UsUzadJn0jnA=
+  peer_v4: null
+  peer_v6: fe80::1716:1080
+  bgp:
+    asn: 4242421716
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
