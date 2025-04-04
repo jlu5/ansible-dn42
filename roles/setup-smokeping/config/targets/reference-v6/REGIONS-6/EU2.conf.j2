@@ -20,17 +20,24 @@ host = 2a0d:f302:106::6
 menu = [AT] Hosteroid
 title = [AT] Hosteroid @ UpstreamNet / Zayo France - Vienna, Austria [2a05:5504:1::4fe:1]
 host = 2a05:5504:1::4fe:1
+{% endif %}
 
+++ netcup-at
+menu = [AT] Netcup
+title = [AT] Netcup (Anexia) - Vienna, Austria [speedtest.netcup.at]
+host = speedtest.netcup.at
+
+{% if not smokeping_lite %}
 ++ linode-sto
 menu = [SE] Linode
 title = [SE] Linode @ Akamai - Stockholm, Sweden [speedtest.stockholm.linode.com]
 host = speedtest.stockholm.linode.com
+{% endif %}
 
 ++ server-factory-se
 menu = [SE] server-factory
 title = [SE] server-factory.com - Stockholm, Sweden [lg.se.server-factory.com]
 host = lg.se.server-factory.com
-{% endif %}
 
 ++ vultr-sto
 menu = [SE] Vultr

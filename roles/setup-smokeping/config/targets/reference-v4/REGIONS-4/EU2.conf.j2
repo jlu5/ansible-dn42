@@ -20,17 +20,22 @@ host = 86.106.182.189
 menu = [AT] Hosteroid
 title = [AT] Hosteroid @ UpstreamNet / Zayo France - Vienna, Austria [vie-lg.hosteroid.uk]
 host = vie-lg.hosteroid.uk
+{% endif %}
 
 ++ hosthatch-vie
 menu = [AT] HostHatch
 title = [AT] HostHatch - Vienna, Austria [lg.vie.hosthatch.com]
 host = lg.vie.hosthatch.com
 
+++ netcup-at
+menu = [AT] Netcup
+title = [AT] Netcup (Anexia) - Vienna, Austria [speedtest.netcup.at]
+host = speedtest.netcup.at
+
 ++ hosthatch-osl
 menu = [NO] HostHatch
 title = [NO] HostHatch - Oslo, Norway [lg.osl.hosthatch.com]
 host = lg.osl.hosthatch.com
-{% endif %}
 
 ++ terrahost-no
 menu = [NO] Gigahost
@@ -42,12 +47,14 @@ host = lg.gigahost.no
 menu = [DK] Virtono @ M247
 title = [DK] Virtono @ M247 - Copenhagen, Denmark [cph-dk-ping.virtono.com]
 host = cph-dk-ping.virtono.com
+{% endif %}
 
 ++ hosthatch-sto
 menu = [SE] HostHatch
 title = [SE] HostHatch - Stockholm, Sweden [lg.sto.hosthatch.com]
 host = lg.sto.hosthatch.com
 
+{% if not smokeping_lite %}
 ++ linode-sto
 menu = [SE] Linode
 title = [SE] Linode @ Akamai - Stockholm, Sweden [speedtest.stockholm.linode.com]
