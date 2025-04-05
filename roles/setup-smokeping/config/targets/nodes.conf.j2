@@ -1,0 +1,79 @@
++ nodes
+menu = AS4242421080 Nodes
+title = AS4242421080 Nodes (clearnet)
+{% set _smokeping_local_has_v4 = (not v6_only | default(False)) %}
+{% set _smokeping_local_has_v6 = (not v4_only | default(False)) %}
+{% macro smokeping_host(host) %}
+{% set _smokeping_id = hostvars[host].smokeping_id %}
+{% set _smokeping_isp = hostvars[host].smokeping_isp %}
+{% set _smokeping_loc = hostvars[host].location %}
+{# Only add a ping target if the src and target host both support the AF type #}
+{% set _smokeping_add_v4 = _smokeping_local_has_v4 and not (hostvars[host].v6_only | default(False)) %}
+{% set _smokeping_add_v6 = _smokeping_local_has_v6 and not (hostvars[host].v4_only | default(False)) %}
+{% set _smokeping_host = hostvars[host].public_host | default(hostvars[host].ansible_host) %}
+{% if _smokeping_add_v4 %}
+
+++ {{ _smokeping_id }}
+menu = {{ _smokeping_id }} - {{ _smokeping_isp }} (IPv4)
+title = {{ _smokeping_isp }} - {{ _smokeping_loc }} (IPv4) [{{ _smokeping_host }}]
+host = {{ _smokeping_host }}
+{% endif %}
+{% if _smokeping_add_v6 %}
+
+++ {{ _smokeping_id }}_v6
+probe = FPing6
+menu = {{ _smokeping_id }} - {{ _smokeping_isp }} (IPv6)
+title = {{ _smokeping_isp }} - {{ _smokeping_loc }} (IPv6) [{{ _smokeping_host }}]
+host = {{ _smokeping_host }}
+{% endif %}
+
+{# ping via dn42 (hidden) #}
+++ {{ _smokeping_id }}_int
+menu = {{ _smokeping_id }} - internal
+title = {{ _smokeping_isp }} - {{ _smokeping_loc }} (internal) [{{hostvars[host].ownip}}]
+host = {{ hostvars[host].ownip }}
+hide = yes
+
+++ {{ _smokeping_id }}_combined
+menu = {{ _smokeping_id }} - {{ _smokeping_isp }} (combined)
+title = {{ _smokeping_isp }} - {{ _smokeping_loc }} (combined)
+host = {% if _smokeping_add_v4 %}/nodes/{{_smokeping_id}}{% endif %}{% if _smokeping_add_v6 %} /nodes/{{_smokeping_id}}_v6{% endif %} /nodes/{{_smokeping_id}}_int
+{% endmacro %}
+
+{%- for host in groups['dn42routers'] %}
+{% if hostvars[host].get('smokeping_id') %}
+{{ smokeping_host(host) }}
+{% endif %}
+{% endfor %}
+
+{# Statically configured hosts #}
+++ ymq02
+menu = ServaRICA Montreal
+title = ServaRICA - Montreal, QC, CA
+host = {{ smokeping_crypt_hosts.ymq02 }}
+
+++ lon02a
+menu = Clouvider London (IPv4)
+title = Clouvider - London, UK (IPv4)
+host = {{ smokeping_crypt_hosts.lon02 }}
+
+{% if _smokeping_local_has_v6 %}
+++ lon02a_v6
+probe = FPing6
+menu = Clouvider London (IPv6)
+title = Clouvider - London, UK (IPv6)
+host = {{ smokeping_crypt_hosts.lon02 }}
+{% endif %}
+
+++ tyo04
+menu = GreenCloudVPS Tokyo (IPv4)
+title = GreenCloudVPS (IIJ blend) - Tokyo, JP (IPv4)
+host = tyo04.jlu5.com
+
+{% if _smokeping_local_has_v6 %}
+++ tyo04_v6
+probe = FPing6
+menu = GreenCloudVPS Tokyo (IPv6)
+title = GreenCloudVPS (IIJ blend) - Tokyo, JP (IPv6)
+host = tyo04.jlu5.com
+{% endif %}

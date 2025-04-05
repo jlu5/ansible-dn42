@@ -12,6 +12,8 @@ remark = highdef.network monitoring: <ul>\
 
 {% include 'targets/anycast-dns.conf.j2' %}
 
+{% include 'targets/nodes.conf.j2' %}
+
 {% if smokeping_dn42 | default('anycast_recursors' in group_names) %}
 
 {% include 'targets/dn42-services.conf.j2' %}
