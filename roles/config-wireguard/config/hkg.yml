@@ -83,10 +83,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-03-18 (down for >= 40 days)
-- name: dn42-tomk
-  remove: true
-
 - name: dn42-potat0
   port: 21816
   remote: hkg.node.potat0.cc:21080
@@ -203,18 +199,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-03-18 (down for >= 40 days)
-- name: dn42-moechs
-  remove: true
-
-# Automatically removed on 2025-03-18 (down for >= 40 days)
-- name: dn42-sidereal
-  remove: true
-
-# Automatically removed on 2025-03-18 (down for >= 40 days)
-- name: dn42-goforcex
-  remove: true
 
 - name: dn42-saltwood
   port: 20222
