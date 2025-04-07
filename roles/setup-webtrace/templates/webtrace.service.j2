@@ -13,8 +13,8 @@ WorkingDirectory={{ webtrace_repo_path }}
 {# async workers are required for streams #}
 ExecStart={{ webtrace_venv_dir }}/bin/gunicorn -k gevent --pythonpath=. app:app
 ExecReload=/bin/kill -s HUP $MAINPID
-Environment=WEBTRACE_SERVERINFO="{{ inventory_hostname }} - {{ location }}"
-Environment=WEBTRACE_TITLE="{{ inventory_hostname }} - webtrace"
+Environment=WEBTRACE_SERVERINFO="{{ inventory_hostname }} - {{ server_isp }} - {{ location }}"
+Environment=WEBTRACE_TITLE="{{ inventory_hostname }} webtrace | highdef.network"
 KillMode=mixed
 TimeoutStopSec=5
 PrivateTmp=true
