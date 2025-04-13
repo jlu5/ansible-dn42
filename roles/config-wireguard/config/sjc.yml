@@ -513,3 +513,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-furry
+  port: 20088
+  remote: 150.241.207.40:21080
+  wg_pubkey: YjnCVWBsTBoslPqJ88ao+bzHsDFj2BezVW5qrvcLtiE=
+  peer_v4: null
+  peer_v6: fe80::88:2
+  bgp:
+    asn: 4242420088
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
