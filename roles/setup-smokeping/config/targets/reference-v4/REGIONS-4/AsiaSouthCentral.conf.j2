@@ -20,6 +20,11 @@ menu = [SG] HostHatch
 title = [SG] HostHatch - Singapore [lg.sgp.hosthatch.com]
 host = lg.sgp.hosthatch.com
 
+++ kuaichedao-sg
+menu = [SG] Kuaichedao
+title = [SG] Kuaichedao - Singapore [sg-bgp.sin.lg.kuaichedao.xyz]
+host = sg-bgp.sin.lg.kuaichedao.xyz
+
 ++ leaseweb-sg
 menu = [SG] LeaseWeb
 title = [SG] LeaseWeb - Singapore [mirror.sg.leaseweb.net]
@@ -47,10 +52,12 @@ menu = [SG] Onidel
 title = [SG] Onidel @ Host Universal - Singapore, Singapore [sg.lg.onidel.com]
 host = sg.lg.onidel.com
 
+{% if not smokeping_lite %}
 ++ orangevps-sg
 menu = [SG] OrangeVPS
 title = [SG] OrangeVPS @ Epsilon Telecommunications - Singapore [sg-lg.orangevps.com]
 host = sg-lg.orangevps.com
+{% endif %}
 
 ++ ovh-sgp-0
 menu = [SG] OVH
@@ -154,11 +161,6 @@ menu = [IN] Vultr (Mumbai)
 title = [IN] Vultr - Mumbai, India [bom-in-ping.vultr.com]
 host = bom-in-ping.vultr.com
 {% endif %}
-
-++ greencloud-hanoi
-menu = [VN] GreenCloud (Hanoi)
-title = [VN] GreenCloud @ FPT Telecom - Hanoi, Vietnam [lg.hn.greencloudvps.com]
-host = lg.hn.greencloudvps.com
 
 ++ tothost-hanoi
 menu = [VN] TOTHOST @ VNPT

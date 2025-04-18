@@ -15,10 +15,10 @@ menu = [SG] HostHatch
 title = [SG] HostHatch - Singapore [2406:ef80:2:87f1::1]
 host = 2406:ef80:2:87f1::1
 
-++ host-universal-sg
-menu = [SG] Onidel
-title = [SG] Onidel @ Host Universal - Singapore, Singapore [2401:a4a0:2::101]
-host = 2401:a4a0:2::101
+++ kuaichedao-sg
+menu = [SG] Kuaichedao
+title = [SG] Kuaichedao - Singapore [sg-bgp.sin.lg.kuaichedao.xyz]
+host = sg-bgp.sin.lg.kuaichedao.xyz
 
 ++ leaseweb-sg
 menu = [SG] LeaseWeb
@@ -30,10 +30,17 @@ menu = [SG] Linode
 title = [SG] Linode - Singapore [speedtest.singapore.linode.com]
 host = speedtest.singapore.linode.com
 
+++ host-universal-sg
+menu = [SG] Onidel
+title = [SG] Onidel @ Host Universal - Singapore, Singapore [2401:a4a0:2::101]
+host = 2401:a4a0:2::101
+
+{% if not smokeping_lite %}
 ++ orangevps-sg
 menu = [SG] OrangeVPS
 title = [SG] OrangeVPS @ Epsilon Telecommunications - Singapore [2001:df4:c140:1f::e]
 host = 2001:df4:c140:1f::e
+{% endif %}
 
 ++ ovh-sgp-0
 menu = [SG] OVH
