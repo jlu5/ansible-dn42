@@ -872,3 +872,16 @@ wg_peers:
     ipv6: true
     mp_bgp: false
     extended_next_hop: false
+
+- name: dn42-flipflap
+  port: 20263
+  remote: nl-ams1.flap42.eu:51826
+  wg_pubkey: osOFClUbgPmF9XVWhUtvatWjM0y0ZgTi0xnitirnphA=
+  peer_v4: null
+  peer_v6: fe80::106
+  bgp:
+    asn: 4242420263
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
