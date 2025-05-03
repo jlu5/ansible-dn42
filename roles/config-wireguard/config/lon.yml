@@ -254,3 +254,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-sm1755
+  port: 21755
+  remote: core1.router.net.ukse1.sidingsmedia.com:21080
+  wg_pubkey: 8rdWhwxdaSY8GE9jHN7zh5PodvnoeVzQQLtN0IHCY1o=
+  peer_v4: null
+  peer_v6: fe80::1755:1080
+  bgp:
+    asn: 4242421755
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
