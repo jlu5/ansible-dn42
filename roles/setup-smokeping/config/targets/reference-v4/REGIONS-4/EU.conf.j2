@@ -20,16 +20,6 @@ host = pme.speedtest.contabo.net
 menu = [UK] HostHatch
 title = [UK] HostHatch - London, United Kingdom [lg.lon.hosthatch.com]
 host = lg.lon.hosthatch.com
-
-++ iomart-maidenhead
-menu = [UK] Iomart (Maidenhead)
-title = [UK] Iomart - Maidenhead, United Kingdom [dc5speedtest.rapidswitch.com]
-host = dc5speedtest.rapidswitch.com
-
-++ iomart-gosport
-menu = [UK] Iomart (Gosport)
-title = [UK] Iomart - Gosport, United Kingdom [speedtest-net7.rapidswitch.co.uk]
-host = speedtest-net7.rapidswitch.co.uk
 {% endif %}
 
 ++ linode-lon
@@ -43,11 +33,6 @@ title = [UK] OVH - Erith, London, United Kingdom [eri.proof.ovh.net]
 host = eri.proof.ovh.net
 
 {% if not smokeping_lite %}
-++ pebblehost
-menu = [UK] PebbleHost (Coventry)
-title = [UK] PebbleHost - Coventry, United Kingdom [as212027.net]
-host = as212027.net
-
 ++ smarthost-uk
 menu = [UK] SmartHost @ VeloxServ
 title = [UK] SmartHost @ VeloxServ - Redditch, United Kingdom [uk1.smarthost.net]
@@ -70,11 +55,6 @@ menu = [UK] Vultr
 title = [UK] Vultr - London, United Kingdom [lon-gb-ping.vultr.com]
 host = lon-gb-ping.vultr.com
 
-++ zare-lon
-menu = [UK] Zare
-title = [UK] Zare / Hydra Communications - London, United Kingdom [ldn.lg.zare.com]
-host = ldn.lg.zare.com
-
 ++ hosteons-par
 menu = [FR] hostEONS
 title = [FR] hostEONS @ Limestone Networks - Paris, France [lg.fr.hosteons.com]
@@ -84,14 +64,12 @@ host = lg.fr.hosteons.com
 menu = [IE] RackNerd
 title = [IE] RackNerd @ HostPapa - Dublin, Ireland [23.95.225.2]
 host = 23.95.225.2
-{% endif %}
 
 ++ layer7-par
 menu = [FR] Layer7
 title = [FR] Layer7 @ Harmony Hosting - Paris, France [194.24.161.1]
 host = 194.24.161.1
 
-{% if not smokeping_lite %}
 ++ linode-par
 menu = [FR] Linode @ Akamai
 title = [FR] Linode @ Akamai - Paris, France [speedtest.paris.linode.com]
@@ -130,12 +108,14 @@ host = ping.online.net
 menu = [FR] Virtua (Lille)
 title = [FR] Virtua.Cloud - Lille, France [lg.lil01fr.vsys.cloud]
 host = lg.lil01fr.vsys.cloud
+{% endif %}
 
 ++ vultr-cdg
 menu = [FR] Vultr
 title = [FR] Vultr - Paris, France [par-fr-ping.vultr.com]
 host = par-fr-ping.vultr.com
 
+{% if not smokeping_lite %}
 ++ chunkserve
 menu = [NL] Chunkserve
 title = [NL] Chunkserve @ backbone.direct - Amsterdam, Netherlands [191.96.11.3]
@@ -145,7 +125,6 @@ host = 191.96.11.3
 menu = [NL] Clouvider
 title = [NL] Clouvider - Amsterdam, Netherlands [nl.mirrors.clouvider.net]
 host = nl.mirrors.clouvider.net
-{% endif %}
 
 ++ colocrossing-ams
 menu = [NL] ColoCrossing
@@ -156,6 +135,7 @@ host = 192.210.175.1
 menu = [NL] heartbeat IT
 title = [NL] heartbeat IT (server-factory) - Eygelshoven, Netherlands [lg.nl.heartbeat-it.com]
 host = lg.nl.heartbeat-it.com
+{% endif %}
 
 ++ hosthatch-ams
 menu = [NL] HostHatch
@@ -167,11 +147,6 @@ host = lg.ams.hosthatch.com
 menu = [NL] HostSlim
 title = [NL] HostSlim - Lelystad, Netherlands [lg.hostslim.nl]
 host = lg.hostslim.nl
-
-++ hybula_0
-menu = [NL] Hybula
-title = [NL] Hybula - Amsterdam, Netherlands [lg-nl-ams.hybula.net]
-host = lg-nl-ams.hybula.net
 
 ++ leaseweb-nl
 menu = [NL] LeaseWeb
@@ -189,23 +164,6 @@ host = lg-drn.liteserver.nl
 menu = [NL] Melbicom
 title = [NL] Melbicom - Amsterdam, Netherlands [dl.ams.melbicom.net]
 host = dl.ams.melbicom.net
-
-++ mirhosting-ams
-menu = [NL] MIRHosting
-title = [NL] MIRHosting - Amsterdam, Netherlands [speedtest.nl3.mirhosting.net]
-host = speedtest.nl3.mirhosting.net
-{% endif %}
-
-++ novoserve-nl
-menu = [NL] NovoServe
-title = [NL] NovoServe - Amsterdam, Netherlands [speedtest.novoserve.com]
-host = speedtest.novoserve.com
-
-{% if not smokeping_lite %}
-++ psychz-nl
-menu = [NL] Psychz
-title = [NL] Psychz - Amsterdam, Netherlands [lg.ams.psychz.net]
-host = lg.ams.psychz.net
 {% endif %}
 
 ++ online-net-ams
@@ -213,12 +171,12 @@ menu = [NL] Scaleway
 title = [NL] Scaleway / Online.net - Amsterdam, Netherlands [ping-ams1.online.net]
 host = ping-ams1.online.net
 
+{% if not smokeping_lite %}
 ++ skylink-nl
 menu = [NL] SkyLink
 title = [NL] SkyLink - Eygelshoven, Netherlands [speedtest.skylink-data-center.nl]
 host = speedtest.skylink-data-center.nl
 
-{% if not smokeping_lite %}
 ++ softshellweb-nl
 menu = [NL] SoftShellWeb
 title = [NL] SoftShellWeb @ REBA Communications - Amsterdam, Netherlands [ams-test.softshellhosting.com]
@@ -235,16 +193,6 @@ host = lg.ams.nl.ultravps.eu
 menu = [NL] WorldStream
 title = [NL] WorldStream - Naaldwijk, Netherlands [speedtest.worldstream.nl]
 host = speedtest.worldstream.nl
-
-++ 23m
-menu = [DE] 23M
-title = [DE] 23M - Frankfurt, Germany [fra01.lg.23m.com]
-host = fra01.lg.23m.com
-
-++ aixit
-menu = [DE] Aixit
-title = [DE] Aixit - Frankfurt, Germany [www.aixit.com]
-host = www.aixit.com
 {% endif %}
 
 ++ alphavps-de
@@ -312,11 +260,6 @@ menu = [DE] Linode
 title = [DE] Linode - Frankfurt, Germany [speedtest.frankfurt.linode.com]
 host = speedtest.frankfurt.linode.com
 
-++ meerfarbig
-menu = [DE] meerfarbig
-title = [DE] meerfarbig - Frankfurt, Germany [speedtest.meerfarbig.net]
-host = speedtest.meerfarbig.net
-
 ++ melbicom-fra
 menu = [DE] Melbicom
 title = [DE] Melbicom - Frankfurt, Germany [dl.fra.melbicom.net]
@@ -339,30 +282,10 @@ menu = [DE] UltraVPS (Duesseldorf)
 title = [DE] UltraVPS - Duesseldorf, Germany [lg.dus.de.ultravps.eu]
 host = lg.dus.de.ultravps.eu
 
-++ vserver-site-de
-menu = [DE] vServer.site
-title = [DE] vServer.site - Frankfurt, Germany [lg-ffm.vserver.site]
-host = lg-ffm.vserver.site
-
-++ virtono-fra-de
-menu = [DE] Virtono @ M247
-title = [DE] Virtono @ M247 - Frankfurt, Germany [fra-de-ping.virtono.com]
-host = fra-de-ping.virtono.com
-
 ++ vultr-fra
 menu = [DE] Vultr
 title = [DE] Vultr - Frankfurt, Germany [fra-de-ping.vultr.com]
 host = fra-de-ping.vultr.com
-
-++ wiit-dus
-menu = [DE] WIIT (Dusseldorf)
-title = [DE] WIIT (fka myLoc) - Dusseldorf, Germany [speed.de-west-02.wiit-cloud.io]
-host = speed.de-west-02.wiit-cloud.io
-
-++ xtom-fra
-menu = [DE] xTom
-title = [DE] xTom / V.PS - Frankfurt, Germany [fra.speedtest.v.ps]
-host = fra.speedtest.v.ps
 {% endif %}
 
 ++ buyvm-lu

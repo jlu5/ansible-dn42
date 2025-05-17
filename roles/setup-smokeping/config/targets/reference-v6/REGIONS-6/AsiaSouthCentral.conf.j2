@@ -4,6 +4,11 @@ title = [SG] Amazon AWS - Singapore [2400:6500:ff00::344a:2]
 host = 2400:6500:ff00::344a:2
 
 {% if not smokeping_lite %}
+++ extravm-sg
+menu = [SG] ExtraVM
+title = [SG] ExtraVM @ Datacamp (Datapacket/CDN77) - Singapore [2a02:6ea0:d117:1::a]
+host = 2a02:6ea0:d117:1::a
+
 ++ hetzner-sg
 menu = [SG] Hetzner
 title = [SG] Hetzner - Singapore [sin-speed.hetzner.com]
@@ -30,18 +35,6 @@ menu = [SG] Linode
 title = [SG] Linode - Singapore [speedtest.singapore.linode.com]
 host = speedtest.singapore.linode.com
 
-++ host-universal-sg
-menu = [SG] Onidel
-title = [SG] Onidel @ Host Universal - Singapore, Singapore [2401:a4a0:2::101]
-host = 2401:a4a0:2::101
-
-{% if not smokeping_lite %}
-++ orangevps-sg
-menu = [SG] OrangeVPS
-title = [SG] OrangeVPS @ Epsilon Telecommunications - Singapore [2001:df4:c140:1f::e]
-host = 2001:df4:c140:1f::e
-{% endif %}
-
 ++ ovh-sgp-0
 menu = [SG] OVH
 title = [SG] OVH - Singapore [sgp.proof.ovh.net]
@@ -50,7 +43,7 @@ host = sgp.proof.ovh.net
 {% if not smokeping_lite %}
 ++ shockhosting-sg
 menu = [SG] Shock Hosting
-title = [SG] Shock Hosting - Singapore [sg-lg.shockhosting.net]
+title = [SG] Shock Hosting @ Host Universal - Singapore [sg-lg.shockhosting.net]
 host = sg-lg.shockhosting.net
 
 ++ starrydns-sg
@@ -113,11 +106,6 @@ host = 2404:fbc0:0:1261::5ea9
 menu = [VN] TOTHOST @ VNPT
 title = [VN] TOTHOST @ VNPT - Hanoi, Vietnam [2400:e920:0:3::185:252]
 host = 2400:e920:0:3::185:252
-
-++ greencloud-hcm
-menu = [VN] GreenCloud (Ho Chi Minh)
-title = [VN] GreenCloud @ FPT Telecom - Ho Chi Minh City, Vietnam [2400:6ea0:0:124d::9da5]
-host = 2400:6ea0:0:124d::9da5
 {% endif %}
 
 ++ virtury

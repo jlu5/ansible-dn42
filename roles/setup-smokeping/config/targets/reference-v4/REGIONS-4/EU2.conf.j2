@@ -32,15 +32,17 @@ menu = [AT] Netcup
 title = [AT] Netcup (Anexia) - Vienna, Austria [speedtest.netcup.at]
 host = speedtest.netcup.at
 
-++ hosthatch-osl
-menu = [NO] HostHatch
-title = [NO] HostHatch - Oslo, Norway [lg.osl.hosthatch.com]
-host = lg.osl.hosthatch.com
-
 ++ terrahost-no
 menu = [NO] Gigahost
 title = [NO] Gigahost (fka Terrahost) - Sandefjord, Norway [lg.gigahost.no]
 host = lg.gigahost.no
+
+{% if not smokeping_lite %}
+++ hosthatch-osl
+menu = [NO] HostHatch
+title = [NO] HostHatch - Oslo, Norway [lg.osl.hosthatch.com]
+host = lg.osl.hosthatch.com
+{% endif %}
 
 {% if not smokeping_lite %}
 ++ virtono-cph-dk
@@ -122,11 +124,6 @@ host = speedtest.milan.linode.com
 menu = [IT] Melbicom
 title = [IT] Melbicom - Palermo, Italy [dl.pal.melbicom.net]
 host = dl.pal.melbicom.net
-
-++ prometeus-it
-menu = [IT] Prometeus
-title = [IT] Prometeus / CDLAN - Milan, Italy [lg-milano.prometeus.net]
-host = lg-milano.prometeus.net
 {% endif %}
 
 ++ skylonhost

@@ -21,11 +21,6 @@ title = [UK] OVH - Erith, London, United Kingdom [eri.proof.ovh.net]
 host = eri.proof.ovh.net
 
 {% if not smokeping_lite %}
-++ pebblehost
-menu = [UK] PebbleHost (Coventry)
-title = [UK] PebbleHost - Coventry, United Kingdom [as212027.net]
-host = as212027.net
-
 ++ smarthost-uk
 menu = [UK] SmartHost @ VeloxServ
 title = [UK] SmartHost @ VeloxServ - Redditch, United Kingdom [2606:6680:3:1::2e41:5025]
@@ -109,11 +104,6 @@ menu = [NL] HostSlim
 title = [NL] HostSlim - Lelystad, Netherlands [2a06:5b80:1::b67b:cd74]
 host = 2a06:5b80:1::b67b:cd74
 
-++ hybula_0
-menu = [NL] Hybula
-title = [NL] Hybula - Amsterdam, Netherlands [lg-nl-ams.hybula.net]
-host = lg-nl-ams.hybula.net
-
 ++ leaseweb-nl
 menu = [NL] LeaseWeb
 title = [NL] LeaseWeb - Amsterdam, Netherlands [mirror.nl.leaseweb.net]
@@ -125,34 +115,17 @@ menu = [NL] LiteServer
 title = [NL] LiteServer - Dronten, Netherlands [lg-drn.liteserver.nl]
 host = lg-drn.liteserver.nl
 
-{% if not smokeping_lite %}
-++ mirhosting-ams
-menu = [NL] MIRHosting
-title = [NL] MIRHosting - Amsterdam, Netherlands [speedtest.nl3.mirhosting.net]
-host = speedtest.nl3.mirhosting.net
-{% endif %}
-
-++ novoserve-nl
-menu = [NL] NovoServe
-title = [NL] NovoServe - Amsterdam, Netherlands [speedtest.novoserve.com]
-host = speedtest.novoserve.com
-
-{% if not smokeping_lite %}
-++ psychz-nl
-menu = [NL] Psychz
-title = [NL] Psychz - Amsterdam, Netherlands [2604:6600:2007:48:0:2:185f:e237]
-host = 2604:6600:2007:48:0:2:185f:e237
-{% endif %}
-
 ++ online-net-ams
 menu = [NL] Scaleway
 title = [NL] Scaleway / Online.net - Amsterdam, Netherlands [ping6-ams1.online.net]
 host = ping6-ams1.online.net
 
+{% if not smokeping_lite %}
 ++ server-factory-nl
 menu = [NL] server-factory
 title = [NL] server-factory.com - Eygelshoven, Netherlands [lg.nl.server-factory.com]
 host = lg.nl.server-factory.com
+{% endif %}
 
 ++ skylink-nl
 menu = [NL] SkyLink
@@ -176,11 +149,6 @@ host = 2a02:e00:fff0:c::1
 menu = [NL] WorldStream
 title = [NL] WorldStream - Naaldwijk, Netherlands [speedtest.worldstream.nl]
 host = speedtest.worldstream.nl
-
-++ 23m
-menu = [DE] 23M
-title = [DE] 23M - Frankfurt, Germany [fra01.lg.23m.com]
-host = fra01.lg.23m.com
 
 ++ aurologic
 menu = [DE] Aurologic
@@ -228,11 +196,6 @@ host = mirror.de.leaseweb.net
 menu = [DE] Linode
 title = [DE] Linode - Frankfurt, Germany [speedtest.frankfurt.linode.com]
 host = speedtest.frankfurt.linode.com
-
-++ meerfarbig
-menu = [DE] meerfarbig
-title = [DE] meerfarbig - Frankfurt, Germany [speedtest.meerfarbig.net]
-host = speedtest.meerfarbig.net
 {% endif %}
 
 ++ netcup-nbg
@@ -249,23 +212,6 @@ host = speedtest1.synlinq.de
 menu = [DE] UltraVPS (Duesseldorf)
 title = [DE] UltraVPS - Duesseldorf, Germany [2a02:e00:ffec:3a::1]
 host = 2a02:e00:ffec:3a::1
-
-{% if not smokeping_lite %}
-++ vserver-site-de
-menu = [DE] vServer.site
-title = [DE] vServer.site - Frankfurt, Germany [lg-ffm.vserver.site]
-host = lg-ffm.vserver.site
-
-++ wiit-dus
-menu = [DE] WIIT (Dusseldorf)
-title = [DE] WIIT (fka myLoc) - Dusseldorf, Germany [speed.de-west-02.wiit-cloud.io]
-host = speed.de-west-02.wiit-cloud.io
-
-++ xtom-fra
-menu = [DE] xTom
-title = [DE] xTom / V.PS - Frankfurt, Germany [fra.speedtest.v.ps]
-host = fra.speedtest.v.ps
-{% endif %}
 
 ++ buyvm-lu
 menu = [LU] BuyVM
