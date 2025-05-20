@@ -529,7 +529,7 @@ wg_peers:
 
 - name: dn42-lezi
   port: 23377
-  remote: los1-us.peer.dn42.leziblog.com:21080
+  remote: v6.los1-us.peer.dn42.leziblog.com:21080
   wg_pubkey: Xzt9UrH2moj84QSH0jsw8Zj+jwXwdBLpApe4hHyfnAw=
   peer_v4: null
   peer_v6: fe80::3377
