@@ -729,10 +729,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-m4rc3l
-  remove: true
-
 - name: dn42-bandura
   port: 22923
   remote: p2p-node.de:51080
