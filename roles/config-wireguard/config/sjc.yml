@@ -563,5 +563,5 @@ wg_peers:
     asn: 4242421240
     ipv4: true
     ipv6: true
-    mp_bgp: false
+    mp_bgp: true
     extended_next_hop: false
