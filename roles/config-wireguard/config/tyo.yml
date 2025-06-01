@@ -231,10 +231,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-03-18 (down for >= 40 days)
-- name: dn42-sernet
-  remove: true
-
 - name: dn42-routedbits
   port: 20207
   remote: router.tyo1.routedbits.com:51080
@@ -334,9 +330,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-saltwood
-  remove: true
 
 - name: dn42-lantian
   port: 22547
