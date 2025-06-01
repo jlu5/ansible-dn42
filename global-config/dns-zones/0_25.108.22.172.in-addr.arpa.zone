@@ -13,8 +13,6 @@ $TTL 300
 36 IN PTR ping-tyo2.highdef.dn42.
 54 IN PTR ns.highdef.dn42.
 53 IN PTR dns.highdef.dn42.
-83 IN PTR grapnel.highdef.dn42.
-82 IN PTR git.highdef.dn42.
 1 IN PTR gw.yvrlab.highdef.dn42.
 35 IN PTR yvr.rtr.highdef.dn42.
 34 IN PTR sjc.rtr.highdef.dn42.
