@@ -343,3 +343,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-immtelecom
+  port: 22488
+  remote: 78d8826d-e062-4893-b5f4-8af06da3f0ea.immtel.com:21080
+  wg_pubkey: kY3JM2o4ABhez5V4G2WwDpQo8PrgnN7HG0VFobYFBi4=
+  peer_v4: null
+  peer_v6: 'fd46:1d76:e65e::'
+  bgp:
+    asn: 4242422488
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
