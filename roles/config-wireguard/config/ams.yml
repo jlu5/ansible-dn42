@@ -583,7 +583,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-    import_mode: peer_only
     export_mode: prepend
 
 - name: dn42-modzilla
