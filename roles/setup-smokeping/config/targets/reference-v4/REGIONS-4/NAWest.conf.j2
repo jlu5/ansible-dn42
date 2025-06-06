@@ -1,6 +1,6 @@
 ++ colocrossing-sjc
 menu = [US/CA] ColoCrossing (San Jose)
-title = [US/CA] ColoCrossing @ EGIHosting - San Jose, CA, US [lg.sj.colocrossing.com]
+title = [US/CA] ColoCrossing - San Jose, CA, US [lg.sj.colocrossing.com]
 host = lg.sj.colocrossing.com
 
 ++ greencloud-sjc
@@ -23,12 +23,14 @@ host = speedtest.fremont.linode.com
 menu = [US/CA] Misaka (San Jose)
 title = [US/CA] Misaka Network - San Jose, CA, United States [us-sjc10.speed.misaka.one]
 host = us-sjc10.speed.misaka.one
+{% endif %}
 
 ++ vultr-sjo
 menu = [US/CA] Vultr (San Jose)
 title = [US/CA] Vultr - Silicon Valley [sjo-ca-us-ping.vultr.com]
 host = sjo-ca-us-ping.vultr.com
 
+{% if not smokeping_lite %}
 ++ xtom-sjc
 menu = [US/CA] xTom (San Jose)
 title = [US/CA] xTom / V.PS - San Jose, United States [sjc.speedtest.v.ps]
@@ -40,12 +42,12 @@ menu = [US/CA] Clouvider (Los Angeles)
 title = [US/CA] Clouvider - Los Angeles, CA, US [la.mirrors.clouvider.net]
 host = la.mirrors.clouvider.net
 
+{% if not smokeping_lite %}
 ++ colocrossing-la
 menu = [US/CA] ColoCrossing (LA)
 title = [US/CA] ColoCrossing - Los Angeles, CA, US [lg.la.colocrossing.com]
 host = lg.la.colocrossing.com
 
-{% if not smokeping_lite %}
 ++ cox-orange-county-ca
 menu = [US/CA] Cox (Orange County)
 title = [US/CA] Cox - Orange County, CA, United States [speedtest.rd.oc.cox.net]
@@ -80,7 +82,7 @@ host = dl.lax.melbicom.net
 {% endif %}
 
 ++ multacom-la
-menu = [US/CA] CloudCone
+menu = [US/CA] MULTACOM
 title = [US/CA] CloudCone @ MULTACOM - Los Angeles, CA, US [la.lg.cloudc.one]
 host = la.lg.cloudc.one
 
@@ -123,24 +125,24 @@ host = lg-global-west01-us.silicloud.com
 menu = [US/CA] Vultr (Los Angeles)
 title = [US/CA] Vultr - Los Angeles, CA, US [lax-ca-us-ping.vultr.com]
 host = lax-ca-us-ping.vultr.com
+{% endif %}
 
 ++ webnx-lax
 menu = [US/CA] WebNX (Los Angeles)
 title = [US/CA] AlphaVPS @ WebNX - Los Angeles, CA, US [lgla.alphavps.com]
 host = lgla.alphavps.com
-{% endif %}
 
 ++ buyvm-las
 menu = [US/NV] BuyVM
 title = [US/NV] BuyVM - Las Vegas, NV, US [speedtest.lv.buyvm.net]
 host = speedtest.lv.buyvm.net
 
+{% if not smokeping_lite %}
 ++ hostodo-las
 menu = [US/NV] Hostodo
 title = [US/NV] Hostodo @ VegasNAP - Las Vegas, NV, US [lv.hostodo.com]
 host = lv.hostodo.com
 
-{% if not smokeping_lite %}
 ++ centurylink-salt-lake-city-ut
 menu = [US/UT] CenturyLink
 title = [US/UT] CenturyLink - Salt Lake City, UT, United States [salt-lake-city.speedtest.centurylink.net]
@@ -157,7 +159,6 @@ host = 23.145.120.2
 menu = [US/UT] WebNX
 title = [US/UT] WebNX - Ogden, UT, US [108.171.216.1]
 host = 108.171.216.1
-{% endif %}
 
 ++ 1gservers
 menu = [US/AZ] 1GServers
@@ -168,3 +169,4 @@ host = speedtest.1gservers.com
 menu = [US/AZ] Clouvider
 title = [US/AZ] Clouvider - Phoenix, AZ, US [phx.mirrors.clouvider.net]
 host = phx.mirrors.clouvider.net
+{% endif %}

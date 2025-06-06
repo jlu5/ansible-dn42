@@ -18,12 +18,14 @@ host = speedtest.fremont.linode.com
 menu = [US/CA] Misaka (San Jose)
 title = [US/CA] Misaka Network - San Jose, CA, United States [us-sjc10.speed.misaka.one]
 host = us-sjc10.speed.misaka.one
+{% endif %}
 
 ++ vultr-sjo
 menu = [US/CA] Vultr (San Jose)
 title = [US/CA] Vultr - Silicon Valley [2001:19f0:ac00:126:5400:ff:fe01:7cd4]
 host = 2001:19f0:ac00:126:5400:ff:fe01:7cd4
 
+{% if not smokeping_lite %}
 ++ xtom-sjc
 menu = [US/CA] xTom (San Jose)
 title = [US/CA] xTom / V.PS - San Jose, United States [sjc.speedtest.v.ps]
@@ -48,7 +50,7 @@ host = speedtest.los-angeles.linode.com
 {% endif %}
 
 ++ multacom-la
-menu = [US/CA] CloudCone
+menu = [US/CA] MULTACOM
 title = [US/CA] CloudCone @ MULTACOM - Los Angeles, CA, US [2607:f130:0:ef::2]
 host = 2607:f130:0:ef::2
 
@@ -79,12 +81,12 @@ host = spt01mtpkca.mtpk.ca.charter.com
 menu = [US/CA] Vultr (Los Angeles)
 title = [US/CA] Vultr - Los Angeles, CA, US [2001:19f0:6000:8002:5400:ff:fe00:5365]
 host = 2001:19f0:6000:8002:5400:ff:fe00:5365
+{% endif %}
 
 ++ webnx-lax
 menu = [US/CA] WebNX (Los Angeles)
 title = [US/CA] WebNX - Los Angeles, CA, US [lax-lg.webnx.com]
 host = lax-lg.webnx.com
-{% endif %}
 
 ++ buyvm-las
 menu = [US/NV] BuyVM
@@ -101,7 +103,6 @@ host = 2602:294:0:f9a::1
 menu = [US/UT] WebNX
 title = [US/UT] WebNX - Ogden, UT, US [ogd-lg.webnx.com]
 host = ogd-lg.webnx.com
-{% endif %}
 
 ++ 1gservers
 menu = [US/AZ] 1GServers
@@ -112,3 +113,4 @@ host = speedtest.1gservers.com
 menu = [US/AZ] Clouvider
 title = [US/AZ] Clouvider - Phoenix, AZ, US [phx.mirrors.clouvider.net]
 host = phx.mirrors.clouvider.net
+{% endif %}

@@ -8,12 +8,14 @@ host = 54.254.128.1
 menu = [SG] Contabo
 title = [SG] Contabo - Singapore [sin.speedtest.contabo.net]
 host = sin.speedtest.contabo.net
+{% endif %}
 
 ++ extravm-sg
 menu = [SG] ExtraVM
 title = [SG] ExtraVM @ Datacamp (Datapacket/CDN77) - Singapore [sgp.lg.extravm.com]
 host = sgp.lg.extravm.com
 
+{% if not smokeping_lite %}
 ++ hetzner-sg
 menu = [SG] Hetzner
 title = [SG] Hetzner - Singapore [sin-speed.hetzner.com]
