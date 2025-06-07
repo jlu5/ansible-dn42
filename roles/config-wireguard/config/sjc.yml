@@ -578,3 +578,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: false
+
+- name: dn42-ferrets
+  port: 23077
+  remote: us-1.dn42.ferrets.space:21080
+  wg_pubkey: 6Rpz5dqrSCx/nexpyw2BfdTT9lnk2ow8PTKBEx2GhUc=
+  peer_v4: 172.23.183.129
+  peer_v6: fd48:fa31:502b:10::2
+  bgp:
+    asn: 4242423077
+    ipv4: true
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
