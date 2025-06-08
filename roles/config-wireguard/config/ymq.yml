@@ -376,3 +376,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-prefixlabs
+  port: 21240
+  remote: ca-01.prefixlabs.net:21080
+  wg_pubkey: GKUu2Jk49pStCQyK/YUDrGF02JsZhggQBSXk8KlxXAM=
+  peer_v4: 172.20.209.14
+  peer_v6: fe80::1240:5
+  bgp:
+    asn: 4242421240
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
