@@ -16,10 +16,15 @@
 <div class="container">
 <p><b>Please note that server locations and IPs are subject to change.
 When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/tree/contrib/reresolve-dns">reresolve-dns.sh</a> instead of hardcoding IP addresses!</b></p>
-{% macro peering_info(host) %}
+
+{%- macro format_location(locstr) -%}
+{{ locstr[-2:] | upper | flag }} {{ locstr }}
+{%- endmacro -%}
+
+{%- macro peering_info(host) %}
 {% set serverdata = hostvars[host] %}
 <h4 id="{{ host }}">
-    {{ serverdata.location[-2:] | upper | flag }} {{ serverdata.location }}
+    {{ format_location(serverdata.location) }}
 {% if serverdata.web_display_name | default('') %}
     ({{ serverdata.web_display_name }})
 {% endif %}
@@ -46,8 +51,17 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
 {% for info_line in serverdata.notes|default([]) %}
     <li>{{ info_line }}</li>
 {% endfor %}
+{% if serverdata.location_alt|default([]) %}
+    <li>This node also serves peers previously connected in:
+    <ul>
+{% for loc in serverdata.location_alt %}
+    <li><b>{{ format_location(loc) }}</b></li>
+{% endfor %}
+    </ul>
+{% endif %}
 </ul>
-{% endmacro %}
+{% endmacro -%}
+
 <h2 id="americas">🌎 Americas</h2>
 {% for host in groups['na'] %}
 {{ peering_info(host) }}
