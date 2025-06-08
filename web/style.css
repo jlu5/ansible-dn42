@@ -2,17 +2,13 @@
 
 body {
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 5em;
+    margin-bottom: 1em;
     background-color: rgb(24, 24, 31);
 
     color: #eee;
     font-family: sans-serif;
     overflow-wrap: break-word;
-}
-
-body, html {
-    width: 99%;
-    height: 86vh;
 }
 
 .main {
