@@ -20,15 +20,6 @@ body {
     font-size: large;
 }
 
-.spacedlist > li {
-    padding-bottom: 1em;
-}
-
-.removed {
-    color: #bbb;
-    text-decoration: line-through;
-}
-
 h1, h2 {
     font-family: 'Comfortaa', cursive;
     margin-top: 2vh;

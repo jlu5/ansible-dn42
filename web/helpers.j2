@@ -1,8 +1,4 @@
-{%- macro link_node(node, alive=True) -%}
+{%- macro link_node(node) -%}
 {{ node[:2] | upper | flag }}
-{% if alive %}
 <a href="peering.html#{{ node }}">{{ node }}</a>
-{% else %}
-<span class="removed">{{ node }}</span>
-{% endif %}
 {%- endmacro -%}
