@@ -591,3 +591,16 @@ wg_peers:
     ipv6: true
     mp_bgp: false
     extended_next_hop: false
+
+- name: dn42-cowgl
+  port: 23999
+  remote: lax.node.cowgl.xyz:31080
+  wg_pubkey: jhOukGNAKHI8Ivn8uI1TS25n5ho/rVlKFfenGmwCVlg=
+  peer_v4: 172.22.144.66
+  peer_v6: "fd36:62be:ef51:2::1"
+  bgp:
+    asn: 4242423999
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: false
