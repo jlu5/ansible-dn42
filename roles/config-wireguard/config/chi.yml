@@ -174,10 +174,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-bri
-  remove: true
-
 - name: dn42-zdong
   port: 22354
   remote: fl1-us.zdong.me:21080

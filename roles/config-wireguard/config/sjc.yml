@@ -45,10 +45,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-03-18 (down for >= 40 days)
-- name: dn42-moe233
-  remove: true
-
 - name: dn42-iedon
   peer_v4: 172.23.91.117
   peer_v6: fe80::2189:e8
@@ -87,14 +83,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-huajitech
-  remove: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-sernet
-  remove: true
 
 - name: dn42-routedbits
   port: 20207
@@ -217,10 +205,6 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-zhaofeng
-  remove: true
-
 - name: dn42-nicholascw
   port: 51288
   remote: "lax2.sc00.org:21080"
@@ -329,10 +313,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-moechs
-  remove: true
-
 - name: dn42-sidereal
   port: 22016
   remote: phx1.dn42.sidereal.ca:21080
@@ -347,10 +327,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-goforcex
-  remove: true
 
 - name: dn42las-yura
   port: 22464

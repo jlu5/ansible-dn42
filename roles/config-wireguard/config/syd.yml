@@ -51,10 +51,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-lare
-  remove: true
-
 - name: dn42-imlonghao
   port: 21888
   remote: au1.dn42.ni.sb:21080
@@ -80,10 +76,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-jack
-  remove: true
 
 - name: dn42-colby
   port: 22558
@@ -149,9 +141,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-duststars
-  remove: true
 
 - name: dn42-furry
   port: 20088

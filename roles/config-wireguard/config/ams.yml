@@ -47,14 +47,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-mayli
-  remove: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-camelus
-  remove: true
-
 - name: dn42-tsingyao
   port: 23699
   remote: "dus-de.tsingyao.pub:21080"
@@ -186,10 +178,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-pigeonhole
-  remove: true
-
 - name: dn42-ventilaar
   port: 22246
   remote: ams01.dn42.ventilaar.net:31080
@@ -264,10 +252,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-hexxnet
-  remove: true
 
 - name: dn42-baragoon
   port: 21732
@@ -528,10 +512,6 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-kskb1817
-  remove: true
-
 - name: dn42-lutoma
   peer_v4: 172.22.119.1
   peer_v6: fe80::acab
@@ -749,10 +729,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-bao
-  remove: true
-
 - name: dn42-04dco
   port: 20304
   remote: gateway.04d.co:21080
@@ -768,14 +744,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-zehka
-  remove: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-eddie303
-  remove: true
 
 - name: dn42-potat0
   port: 21816

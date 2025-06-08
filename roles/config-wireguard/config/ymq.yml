@@ -182,10 +182,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-pigeonhole
-  remove: true
-
 - name: dn42-kioubit
   port: 23914
   remote: us2.g-load.eu:21080
@@ -251,10 +247,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-tibs
-  remove: true
-
 - name: dn42-lapisnet
   port: 22032
   remote: yul1.rtr42.inet6.foo:21080
@@ -293,10 +285,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-lukasbecke
-  remove: true
 
 - name: dn42-peanuts
   port: 21465

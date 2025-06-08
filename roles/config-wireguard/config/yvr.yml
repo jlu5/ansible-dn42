@@ -27,9 +27,6 @@ wg_peers:
     wg_allowedips: "172.22.108.101/32"
   peer_v6: null
 
-- name: dn42-yura
-  remove: true
-
 - name: dn42-bandura
   port: 22923
   remote: stricker.mk16.de:51080
@@ -63,10 +60,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-kiyomi
-  remove: true
 
 - name: dn42-routedbits
   port: 20207

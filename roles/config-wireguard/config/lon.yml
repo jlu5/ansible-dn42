@@ -51,14 +51,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-servermade
-  remove: true
-
-# Automatically removed on 2025-02-16 (down for >= 40 days)
-- name: dn42-camelus
-  remove: true
-
 - name: dn42-atolm
   peer_v4: null
   peer_v6: fe80::585
