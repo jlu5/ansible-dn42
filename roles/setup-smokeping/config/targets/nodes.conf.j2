@@ -65,16 +65,3 @@ menu = Clouvider London (IPv6)
 title = Clouvider - London, UK (IPv6)
 host = {{ smokeping_crypt_hosts.lon02 }}
 {% endif %}
-
-++ tyo04
-menu = GreenCloudVPS Tokyo (IPv4)
-title = GreenCloudVPS (IIJ blend) - Tokyo, JP (IPv4)
-host = tyo04.jlu5.com
-
-{% if _smokeping_local_has_v6 %}
-++ tyo04_v6
-probe = FPing6
-menu = GreenCloudVPS Tokyo (IPv6)
-title = GreenCloudVPS (IIJ blend) - Tokyo, JP (IPv6)
-host = tyo04.jlu5.com
-{% endif %}

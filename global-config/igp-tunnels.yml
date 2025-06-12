@@ -26,7 +26,6 @@ igp_neighbours:
     sjc: null
     syd: null
     tyo: null
-    tyo2: null
     yvr: null
   lon: !!set
     ams: null
@@ -44,7 +43,6 @@ igp_neighbours:
     hkg: null
     syd: null
     tyo: null
-    tyo2: null
     ymq: null
     yvr: null
   sto: !!set
@@ -55,19 +53,11 @@ igp_neighbours:
     hkg: null
     sjc: null
     tyo: null
-    tyo2: null
   tyo: !!set
     ams: null
     hkg: null
     sjc: null
     syd: null
-    tyo2: null
-    yvr: null
-  tyo2: !!set
-    hkg: null
-    sjc: null
-    syd: null
-    tyo: null
     yvr: null
   ymq: !!set
     ams: null
@@ -83,7 +73,6 @@ igp_neighbours:
     hkg: null
     sjc: null
     tyo: null
-    tyo2: null
     ymq: null
 igp_wg_ports:
   ams:
@@ -109,10 +98,10 @@ igp_wg_ports:
     yvr: 30033
   hkg:
     ams: 30024
+    sgp: 30032
     sjc: 30025
     syd: 30023
     tyo: 30027
-    tyo2: 30032
     yvr: 30026
   lon:
     ams: 30008
@@ -124,13 +113,19 @@ igp_wg_ports:
     ams: 30018
     lon: 30019
     ymq: 30022
+  sgp:
+    hkg: 30032
+    sjc: 30028
+    syd: 30029
+    tyo: 30031
+    yvr: 30030
   sjc:
     ams: 30002
     chi: 30004
     hkg: 30025
+    sgp: 30028
     syd: 30016
     tyo: 30014
-    tyo2: 30028
     ymq: 30003
     yvr: 30000
   sto:
@@ -139,22 +134,16 @@ igp_wg_ports:
   syd:
     ams: 30021
     hkg: 30023
+    sgp: 30029
     sjc: 30016
     tyo: 30017
-    tyo2: 30029
   tyo:
     ams: 30020
     hkg: 30027
+    sgp: 30031
     sjc: 30014
     syd: 30017
-    tyo2: 30031
     yvr: 30015
-  tyo2:
-    hkg: 30032
-    sjc: 30028
-    syd: 30029
-    tyo: 30031
-    yvr: 30030
   ymq:
     ams: 30006
     chi: 30005
@@ -167,8 +156,8 @@ igp_wg_ports:
     chi: 30001
     chi2: 30033
     hkg: 30026
+    sgp: 30030
     sjc: 30000
     tyo: 30015
-    tyo2: 30030
     ymq: 30007
 next_port: 30036
