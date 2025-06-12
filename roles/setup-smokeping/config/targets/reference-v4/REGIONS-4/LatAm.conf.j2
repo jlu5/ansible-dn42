@@ -5,7 +5,7 @@ host = mex-mx-ping.vultr.com
 
 {% if not smokeping_lite %}
 ++ amazon-br
-menu = [BR] Amazon AWS
+menu = [BR] Amazon AWS (Sao Paulo)
 title = [BR] Amazon AWS - Sao Paulo, Brazil [54.94.0.66]
 host = 54.94.0.66
 
@@ -21,27 +21,27 @@ title = [BR] EdgeUno - São Paulo, Brazil [spt-sao1.edgeuno.com]
 host = spt-sao1.edgeuno.com
 
 ++ gcore-sao
-menu = [BR] G-Core Labs
+menu = [BR] G-Core Labs (Sao Paulo)
 title = [BR] G-Core Labs - Sao Paulo, Brazil [5.188.238.2]
 host = 5.188.238.2
 
 ++ linode-sao
-menu = [BR] Linode
+menu = [BR] Linode (Sao Paulo)
 title = [BR] Linode @ Akamai - Sao Paulo, Brazil [speedtest.sao-paulo.linode.com]
 host = speedtest.sao-paulo.linode.com
 
 ++ oneprovider-br
-menu = [BR] OneProvider
+menu = [BR] OneProvider (Sao Paulo)
 title = [BR] OneProvider @ Latitude.sh - Sao Paulo, Brazil [185.192.124.1]
 host = 185.192.124.1
 
 ++ psychz-sao
-menu = [BR] Psychz
+menu = [BR] Psychz (Sao Paulo)
 title = [BR] Psychz - Sao Paulo, Brazil [lg.sao.psychz.net]
 host = lg.sao.psychz.net
 
 ++ vultr-sao
-menu = [BR] Vultr
+menu = [BR] Vultr (Sao Paulo)
 title = [BR] Vultr - Sao Paulo, Brazil [sao-br-ping.vultr.com]
 host = sao-br-ping.vultr.com
 
@@ -57,17 +57,19 @@ title = [CL] Vultr - Santiago, Chile [scl-cl-ping.vultr.com]
 host = scl-cl-ping.vultr.com
 {% endif %}
 
+{% if not smokeping_lite %}
+++ edgeuno-buenos-aires
+menu = [AR] EdgeUno
+title = [AR] EdgeUno - Buenos Aires, Argentina [spt-eze1.edgeuno.com]
+host = spt-eze1.edgeuno.com
+{% endif %}
+
 ++ owntn-uy
 menu = [UY] OWN.TN @ ANTEL
 title = [UY] OWN.TN @ ANTEL - Pando, Uruguay [190.64.201.9]
 host = 190.64.201.9
 
 {% if not smokeping_lite %}
-++ edgeuno-buenos-aires
-menu = [AR] EdgeUno
-title = [AR] EdgeUno - Buenos Aires, Argentina [spt-eze1.edgeuno.com]
-host = spt-eze1.edgeuno.com
-
 ++ edgeuno-guatemala-city
 menu = [GT] EdgeUno
 title = [GT] EdgeUno - Guatemala City, Guatemala [spt-gua1.edgeuno.com]

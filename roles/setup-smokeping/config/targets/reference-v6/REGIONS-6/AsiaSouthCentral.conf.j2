@@ -58,11 +58,6 @@ title = [SG] Vultr - Singapore [2001:19f0:4400:4001:5400:ff:fe32:b7e5]
 host = 2001:19f0:4400:4001:5400:ff:fe32:b7e5
 
 {% if not smokeping_lite %}
-++ linode-cgk
-menu = [ID] Linode
-title = [ID] Linode @ Akamai - Jakarta, Indonesia [speedtest.jakarta.linode.com]
-host = speedtest.jakarta.linode.com
-
 ++ contabo-mumbai
 menu = [IN] Contabo (Mumbai)
 title = [IN] Contabo - Mumbai, India [bom.speedtest.contabo.net]
@@ -85,16 +80,23 @@ menu = [IN] Melbicom (Mumbai)
 title = [IN] Melbicom - Mumbai, India [dl.bom.melbicom.net]
 host = dl.bom.melbicom.net
 
-++ ovh-bom
-menu = [IN] OVH (Mumbai)
-title = [IN] OVH - Mumbai, India [bom.proof.ovh.net]
-host = bom.proof.ovh.net
+++ vultr-del
+menu = [IN] Vultr (Delhi)
+title = [IN] Vultr - Delhi NCR, India [2401:c080:3400:209c:5400:4ff:fe1f:b29e]
+host = 2401:c080:3400:209c:5400:4ff:fe1f:b29e
 {% endif %}
 
 ++ vultr-blr
-menu = [IN] Vultr (Bangalore)
-title = [IN] Vultr - Bangalore, India [2401:c080:3000:2048:5400:4ff:fe1d:7185]
+menu = [IN] Vultr (Bengaluru)
+title = [IN] Vultr - Bengaluru, India [2401:c080:3000:2048:5400:4ff:fe1d:7185]
 host = 2401:c080:3000:2048:5400:4ff:fe1d:7185
+
+{% if not smokeping_lite %}
+++ linode-cgk
+menu = [ID] Linode
+title = [ID] Linode @ Akamai - Jakarta, Indonesia [speedtest.jakarta.linode.com]
+host = speedtest.jakarta.linode.com
+{% endif %}
 
 ++ greencloud-hanoi
 menu = [VN] GreenCloud (Hanoi)

@@ -9,11 +9,6 @@ menu = [AU] Contabo
 title = [AU] Contabo - Sydney, Australia [syd.speedtest.contabo.net]
 host = syd.speedtest.contabo.net
 
-++ gsl-networks-brisbane
-menu = [AU] GSL Networks (Brisbane)
-title = [AU] GSL Networks - Brisbane, Australia [b2.speedtest.gslnetworks.com]
-host = b2.speedtest.gslnetworks.com
-
 ++ gsl-networks-sydney
 menu = [AU] GSL Networks (Sydney)
 title = [AU] GSL Networks - Sydney, Australia [sy5.test.gslnetworks.com.au]
@@ -47,16 +42,23 @@ menu = [AU] Vultr (Sydney)
 title = [AU] Vultr - Sydney, Australia [syd-au-ping.vultr.com]
 host = syd-au-ping.vultr.com
 
+{% if not smokeping_lite %}
+++ xtom-syd
+menu = [AU] xTom
+title = [AU] xTom / V.PS - Sydney, Australia [syd.speedtest.v.ps]
+host = syd.speedtest.v.ps
+{% endif %}
+
 ++ vultr-mel
 menu = [AU] Vultr (Melbourne)
 title = [AU] Vultr - Melbourne, Australia [mel-au-ping.vultr.com]
 host = mel-au-ping.vultr.com
 
 {% if not smokeping_lite %}
-++ xtom-syd
-menu = [AU] xTom
-title = [AU] xTom / V.PS - Sydney, Australia [syd.speedtest.v.ps]
-host = syd.speedtest.v.ps
+++ gsl-networks-brisbane
+menu = [AU] GSL Networks (Brisbane)
+title = [AU] GSL Networks - Brisbane, Australia [b2.speedtest.gslnetworks.com]
+host = b2.speedtest.gslnetworks.com
 {% endif %}
 
 ++ zappiehost-nz

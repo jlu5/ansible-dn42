@@ -82,11 +82,6 @@ title = [SG] Vultr - Singapore [sgp-ping.vultr.com]
 host = sgp-ping.vultr.com
 
 {% if not smokeping_lite %}
-++ linode-cgk
-menu = [ID] Linode
-title = [ID] Linode @ Akamai - Jakarta, Indonesia [speedtest.jakarta.linode.com]
-host = speedtest.jakarta.linode.com
-
 ++ terabix-my
 menu = [MY] Terabix
 title = [MY] Terabix - Johor Bahru, Malaysia [160.30.4.225]
@@ -97,11 +92,6 @@ menu = [IN] Contabo (Mumbai)
 title = [IN] Contabo - Mumbai, India [bom.speedtest.contabo.net]
 host = bom.speedtest.contabo.net
 {% endif %}
-
-++ hostvds-in
-menu = [IN] HostVDS @ Anonet
-title = [IN] HostVDS @ Anonet - Delhi, India [ping-del1.hostvds.com]
-host = ping-del1.hostvds.com
 
 ++ leapswitch
 menu = [IN] Leapswitch (Mumbai)
@@ -129,27 +119,42 @@ menu = [IN] Psychz
 title = [IN] Psychz - Mumbai, India [lg.in.psychz.net]
 host = lg.in.psychz.net
 
-++ readydedis
-menu = [IN] ReadyDedis (Hyderabad)
-title = [IN] ReadyDedis @ Web Werks - Hyderabad, India [170.205.54.253]
-host = 170.205.54.253
-{% endif %}
-
-++ vultr-blr1
-menu = [IN] Vultr (Bangalore)
-title = [IN] Vultr - Bangalore, India [blr-in-ping.vultr.com]
-host = blr-in-ping.vultr.com
-
-{% if not smokeping_lite %}
-++ vultr-del
-menu = [IN] Vultr (Delhi)
-title = [IN] Vultr - Delhi NCR, India [del-in-ping.vultr.com]
-host = del-in-ping.vultr.com
-
 ++ vultr-bom
 menu = [IN] Vultr (Mumbai)
 title = [IN] Vultr - Mumbai, India [bom-in-ping.vultr.com]
 host = bom-in-ping.vultr.com
+
+++ hostvds-in
+menu = [IN] HostVDS (Delhi)
+title = [IN] HostVDS @ Anonet - Delhi, India [ping-del1.hostvds.com]
+host = ping-del1.hostvds.com
+
+++ vultr-del
+menu = [IN] Vultr (Delhi)
+title = [IN] Vultr - Delhi NCR, India [del-in-ping.vultr.com]
+host = del-in-ping.vultr.com
+{% endif %}
+
+++ digirdp-blr
+menu = [IN] DigiRDP (Bengaluru)
+title = [IN] DigiRDP @ RACKVOLT - Bengaluru, India [lg-india-blr.digidedi.com]
+host = lg-india-blr.digidedi.com
+
+++ vultr-blr1
+menu = [IN] Vultr (Bengaluru)
+title = [IN] Vultr - Bengaluru, India [blr-in-ping.vultr.com]
+host = blr-in-ping.vultr.com
+
+{% if not smokeping_lite %}
+++ readydedis
+menu = [IN] ReadyDedis (Hyderabad)
+title = [IN] ReadyDedis @ Web Werks - Hyderabad, India [170.205.54.253]
+host = 170.205.54.253
+
+++ linode-cgk
+menu = [ID] Linode
+title = [ID] Linode @ Akamai - Jakarta, Indonesia [speedtest.jakarta.linode.com]
+host = speedtest.jakarta.linode.com
 {% endif %}
 
 ++ tothost-hanoi

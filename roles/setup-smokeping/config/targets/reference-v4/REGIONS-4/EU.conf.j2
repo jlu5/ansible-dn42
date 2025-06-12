@@ -55,23 +55,23 @@ menu = [UK] Vultr
 title = [UK] Vultr - London, United Kingdom [lon-gb-ping.vultr.com]
 host = lon-gb-ping.vultr.com
 
-++ hosteons-par
-menu = [FR] hostEONS
-title = [FR] hostEONS @ Limestone Networks - Paris, France [lg.fr.hosteons.com]
-host = lg.fr.hosteons.com
-
 ++ hostpapa-ie
 menu = [IE] RackNerd
 title = [IE] RackNerd @ HostPapa - Dublin, Ireland [23.95.225.2]
 host = 23.95.225.2
 
+++ hosteons-par
+menu = [FR] hostEONS (Paris)
+title = [FR] hostEONS @ Limestone Networks - Paris, France [lg.fr.hosteons.com]
+host = lg.fr.hosteons.com
+
 ++ layer7-par
-menu = [FR] Layer7
+menu = [FR] Layer7 (Paris)
 title = [FR] Layer7 @ Harmony Hosting - Paris, France [194.24.161.1]
 host = 194.24.161.1
 
 ++ linode-par
-menu = [FR] Linode @ Akamai
+menu = [FR] Linode (Paris)
 title = [FR] Linode @ Akamai - Paris, France [speedtest.paris.linode.com]
 host = speedtest.paris.linode.com
 {% endif %}
@@ -99,11 +99,16 @@ host = lg-fr.racknerd.com
 {% endif %}
 
 ++ online-net-par
-menu = [FR] Scaleway
+menu = [FR] Scaleway (Paris)
 title = [FR] Scaleway / Online.net - Paris, France [ping.online.net]
 host = ping.online.net
 
 {% if not smokeping_lite %}
+++ serverd-par
+menu = [FR] SERVERD (Paris)
+title = [FR] SERVERD - Paris, France [iperf.par.as62000.net]
+host = iperf.par.as62000.net
+
 ++ virtua-lille
 menu = [FR] Virtua (Lille)
 title = [FR] Virtua.Cloud - Lille, France [lg.lil01fr.vsys.cloud]
@@ -111,9 +116,14 @@ host = lg.lil01fr.vsys.cloud
 {% endif %}
 
 ++ vultr-cdg
-menu = [FR] Vultr
+menu = [FR] Vultr (Paris)
 title = [FR] Vultr - Paris, France [par-fr-ping.vultr.com]
 host = par-fr-ping.vultr.com
+
+++ serverd-mrs
+menu = [FR] SERVERD (Marseille)
+title = [FR] SERVERD - Marseille, France [iperf.nce.as62000.net]
+host = iperf.nce.as62000.net
 
 {% if not smokeping_lite %}
 ++ chunkserve
@@ -130,6 +140,11 @@ host = nl.mirrors.clouvider.net
 menu = [NL] ColoCrossing
 title = [NL] ColoCrossing - Amsterdam, Netherlands [192.210.175.1]
 host = 192.210.175.1
+
+++ deluxhost
+menu = [NL] DeluxHost
+title = [NL] DeluxHost - Amsterdam, Netherlands [lg.deluxhost.net]
+host = lg.deluxhost.net
 
 ++ server-factory-nl
 menu = [NL] heartbeat IT

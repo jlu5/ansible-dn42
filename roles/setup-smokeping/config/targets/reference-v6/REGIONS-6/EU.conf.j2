@@ -44,12 +44,12 @@ title = [UK] xTom / V.PS - London, United Kingdom [lon.speedtest.v.ps]
 host = lon.speedtest.v.ps
 
 ++ hosteons-par
-menu = [FR] hostEONS
+menu = [FR] hostEONS (Paris)
 title = [FR] hostEONS @ Limestone Networks - Paris, France [2402:d0c0:22:c::1]
 host = 2402:d0c0:22:c::1
 
 ++ linode-par
-menu = [FR] Linode @ Akamai
+menu = [FR] Linode (Paris)
 title = [FR] Linode @ Akamai - Paris, France [speedtest.paris.linode.com]
 host = speedtest.paris.linode.com
 {% endif %}
@@ -72,16 +72,28 @@ host = sbg.proof.ovh.net
 {% endif %}
 
 ++ online-net-par
-menu = [FR] Scaleway
+menu = [FR] Scaleway (Paris)
 title = [FR] Scaleway / Online.net - Paris, France [ping6.online.net]
 host = ping6.online.net
 
 {% if not smokeping_lite %}
+++ serverd-par
+menu = [FR] SERVERD (Paris)
+title = [FR] SERVERD - Paris, France [iperf.par.as62000.net]
+host = iperf.par.as62000.net
+{% endif %}
+
 ++ vultr-par
-menu = [FR] Vultr
+menu = [FR] Vultr (Paris)
 title = [FR] Vultr - Paris, France [2001:19f0:6800:8002:5400:ff:fe00:536b]
 host = 2001:19f0:6800:8002:5400:ff:fe00:536b
 
+++ serverd-mrs
+menu = [FR] SERVERD (Marseille)
+title = [FR] SERVERD - Marseille, France [iperf.nce.as62000.net]
+host = iperf.nce.as62000.net
+
+{% if not smokeping_lite %}
 ++ chunkserve
 menu = [NL] Chunkserve
 title = [NL] Chunkserve @ backbone.direct - Amsterdam, Netherlands [2a0f:85c1:840::2]
@@ -91,6 +103,11 @@ host = 2a0f:85c1:840::2
 menu = [NL] Clouvider
 title = [NL] Clouvider - Amsterdam, Netherlands [nl.mirrors.clouvider.net]
 host = nl.mirrors.clouvider.net
+
+++ deluxhost
+menu = [NL] DeluxHost
+title = [NL] DeluxHost - Amsterdam, Netherlands [2a12:bec4:1822:86::a]
+host = 2a12:bec4:1822:86::a
 {% endif %}
 
 ++ hosthatch-ams
