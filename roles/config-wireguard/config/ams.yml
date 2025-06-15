@@ -63,20 +63,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-hujk
-  peer_v4: null
-  peer_v6: fe80::104:50:2030:c
-  port: 22717
-  remote: nl.vm.whojk.com:23010
-  wg_pubkey: cokP4jFBH0TlBD/m3sWCpc9nADLOhzM2+lcjAb3ynFc=
-  local_v6: fe80::118
-  wg_privkey: /etc/wireguard/privatekey_ams
-  bgp:
-    asn: 4242422717
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-iedon
   peer_v4: 172.23.91.125
@@ -300,20 +289,9 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-marlinc
-  port: 23941
-  remote: 2a0f:93c1:26:27c::1:21080
-  wg_pubkey: cP88BzE/gser2JVw74EPi2/9ZNEsSYWx2MOANGk+YUc=
-  peer_v4: null
-  peer_v6: fd33:aba8:392:1::2
-  local_v6: fd33:aba8:392:1::3
-  wg_privkey: /etc/wireguard/privatekey_ams
-  bgp:
-    asn: 4242423941
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-w1kl4s
   port: 51516
@@ -771,31 +749,13 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-bernd
-  port: 23455
-  remote: fde6-a09a-b373.dynv6.net:33791
-  wg_pubkey: Ry996w9g2QeKtzdcK+/7ihliE2Y/hjOZkG/7ncFzl24=
-  peer_v4: null
-  peer_v6: fe80::63:7065
-  bgp:
-    asn: 4242423455
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
+  remove: true
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-apeku
-  port: 20059
-  remote: dn42.agent-est.com:4245
-  wg_pubkey: ZwCdWfn5LCR+s6Bwq1LtxyYojei1ak0Pa2dbLVl3eA8=
-  peer_v4: 172.20.44.1
-  peer_v6: fd48:377b:4ea7::1
-  bgp:
-    asn: 4242420059
-    ipv4: true
-    ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
+  remove: true
 
 - name: dn42-duststars
   port: 21771

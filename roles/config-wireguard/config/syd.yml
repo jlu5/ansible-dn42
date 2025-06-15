@@ -142,15 +142,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-furry
-  port: 20088
-  remote: 158.179.18.30:21080
-  wg_pubkey: QB/LKrY7SbZP6U7LokvMPqW20QDZ8AT6WfLPNnfhWnM=
-  peer_v4: null
-  peer_v6: fe80::88:1
-  bgp:
-    asn: 4242420088
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
+  remove: true

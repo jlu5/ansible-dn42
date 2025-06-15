@@ -221,18 +221,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-sernet
-  port: 23947
-  remote: us2.sherpherd.net:21080
-  wg_pubkey: PXkGrHooCFnB6N8bD6isgVjhl9GvzD2CLqlA+e2XikM=
-  peer_v4: null
-  peer_v6: fe80::3947:7
-  bgp:
-    asn: 4242423947
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-colby
   port: 22558
@@ -286,18 +277,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-peanuts
-  port: 21465
-  remote: vpn.peaunts.net:21080
-  wg_pubkey: JTH6M6XnV8vi9RG+SfCPAMTne7hMXcB4XlFfJA9qzls=
-  peer_v4: null
-  peer_v6: fe80::fee1
-  bgp:
-    asn: 4242421465
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-fiberplz
   port: 20389

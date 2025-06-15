@@ -44,18 +44,9 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-melty
-  peer_v4: null
-  peer_v6: fe80::3632
-  port: 23632
-  remote: achacha.link.melty.land:21080
-  wg_pubkey: 7t0RGOTU6KTNMp+dz1jmnsZDccXp8EQ6p9J6ZbgJkQQ=
-  bgp:
-    asn: 4242423632
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
+  remove: true
 
 - name: dn42-sernet
   port: 23947
@@ -258,18 +249,9 @@ wg_peers:
     mp_bgp: false
     extended_next_hop: false
 
+# Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-heartbleed
-  port: 22297
-  remote: sin-gw.buddy.ileg.al:52297
-  wg_pubkey: fgl0bDJkhGByL0HyHTBK49wWK2EEgl4utxiBbht6WDA=
-  peer_v4: 172.23.9.129
-  peer_v6: fdd0:b971:a0bf::1
-  bgp:
-    asn: 4242422297
-    ipv4: true
-    ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
+  remove: true
 
 - name: dn42-sdubs
   port: 20202

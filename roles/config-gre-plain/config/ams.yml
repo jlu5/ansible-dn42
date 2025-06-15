@@ -11,13 +11,4 @@ gre_peers:
     mp_bgp: true
 
 - name: dn42-marlinc-1
-  port: 23941
-  remote: 2a0b:b600:3c01:1::1
-  local_v6: fd86:bad:11b7:7f42:3941::0/127
-  bgp:
-    asn: 4242423941
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    suffix: "_gre"
+  remove: true
