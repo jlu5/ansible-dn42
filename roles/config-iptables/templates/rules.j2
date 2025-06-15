@@ -70,7 +70,7 @@
 
 ## GRE peers
 {% for gre_peer in gre_peers|default([]) %}
-{% if (gre_peer.remote is ansible.utils.ipv4 and aftype == 4) or (gre_peer.remote is ansible.utils.ipv6 and aftype == 6) %}
+{% if 'remote' in gre_peer and ((gre_peer.remote is ansible.utils.ipv4 and aftype == 4) or (gre_peer.remote is ansible.utils.ipv6 and aftype == 6)) %}
 # {{ gre_peer.name }}
 -A INPUT -p gre -s {{ gre_peer.remote }} -j ACCEPT
 {% endif %}
