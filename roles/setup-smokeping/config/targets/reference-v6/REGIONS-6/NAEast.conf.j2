@@ -64,17 +64,17 @@ host = proof.ovh.ca
 menu = [CA/QC] ServaRICA
 title = [CA/QC] ServaRICA - Montreal, QC, Canada [ping.servarica.com]
 host = ping.servarica.com
-{% endif %}
 
 ++ linveo-oh
 menu = [US/OH] Linveo
-title = [US/OH] Linveo @ Cyxtera - Columbus, OH, US [2602:f953:6:1::a]
+title = [US/OH] Linveo - Columbus, OH, US [2602:f953:6:1::a]
 host = 2602:f953:6:1::a
 
 ++ smarthost-oh
 menu = [US/OH] SmartHost @ Microtronix
 title = [US/OH] SmartHost @ Microtronix - Ottoville, OH, US [2606:6680:47:1::43b3:1c5a]
 host = 2606:6680:47:1::43b3:1c5a
+{% endif %}
 
 ++ buyvm-nyc
 menu = [US/NY] BuyVM
@@ -98,12 +98,12 @@ menu = [US/NY] ReliableSite
 title = [US/NY] ReliableSite - New York City, NY, US [nycmetro-speedtest.reliablesite.net]
 host = nycmetro-speedtest.reliablesite.net
 
+{% if not smokeping_lite %}
 ++ spectrum-new-york-ny
 menu = [US/NY] Spectrum
 title = [US/NY] Spectrum - New York, NY, United States [speedtest.nyc.rr.com]
 host = speedtest.nyc.rr.com
 
-{% if not smokeping_lite %}
 ++ webnx-nyc
 menu = [US/NY] WebNX
 title = [US/NY] WebNX - New York City, NY, US [nyc-lg.webnx.com]

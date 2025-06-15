@@ -31,8 +31,8 @@ host = objectstorage.ca-toronto-1.oci.oraclecloud.com
 {% endif %}
 
 ++ rogers-east
-menu = [CA/ON] Rogers Wireless
-title = [CA/ON] Rogers Wireless - Toronto, ON, Canada [sttorontowireless.rogers.com]
+menu = [CA/ON] Rogers
+title = [CA/ON] Rogers - Toronto, ON, Canada [sttorontowireless.rogers.com]
 host = sttorontowireless.rogers.com
 
 {% if not smokeping_lite %}
@@ -85,6 +85,11 @@ title = [CA/QC] OVH - Beauharnois, QC, Canada [proof.ovh.ca]
 host = proof.ovh.ca
 
 {% if not smokeping_lite %}
+++ rogers-qc
+menu = [CA/QC] Rogers
+title = [CA/QC] Rogers - Montreal, QC, Canada [stmontrealwireless.rogers.com]
+host = stmontrealwireless.rogers.com
+
 ++ servarica
 menu = [CA/QC] ServaRICA
 title = [CA/QC] ServaRICA - Montreal, QC, Canada [ping.servarica.com]
@@ -94,17 +99,17 @@ host = ping.servarica.com
 menu = [CA/NS] Eastlink
 title = [CA/NS] Eastlink - Halifax, NS, Canada [speedtest-east.eastlink.ca]
 host = speedtest-east.eastlink.ca
-{% endif %}
 
 ++ linveo-oh
 menu = [US/OH] Linveo
-title = [US/OH] Linveo @ Cyxtera - Columbus, OH, US [lg-ohio.linveo.com]
+title = [US/OH] Linveo - Columbus, OH, US [lg-ohio.linveo.com]
 host = lg-ohio.linveo.com
 
 ++ smarthost-oh
 menu = [US/OH] SmartHost @ Microtronix
 title = [US/OH] SmartHost @ Microtronix - Ottoville, OH, US [oh1.smarthost.net]
 host = oh1.smarthost.net
+{% endif %}
 
 ++ buyvm-nyc
 menu = [US/NY] BuyVM
@@ -133,12 +138,12 @@ menu = [US/NY] ReliableSite
 title = [US/NY] ReliableSite - New York City, NY, US [nycmetro-speedtest.reliablesite.net]
 host = nycmetro-speedtest.reliablesite.net
 
+{% if not smokeping_lite %}
 ++ spectrum-new-york-ny
 menu = [US/NY] Spectrum
 title = [US/NY] Spectrum - New York, NY, United States [speedtest.nyc.rr.com]
 host = speedtest.nyc.rr.com
 
-{% if not smokeping_lite %}
 ++ webnx-nyc
 menu = [US/NY] WebNX
 title = [US/NY] WebNX - New York City, NY, US [nyc-lg.webnx.com]
