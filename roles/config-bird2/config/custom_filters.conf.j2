@@ -117,13 +117,17 @@ function handle_special_cases()
             4242420207,
             4242420604,
             4242421288,
-            4242421588,
             4242422002,
             4242422904,
             4242422980,
             4242423035
         ] ? * =]) then {
             bgp_med = bgp_med + 15;
+    }
+
+    # Depref transit from massive networks (>200 peers)
+    else if (bgp_path ~ [= [4242421588, 4242423914] ? * =]) then {
+        bgp_med = bgp_med + 5;
     }
 }
 
