@@ -1,6 +1,6 @@
 {# FIXME: does jinja2 have a re.escape filter? #}
 {% set webtrace_supported_servers_re = '(' + '|'.join(groups['webtrace']) + ')' %}
-{% set multi_traceroute_error = "Sorry, multi-server traceroute is no longer supported. Please select a single server and you'll be redirected to the new webtrace interface."%}
+{% set multi_traceroute_error = "Sorry, multi-server traceroute is no longer supported. Please select a single server and you'll be redirected to the new webtrace interface.\n"%}
 # dn42
 server {
     listen 80;
@@ -10,10 +10,16 @@ server {
     access_log /var/log/nginx/dn42-lg-access.log;
     error_log /var/log/nginx/dn42-lg-error.log;
 
+    # restricted to dn42 origins only
+    allow 10.0.0.0/8;
+    allow 172.20.0.0/14;
+    allow 172.31.0.0/16;
+    allow fd00::/8;
+    deny all;
+
     location ~ ^/traceroute/(.*?)\+(.*?)/ {
-        add_header Content-Type text/plain;
-        {# FIXME: returning an error code doesn't seem to display the page content #}
-        return 200 "{{ multi_traceroute_error }}";
+        add_header Content-Type text/plain always;
+        return 404 "{{ multi_traceroute_error }}";
     }
     location ~ ^/traceroute/{{ webtrace_supported_servers_re }}/([^/]+) {
         return http://$1{{ dns_auto_host_record_suffix }}.{{ dns_domain }}/webtrace/?target=$2;
@@ -55,12 +61,17 @@ server {
     }
 
     location ~ ^/traceroute/(.*?)\+(.*?)/ {
-        add_header Content-Type text/plain;
-        return 200 "{{ multi_traceroute_error }}";
+        add_header Content-Type text/plain always;
+        return 404 "{{ multi_traceroute_error }}";
     }
     location ~ ^/traceroute/{{ webtrace_supported_servers_re }}/([^/]+) {
         {# FIXME: this hardcodes the server suffix #}
         return https://$1.peer.highdef.network/webtrace/?target=$2;
+    }
+
+    location ~ ^/(api|generic|route_generic|route_where|route_from_protocol) {
+        add_header Content-Type text/plain always;
+        return 403 "This endpoint is not available over clearnet. Please access it at {{ birdlg_vhost }}\n";
     }
 
     location / {
