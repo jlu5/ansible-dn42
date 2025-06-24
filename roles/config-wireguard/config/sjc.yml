@@ -539,7 +539,7 @@ wg_peers:
 - name: dn42-ferrets
   port: 23077
   remote: us-1.dn42.ferrets.space:21080
-  wg_pubkey: 6Rpz5dqrSCx/nexpyw2BfdTT9lnk2ow8PTKBEx2GhUc=
+  wg_pubkey: 2SyET8eMECoQXCH+pRGASj4moNwlexrbXFzPDmex3SI=
   peer_v4: 172.23.183.129
   peer_v6: fd48:fa31:502b:10::2
   bgp:
