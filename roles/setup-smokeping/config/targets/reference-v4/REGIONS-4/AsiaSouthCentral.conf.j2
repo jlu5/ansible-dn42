@@ -47,6 +47,11 @@ host = speedtest.singapore.linode.com
 menu = [SG] Melbicom
 title = [SG] Melbicom - Singapore [103.172.116.3]
 host = 103.172.116.3
+
+++ orangevps-sg
+menu = [SG] OrangeVPS
+title = [SG] OrangeVPS - Singapore [sg-lg.orangevps.com]
+host = sg-lg.orangevps.com
 {% endif %}
 
 ++ ovh-sgp-0
@@ -64,6 +69,11 @@ host = 64.235.43.60
 menu = [SG] Shock Hosting
 title = [SG] Shock Hosting @ Host Universal - Singapore [sg-lg.shockhosting.net]
 host = sg-lg.shockhosting.net
+
+++ singtel-singapore
+menu = [SG] Singtel
+title = [SG] Singtel - Singapore [speedtest.singnet.com.sg]
+host = speedtest.singnet.com.sg
 
 ++ starrydns-sg
 menu = [SG] StarryDNS
@@ -91,12 +101,12 @@ host = 160.30.4.225
 menu = [IN] Contabo (Mumbai)
 title = [IN] Contabo - Mumbai, India [bom.speedtest.contabo.net]
 host = bom.speedtest.contabo.net
+{% endif %}
 
 ++ hostdzire-in
 menu = [IN] HostDZire
 title = [IN] HostDZire @ Web Werks - Mumbai, India [103.182.102.222]
 host = 103.182.102.222
-{% endif %}
 
 ++ leapswitch
 menu = [IN] Leapswitch (Mumbai)
@@ -138,12 +148,12 @@ host = ping-del1.hostvds.com
 menu = [IN] Vultr (Delhi)
 title = [IN] Vultr - Delhi NCR, India [del-in-ping.vultr.com]
 host = del-in-ping.vultr.com
-{% endif %}
 
 ++ digirdp-blr
 menu = [IN] DigiRDP (Bengaluru)
 title = [IN] DigiRDP @ RACKVOLT - Bengaluru, India [lg-india-blr.digidedi.com]
 host = lg-india-blr.digidedi.com
+{% endif %}
 
 ++ vultr-blr1
 menu = [IN] Vultr (Bengaluru)
@@ -157,9 +167,21 @@ title = [IN] ReadyDedis @ Web Werks - Hyderabad, India [170.205.54.253]
 host = 170.205.54.253
 
 ++ linode-cgk
-menu = [ID] Linode
+menu = [ID] Linode (Jakarta)
 title = [ID] Linode @ Akamai - Jakarta, Indonesia [speedtest.jakarta.linode.com]
 host = speedtest.jakarta.linode.com
+{% endif %}
+
+++ telin
+menu = [ID] Telin (Jakarta)
+title = [ID] Telkom Indonesia (Telin) - Jakarta, Indonesia [jakarta2.speedtest.telkom.net.id]
+host = jakarta2.speedtest.telkom.net.id
+
+{% if not smokeping_lite %}
+++ greencloud-hanoi
+menu = [VN] GreenCloud (Hanoi)
+title = [VN] GreenCloud @ FPT Telecom - Hanoi, Vietnam [103.199.17.252]
+host = 103.199.17.252
 {% endif %}
 
 ++ tothost-hanoi
@@ -179,14 +201,19 @@ menu = [PK] Virtury Cloud
 title = [PK] Virtury Cloud - Islamabad, Pakistan [lg.virtury.com]
 host = lg.virtury.com
 
+++ pldt-manila
+menu = [PH] PLDT (Manila)
+title = [PH] PLDT - Manila, Philippines [119.92.238.50]
+host = 119.92.238.50
+
+++ globe-telecom-manila
+menu = [PH] Globe Telecom (Manila)
+title = [PH] Globe Telecom - Manila, Philippines [mnl-speedtest.globe.com.ph]
+host = mnl-speedtest.globe.com.ph
+
 {% if not smokeping_lite %}
 ++ gcore-kz
 menu = [KZ] G-Core Labs
 title = [KZ] G-Core Labs - Almaty, Kazakhstan [213.156.137.1]
 host = 213.156.137.1
-
-++ owntn-kz
-menu = [KZ] OWN.TN @ Kazakhtelecom
-title = [KZ] OWN.TN @ Kazakhtelecom - Pavlodar, Kazakhstan [178.89.141.8]
-host = 178.89.141.8
 {% endif %}

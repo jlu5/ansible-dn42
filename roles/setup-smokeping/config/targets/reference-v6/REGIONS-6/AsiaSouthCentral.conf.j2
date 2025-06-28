@@ -35,6 +35,13 @@ menu = [SG] Linode
 title = [SG] Linode - Singapore [speedtest.singapore.linode.com]
 host = speedtest.singapore.linode.com
 
+{% if not smokeping_lite %}
+++ orangevps-sg
+menu = [SG] OrangeVPS
+title = [SG] OrangeVPS - Singapore [2001:df4:c140:1f::e]
+host = 2001:df4:c140:1f::e
+{% endif %}
+
 ++ ovh-sgp-0
 menu = [SG] OVH
 title = [SG] OVH - Singapore [sgp.proof.ovh.net]
@@ -93,24 +100,34 @@ host = 2401:c080:3000:2048:5400:4ff:fe1d:7185
 
 {% if not smokeping_lite %}
 ++ linode-cgk
-menu = [ID] Linode
+menu = [ID] Linode (Jakarta)
 title = [ID] Linode @ Akamai - Jakarta, Indonesia [speedtest.jakarta.linode.com]
 host = speedtest.jakarta.linode.com
 {% endif %}
 
+++ telin
+menu = [ID] Telin (Jakarta)
+title = [ID] Telkom Indonesia (Telin) - Jakarta, Indonesia [jakarta2.speedtest.telkom.net.id]
+host = jakarta2.speedtest.telkom.net.id
+
+{% if not smokeping_lite %}
 ++ greencloud-hanoi
 menu = [VN] GreenCloud (Hanoi)
 title = [VN] GreenCloud @ FPT Telecom - Hanoi, Vietnam [2404:fbc0:0:1261::5ea9]
 host = 2404:fbc0:0:1261::5ea9
+{% endif %}
 
-{% if not smokeping_lite %}
 ++ tothost-hanoi
 menu = [VN] TOTHOST @ VNPT
 title = [VN] TOTHOST @ VNPT - Hanoi, Vietnam [2400:e920:0:3::185:252]
 host = 2400:e920:0:3::185:252
-{% endif %}
 
 ++ virtury
 menu = [PK] Virtury Cloud
 title = [PK] Virtury Cloud - Islamabad, Pakistan [2001:df2:d40:1::1]
 host = 2001:df2:d40:1::1
+
+++ globe-telecom-manila
+menu = [PH] Globe Telecom (Manila)
+title = [PH] Globe Telecom - Manila, Philippines [mnl-speedtest.globe.com.ph]
+host = mnl-speedtest.globe.com.ph

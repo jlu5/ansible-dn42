@@ -166,6 +166,11 @@ host = mirror.hk.leaseweb.net
 menu = [HK] Misaka
 title = [HK] Misaka Network - Hong Kong, China [45.11.104.140]
 host = 45.11.104.140
+
+++ orangevps-hk
+menu = [HK] OrangeVPS
+title = [HK] OrangeVPS - Hong Kong, China [hk-lg.orangevps.com]
+host = hk-lg.orangevps.com
 {% endif %}
 
 ++ skywolf-hk
@@ -178,22 +183,41 @@ host = lg.hk.skywolf.cloud
 menu = [HK] StarryDNS
 title = [HK] StarryDNS - Hong Kong, China [hk4.lg.starrydns.com]
 host = hk4.lg.starrydns.com
+{% endif %}
 
 ++ tencent-hk
 menu = [HK] Tencent Cloud
 title = [HK] Tencent Cloud - Hong Kong, China [cos.ap-hongkong.myqcloud.com]
 host = cos.ap-hongkong.myqcloud.com
 
+{% if not smokeping_lite %}
 ++ virtono-hk
 menu = [HK] Virtono @ M247
 title = [HK] Virtono @ M247 - Hong Kong, China [hk-ping.virtono.com]
 host = hk-ping.virtono.com
 {% endif %}
 
-++ psychz-tw
-menu = [TW] Psychz
-title = [TW] Psychz - Taipei, Taiwan [lg.tw.psychz.net]
-host = lg.tw.psychz.net
+++ hinet-taipei
+menu = [TW] HiNet (Taipei)
+title = [TW] HiNet (Chunghwa Telecom) - Taipei, Taiwan [tp1.chtm.hinet.net]
+host = tp1.chtm.hinet.net
+
+++ seednet-taoyuan
+menu = [TW] Seednet (Taoyuan)
+title = [TW] Seednet (Digital United) - Taoyuan, Taiwan [seednet-ty1.seed.net.tw]
+host = seednet-ty1.seed.net.tw
+
+{% if not smokeping_lite %}
+++ hostinginside
+menu = [TW] SoftShellWeb
+title = [TW] SoftShellWeb @ HostingInside - Taipei, Taiwan [tw-test.softshellhosting.com]
+host = tw-test.softshellhosting.com
+
+++ taiwan-mobile-taipei
+menu = [TW] Taiwan Mobile (Taipei)
+title = [TW] Taiwan Mobile - Taipei, Taiwan [spttp1.taiwanmobile.com]
+host = spttp1.taiwanmobile.com
+{% endif %}
 
 ++ gcore-khv
 menu = [RU] EdgeCenter (Khabarovsk)
