@@ -114,6 +114,19 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+- name: dn42-gatuno
+  port: 20180
+  remote: bokbok.gatuno.mx:21080
+  wg_pubkey: sORFj7pR8ZO1U4vZxmgq0ue9gGGNf8wdrgr7kb+CTBA=
+  peer_v4: 172.22.122.15
+  peer_v6: fe80::0180
+  bgp:
+    asn: 4242420180
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
+
 # BEGIN peers imported from dal.peer (202408)
 
 - name: dn42-bandura
@@ -135,22 +148,6 @@ wg_peers:
   bgp:
     asn: 4242422923
     extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-- name: dn42-gatuno
-  port: 20180
-  remote: "bokbok.gatuno.mx:50180"
-  wg_pubkey: "sORFj7pR8ZO1U4vZxmgq0ue9gGGNf8wdrgr7kb+CTBA="
-  peer_v4: "172.22.122.15"
-  peer_v6: "fd42:470:f0ef:307::1/64"
-  local_v6: "fd42:470:f0ef:307::2/64"
-  local_v4: 172.22.108.33
-  wg_privkey: /etc/wireguard/privatekey_dal
-  bgp:
-    asn: 4242420180
-    extended_next_hop: false
     ipv4: true
     ipv6: true
     mp_bgp: true
