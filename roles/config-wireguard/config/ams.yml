@@ -289,6 +289,22 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
+- name: dn42-camelusfer
+  port: 21592
+  remote: nl01.dn42.ca.melusfer.us:41080
+  wg_pubkey: RcXm6OK+3+/sjXoivNTdjU3W5ctdohZ9GKYS25f05n8=
+  peer_v4: 172.21.99.189
+  peer_v6: fe80::1592
+  local_v4: 172.20.229.118
+  local_v6: fe80::118
+  wg_privkey: /etc/wireguard/privatekey_ams
+  bgp:
+    asn: 4242421592
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+
 # Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-marlinc
   remove: true
