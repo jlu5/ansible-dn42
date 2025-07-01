@@ -371,3 +371,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-baragoon
+  port: 21732
+  remote: chr-to01.as215887.net:21080
+  wg_pubkey: OrIhRR7m2fX1D8Qsi1L9l1LJfHi+Jb4Xecxrwxjq0FY=
+  peer_v4: 172.23.32.153
+  peer_v6: fe80::1732
+  bgp:
+    asn: 4242421732
+    extended_next_hop: false
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
