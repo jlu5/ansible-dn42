@@ -25,8 +25,8 @@ define OUTGOING_BGP_MED = {{ default_outgoing_bgp_med | default(0) }};
 # Node ID is AS4242421080-specific and used for informational communities and route pinning. You probably don't need it
 define NODEID = {{ ownip.rsplit('.', 1)[1] }};
 
+define LC_ORIGIN_NODEID = 100;
 define LC_ORIGIN_REGION = 101;
-define LC_ORIGIN_NODEID = 103;
 
 # Subnets to route through iBGP
 # This includes anycast services as well as any single-homed downstreams with agreement
