@@ -1,4 +1,10 @@
-{%- macro link_node(node) -%}
-{{ node[:2] | upper | flag }}
-<a href="peering.html#{{ node }}">{{ node }}</a>
+{%- macro format_location(locstr, nodelink='') -%}
+{{ locstr[-2:] | upper | flag }}
+{% if nodelink %}<a href="peering.html#{{ nodelink }}">{% endif %}
+ {{ locstr }}
+{% if nodelink %}</a>{% endif %}
+{%- endmacro -%}
+
+{%- macro anchor(name) %}
+<a href="#{{ name }}"><i class="fa fa-link" aria-hidden="true"></i></a>
 {%- endmacro -%}

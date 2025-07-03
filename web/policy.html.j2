@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Routing Policy - highdef.network</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+<!-- {% import 'helpers.j2' as helpers %} -->
+</head>
+
+<body>
+<div class="main">
+<h1>Routing Policy</h1>
+{% include 'navigation.j2' %}
+<div class="container">
+
+<h2 id="policy-general">General</h2>
+<ul>
+<li>Routes must have <strong>valid ROA</strong> to be accepted.</li>
+<li>Routes with unusually large path lengths (&gt; 8) are rejected as they usually signal ghost routes.</li>
+<li>AS{{ ownas }} uses cold potato routing. This is done by calculating MED values on import - routes that have the same
+<a href="https://dn42.dev/howto/BGP-communities#route-origin">origin BGP community</a> as the receiving PoP will be
+assigned a lower MED.</li>
+<ul>
+    <li>As such, MED values from other ASNs will be ignored at import.</li>
+</ul>
+<li>For cold potato routing:</li>
+<ul>
+    <li>North America - Central (42) and North America - East (43) are considered one region.</li>
+    <li>Asia Pacific (51, 52, 53) is considered one region.</li>
+</ul>
+</ul>
+
+<h2 id="rate-limits">Rate Limits</h2>
+<p>To prevent abuse, outbound dn42 traffic is rate limited to <b>{{ dn42_ratelimit}}Mbps</b> per interface.</p>
+
+<h2 id="bgp-communities">BGP Communities</h2>
+<ul>
+<li>AS{{ ownas }} supports the <a href="https://dn42.dev/howto/BGP-communities#bgp-community-criteria">standard dn42 BGP communities</a>
+for bandwidth, encryption, and route origin region.</li>
+<li>The latency metric is NOT supported (and should not be used for choosing routes anyways, as it does not account for
+intra-AS latency).</li>
+</ul>
+
+<h3 id="large-communities">Large communities</h3>
+<p>AS{{ ownas }} exports the following informational large communities:</p>
+<ul>
+<li><b>(AS{{ ownas }}, 100, X)</b> - Route learned by server ID X:
+<ul>
+{% for node in groups['dn42routers'] %}
+<li><b>(AS{{ ownas }}, 100, {{ hostvars[node].ownip.rsplit('.', 1)[-1] }})</b> - Route learned in {{ helpers.format_location(hostvars[node].location, node) }}</li>
+{% endfor %}
+</ul>
+<li><b>(AS{{ ownas }}, 101, 41...70)</b> - Route learned in this <a href="https://dn42.dev/howto/BGP-communities#route-origin">dn42 region</a></li>
+</ul>
+
+</div>
+</div>
+</body>
+</html>

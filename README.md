@@ -6,8 +6,6 @@ This repository contains the configs for **AS4242421080 / HIGHDEF-AS** on [dn42]
 
 This iteration of the network uses OSPF (v2 + v3) and a full mesh of iBGP sessions over WireGuard. Internal costs between nodes are [periodically generated](scripts/igpping/) based off latency and packet loss.
 
-[Routing Policy](ROUTING-POLICY.md)
-
 ## Config structure
 
 Here I use Ansible to configure the following components:

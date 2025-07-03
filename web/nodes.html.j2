@@ -17,14 +17,10 @@
 <p><b>Please note that server locations and IPs are subject to change.
 When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/tree/contrib/reresolve-dns">reresolve-dns.sh</a> instead of hardcoding IP addresses!</b></p>
 
-{%- macro format_location(locstr) -%}
-{{ locstr[-2:] | upper | flag }} {{ locstr }}
-{%- endmacro -%}
-
 {%- macro peering_info(host) %}
 {% set serverdata = hostvars[host] %}
 <h4 id="{{ host }}">
-    {{ format_location(serverdata.location) }}
+    {{ helpers.format_location(serverdata.location) }}
 {% if serverdata.web_display_name | default('') %}
     ({{ serverdata.web_display_name }})
 {% endif %}
@@ -32,7 +28,7 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
 [<a href="https://{{ serverdata.public_host | default(serverdata.ansible_host) }}/webtrace/">webtrace</a>]
 {% endif %}
 [<a href="https://lg.highdef.network/summary/{{ host }}/">looking glass</a>]
-    <a href="#{{ host }}"><i class="fa fa-link" aria-hidden="true"></i></a>
+    {{ helpers.anchor(host) }}
 </h4>
 <ul>
     <li><strong>Hostname</strong>: {{ serverdata.ansible_host }}
@@ -55,7 +51,7 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
     <li>This node also serves peers previously connected in:
     <ul>
 {% for loc in serverdata.location_alt %}
-    <li><b>{{ format_location(loc) }}</b></li>
+    <li><b>{{ helpers.format_location(loc) }}</b></li>
 {% endfor %}
     </ul>
 {% endif %}
