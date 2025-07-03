@@ -15,7 +15,7 @@
 {% include 'navigation.j2' %}
 <div class="container">
 
-<h2 id="policy-general">General</h2>
+<h2 id="policy-general"><i class="fa fa-info-circle" aria-hidden="true"></i> General</h2>
 <ul>
 <li>Routes must have <strong>valid ROA</strong> to be accepted.</li>
 <li>Routes with unusually large path lengths (&gt; 8) are rejected as they usually signal ghost routes.</li>
@@ -32,10 +32,10 @@ assigned a lower MED.</li>
 </ul>
 </ul>
 
-<h2 id="rate-limits">Rate Limits</h2>
+<h2 id="rate-limits"><i class="fa fa-flag" aria-hidden="true"></i> Rate Limits</h2>
 <p>To prevent abuse, outbound dn42 traffic is rate limited to <b>{{ dn42_ratelimit}}Mbps</b> per interface.</p>
 
-<h2 id="bgp-communities">BGP Communities</h2>
+<h2 id="bgp-communities"><i class="fa fa-code" aria-hidden="true"></i> BGP Communities</h2>
 <ul>
 <li>AS{{ ownas }} supports the <a href="https://dn42.dev/howto/BGP-communities#bgp-community-criteria">standard dn42 BGP communities</a>
 for bandwidth, encryption, and route origin region.</li>
