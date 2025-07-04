@@ -298,3 +298,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-bitrate
+  port: 23997
+  remote: uk1.dn42.bitrate.studio:21080
+  wg_pubkey: 7uqGJcYhftxmM+8WrYZbGKnUi4ye8PD6A1/KrfSjXno=
+  peer_v4: 172.21.95.40
+  peer_v6: fe80::3997
+  bgp:
+    asn: 4242423997
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
