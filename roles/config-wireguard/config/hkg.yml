@@ -113,6 +113,19 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+- name: dn42-billchen
+  port: 20803
+  remote: hk.billchen.bid:21080
+  wg_pubkey: jfJLocC6s+MUvxkrrJJ010kiVvmPJ23TYjdsarc4R28=
+  peer_v4: 172.23.33.10
+  peer_v6: fe80::803
+  bgp:
+    asn: 4242420803
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
 ## peers moved from sgp.peer
 - name: dn42-moecast
   port: 20604
@@ -129,22 +142,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     export_mode: prepend
-
-- name: dn42-billchen
-  port: 20803
-  remote: hk.billchen.bid:21080
-  wg_pubkey: jfJLocC6s+MUvxkrrJJ010kiVvmPJ23TYjdsarc4R28=
-  peer_v4: 172.23.33.10
-  peer_v6: fe80::803
-  local_v4: 172.22.108.39
-  local_v6: "fe80::1080:39"
-  wg_privkey: "/etc/wireguard/privatekey_sgp"
-  bgp:
-    asn: 4242420803
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
 
 - name: dn42-imlonghao
   port: 21888
