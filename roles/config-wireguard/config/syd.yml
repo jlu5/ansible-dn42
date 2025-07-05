@@ -142,6 +142,19 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
+- name: dn42-prefixlabs
+  port: 21240
+  remote: au-01.prefixlabs.net:21080
+  wg_pubkey: 0OapC67LuwIjvMkJ56lOEoPGHi+ZMA4A3qU0cjpG+Aw=
+  peer_v4: 172.20.209.20
+  peer_v6: fe80::1240:12
+  bgp:
+    asn: 4242421240
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+
 # Automatically removed on 2025-06-14 (down for >= 40 days)
 - name: dn42-furry
   remove: true
