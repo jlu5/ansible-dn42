@@ -892,7 +892,7 @@ wg_peers:
 
 - name: dn42-kmsbismarc
   port: 23555
-  remote: 188.230.215.43:35555
+  remote: 188.230.215.43:47001
   wg_pubkey: Y0JKYbu/J0hxTS/6/+0P9Noom9Z1Z4wHE/6PX5DNTDs=
   peer_v4: 172.20.40.33
   peer_v6: null
