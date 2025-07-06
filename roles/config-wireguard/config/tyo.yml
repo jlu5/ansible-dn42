@@ -403,3 +403,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-mxmilu
+  port: 21166
+  remote: jp.dn42.milu.moe:21080
+  wg_pubkey: KEvc8ZVx68bazeY2XO4LDIb3PAxFtiQSTY5xNesTFDc=
+  peer_v4: 172.22.110.33
+  peer_v6: fe80::1166
+  bgp:
+    asn: 4242421166
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
