@@ -311,3 +311,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-xeiu
+  port: 21336
+  remote: fra1.dn42.xeiu.top:21080
+  wg_pubkey: Z5sN+emFAsZxrcpqcBnkww6X70FlHLRWkcuab4O7jzI=
+  peer_v4: 172.20.159.3
+  peer_v6: fe80::2:1336
+  bgp:
+    asn: 4242421336
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
