@@ -5,6 +5,7 @@ igp_neighbours:
     hkg: null
     lon: null
     lon2: null
+    mum: null
     sjc: null
     sto: null
     syd: null
@@ -12,17 +13,13 @@ igp_neighbours:
     ymq: null
   chi: !!set
     ams: null
-    chi2: null
     lon: null
     sjc: null
     ymq: null
     yvr: null
-  chi2: !!set
-    chi: null
-    ymq: null
-    yvr: null
   hkg: !!set
     ams: null
+    mum: null
     sjc: null
     syd: null
     tyo: null
@@ -31,12 +28,19 @@ igp_neighbours:
     ams: null
     chi: null
     lon2: null
+    mum: null
     sto: null
     ymq: null
   lon2: !!set
     ams: null
     lon: null
     ymq: null
+  mum: !!set
+    ams: null
+    hkg: null
+    lon: null
+    syd: null
+    tyo: null
   sjc: !!set
     ams: null
     chi: null
@@ -51,25 +55,25 @@ igp_neighbours:
   syd: !!set
     ams: null
     hkg: null
+    mum: null
     sjc: null
     tyo: null
   tyo: !!set
     ams: null
     hkg: null
+    mum: null
     sjc: null
     syd: null
     yvr: null
   ymq: !!set
     ams: null
     chi: null
-    chi2: null
     lon: null
     lon2: null
     sjc: null
     yvr: null
   yvr: !!set
     chi: null
-    chi2: null
     hkg: null
     sjc: null
     tyo: null
@@ -80,6 +84,7 @@ igp_wg_ports:
     hkg: 30024
     lon: 30008
     lon2: 30018
+    mum: 30040
     sjc: 30002
     sto: 30012
     syd: 30021
@@ -98,6 +103,7 @@ igp_wg_ports:
     yvr: 30033
   hkg:
     ams: 30024
+    mum: 30037
     sgp: 30032
     sjc: 30025
     syd: 30023
@@ -107,12 +113,19 @@ igp_wg_ports:
     ams: 30008
     chi: 30010
     lon2: 30019
+    mum: 30036
     sto: 30013
     ymq: 30009
   lon2:
     ams: 30018
     lon: 30019
     ymq: 30022
+  mum:
+    ams: 30040
+    hkg: 30037
+    lon: 30036
+    syd: 30039
+    tyo: 30038
   sgp:
     hkg: 30032
     sjc: 30028
@@ -134,12 +147,14 @@ igp_wg_ports:
   syd:
     ams: 30021
     hkg: 30023
+    mum: 30039
     sgp: 30029
     sjc: 30016
     tyo: 30017
   tyo:
     ams: 30020
     hkg: 30027
+    mum: 30038
     sgp: 30031
     sjc: 30014
     syd: 30017
@@ -160,4 +175,4 @@ igp_wg_ports:
     sjc: 30000
     tyo: 30015
     ymq: 30007
-next_port: 30036
+next_port: 30041
