@@ -233,7 +233,6 @@ wg_peers:
   wg_pubkey: eT9G9iM8XDIuUU1CAYl8eBLdI43z77nfWxJSeknQjQg=
   peer_v4: null
   peer_v6: fe80::1525
-  wg_privkey: /etc/wireguard/privatekey_ams
   bgp:
     asn: 4242421525
     extended_next_hop: true
