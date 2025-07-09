@@ -1,0 +1,13 @@
+wg_peers:
+- name: dn42-routedbits
+  port: 20207
+  remote: router.mum1.routedbits.com:51080
+  wg_pubkey: RgwTfRAivLpvkeenTQMwNyLU55W5EZfYnXGjWTAY5yw=
+  peer_v4: null
+  peer_v6: fe80::207
+  bgp:
+    asn: 4242420207
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
