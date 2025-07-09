@@ -64,6 +64,11 @@ menu = [SG] Vultr
 title = [SG] Vultr - Singapore [2001:19f0:4400:4001:5400:ff:fe32:b7e5]
 host = 2001:19f0:4400:4001:5400:ff:fe32:b7e5
 
+++ webhorizon-my
+menu = [MY] WebHorizon
+title = [MY] WebHorizon - Johor, Malaysia [lg-my-jhb.webhorizon.net]
+host = lg-my-jhb.webhorizon.net
+
 {% if not smokeping_lite %}
 ++ contabo-mumbai
 menu = [IN] Contabo (Mumbai)
@@ -86,7 +91,14 @@ host = speedtest.mum1.linode.com
 menu = [IN] Melbicom (Mumbai)
 title = [IN] Melbicom - Mumbai, India [dl.bom.melbicom.net]
 host = dl.bom.melbicom.net
+{% endif %}
 
+++ webhorizon-in
+menu = [IN] WebHorizon (Mumbai)
+title = [IN] WebHorizon - Mumbai, India [lg-in-mum.webhorizon.net]
+host = lg-in-mum.webhorizon.net
+
+{% if not smokeping_lite %}
 ++ vultr-del
 menu = [IN] Vultr (Delhi)
 title = [IN] Vultr - Delhi NCR, India [2401:c080:3400:209c:5400:4ff:fe1f:b29e]
@@ -128,6 +140,6 @@ title = [PK] Virtury Cloud - Islamabad, Pakistan [2001:df2:d40:1::1]
 host = 2001:df2:d40:1::1
 
 ++ globe-telecom-manila
-menu = [PH] Globe Telecom (Manila)
+menu = [PH] Globe Telecom
 title = [PH] Globe Telecom - Manila, Philippines [mnl-speedtest.globe.com.ph]
 host = mnl-speedtest.globe.com.ph

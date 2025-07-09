@@ -15,6 +15,11 @@ menu = [US/VA] Hetzner
 title = [US/VA] Hetzner - Ashburn, VA, US [ash-speed.hetzner.com]
 host = ash-speed.hetzner.com
 
+++ leaseweb-wdc
+menu = [US/VA] LeaseWeb
+title = [US/VA] LeaseWeb - Manassas, VA, US [mirror.wdc2.us.leaseweb.net]
+host = mirror.wdc2.us.leaseweb.net
+
 {% if not smokeping_lite %}
 ++ linode-was
 menu = [US/DC] Linode @ Akamai
@@ -75,6 +80,13 @@ host = 2606:6680:43:1::5d98:1521
 menu = [US/GA] Vultr
 title = [US/GA] Vultr - Atlanta, GA, US [2001:19f0:5400:8001:5400:ff:fe00:5369]
 host = 2001:19f0:5400:8001:5400:ff:fe00:5369
+
+{% if not smokeping_lite %}
+++ tiernet-nc
+menu = [US/NC] Tier.net
+title = [US/NC] Tier.net - Charlotte, NC, US [lg.nc.tier.net]
+host = lg.nc.tier.net
+{% endif %}
 
 ++ buyvm-mia
 menu = [US/FL] BuyVM

@@ -17,6 +17,7 @@ title = AS4242421080 Nodes (clearnet)
 menu = {{ _smokeping_id }} - {{ _server_isp }} (IPv4)
 title = {{ _server_isp }} - {{ _smokeping_loc }} (IPv4) [{{ _smokeping_host }}]
 host = {{ _smokeping_host }}
+hide = yes
 {% endif %}
 {% if _smokeping_add_v6 %}
 
@@ -25,6 +26,7 @@ probe = FPing6
 menu = {{ _smokeping_id }} - {{ _server_isp }} (IPv6)
 title = {{ _server_isp }} - {{ _smokeping_loc }} (IPv6) [{{ _smokeping_host }}]
 host = {{ _smokeping_host }}
+hide = yes
 {% endif %}
 
 {# ping via dn42 (hidden) #}
@@ -35,7 +37,7 @@ host = {{ hostvars[host].ownip }}
 hide = yes
 
 ++ {{ _smokeping_id }}_combined
-menu = {{ _smokeping_id }} - {{ _server_isp }} (combined)
+menu = {{ _smokeping_id }} - {{ _server_isp }}
 title = {{ _server_isp }} - {{ _smokeping_loc }} (combined)
 host = {% if _smokeping_add_v4 %}/nodes/{{_smokeping_id}}{% endif %}{% if _smokeping_add_v6 %} /nodes/{{_smokeping_id}}_v6{% endif %} /nodes/{{_smokeping_id}}_int
 {% endmacro %}
@@ -52,6 +54,14 @@ host = {% if _smokeping_add_v4 %}/nodes/{{_smokeping_id}}{% endif %}{% if _smoke
 menu = ServaRICA Montreal
 title = ServaRICA - Montreal, QC, CA
 host = {{ smokeping_crypt_hosts.ymq02 }}
+
+{% if _smokeping_local_has_v6 %}
+++ ymq02_v6
+probe = FPing6
+menu = ServaRICA Montreal (IPv6)
+title = ServaRICA - Montreal, QC, CA (IPv6)
+host = {{ smokeping_crypt_hosts.ymq02 }}
+{% endif %}
 
 ++ lon02a
 menu = Clouvider London (IPv4)

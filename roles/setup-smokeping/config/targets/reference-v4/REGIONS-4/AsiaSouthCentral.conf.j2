@@ -96,7 +96,14 @@ host = sgp-ping.vultr.com
 menu = [MY] Terabix
 title = [MY] Terabix - Johor Bahru, Malaysia [160.30.4.225]
 host = 160.30.4.225
+{% endif %}
 
+++ webhorizon-my
+menu = [MY] WebHorizon
+title = [MY] WebHorizon - Johor, Malaysia [lg-my-jhb.webhorizon.net]
+host = lg-my-jhb.webhorizon.net
+
+{% if not smokeping_lite %}
 ++ contabo-mumbai
 menu = [IN] Contabo (Mumbai)
 title = [IN] Contabo - Mumbai, India [bom.speedtest.contabo.net]
@@ -104,7 +111,7 @@ host = bom.speedtest.contabo.net
 {% endif %}
 
 ++ hostdzire-in
-menu = [IN] HostDZire
+menu = [IN] HostDZire (Mumbai)
 title = [IN] HostDZire @ Web Werks - Mumbai, India [103.182.102.222]
 host = 103.182.102.222
 
@@ -130,7 +137,7 @@ title = [IN] OVH - Mumbai, India [bom.proof.ovh.net]
 host = bom.proof.ovh.net
 
 ++ psychz-in
-menu = [IN] Psychz
+menu = [IN] Psychz (Mumbai)
 title = [IN] Psychz - Mumbai, India [lg.in.psychz.net]
 host = lg.in.psychz.net
 
@@ -138,7 +145,14 @@ host = lg.in.psychz.net
 menu = [IN] Vultr (Mumbai)
 title = [IN] Vultr - Mumbai, India [bom-in-ping.vultr.com]
 host = bom-in-ping.vultr.com
+{% endif %}
 
+++ webhorizon-in
+menu = [IN] WebHorizon (Mumbai)
+title = [IN] WebHorizon - Mumbai, India [lg-in-mum.webhorizon.net]
+host = lg-in-mum.webhorizon.net
+
+{% if not smokeping_lite %}
 ++ hostvds-in
 menu = [IN] HostVDS (Delhi)
 title = [IN] HostVDS @ Anonet - Delhi, India [ping-del1.hostvds.com]
@@ -202,16 +216,26 @@ title = [PK] Virtury Cloud - Islamabad, Pakistan [lg.virtury.com]
 host = lg.virtury.com
 
 ++ pldt-manila
-menu = [PH] PLDT (Manila)
+menu = [PH] PLDT
 title = [PH] PLDT - Manila, Philippines [119.92.238.50]
 host = 119.92.238.50
 
 ++ globe-telecom-manila
-menu = [PH] Globe Telecom (Manila)
+menu = [PH] Globe Telecom
 title = [PH] Globe Telecom - Manila, Philippines [mnl-speedtest.globe.com.ph]
 host = mnl-speedtest.globe.com.ph
 
 {% if not smokeping_lite %}
+++ metrovps-bd1
+menu = [BD] MetroVPS BD1
+title = [BD] MetroVPS (Flarezen) BD1 - Dhaka, Bangladesh [lg-bd1.metrovps.com]
+host = lg-bd1.metrovps.com
+
+++ metrovps-bd2
+menu = [BD] MetroVPS BD2
+title = [BD] MetroVPS (Flarezen) BD2 - Dhaka, Bangladesh [lg-bd2.metrovps.com]
+host = lg-bd2.metrovps.com
+
 ++ gcore-kz
 menu = [KZ] G-Core Labs
 title = [KZ] G-Core Labs - Almaty, Kazakhstan [213.156.137.1]

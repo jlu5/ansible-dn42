@@ -21,7 +21,7 @@ smokeping_region_map:
     lite: [NACentral, NASoutheast, NAEast, AsiaEast, AsiaCN]
   AsiaSouthCentral:
     full: [AsiaEast]
-    lite: [AsiaCN, Oceania, NAWest, NANorthwest, EU]
+    lite: [AsiaCN, Oceania, NAWest, NANorthwest, EU, MEA]
   AsiaEast:
     full: [AsiaSouthCentral]
     lite: [AsiaCN, Oceania, NANorthwest, NAWest, EU]

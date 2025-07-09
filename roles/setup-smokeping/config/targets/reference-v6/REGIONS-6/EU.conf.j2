@@ -108,6 +108,11 @@ host = nl.mirrors.clouvider.net
 menu = [NL] DeluxHost
 title = [NL] DeluxHost - Amsterdam, Netherlands [2a12:bec4:1822:86::a]
 host = 2a12:bec4:1822:86::a
+
+++ server-factory-nl
+menu = [NL] heartbeat IT
+title = [NL] heartbeat IT (server-factory) - Eygelshoven, Netherlands [lg.nl.server-factory.com]
+host = lg.nl.server-factory.com
 {% endif %}
 
 ++ hosthatch-ams
@@ -137,13 +142,6 @@ menu = [NL] Scaleway
 title = [NL] Scaleway / Online.net - Amsterdam, Netherlands [ping6-ams1.online.net]
 host = ping6-ams1.online.net
 
-{% if not smokeping_lite %}
-++ server-factory-nl
-menu = [NL] server-factory
-title = [NL] server-factory.com - Eygelshoven, Netherlands [lg.nl.server-factory.com]
-host = lg.nl.server-factory.com
-{% endif %}
-
 ++ skylink-nl
 menu = [NL] SkyLink
 title = [NL] SkyLink - Eygelshoven, Netherlands [speedtest.skylink-data-center.nl]
@@ -168,35 +166,20 @@ title = [NL] WorldStream - Naaldwijk, Netherlands [speedtest.worldstream.nl]
 host = speedtest.worldstream.nl
 
 ++ aurologic
-menu = [DE] Aurologic
+menu = [DE] Aurologic (Frankfurt)
 title = [DE] Aurologic - Frankfurt, Germany [lg.aurologic.com]
 host = lg.aurologic.com
 {% endif %}
 
 ++ clouvider-fra
-menu = [DE] Clouvider
+menu = [DE] Clouvider (Frankfurt)
 title = [DE] Clouvider - Frankfurt, Germany [de.mirrors.clouvider.net]
 host = de.mirrors.clouvider.net
 
-++ contabo-dus
-menu = [DE] Contabo (Dusseldorf)
-title = [DE] Contabo - Dusseldorf, Germany [dus.speedtest.contabo.net]
-host = dus.speedtest.contabo.net
-
 ++ php-friends
-menu = [DE] dataforest
+menu = [DE] dataforest (Frankfurt)
 title = [DE] dataforest / PHP-Friends / Avoro - Frankfurt, Germany [lg.php-friends.de]
 host = lg.php-friends.de
-
-++ hetzner-nbg
-menu = [DE] Hetzner (Nuremberg)
-title = [DE] Hetzner - Nuremberg, Germany [nbg.icmp.hetzner.com]
-host = nbg.icmp.hetzner.com
-
-++ hetzner-fsn
-menu = [DE] Hetzner (Falkenstein)
-title = [DE] Hetzner - Falkenstein, Germany [fsn.icmp.hetzner.com]
-host = fsn.icmp.hetzner.com
 
 {% if not smokeping_lite %}
 ++ ip-projects
@@ -205,30 +188,52 @@ title = [DE] IP-Projects - Frankfurt, Germany [lg.ip-projects.de]
 host = lg.ip-projects.de
 
 ++ leaseweb-de
-menu = [DE] LeaseWeb
+menu = [DE] LeaseWeb (Frankfurt)
 title = [DE] LeaseWeb - Frankfurt, Germany [mirror.de.leaseweb.net]
 host = mirror.de.leaseweb.net
 
 ++ linode-fra
-menu = [DE] Linode
+menu = [DE] Linode (Frankfurt)
 title = [DE] Linode - Frankfurt, Germany [speedtest.frankfurt.linode.com]
 host = speedtest.frankfurt.linode.com
+
+++ vultr-fra
+menu = [DE] Vultr (Frankfurt)
+title = [DE] Vultr - Frankfurt, Germany [2001:19f0:6c00:8002:5400:ff:fe00:536a]
+host = 2001:19f0:6c00:8002:5400:ff:fe00:536a
 {% endif %}
+
+++ synlinq
+menu = [DE] SYNLINQ (Frankfurt)
+title = [DE] SYNLINQ - Frankfurt, Germany [speedtest1.synlinq.de]
+host = speedtest1.synlinq.de
+
+++ contabo-dus
+menu = [DE] Contabo (Dusseldorf)
+title = [DE] Contabo - Dusseldorf, Germany [dus.speedtest.contabo.net]
+host = dus.speedtest.contabo.net
+
+++ ultravps-dus
+menu = [DE] UltraVPS (Dusseldorf)
+title = [DE] UltraVPS - Dusseldorf, Germany [2a02:e00:ffec:3a::1]
+host = 2a02:e00:ffec:3a::1
+
+{% if not smokeping_lite %}
+++ hetzner-nbg
+menu = [DE] Hetzner (Nuremberg)
+title = [DE] Hetzner - Nuremberg, Germany [nbg.icmp.hetzner.com]
+host = nbg.icmp.hetzner.com
+{% endif %}
+
+++ hetzner-fsn
+menu = [DE] Hetzner (Falkenstein)
+title = [DE] Hetzner - Falkenstein, Germany [fsn.icmp.hetzner.com]
+host = fsn.icmp.hetzner.com
 
 ++ netcup-nbg
 menu = [DE] Netcup (Nuremberg)
 title = [DE] Netcup / Anexia - Nuremberg, Germany [lg.netcup.net]
 host = lg.netcup.net
-
-++ synlinq
-menu = [DE] SYNLINQ
-title = [DE] SYNLINQ - Frankfurt, Germany [speedtest1.synlinq.de]
-host = speedtest1.synlinq.de
-
-++ ultravps-dus
-menu = [DE] UltraVPS (Duesseldorf)
-title = [DE] UltraVPS - Duesseldorf, Germany [2a02:e00:ffec:3a::1]
-host = 2a02:e00:ffec:3a::1
 
 ++ buyvm-lu
 menu = [LU] BuyVM
