@@ -229,12 +229,10 @@ wg_peers:
 
 - name: dn42-alemal
   port: 21525
-  remote: uk1.alemal.se:51080
-  wg_pubkey: 1JwYl6O6Y94PiKe5dXcgwMYjDxRK3im8mqvbZIeMSDE=
+  remote: de1.alemal.se:51080
+  wg_pubkey: eT9G9iM8XDIuUU1CAYl8eBLdI43z77nfWxJSeknQjQg=
   peer_v4: null
   peer_v6: fe80::1525
-  local_v6: fe80::118
-  wg_privkey: /etc/wireguard/privatekey_ams
   bgp:
     asn: 4242421525
     extended_next_hop: true
