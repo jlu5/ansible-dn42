@@ -898,8 +898,8 @@ wg_peers:
     asn: 4242423555
     ipv4: true
     ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
+    mp_bgp: true
+    extended_next_hop: true
 
 - name: dn42-furry
   port: 20088
