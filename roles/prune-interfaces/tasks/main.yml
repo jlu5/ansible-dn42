@@ -6,7 +6,7 @@
 - name: Read existing peers on disk
   ansible.builtin.find:
     paths: "{{ automation_root_dir }}/interfaces/"
-    patterns: ["[0-9][0-9]dn42*"]
+    patterns: ["[0-9][0-9]*"]
   register: existing_peer_files
 
 - name: Read existing and new peer names
@@ -14,7 +14,7 @@
     existing_peer_names: "{{ existing_peer_files.files | map(attribute='path') | map('basename') | map('regex_replace', '^[0-9]{2}', '') | unique }}"
     # Note: this does not handle "remove: false" correctly, but doing so is a PITA
     # https://www.0xf8.org/2021/03/filtering-with-ansibles-selectattr-rejectattr-when-the-tested-attribute-can-be-absent/
-    wg_peer_names: "{{ wg_peers | default([]) | rejectattr('remove', 'defined') | map(attribute='name') | list }}"
+    wg_peer_names: "{{ wg_peers_all | default([]) | rejectattr('remove', 'defined') | map(attribute='name') | list }}"
     gre_peer_names: "{{ gre_peers | default([]) | rejectattr('remove', 'defined') | map(attribute='name') | list }}"
 
 - name: Debug existing_peer_names

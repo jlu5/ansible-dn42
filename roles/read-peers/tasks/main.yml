@@ -7,3 +7,36 @@
   include_vars:
     file: "{{ playbook_dir }}/roles/config-gre-plain/config/{{ inventory_hostname }}.yml"
   ignore_errors: true
+
+# This is already read in once as part of group_vars/all, but the values may have been changed
+# by scripts/enumerate-igp-tunnels.py: pre_tasks still run after enumerating facts the first time
+- name: Read IGP tunnel settings
+  include_vars:
+    file: "global-config/igp-tunnels.yml"
+
+- name: Enumerate WireGuard tunnels
+  set_fact:
+    wg_peers_all: []
+
+- name: Enumerate WireGuard tunnels to update (dn42 peers)
+  set_fact:
+    wg_peers_all: "{{ wg_peers | default([]) | selectattr('remove', 'false') | list
+                    + wg_peers | default([]) | selectattr('remove', 'undefined') | list}}"
+
+- name: Enumerate WireGuard tunnels to update (internal nodes)
+  set_fact:
+    # Template internal nodes before peers
+    wg_peers_all: "{{ [peer_info] + wg_peers_all }}"
+  loop: "{{ igp_neighbours.get(inventory_hostname, []) | sort }}"
+  loop_control:
+    loop_var: igp_node
+  vars:
+    peer_info:
+      name: "igp-{{ igp_node }}"
+      port: "{{ igp_wg_ports[inventory_hostname][igp_node] }}"
+      remote: "{{ hostvars[igp_node]['ansible_host'] }}:{{ igp_wg_ports[inventory_hostname][igp_node] }}"
+      wg_pubkey: "{{ hostvars[igp_node]['wg_pubkey'] }}"
+      peer_v4: "{{ hostvars[igp_node]['link_local_ip4'] }}"
+      peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
+      priority: 10
+      is_internal_node: true
