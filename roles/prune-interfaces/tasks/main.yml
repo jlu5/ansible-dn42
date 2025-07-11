@@ -3,10 +3,6 @@
     existing_peer_names: []
     peers_to_remove: []
 
-- name: Read peering interfaces
-  include_role:
-    name: read-peers
-
 - name: Read existing peers on disk
   ansible.builtin.find:
     paths: "{{ automation_root_dir }}/interfaces/"

@@ -26,10 +26,6 @@
     ownnets6_aggr_ipset: "{{ ownnets6 | join(', ') }}"
   ignore_errors: true
 
-- name: Read peering interfaces
-  include_role:
-    name: read-peers
-
 - name: "Remove unknown bird config files"
   file:
     path: "/etc/bird/{{ item|basename }}"

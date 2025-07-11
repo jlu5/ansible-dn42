@@ -1,8 +1,3 @@
-- name: Read WireGuard tunnel settings
-  include_vars:
-    file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
-  ignore_errors: true
-
 # This is already read in once as part of group_vars/all, but the values may have been changed
 # by scripts/enumerate-igp-tunnels.py: pre_tasks still run after enumerating facts the first time
 - name: Read IGP tunnel settings

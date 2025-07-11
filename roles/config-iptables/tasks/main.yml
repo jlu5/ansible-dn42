@@ -4,10 +4,6 @@
   include_vars:
     file: "global-config/igp-tunnels.yml"
 
-- name: Read peering interfaces
-  include_role:
-    name: read-peers
-
 - name: "Read iptables rules template"
   set_fact:
     iptables_rules: "{{ lookup('template', 'templates/rules.j2') }}"
