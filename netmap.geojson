@@ -66,6 +66,21 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    72.832073,
+                    18.958193
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#mum\" class=\"netmap-server-link\">Mumbai, IN</a>",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -121.886329,
                     37.338208
                 ]
