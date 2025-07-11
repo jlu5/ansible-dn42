@@ -15,7 +15,7 @@
 - name: "Enumerate config folder contents (ignore errors if no peers are defined)"
   # This is a separate step because set_fact can't template facts set in the same task
   set_fact:
-    bird_managed_files: "{{ lookup('fileglob', '{{ config_dir }}/*.conf*').split(',') | map('basename') | map('regex_replace', '\\.j2$', '') | list }}"
+    bird_managed_files: "{{ lookup('fileglob', '{{ config_dir }}/*.conf*', wantlist=True) | map('basename') | map('regex_replace', '\\.j2$', '') | list }}"
   ignore_errors: true
 
 - name: "Enumerate IPsets for BIRD"
@@ -24,7 +24,6 @@
     ownnets6_ipset: "{{ ownnets6 | map('regex_replace', '$', '+') | join(', ') }}"
     ownnets4_aggr_ipset: "{{ ownnets4 | join(', ') }}"
     ownnets6_aggr_ipset: "{{ ownnets6 | join(', ') }}"
-
   ignore_errors: true
 
 - name: Read WireGuard tunnel settings
