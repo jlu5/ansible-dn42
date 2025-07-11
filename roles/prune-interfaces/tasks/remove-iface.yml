@@ -2,15 +2,15 @@
   file:
     dest: "/etc/wireguard/{{ peer_name }}.conf"
     state: absent
-  loop: "{{ _wg_to_remove }}"
+  loop: "{{ peers_to_remove }}"
   loop_control:
     loop_var: peer_name
-  register: wg_tunnel_remove
+  register: wg_conf_remove
 
-- name: "Remove obsolete WireGuard interfaces"
+- name: "Remove obsolete interface configurations"
   shell:
     cmd: "rm -fv {{ automation_root_dir | quote }}/interfaces/??{{ peer_name | quote }}"
-  loop: "{{ _wg_to_remove }}"
+  loop: "{{ peers_to_remove }}"
   loop_control:
     loop_var: peer_name
   register: interfaces_remove
@@ -18,8 +18,8 @@
 
 - name: "Stop obsolete interfaces"
   command: "ip link del {{ peer_name }}"
-  loop: "{{ (wg_tunnel_remove.results + interfaces_remove.results)
-            | selectattr('changed', 'true') | map(attribute='peer_name') | unique | list }}"
+  loop: "{{ (wg_conf_remove.results + interfaces_remove.results)
+            | selectattr('changed', 'true') | map(attribute='peer_name') | unique }}"
   loop_control:
     loop_var: peer_name
   ignore_errors: yes

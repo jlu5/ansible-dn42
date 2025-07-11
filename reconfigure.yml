@@ -12,5 +12,6 @@
       when: "'igp' in dummy_interfaces"
     - config-wireguard
     - config-gre-plain
+    - prune-interfaces
     - config-igpping
     - config-bird2

@@ -1,0 +1,45 @@
+- name: Set variable defaults
+  set_fact:
+    existing_peer_names: []
+    peers_to_remove: []
+
+- name: Read peering interfaces
+  include_role:
+    name: read-peers
+
+- name: Read existing peers on disk
+  ansible.builtin.find:
+    paths: "{{ automation_root_dir }}/interfaces/"
+    patterns: ["[0-9][0-9]dn42*"]
+  register: existing_peer_files
+
+- name: Read existing and new peer names
+  set_fact:
+    existing_peer_names: "{{ existing_peer_files.files | map(attribute='path') | map('basename') | map('regex_replace', '^[0-9]{2}', '') | unique }}"
+    # Note: this does not handle "remove: false" correctly, but doing so is a PITA
+    # https://www.0xf8.org/2021/03/filtering-with-ansibles-selectattr-rejectattr-when-the-tested-attribute-can-be-absent/
+    wg_peer_names: "{{ wg_peers | default([]) | rejectattr('remove', 'defined') | map(attribute='name') | list }}"
+    gre_peer_names: "{{ gre_peers | default([]) | rejectattr('remove', 'defined') | map(attribute='name') | list }}"
+
+- name: Debug existing_peer_names
+  debug:
+    var: existing_peer_names
+
+# - name: Debug wg_peer_names
+#   debug:
+#     var: wg_peer_names
+
+# - name: Debug gre_peer_names
+#   debug:
+#     var: gre_peer_names
+
+- name: Compute list of peers to remove
+  set_fact:
+    peers_to_remove: "{{ existing_peer_names | difference(wg_peer_names + gre_peer_names) }}"
+
+- name: Debug peers_to_remove
+  debug:
+    var: peers_to_remove
+
+- name: Remove obsolete peer configurations
+  include_tasks: "remove-iface.yml"

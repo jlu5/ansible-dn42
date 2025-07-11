@@ -11,13 +11,10 @@
 
 - name: Enumerate WireGuard tunnels
   set_fact:
-    _wg_to_remove: []
     _wg_to_add: []
 
 - name: Enumerate WireGuard tunnels to update (dn42 peers)
   set_fact:
-    _wg_to_remove: "{{ (cleanup_remove_ifaces | default([]))
-                       + (wg_peers | default([]) | selectattr('remove', 'true') | map(attribute='name') | list) }}"
     _wg_to_add: "{{ wg_peers | default([]) | selectattr('remove', 'false') | list
                     + wg_peers | default([]) | selectattr('remove', 'undefined') | list}}"
   when: not (skip_wg_dn42_peers | default(False))
@@ -39,17 +36,6 @@
       peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
       priority: 10
       is_internal_node: true
-
-- name: "Debug _wg_to_remove"
-  debug:
-    var: _wg_to_remove
-
-# - name: "Debug _wg_to_add"
-#   debug:
-#     var: _wg_to_add
-
-- name: Remove obsolete WireGuard tunnels
-  include_tasks: "wg-remove.yml"
 
 - name: Write updated WireGuard tunnels
   include_tasks: "wg-update.yml"
