@@ -63,10 +63,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-hujk
-  remove: true
-
 - name: dn42-iedon
   peer_v4: 172.23.91.125
   peer_v6: fe80::2189:e9
@@ -302,10 +298,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-marlinc
-  remove: true
 
 - name: dn42-w1kl4s
   port: 51516
@@ -762,14 +754,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-bernd
-  remove: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-apeku
-  remove: true
 
 - name: dn42-duststars
   port: 21771

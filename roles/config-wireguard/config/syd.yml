@@ -155,6 +155,3 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-furry
-  remove: true

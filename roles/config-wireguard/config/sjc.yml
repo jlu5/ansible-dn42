@@ -175,10 +175,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-9pfs
-  remove: true
-
 - name: dn42-tech9
   port: 21588
   remote: us-phx03.dn42.tech9.io:55968
@@ -431,10 +427,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-duststars
-  remove: true
 
 - name: dn42-joenet
   port: 20157

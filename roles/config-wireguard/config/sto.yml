@@ -38,10 +38,6 @@ wg_peers:
     mp_bgp: false
     extended_next_hop: false
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-heartbleed
-  remove: true
-
 - name: dn42-myxoz
   port: 20166
   remote: swehadgw-dn42.myxoz.net:21080

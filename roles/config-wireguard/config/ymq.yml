@@ -208,10 +208,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-sernet
-  remove: true
-
 - name: dn42-colby
   port: 22558
   remote: us-nyc1.dn42.derix.au:21080
@@ -263,10 +259,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-peanuts
-  remove: true
 
 - name: dn42-fiberplz
   port: 20389
