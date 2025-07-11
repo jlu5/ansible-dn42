@@ -1,0 +1,9 @@
+- name: Read Wireguard settings for peers
+  include_vars:
+    file: "{{ playbook_dir }}/roles/config-wireguard/config/{{ inventory_hostname }}.yml"
+  ignore_errors: true
+
+- name: Read GRE settings for peers
+  include_vars:
+    file: "{{ playbook_dir }}/roles/config-gre-plain/config/{{ inventory_hostname }}.yml"
+  ignore_errors: true

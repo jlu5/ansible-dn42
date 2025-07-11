@@ -26,16 +26,9 @@
     ownnets6_aggr_ipset: "{{ ownnets6 | join(', ') }}"
   ignore_errors: true
 
-- name: Read WireGuard tunnel settings
-  include_vars:
-    # FIXME: is this a portable way to specify a role path?
-    file: "roles/config-wireguard/config/{{ inventory_hostname }}.yml"
-  ignore_errors: true
-
-- name: Read GRE tunnel settings
-  include_vars:
-    file: "roles/config-gre-plain/config/{{ inventory_hostname }}.yml"
-  ignore_errors: true
+- name: Read peering interfaces
+  include_role:
+    name: read-peers
 
 - name: "Remove unknown bird config files"
   file:
