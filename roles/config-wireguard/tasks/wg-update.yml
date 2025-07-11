@@ -10,7 +10,7 @@
 - name: "Write WireGuard interface config"
   template:
     src: dn42_interface.conf.j2
-    dest: "{{ automation_root_dir }}/interfaces/{{ peer_info.priority|default(42) }}{{ peer_info.name }}"
+    dest: "{{ automation_root_dir }}/interfaces/{{ peer_info.priority|default(42)|zfill(2) }}{{ peer_info.name }}"
   loop: "{{ _wg_to_add }}"
   loop_control:
     loop_var: peer_info
