@@ -1,55 +1,28 @@
-- name: Read WireGuard tunnel settings
-  include_vars:
-    file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
-  ignore_errors: true
-
-# This is already read in once as part of group_vars/all, but the values may have been changed
-# by scripts/enumerate-igp-tunnels.py: pre_tasks still run after enumerating facts the first time
-- name: Read IGP tunnel settings
-  include_vars:
-    file: "global-config/igp-tunnels.yml"
-
-- name: Enumerate WireGuard tunnels
-  set_fact:
-    _wg_to_remove: []
-    _wg_to_add: []
-
-- name: Enumerate WireGuard tunnels to update (dn42 peers)
-  set_fact:
-    _wg_to_remove: "{{ (cleanup_remove_ifaces | default([]))
-                       + (wg_peers | default([]) | selectattr('remove', 'true') | map(attribute='name') | list) }}"
-    _wg_to_add: "{{ wg_peers | default([]) | selectattr('remove', 'false') | list
-                    + wg_peers | default([]) | selectattr('remove', 'undefined') | list}}"
-  when: not (skip_wg_dn42_peers | default(False))
-
-- name: Enumerate WireGuard tunnels to update (internal nodes)
-  set_fact:
-    # Template internal nodes before peers
-    _wg_to_add: "{{ [peer_info] + _wg_to_add }}"
-  loop: "{{ igp_neighbours.get(inventory_hostname, []) | sort }}"
+- name: "Write WireGuard tunnel config"
+  template:
+    src: wg_tunnel.conf.j2
+    dest: "/etc/wireguard/{{ peer_info.name }}.conf"
+  loop: "{{ wg_peers_all }}"
   loop_control:
-    loop_var: igp_node
-  vars:
-    peer_info:
-      name: "igp-{{ igp_node }}"
-      port: "{{ igp_wg_ports[inventory_hostname][igp_node] }}"
-      remote: "{{ hostvars[igp_node]['ansible_host'] }}:{{ igp_wg_ports[inventory_hostname][igp_node] }}"
-      wg_pubkey: "{{ hostvars[igp_node]['wg_pubkey'] }}"
-      peer_v4: "{{ hostvars[igp_node]['link_local_ip4'] }}"
-      peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"
-      priority: 10
-      is_internal_node: true
+    loop_var: peer_info
+  register: wg_tunnel_tmpl
 
-- name: "Debug _wg_to_remove"
-  debug:
-    var: _wg_to_remove
+- name: "Write WireGuard interface config"
+  template:
+    src: dn42_interface.conf.j2
+    dest: "{{ automation_root_dir }}/interfaces/{{ peer_info.priority|default(42)|zfill(2) }}{{ peer_info.name }}"
+  loop: "{{ wg_peers_all }}"
+  loop_control:
+    loop_var: peer_info
+  register: interfaces_tmpl
 
-# - name: "Debug _wg_to_add"
-#   debug:
-#     var: _wg_to_add
-
-- name: Remove obsolete WireGuard tunnels
-  include_tasks: "wg-remove.yml"
-
-- name: Write updated WireGuard tunnels
-  include_tasks: "wg-update.yml"
+# Look up only tunnels that have changed and restart those
+- name: "Restart changed WireGuard interfaces"
+  shell: "ifdown --force {{ peer_name }} --interfaces={{ _ifupdown_dn42_iface_file }}; ifup {{ peer_name }} --interfaces={{ _ifupdown_dn42_iface_file }}"
+  loop: "{{ (wg_tunnel_tmpl.results + interfaces_tmpl.results)
+            | selectattr('changed', 'true')
+            | map(attribute='peer_info') | map(attribute='name') | unique | list }}"
+  loop_control:
+    loop_var: peer_name
+  ignore_errors: yes
+  when: 'not (skip_wg_restart | default(False))'

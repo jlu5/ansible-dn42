@@ -9,6 +9,3 @@ gre_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-marlinc-1
-  remove: true
