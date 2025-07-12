@@ -155,6 +155,15 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-furry
-  remove: true
+- name: dn42-badaimweeb
+  port: 23797
+  remote: 12ee65e53ef756b115b01fe1ced14cec6dd3f024.dc.badaimweeb.me:5602
+  wg_pubkey: uSfj7LEDt0VHP2jbacFkzx/JzSCExzax38BhPorj6x4=
+  peer_v4: null
+  peer_v6: fe80::bad0:1080
+  bgp:
+    asn: 4242423797
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true

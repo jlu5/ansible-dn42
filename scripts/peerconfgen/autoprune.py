@@ -123,9 +123,8 @@ def main():
     lost_peers = ap.get_lost_peers(args.url, ignore_new_days=args.ignore_new_days)
 
     if not args.dry_run:
-        reason = f'Automatically removed on {datetime.date.today()} (down for >= {args.threshold} days)'
         for node, asns in lost_peers.items():
-            remove_peer(node, [str(asn) for asn in asns], reason=reason)
+            remove_peer(node, [str(asn) for asn in asns])
 
 if __name__ == '__main__':
     main()

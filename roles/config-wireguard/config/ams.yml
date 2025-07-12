@@ -63,10 +63,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-hujk
-  remove: true
-
 - name: dn42-iedon
   peer_v4: 172.23.91.125
   peer_v6: fe80::2189:e9
@@ -302,10 +298,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-marlinc
-  remove: true
 
 - name: dn42-w1kl4s
   port: 51516
@@ -763,14 +755,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-bernd
-  remove: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-apeku
-  remove: true
-
 - name: dn42-duststars
   port: 21771
   remote: frank1-v4.exploro.one:32604
@@ -893,13 +877,13 @@ wg_peers:
   remote: 188.230.215.43:47001
   wg_pubkey: Y0JKYbu/J0hxTS/6/+0P9Noom9Z1Z4wHE/6PX5DNTDs=
   peer_v4: 172.20.40.33
-  peer_v6: null
+  peer_v6: fe80::3555:1
   bgp:
     asn: 4242423555
     ipv4: true
-    ipv6: false
-    mp_bgp: false
-    extended_next_hop: false
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
 
 - name: dn42-furry
   port: 20088

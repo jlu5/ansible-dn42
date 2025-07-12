@@ -170,22 +170,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-zdong
-  port: 22354
-  remote: fl1-us.zdong.me:21080
-  wg_pubkey: u9NcC04pptIt8ELgSrxZjHRKARvjfiaJuVR/rsdtYHE=
-  peer_v4: 172.23.132.130
-  peer_v6: fe80::2354
-  local_v4: 172.20.229.119
-  local_v6: fe80::1080:119
-  wg_privkey: /etc/wireguard/privatekey_atl
-  bgp:
-    asn: 4242422354
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
 # END peers imported from tpa.peer
 
 - name: dn42-9pfs
@@ -274,6 +258,19 @@ wg_peers:
   peer_v6: fe80::1:1336
   bgp:
     asn: 4242421336
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+
+- name: dn42-be0ba
+  port: 20224
+  remote: chi01.dn42.tcp80.org:40018
+  wg_pubkey: dm2ju2/9CJeDm27hqS7WWoutmz49uksaSA4Me0S91nw=
+  peer_v4: null
+  peer_v6: fe80::224
+  bgp:
+    asn: 4242420224
     ipv4: true
     ipv6: true
     mp_bgp: true

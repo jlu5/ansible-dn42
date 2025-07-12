@@ -44,10 +44,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-melty
-  remove: true
-
 - name: dn42-sernet
   port: 23947
   remote: hk1.sherpherd.net:21080
@@ -245,10 +241,6 @@ wg_peers:
     ipv6: true
     mp_bgp: false
     extended_next_hop: false
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-heartbleed
-  remove: true
 
 - name: dn42-sdubs
   port: 20202

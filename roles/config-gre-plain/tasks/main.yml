@@ -1,25 +1,24 @@
-- name: Read GRE tunnel settings
-  include_vars:
-    file: "{{ role_path }}/config/{{ inventory_hostname }}.yml"
-  ignore_errors: true
-
 - name: Enumerate GRE tunnels to update
   set_fact:
-    _gre_to_remove: "{{ (cleanup_remove_ifaces | default([]))
-                       + (gre_peers | default([]) | selectattr('remove', 'true') | map(attribute='name') | list) }}"
     _gre_to_add: "{{ gre_peers | default([]) | selectattr('remove', 'false') | list
                     + gre_peers | default([]) | selectattr('remove', 'undefined') | list}}"
 
-# - name: "Debug _gre_to_remove"
-#   debug:
-#     var: _gre_to_remove
+- name: "Write GRE interface config"
+  template:
+    src: gre_interface.conf.j2
+    dest: "{{ automation_root_dir }}/interfaces/{{ peer_info.priority|default(42)|zfill(2) }}{{ peer_info.name }}"
+  loop: "{{ _gre_to_add }}"
+  loop_control:
+    loop_var: peer_info
+  register: interfaces_tmpl
 
-# - name: "Debug _gre_to_add"
-#   debug:
-#     var: _gre_to_add
-
-- name: Remove obsolete GRE tunnels
-  include_tasks: "gre-remove.yml"
-
-- name: Write updated GRE tunnels
-  include_tasks: "gre-update.yml"
+# Look up only tunnels that have changed and restart those
+- name: "Restart changed GRE interfaces"
+  shell: "ifdown --force {{ peer_name }} --interfaces={{ _ifupdown_dn42_iface_file }}; ifup {{ peer_name }} --interfaces={{ _ifupdown_dn42_iface_file }}"
+  loop: "{{ (interfaces_tmpl.results)
+            | selectattr('changed', 'true')
+            | map(attribute='peer_info') | map(attribute='name') | unique | list }}"
+  loop_control:
+    loop_var: peer_name
+  ignore_errors: yes
+  when: 'not (skip_gre_restart | default(False))'

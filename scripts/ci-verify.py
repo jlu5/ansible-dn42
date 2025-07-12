@@ -146,12 +146,9 @@ class PeerVerifier():
             raise ValidationError(f'Duplicate interface name {ifname!r}', config_path)
         self.seen_ifnames[rtrname].add(ifname)
 
-        # Verify cleaned up hosts (remove: true)
         if peer_config.get('remove'):
-            if len(peer_config.keys()) > 2:
-                raise ValidationError(
-                    f'Peer {ifname!r} has stray options in addition to "remove: true"', config_path)
-            return  # Skip remaining checks
+            raise ValidationError(
+                f'Peer {ifname!r} has deprecated "remove: true". Remove the YAML config block instead', config_path)
 
         wg_multi = False
         # Verify WireGuard configuration

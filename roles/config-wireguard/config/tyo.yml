@@ -14,10 +14,6 @@ wg_peers:
     mp_bgp: false
     export_mode: prepend
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-koala
-  remove: true
-
 - name: dn42-yura
   port: 22464
   remote: "nrt.dneo.moeternet.com:21080"
@@ -103,10 +99,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-myon
-  remove: true
 
 - name: dn42-kskb
   peer_v4: 10.127.111.9
@@ -425,6 +417,19 @@ wg_peers:
   peer_v6: fe80::1336
   bgp:
     asn: 4242421336
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+
+- name: dn42-iyoroy
+  port: 22024
+  remote: ipv4.tyo-jp.ecs.iyoroy-infra.top:21080
+  wg_pubkey: Sh62ZCxnEcXyLq49mLP1jF4C2vWKhKMxjtZHxVUAQg4=
+  peer_v4: 172.20.234.227
+  peer_v6: fe80::2024
+  bgp:
+    asn: 4242422024
     ipv4: true
     ipv6: true
     mp_bgp: true

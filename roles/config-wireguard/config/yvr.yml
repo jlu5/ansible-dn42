@@ -87,10 +87,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-lukasbecke
-  remove: true
-
 - name: dn42-deboer
   port: 23328
   remote: openvpn.dirkhome.ca:51820
@@ -129,10 +125,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-# Automatically removed on 2025-06-14 (down for >= 40 days)
-- name: dn42-9pfs
-  remove: true
 
 - name: dn42-joenet
   port: 20157

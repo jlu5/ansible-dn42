@@ -33,17 +33,4 @@ The `--replace` option allows you to overwrite existing configurations - otherwi
 
 ### Removing peerings
 
-```
-usage: peerconfrm.py [-h] node peername
-
-Script to automate removing old peerings.
-
-positional arguments:
-  node        Node to generate config for
-  peername    Short name / identifier for peer
-
-options:
-  -h, --help  show this help message and exit
-```
-
-Note that this leaves behind stubs in the WireGuard configuration YAML so that old interfaces get cleaned up properly. (Ansible is generally imperative and not declarative)
+To remove a peering, just delete its configuration from the YAML file.
