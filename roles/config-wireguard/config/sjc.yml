@@ -584,19 +584,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-4242420057
-  port: 20057
-  remote: home.tompkel.net:13244
-  wg_pubkey: erQef80xClj/NLRMoPPmzJIgzBy7bKt5ZJO3NSJqRQk=
-  peer_v4: 172.22.159.12
-  peer_v6: fd48:ce37:a00f:4fff::1
-  bgp: 
-    asn: 4242420057
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: false
-
 - name: dn42-hexpnetwor
   port: 20298
   remote: !vault |
