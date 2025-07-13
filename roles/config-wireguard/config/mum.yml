@@ -24,3 +24,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-cdubs
+  port: 20566
+  remote: dn20.in.surgebytes.com:31080
+  wg_pubkey: ZkGeLAmwOwEKFRDTsnWnfnZlWQ1SgW9jUUx6O8+tCnA=
+  peer_v4: null
+  peer_v6: fe80::566:20
+  bgp:
+    asn: 4242420566
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
