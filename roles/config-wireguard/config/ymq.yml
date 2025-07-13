@@ -389,3 +389,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-fmepnet
+  port: 23703
+  remote: us-nj0.fmepnet.org:41080
+  wg_pubkey: 86/CxSzDM6ppIAxgvjsfXnUoKd29BS1v1ltAaYYVUxQ=
+  peer_v4: null
+  peer_v6: fe80::3703:236
+  bgp:
+    asn: 4242423703
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
