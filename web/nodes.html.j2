@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Server Info - highdef.network</title>
+<title>Nodes - highdef.network</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="style.css" rel="stylesheet">
@@ -11,11 +11,12 @@
 
 <body>
 <div class="main">
-<h1>AS4242421080 Server Info</h1>
+<h1>AS4242421080 Nodes</h1>
 {% include 'navigation.j2' %}
 <div class="container">
 <p><b>Please note that server locations and IPs are subject to change.
 When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/tree/contrib/reresolve-dns">reresolve-dns.sh</a> instead of hardcoding IP addresses!</b></p>
+<p>For service quality reasons, this network does not accept peering to endpoints in Mainland China.</p>
 
 {%- macro peering_info(host) %}
 {% set serverdata = hostvars[host] %}
