@@ -768,19 +768,6 @@ wg_peers:
     mp_bgp: false
     extended_next_hop: false
 
-- name: dn42-lefay
-  port: 21495
-  remote: vtnet0.nl-myb-1.le-fay.org:12008
-  wg_pubkey: xA7BmPYu39BUYIj+1ImE1FAuBogAQ815H6RlGD8w8C0=
-  peer_v4: null
-  peer_v6: fe80::1
-  bgp:
-    asn: 4242421495
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-tobast
   port: 22112
   remote: pl-waw1.dn42.tobast.fr:21080
