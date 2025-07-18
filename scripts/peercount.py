@@ -35,7 +35,7 @@ def get_stats(api_url, ignore_prefixes=DEFAULT_IGNORE_PREFIXES):
         counts[server] = (count_up, count_total)
     return counts
 
-DEFAULT_API_URL = 'https://lg.highdef.network/api/'
+DEFAULT_API_URL = 'http://lg.highdef.dn42/api/'
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('api_url', help='bird-lg-go API URL', nargs='?', default=DEFAULT_API_URL)
