@@ -379,3 +379,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: false
+
+- name: dn42-jasonxu
+  port: 23658
+  remote: 82.152.165.157:23377
+  wg_pubkey: L/ohOmR8NDe/sgaAI0md8RvT1lrPDZiLMny9QwLheAA=
+  peer_v4: null
+  peer_v6: fd4e:d0:d38d:68c1::1
+  bgp:
+    asn: 4242423658
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
