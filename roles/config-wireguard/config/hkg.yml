@@ -392,3 +392,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-alice8585
+  port: 20387
+  remote: 156.226.173.78:21080
+  wg_pubkey: krJb3l8hypXbDs8h6zNw5QQy5zdwVsRKRm1g30KnYBU=
+  peer_v4: 172.20.44.129
+  peer_v6: fe80::387
+  bgp:
+    asn: 4242420387
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
