@@ -45,9 +45,6 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
     <li><strong>WireGuard pubkey</strong>: {{ serverdata.wg_pubkey }}</li>
     <li><strong>Tunneled IPv4 address</strong>: {{ serverdata.ownip }}</li>
     <li><strong>Tunneled IPv6 address</strong>: {{ serverdata.link_local_ip6 }} (link-local) OR {{ serverdata.ownip6 }}</li>
-{% for info_line in serverdata.notes|default([]) %}
-    <li>{{ info_line }}</li>
-{% endfor %}
 {% if serverdata.location_alt|default([]) %}
     <li>This node also serves peers previously connected in:
     <ul>
@@ -56,6 +53,9 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
 {% endfor %}
     </ul>
 {% endif %}
+{% for info_line in serverdata.notes|default([]) %}
+    <li><b>Note</b>: {{ info_line }}</li>
+{% endfor %}
 </ul>
 {% endmacro -%}
 
