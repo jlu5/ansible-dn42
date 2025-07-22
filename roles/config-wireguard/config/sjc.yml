@@ -32,7 +32,7 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42sjc-kskb # autopeer ID 21080
+- name: dn42sjc-kskb  # autopeer ID 21080
   port: 21111
   remote: null
   wg_pubkey: "ffcWCDuBP3YdufFzOaiW2QeZLFG/GXg4QfbWTZ6LVz8="

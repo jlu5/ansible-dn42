@@ -14,7 +14,7 @@ wg_peers:
   - "{{ link_local_ip6 }}"
   port: 19998
   multi:
-    # sixel
+  # sixel
   - wg_pubkey: "b0B59Xx/mPbj13GSh5BUaw2Hh4oKd9UuIDcX/wwuYg4="
     wg_allowedips: "172.22.108.97/32,fd86:bad:11b7:fa7c::f2/128"
   peer_v6: null
@@ -89,7 +89,7 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
-- name: dn42ash-kskb # autopeer ID 21080
+- name: dn42ash-kskb  # autopeer ID 21080
   port: 21111
   remote: null
   wg_pubkey: "2FSX+6N/PwfipN/jXMj++4mabFQj25MXDy51mnnz3AA="

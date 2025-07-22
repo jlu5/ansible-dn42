@@ -145,7 +145,7 @@ wg_peers:
   wg_pubkey: erQef80xClj/NLRMoPPmzJIgzBy7bKt5ZJO3NSJqRQk=
   peer_v4: 172.22.159.12
   peer_v6: fd48:ce37:a00f:4fff::1
-  bgp: 
+  bgp:
     asn: 4242420057
     ipv4: true
     ipv6: true
