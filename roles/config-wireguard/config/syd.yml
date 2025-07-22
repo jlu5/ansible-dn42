@@ -1,5 +1,5 @@
 wg_peers:
-- name: dn42syd-narnia
+- name: dn42-narnia
   port: 52037
   remote: "syd2.dn42.narnia.network:42011"
   wg_pubkey: "0T0LUDBHnWAAg5Kz4OBF0r0+r+9WHtaUsvywKZSci2I="

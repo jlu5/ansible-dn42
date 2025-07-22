@@ -6,7 +6,7 @@ wg_peers:
   local_v4: 169.254.108.78/31
   peer_v6: fe80::e545:cd0:1641:bc4e
 
-- name: dn42atl-doxz
+- name: dn42-doxz
   port: 50003
   remote: "45.76.249.17:51822"
   wg_pubkey: "2RkCWgwBkoq5jJhjDWI15nCxwgb6oQxdY9lIO18KEzs="

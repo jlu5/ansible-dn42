@@ -19,7 +19,7 @@ wg_peers:
     wg_allowedips: "172.22.108.97/32,fd86:bad:11b7:fa7c::f2/128"
   peer_v6: null
 
-- name: "dn42pnj-tomkap"
+- name: "dn42-tomkap"
   port: 52092
   remote: "us0.dn42.pebkac.gr:51080"
   wg_pubkey: "NnIsCmxiGctp5hR9ViuNRjZXr8lxtjn382sIwsV+GBU="
@@ -59,7 +59,7 @@ wg_peers:
     mp_bgp: true
 
 ### legacy configurations from ca-bhs01
-- name: dn42bhs-grmml
+- name: dn42-grmml
   port: 50123
   remote: "ca-bha.grmml.net:51080"
   wg_pubkey: "Y74Q+xtl3YXureqokfYhSjfHWQU2cO4QP3mgmatj2gs="
@@ -89,7 +89,7 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
-- name: dn42ash-kskb  # autopeer ID 21080
+- name: dn42-kskb  # autopeer ID 21080
   port: 21111
   remote: null
   wg_pubkey: "2FSX+6N/PwfipN/jXMj++4mabFQj25MXDy51mnnz3AA="

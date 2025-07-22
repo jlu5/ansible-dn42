@@ -16,9 +16,9 @@ def remove_peer(node, peernames):
     wg_config_path = get_config_paths(node)
     peernames_set = set(peernames)
     yaml = get_yaml()
-    # Peer names are in the form dn42XXX-peername or dn42-peername, truncated to 15 chars
+    # Peer names are in the form dn42-peername, truncated to 15 chars
     # pylint: disable=consider-using-f-string
-    wg_peername_res = [r'(^dn42(-%s|[a-zA-Z]{3}-%s)$)' % (peername[:15-5], peername[:15-8])
+    wg_peername_res = [r'(^dn42-%s$)' % peername[:15-5]
                        for peername in peernames]
     wg_peername_re = re.compile('|'.join(wg_peername_res))
 

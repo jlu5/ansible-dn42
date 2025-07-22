@@ -11,7 +11,7 @@ import re
 from _common import yaml_load, VaultEncryptedDummy
 
 MAX_IFACE_LENGTH = 15
-ALLOWED_IFACE_RE = re.compile(r'^(dn42(?:[0-9a-z]{3})?|cl|igp)-([0-9a-z-]+)')
+ALLOWED_IFACE_RE = re.compile(r'^(dn42|cl|igp)-([0-9a-z-]+)')
 # May be a hostname, IPv4 address, or IPv6 address (bracketed or not)
 ALLOWED_REMOTE_RE = re.compile(r'([a-zA-Z0-9-.]+|\[[0-9a-fA-F:]+\]|[0-9a-fA-F:]+):\d{1,5}')
 WGKEY_RE = re.compile(r'[0-9a-zA-Z+/]{43}=')

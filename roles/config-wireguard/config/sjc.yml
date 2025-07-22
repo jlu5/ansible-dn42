@@ -6,7 +6,7 @@ wg_peers:
   local_v4: 169.254.108.72/31
   peer_v6: fe80::89f7:b22a:5452:3402
 
-- name: dn42sjc-sunnet
+- name: dn42-sunnet
   port: 23088
   remote: "sjc1-us.dn42.6700.cc:21080"
   wg_pubkey: "G/ggwlVSy5jKWFlJM01hxcWnL8VDXsD5EXZ/S47SmhM="
@@ -19,7 +19,7 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42sjc-jerry
+- name: dn42-jerry
   port: 23618
   remote: "us.neo.jerryxiao.cc:50114"
   wg_pubkey: "z/cbjONQ4kx+KTUuIpqxqpVQasKD5UC6NeAyMrlNHHM="
@@ -32,7 +32,7 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42sjc-kskb  # autopeer ID 21080
+- name: dn42-kskb  # autopeer ID 21080
   port: 21111
   remote: null
   wg_pubkey: "ffcWCDuBP3YdufFzOaiW2QeZLFG/GXg4QfbWTZ6LVz8="
@@ -331,7 +331,7 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42las-yura
+- name: dn42-yura
   port: 22464
   remote: "las.dneo.moeternet.com:21080"
   wg_pubkey: "viR4CoaJTBHROo/Bgbb27hQ2ttr8AbByGY/yOz3D3GY="
@@ -346,7 +346,7 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42las-miaoton
+- name: dn42-miaotony
   port: 52688
   remote: !vault |
     $ANSIBLE_VAULT;1.1;AES256
