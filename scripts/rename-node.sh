@@ -14,7 +14,6 @@ fi
 
 set -x
 sed -i "s/$oldname/$newname/g" global-config/igp-tunnels.yml hosts.yml
-sed -i -E "s/(cleanup_remove_ifaces: \[.*)\]/\1,igp-$oldname\]/" global-config/general.yml
 mv -i "roles/config-bird2/config/peers/$oldname" "roles/config-bird2/config/peers/$newname"
 for vpn in "wireguard" "gre"; do
     if [[ -f "roles/config-$vpn/config/$oldname.yml" ]]; then

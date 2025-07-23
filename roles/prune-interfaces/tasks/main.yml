@@ -12,10 +12,8 @@
 - name: Read existing and new peer names
   set_fact:
     existing_peer_names: "{{ existing_peer_files.files | map(attribute='path') | map('basename') | map('regex_replace', '^[0-9]{2}', '') | unique }}"
-    # Note: this does not handle "remove: false" correctly, but doing so is a PITA
-    # https://www.0xf8.org/2021/03/filtering-with-ansibles-selectattr-rejectattr-when-the-tested-attribute-can-be-absent/
-    wg_peer_names: "{{ wg_peers_all | default([]) | rejectattr('remove', 'defined') | map(attribute='name') | list }}"
-    gre_peer_names: "{{ gre_peers | default([]) | rejectattr('remove', 'defined') | map(attribute='name') | list }}"
+    wg_peer_names: "{{ wg_peers_all | default([]) | map(attribute='name') }}"
+    gre_peer_names: "{{ gre_peers | default([]) | map(attribute='name') }}"
 
 - name: Debug existing_peer_names
   debug:

@@ -64,13 +64,13 @@ protocol bgp {{ _session_basename }}_v6 from dnpeers {
 {%- endmacro %}
 
 {% for wg_peer in wg_peers|default([]) -%}
-{% if not wg_peer.get('remove') and wg_peer.get('bgp') %}
+{% if wg_peer.get('bgp') %}
 {{ dn42_peer(wg_peer, 34) }}
 {% endif %}
 {%- endfor -%}
 
 {% for gre_peer in gre_peers|default([]) -%}
-{% if not gre_peer.get('remove') and gre_peer.get('bgp') %}
+{% if gre_peer.get('bgp') %}
 {{ dn42_peer(gre_peer, 31) }}
 {% endif %}
 {%- endfor -%}

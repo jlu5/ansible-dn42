@@ -14,14 +14,9 @@
   include_vars:
     file: "global-config/igp-tunnels.yml"
 
-- name: Enumerate WireGuard tunnels
-  set_fact:
-    wg_peers_all: []
-
 - name: Enumerate WireGuard tunnels to update (dn42 peers)
   set_fact:
-    wg_peers_all: "{{ wg_peers | default([]) | selectattr('remove', 'false') | list
-                    + wg_peers | default([]) | selectattr('remove', 'undefined') | list}}"
+    wg_peers_all: "{{ wg_peers | default([]) }}"
 
 - name: Enumerate WireGuard tunnels to update (internal nodes)
   set_fact:

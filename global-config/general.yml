@@ -43,9 +43,6 @@ dummy_interfaces:
     ip6: ["fd86:bad:11b7:53::2", "fd42:d42:d42:53::1/64", "fd42:d42:d42:81::1/64"]
     track_service: yes
 
-# Interfaces to clean up (e.g. for decommissioned nodes)
-cleanup_remove_ifaces: []
-
 # DNS related settings
 # This is the main domain used for creating host records for routers (<shortname>.<dns_domain>).
 # Other domains can be specified in global-config/dns-entries.yml

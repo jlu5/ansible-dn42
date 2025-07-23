@@ -192,7 +192,7 @@ def main():
         iface_name = get_iface_name(peername)
         for iface_idx, wg_peer in enumerate(wg_peers):
             if wg_peer['name'] == iface_name:
-                if not args.replace and not wg_peer.get('remove'):
+                if not args.replace:
                     raise ValueError(f"A WireGuard config block for {iface_name!r} already exists")
                 print(f"Overwriting existing WireGuard config for {iface_name!r}")
                 break

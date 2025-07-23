@@ -1,13 +1,8 @@
-- name: Enumerate GRE tunnels to update
-  set_fact:
-    _gre_to_add: "{{ gre_peers | default([]) | selectattr('remove', 'false') | list
-                    + gre_peers | default([]) | selectattr('remove', 'undefined') | list}}"
-
 - name: "Write GRE interface config"
   template:
     src: gre_interface.conf.j2
     dest: "{{ automation_root_dir }}/interfaces/{{ peer_info.priority|default(42)|zfill(2) }}{{ peer_info.name }}"
-  loop: "{{ _gre_to_add }}"
+  loop: "{{ gre_peers | default([]) }}"
   loop_control:
     loop_var: peer_info
   register: interfaces_tmpl
