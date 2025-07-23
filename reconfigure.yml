@@ -10,8 +10,8 @@
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.igp }}"
       when: "'igp' in dummy_interfaces"
+    - prune-interfaces
     - config-wireguard
     - config-gre-plain
-    - prune-interfaces
     - config-igpping
     - config-bird2
