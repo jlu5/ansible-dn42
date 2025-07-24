@@ -337,3 +337,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-iedon
+  port: 22189
+  remote: uk-lon.dn42.iedon.net:45449
+  wg_pubkey: d9pyoZJYxLcd47vWOcNRY7hCuvLBe94BLSn8Qz3Q/j0=
+  peer_v4: null
+  peer_v6: fe80::2189:122
+  bgp:
+    asn: 4242422189
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true

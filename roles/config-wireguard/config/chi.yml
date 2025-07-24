@@ -275,3 +275,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-iedon
+  port: 22189
+  remote: us-nyc.dn42.iedon.net:60608
+  wg_pubkey: 2Wmv10a9eVSni9nfZ7YPsyl3ZC5z7vHq0sTZGgk5WGo=
+  peer_v4: null
+  peer_v6: fe80::2189:124
+  bgp:
+    asn: 4242422189
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
