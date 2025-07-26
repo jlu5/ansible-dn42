@@ -10,8 +10,6 @@ ownnets6:
 
 transfer_networks:
 - "fd86:bad:11b7:7f42::/64"
-# Legacy per-node addresses
-- "fd86:bad:11b7:117:42:1080::/96"
 
 # Default ratelimit (Mbps) for outgoing traffic on dn42 interfaces
 dn42_ratelimit: 15
