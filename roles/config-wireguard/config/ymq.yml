@@ -389,3 +389,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-factor2431
+  port: 21534
+  remote: 2a0a:4cc0:2000:c325::1:21080
+  wg_pubkey: G2pN3V0dtE/fGltPoOPwEkvZ7wC7TLmpr9gR3x/QUTk=
+  peer_v4: null
+  peer_v6: fe80::1534
+  bgp:
+    asn: 4242421534
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
