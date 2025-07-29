@@ -2,7 +2,6 @@
 igp_neighbours:
   ams: !!set
     chi: null
-    hkg: null
     lon: null
     lon2: null
     mum: null
@@ -20,12 +19,9 @@ igp_neighbours:
     ymq2: null
     yvr: null
   hkg: !!set
-    ams: null
     mum: null
-    sjc: null
     syd: null
     tyo: null
-    yvr: null
   lon: !!set
     ams: null
     chi: null
@@ -46,7 +42,6 @@ igp_neighbours:
   sjc: !!set
     ams: null
     chi: null
-    hkg: null
     syd: null
     tyo: null
     ymq: null
@@ -83,7 +78,6 @@ igp_neighbours:
     ymq: null
   yvr: !!set
     chi: null
-    hkg: null
     sjc: null
     tyo: null
     ymq: null
