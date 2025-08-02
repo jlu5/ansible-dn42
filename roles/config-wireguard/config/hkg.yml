@@ -99,7 +99,7 @@ wg_peers:
 - name: dn42-cmcc
   port: 21686
   remote: null
-  wg_pubkey: ocG/0wXtmuXA9OF5pMVolBIsFfE1K3JILX3MC3J5pGI=
+  wg_pubkey: D4MBIR+HsCPeEGuPg1YziRe1RgaG7jaiTw4wmV8XZUY=
   peer_v4: null
   peer_v6: fe80::1686
   bgp:
