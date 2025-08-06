@@ -912,7 +912,7 @@ wg_peers:
 
 - name: dn42-notu
   port: 20020
-  remote: dn42.diigg.tech:21080
+  remote: dn42.iputils.de:21080
   wg_pubkey: MJd3RQEM6+uFx1376rpIC99XWanD9e3iE3aFS2wa9TI=
   peer_v4: null
   peer_v6: fe80::d311
