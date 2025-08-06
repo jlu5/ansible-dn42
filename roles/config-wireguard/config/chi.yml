@@ -291,10 +291,10 @@ wg_peers:
 
 - name: dn42-tatk
   port: 23152
-  remote: rt1.us.tatk.network:21080
-  wg_pubkey: 8EjYngEiwoUaIMjHlOTysiy2SZsQzBxEy7epNK3zMGk=
+  remote: rt0.us.tatk.network:21080
+  wg_pubkey: 54tB3QacxF+NIfAZlXzwPsUuu23Z45TgQNmZMiuDFWo=
   peer_v4: null
-  peer_v6: fe80::3152:6
+  peer_v6: fe80::3152:4
   bgp:
     asn: 4242423152
     ipv4: true

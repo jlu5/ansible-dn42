@@ -370,16 +370,3 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: false
-
-- name: dn42-tatk
-  port: 23152
-  remote: rt0.sg.tatk.network:21080
-  wg_pubkey: ulL02/8Z2brK85/y2u389mVkieM4cXQrX/t+4jaJZQ8=
-  peer_v4: null
-  peer_v6: fe80::3152:5
-  bgp:
-    asn: 4242423152
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
