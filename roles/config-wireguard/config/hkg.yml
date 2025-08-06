@@ -122,41 +122,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-## peers moved from sgp.peer
-- name: dn42-moecast
-  port: 20604
-  remote: "sgp1.dn42.cas7.moe:21080"
-  wg_pubkey: "R8iyaSzF6xx/t4+1wKlYWZWyZOxJDCXlA2BE3OZnsAY="
-  peer_v4: "172.23.89.1"
-  peer_v6: "fe80::604"
-  local_v4: 172.20.229.127
-  local_v6: "fe80::1080:127"
-  bgp:
-    asn: 4242420604
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    export_mode: prepend
-
-- name: dn42-imlonghao
-  port: 21888
-  remote: sg1.dn42.ni.sb:21080
-  wg_pubkey: vBcYFxMLwcsVScQ0LqkGDEIbbykskatmqWHlPGEUrE8=
-  peer_v4: 172.22.68.0
-  peer_v6: fe80::1888
-  local_v4: 172.22.108.39
-  local_v6: "fe80::1080:39"
-  wg_privkey: "/etc/wireguard/privatekey_sgp"
-  bgp:
-    asn: 4242421888
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-## end peers moved from sgp.peer
-
 - name: dn42-sunnet
   port: 23088
   remote: hk1-hk.dn42.6700.cc:21080
