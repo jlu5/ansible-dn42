@@ -42,8 +42,8 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#hkg\" class=\"netmap-server-link\">Hong Kong, HK</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+                "description": "- LITE node, NO Anycast DNS<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
             }
         },
         {
@@ -72,6 +72,21 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#mum\" class=\"netmap-server-link\">Mumbai, IN</a>",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.819836,
+                    1.352083
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#sgp\" class=\"netmap-server-link\">Singapore, SG</a>",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
