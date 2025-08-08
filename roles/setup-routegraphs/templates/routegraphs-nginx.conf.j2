@@ -2,6 +2,7 @@ upstream routegraphs-backend {
     server unix:/run/routegraphs.sock;
 }
 
+# clearnet listener
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -20,17 +21,28 @@ server {
     }
 }
 
-# redirects
+# dn42 listener
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name routegraphs.{{ dns_domain }};
+
+    location / {
+        proxy_pass http://routegraphs-backend/;
+    }
+}
+
+# redirect clearnet -> HTTPS
 server {
     listen 80;
     listen [::]:80;
 
     server_name {{ routegraphs_server_name }};
-    server_name routegraphs.{{ dns_domain }};
-
-    return 302 https://{{ routegraphs_server_name }}$request_uri;
+    return 302 https://$server_name$request_uri;
 }
 
+# redirect dn42 -> HTTP
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -39,5 +51,5 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/{{ routegraphs_server_name }}/privkey.pem;
 
     server_name routegraphs.{{ dns_domain }};
-    return 302 https://{{ routegraphs_server_name }}$request_uri;
+    return 302 http://$server_name$request_uri;
 }
