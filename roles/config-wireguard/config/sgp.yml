@@ -76,6 +76,7 @@ wg_peers:
   wg_pubkey: S8BzQtSgHy+YFnnBjE0bmBYDIvCve5Tv43Y2dcVVBm4=
   peer_v4: 10.127.204.49
   peer_v6: fe80::1836
+  wg_mtu: 1280
   bgp:
     asn: 4201273722
     ipv4: true
