@@ -12,7 +12,7 @@ import pathlib
 import git
 import requests
 
-from peerconfgen import get_yaml
+from peerconfgen import _get_yaml_loader
 from peerconfrm import remove_peer
 
 def query_prometheus(prometheus_url, query):
@@ -57,7 +57,7 @@ present_over_time(bird_protocol_up{name=~"AS.+"}[%s])) == 0''' % (threshold, IGN
         return result
 
     def _read_configs(self):
-        yaml_loader = get_yaml()
+        yaml_loader = _get_yaml_loader()
         for conffile in pathlib.Path('roles/config-wireguard/config').glob('*.yml'):
             node = conffile.stem
 

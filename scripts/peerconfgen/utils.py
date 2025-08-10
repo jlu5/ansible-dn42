@@ -44,10 +44,6 @@ def prompt_float(prompt):
             tries += 1
     raise ValueError("Too many failed inputs, aborting")
 
-def get_iface_name(peername):
-    # TODO: sanitize peer names
-    return f'dn42-{peername[:10]}'
-
 def get_dn42_latency_value(latency):
     for x in range(1, 10):
         if latency < (math.e ** x):

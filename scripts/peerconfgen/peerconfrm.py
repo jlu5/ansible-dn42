@@ -10,12 +10,12 @@ import re
 
 import ruamel.yaml
 
-from peerconfgen import get_config_paths, get_yaml
+from peerconfgen import get_config_paths, _get_yaml_loader
 
 def remove_peer(node, peernames):
     wg_config_path = get_config_paths(node)
     peernames_set = set(peernames)
-    yaml = get_yaml()
+    yaml = _get_yaml_loader()
     # Peer names are in the form dn42-peername, truncated to 15 chars
     # pylint: disable=consider-using-f-string
     wg_peername_res = [r'(^dn42-%s$)' % peername[:15-5]

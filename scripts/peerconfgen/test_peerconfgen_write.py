@@ -4,7 +4,7 @@ import unittest
 import unittest.mock
 
 from birdoptions import BirdOptions
-from exporters import gen_peer_config
+from peerconfgen import gen_peer_config
 
 class PeerConfWriteTest(unittest.TestCase):
     maxDiff = None

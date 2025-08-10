@@ -11,7 +11,6 @@ import re
 import ruamel.yaml
 
 from birdoptions import fill_bird_options
-from exporters import gen_peer_config
 from utils import *
 from validators import *
 
@@ -157,12 +156,44 @@ def _run_interactive(node):
     print("BIRD peering options:", bird_options)
     return completed_config, bird_options
 
-def get_yaml():
+def _get_yaml_loader():
     yaml = ruamel.yaml.YAML()
     yaml.preserve_quotes = True
     # preserve explicit null values https://stackoverflow.com/a/44314840
     yaml.representer.add_representer(type(None), lambda self, data: self.represent_scalar('tag:yaml.org,2002:null', 'null'))
     return yaml
+
+def get_iface_name(peername):
+    return f'dn42-{peername[:10]}'
+
+def gen_peer_config(peername, completed_config, bird_options, mtu=None):
+    """
+    Generates a YAML wg_peers config entry.
+    """
+    if completed_config['remote']:
+        remote = completed_config['remote'] + ':' + completed_config['port']
+    else:
+        remote = None
+
+    peer_v4 = completed_config['peer_v4']
+    peer_v6 = completed_config['peer_v6']
+    result = {
+        'name': get_iface_name(peername),
+        # 20000 + last 4 digits of ASN
+        'port': 20000 + int(completed_config['asn']) % 10000,
+        'remote': remote,
+        'wg_pubkey': completed_config['wg_pubkey'],
+        'peer_v4': peer_v4,
+        'peer_v6': peer_v6,
+        'bgp': {
+            'asn': int(completed_config['asn']),
+            'ipv4': bool(peer_v4) or bird_options.extended_next_hop,
+            'ipv6': bool(peer_v6),
+            'mp_bgp': bird_options.mp_bgp or bird_options.extended_next_hop,
+            'extended_next_hop': bird_options.extended_next_hop,
+        }
+    }
+    return result
 
 _PEERNAME_RE = re.compile(r'^[a-z0-9]+$')
 def main():
@@ -184,7 +215,7 @@ def main():
 
     wg_config_path = get_config_paths(args.node, create=args.create)
 
-    yaml = get_yaml()
+    yaml = _get_yaml_loader()
     with open(wg_config_path, 'r+', encoding='utf-8') as f:
         wg_config = yaml.load(f) or {}
 
