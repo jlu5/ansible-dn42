@@ -125,6 +125,12 @@ class PeerVerifier():
                         f'Peer {ifname!r} has invalid wg_allowedips {wg_allowedips!r}',
                         config_path) from e
 
+        # Verify MTU
+        if wg_mtu := peer_config.get('wg_mtu'):
+            if wg_mtu < 1280:
+                raise ValidationError(
+                    f'Peer {ifname!r} has invalid wg_mtu {wg_mtu!r}', config_path)
+
     def _check_peer_config(self, config_path: pathlib.Path, peer_config, peer_type: PeerType):
         """Checks a peer config block for validity."""
         ifname = peer_config['name']

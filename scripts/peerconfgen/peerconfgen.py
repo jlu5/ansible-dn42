@@ -193,6 +193,8 @@ def gen_peer_config(peername, completed_config, bird_options, mtu=None):
             'extended_next_hop': bird_options.extended_next_hop,
         }
     }
+    if mtu:
+        result['wg_mtu'] = int(mtu)
     return result
 
 _PEERNAME_RE = re.compile(r'^[a-z0-9]+$')
@@ -201,6 +203,7 @@ def main():
     parser.add_argument('--dry-run', '-n', help='Only print generated output; do not write it to disk', action='store_true')
     parser.add_argument('--replace', '-r', help='Overwrite existing config blocks', action='store_true')
     parser.add_argument('--create', '-c', help="Create WireGuard config file if it doesn't exist", action='store_true')
+    parser.add_argument('--mtu', '-m', help="Override WireGuard tunnel MTU", type=int, default=None)
     parser.add_argument('node', help='Node to generate config for', type=str)
     parser.add_argument('peername', help='Short name / identifier for peer', type=str)
     args = parser.parse_args()
@@ -231,7 +234,7 @@ def main():
             iface_idx = -1
 
         completed_config, bird_options = _run_interactive(args.node)
-        wg_config_snippet = gen_peer_config(peername, completed_config, bird_options)
+        wg_config_snippet = gen_peer_config(peername, completed_config, bird_options, mtu=args.mtu)
         if iface_idx < 0:
             wg_peers.append(wg_config_snippet)
             # Add an extra newline before the config block for readability
