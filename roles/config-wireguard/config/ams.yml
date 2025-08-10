@@ -871,19 +871,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-furry
-  port: 20088
-  remote: de01-peer.furry.lv:21080
-  wg_pubkey: eagcePZjNKnvQqf4u9D+5RHnsR2WkTOKD06MWpy2ZAI=
-  peer_v4: 172.20.5.70
-  peer_v6: fe80::88
-  bgp:
-    asn: 4242420088
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-badaimweeb
   port: 23797
   remote: 918795de1cdfe9ea10f7ff7348e3e5ad25b0ac1c.dc.badaimweeb.me:5607
