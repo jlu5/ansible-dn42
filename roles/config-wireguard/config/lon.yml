@@ -363,3 +363,17 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-aerionclou
+  port: 22550
+  remote: bgp.aerioncloud.com:21080
+  wg_pubkey: s416rWuCTAakM7lwrcOfn+wSR3BGnUQl1OKisob7/TQ=
+  peer_v4: null
+  peer_v6: fe80::abc0
+  bgp:
+    asn: 4242422550
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+  wg_mtu: 1412
