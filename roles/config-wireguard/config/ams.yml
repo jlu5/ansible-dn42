@@ -795,10 +795,10 @@ wg_peers:
 
 - name: dn42-factor2431
   port: 21534
-  remote: 37.221.197.64:21080
+  remote: de-nue.factor2431.com:21080
   wg_pubkey: +nTkXWmpE+/jdRw47xIgzbZGLXfiOFuL8badSOXqAGw=
   peer_v4: null
-  peer_v6: fdf4:be86:71d9:e678:9d5a:4574:9bf9:9f27
+  peer_v6: fe80::1534
   bgp:
     asn: 4242421534
     ipv4: true
