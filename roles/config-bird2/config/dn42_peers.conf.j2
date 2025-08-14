@@ -5,6 +5,7 @@
 {%- set export_mode = peer_config.bgp.get('export_mode') or 'filter' -%}
         import where dn42_import_{{ import_mode }}(0,{{ _dn42_bandwidth }},{{ dn42_encryption }});
         export where dn42_export_{{ export_mode }}(0,{{ _dn42_bandwidth }},{{ dn42_encryption }});
+        import table;
 {%- endmacro -%}
 
 {# Template for per-session BGP options #}

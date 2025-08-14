@@ -20,6 +20,7 @@ protocol bgp ibgp_{{ host | replace("-", "_") }} {
 {% endif %}
         next hop address {{ ownip }};
         next hop self ebgp;
+        import table;
     };
 
     ipv6 {
@@ -31,6 +32,7 @@ protocol bgp ibgp_{{ host | replace("-", "_") }} {
 {% endif %}
         next hop address {{ ownip6 }};
         next hop self ebgp;
+        import table;
     };
 }
 {%- endmacro %}
