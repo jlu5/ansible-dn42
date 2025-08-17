@@ -37,3 +37,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-segfault
+  port: 23443
+  remote: router.uchinoie.site:51080
+  wg_pubkey: PL+bwsJypqEs/oSUkEQKL2EkM4xagyJXSZLqNVrMFTI=
+  peer_v4: null
+  peer_v6: fe80::3443:1080
+  bgp:
+    asn: 4242423443
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
