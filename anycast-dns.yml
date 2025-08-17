@@ -9,7 +9,7 @@
       local_action: command scripts/make-dns-records.py
       run_once: true
     - name: Generate forward-zones config
-      local_action: command scripts/make-forward-zones.sh
+      local_action: command scripts/make-forward-zones.py ./dn42-registry ./global-config/pdns-recursor
       run_once: true
 
 - name: Configure authoritative DNS
