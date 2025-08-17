@@ -52,8 +52,8 @@
         loglevel: 6
 
     pdns_rec_service_overrides:
-      User: pdns
-      Group: pdns
+      User: "{{ pdns_rec_user }}"
+      Group: "{{ pdns_rec_group }}"
       # Start/stop
       ExecStartPre: "+ifup {{ dummy_interfaces.anycast_recursors.ifname }} --force"
       ExecStopPost: "+ip link del {{ dummy_interfaces.anycast_recursors.ifname }}"
