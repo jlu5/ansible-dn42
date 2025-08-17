@@ -12,3 +12,12 @@
       nameserver 127.0.0.1
       # Ignore the systemd-resolved comment - this is likely not enabled here
   notify: "Refresh resolvconf"
+
+- name: "Add fallback recursor to /etc/resolvconf/resolv.conf.d/base"
+  blockinfile:
+    path: /etc/resolvconf/resolv.conf.d/base
+    insertafter: BOF
+    block: |
+      nameserver 8.8.8.8
+      nameserver 8.8.4.4
+  notify: "Refresh resolvconf"
