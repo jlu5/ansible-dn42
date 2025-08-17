@@ -1,0 +1,5 @@
+- name: PowerDNS.pdns_recursor
+
+- src: https://github.com/PowerDNS/pdns_recursor-ansible
+  # Git snapshot for 5.x YAML default config
+  version: a93da79502be80f92837fefb788bf2e5f1163267

@@ -6,54 +6,52 @@
     state: directory
     mode: '0750'
 
+- name: "Compute pdns-recursor config vars"
+  set_fact:
+    _pdns_recursor_extra_conf_dir: "/etc/powerdns/dn42-recursor"
+    _pdns_recursor_listen_ips:
+      "{{ ((dummy_interfaces.anycast_recursors.ip4 | ansible.utils.ipaddr('address')) | default([], true)
+      + (dummy_interfaces.anycast_recursors.ip6 | ansible.utils.ipaddr('address')) | default([], true)
+      + ['127.0.0.1', '[0::1]', ownip, ownip6]) }}"
+
 - name: "Upload config files for PowerDNS recursor"
   copy:
-    src: "{{ playbook_dir }}/global-config/pdns-recursor/{{ item }}"
-    dest: "/etc/powerdns/{{ item }}"
+    src: "{{ item }}"
+    dest: "{{ _pdns_recursor_extra_conf_dir }}/{{ item | basename }}"
     mode: '0644'
   notify:
     - Reconfigure PowerDNS recursor
-  loop:
-    - "forward-zones.conf"
-    - "recursor.lua"
+  with_fileglob:
+    - "{{ playbook_dir }}/global-config/pdns-recursor/*.yml"
 
 # Install & configure PowerDNS resolver
 - import_role:
     name: PowerDNS.pdns_recursor
   vars:
-    pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_43 if ansible_distribution_release == 'buster' else '' }}"
-    pdns_rec_config:
-      # Reduce dont-query list from defaults to exclude dn42 ranges
-      dont-query: 127.0.0.0/8, 192.168.0.0/16, ::1/128, fe80::/10
+    pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_52 if ansible_distribution_release == 'bookworm' else '' }}"
+    pdns_rec_custom_config:
+      dnssec:
+        log_bogus: true
+      recordcache:
+        # Limit caching when DNSSEC fails
+        max_cache_bogus_ttl: 20
+      incoming:
+        listen: "{{ _pdns_recursor_listen_ips }}"
+      recursor:
+        extended_resolution_errors: true
+        include_dir: "{{ _pdns_recursor_extra_conf_dir }}"
+      outgoing:
+        # Reduce dont-query list to exclude dn42 ranges
+        dont_query: [127.0.0.0/8, 192.168.0.0/16, ::1/128, fe80::/10]
 
-      forward-zones-file: "{{ pdns_rec_config_dir }}/forward-zones.conf"
-      lua-config-file: "{{ pdns_rec_config_dir }}/recursor.lua"
-
-      # DNSSEC
-      dnssec: validate
-      dnssec-log-bogus: true
-      # Don't cache records where DNSSEC validation failed. (I seem to get intermittent validation issues?)
-      max-cache-bogus-ttl: 20
-
-      # Allow sending queries over IPv6
-      query-local-address: "0.0.0.0,::"
-
-      # Translate addresses from CIDR into raw IP form as needed
-      local-address: "{{ ((dummy_interfaces.anycast_recursors.ip4 | ansible.utils.ipaddr('address')) | default([], true)
-                          + (dummy_interfaces.anycast_recursors.ip6 | ansible.utils.ipaddr('address')) | default([], true)
-                          + ['127.0.0.1', '[0::1]', ownip, ownip6])
-                          | join(', ') }}"
-
-      # Use a higher timeout for queries
-      network-timeout: 5000
-
-      # work around https://github.com/PowerDNS/pdns/issues/10263
-      qname-minimization: no
+        network_timeout: 5000
+        source_address:
+          - 0.0.0.0
+          - '::'
+      logging:
+        loglevel: 6
 
     pdns_rec_service_overrides:
-      # Work around errors described at https://github.com/PowerDNS/pdns_recursor-ansible/issues/69
-      User: "{{ pdns_rec_user }}"
-      Group: "{{ pdns_rec_group }}"
       # Start/stop
       ExecStartPre: "+ifup {{ dummy_interfaces.anycast_recursors.ifname }} --force"
       ExecStopPost: "+ip link del {{ dummy_interfaces.anycast_recursors.ifname }}"
