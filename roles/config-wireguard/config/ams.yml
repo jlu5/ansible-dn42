@@ -935,3 +935,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-leslie
+  port: 23264
+  remote: 158.178.157.79:51821
+  wg_pubkey: rDsjGT/9wnI6t66tH5Z+4weXbzp1jgTpRL+ZArkQ2Eg=
+  peer_v4: 172.20.48.5
+  peer_v6: fd64:8964:8964::5
+  bgp:
+    asn: 4242423264
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
