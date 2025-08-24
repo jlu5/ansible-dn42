@@ -108,7 +108,14 @@ host = nl.mirrors.clouvider.net
 menu = [NL] DeluxHost
 title = [NL] DeluxHost - Amsterdam, Netherlands [2a12:bec4:1822:86::a]
 host = 2a12:bec4:1822:86::a
+{% endif %}
 
+++ greencloud-ams
+menu = [NL] GreenCloud
+title = [NL] GreenCloud @ xTom - Amsterdam, Netherlands [2a0c:b847:ffff:38::4be3]
+host = 2a0c:b847:ffff:38::4be3
+
+{% if not smokeping_lite %}
 ++ server-factory-nl
 menu = [NL] heartbeat IT
 title = [NL] heartbeat IT (server-factory) - Eygelshoven, Netherlands [lg.nl.server-factory.com]
@@ -236,6 +243,30 @@ title = [DE] Netcup / Anexia - Nuremberg, Germany [lg.netcup.net]
 host = lg.netcup.net
 
 ++ buyvm-lu
-menu = [LU] BuyVM
-title = [LU] BuyVM - Roost, Luxembourg [speedtest.lu.buyvm.net]
+menu = [CH] BuyVM
+title = [CH] BuyVM - Bern, Switzerland [speedtest.lu.buyvm.net]
 host = speedtest.lu.buyvm.net
+
+{% if not smokeping_lite %}
+++ infomaniak-geneva
+menu = [CH] Infomaniak
+title = [CH] Infomaniak - Geneva, Switzerland [speedtest2.infomaniak.com]
+host = speedtest2.infomaniak.com
+{% endif %}
+
+++ alwyzon
+menu = [AT] Alwyzon
+title = [AT] Alwyzon - Vienna, Austria [2a0d:f302:106::6]
+host = 2a0d:f302:106::6
+
+{% if not smokeping_lite %}
+++ hosteroid-vie
+menu = [AT] Hosteroid
+title = [AT] Hosteroid @ UpstreamNet / Zayo France - Vienna, Austria [2a05:5504:1::4fe:1]
+host = 2a05:5504:1::4fe:1
+{% endif %}
+
+++ netcup-at
+menu = [AT] Netcup
+title = [AT] Netcup (Anexia) - Vienna, Austria [speedtest.netcup.at]
+host = speedtest.netcup.at

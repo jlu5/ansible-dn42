@@ -1,37 +1,3 @@
-++ hosthatch-zrh
-menu = [CH] HostHatch
-title = [CH] HostHatch - Zurich, Switzerland [lg.zrh.hosthatch.com]
-host = lg.zrh.hosthatch.com
-
-{% if not smokeping_lite %}
-++ infomaniak-geneva
-menu = [CH] Infomaniak
-title = [CH] Infomaniak - Geneva, Switzerland [speedtest2.infomaniak.com]
-host = speedtest2.infomaniak.com
-{% endif %}
-
-++ alwyzon
-menu = [AT] Alwyzon
-title = [AT] Alwyzon - Vienna, Austria [86.106.182.189]
-host = 86.106.182.189
-
-{% if not smokeping_lite %}
-++ hosteroid-vie
-menu = [AT] Hosteroid
-title = [AT] Hosteroid @ UpstreamNet / Zayo France - Vienna, Austria [vie-lg.hosteroid.uk]
-host = vie-lg.hosteroid.uk
-{% endif %}
-
-++ hosthatch-vie
-menu = [AT] HostHatch
-title = [AT] HostHatch - Vienna, Austria [lg.vie.hosthatch.com]
-host = lg.vie.hosthatch.com
-
-++ netcup-at
-menu = [AT] Netcup
-title = [AT] Netcup (Anexia) - Vienna, Austria [speedtest.netcup.at]
-host = speedtest.netcup.at
-
 ++ terrahost-no
 menu = [NO] Gigahost
 title = [NO] Gigahost (fka Terrahost) - Sandefjord, Norway [lg.gigahost.no]
@@ -160,12 +126,12 @@ title = [LT] Melbicom - Vilnius, Lithuania [195.238.126.3]
 host = 195.238.126.3
 {% endif %}
 
-{% if not smokeping_lite %}
 ++ ultravps-lt
 menu = [LT] UltraVPS (Siauliai)
 title = [LT] UltraVPS - Siauliai, Lithuania [lg.sqq.lt.ultravps.eu]
 host = lg.sqq.lt.ultravps.eu
 
+{% if not smokeping_lite %}
 ++ xtom-tll
 menu = [EE] xTom
 title = [EE] xTom / V.PS - Tallinn, Estonia [tll.speedtest.v.ps]
@@ -189,16 +155,26 @@ title = [RU] Psychz - Moscow, Russia [lg.svo.psychz.net]
 host = lg.svo.psychz.net
 {% endif %}
 
+++ rocketcloud-ru
+menu = [RU] RocketCloud (Moscow)
+title = [RU] RocketCloud - Moscow, Russia [ping-msk1.rocketcloud.ru]
+host = ping-msk1.rocketcloud.ru
+
+++ vdsina-ru
+menu = [RU] VDSina (Moscow)
+title = [RU] VDSina - Moscow, Russia [speedtest-ru.vdsina.ru]
+host = speedtest-ru.vdsina.ru
+
+{% if not smokeping_lite %}
 ++ justhost-spb
 menu = [RU] JustHost (Saint Petersburg)
 title = [RU] JustHost @ RASCOM - Saint Petersburg, Russia [lg-led1.just.hosting]
 host = lg-led1.just.hosting
 
-{% if not smokeping_lite %}
-++ rocketcloud-ru
-menu = [RU] RocketCloud
-title = [RU] RocketCloud - Moscow, Russia [ping-msk1.rocketcloud.ru]
-host = ping-msk1.rocketcloud.ru
+++ 4vps-nvo
+menu = [RU] 4VPS.SU (Novosibirsk)
+title = [RU] 4VPS.SU @ Adman - Novosibirsk, Russia [ping-ru-nsk.4vps.su]
+host = ping-ru-nsk.4vps.su
 
 ++ justhost-ovb
 menu = [RU] JustHost (Novosibirsk)
@@ -244,6 +220,11 @@ title = [RO] M247 - Bucharest, Romania [speed.m247.ro]
 host = speed.m247.ro
 
 {% if not smokeping_lite %}
+++ torchbyte
+menu = [RO] torchbyte
+title = [RO] torchbyte - Bucharest, Romania [lg-ro-buc.torchbyte.com]
+host = lg-ro-buc.torchbyte.com
+
 ++ alexhost
 menu = [MD] Alexhost
 title = [MD] Alexhost - Chisinau, Moldova [lg.alexhost.com]

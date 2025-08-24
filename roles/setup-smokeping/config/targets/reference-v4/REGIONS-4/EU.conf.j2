@@ -145,7 +145,14 @@ host = 192.210.175.1
 menu = [NL] DeluxHost
 title = [NL] DeluxHost - Amsterdam, Netherlands [lg.deluxhost.net]
 host = lg.deluxhost.net
+{% endif %}
 
+++ greencloud-ams
+menu = [NL] GreenCloud
+title = [NL] GreenCloud @ xTom - Amsterdam, Netherlands [185.214.10.103]
+host = 185.214.10.103
+
+{% if not smokeping_lite %}
 ++ server-factory-nl
 menu = [NL] heartbeat IT
 title = [NL] heartbeat IT (server-factory) - Eygelshoven, Netherlands [lg.nl.heartbeat-it.com]
@@ -311,6 +318,40 @@ title = [DE] Hetzner - Falkenstein, Germany [fsn.icmp.hetzner.com]
 host = fsn.icmp.hetzner.com
 
 ++ buyvm-lu
-menu = [LU] BuyVM
-title = [LU] BuyVM - Roost, Luxembourg [speedtest.lu.buyvm.net]
+menu = [CH] BuyVM
+title = [CH] BuyVM - Bern, Switzerland [speedtest.lu.buyvm.net]
 host = speedtest.lu.buyvm.net
+
+++ hosthatch-zrh
+menu = [CH] HostHatch
+title = [CH] HostHatch - Zurich, Switzerland [lg.zrh.hosthatch.com]
+host = lg.zrh.hosthatch.com
+
+{% if not smokeping_lite %}
+++ infomaniak-geneva
+menu = [CH] Infomaniak
+title = [CH] Infomaniak - Geneva, Switzerland [speedtest2.infomaniak.com]
+host = speedtest2.infomaniak.com
+{% endif %}
+
+++ alwyzon
+menu = [AT] Alwyzon
+title = [AT] Alwyzon - Vienna, Austria [86.106.182.189]
+host = 86.106.182.189
+
+{% if not smokeping_lite %}
+++ hosteroid-vie
+menu = [AT] Hosteroid
+title = [AT] Hosteroid @ UpstreamNet / Zayo France - Vienna, Austria [vie-lg.hosteroid.uk]
+host = vie-lg.hosteroid.uk
+{% endif %}
+
+++ hosthatch-vie
+menu = [AT] HostHatch
+title = [AT] HostHatch - Vienna, Austria [lg.vie.hosthatch.com]
+host = lg.vie.hosthatch.com
+
+++ netcup-at
+menu = [AT] Netcup
+title = [AT] Netcup (Anexia) - Vienna, Austria [speedtest.netcup.at]
+host = speedtest.netcup.at
