@@ -19,6 +19,9 @@
     - role: config-loopback
       dummy_iface: "{{ dummy_interfaces.anycast_auth_dns }}"
     - role: config-powerdns
+  tasks:
+    - name: Flush handlers
+      ansible.builtin.meta: flush_handlers
 
 - name: Configure DNS recursors
   hosts: anycast_recursors
