@@ -62,16 +62,3 @@ menu = ServaRICA Montreal (IPv6)
 title = ServaRICA - Montreal, QC, CA (IPv6)
 host = {{ smokeping_crypt_hosts.ymq02 }}
 {% endif %}
-
-++ lon02a
-menu = Clouvider London (IPv4)
-title = Clouvider - London, UK (IPv4)
-host = {{ smokeping_crypt_hosts.lon02 }}
-
-{% if _smokeping_local_has_v6 %}
-++ lon02a_v6
-probe = FPing6
-menu = Clouvider London (IPv6)
-title = Clouvider - London, UK (IPv6)
-host = {{ smokeping_crypt_hosts.lon02 }}
-{% endif %}
