@@ -111,12 +111,12 @@ def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
     assert pycountry_entry
 
     isp_short = isp.split('@')[0].strip()
+    cc_prefix = country
     if country in ('CA', 'US'):
-        print(f'menu = [{country}/{province}] {isp_short}')
-        assert city
+        cc_prefix = f'[{country}/{province}]'
         loc = f'{city}, {province}, {country}'
-        print(f'title = [{country}/{province}] {isp} - {loc} [{address}]')
     else:
+        country_display = country
         if country in ('HK', 'MO'):
             city = pycountry_entry.name
             country_display = 'China'
@@ -124,12 +124,20 @@ def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
             country_display = 'Russia'
         else:
             country_display = getattr(pycountry_country, 'common_name', pycountry_entry.name)
-
-        print(f'menu = [{country}] {isp_short}')
+        if country == 'SG':
+            city = ''
         loc = f'{city}, {country_display}' if city else country_display
-        print(f'title = [{country}] {isp} - {loc} [{address}]')
-    print(f'host = {address}')
 
+    if city and (cc_prefix in ('US/CA', 'DE', 'FR', 'CN', 'RU', 'IN', 'BR') or
+                 (cc_prefix == 'UK' and 'London' not in city) or
+                 (cc_prefix == 'JP' and 'Tokyo' not in city) or
+                 (cc_prefix == 'US/NY' and 'New York' not in city) or
+                 (cc_prefix == 'AU' and 'Sydney' not in city)):
+        print(f'menu = [{cc_prefix}] {isp_short} ({city})')
+    else:
+        print(f'menu = [{cc_prefix}] {isp_short}')
+    print(f'title = [{cc_prefix}] {isp} - {loc} [{address}]')
+    print(f'host = {address}')
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

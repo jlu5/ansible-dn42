@@ -28,8 +28,8 @@ title = [UK] Linode - London, United Kingdom [speedtest.london.linode.com]
 host = speedtest.london.linode.com
 
 ++ ovh-lon_0
-menu = [UK] OVH
-title = [UK] OVH - Erith, London, United Kingdom [eri.proof.ovh.net]
+menu = [UK] OVHcloud
+title = [UK] OVHcloud - Erith, London, United Kingdom [eri.proof.ovh.net]
 host = eri.proof.ovh.net
 
 {% if not smokeping_lite %}
@@ -78,18 +78,18 @@ host = speedtest.paris.linode.com
 
 ++ ovh-gra
 menu = [FR] OVH (Gravelines)
-title = [FR] OVH - Gravelines, France [gra.proof.ovh.net]
+title = [FR] OVHcloud - Gravelines, France [gra.proof.ovh.net]
 host = gra.proof.ovh.net
 
 ++ ovh-rbx
 menu = [FR] OVH (Roubaix)
-title = [FR] OVH - Roubaix, France [rbx.proof.ovh.net]
+title = [FR] OVHcloud - Roubaix, France [rbx.proof.ovh.net]
 host = rbx.proof.ovh.net
 
 {% if not smokeping_lite %}
 ++ ovh-sbg
 menu = [FR] OVH (Strasbourg)
-title = [FR] OVH - Strasbourg, France [sbg.proof.ovh.net]
+title = [FR] OVHcloud - Strasbourg, France [sbg.proof.ovh.net]
 host = sbg.proof.ovh.net
 
 ++ racknerd-fr
@@ -222,12 +222,17 @@ host = speedtest.worldstream.nl
 menu = [DE] Aurologic (Frankfurt)
 title = [DE] Aurologic - Frankfurt, Germany [lg.aurologic.com]
 host = lg.aurologic.com
-{% endif %}
 
 ++ clouvider-fra
 menu = [DE] Clouvider (Frankfurt)
 title = [DE] Clouvider - Frankfurt, Germany [de.mirrors.clouvider.net]
 host = de.mirrors.clouvider.net
+
+++ computebox
+menu = [DE] ComputeBox (Moelln)
+title = [DE] ComputeBox @ CSN-Solutions - Moelln, Germany [lg.computebox.de]
+host = lg.computebox.de
+{% endif %}
 
 ++ php-friends
 menu = [DE] dataforest (Frankfurt)
@@ -276,6 +281,11 @@ host = speedtest1.synlinq.de
 menu = [DE] Vultr (Frankfurt)
 title = [DE] Vultr - Frankfurt, Germany [fra-de-ping.vultr.com]
 host = fra-de-ping.vultr.com
+
+++ xtom-fra
+menu = [DE] xTom (Frankfurt)
+title = [DE] xTom / V.PS - Frankfurt, Germany [fra.lg.v.ps]
+host = fra.lg.v.ps
 {% endif %}
 
 ++ contabo-dus
