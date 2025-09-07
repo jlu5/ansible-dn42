@@ -873,7 +873,7 @@ wg_peers:
 
 - name: dn42-badaimweeb
   port: 23797
-  remote: 918795de1cdfe9ea10f7ff7348e3e5ad25b0ac1c.dc.badaimweeb.me:5607
+  remote: de-fra1.rc.badaimweeb.me:5607
   wg_pubkey: UGXD2MM0aBRtwmfMuwlt3VMDNjO9PU/JOMBrtsJ+YVo=
   peer_v4: null
   peer_v6: fe80::bad1:1080

@@ -96,3 +96,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-badaimweeb
+  port: 23797
+  remote: my-jhb1.rc.badaimweeb.me:5604
+  wg_pubkey: bBHJySFUGSBiXbaSJnLVvZtSUm/fEQCgQqVxGCDx7ho=
+  peer_v4: null
+  peer_v6: fe80::3797
+  bgp:
+    asn: 4242423797
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
