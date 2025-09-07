@@ -97,7 +97,7 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-sgp
+- name: dn42-badaimweeb
   port: 23797
   remote: my-jhb1.rc.badaimweeb.me:5604
   wg_pubkey: bBHJySFUGSBiXbaSJnLVvZtSUm/fEQCgQqVxGCDx7ho=
