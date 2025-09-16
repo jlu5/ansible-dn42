@@ -434,3 +434,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: false
+
+- name: dn42-maiyun
+  port: 20893
+  remote: jp02.dn42.maiyun.me:24213
+  wg_pubkey: J5aq5AYRv/GHfr90mVEOPRCQeLInGS3mnSpckuyWt04=
+  peer_v4: null
+  peer_v6: fe80::893
+  bgp:
+    asn: 4242420893
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
