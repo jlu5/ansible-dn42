@@ -308,7 +308,7 @@ wg_peers:
 
 - name: dn42-iyoroy
   port: 22024
-  remote: hk2-cn.ecs.iyoroy-infra.top:21080
+  remote: hkg02-cn.ecs.iyoroy-infra.top:21080
   wg_pubkey: 6gm7634mtfq1cXdTVJzGInVha/77qMqnUxFVubMHjUI=
   peer_v4: 172.20.234.225
   peer_v6: fe80::2024
