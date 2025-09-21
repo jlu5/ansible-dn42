@@ -1,5 +1,4 @@
-
-
+{% if not smokeping_lite %}
 ++ aliyun-beijing
 menu = [CN] Aliyun (Beijing)
 title = [CN] Aliyun / Alibaba Cloud - Beijing, China [oss-cn-beijing.aliyuncs.com]
@@ -9,6 +8,7 @@ host = oss-cn-beijing.aliyuncs.com
 menu = [CN] Aliyun (Shenzhen)
 title = [CN] Aliyun / Alibaba Cloud - Shenzhen, China [oss-cn-shenzhen.aliyuncs.com]
 host = oss-cn-shenzhen.aliyuncs.com
+{% endif %}
 
 ++ amazon-cn-north1
 menu = [CN] Amazon AWS (Beijing)
@@ -35,6 +35,11 @@ menu = [CN] China Mobile (Hangzhou)
 title = [CN] China Mobile - Hangzhou, China [speedtest.139play.com]
 host = speedtest.139play.com
 
+++ china-mobile-guangzhou
+menu = [CN] China Mobile (Guangzhou)
+title = [CN] China Mobile - Guangzhou, China [211.136.192.6]
+host = 211.136.192.6
+
 ++ china-telecom-beijing
 menu = [CN] China Telecom (Beijing)
 title = [CN] China Telecom - Beijing, China [218.30.118.6]
@@ -45,16 +50,27 @@ menu = [CN] China Telecom (Shanghai)
 title = [CN] China Telecom - Shanghai, China [101.226.4.6]
 host = 101.226.4.6
 
+++ china-telecom-guangzhou
+menu = [CN] China Telecom (Guangzhou)
+title = [CN] China Telecom - Guangzhou, China [202.96.128.86]
+host = 202.96.128.86
+
 ++ china-unicom-beijing
 menu = [CN] China Unicom (Beijing)
 title = [CN] China Unicom - Beijing, China [123.123.123.123]
 host = 123.123.123.123
+
+++ china-unicom-hangzhou
+menu = [CN] China Unicom (Hangzhou)
+title = [CN] China Unicom - Hangzhou, China [221.12.1.227]
+host = 221.12.1.227
 
 ++ china-unicom-shenzhen
 menu = [CN] China Unicom (Shenzhen)
 title = [CN] China Unicom - Shenzhen, China [210.21.196.6]
 host = 210.21.196.6
 
+{% if not smokeping_lite %}
 ++ huawei-cn-north-1
 menu = [CN] Huawei (Beijing)
 title = [CN] Huawei Cloud (cn-north-1) - Beijing, China [as.cn-north-1.myhuaweicloud.com]
@@ -84,3 +100,4 @@ host = cos.ap-shanghai.myqcloud.com
 menu = [CN] Tencent (Guangzhou)
 title = [CN] Tencent Cloud @ China Telecom - Guangzhou, China [cos.ap-guangzhou.myqcloud.com]
 host = cos.ap-guangzhou.myqcloud.com
+{% endif %}
