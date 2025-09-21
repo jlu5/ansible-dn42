@@ -370,3 +370,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-sam
+  port: 22503
+  remote: hk1.dn42.sam1314.com:21080
+  wg_pubkey: GyS7yHeu3kQykROMr6ZMix8FRUlLE/mxQWmn1zzdAUE=
+  peer_v4: 172.23.161.64
+  peer_v6: fe80::2503
+  bgp:
+    asn: 4242422503
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
