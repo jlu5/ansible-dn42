@@ -779,10 +779,10 @@ wg_peers:
 
 - name: dn42-flipflap
   port: 20263
-  remote: nl-ams1.flap42.eu:51826
-  wg_pubkey: osOFClUbgPmF9XVWhUtvatWjM0y0ZgTi0xnitirnphA=
+  remote: nl-ams2.flap42.eu:52021
+  wg_pubkey: C3Wlu6y+v84FN/vreuTqL6r5wEtGTMXX5rKgHkxDaTI=
   peer_v4: null
-  peer_v6: fe80::106
+  peer_v6: fe80::263
   bgp:
     asn: 4242420263
     ipv4: true
