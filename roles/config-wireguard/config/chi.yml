@@ -314,3 +314,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-flipflap
+  port: 20263
+  remote: us-nyc1.flap42.eu:52010
+  wg_pubkey: uY0GCV3adypvnCWtWcm10PCrJ/OWeplmgL64WWlqZFY=
+  peer_v4: null
+  peer_v6: fe80::263
+  bgp:
+    asn: 4242420263
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
