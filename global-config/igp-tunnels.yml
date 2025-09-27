@@ -2,6 +2,7 @@
 igp_neighbours:
   ams: !!set
     chi: null
+    hkg: null
     lon: null
     mum: null
     sgp: null
@@ -19,12 +20,15 @@ igp_neighbours:
     ymq2: null
     yvr: null
   hkg: !!set
+    ams: null
+    lon: null
     sgp: null
     syd: null
     tyo: null
   lon: !!set
     ams: null
     chi: null
+    hkg: null
     mum: null
     sto: null
     ymq: null
