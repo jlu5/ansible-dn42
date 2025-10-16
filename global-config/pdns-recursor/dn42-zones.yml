@@ -8,32 +8,6 @@ recursor:
     - 8.8.8.8
     - 8.8.4.4
   forward_zones:
-  - zone: dn42
-    forwarders: &id001
-    - fd42:4242:2601:ac53::1
-    - 172.20.129.1
-    - fdcf:8538:9ad5:1111::2
-    - 172.20.14.34
-    - fd42:5d71:219:0:216:3eff:fe1e:22d6
-    - 172.20.1.254
-    - fd86:bad:11b7:53::1
-    - 172.22.108.54
-    - fd42:4242:2189::1
-    - 172.23.91.1
-  - zone: 10.in-addr.arpa
-    forwarders: *id001
-  - zone: 20.172.in-addr.arpa
-    forwarders: *id001
-  - zone: 21.172.in-addr.arpa
-    forwarders: *id001
-  - zone: 22.172.in-addr.arpa
-    forwarders: *id001
-  - zone: 23.172.in-addr.arpa
-    forwarders: *id001
-  - zone: 31.172.in-addr.arpa
-    forwarders: *id001
-  - zone: d.f.ip6.arpa
-    forwarders: *id001
   - zone: ffin
     forwarders:
     - 10.10.0.2
@@ -326,16 +300,16 @@ recursor:
     - fda1:384a:74de:4242:0000:0000:0000:ff07
   - zone: dn42
     forwarders:
-    - fd42:4242:2601:ac53::1
     - 172.20.129.1
-    - fdcf:8538:9ad5:1111::2
-    - 172.20.14.34
-    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - fd42:4242:2601:ac53::1
     - 172.20.1.254
-    - fd86:bad:11b7:53::1
+    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - 172.20.14.34
+    - fdcf:8538:9ad5:1111::2
     - 172.22.108.54
-    - fd42:4242:2189::1
+    - fd86:bad:11b7:53::1
     - 172.23.91.1
+    - fd42:4242:2189::1
   - zone: fftut
     forwarders:
     - 10.119.0.5
@@ -516,6 +490,90 @@ recursor:
   - zone: fflln
     forwarders:
     - 10.21.3.1
+  - zone: 10.in-addr.arpa
+    forwarders:
+    - 172.20.129.1
+    - fd42:4242:2601:ac53::1
+    - 172.20.1.254
+    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - 172.20.14.34
+    - fdcf:8538:9ad5:1111::2
+    - 172.22.108.54
+    - fd86:bad:11b7:53::1
+    - 172.23.91.1
+    - fd42:4242:2189::1
+  - zone: 20.172.in-addr.arpa
+    forwarders:
+    - 172.20.129.1
+    - fd42:4242:2601:ac53::1
+    - 172.20.1.254
+    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - 172.20.14.34
+    - fdcf:8538:9ad5:1111::2
+    - 172.22.108.54
+    - fd86:bad:11b7:53::1
+    - 172.23.91.1
+    - fd42:4242:2189::1
+  - zone: 21.172.in-addr.arpa
+    forwarders:
+    - 172.20.129.1
+    - fd42:4242:2601:ac53::1
+    - 172.20.1.254
+    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - 172.20.14.34
+    - fdcf:8538:9ad5:1111::2
+    - 172.22.108.54
+    - fd86:bad:11b7:53::1
+    - 172.23.91.1
+    - fd42:4242:2189::1
+  - zone: 22.172.in-addr.arpa
+    forwarders:
+    - 172.20.129.1
+    - fd42:4242:2601:ac53::1
+    - 172.20.1.254
+    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - 172.20.14.34
+    - fdcf:8538:9ad5:1111::2
+    - 172.22.108.54
+    - fd86:bad:11b7:53::1
+    - 172.23.91.1
+    - fd42:4242:2189::1
+  - zone: 20.172.in-addr.arpa
+    forwarders:
+    - 172.20.129.1
+    - fd42:4242:2601:ac53::1
+    - 172.20.1.254
+    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - 172.20.14.34
+    - fdcf:8538:9ad5:1111::2
+    - 172.22.108.54
+    - fd86:bad:11b7:53::1
+    - 172.23.91.1
+    - fd42:4242:2189::1
+  - zone: 31.172.in-addr.arpa
+    forwarders:
+    - 172.20.129.1
+    - fd42:4242:2601:ac53::1
+    - 172.20.1.254
+    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - 172.20.14.34
+    - fdcf:8538:9ad5:1111::2
+    - 172.22.108.54
+    - fd86:bad:11b7:53::1
+    - 172.23.91.1
+    - fd42:4242:2189::1
+  - zone: d.f.ip6.arpa
+    forwarders:
+    - 172.20.129.1
+    - fd42:4242:2601:ac53::1
+    - 172.20.1.254
+    - fd42:5d71:219:0:216:3eff:fe1e:22d6
+    - 172.20.14.34
+    - fdcf:8538:9ad5:1111::2
+    - 172.22.108.54
+    - fd86:bad:11b7:53::1
+    - 172.23.91.1
+    - fd42:4242:2189::1
 dnssec:
   trustanchors:
   - name: .
@@ -527,12 +585,40 @@ dnssec:
     - 1624 15 2 CE9AE07ABC41D7A509530DEBEFFA79D42DE7167208435D3E1881BB5448ABAEAF
   - name: dn42
     dsrecords:
-    - 64441 10 2 2b19d6fc6a6efa3218c61d84ad95a3c63b6ed988e2ae0bd7c8dcb91fe5ec7fa8
-    - 3096 10 2 34a45a0dcd8bbf26f8ba466fed595f39858b6f3224d41210f90600689c810149
+    - 64441 10 2 6dadda00f5986bd26fe4f162669742cf7eba07d212b525acac9840ee06cb2799
+    - 3096 10 2 b7c687a99bee60e172ea439bd2d3087b1d970916575db9c1cb591b7ee15d8cb1
   - name: neo
     dsrecords:
     - 37727 15 2 C32191A298279D16846EEEFC157EEC6BE69BE8EDFEB4F3145C685F0752A73A8D
     - 56336 13 2 317F7CC14D2F74ABF560CFCE6F89F5187872573BA5A7AF9A9B14CF47E51489E5
+  - name: 10.in-addr.arpa
+    dsrecords:
+    - 64441 10 2 8a39e9df85a73f1982e43c9139e095e8548451d2048d92c2703869ef8bfebbb4
+    - 3096 10 2 1fa3673dc2cf9ffa82b429bf25405b44931460b7263a081d586cc61f003a10a2
+  - name: 20.172.in-addr.arpa
+    dsrecords:
+    - 64441 10 2 616c149633e93d963b0e8f738719630ea0a09f4aabe211b1fbb8fc9f51304027
+    - 3096 10 2 6adf85efddf223c8747f1816b12b62feea0b9b1bdb65e7c809202f890a33740d
+  - name: 21.172.in-addr.arpa
+    dsrecords:
+    - 64441 10 2 4cc085716ba83f18df1a7fb9f9479d10327e3d30e222c7a197109c7560ae0368
+    - 3096 10 2 506fd7f34aaad4df1b6cfa56fe8c00e157b1c32551c981def0c5fd8f65ab14ac
+  - name: 22.172.in-addr.arpa
+    dsrecords:
+    - 64441 10 2 383a8c2714d3da76f58cee4c54566566b336b2dfa219b965f7cb706d71c54356
+    - 3096 10 2 5437ab49f1cd947d41c585c2cc9c357323013391b0e5f94784f99175142c3260
+  - name: 20.172.in-addr.arpa
+    dsrecords:
+    - 64441 10 2 e91c0281e705317968c76689e4f36bf2207c90bdfaad071693bb9a999d15778f
+    - 3096 10 2 631b00ba00cf80a8300b356bcca2fde4c844f6ff707a2d98b4518c72e0643467
+  - name: 31.172.in-addr.arpa
+    dsrecords:
+    - 64441 10 2 5f668f3083d65650ab5c4e9fccdddd0c8108e0fa4be39e161e6a58d1741c5b2d
+    - 3096 10 2 4ab3c242fdfa6d84cbe83d5c9b0f9b431c6974dd18db32d08a2599ab1b816465
+  - name: d.f.ip6.arpa
+    dsrecords:
+    - 64441 10 2 9057500a3b6e09bf45a60ed8891f2e649c6812d5d149c45a3c560fa0a6195c49
+    - 3096 10 2 23fb364c82e6ed1c30b18c635f58dca58bbeb2e069bbd9d90ab9a90f66b948d2
   negative_trustanchors:
   - name: ffin
     reason: no trust anchors found in dn42 registry
