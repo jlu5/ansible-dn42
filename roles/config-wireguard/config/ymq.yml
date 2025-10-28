@@ -460,3 +460,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: false
+
+- name: dn42-ulti
+  port: 20424
+  remote: ca-ott-1.ulti.lol:51898
+  wg_pubkey: z/HbAsrDQzErbFHpfO8ncGZmzsy/eXmHYkPAhxvZEnk=
+  peer_v4: 172.23.230.210
+  peer_v6: "fe80::4920:948"
+  bgp:
+    asn: 4242420424
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
