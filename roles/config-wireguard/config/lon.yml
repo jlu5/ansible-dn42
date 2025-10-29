@@ -201,19 +201,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: false
 
-- name: dn42-lefay
-  port: 21495
-  remote: oak.le-fay.org:21080
-  wg_pubkey: sZ07jrWqPHvuJuDrgJxMoHpdOtX4sXhZYoDVgoymLFI=
-  peer_v4: 172.23.76.1
-  peer_v6: fe80::1495:2
-  bgp:
-    asn: 4242421495
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-9pfs
   port: 22002
   remote: null

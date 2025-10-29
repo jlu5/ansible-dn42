@@ -116,19 +116,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-peer
-  port: 20343
-  remote: etana.s.nullcontent.net:31080
-  wg_pubkey: 3UrAkm2gcI6ZC3uVANx90bLkGN6a67SI1r8YGB56DX4=
-  peer_v4: null
-  peer_v6: fe80::343:3
-  bgp:
-    asn: 4242420343
-    extended_next_hop: false
-    ipv4: false
-    ipv6: true
-    mp_bgp: false
-
 - name: dn42-cdubs
   port: 20566
   remote: dn22.syd.surgebytes.com:31080

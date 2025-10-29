@@ -271,21 +271,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-colby
-  port: 22558
-  remote: us-lax1.dn42.derix.au:21080
-  wg_pubkey: s3IVH2xJ3oRekd4x4Bc2H2pb0YZD11FT7Unxttc7GCU=
-  peer_v4: null
-  peer_v6: fe80::2558:7
-  local_v6: "fe80::122"
-  wg_privkey: /etc/wireguard/privatekey_lax
-  bgp:
-    asn: 4242422558
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-burble
   peer_v4: null
   peer_v6: fe80::42:2601:2a:1
@@ -326,21 +311,6 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_lax
   bgp:
     asn: 4242422016
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-- name: dn42-yura
-  port: 22464
-  remote: "las.dneo.moeternet.com:21080"
-  wg_pubkey: "viR4CoaJTBHROo/Bgbb27hQ2ttr8AbByGY/yOz3D3GY="
-  peer_v4: null
-  peer_v6: "fe80::2464"
-  local_v6: fe80::1080:126
-  wg_privkey: /etc/wireguard/privatekey_las
-  bgp:
-    asn: 4242422464
     extended_next_hop: true
     ipv4: true
     ipv6: true
@@ -518,19 +488,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-liekong
-  port: 20070
-  remote: us1.dn42.lie-kong.top:21080
-  wg_pubkey: I1jqIEbnM09Qk2Ud+OYZ8nNhuEALpikR0esae1C5c1Q=
-  peer_v4: 172.20.53.35
-  peer_v6: fe80::0070:3
-  bgp:
-    asn: 4242420070
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: false
 
 - name: dn42-ferrets
   port: 23077

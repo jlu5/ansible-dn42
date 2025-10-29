@@ -202,19 +202,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-smyers119
-  port: 23411
-  remote: useast.dn42.goldlineit.org:3415
-  wg_pubkey: HM35mEe6q1WcQG9UHd2n4xrHuXyBGuYpOjzbRz2kD00=
-  peer_v4: null
-  peer_v6: fe80::3411
-  bgp:
-    asn: 4242423411
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-colby
   port: 22558
   remote: us-nyc1.dn42.derix.au:21080

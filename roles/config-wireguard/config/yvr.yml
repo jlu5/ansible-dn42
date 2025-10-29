@@ -87,19 +87,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-deboer
-  port: 23328
-  remote: openvpn.dirkhome.ca:51820
-  wg_pubkey: Mwnj2IvUsqtPvCX/umqhjYICkgxlpW5XeXl4hBg4yjA=
-  peer_v4: null
-  peer_v6: fe80::3309:e3d8:8bd4:b2ab
-  bgp:
-    asn: 4242423328
-    extended_next_hop: false
-    ipv4: false
-    ipv6: true
-    mp_bgp: false
-
 - name: dn42-fmepnet
   port: 23703
   remote: us-sea0.fmepnet.org:51827

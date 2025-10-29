@@ -47,22 +47,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-tsingyao
-  port: 23699
-  remote: "dus-de.tsingyao.pub:21080"
-  wg_pubkey: "xyhzHBpNDQlyeNG44xaU5zz86+Qeig8v6/PTutZqCRM="
-  peer_v4: "172.22.155.9"
-  peer_v6: "fe80::42:3699:9"
-  local_v4: 172.20.229.118
-  local_v6: fe80::118
-  wg_privkey: /etc/wireguard/privatekey_ams
-  bgp:
-    asn: 4242423699
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-iedon
   peer_v4: 172.23.91.125
   peer_v6: fe80::2189:e9
@@ -435,19 +419,6 @@ wg_peers:
   peer_v6: "fe80::3770/64"
   bgp:
     asn: 4242423770
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-- name: dn42-plasma
-  port: 52322
-  remote: "85.10.202.194:42235"
-  wg_pubkey: "g4jQ1g2pYk2mXQhuDNL7E6zHqkcLpqS+YxdMAnAAo3w="
-  peer_v4: 172.22.181.193
-  peer_v6: fd42:4242:2322::1
-  bgp:
-    asn: 4242422322
     extended_next_hop: false
     ipv4: true
     ipv6: true

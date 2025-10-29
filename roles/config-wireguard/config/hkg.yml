@@ -109,19 +109,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-billchen
-  port: 20803
-  remote: hk.billchen.bid:21080
-  wg_pubkey: jfJLocC6s+MUvxkrrJJ010kiVvmPJ23TYjdsarc4R28=
-  peer_v4: 172.23.33.10
-  peer_v6: fe80::803
-  bgp:
-    asn: 4242420803
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-sunnet
   port: 23088
   remote: hk1-hk.dn42.6700.cc:21080
@@ -148,25 +135,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-saltwood
-  port: 20222
-  remote: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    65613931663538373337626437306163623566363864313139386331313539353161326332326338
-    3239643636666636646137623236316364383231383832650a373233653735303364303232303665
-    37323336303239326364353566343962663433633565623466326361666638656561656332386163
-    3366376332366134300a303838356333336636626637353063356230353861363863623262313764
-    33623636633734643834623333646262323037616233623935313563323035613066
-  wg_pubkey: oljz+KI+3MDUba5z+MVzm3bTFkfrkADJI9GvNCDg9mA=
-  peer_v4: 172.20.142.3
-  peer_v6: fe80::222:3
-  bgp:
-    asn: 4242420222
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: false
 
 - name: dn42-lantian
   port: 22547

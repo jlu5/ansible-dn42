@@ -191,20 +191,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-tavimori
-  port: 20950
-  remote: tyo.dn42.lcblue.net:21080
-  wg_pubkey: sFw/u+6a/E3yv3UzTzZdO5oXQAqPtZ/HqaOMVaOMNmI=
-  peer_v4: 172.20.181.253
-  peer_v6: fe80::b05c:3fbb:ee9a:fc4d
-  wg_mtu: 1320
-  bgp:
-    asn: 4242420950
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-routedbits
   port: 20207
   remote: router.tyo1.routedbits.com:51080
@@ -356,19 +342,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-liekong
-  port: 20070
-  remote: jp.dn42.lie-kong.top:21080
-  wg_pubkey: PA5hDpcgaKsYKUyI3lLMcYojivg5LRfBuyOSsKTq1mY=
-  peer_v4: 172.20.53.33
-  peer_v6: fe80::0070:1
-  bgp:
-    asn: 4242420070
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: false
 
 - name: dn42-bitrate
   port: 23997

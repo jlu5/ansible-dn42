@@ -22,7 +22,7 @@ def query_prometheus(prometheus_url, query):
     url = prometheus_url + "/api/v1/query"
     params = {'query': query}
     print(f'Querying {url} ...')
-    response = requests.get(url, params=params, timeout=10)
+    response = requests.get(url, params=params, timeout=30)
     response.raise_for_status()
 
     data = response.json()
