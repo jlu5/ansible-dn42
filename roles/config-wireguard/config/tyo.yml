@@ -306,16 +306,17 @@ wg_peers:
 
 - name: dn42-duststars
   port: 21771
-  remote: tokyo1.exploro.one:32583
-  wg_pubkey: P8a4I7LXo976Fyh4ChJ/T6+lxna4gHjJk3SOHxtPSXw=
+  remote: tyo1.exploro.one:32583
+  wg_pubkey: bYG9mG2WvvzO8P9GoSJTP/DmwjeWPlR9j2uH3avnJAU=
   peer_v4: null
-  peer_v6: fe80::afaf:bfbf:cdcf:3a
+  peer_v6: fe80::1771
   bgp:
     asn: 4242421771
-    ipv4: false
+    ipv4: true
     ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
+    mp_bgp: true
+    extended_next_hop: true
+
 
 - name: dn42-cowgl
   port: 23999
