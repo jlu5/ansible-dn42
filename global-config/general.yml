@@ -66,7 +66,7 @@ iptables_dir:         "/etc/iptables"
 iptables_rules_path:  "{{ iptables_dir }}/rules.v4"
 ip6tables_rules_path: "{{ iptables_dir }}/rules.v6"
 
-# Automation user for running scripts like peerfinder
+# Automation user for running scripts
 automation_user: dn42-automation
 automation_root_dir: /opt/dn42
 automation_user_home: /opt/dn42/automation/
