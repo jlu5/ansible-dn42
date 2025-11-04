@@ -6,13 +6,6 @@ wg_peers:
   local_v4: 169.254.108.74/31
   peer_v6: fe80::66a3:ee6c:5a00:a586
 
-- name: igp-stub-spark
-  port: 19997
-  wg_pubkey: "v5fs9YDJCwPx5I6mlro3qtGjaodBYTliNsMjRYuN9Bs="
-  remote: 142.4.217.149:19998
-  peer_v4: 172.22.108.65/32
-  peer_v6: null
-
 - name: cl-roam
   local_v4: 172.22.108.96/31
   local_v6_multi:

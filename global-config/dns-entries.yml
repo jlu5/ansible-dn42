@@ -34,11 +34,6 @@ dns_records:
       type: CNAME
       target: "@"
 
-    # Internal services
-    "mtxadmin":
-      type: A
-      target: 172.22.108.67
-
     # Misc routers
     "gw.yvrlab":
       type: host_record
