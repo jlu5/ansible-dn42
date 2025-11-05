@@ -421,3 +421,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-factor2431
+  port: 21534
+  remote: jp-tyo.factor2431.com:21080
+  wg_pubkey: XYyk/uk3LTHk7vOqtDsDh/AcPtdT3qQptqhggzZCRio=
+  peer_v4: null
+  peer_v6: fe80::1534
+  bgp:
+    asn: 4242421534
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
