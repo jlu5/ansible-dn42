@@ -434,3 +434,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-moohr
+  port: 22279
+  remote: jp-nrt1.bb.mhr.hk:21080
+  wg_pubkey: Bt0gmHMrBBCgV8/k7n8ykA31YStGc55xmyLgMyB04E0=
+  peer_v4: 172.23.77.200
+  peer_v6: fe80::2279
+  bgp:
+    asn: 4242422279
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
