@@ -113,7 +113,7 @@ def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
     isp_short = isp.split('@')[0].strip()
     cc_prefix = country
     if country in ('CA', 'US'):
-        cc_prefix = f'[{country}/{province}]'
+        cc_prefix = f'{country}/{province}'
         loc = f'{city}, {province}, {country}'
     else:
         country_display = country

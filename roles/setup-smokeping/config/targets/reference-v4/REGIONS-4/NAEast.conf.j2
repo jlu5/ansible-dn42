@@ -10,10 +10,10 @@ title = [CA/ON] ColoCrossing - Toronto, ON, CA [lg.tor.colocrossing.com]
 host = lg.tor.colocrossing.com
 {% endif %}
 
-++ freerangecloud-yyz
+++ freerangecloud-yyz_0
 menu = [CA/ON] Free Range Cloud
-title = [CA/ON] Free Range Cloud - Toronto, ON, Canada [yyz01.lg.freerangecloud.com]
-host = yyz01.lg.freerangecloud.com
+title = [CA/ON] Free Range Cloud - Toronto, ON, Canada [103.144.177.38]
+host = 103.144.177.38
 
 ++ greencloud-yyz
 menu = [CA/ON] GreenCloud
@@ -123,12 +123,12 @@ menu = [US/NY] BuyVM
 title = [US/NY] BuyVM - New York City, NY, US [speedtest.ny.buyvm.net]
 host = speedtest.ny.buyvm.net
 
+{% if not smokeping_lite %}
 ++ clouvider-nyc
 menu = [US/NY] Clouvider
 title = [US/NY] Clouvider - New York City, NY, US [nyc.mirrors.clouvider.net]
 host = nyc.mirrors.clouvider.net
 
-{% if not smokeping_lite %}
 ++ fourplex
 menu = [US/NY] Fourplex
 title = [US/NY] Fourplex Telecom - New York City, NY, US [38.135.24.6]
@@ -138,11 +138,18 @@ host = 38.135.24.6
 menu = [US/NY] GSL Networks
 title = [US/NY] GSL Networks - New York, NY, United States [ny2.speedtest.gslnetworks.com]
 host = ny2.speedtest.gslnetworks.com
+{% endif %}
 
 ++ hosthatch-ny
 menu = [US/NY] HostHatch
 title = [US/NY] HostHatch - New York City, NY, US [lg.ny.hosthatch.com]
 host = lg.ny.hosthatch.com
+
+{% if not smokeping_lite %}
+++ purevoltage-nyc
+menu = [US/NY] PureVoltage
+title = [US/NY] PureVoltage - New York, NY, US [lg.nyc.purevoltage.com]
+host = lg.nyc.purevoltage.com
 {% endif %}
 
 ++ rsnet-ny

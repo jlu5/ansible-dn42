@@ -3,6 +3,11 @@ menu = [CA/ON] Bell
 title = [CA/ON] Bell - Toronto, ON, Canada [wirelinespeedtesttoronto.srvr.bell.ca]
 host = wirelinespeedtesttoronto.srvr.bell.ca
 
+++ freerangecloud-yyz_0
+menu = [CA/ON] Free Range Cloud
+title = [CA/ON] Free Range Cloud - Toronto, ON, Canada [2602:fed2:fa0:41::1]
+host = 2602:fed2:fa0:41::1
+
 {% if not smokeping_lite %}
 ++ linode-tor
 menu = [CA/ON] Linode
@@ -74,22 +79,22 @@ menu = [US/NY] BuyVM
 title = [US/NY] BuyVM - New York City, NY, US [speedtest.ny.buyvm.net]
 host = speedtest.ny.buyvm.net
 
+{% if not smokeping_lite %}
 ++ clouvider-nyc
 menu = [US/NY] Clouvider
 title = [US/NY] Clouvider - New York City, NY, US [nyc.mirrors.clouvider.net]
 host = nyc.mirrors.clouvider.net
 
-{% if not smokeping_lite %}
 ++ fourplex
 menu = [US/NY] Fourplex
 title = [US/NY] Fourplex Telecom - New York City, NY, US [2602:f6f6:1::6]
 host = 2602:f6f6:1::6
+{% endif %}
 
 ++ hosthatch-ny_0
 menu = [US/NY] HostHatch
 title = [US/NY] HostHatch - New York City, NY, US [2605:4840:2::1]
 host = 2605:4840:2::1
-{% endif %}
 
 ++ reliablesite-ny
 menu = [US/NY] ReliableSite
