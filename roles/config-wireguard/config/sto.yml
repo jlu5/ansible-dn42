@@ -63,3 +63,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-zyner
+  port: 20900
+  remote: dn42.selud02.zyner.net:21080
+  wg_pubkey: Odxqq2L5HH26owU2Qu2zZsZbrYj/TyfpUhUxOaOyjyY=
+  peer_v4: null
+  peer_v6: fe80::0900
+  bgp:
+    asn: 4242420900
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
