@@ -12,7 +12,7 @@
 <div class="main">
     <h1>AS4242421080</h1>
     {% include 'navigation.j2' %}
-    <p class="largefont"><b>highdef.network</b> is an experimental network interconnected with <a href="https://dn42.dev">dn42</a>, operated by <a href="https://jlu5.com">jlu5</a>.</p>
+    <p class="largefont"><b>highdef.network</b> is an experimental network connected to <a href="https://dn42.dev">dn42</a>.</p>
 
     <h3>Network Map</h3>
     <div id="map"></div>
@@ -22,5 +22,8 @@
 {% set _token1 = "AIzaSyBQpliJPYWowdL" %}
 {% set _token2 = "33oCVAfHKHhzvQv6PvaQ" %}
 <script defer src="https://maps.googleapis.com/maps/api/js?key={{ _token1 }}{{ _token2 }}&amp;callback=initMap"></script>
+
+<br>
+{% include 'footer.j2' %}
 </body>
 </html>
