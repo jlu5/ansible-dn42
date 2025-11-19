@@ -203,10 +203,10 @@ wg_peers:
 
 - name: dn42-9pfs
   port: 22002
-  remote: null
-  wg_pubkey: sDvoqtg1OcmNCXuuES+wKHyrSqANDElI2iLQQnZByzo=
+  remote: nolife.uk:21080
+  wg_pubkey: FFBT/0qnj6FoBl6AIdivLG3usRYVUsfoYAVlg7Uo+Rs=
   peer_v4: null
-  peer_v6: fe80::2002:3
+  peer_v6: fe80::2002:15
   bgp:
     asn: 4242422002
     ipv4: true
