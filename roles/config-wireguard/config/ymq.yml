@@ -47,16 +47,16 @@ wg_peers:
 
 - name: dn42-burble
   port: 22601
-  remote: "dn42-us-nyc1.burble.com:21080"
-  wg_pubkey: "2mKKhhA5gz/rtIPtbz9b5wG6g5r4cdIYC/3/6My1SAw="
+  remote: dn42-ca-bhs1.burble.com:21080
+  wg_pubkey: N1/U3+XqpY7hrLaKW5qDETtW4TvclfJ7a1BOvj/jEWg=
   peer_v4: null
-  peer_v6: "fe80::42:2601:29:1"
+  peer_v6: fe80::42:2601:2c:1
   bgp:
     asn: 4242422601
-    extended_next_hop: true
     ipv4: true
     ipv6: true
     mp_bgp: true
+    extended_next_hop: true
 
 ### legacy configurations from ca-bhs01
 - name: dn42-grmml
