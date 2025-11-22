@@ -8,14 +8,14 @@
 
 - name: "Enumerate config folder paths"
   set_fact:
-    config_dir:         "{{ role_path }}/config"
-    peers_config_dir:   "{{ role_path }}/config/peers/{{ inventory_hostname }}"
+    config_dir: "{{ role_path }}/config"
+    peers_config_dir: "{{ role_path }}/config/peers/{{ inventory_hostname }}"
     bird_managed_files: []
 
 - name: "Enumerate config folder contents (ignore errors if no peers are defined)"
   # This is a separate step because set_fact can't template facts set in the same task
   set_fact:
-    bird_managed_files: "{{ lookup('fileglob', '{{ config_dir }}/*.conf*', wantlist=True) | map('basename') | map('regex_replace', '\\.j2$', '') | list }}"
+    bird_managed_files: "{{ lookup('fileglob', config_dir + '/*.conf*', wantlist=True) | map('basename') | map('regex_replace', '\\.j2$', '') | list }}"
   ignore_errors: true
 
 - name: "Enumerate IPsets for BIRD"
