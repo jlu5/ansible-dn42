@@ -167,3 +167,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-9pfs
+  port: 22002
+  remote: null
+  wg_pubkey: k2MW2Bh0YzhLP/Dzb4IdCEBEl5Ifg26lo7MKK/P95EQ=
+  peer_v4: null
+  peer_v6: fe80::2002:22
+  bgp:
+    asn: 4242422002
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
