@@ -1,0 +1,9 @@
+ansible==13.*
+dnspython
+geojson
+geopy
+GitPython
+pycountry
+PyYAML
+requests
+ruamel.yaml
