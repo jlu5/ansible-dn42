@@ -51,6 +51,13 @@
       logging:
         loglevel: 6
 
+    # Remove lua_config_file / lua_dns_script to work around https://github.com/PowerDNS/pdns_recursor-ansible/issues/236
+    pdns_rec_base_config:
+      recursor:
+        config_dir: "{{ pdns_rec_config_dir }}"
+        setuid: "{{ pdns_rec_user }}"
+        setgid: "{{ pdns_rec_group }}"
+
     pdns_rec_service_overrides:
       User: "{{ pdns_rec_user }}"
       Group: "{{ pdns_rec_group }}"
