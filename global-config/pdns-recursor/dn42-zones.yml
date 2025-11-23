@@ -8,122 +8,63 @@ recursor:
     - 8.8.8.8
     - 8.8.4.4
   forward_zones:
-  - zone: ffin
+  - zone: ffka
     forwarders:
-    - 10.10.0.2
-    - 10.10.0.4
-  - zone: ffge
+    - 10.214.0.3
+  - zone: ffggrz
     forwarders:
-    - 10.28.0.247
-    - fda0:747e:ab29:0209:ff07:0000:0000:0001
-  - zone: ffdh
-    forwarders:
-    - 10.213.0.2
-  - zone: ffnord
-    forwarders:
-    - 10.187.1.1
-    - fd42:eb49:c0b5:4242:0000:0000:0000:fd00
-  - zone: ffch
-    forwarders:
-    - 10.119.0.5
-    - 10.119.0.8
-    - 10.119.0.10
-    - fdc7:3c9d:b889:a272:0000:0000:0000:0005
-    - fdc7:3c9d:b889:a272:0000:0000:0000:0008
-    - fdc7:3c9d:b889:a272:0000:0000:0000:000a
-  - zone: ff3l
-    forwarders:
-    - 10.119.0.5
-    - 10.119.0.4
-    - 10.119.0.10
-    - fdc7:3c9d:b889:a272:0000:0000:0000:0005
-    - fdc7:3c9d:b889:a272:0000:0000:0000:0004
-    - fdc7:3c9d:b889:a272:0000:0000:0000:000a
-  - zone: fftr
-    forwarders:
-    - 10.172.0.14
-    - 10.172.0.16
-    - 2001:0bf7:fc0f:0000:0000:0000:0000:0014
-    - 2001:0bf7:fc0f:0000:0000:0000:0000:0016
-  - zone: ffaw
-    forwarders:
-    - 10.210.0.101
-    - 10.210.0.102
-    - 10.210.0.103
-    - 10.210.0.104
-    - 10.210.0.105
-    - 10.210.0.106
-    - 10.210.0.199
-    - fd00:ffba:ffba:0000:0000:0000:0000:0101
-    - fd00:ffba:ffba:0000:0000:0000:0000:0102
-    - fd00:ffba:ffba:0000:0000:0000:0000:0103
-    - fd00:ffba:ffba:0000:0000:0000:0000:0104
-    - fd00:ffba:ffba:0000:0000:0000:0000:0105
-    - fd00:ffba:ffba:0000:0000:0000:0000:0106
-    - fd00:ffba:ffba:0000:0000:0000:0000:0199
-  - zone: ffbin
-    forwarders:
-    - 10.25.1.1
-    - 10.25.1.2
-  - zone: ffrgb
-    forwarders:
-    - 10.90.0.11
-    - fdef:f00f:1337:cafe:0000:0000:0000:0011
-  - zone: ffhl
-    forwarders:
-    - fdef:ffc0:3dd7:0000:0000:0000:0000:0801
-    - fdef:ffc0:3dd7:0000:0000:0000:0000:0a01
-    - fdef:ffc0:3dd7:0000:0000:0000:0000:0c01
-    - fdef:ffc0:3dd7:0000:0000:0000:0000:0e01
-    - 10.130.0.252
-    - 10.130.0.253
-    - 10.130.0.254
-    - 10.130.0.255
-  - zone: ffsu
-    forwarders:
-    - 10.152.0.10
-    - 10.152.16.10
-    - fda4:1721:8450:0100:0000:0000:0000:0001
-    - fda4:1721:8450:0200:0000:0000:0000:0001
+    - 10.181.0.11
+    - 10.181.0.12
+    - 10.181.0.13
+    - fdb5:078b:64cc:0000:0000:0000:0000:0011
+    - fdb5:078b:64cc:0000:0000:0000:0000:0012
+    - fdb5:078b:64cc:0000:0000:0000:0000:0013
   - zone: helgo
     forwarders:
     - 10.112.1.2
     - 2a03:2267:0000:0000:0000:0000:0000:0102
+  - zone: ffharz
+    forwarders:
+    - 10.7.0.2
+    - 10.7.0.10
+    - fd0e:8db3:d50a:0000:0000:0000:0000:0002
+    - fd0e:8db3:d50a:0000:0000:0000:0000:0100
+  - zone: neo
+    forwarders:
+    - 10.127.255.53
+    - 'fd10:127:ffff:53::'
+  - zone: ffki
+    forwarders:
+    - fda1:384a:74de:4242:0000:0000:0000:ff00
+    - fda1:384a:74de:4242:0000:0000:0000:ff01
+    - fda1:384a:74de:4242:0000:0000:0000:ff02
+    - fda1:384a:74de:4242:0000:0000:0000:ff03
+    - fda1:384a:74de:4242:0000:0000:0000:ff05
+    - fda1:384a:74de:4242:0000:0000:0000:ff06
+    - fda1:384a:74de:4242:0000:0000:0000:ff07
   - zone: fflw
     forwarders:
     - 10.66.0.10
     - fddf:0000:0000:0000:0000:0000:0000:1066
-  - zone: ffms
+  - zone: ffbit
     forwarders:
-    - 10.43.8.2
-    - 2a03:2260:0115:0100:0000:0000:0000:0002
-    - 10.43.8.3
-    - 2a03:2260:0115:0100:0000:0000:0000:0003
-    - 10.43.16.2
-    - 2a03:2260:0115:0200:0000:0000:0000:0002
-    - 10.43.16.3
-    - 2a03:2260:0115:0200:0000:0000:0000:0003
-  - zone: ffgoe
+    - fda0:cab1:e1e5:5b11:c0ff:00ee:0000:0000
+  - zone: ffbgl
     forwarders:
-    - 10.109.0.42
-    - fde6:36fc:c985:0000:0000:0000:0000:0042
-  - zone: fffd
+    - 10.156.3.1
+  - zone: ffhm
     forwarders:
-    - 10.185.0.1
-    - 10.185.0.2
-    - 10.185.0.4
-    - fd00:65a8:93a4:0000:0000:0000:0000:0001
-    - fd00:65a8:93a4:0000:0000:0000:0000:0002
-    - fd00:65a8:93a4:0000:0000:0000:0000:0004
-  - zone: ffel
+    - 10.11.96.1
+  - zone: ffbin
     forwarders:
-    - 151.80.64.190
-    - 85.14.255.33
-    - 2001:41d0:000c:095c:0000:0000:0000:0190
-    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
-  - zone: ffj
+    - 10.25.1.1
+    - 10.25.1.2
+  - zone: ffde
     forwarders:
-    - 10.17.250.1
+    - 10.62.1.1
+    - 10.62.0.1
+    - fd0f:8db3:d50a:0000:0000:0000:0000:0002
+    - fd0f:8db3:d50a:0000:0000:0000:0000:0100
   - zone: ffws
     forwarders:
     - 10.210.0.101
@@ -140,76 +81,25 @@ recursor:
     - fd00:ffba:ffba:0000:0000:0000:0000:0105
     - fd00:ffba:ffba:0000:0000:0000:0000:0106
     - fd00:ffba:ffba:0000:0000:0000:0000:0199
-  - zone: ffnw
+  - zone: ffmck
     forwarders:
-    - 10.18.0.1
-    - 10.18.32.1
-  - zone: fffl
+    - 10.152.64.10
+    - 10.152.80.10
+    - fda4:1721:8451:0100:0000:0000:0000:0001
+    - fda4:1721:8451:0200:0000:0000:0000:0001
+  - zone: fftr
     forwarders:
-    - 10.129.1.1
-    - 10.129.1.3
-    - 10.129.1.6
-    - 2001:0bf7:0010:0001:0001:0000:0000:0001
-    - 2001:0bf7:0010:0001:0001:0000:0000:0003
-    - 2001:0bf7:0010:0001:0001:0000:0000:0006
-  - zone: fffr
+    - 10.172.0.14
+    - 10.172.0.16
+    - 2001:0bf7:fc0f:0000:0000:0000:0000:0014
+    - 2001:0bf7:fc0f:0000:0000:0000:0000:0016
+  - zone: ffel
     forwarders:
-    - 10.60.0.103
-    - 10.60.0.106
-    - 10.60.0.112
-    - fdf0:09bb:7814:a630:0000:0000:0000:1113
-    - fdf0:09bb:7814:a630:0000:0000:0000:1116
-    - fdf0:09bb:7814:a630:0000:0000:0000:1122
-    - 2001:0bf7:2810:0000:0000:0000:0000:1113
-    - 2001:0bf7:2810:0000:0000:0000:0000:1116
-    - 2001:0bf7:2810:0000:0000:0000:0000:1122
-  - zone: ffka
-    forwarders:
-    - 10.214.0.3
-  - zone: ffza
-    forwarders:
-    - 10.70.2.2
-    - 10.70.3.3
-    - 2a05:ff01:000a:0001:0000:0000:0000:000a
-    - 2a05:ff01:000a:0001:0000:0000:0000:000b
-    - 2a05:ff01:000b:0001:0000:0000:0000:000a
-    - 2a05:ff01:000b:0001:0000:0000:0000:000b
-  - zone: icvpn
-    forwarders:
-    - 10.169.1.1
-    - 10.255.128.53
-    - fec0:0000:0000:0000:000a:00cf:0000:008a
-  - zone: ffggrz
-    forwarders:
-    - 10.181.0.11
-    - 10.181.0.12
-    - 10.181.0.13
-    - fdb5:078b:64cc:0000:0000:0000:0000:0011
-    - fdb5:078b:64cc:0000:0000:0000:0000:0012
-    - fdb5:078b:64cc:0000:0000:0000:0000:0013
-  - zone: ffharz
-    forwarders:
-    - 10.7.0.2
-    - 10.7.0.10
-    - fd0e:8db3:d50a:0000:0000:0000:0000:0002
-    - fd0e:8db3:d50a:0000:0000:0000:0000:0100
-  - zone: ffc
-    forwarders:
-    - 10.8.6.6
-  - zone: ffwb
-    forwarders:
-    - 10.62.1.1
-    - 10.62.0.1
-    - fd0f:8db3:d50a:0000:0000:0000:0000:0002
-    - fd0f:8db3:d50a:0000:0000:0000:0000:0100
-  - zone: fflux
-    forwarders:
-    - 10.24.128.10
-    - fd4e:f2d7:88d2:fffe:0000:0000:0000:0010
-  - zone: crxn
-    forwarders:
-    - fd92:58b6:2b2::54
-  - zone: ffh
+    - 151.80.64.190
+    - 85.14.255.33
+    - 2001:41d0:000c:095c:0000:0000:0000:0190
+    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
+  - zone: ffi
     forwarders:
     - 10.2.10.1
     - fdca:ffee:0008:0000:0000:0000:0000:0a01
@@ -221,83 +111,31 @@ recursor:
     - fdca:ffee:0008:0000:0000:0000:0000:2801
     - 10.2.50.1
     - fdca:ffee:0008:0000:0000:0000:0000:3201
-  - zone: ffrgw
+  - zone: fffd
     forwarders:
-    - 151.80.64.190
-    - 85.14.255.33
-    - 2001:41d0:000c:095c:0000:0000:0000:0190
-    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
-  - zone: ffbgl
-    forwarders:
-    - 10.156.3.1
-  - zone: ffsl
-    forwarders:
-    - 10.55.55.55
-    - 10.55.0.3
-  - zone: ffw
-    forwarders:
-    - 10.3.0.247
-    - 10.3.0.249
-    - 10.3.0.250
-    - 10.3.0.251
-    - fda0:747e:ab29:e1ba:ff07:0000:0000:0001
-  - zone: ffhal
-    forwarders:
-    - 10.62.1.1
-    - 10.62.0.1
-    - fd0f:8db3:d50a:0000:0000:0000:0000:0002
-    - fd0f:8db3:d50a:0000:0000:0000:0000:0100
-  - zone: adm
-    forwarders:
-    - 10.205.253.1
-    - 10.205.253.2
-  - zone: ffrade
-    forwarders:
-    - 10.27.0.247
-  - zone: ffen
-    forwarders:
-    - 151.80.64.190
-    - 85.14.255.33
-    - 2001:41d0:000c:095c:0000:0000:0000:0190
-    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
-  - zone: ffbcd
-    forwarders:
-    - 10.156.3.1
+    - 10.185.0.1
+    - 10.185.0.2
+    - 10.185.0.4
+    - fd00:65a8:93a4:0000:0000:0000:0000:0001
+    - fd00:65a8:93a4:0000:0000:0000:0000:0002
+    - fd00:65a8:93a4:0000:0000:0000:0000:0004
   - zone: ffpr
     forwarders:
     - 10.15.192.1
     - 10.15.192.2
     - fde8:21c6:370b:0000:0000:0000:0000:0a01
     - fde8:21c6:370b:0000:0000:0000:0000:0b01
-  - zone: ffde
+  - zone: ff3l
     forwarders:
-    - 10.62.1.1
-    - 10.62.0.1
-    - fd0f:8db3:d50a:0000:0000:0000:0000:0002
-    - fd0f:8db3:d50a:0000:0000:0000:0000:0100
-  - zone: ffrg
+    - 10.119.0.5
+    - 10.119.0.4
+    - 10.119.0.10
+    - fdc7:3c9d:b889:a272:0000:0000:0000:0005
+    - fdc7:3c9d:b889:a272:0000:0000:0000:0004
+    - fdc7:3c9d:b889:a272:0000:0000:0000:000a
+  - zone: crxn
     forwarders:
-    - 151.80.64.190
-    - 85.14.255.33
-    - 2001:41d0:000c:095c:0000:0000:0000:0190
-    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
-  - zone: ffhh
-    forwarders:
-    - 2a03:2267:ffff:0b00:0000:0000:0000:0003
-  - zone: ffwdh
-    forwarders:
-    - 10.23.0.1
-    - 10.23.0.2
-    - 10.23.0.2
-  - zone: ffki
-    forwarders:
-    - fda1:384a:74de:4242:0000:0000:0000:ff00
-    - fda1:384a:74de:4242:0000:0000:0000:ff01
-    - fda1:384a:74de:4242:0000:0000:0000:ff02
-    - fda1:384a:74de:4242:0000:0000:0000:ff03
-    - fda1:384a:74de:4242:0000:0000:0000:ff05
-    - fda1:384a:74de:4242:0000:0000:0000:ff06
-    - fda1:384a:74de:4242:0000:0000:0000:ff07
+    - fd92:58b6:2b2::54
   - zone: dn42
     forwarders:
     - 172.20.129.1
@@ -310,6 +148,121 @@ recursor:
     - fd86:bad:11b7:53::1
     - 172.23.91.1
     - fd42:4242:2189::1
+    - 172.20.132.105
+    - fd00:913e:130::400
+  - zone: ffa
+    forwarders:
+    - 10.11.0.8
+    - 10.11.10.15
+    - 10.11.63.26
+    - fdca:ffee:0ffa:0008:0000:0000:0000:0001
+    - fdca:ffee:0ffa:0a0f:0000:0000:0000:0001
+    - fdca:ffee:0ffa:3f1a:0000:0000:0000:0001
+  - zone: ffj
+    forwarders:
+    - 10.17.250.1
+  - zone: ffwdh
+    forwarders:
+    - 10.23.0.1
+    - 10.23.0.2
+    - 10.23.0.2
+  - zone: ffge
+    forwarders:
+    - 10.28.0.247
+    - fda0:747e:ab29:0209:ff07:0000:0000:0001
+  - zone: ffcux
+    forwarders:
+    - fdec:c0f1:afda:0000:0000:0000:0000:ff01
+    - fdec:c0f1:afda:0000:0000:0000:0000:ff02
+    - fdec:c0f1:afda:0000:0000:0000:0000:ff03
+    - fdec:c0f1:afda:0000:0000:0000:0000:ff04
+    - fdec:c0f1:afda:0000:0000:0000:0000:ff05
+  - zone: ffue
+    forwarders:
+    - 10.134.10.1
+    - 10.134.20.1
+    - 10.134.30.1
+    - fd83:e002:c8a1:0000:0000:0000:0000:0001
+    - fd83:e002:c8a1:0000:0000:0000:0000:0002
+    - fd83:e002:c8a1:0000:0000:0000:0000:0003
+  - zone: ffza
+    forwarders:
+    - 10.70.2.2
+    - 10.70.3.3
+    - 2a05:ff01:000a:0001:0000:0000:0000:000a
+    - 2a05:ff01:000a:0001:0000:0000:0000:000b
+    - 2a05:ff01:000b:0001:0000:0000:0000:000a
+    - 2a05:ff01:000b:0001:0000:0000:0000:000b
+  - zone: ffwb
+    forwarders:
+    - 10.62.1.1
+    - 10.62.0.1
+    - fd0f:8db3:d50a:0000:0000:0000:0000:0002
+    - fd0f:8db3:d50a:0000:0000:0000:0000:0100
+  - zone: '020'
+    forwarders:
+    - 10.205.253.1
+    - 10.205.253.2
+  - zone: fferz
+    forwarders:
+    - 10.13.80.1
+  - zone: fflux
+    forwarders:
+    - 10.24.128.10
+    - fd4e:f2d7:88d2:fffe:0000:0000:0000:0010
+  - zone: fflln
+    forwarders:
+    - 10.21.3.1
+  - zone: fffr
+    forwarders:
+    - 10.60.0.103
+    - 10.60.0.106
+    - 10.60.0.112
+    - fdf0:09bb:7814:a630:0000:0000:0000:1113
+    - fdf0:09bb:7814:a630:0000:0000:0000:1116
+    - fdf0:09bb:7814:a630:0000:0000:0000:1122
+    - 2001:0bf7:2810:0000:0000:0000:0000:1113
+    - 2001:0bf7:2810:0000:0000:0000:0000:1116
+    - 2001:0bf7:2810:0000:0000:0000:0000:1122
+  - zone: fmie
+    forwarders:
+    - 2001:0678:0358:0000:0000:0000:0000:ffff
+    - 2001:0678:0358:0000:0000:0000:0000:fffe
+  - zone: ffen
+    forwarders:
+    - 151.80.64.190
+    - 85.14.255.33
+    - 2001:41d0:000c:095c:0000:0000:0000:0190
+    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
+  - zone: ffrade
+    forwarders:
+    - 10.27.0.247
+  - zone: ffh
+    forwarders:
+    - 10.2.10.1
+    - fdca:ffee:0008:0000:0000:0000:0000:0a01
+    - 10.2.20.1
+    - fdca:ffee:0008:0000:0000:0000:0000:1401
+    - 10.2.30.1
+    - fdca:ffee:0008:0000:0000:0000:0000:1e01
+    - 10.2.40.1
+    - fdca:ffee:0008:0000:0000:0000:0000:2801
+    - 10.2.50.1
+    - fdca:ffee:0008:0000:0000:0000:0000:3201
+  - zone: ffnw
+    forwarders:
+    - 10.18.0.1
+    - 10.18.32.1
+  - zone: ffms
+    forwarders:
+    - 10.43.8.2
+    - 2a03:2260:0115:0100:0000:0000:0000:0002
+    - 10.43.8.3
+    - 2a03:2260:0115:0100:0000:0000:0000:0003
+    - 10.43.16.2
+    - 2a03:2260:0115:0200:0000:0000:0000:0002
+    - 10.43.16.3
+    - 2a03:2260:0115:0200:0000:0000:0000:0003
   - zone: fftut
     forwarders:
     - 10.119.0.5
@@ -318,10 +271,106 @@ recursor:
     - fdc7:3c9d:b889:a272:0000:0000:0000:0005
     - fdc7:3c9d:b889:a272:0000:0000:0000:0008
     - fdc7:3c9d:b889:a272:0000:0000:0000:000a
-  - zone: fftdf
+  - zone: ffpi
     forwarders:
-    - 10.188.1.100
-    - 10.188.1.23
+    - 10.137.12.1
+    - 10.137.13.1
+    - 10.137.10.1
+    - fde8:21c6:9d82:0000:0000:0000:0000:0c01
+    - fde8:21c6:9d82:0000:0000:0000:0000:0d01
+    - fde8:21c6:9d82:0000:0000:0000:0000:0a01
+  - zone: ffch
+    forwarders:
+    - 10.119.0.5
+    - 10.119.0.8
+    - 10.119.0.10
+    - fdc7:3c9d:b889:a272:0000:0000:0000:0005
+    - fdc7:3c9d:b889:a272:0000:0000:0000:0008
+    - fdc7:3c9d:b889:a272:0000:0000:0000:000a
+  - zone: ffin
+    forwarders:
+    - 10.10.0.2
+    - 10.10.0.4
+  - zone: ffrgw
+    forwarders:
+    - 151.80.64.190
+    - 85.14.255.33
+    - 2001:41d0:000c:095c:0000:0000:0000:0190
+    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
+  - zone: ffamt
+    forwarders:
+    - 10.202.2.2
+    - 10.202.2.4
+  - zone: ffsl
+    forwarders:
+    - 10.55.55.55
+    - 10.55.0.3
+  - zone: ffrek
+    forwarders:
+    - 10.219.0.1
+    - fda0:747e:ab29:5016:0000:0000:0000:0001
+  - zone: ffac
+    forwarders:
+    - 10.5.0.241
+    - 10.5.0.242
+    - 2a03:2260:0114:0000:0000:0000:0001:0053
+    - 2a03:2260:0114:0000:0000:0000:0002:0053
+  - zone: ffrg
+    forwarders:
+    - 151.80.64.190
+    - 85.14.255.33
+    - 2001:41d0:000c:095c:0000:0000:0000:0190
+    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
+  - zone: ffbcd
+    forwarders:
+    - 10.156.3.1
+  - zone: ffw
+    forwarders:
+    - 10.3.0.247
+    - 10.3.0.249
+    - 10.3.0.250
+    - 10.3.0.251
+    - fda0:747e:ab29:e1ba:ff07:0000:0000:0001
+  - zone: ffwk
+    forwarders:
+    - 10.13.1.1
+    - fd23:dead:beef:0000:0000:0000:0000:ff01
+  - zone: ffrz
+    forwarders:
+    - 10.1.0.1
+    - 10.1.0.2
+    - 10.1.0.3
+    - 10.1.0.4
+  - zone: ffnh
+    forwarders:
+    - 10.71.1.1
+    - fd8f:14c7:d318:0000:0000:0000:0000:0001
+  - zone: ffaw
+    forwarders:
+    - 10.210.0.101
+    - 10.210.0.102
+    - 10.210.0.103
+    - 10.210.0.104
+    - 10.210.0.105
+    - 10.210.0.106
+    - 10.210.0.199
+    - fd00:ffba:ffba:0000:0000:0000:0000:0101
+    - fd00:ffba:ffba:0000:0000:0000:0000:0102
+    - fd00:ffba:ffba:0000:0000:0000:0000:0103
+    - fd00:ffba:ffba:0000:0000:0000:0000:0104
+    - fd00:ffba:ffba:0000:0000:0000:0000:0105
+    - fd00:ffba:ffba:0000:0000:0000:0000:0106
+    - fd00:ffba:ffba:0000:0000:0000:0000:0199
+  - zone: ffdo
+    forwarders:
+    - 151.80.64.190
+    - 85.14.255.33
+    - 2001:41d0:000c:095c:0000:0000:0000:0190
+    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
+  - zone: adm
+    forwarders:
+    - 10.205.253.1
+    - 10.205.253.2
   - zone: ffweyher
     forwarders:
     - 10.210.0.101
@@ -338,46 +387,37 @@ recursor:
     - fd00:ffba:ffba:0000:0000:0000:0000:0105
     - fd00:ffba:ffba:0000:0000:0000:0000:0106
     - fd00:ffba:ffba:0000:0000:0000:0000:0199
-  - zone: ffac
+  - zone: ffhal
     forwarders:
-    - 10.5.0.241
-    - 10.5.0.242
-    - 2a03:2260:0114:0000:0000:0000:0001:0053
-    - 2a03:2260:0114:0000:0000:0000:0002:0053
-  - zone: ffue
+    - 10.62.1.1
+    - 10.62.0.1
+    - fd0f:8db3:d50a:0000:0000:0000:0000:0002
+    - fd0f:8db3:d50a:0000:0000:0000:0000:0100
+  - zone: ffhgw
     forwarders:
-    - 10.134.10.1
-    - 10.134.20.1
-    - 10.134.30.1
-    - fd83:e002:c8a1:0000:0000:0000:0000:0001
-    - fd83:e002:c8a1:0000:0000:0000:0000:0002
-    - fd83:e002:c8a1:0000:0000:0000:0000:0003
-  - zone: neo
+    - 10.143.0.2
+    - fdef:affe:edda:0000:0000:0000:0000:0002
+  - zone: fffl
     forwarders:
-    - 10.127.255.53
-    - 'fd10:127:ffff:53::'
-  - zone: ffwk
+    - 10.129.1.1
+    - 10.129.1.3
+    - 10.129.1.6
+    - 2001:0bf7:0010:0001:0001:0000:0000:0001
+    - 2001:0bf7:0010:0001:0001:0000:0000:0003
+    - 2001:0bf7:0010:0001:0001:0000:0000:0006
+  - zone: ffeu
     forwarders:
-    - 10.13.1.1
-    - fd23:dead:beef:0000:0000:0000:0000:ff01
-  - zone: ffcux
+    - 10.47.0.2
+  - zone: ffdh
     forwarders:
-    - fdec:c0f1:afda:0000:0000:0000:0000:ff01
-    - fdec:c0f1:afda:0000:0000:0000:0000:ff02
-    - fdec:c0f1:afda:0000:0000:0000:0000:ff03
-    - fdec:c0f1:afda:0000:0000:0000:0000:ff04
-    - fdec:c0f1:afda:0000:0000:0000:0000:ff05
-  - zone: ffpi
+    - 10.213.0.2
+  - zone: ffrgb
     forwarders:
-    - 10.137.12.1
-    - 10.137.13.1
-    - 10.137.10.1
-    - fde8:21c6:9d82:0000:0000:0000:0000:0c01
-    - fde8:21c6:9d82:0000:0000:0000:0000:0d01
-    - fde8:21c6:9d82:0000:0000:0000:0000:0a01
-  - zone: ffbit
+    - 10.90.0.11
+    - fdef:f00f:1337:cafe:0000:0000:0000:0011
+  - zone: ffc
     forwarders:
-    - fda0:cab1:e1e5:5b11:c0ff:00ee:0000:0000
+    - 10.8.6.6
   - zone: ffvp
     forwarders:
     - 10.210.0.101
@@ -394,10 +434,54 @@ recursor:
     - fd00:ffba:ffba:0000:0000:0000:0000:0105
     - fd00:ffba:ffba:0000:0000:0000:0000:0106
     - fd00:ffba:ffba:0000:0000:0000:0000:0199
-  - zone: fmie
+  - zone: ffff
     forwarders:
-    - 2001:0678:0358:0000:0000:0000:0000:ffff
-    - 2001:0678:0358:0000:0000:0000:0000:fffe
+    - 151.80.64.190
+    - 85.14.255.33
+    - 2001:41d0:000c:095c:0000:0000:0000:0190
+    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
+  - zone: ffhl
+    forwarders:
+    - fdef:ffc0:3dd7:0000:0000:0000:0000:0801
+    - fdef:ffc0:3dd7:0000:0000:0000:0000:0a01
+    - fdef:ffc0:3dd7:0000:0000:0000:0000:0c01
+    - fdef:ffc0:3dd7:0000:0000:0000:0000:0e01
+    - 10.130.0.252
+    - 10.130.0.253
+    - 10.130.0.254
+    - 10.130.0.255
+  - zone: ffhh
+    forwarders:
+    - 2a03:2267:ffff:0b00:0000:0000:0000:0003
+  - zone: fftdf
+    forwarders:
+    - 10.188.1.100
+    - 10.188.1.23
+  - zone: icvpn
+    forwarders:
+    - 10.169.1.1
+    - 10.255.128.53
+    - fec0:0000:0000:0000:000a:00cf:0000:008a
+  - zone: ffsu
+    forwarders:
+    - 10.152.0.10
+    - 10.152.16.10
+    - fda4:1721:8450:0100:0000:0000:0000:0001
+    - fda4:1721:8450:0200:0000:0000:0000:0001
+  - zone: ffgoe
+    forwarders:
+    - 10.109.0.42
+    - fde6:36fc:c985:0000:0000:0000:0000:0042
+  - zone: ffgl
+    forwarders:
+    - 10.156.3.1
+  - zone: ffdus
+    forwarders:
+    - 10.155.0.10
+  - zone: ffnord
+    forwarders:
+    - 10.187.1.1
+    - fd42:eb49:c0b5:4242:0000:0000:0000:fd00
   - zone: ffsaar
     forwarders:
     - 10.24.193.1
@@ -408,88 +492,6 @@ recursor:
     - fd4e:f2d7:88d2:ffff:0000:0000:0000:0102
     - fd4e:f2d7:88d2:ffff:0000:0000:0000:0103
     - fd4e:f2d7:88d2:ffff:0000:0000:0000:0104
-  - zone: ffeu
-    forwarders:
-    - 10.47.0.2
-  - zone: ffff
-    forwarders:
-    - 151.80.64.190
-    - 85.14.255.33
-    - 2001:41d0:000c:095c:0000:0000:0000:0190
-    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
-  - zone: ffhm
-    forwarders:
-    - 10.11.96.1
-  - zone: ffi
-    forwarders:
-    - 10.2.10.1
-    - fdca:ffee:0008:0000:0000:0000:0000:0a01
-    - 10.2.20.1
-    - fdca:ffee:0008:0000:0000:0000:0000:1401
-    - 10.2.30.1
-    - fdca:ffee:0008:0000:0000:0000:0000:1e01
-    - 10.2.40.1
-    - fdca:ffee:0008:0000:0000:0000:0000:2801
-    - 10.2.50.1
-    - fdca:ffee:0008:0000:0000:0000:0000:3201
-  - zone: ffhgw
-    forwarders:
-    - 10.143.0.2
-    - fdef:affe:edda:0000:0000:0000:0000:0002
-  - zone: ffnh
-    forwarders:
-    - 10.71.1.1
-    - fd8f:14c7:d318:0000:0000:0000:0000:0001
-  - zone: ffrz
-    forwarders:
-    - 10.1.0.1
-    - 10.1.0.2
-    - 10.1.0.3
-    - 10.1.0.4
-  - zone: ffgl
-    forwarders:
-    - 10.156.3.1
-  - zone: ffamt
-    forwarders:
-    - 10.202.2.2
-    - 10.202.2.4
-  - zone: ffa
-    forwarders:
-    - 10.11.0.8
-    - 10.11.10.15
-    - 10.11.63.26
-    - fdca:ffee:0ffa:0008:0000:0000:0000:0001
-    - fdca:ffee:0ffa:0a0f:0000:0000:0000:0001
-    - fdca:ffee:0ffa:3f1a:0000:0000:0000:0001
-  - zone: ffmck
-    forwarders:
-    - 10.152.64.10
-    - 10.152.80.10
-    - fda4:1721:8451:0100:0000:0000:0000:0001
-    - fda4:1721:8451:0200:0000:0000:0000:0001
-  - zone: fferz
-    forwarders:
-    - 10.13.80.1
-  - zone: ffdus
-    forwarders:
-    - 10.155.0.10
-  - zone: '020'
-    forwarders:
-    - 10.205.253.1
-    - 10.205.253.2
-  - zone: ffdo
-    forwarders:
-    - 151.80.64.190
-    - 85.14.255.33
-    - 2001:41d0:000c:095c:0000:0000:0000:0190
-    - 2001:4ba0:ffff:01e9:0000:0000:0000:0033
-  - zone: ffrek
-    forwarders:
-    - 10.219.0.1
-    - fda0:747e:ab29:5016:0000:0000:0000:0001
-  - zone: fflln
-    forwarders:
-    - 10.21.3.1
   - zone: 10.in-addr.arpa
     forwarders:
     - 172.20.129.1
@@ -502,6 +504,8 @@ recursor:
     - fd86:bad:11b7:53::1
     - 172.23.91.1
     - fd42:4242:2189::1
+    - 172.20.132.105
+    - fd00:913e:130::400
   - zone: 20.172.in-addr.arpa
     forwarders:
     - 172.20.129.1
@@ -514,6 +518,8 @@ recursor:
     - fd86:bad:11b7:53::1
     - 172.23.91.1
     - fd42:4242:2189::1
+    - 172.20.132.105
+    - fd00:913e:130::400
   - zone: 21.172.in-addr.arpa
     forwarders:
     - 172.20.129.1
@@ -526,6 +532,8 @@ recursor:
     - fd86:bad:11b7:53::1
     - 172.23.91.1
     - fd42:4242:2189::1
+    - 172.20.132.105
+    - fd00:913e:130::400
   - zone: 22.172.in-addr.arpa
     forwarders:
     - 172.20.129.1
@@ -538,6 +546,8 @@ recursor:
     - fd86:bad:11b7:53::1
     - 172.23.91.1
     - fd42:4242:2189::1
+    - 172.20.132.105
+    - fd00:913e:130::400
   - zone: 20.172.in-addr.arpa
     forwarders:
     - 172.20.129.1
@@ -550,6 +560,8 @@ recursor:
     - fd86:bad:11b7:53::1
     - 172.23.91.1
     - fd42:4242:2189::1
+    - 172.20.132.105
+    - fd00:913e:130::400
   - zone: 31.172.in-addr.arpa
     forwarders:
     - 172.20.129.1
@@ -562,6 +574,8 @@ recursor:
     - fd86:bad:11b7:53::1
     - 172.23.91.1
     - fd42:4242:2189::1
+    - 172.20.132.105
+    - fd00:913e:130::400
   - zone: d.f.ip6.arpa
     forwarders:
     - 172.20.129.1
@@ -574,12 +588,18 @@ recursor:
     - fd86:bad:11b7:53::1
     - 172.23.91.1
     - fd42:4242:2189::1
+    - 172.20.132.105
+    - fd00:913e:130::400
 dnssec:
   trustanchors:
   - name: .
     dsrecords:
     - 20326 8 2 E06D44B80B8F1D39A95C0B0D7C65D08458E880409BBC683457104237C7F8EC8D
     - 38696 8 2 683D2D0ACB8C9B712A1948B27F741219298D0A450D612C483AF444A4C0FB2B16
+  - name: neo
+    dsrecords:
+    - 37727 15 2 C32191A298279D16846EEEFC157EEC6BE69BE8EDFEB4F3145C685F0752A73A8D
+    - 56336 13 2 317F7CC14D2F74ABF560CFCE6F89F5187872573BA5A7AF9A9B14CF47E51489E5
   - name: crxn
     dsrecords:
     - 1624 15 2 CE9AE07ABC41D7A509530DEBEFFA79D42DE7167208435D3E1881BB5448ABAEAF
@@ -587,10 +607,6 @@ dnssec:
     dsrecords:
     - 64441 10 2 6dadda00f5986bd26fe4f162669742cf7eba07d212b525acac9840ee06cb2799
     - 3096 10 2 b7c687a99bee60e172ea439bd2d3087b1d970916575db9c1cb591b7ee15d8cb1
-  - name: neo
-    dsrecords:
-    - 37727 15 2 C32191A298279D16846EEEFC157EEC6BE69BE8EDFEB4F3145C685F0752A73A8D
-    - 56336 13 2 317F7CC14D2F74ABF560CFCE6F89F5187872573BA5A7AF9A9B14CF47E51489E5
   - name: 10.in-addr.arpa
     dsrecords:
     - 64441 10 2 8a39e9df85a73f1982e43c9139e095e8548451d2048d92c2703869ef8bfebbb4
@@ -620,155 +636,155 @@ dnssec:
     - 64441 10 2 9057500a3b6e09bf45a60ed8891f2e649c6812d5d149c45a3c560fa0a6195c49
     - 3096 10 2 23fb364c82e6ed1c30b18c635f58dca58bbeb2e069bbd9d90ab9a90f66b948d2
   negative_trustanchors:
-  - name: ffin
-    reason: no trust anchors found in dn42 registry
-  - name: ffge
-    reason: no trust anchors found in dn42 registry
-  - name: ffdh
-    reason: no trust anchors found in dn42 registry
-  - name: ffnord
-    reason: no trust anchors found in dn42 registry
-  - name: ffch
-    reason: no trust anchors found in dn42 registry
-  - name: ff3l
-    reason: no trust anchors found in dn42 registry
-  - name: fftr
-    reason: no trust anchors found in dn42 registry
-  - name: ffaw
-    reason: no trust anchors found in dn42 registry
-  - name: ffbin
-    reason: no trust anchors found in dn42 registry
-  - name: ffrgb
-    reason: no trust anchors found in dn42 registry
-  - name: ffhl
-    reason: no trust anchors found in dn42 registry
-  - name: ffsu
-    reason: no trust anchors found in dn42 registry
-  - name: helgo
-    reason: no trust anchors found in dn42 registry
-  - name: fflw
-    reason: no trust anchors found in dn42 registry
-  - name: ffms
-    reason: no trust anchors found in dn42 registry
-  - name: ffgoe
-    reason: no trust anchors found in dn42 registry
-  - name: fffd
-    reason: no trust anchors found in dn42 registry
-  - name: ffel
-    reason: no trust anchors found in dn42 registry
-  - name: ffj
-    reason: no trust anchors found in dn42 registry
-  - name: ffws
-    reason: no trust anchors found in dn42 registry
-  - name: ffnw
-    reason: no trust anchors found in dn42 registry
-  - name: fffl
-    reason: no trust anchors found in dn42 registry
-  - name: fffr
-    reason: no trust anchors found in dn42 registry
   - name: ffka
-    reason: no trust anchors found in dn42 registry
-  - name: ffza
-    reason: no trust anchors found in dn42 registry
-  - name: icvpn
     reason: no trust anchors found in dn42 registry
   - name: ffggrz
     reason: no trust anchors found in dn42 registry
+  - name: helgo
+    reason: no trust anchors found in dn42 registry
   - name: ffharz
-    reason: no trust anchors found in dn42 registry
-  - name: ffc
-    reason: no trust anchors found in dn42 registry
-  - name: ffwb
-    reason: no trust anchors found in dn42 registry
-  - name: fflux
-    reason: no trust anchors found in dn42 registry
-  - name: ffh
-    reason: no trust anchors found in dn42 registry
-  - name: ffrgw
-    reason: no trust anchors found in dn42 registry
-  - name: ffbgl
-    reason: no trust anchors found in dn42 registry
-  - name: ffsl
-    reason: no trust anchors found in dn42 registry
-  - name: ffw
-    reason: no trust anchors found in dn42 registry
-  - name: ffhal
-    reason: no trust anchors found in dn42 registry
-  - name: adm
-    reason: no trust anchors found in dn42 registry
-  - name: ffrade
-    reason: no trust anchors found in dn42 registry
-  - name: ffen
-    reason: no trust anchors found in dn42 registry
-  - name: ffbcd
-    reason: no trust anchors found in dn42 registry
-  - name: ffpr
-    reason: no trust anchors found in dn42 registry
-  - name: ffde
-    reason: no trust anchors found in dn42 registry
-  - name: ffrg
-    reason: no trust anchors found in dn42 registry
-  - name: ffhh
-    reason: no trust anchors found in dn42 registry
-  - name: ffwdh
     reason: no trust anchors found in dn42 registry
   - name: ffki
     reason: no trust anchors found in dn42 registry
-  - name: fftut
-    reason: no trust anchors found in dn42 registry
-  - name: fftdf
-    reason: no trust anchors found in dn42 registry
-  - name: ffweyher
-    reason: no trust anchors found in dn42 registry
-  - name: ffac
-    reason: no trust anchors found in dn42 registry
-  - name: ffue
-    reason: no trust anchors found in dn42 registry
-  - name: ffwk
-    reason: no trust anchors found in dn42 registry
-  - name: ffcux
-    reason: no trust anchors found in dn42 registry
-  - name: ffpi
+  - name: fflw
     reason: no trust anchors found in dn42 registry
   - name: ffbit
     reason: no trust anchors found in dn42 registry
-  - name: ffvp
-    reason: no trust anchors found in dn42 registry
-  - name: fmie
-    reason: no trust anchors found in dn42 registry
-  - name: ffsaar
-    reason: no trust anchors found in dn42 registry
-  - name: ffeu
-    reason: no trust anchors found in dn42 registry
-  - name: ffff
+  - name: ffbgl
     reason: no trust anchors found in dn42 registry
   - name: ffhm
     reason: no trust anchors found in dn42 registry
-  - name: ffi
+  - name: ffbin
     reason: no trust anchors found in dn42 registry
-  - name: ffhgw
+  - name: ffde
     reason: no trust anchors found in dn42 registry
-  - name: ffnh
-    reason: no trust anchors found in dn42 registry
-  - name: ffrz
-    reason: no trust anchors found in dn42 registry
-  - name: ffgl
-    reason: no trust anchors found in dn42 registry
-  - name: ffamt
-    reason: no trust anchors found in dn42 registry
-  - name: ffa
+  - name: ffws
     reason: no trust anchors found in dn42 registry
   - name: ffmck
     reason: no trust anchors found in dn42 registry
-  - name: fferz
+  - name: fftr
     reason: no trust anchors found in dn42 registry
-  - name: ffdus
+  - name: ffel
+    reason: no trust anchors found in dn42 registry
+  - name: ffi
+    reason: no trust anchors found in dn42 registry
+  - name: fffd
+    reason: no trust anchors found in dn42 registry
+  - name: ffpr
+    reason: no trust anchors found in dn42 registry
+  - name: ff3l
+    reason: no trust anchors found in dn42 registry
+  - name: ffa
+    reason: no trust anchors found in dn42 registry
+  - name: ffj
+    reason: no trust anchors found in dn42 registry
+  - name: ffwdh
+    reason: no trust anchors found in dn42 registry
+  - name: ffge
+    reason: no trust anchors found in dn42 registry
+  - name: ffcux
+    reason: no trust anchors found in dn42 registry
+  - name: ffue
+    reason: no trust anchors found in dn42 registry
+  - name: ffza
+    reason: no trust anchors found in dn42 registry
+  - name: ffwb
     reason: no trust anchors found in dn42 registry
   - name: '020'
     reason: no trust anchors found in dn42 registry
-  - name: ffdo
+  - name: fferz
+    reason: no trust anchors found in dn42 registry
+  - name: fflux
+    reason: no trust anchors found in dn42 registry
+  - name: fflln
+    reason: no trust anchors found in dn42 registry
+  - name: fffr
+    reason: no trust anchors found in dn42 registry
+  - name: fmie
+    reason: no trust anchors found in dn42 registry
+  - name: ffen
+    reason: no trust anchors found in dn42 registry
+  - name: ffrade
+    reason: no trust anchors found in dn42 registry
+  - name: ffh
+    reason: no trust anchors found in dn42 registry
+  - name: ffnw
+    reason: no trust anchors found in dn42 registry
+  - name: ffms
+    reason: no trust anchors found in dn42 registry
+  - name: fftut
+    reason: no trust anchors found in dn42 registry
+  - name: ffpi
+    reason: no trust anchors found in dn42 registry
+  - name: ffch
+    reason: no trust anchors found in dn42 registry
+  - name: ffin
+    reason: no trust anchors found in dn42 registry
+  - name: ffrgw
+    reason: no trust anchors found in dn42 registry
+  - name: ffamt
+    reason: no trust anchors found in dn42 registry
+  - name: ffsl
     reason: no trust anchors found in dn42 registry
   - name: ffrek
     reason: no trust anchors found in dn42 registry
-  - name: fflln
+  - name: ffac
+    reason: no trust anchors found in dn42 registry
+  - name: ffrg
+    reason: no trust anchors found in dn42 registry
+  - name: ffbcd
+    reason: no trust anchors found in dn42 registry
+  - name: ffw
+    reason: no trust anchors found in dn42 registry
+  - name: ffwk
+    reason: no trust anchors found in dn42 registry
+  - name: ffrz
+    reason: no trust anchors found in dn42 registry
+  - name: ffnh
+    reason: no trust anchors found in dn42 registry
+  - name: ffaw
+    reason: no trust anchors found in dn42 registry
+  - name: ffdo
+    reason: no trust anchors found in dn42 registry
+  - name: adm
+    reason: no trust anchors found in dn42 registry
+  - name: ffweyher
+    reason: no trust anchors found in dn42 registry
+  - name: ffhal
+    reason: no trust anchors found in dn42 registry
+  - name: ffhgw
+    reason: no trust anchors found in dn42 registry
+  - name: fffl
+    reason: no trust anchors found in dn42 registry
+  - name: ffeu
+    reason: no trust anchors found in dn42 registry
+  - name: ffdh
+    reason: no trust anchors found in dn42 registry
+  - name: ffrgb
+    reason: no trust anchors found in dn42 registry
+  - name: ffc
+    reason: no trust anchors found in dn42 registry
+  - name: ffvp
+    reason: no trust anchors found in dn42 registry
+  - name: ffff
+    reason: no trust anchors found in dn42 registry
+  - name: ffhl
+    reason: no trust anchors found in dn42 registry
+  - name: ffhh
+    reason: no trust anchors found in dn42 registry
+  - name: fftdf
+    reason: no trust anchors found in dn42 registry
+  - name: icvpn
+    reason: no trust anchors found in dn42 registry
+  - name: ffsu
+    reason: no trust anchors found in dn42 registry
+  - name: ffgoe
+    reason: no trust anchors found in dn42 registry
+  - name: ffgl
+    reason: no trust anchors found in dn42 registry
+  - name: ffdus
+    reason: no trust anchors found in dn42 registry
+  - name: ffnord
+    reason: no trust anchors found in dn42 registry
+  - name: ffsaar
     reason: no trust anchors found in dn42 registry
