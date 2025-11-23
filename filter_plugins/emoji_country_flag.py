@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-import flag  # https://pypi.org/project/emoji-country-flag/
+import pycountry
 
 class FilterModule():
 
-    def _flag(self, text):
-        if text == 'UK':
-            text = 'GB'
-        return flag.flag(text)
+    def _flag(self, alpha_2_code: str):
+        if alpha_2_code == 'UK':
+            alpha_2_code = 'GB'
+        return pycountry.countries.get(alpha_2=alpha_2_code).flag
 
     def filters(self):
         return {
-            'flagize': flag.flagize,
-            'dflagize': flag.dflagize,
             'flag': self._flag
         }
