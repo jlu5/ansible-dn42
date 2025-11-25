@@ -995,3 +995,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-stevie
+  port: 20337
+  remote: ams01.dn42.wwrr.ru:21080
+  wg_pubkey: ijO/ApO4Vnl2U7egsdGSIOpaeS1A22Jj0uHjsqv24Ak=
+  peer_v4: null
+  peer_v6: fe80::337
+  bgp:
+    asn: 4242420337
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
