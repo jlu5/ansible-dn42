@@ -9,8 +9,10 @@ import os
 import pathlib
 import re
 import ruamel.yaml
+import sys
 
 from birdoptions import fill_bird_options
+from exceptions import AbortError
 from utils import *
 from validators import *
 
@@ -233,7 +235,12 @@ def main():
         else:
             iface_idx = -1
 
-        completed_config, bird_options = _run_interactive(args.node)
+        try:
+            completed_config, bird_options = _run_interactive(args.node)
+        except AbortError:
+            print("Aborting...")
+            sys.exit(1)
+
         wg_config_snippet = gen_peer_config(peername, completed_config, bird_options, mtu=args.mtu)
         if iface_idx < 0:
             wg_peers.append(wg_config_snippet)
