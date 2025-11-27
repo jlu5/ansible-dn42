@@ -59,10 +59,11 @@ def scrape_ips(url, force_dns=False, maxsize=65536):
     if content_length > maxsize:
         raise ValueError(f'HTTP response too large ({content_length} > {maxsize})')
     total_length = 0
+    text = ''
     for chunk in r.iter_content(maxsize):
         if total_length > maxsize:
             break
-        text = chunk.decode('utf-8', 'ignore')
+        text += chunk.decode('utf-8', 'ignore')
         total_length += len(text)
 
     for m_ipv4 in IP4_RE.finditer(text):
