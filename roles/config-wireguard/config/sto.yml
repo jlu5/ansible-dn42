@@ -76,3 +76,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-sa0wii
+  port: 20019
+  remote: sto.dn42.sa0wii.se:20019
+  wg_pubkey: 4iX21JQa0Z6pYjoSdMrNhRx2gwyF2xO3iMS7qV9zzVc=
+  peer_v4: null
+  peer_v6: fe80::19
+  bgp:
+    asn: 4242420019
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
