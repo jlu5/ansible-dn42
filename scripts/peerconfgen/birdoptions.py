@@ -36,10 +36,11 @@ def fill_bird_options(node, completed_config):
             traceback.print_exc()
             if not prompt_bool(f"Could not ping {remote}. {latency_warning}"):
                 raise AbortError()
-        if latency > _PREFERRED_LATENCY and not prompt_bool(
-            f"This peering has high latency. {latency_warning}"
-        ):
-            raise AbortError()
+        else:
+            if latency > _PREFERRED_LATENCY and not prompt_bool(
+                f"This peering has high latency. {latency_warning}"
+            ):
+                raise AbortError()
 
     elif not prompt_bool(f"No remote specified. {latency_warning}"):
         raise AbortError()
