@@ -460,3 +460,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-moraxyc
+  port: 23011
+  remote: jp2.dn42.moraxyc.com:21080
+  wg_pubkey: 5Sq33dQ6Hox8lpda0wve08scNBc7BSDjaP4EPYKjdVk=
+  peer_v4: null
+  peer_v6: fe80::3011
+  bgp:
+    asn: 4242423011
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
