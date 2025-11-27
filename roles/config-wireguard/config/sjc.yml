@@ -110,19 +110,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-moraxyc
-  port: 23011
-  remote: us-sj1.dn42.moraxyc.com:21080
-  wg_pubkey: eFZBQnpapXIAqkLq3s4x47M1ZE1b9cceqV1HiTbYlQI=
-  peer_v4: null
-  peer_v6: fe80::3011:12
-  bgp:
-    asn: 4242423011
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-dnsense
   port: 23117
   remote: 6.dnsense.pub:21080
