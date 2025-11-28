@@ -4,74 +4,78 @@ import unittest
 import unittest.mock
 
 from birdoptions import BirdOptions, fill_bird_options
-from utils import FakeInput, get_dn42_latency_value
+from exceptions import AbortError
+from utils import FakeInput
 
 class PeerConfFillBirdTest(unittest.TestCase):
     maxDiff = None
 
-    def test_calc_dn42_latency(self):
-        self.assertEqual(1, get_dn42_latency_value(0.9))
-        self.assertEqual(1, get_dn42_latency_value(2.5))
-        self.assertEqual(2, get_dn42_latency_value(2.8))
-        self.assertEqual(2, get_dn42_latency_value(7.15))
-        self.assertEqual(3, get_dn42_latency_value(9.99))
-        self.assertEqual(3, get_dn42_latency_value(18.1))
-        self.assertEqual(4, get_dn42_latency_value(24.9))
-        self.assertEqual(8, get_dn42_latency_value(1500))
+    cfg_dualstack = {
+        'asn': '4242428888',
+        'remote': 'test.null.invalid',
+        'port': '8888',
+        'wg_pubkey': 'dn42' * 10 + 'dn4=',
+        'peer_v4': '172.22.108.88',
+        'peer_v6': 'fe80::1234',
+    }
+    cfg_v6_only = {
+        'asn': '4242428888',
+        'remote': 'test.null.invalid',
+        'port': '8888',
+        'wg_pubkey': 'dn42' * 10 + 'dn4=',
+        'peer_v4': None,
+        'peer_v6': 'fe80::1234',
+    }
 
     @unittest.mock.patch('builtins.input', FakeInput([
-        'n',  # don't auto calculate ping
         'n',  # No extended next hop
-        '5',  # manual latency value
     ]))
     def test_fill_bird_options_v6only(self):
-        cfg = {
-            'asn': '4242428888',
-            'remote': 'test.null.invalid',
-            'port': '8888',
-            'wg_pubkey': 'dn42' * 10 + 'dn4=',
-            'peer_v4': None,
-            'peer_v6': 'fe80::1234',
-        }
-        self.assertEqual(BirdOptions(False, False, 5.0),
-                         fill_bird_options('DUMMYINVALID', cfg))
+        with unittest.mock.patch('birdoptions.get_rtt', return_value=0.909):
+            self.assertEqual(BirdOptions(False, False),
+                             fill_bird_options(None, self.cfg_v6_only))
 
     @unittest.mock.patch('builtins.input', FakeInput([
         'y',  # mp-bgp
         'n',  # extended next hop
-        'n',  # don't auto calculate ping
-        '123',# manual latency value
     ]))
     def test_fill_bird_options_dualstack(self):
-        cfg = {
-            'asn': '4242428888',
-            'remote': 'test.null.invalid',
-            'port': '8888',
-            'wg_pubkey': 'dn42' * 10 + 'dn4=',
-            'peer_v4': '172.22.108.88',
-            'peer_v6': 'fe80::1234',
-        }
-        self.assertEqual(BirdOptions(True, False, 123.0),
-                         fill_bird_options('DUMMYINVALID', cfg))
-
+        with unittest.mock.patch('birdoptions.get_rtt', return_value=0.909):
+            self.assertEqual(BirdOptions(True, False),
+                             fill_bird_options(None, self.cfg_dualstack))
 
     @unittest.mock.patch('builtins.input', FakeInput([
         'y',  # mp-bgp
         'y',  # extended next hop
-        'y',  # auto calculate ping
+        'y',  # continue despite high ping
     ]))
-    def test_fill_bird_options_pingtest(self):
-        cfg = {
-            'asn': '4242428888',
-            'remote': 'test.null.invalid',
-            'port': '8888',
-            'wg_pubkey': 'dn42' * 10 + 'dn4=',
-            'peer_v4': '172.22.108.88',
-            'peer_v6': 'fe80::1234',
-        }
-        with unittest.mock.patch('birdoptions.get_rtt', return_value=0.909):
-            self.assertEqual(BirdOptions(True, True, 0.909),
-                             fill_bird_options('DUMMYINVALID', cfg))
+    def test_fill_bird_options_high_ping(self):
+        with unittest.mock.patch('birdoptions.get_rtt', return_value=200):
+            self.assertEqual(BirdOptions(True, True),
+                             fill_bird_options(None, self.cfg_dualstack))
+
+    @unittest.mock.patch('builtins.input', FakeInput([
+        'y',  # mp-bgp
+        'y',  # extended next hop
+        'n',  # abort because of high ping
+    ]))
+    def test_fill_bird_options_high_ping_abort(self):
+        with unittest.mock.patch('birdoptions.get_rtt', return_value=200):
+            with self.assertRaises(AbortError):
+                self.assertEqual(BirdOptions(True, True),
+                                fill_bird_options(None, self.cfg_dualstack))
+
+    @unittest.mock.patch('builtins.input', FakeInput([
+        'y',  # mp-bgp
+        'y',  # extended next hop
+        'n',  # abort because of failed ping
+    ]))
+    def test_fill_bird_options_failed_ping_abort(self):
+        with unittest.mock.patch('birdoptions.get_rtt',
+                side_effect=OSError("placeholder exception for testing")):
+            with self.assertRaises(AbortError):
+                self.assertEqual(BirdOptions(True, True),
+                                fill_bird_options(None, self.cfg_dualstack))
 
 if __name__ == '__main__':
     unittest.main()

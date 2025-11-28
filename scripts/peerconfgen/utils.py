@@ -43,9 +43,3 @@ def prompt_float(prompt):
             print(f"Invalid input: {s}")
             tries += 1
     raise ValueError("Too many failed inputs, aborting")
-
-def get_dn42_latency_value(latency):
-    for x in range(1, 10):
-        if latency < (math.e ** x):
-            return x
-    return x
