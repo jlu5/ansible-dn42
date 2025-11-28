@@ -11,12 +11,8 @@ dns_records:
       ip4: 172.22.108.3
       ip6: fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
     "ping-ymq3":
-      type: multi
-      records:
-        - type: A
-          target: 172.22.108.32
-        - type: AAAA
-          target: fd86:bad:11b7:a332::1
+      type: ansible_host_alias
+      target: ymq3
     "routegraphs":
       type: ansible_host_alias
       target: ams
