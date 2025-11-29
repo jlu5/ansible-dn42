@@ -11,8 +11,8 @@ smokeping_region_map:
     full: [NAEast, NACentral]
     lite: [NANorthwest, NAWest, LatAm, EU]
   NACentral:
-    full: [NAEast]
-    lite: [NASoutheast, NANorthwest, NAWest, EU, AsiaCN]
+    full: [NAEast, NASoutheast]
+    lite: [NANorthwest, NAWest, EU, AsiaCN]
   NANorthwest:
     full: [NAWest]
     lite: [NACentral, NAEast, NASoutheast, AsiaEast, AsiaSouthCentral, AsiaCN]
