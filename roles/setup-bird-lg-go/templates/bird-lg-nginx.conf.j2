@@ -80,7 +80,7 @@ server {
 
     location ~ ^/(api|generic|route_generic|route_where|route_from_protocol) {
         add_header Content-Type text/plain always;
-        return 403 "This endpoint is not available over clearnet. Please access it at {{ birdlg_vhost }}\n";
+        return 403 "This endpoint is not available over clearnet. Please access it at http://{{ birdlg_vhost }}\n";
     }
 
     location / {
