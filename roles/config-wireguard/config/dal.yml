@@ -65,3 +65,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 # END peers imported from atl
+
+- name: dn42-be0ba
+  port: 20224
+  remote: dal01.dn42.tcp80.org:40015
+  wg_pubkey: 3T1a4znEbtN20C5GGGpSgibHHzqx79OPjCmLtxytbw0=
+  peer_v4: null
+  peer_v6: fe80::224
+  bgp:
+    asn: 4242420224
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
