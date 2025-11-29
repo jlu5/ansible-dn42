@@ -13,10 +13,23 @@ igp_neighbours:
     ymq2: null
   chi: !!set
     ams: null
+    chi2: null
+    dal: null
     lon: null
     sjc: null
     ymq: null
     ymq2: null
+    yvr: null
+  chi2: !!set
+    chi: null
+    sjc: null
+    ymq: null
+    yvr: null
+  dal: !!set
+    chi: null
+    lon: null
+    sjc: null
+    ymq: null
     yvr: null
   hkg: !!set
     mum: null
@@ -28,6 +41,7 @@ igp_neighbours:
   lon: !!set
     ams: null
     chi: null
+    dal: null
     mum: null
     sto: null
     ymq: null
@@ -48,6 +62,8 @@ igp_neighbours:
   sjc: !!set
     ams: null
     chi: null
+    chi2: null
+    dal: null
     hkg: null
     sgp: null
     syd: null
@@ -85,6 +101,8 @@ igp_neighbours:
   ymq: !!set
     ams: null
     chi: null
+    chi2: null
+    dal: null
     lon: null
     sjc: null
     ymq2: null
@@ -101,6 +119,8 @@ igp_neighbours:
     ymq2: null
   yvr: !!set
     chi: null
+    chi2: null
+    dal: null
     sjc: null
     tyo: null
     tyo2: null
@@ -121,11 +141,24 @@ igp_wg_ports:
     ymq3: 30018
   chi:
     ams: 30011
+    chi2: 30052
+    dal: 30060
     lon: 30010
     sjc: 30004
     ymq: 30005
     ymq2: 30035
     yvr: 30001
+  chi2:
+    chi: 30052
+    sjc: 30054
+    ymq: 30055
+    yvr: 30053
+  dal:
+    chi: 30060
+    lon: 30058
+    sjc: 30059
+    ymq: 30056
+    yvr: 30057
   hkg:
     ams: 30024
     lon: 30045
@@ -139,6 +172,7 @@ igp_wg_ports:
   lon:
     ams: 30008
     chi: 30010
+    dal: 30058
     hkg: 30045
     mum: 30036
     sto: 30013
@@ -162,6 +196,8 @@ igp_wg_ports:
   sjc:
     ams: 30002
     chi: 30004
+    chi2: 30054
+    dal: 30059
     hkg: 30025
     sgp: 30028
     syd: 30016
@@ -199,6 +235,8 @@ igp_wg_ports:
   ymq:
     ams: 30006
     chi: 30005
+    chi2: 30055
+    dal: 30056
     lon: 30009
     sjc: 30003
     ymq2: 30034
@@ -218,6 +256,8 @@ igp_wg_ports:
     ymq2: 30046
   yvr:
     chi: 30001
+    chi2: 30053
+    dal: 30057
     hkg: 30026
     sgp: 30030
     sjc: 30000
@@ -225,4 +265,4 @@ igp_wg_ports:
     tyo2: 30051
     ymq: 30007
     ymq2: 30033
-next_port: 30052
+next_port: 30061

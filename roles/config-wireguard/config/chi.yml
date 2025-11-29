@@ -127,51 +127,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: false
 
-# BEGIN peers imported from dal.peer (202408)
-
-- name: dn42-bandura
-  port: 22923
-  remote: aurora.mk16.de:51080
-  wg_pubkey: bdV11rHcf1YIesd7y5UFyChr9+ZJ+0LtoblBXAlHzDs=
-  peer_v4: null
-  peer_v6: fe80::2923
-  wg_presharedkey: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    65373033623433623230613061633865613562633438393866383061633030363233373062303763
-    3762643439643234316361666165336436383636306362310a333530336263393835353436393037
-    33633035393837333837303865373633643361613535653132623238663336353734373939633733
-    6135393935333530640a373363386530396634303732623139353062393261333739653666333365
-    30306262343131386334343963633432353238336234616266383163366437396266623166353236
-    3038366232633135323634343662663835366162346464376631
-  local_v6: fe80::1080:33
-  wg_privkey: /etc/wireguard/privatekey_dal
-  bgp:
-    asn: 4242422923
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-# END peers imported from dal.peer
-
-# BEGIN peers imported from atl/tpa (202408)
-- name: dn42-napsterbat
-  port: 51050
-  remote: atl1-us.dn42.napshome.net:51080
-  wg_pubkey: "Cro0O53QVO63240SyAu1vkF7kOa/KeMIwT8+7qGV9lI="
-  peer_v4: "172.22.169.128"
-  peer_v6: "fda9:26a9:1c47:d42:42:42:1080:1050"
-  local_v4: 172.20.229.119
-  local_v6: fd86:bad:11b7:9::1
-  wg_privkey: /etc/wireguard/privatekey_atl
-  bgp:
-    asn: 4242421050
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-# END peers imported from tpa.peer
-
 - name: dn42-9pfs
   port: 22002
   remote: null

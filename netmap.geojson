@@ -36,14 +36,29 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -96.796988,
+                    32.776664
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#dal\" class=\"netmap-server-link\">Dallas, TX, US</a>",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     114.169361,
                     22.319304
                 ]
             },
             "properties": {
                 "title": "<a href=\"nodes.html#hkg\" class=\"netmap-server-link\">Hong Kong, HK</a>",
-                "description": "- LITE node, NO Anycast DNS<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red.png"
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
         {
