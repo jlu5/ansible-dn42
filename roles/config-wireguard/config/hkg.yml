@@ -7,7 +7,7 @@ wg_peers:
   peer_v6: "fe80::ade0"
   bgp:
     asn: 4242423914
-    extended_next_hop: false
+    extended_next_hop: true
     ipv4: true
     ipv6: true
     mp_bgp: true
