@@ -51,10 +51,6 @@ dns_nameserver: "ns.highdef.dn42"  # used in NS, SOA records; substitutions not 
 dns_ttl: 300
 dns_zones_dir: "/etc/powerdns/dns-zones"
 
-# Mitogen needs this to be set; it doesn't follow the interpreter_python setting in ansible.cfg yet
-# See https://github.com/dw/mitogen/issues/740
-ansible_python_interpreter: /usr/bin/python3
-
 # Bird settings
 # See roles/config-bird2/config for the full Bird config
 bird_logs_dir: "/var/log/bird/"
