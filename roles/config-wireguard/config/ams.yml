@@ -334,7 +334,7 @@ wg_peers:
     export_mode: prepend
 
 - name: dn42-kioubit
-  port: 53914
+  port: 23914
   remote: "de2.g-load.eu:21080"
   wg_pubkey: "B1xSG/XTJRLd+GrWDsB06BqnIq8Xud93YVh/LYYYtUY="
   peer_v4: "172.20.53.97"
