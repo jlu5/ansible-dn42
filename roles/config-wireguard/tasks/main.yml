@@ -1,25 +1,26 @@
-- name: "Write WireGuard tunnel config"
-  template:
-    src: wg_tunnel.conf.j2
-    dest: "/etc/wireguard/{{ peer_info.name }}.conf"
-  loop: "{{ wg_peers_all }}"
-  loop_control:
-    loop_var: peer_info
-  register: wg_tunnel_tmpl
-
 - name: "Write WireGuard interface config"
   template:
-    src: dn42_interface.conf.j2
+    src: wg_interface.conf.j2
     dest: "{{ automation_root_dir }}/interfaces/{{ peer_info.priority|default(42)|zfill(2) }}{{ peer_info.name }}"
+    mode: "0600"
+    owner: root
+    group: root
   loop: "{{ wg_peers_all }}"
   loop_control:
     loop_var: peer_info
-  register: interfaces_tmpl
+  register: wg_interface_tmpl
 
-# Look up only tunnels that have changed and restart those
+- name: "Remove old WireGuard tunnel config"
+  file:
+    path: "/etc/wireguard/{{ peer_info.name }}.conf"
+    state: absent
+  loop: "{{ wg_peers_all }}"
+  loop_control:
+    loop_var: peer_info
+
 - name: "Restart changed WireGuard interfaces"
   shell: "ifdown --force {{ peer_name }} --interfaces={{ _ifupdown_dn42_iface_file }}; ifup {{ peer_name }} --interfaces={{ _ifupdown_dn42_iface_file }}"
-  loop: "{{ (wg_tunnel_tmpl.results + interfaces_tmpl.results)
+  loop: "{{ wg_interface_tmpl.results
             | selectattr('changed', 'true')
             | map(attribute='peer_info') | map(attribute='name') | unique | list }}"
   loop_control:
