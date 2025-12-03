@@ -30,7 +30,7 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
     {{ helpers.anchor(host) }}
 </h4>
 <ul>
-    <li><strong>Hostname</strong>: {{ serverdata.ansible_host }}
+    <li><strong>Hostname</strong>: {{ serverdata.public_host | default(serverdata.ansible_host) }}
 {% if serverdata.v6_only|default(False) %}
     <span class="info-warn">(Clearnet IPv6 only)</span>
 {% elif serverdata.v4_only|default(False) %}
