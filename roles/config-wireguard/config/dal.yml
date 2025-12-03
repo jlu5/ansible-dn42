@@ -48,24 +48,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-# BEGIN peers imported from atl (202408)
-- name: dn42-napsterbat
-  port: 51050
-  remote: atl1-us.dn42.napshome.net:51080
-  wg_pubkey: "Cro0O53QVO63240SyAu1vkF7kOa/KeMIwT8+7qGV9lI="
-  peer_v4: "172.22.169.128"
-  peer_v6: "fda9:26a9:1c47:d42:42:42:1080:1050"
-  local_v4: 172.20.229.119
-  local_v6: fd86:bad:11b7:9::1
-  wg_privkey: /etc/wireguard/privatekey_atl
-  bgp:
-    asn: 4242421050
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-# END peers imported from atl
-
 - name: dn42-be0ba
   port: 20224
   remote: dal01.dn42.tcp80.org:40015
