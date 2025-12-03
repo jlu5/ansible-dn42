@@ -448,3 +448,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-iris
+  port: 21023
+  remote: hkg-01.node.svc.moe:21080
+  wg_pubkey: dPTukyAM6scP2dlCYiP55BDb0lmuBhX7Rm4G8p/9awA=
+  peer_v4: null
+  peer_v6: fe80::1023:2
+  bgp:
+    asn: 4242421023
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true

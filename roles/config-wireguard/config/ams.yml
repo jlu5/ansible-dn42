@@ -1021,3 +1021,16 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
   wg_mtu: 1370
+
+- name: dn42-iris
+  port: 21023
+  remote: ams-01.node.svc.moe:21080
+  wg_pubkey: EERaAzJ1oDMhWZCMIWbK4Gd523BDM2YlV1O7AB1th1Y=
+  peer_v4: null
+  peer_v6: fe80::1023:2
+  bgp:
+    asn: 4242421023
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
