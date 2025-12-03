@@ -25,9 +25,7 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
 {% if serverdata.web_display_name | default('') %}
     ({{ serverdata.web_display_name }})
 {% endif %}
-{% if host in groups['webtrace'] %}
 [<a href="https://{{ serverdata.public_host | default(serverdata.ansible_host) }}/webtrace/">webtrace</a>]
-{% endif %}
 [<a href="https://lg.highdef.network/summary/{{ host }}/">looking glass</a>]
     {{ helpers.anchor(host) }}
 </h4>

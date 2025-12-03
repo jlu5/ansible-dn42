@@ -7,9 +7,4 @@
     - setup-bird-lg-go
     - setup-extra-scripts
     - setup-routestats
-
-- name: Setup webtrace
-  hosts: webtrace
-  become: yes
-  roles:
     - setup-webtrace

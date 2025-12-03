@@ -1,5 +1,5 @@
 {# FIXME: does jinja2 have a re.escape filter? #}
-{% set webtrace_supported_servers_re = '(' + '|'.join(groups['webtrace']) + ')' %}
+{% set webtrace_supported_servers_re = '(' + '|'.join(groups['dn42routers']) + ')' %}
 {% set multi_traceroute_error = "Sorry, multi-server traceroute is no longer supported. Please select a single server and you'll be redirected to the new webtrace interface.\n"%}
 # dn42
 server {

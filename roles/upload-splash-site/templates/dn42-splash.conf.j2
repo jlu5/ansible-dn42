@@ -60,7 +60,6 @@ server {
         add_header Cache-Control "max-age=120";
     }
 
-{% if inventory_hostname in groups['webtrace'] %}
     location /webtrace/ {
         proxy_pass http://webtrace-backend/;
         # Important since we use HTTP streaming!
@@ -68,7 +67,7 @@ server {
         access_log /var/log/nginx/webtrace-access.log;
         error_log /var/log/nginx/webtrace-error.log;
     }
-{% endif %}
+
     location / {
         root {{ automation_root_dir }}/splash;
         index index-dn42.html;
