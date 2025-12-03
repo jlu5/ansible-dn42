@@ -102,21 +102,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-tech9
-  peer_v4: 172.20.16.143
-  peer_v6: fe80::1588
-  port: 21588
-  remote: us-qas01.dn42.tech9.io:57225
-  wg_pubkey: itmJ4Z8V1aNN368P6kMzuQM+GdzWbBKZjJiXrgSeGlw=
-  local_v6: fe80::100
-  bgp:
-    asn: 4242421588
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: false
-    export_mode: prepend
-
 - name: dn42-hujk
   peer_v4: null
   peer_v6: fe80::104:50:2030:10

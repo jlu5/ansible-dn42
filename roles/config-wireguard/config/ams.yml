@@ -319,10 +319,10 @@ wg_peers:
     mp_bgp: true
 
 - name: dn42-tech9
-  port: 51588
-  remote: "de-fra02.dn42.tech9.io:56614"
-  wg_pubkey: "MD1EdVe9a0yycUdXCH3A61s3HhlDn17m5d07e4H33S0="
-  peer_v4: "172.20.16.141"
+  port: 21588
+  remote: "nl-ams01.dn42.tech9.io:56614"
+  wg_pubkey: "opEMCeB+Zepf/lMabVndWVOmKVHI3Bvc98hm55TAxGI="
+  peer_v4: "172.23.220.192"
   peer_v6: "fe80::1588/64"
   local_v6: "fe80::100"
   bgp:
@@ -331,7 +331,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: false
-    export_mode: prepend
 
 - name: dn42-kioubit
   port: 23914
