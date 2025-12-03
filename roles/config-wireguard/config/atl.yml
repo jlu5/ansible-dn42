@@ -11,3 +11,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-routedbits
+  port: 20207
+  remote: router.atl1.routedbits.com:51080
+  wg_pubkey: QKK4a4vZQ4sd6EdXZ2IIlXNoUVMqcWX8nGoKEfy/VGU=
+  peer_v4: null
+  peer_v6: fe80::207
+  bgp:
+    asn: 4242420207
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
