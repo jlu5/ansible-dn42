@@ -8,11 +8,10 @@ wg_peers:
   local_v6: fe80::100
   bgp:
     asn: 4242421588
-    extended_next_hop: false
+    extended_next_hop: true
     ipv4: true
     ipv6: true
     mp_bgp: true
-    export_mode: prepend
 
 - name: dn42-routedbits
   port: 20207
