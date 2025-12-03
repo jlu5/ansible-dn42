@@ -25,3 +25,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-burble
+  port: 22601
+  remote: dn42-us-ash1.burble.com:21080
+  wg_pubkey: NyNVeb5VPSZ/HlEbX1NEzZ6qjKURX7vxmkR59ev3wCs=
+  peer_v4: null
+  peer_v6: fe80::42:2601:37:1
+  bgp:
+    asn: 4242422601
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true

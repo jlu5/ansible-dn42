@@ -258,19 +258,17 @@ wg_peers:
     mp_bgp: true
 
 - name: dn42-burble
-  peer_v4: null
-  peer_v6: fe80::42:2601:2a:1
   port: 22601
-  remote: dn42-us-lax1.burble.com:21080
-  wg_pubkey: MDjt4DyKGFumReT9pBJL6mPbDfQDfhPFyzHGDeoQVBQ=
-  local_v6: "fe80::122"
-  wg_privkey: /etc/wireguard/privatekey_lax
+  remote: dn42-us-fre1.burble.com:21080
+  wg_pubkey: HbKhgIzeXmLPk0rT98SDbWwkpBqIvtw1gfRZtZmXxEU=
+  peer_v4: null
+  peer_v6: fe80::42:2601:36:1
   bgp:
     asn: 4242422601
-    extended_next_hop: true
     ipv4: true
     ipv6: true
     mp_bgp: true
+    extended_next_hop: true
 
 - name: dn42-rubick
   port: 23451
