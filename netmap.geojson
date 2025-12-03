@@ -21,6 +21,36 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -77.487442,
+                    39.043757
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#ash\" class=\"netmap-server-link\">Ashburn, VA, US</a>",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.387982,
+                    33.748995
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#atl\" class=\"netmap-server-link\">Atlanta, GA, US</a>",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     -87.629798,
                     41.878114
                 ]
