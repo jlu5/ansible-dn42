@@ -353,21 +353,18 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-akihi
+- name: dn42-boletus
   port: 20398
-  remote: lax.dn42.boletus.me:21080
+  remote: lax.dn42.boletus.icu:21080
   wg_pubkey: oAPy0U2qVuSR8PyPLmVLEgWLBKrOq4kcLNLAOVZL10M=
   peer_v4: null
-  peer_v6: fe80::426f
-  local_v6: fe80::1080:126
-  wg_privkey: /etc/wireguard/privatekey_las
+  peer_v6: fe80::398
   bgp:
     asn: 4242420398
-    extended_next_hop: true
     ipv4: true
     ipv6: true
     mp_bgp: true
-### end peers moved from las.peer
+    extended_next_hop: true
 
 - name: dn42-scoopta
   port: 21197

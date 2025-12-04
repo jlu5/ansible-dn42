@@ -203,18 +203,18 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-akihi
+- name: dn42-boletus
   port: 20398
-  remote: nrt.dn42.boletus.me:21080
-  wg_pubkey: /EDDHZQrfLv9XeKMYOp8XdEFEB9ml3BE/YwV5UhN5W0=
+  remote: nrt.dn42.boletus.icu:21080
+  wg_pubkey: QQecM/0eCbRu5TNdyRxGpJTCo6aGolMb0kZAqLH5Oho=
   peer_v4: null
-  peer_v6: fe80::426f
+  peer_v6: fe80::398
   bgp:
     asn: 4242420398
-    extended_next_hop: true
     ipv4: true
     ipv6: true
     mp_bgp: true
+    extended_next_hop: true
 
 - name: dn42-c4tg
   port: 21411

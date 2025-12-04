@@ -461,3 +461,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-boletus
+  port: 20398
+  remote: hkl.dn42.boletus.icu:21080
+  wg_pubkey: XD66eoHp06VmDUNFUguJeOY8gFLiLZ7Lkyz/WsMQSWU=
+  peer_v4: null
+  peer_v6: fe80::398
+  bgp:
+    asn: 4242420398
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
