@@ -167,3 +167,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-cow
+  port: 23222
+  remote: 15.204.34.0:51950
+  wg_pubkey: RDacCsc+GqW30s5XlA4aW1P5NeG53Ut/jle2HSsoR2s=
+  peer_v4: null
+  peer_v6: fe80::3222
+  bgp:
+    asn: 4242423222
+    ipv4: false
+    ipv6: true
+    mp_bgp: false
+    extended_next_hop: false
