@@ -32,10 +32,12 @@ menu = [SG] HostHatch
 title = [SG] HostHatch - Singapore [lg.sgp.hosthatch.com]
 host = lg.sgp.hosthatch.com
 
+{% if not smokeping_lite %}
 ++ kuaichedao-sg
 menu = [SG] Kuaichedao
 title = [SG] Kuaichedao - Singapore [sg-bgp.sin.lg.kuaichedao.xyz]
 host = sg-bgp.sin.lg.kuaichedao.xyz
+{% endif %}
 
 ++ leaseweb-sg
 menu = [SG] LeaseWeb
@@ -74,12 +76,14 @@ host = sgp.proof.ovh.net
 menu = [SG] ServerPoint.com
 title = [SG] ServerPoint.com - Singapore [64.235.43.60]
 host = 64.235.43.60
+{% endif %}
 
 ++ shockhosting-sg
 menu = [SG] Shock Hosting
 title = [SG] Shock Hosting @ Host Universal - Singapore [sg-lg.shockhosting.net]
 host = sg-lg.shockhosting.net
 
+{% if not smokeping_lite %}
 ++ singtel-singapore
 menu = [SG] Singtel
 title = [SG] Singtel - Singapore [speedtest.singnet.com.sg]

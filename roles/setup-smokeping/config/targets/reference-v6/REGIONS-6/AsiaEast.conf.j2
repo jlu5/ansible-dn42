@@ -20,22 +20,24 @@ menu = [JP] GreenCloud @ IIJ
 title = [JP] GreenCloud @ xTom (IIJ blend) - Tokyo, Japan [2403:71c0:2000::1]
 host = 2403:71c0:2000::1
 
+{% if not smokeping_lite %}
 ++ kuaichedao-jp
 menu = [JP] Kuaichedao
 title = [JP] Kuaichedao @ Eons Data - Tokyo, Japan [jp-bgp.tyo.lg.kuaichedao.xyz]
 host = jp-bgp.tyo.lg.kuaichedao.xyz
+{% endif %}
 
 ++ linode-jp
 menu = [JP] Linode (Tokyo)
 title = [JP] Linode - Tokyo, Japan [speedtest.tokyo2.linode.com]
 host = speedtest.tokyo2.linode.com
 
-{% if not smokeping_lite %}
 ++ shockhosting-jp
 menu = [JP] Shock Hosting
 title = [JP] Shock Hosting @ Host Universal - Tokyo, Japan [jp-lg.shockhosting.net]
 host = jp-lg.shockhosting.net
 
+{% if not smokeping_lite %}
 ++ silicloud-tyo
 menu = [JP] SiliCloud
 title = [JP] SiliCloud - Tokyo, Japan [2400:38e0:1:417b::e4]

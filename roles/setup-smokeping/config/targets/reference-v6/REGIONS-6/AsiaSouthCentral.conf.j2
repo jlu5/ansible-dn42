@@ -25,10 +25,12 @@ menu = [SG] HostHatch
 title = [SG] HostHatch - Singapore [2406:ef80:2:87f1::1]
 host = 2406:ef80:2:87f1::1
 
+{% if not smokeping_lite %}
 ++ kuaichedao-sg
 menu = [SG] Kuaichedao
 title = [SG] Kuaichedao - Singapore [sg-bgp.sin.lg.kuaichedao.xyz]
 host = sg-bgp.sin.lg.kuaichedao.xyz
+{% endif %}
 
 ++ leaseweb-sg
 menu = [SG] LeaseWeb
@@ -52,12 +54,12 @@ menu = [SG] OVHcloud
 title = [SG] OVHcloud - Singapore [sgp.proof.ovh.net]
 host = sgp.proof.ovh.net
 
-{% if not smokeping_lite %}
 ++ shockhosting-sg
 menu = [SG] Shock Hosting
 title = [SG] Shock Hosting @ Host Universal - Singapore [sg-lg.shockhosting.net]
 host = sg-lg.shockhosting.net
 
+{% if not smokeping_lite %}
 ++ starrydns-sg
 menu = [SG] StarryDNS
 title = [SG] StarryDNS - Singapore [2403:ad80:a7:7e8::ffff]

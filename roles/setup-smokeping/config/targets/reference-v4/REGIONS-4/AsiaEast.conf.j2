@@ -32,10 +32,12 @@ menu = [JP] HostHatch
 title = [JP] HostHatch - Tokyo, Japan [lg.tok.hosthatch.com]
 host = lg.tok.hosthatch.com
 
+{% if not smokeping_lite %}
 ++ kuaichedao-jp
 menu = [JP] Kuaichedao
 title = [JP] Kuaichedao @ Eons Data - Tokyo, Japan [jp-bgp.tyo.lg.kuaichedao.xyz]
 host = jp-bgp.tyo.lg.kuaichedao.xyz
+{% endif %}
 
 ++ leaseweb-jp
 menu = [JP] LeaseWeb
@@ -52,12 +54,14 @@ host = speedtest.tokyo2.linode.com
 menu = [JP] Oracle Cloud
 title = [JP] Oracle Cloud - Tokyo, Japan [objectstorage.ap-tokyo-1.oci.oraclecloud.com]
 host = objectstorage.ap-tokyo-1.oci.oraclecloud.com
+{% endif %}
 
 ++ shockhosting-jp
 menu = [JP] Shock Hosting
 title = [JP] Shock Hosting @ Host Universal - Tokyo, Japan [jp-lg.shockhosting.net]
 host = jp-lg.shockhosting.net
 
+{% if not smokeping_lite %}
 ++ silicloud-tyo_0
 menu = [JP] SiliCloud
 title = [JP] SiliCloud - Tokyo, Japan [lg-global-tyo01-jp.silicloud.com]
