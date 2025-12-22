@@ -149,19 +149,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-kioubit
-  port: 23914
-  remote: us2.g-load.eu:21080
-  wg_pubkey: 6Cylr9h1xFduAO+5nyXhFI1XJ0+Sw9jCpCDvcqErF1s=
-  peer_v4: 172.20.53.98
-  peer_v6: fe80::ade0
-  bgp:
-    asn: 4242423914
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-routedbits
   port: 20207
   remote: router.tor1.routedbits.com:51080
