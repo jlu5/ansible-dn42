@@ -78,7 +78,7 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-as42424200
+- name: dn42-cow
   port: 23222
   remote: cow.computer:51852
   wg_pubkey: FMqnPe0y67hTl5ppPp/g3KrGtcM7KGUCf2ZHa3omOio=
