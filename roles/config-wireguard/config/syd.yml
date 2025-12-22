@@ -180,3 +180,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-iedon
+  port: 22189
+  remote: au-syd.dn42.iedon.net:57046
+  wg_pubkey: Yl8pmNGEmxI8drpE0e2GeLRhFpd94Bg82COzbCWl0go=
+  peer_v4: null
+  peer_v6: fe80::2189:126
+  bgp:
+    asn: 4242422189
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
