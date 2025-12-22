@@ -145,6 +145,7 @@ igp_neighbours:
   ymq3: !!set
     ymq: null
     ymq2: null
+    yvr: null
   yvr: !!set
     ash: null
     atl: null
@@ -155,6 +156,7 @@ igp_neighbours:
     tyo: null
     tyo2: null
     ymq: null
+    ymq3: null
 igp_wg_ports:
   ams:
     chi: 30011
@@ -314,12 +316,12 @@ igp_wg_ports:
     sjc: 30042
     ymq: 30034
     ymq3: 30046
-    yvr: 30033
   ymq3:
     ams: 30018
     lon: 30019
     ymq: 30022
     ymq2: 30046
+    yvr: 30033
   yvr:
     ash: 30061
     atl: 30078
@@ -333,5 +335,5 @@ igp_wg_ports:
     tyo: 30015
     tyo2: 30051
     ymq: 30007
-    ymq2: 30033
+    ymq3: 30033
 next_port: 30079
