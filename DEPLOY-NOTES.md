@@ -28,4 +28,5 @@ These flags can be enabled using `-e <flagname>=true` on the Ansible CLI.
 
 - `skip_wg_restart`: skip restarting all changed WireGuard tunnels
    - This can reduce noise if insignificant changes are made to the WireGuard config template
-- `igpping_force`: force [`igpping`](scripts/igpping/) to recalculate latencies for configured neighbour nodes
+- `skip_wg_dn42_peers`: skip templating interfaces for dn42 peers
+- `igpping_force`: force [`igpping`](scripts/igpping/) to recalculate latencies for configured neighbours

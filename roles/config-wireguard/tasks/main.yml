@@ -5,7 +5,7 @@
     mode: "0600"
     owner: root
     group: root
-  loop: "{{ wg_peers_all }}"
+  loop: "{{ wg_peers_internal if (skip_wg_dn42_peers|default(False)) else wg_peers_all }}"
   loop_control:
     loop_var: peer_info
   register: wg_interface_tmpl
