@@ -50,7 +50,9 @@ def write_costs(hosts, results, overwrite):
             if not output_text.endswith('\n'):
                 f.write("\n")
 
-def calc_costs(fping_output):
+_MIN_RTT = 1
+_MAX_RTT = 65535
+def calc_costs(fping_output) -> dict[str, int]:
     results = {}
     # fping aggregate lines look like this:
     # "192.168.1.102 : 0.316 0.281 - 132 0.242 0.403 0.319 0.336 0.290 0.457"
@@ -71,11 +73,8 @@ def calc_costs(fping_output):
         if n_success:
             rtt_avg = int(rtt_sum / n_success)
             rtt_avg += CONFIG.getint(CONFIG.default_section, "BaseCost")
-        else:
-            rtt_avg = 65535
-        rtt_avg += CONFIG.getint(CONFIG.default_section, "BaseCost")
-        # Clamp the result to 1-65535
-        results[host] = max(1, min(65535, rtt_avg+penalty))
+            # Clamp the result to 1-65535
+            results[host] = max(_MIN_RTT, min(_MAX_RTT, rtt_avg+penalty))
 
     return results
 

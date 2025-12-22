@@ -1,0 +1,4 @@
+igpping_ping_count: 5
+igpping_lost_penalty: 100
+igpping_base_cost: 10
+igpping_fallback_cost: 10000

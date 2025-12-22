@@ -5,7 +5,7 @@ area 0 {
 {% for host in igp_neighbours.get(inventory_hostname, []) | sort %}
     interface "igp-{{ host }}" {
 {% if (igpping_override | default({})).get(host) %}
-        cost {{ igpping_override[host] + (igpping_base_cost | default(10)) }};
+        cost {{ igpping_override[host] }};
 {% else %}
         cost
         include "{{ automation_root_dir }}/igpping/rxcost/{{ hostvars[host]['ansible_host'] }}.conf";;
