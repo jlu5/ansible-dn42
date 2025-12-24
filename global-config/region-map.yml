@@ -1,0 +1,11 @@
+dn42_region_map:
+  EU: 41
+  EU2: 41
+  NAEast: 42
+  NASoutheast: 42
+  NACentral: 43
+  NAWest: 44
+  NANorthwest: 44
+  AsiaSouthCentral: 51
+  AsiaEast: 52
+  Oceania: 53

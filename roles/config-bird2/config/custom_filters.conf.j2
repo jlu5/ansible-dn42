@@ -176,11 +176,6 @@ function ebgp_export_filter() {
     if (bgp_path.len = 0) then {
         bgp_large_community.add((OWNAS, LC_ORIGIN_NODEID, NODEID));
     }
-    if source ~ [RTS_STATIC, RTS_DEVICE] then {
-{% for region_tag in dn42_regions[1:] %}
-        bgp_community.add((64511, {{ region_tag }}));
-{% endfor %}
-    }
 };
 
 function ibgp_import_filter() {

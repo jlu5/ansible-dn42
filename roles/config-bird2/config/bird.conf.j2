@@ -4,7 +4,7 @@ define OWNAS = {{ ownas }};
 define OWNIP = {{ ownip }};
 define OWNIPv6 = {{ ownip6 }};
 
-define DN42_REGION = {{ dn42_regions[0] }};
+define DN42_REGION = {{ dn42_region_map[region] }};
 
 hostname "{{ public_host | default(ansible_host) }}";
 
