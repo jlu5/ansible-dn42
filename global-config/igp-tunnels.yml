@@ -67,6 +67,7 @@ igp_neighbours:
     chi: null
     dal: null
     mum: null
+    sgp: null
     sto: null
     ymq: null
   mum: !!set
@@ -79,6 +80,7 @@ igp_neighbours:
   sgp: !!set
     ams: null
     hkg: null
+    lon: null
     mum: null
     sjc: null
     syd: null
@@ -237,6 +239,7 @@ igp_wg_ports:
     dal: 30058
     hkg: 30045
     mum: 30036
+    sgp: 30079
     sto: 30013
     ymq: 30009
     ymq3: 30019
@@ -250,6 +253,7 @@ igp_wg_ports:
   sgp:
     ams: 30043
     hkg: 30032
+    lon: 30079
     mum: 30044
     sjc: 30028
     syd: 30029
@@ -336,4 +340,4 @@ igp_wg_ports:
     tyo2: 30051
     ymq: 30007
     ymq3: 30033
-next_port: 30079
+next_port: 30080
