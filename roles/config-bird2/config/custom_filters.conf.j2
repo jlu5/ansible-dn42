@@ -150,9 +150,8 @@ function ebgp_import_filter()
     }
 
     # Strip internal communities from incoming routes before processing
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION, 41..53)]);
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 112..127)]);
-    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, 33..39)]);
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_REGION, *)]);
+    bgp_large_community.delete([(OWNAS, LC_ORIGIN_NODEID, *)]);
 
     prefer_cold_potato();
     handle_special_cases();
