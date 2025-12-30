@@ -1108,3 +1108,17 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-ducky
+  port: 20347
+  remote: 2001:470:7388::1:62290  # que.trolling.win
+  wg_pubkey: DUcK8GIr5PJr28dQ7vQOI5o5KVqQWVz2TxvBENxrvXE=
+  peer_v4: null
+  peer_v6: fe80::5115
+  wg_mtu: 1280
+  bgp:
+    asn: 4242420347
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
