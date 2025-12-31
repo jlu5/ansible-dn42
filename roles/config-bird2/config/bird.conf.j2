@@ -6,7 +6,11 @@ define OWNIPv6 = {{ ownip6 }};
 
 define DN42_REGION = {{ dn42_region_map[region] }};
 
+{% if "dn42routers" in group_names %}
 hostname "{{ public_host | default(ansible_host) }}";
+{% else %}
+hostname "{{ inventory_hostname }}-int";
+{% endif %}
 
 # For bird-exporter integration
 timeformat base     iso long;
