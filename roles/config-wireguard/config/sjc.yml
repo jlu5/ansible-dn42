@@ -259,10 +259,10 @@ wg_peers:
 
 - name: dn42-burble
   port: 22601
-  remote: dn42-us-fre1.burble.com:21080
-  wg_pubkey: HbKhgIzeXmLPk0rT98SDbWwkpBqIvtw1gfRZtZmXxEU=
+  remote: dn42-us-lax1.burble.com:21080
+  wg_pubkey: fCINJ4w+o946FUSBUJoqso12SOKWMJYxJjTQw7HD/lQ=
   peer_v4: null
-  peer_v6: fe80::42:2601:36:1
+  peer_v6: fe80::42:2601:2a:1
   bgp:
     asn: 4242422601
     ipv4: true
