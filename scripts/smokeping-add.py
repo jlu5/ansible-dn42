@@ -34,6 +34,7 @@ IP6_RE = re.compile(
 REQUESTS_HEADERS = {
     'Accept': 'text/*'
 }
+
 def scrape_ips(url, force_dns=False, maxsize=65536):
     url_parts = urllib.parse.urlparse(url)
     netloc = url_parts.netloc or url
@@ -66,29 +67,27 @@ def scrape_ips(url, force_dns=False, maxsize=65536):
         text += chunk.decode('utf-8', 'ignore')
         total_length += len(text)
 
-    for m_ipv4 in IP4_RE.finditer(text):
-        ipv4 = m_ipv4.group(0)
-        ipaddr = ipaddress.ip_address(ipv4)
-        if not ipaddr.is_global:
-            continue
-        print(f'{ipv4} ASN info:', get_ipinfo(ipv4))
-        if ipaddr in dns_results:
-            ipv4 = netloc
-        break
-    for m_ipv6 in IP6_RE.finditer(text):
-        ipv6 = m_ipv6.group(0)
+    def _try_parse_ip(ipstr):
         try:
-            ipaddr = ipaddress.ip_address(ipv6)
+            ipaddr = ipaddress.ip_address(ipstr)
             if not ipaddr.is_global:
-                continue
-            print(f'{ipv6} ASN info:', get_ipinfo(ipv6))
+                return None
+            print(f'{ipstr} ASN info:', get_ipinfo(ipstr))
             if ipaddr in dns_results:
-                ipv6 = netloc
+                return netloc
+            return ipaddr
         except ValueError as e:
-            print(f'Skipping invalid v6 IP: {ipv6}, {e}')
-            ipv6 = None
-        else:
+            print(f'Skipping invalid IP: {ipstr}, {e}')
+            return None
+
+    for m_ipv4 in IP4_RE.finditer(text):
+        if ipv4 := _try_parse_ip(m_ipv4.group(0)):
             break
+
+    for m_ipv6 in IP6_RE.finditer(text):
+        if ipv6 := _try_parse_ip(m_ipv6.group(0)):
+            break
+
     assert ipv4 or ipv6
     return ipv4, ipv6
 
