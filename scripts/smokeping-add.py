@@ -122,6 +122,8 @@ def fmt_smokeping(entry_name, address, isp, country, province, city, levels=2):
             country_display = 'China'
         elif country == 'RU':
             country_display = 'Russia'
+        elif country == 'KR':
+            country_display = 'Korea'
         else:
             country_display = getattr(pycountry_country, 'common_name', pycountry_entry.name)
         if country == 'SG':
