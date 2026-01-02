@@ -225,3 +225,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-bingxin
+  port: 23374
+  remote: sg01.dn42.baka.pub:21080
+  wg_pubkey: O3zvtZQNT6InSXgYDloIuQ4jP6PHO06WtsKz6coylBs=
+  peer_v4: null
+  peer_v6: fe80::2999:227
+  bgp:
+    asn: 4242423374
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
