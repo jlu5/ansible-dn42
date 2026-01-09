@@ -2,12 +2,20 @@
 menu = dn42
 title = dn42 Services
 
-{% include 'targets/dn42-dns.conf.j2' %}
-
 {% import 'smokeping-helpers.j2' as helpers %}
 {# For consistency, keep this list sorted by ASN - entries without the asn key
 are labelled as anycast and go first #}
 {% set dn42_dests = {
+    'a0_dns': {
+        'desc': 'a0 DNS',
+        'host4': '172.20.0.53',
+        'host6': 'fd42:d42:d42:54::1'
+    },
+    'a3_dns': {
+        'desc': 'a3 DNS',
+        'host4': '172.23.0.53',
+        'host6': 'fd42:d42:d42:53::1'
+    },
     'wiki_dn42': {
         'desc': 'dn42 Wiki',
         'host4': '172.23.0.80',
@@ -46,9 +54,9 @@ are labelled as anycast and go first #}
         'host': 'map.dn42',
     },
     'grc': {
-        'asn': 4242422601,
+        'asn': 4242420123,
         'desc': 'dn42 GRC',
-        'host6': 'collector.dn42',
+        'host': 'collector.dn42',
     },
     'bandura': {
         'asn': 4242422923,
