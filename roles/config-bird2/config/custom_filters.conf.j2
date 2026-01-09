@@ -94,18 +94,18 @@ function prefer_cold_potato()
 }
 
 # Special cases I've added for route optimization, your mileage may vary
-function handle_special_cases()
-    bool is_anycast;
-{
+function handle_special_cases() {
     # 2022-12-13: work around ghost routes; paths to well-connected peers should not need to travel through ICVPN
     if (bgp_path ~ [= * [65043, 65026, 65022, 65024] * [4242420101, 64719, 4242420119, 4242420197, 4242422923] * =]) then {
         reject;
     }
 
-    is_anycast = (net.type = NET_IP4 && net.len = 32) || (net.type = NET_IP6 && net.len = 64);
     # Cold potato routing for selected EU-origin nets
     if (DN42_REGION != 41 && bgp_path ~
             [= * [4242420101, 65043, 64654, 4242421337, 65026] * =]) then {
+        bgp_med = bgp_med + 20;
+    }
+    if (DN42_REGION != 41 && (net = 172.20.0.179/32 || net = fd42:d42:d42:179::/64)) then {
         bgp_med = bgp_med + 20;
     }
 
