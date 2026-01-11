@@ -1,7 +1,7 @@
 - name: Set configuration variables
   set_fact:
     _bird_lg_go_dir: "{{ automation_root_dir }}/bird-lg-go"
-    _bird_lg_go_version: 1.3.5
+    _bird_lg_go_version: 1.4.2
 
 - name: Create bird-lg-go directory
   file:
@@ -13,7 +13,7 @@
     # FIXME: this should be more flexible with architectures
     url: "https://github.com/xddxdd/bird-lg-go/releases/download/v{{ _bird_lg_go_version }}/bird-lg-go-v{{ _bird_lg_go_version }}-linux-amd64.tar.gz"
     dest: "{{ _bird_lg_go_dir }}/bird-lg-go.tar.gz"
-    checksum: "md5:c1286bdfc8e8651ad09a26313c7731f8"
+    checksum: "md5:7a47f22ea68fc8b505a2f4dfbe6d5fb2"
     mode: "0644"
 
 - name: Extract bird-lg-go (frontend) binary package
@@ -28,7 +28,7 @@
     # FIXME: this should be more flexible with architectures
     url: "https://github.com/xddxdd/bird-lg-go/releases/download/v{{ _bird_lg_go_version }}/bird-lgproxy-go-v{{ _bird_lg_go_version }}-linux-amd64.tar.gz"
     dest: "{{ _bird_lg_go_dir }}/bird-lgproxy-go.tar.gz"
-    checksum: "md5:449e6d6647d16c8d4231a77003cc2013"
+    checksum: "md5:68f8a206566ea7a52a24336ef7e58331"
     mode: "0644"
 
 - name: Extract bird-lgproxy-go binary package
