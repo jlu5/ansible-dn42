@@ -513,3 +513,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-timxzhao
+  port: 23388
+  remote: hkg-01.v4.xinzhao.ca:21080
+  wg_pubkey: w/NC733+OV9jSuo7YWMelPITDEVoA5SaFt36UHhGC0o=
+  peer_v4: null
+  peer_v6: fe80::3388
+  bgp:
+    asn: 4242423388
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
