@@ -277,19 +277,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-stepnem
-  port: 21282
-  remote: jp-tyo1.dn42.smrk.net:21080
-  wg_pubkey: sgHPjsqtu7vh5U5T1DaXtinC9RHrWQpVzxm4qEnzpyw=
-  peer_v4: null
-  peer_v6: fe80::1282
-  bgp:
-    asn: 4242421282
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-lantian
   port: 22547
   remote: oracle-vm1.lantian.pub:21080
