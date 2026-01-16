@@ -1,0 +1,22 @@
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      recursive: false
+
+steps:
+- name: verify peers
+  image: python:3.14
+  commands:
+    - pip install PyYAML
+    - scripts/ci-verify.py .
+
+- name: unit tests
+  image: python:3.14
+  commands:
+    - pip install -r requirements.txt
+    - pytest -v
+  depends_on: [] # run in parallel
+
+when:
+  - event: [push, pull_request]

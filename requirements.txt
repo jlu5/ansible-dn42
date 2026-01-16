@@ -7,3 +7,4 @@ pycountry
 PyYAML
 requests
 ruamel.yaml
+pytest
