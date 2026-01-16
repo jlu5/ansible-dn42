@@ -25,10 +25,12 @@ menu = [US/IL] HostHatch
 title = [US/IL] HostHatch - Chicago, IL, US [lg.chi.hosthatch.com]
 host = lg.chi.hosthatch.com
 
+{% if not smokeping_lite %}
 ++ linode-chi
 menu = [US/IL] Linode @ Akamai
 title = [US/IL] Linode @ Akamai - Chicago, IL, US [speedtest.chicago.linode.com]
 host = speedtest.chicago.linode.com
+{% endif %}
 
 ++ nexeon
 menu = [US/IL] Nexeon
@@ -36,21 +38,23 @@ title = [US/IL] Nexeon - Chicago, IL, US [lg.chi1.as20278.net]
 host = lg.chi1.as20278.net
 
 {% if not smokeping_lite %}
-++ nuyek
-menu = [US/IL] Nuyek
-title = [US/IL] Nuyek - Highland, IL, US [lg.nuyek.com]
-host = lg.nuyek.com
-
 ++ psychz-chi
 menu = [US/IL] Psychz
 title = [US/IL] Psychz - Chicago, IL, US [lg.chi.psychz.net]
 host = lg.chi.psychz.net
+
+++ quickpacket-chi
+menu = [US/IL] QuickPacket
+title = [US/IL] QuickPacket - Chicago, IL, US [lg.ord.quickpacket.com]
+host = lg.ord.quickpacket.com
+{% endif %}
 
 ++ tnahosting
 menu = [US/IL] TNAHosting
 title = [US/IL] TNAHosting @ GigeNET - Chicago, IL, US [lg.chi2.tnahosting.net]
 host = lg.chi2.tnahosting.net
 
+{% if not smokeping_lite %}
 ++ vultr-chi
 menu = [US/IL] Vultr
 title = [US/IL] Vultr - Chicago, IL, US [il-us-ping.vultr.com]
@@ -126,11 +130,6 @@ host = lg.dal.hosteons.com
 menu = [US/TX] Hosting Bot
 title = [US/TX] Linveo @ Hosting Bot - Dallas, TX, US [lg-texas.linveo.com]
 host = lg-texas.linveo.com
-
-++ khanwebhost-tx
-menu = [US/TX] KhanWebHost
-title = [US/TX] KhanWebHost - Houston, TX, US [64.112.124.13]
-host = 64.112.124.13
 
 ++ leveloneservers-dal
 menu = [US/TX] LevelOneServers
