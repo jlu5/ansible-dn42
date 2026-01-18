@@ -12,6 +12,7 @@ title = AS4242421080 Nodes
 {% set _smokeping_add_v6 = _smokeping_local_has_v6 and not (hostvars[host].v4_only | default(False)) %}
 {% set _smokeping_host_v4 = hostvars[host].public_host_v4 | default(hostvars[host].public_host) | default(hostvars[host].ansible_host) %}
 {% set _smokeping_host_v6 = hostvars[host].public_host_v6 | default(hostvars[host].public_host) | default(hostvars[host].ansible_host) %}
+{% set _smokeping_add_int = hostvars[host].get('ownip', '') | length > 0 %}
 {% if _smokeping_add_v4 %}
 
 ++ {{ _smokeping_id }}
@@ -29,6 +30,7 @@ title = {{ _smokeping_id }} - {{ _server_isp }} - {{ _smokeping_loc }} (IPv6) [{
 host = {{ _smokeping_host_v6 }}
 hide = yes
 {% endif %}
+{% if _smokeping_add_int %}
 
 {# ping via dn42 (hidden) #}
 ++ {{ _smokeping_id }}_int
@@ -36,11 +38,12 @@ menu = {{ _smokeping_id }} - internal
 title = {{ _smokeping_id }} - {{ _server_isp }} - {{ _smokeping_loc }} (internal) [{{hostvars[host].ownip}}]
 host = {{ hostvars[host].ownip }}
 hide = yes
+{% endif %}
 
 ++ {{ _smokeping_id }}_combined
 menu = {{ _smokeping_id }} - {{ _server_isp }}
 title = {{ _smokeping_id }} - {{ _server_isp }} - {{ _smokeping_loc }}
-host = {% if _smokeping_add_v4 %}/nodes/{{_smokeping_id}}{% endif %}{% if _smokeping_add_v6 %} /nodes/{{_smokeping_id}}_v6{% endif %} /nodes/{{_smokeping_id}}_int
+host = {% if _smokeping_add_v4 %}/nodes/{{_smokeping_id}}{% endif %}{% if _smokeping_add_v6 %} /nodes/{{_smokeping_id}}_v6{% endif %} {% if _smokeping_add_int %}/nodes/{{_smokeping_id}}_int{% endif %}
 {% endmacro %}
 
 {%- for host in groups['all'] %}
