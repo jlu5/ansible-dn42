@@ -549,19 +549,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-jasonxu
-  port: 23658
-  remote: 23.178.72.73:21080
-  wg_pubkey: uA0q51QKx3JoU6me/Q1IW6Nu/IwS9nIdKk+XydhM1S4=
-  peer_v4: null
-  peer_v6: fd4e:d0:d38d:f7d1::1
-  bgp:
-    asn: 4242423658
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-cmcc
   port: 21686
   remote: null

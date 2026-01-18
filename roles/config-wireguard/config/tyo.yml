@@ -52,27 +52,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-yuuta
-  port: 52980
-  remote: "tyo1.jp.dn42.yuuta.moe:21080"
-  wg_pubkey: "4O3EO93PdKwo37UuKVmtXmTGh/tSJbQBcZJc+Yh3XRw="
-  wg_presharedkey: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    63643033623733346561643137326366613736366233666638303331333664393132613430363730
-    3766656235363735636362643265616437336437656332340a383337656231316631323434363637
-    33343234333034653561663763613939373062393161393461343837333838326431653631303437
-    6235373838383630380a656638313338373563386464306265306332323061323131376463363937
-    64346162356161363636326432653562383735376261613661363032386163316332366530656332
-    3265643836323665333639306561346165666262353032343565
-  peer_v4: "172.23.105.2"
-  peer_v6: "fe80::2980"
-  bgp:
-    asn: 4242422980
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-iedon
   port: 22189
   remote: jp-tyo.dn42.kuu.moe:54764
@@ -263,19 +242,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-joenet
-  port: 20157
-  remote: tyo01.ke8jwh.com:31080
-  wg_pubkey: 8/TRCsEGBnmYwePBlnyajoPYSVoPJ46aNmH40mGAXFk=
-  peer_v4: null
-  peer_v6: fe80::157:236
-  bgp:
-    asn: 4242420157
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
 
 - name: dn42-lantian
   port: 22547

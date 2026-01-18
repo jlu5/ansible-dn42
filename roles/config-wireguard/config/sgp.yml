@@ -13,23 +13,6 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
-- name: dn42-moecast
-  port: 20604
-  remote: "sgp1.dn42.cas7.moe:21080"
-  wg_pubkey: "R8iyaSzF6xx/t4+1wKlYWZWyZOxJDCXlA2BE3OZnsAY="
-  peer_v4: "172.23.89.1"
-  peer_v6: "fe80::604"
-  local_v4: 172.20.229.127
-  local_v6: "fe80::1080:127"
-  wg_privkey: /etc/wireguard/privatekey_hkg
-  bgp:
-    asn: 4242420604
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    export_mode: prepend
-
 - name: dn42-imlonghao
   port: 21888
   remote: sg1.dn42.ni.sb:21080

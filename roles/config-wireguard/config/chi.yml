@@ -20,19 +20,6 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
-- name: dn42-nicholascw
-  port: 51288
-  remote: "chi2.sc00.org:21080"
-  wg_pubkey: "750WkOmYTh+gfrod2LRgKU46nkEJrWK2z6emynV+j3U="
-  peer_v4: "172.20.233.129"
-  peer_v6: "fe80::1288/64"
-  bgp:
-    asn: 4242421288
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-tech9
   peer_v4: 172.20.16.139
   peer_v6: fe80::1588
@@ -125,19 +112,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: false
-
-- name: dn42-9pfs
-  port: 22002
-  remote: null
-  wg_pubkey: /ejtL+zL6PGhwczGDXiBL0PoVxLk+K3YMAArwc+tcyI=
-  peer_v4: null
-  peer_v6: fe80::2002:2
-  bgp:
-    asn: 4242422002
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
 
 - name: dn42-scoopta
   port: 21197

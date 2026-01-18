@@ -515,19 +515,6 @@ wg_peers:
     mp_bgp: true
     export_mode: prepend
 
-- name: dn42-modzilla
-  port: 21909
-  remote: 23.88.107.9:51825
-  wg_pubkey: x1rsNq2U+DVeQCbLLlh58gE+fJbNCeDi6q+4AW3EFHY=
-  peer_v4: null
-  peer_v6: fe80::9656:d128:8652:64b7
-  bgp:
-    asn: 4242421909
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-c4tg
   peer_v4: null
   peer_v6: fe80::1411:1

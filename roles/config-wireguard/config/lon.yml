@@ -292,19 +292,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-xeiu
-  port: 21336
-  remote: fra1.dn42.xeiu.top:21080
-  wg_pubkey: Z5sN+emFAsZxrcpqcBnkww6X70FlHLRWkcuab4O7jzI=
-  peer_v4: 172.20.159.3
-  peer_v6: fe80::2:1336
-  bgp:
-    asn: 4242421336
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-alemal
   port: 21525
   remote: uk1.alemal.se:51080
@@ -343,20 +330,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-aerionclou
-  port: 22550
-  remote: bgp.aerioncloud.com:21080
-  wg_pubkey: s416rWuCTAakM7lwrcOfn+wSR3BGnUQl1OKisob7/TQ=
-  peer_v4: null
-  peer_v6: fe80::abc0
-  bgp:
-    asn: 4242422550
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-  wg_mtu: 1412
 
 - name: dn42-pixsal
   port: 21315

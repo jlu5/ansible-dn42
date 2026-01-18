@@ -96,19 +96,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-cmcc
-  port: 21686
-  remote: null
-  wg_pubkey: D4MBIR+HsCPeEGuPg1YziRe1RgaG7jaiTw4wmV8XZUY=
-  peer_v4: null
-  peer_v6: fe80::1686
-  bgp:
-    asn: 4242421686
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-sunnet
   port: 23088
   remote: hk1-hk.dn42.6700.cc:21080
@@ -228,19 +215,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-liekong
-  port: 20070
-  remote: hk.dn42.lie-kong.top:21080
-  wg_pubkey: 3Qhit0K7maW6oMVt57KUkWDiDfZ/OWOYwzu/fYrk6iE=
-  peer_v4: 172.20.53.34
-  peer_v6: fe80::0070:2
-  bgp:
-    asn: 4242420070
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: false
-
 - name: dn42-bitrate
   port: 23997
   remote: hk1.dn42.bitrate.studio:21080
@@ -249,19 +223,6 @@ wg_peers:
   peer_v6: fe80::3997
   bgp:
     asn: 4242423997
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
-- name: dn42-immtelecom
-  port: 22488
-  remote: 78d8826d-e062-4893-b5f4-8af06da3f0ea.immtel.com:21080
-  wg_pubkey: kY3JM2o4ABhez5V4G2WwDpQo8PrgnN7HG0VFobYFBi4=
-  peer_v4: null
-  peer_v6: 'fd46:1d76:e65e::'
-  bgp:
-    asn: 4242422488
     ipv4: true
     ipv6: true
     mp_bgp: true
@@ -305,19 +266,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: false
-
-- name: dn42-jasonxu
-  port: 23658
-  remote: 82.152.165.157:23377
-  wg_pubkey: L/ohOmR8NDe/sgaAI0md8RvT1lrPDZiLMny9QwLheAA=
-  peer_v4: null
-  peer_v6: fd4e:d0:d38d:68c1::1
-  bgp:
-    asn: 4242423658
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
 
 - name: dn42-alice8585
   port: 20387

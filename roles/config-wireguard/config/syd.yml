@@ -155,19 +155,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-afnooi
-  port: 22213
-  remote: au.iswall.eu:21080
-  wg_pubkey: Vzz20ZG7QMhZhmRIymGHo7VGMFLye4XVUOFOV2yztBQ=
-  peer_v4: null
-  peer_v6: fe80::ae:64ff:fe3a:4be1
-  bgp:
-    asn: 4242422213
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-9pfs
   port: 22002
   remote: null
