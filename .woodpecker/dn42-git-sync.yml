@@ -22,13 +22,13 @@ steps:
     - if git diff --exit-code; then echo "Exiting, no changes made"; exit 0; fi
     - git remote add fork git@git.dn42.dev:jlu5/dns-config.git
     - git fetch fork
+    - git config user.name 'highdef.network bot'
+    - git config user.email 'noc@highdef.network'
     - git commit . -m 'Update AS4242421080 delegation servers'
     # 2) If the change we're making is already in the fork, also skip pushing to avoid refreshing the PR unnecessarily
     - if ! git diff fork/ci-auto-update --exit-code; then git push -f fork HEAD:ci-auto-update; else echo "Skip pushing, remote branch is equal"; fi
   environment:
     GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=accept-new -i $HOME/.ssh/id_git_dn42
-    GIT_AUTHOR_NAME: highdef.network bot
-    GIT_AUTHOR_EMAIL: noc@highdef.network
     SSH_KEY:
       from_secret: git-dn42-ssh-key
 
