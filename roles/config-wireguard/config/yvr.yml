@@ -140,8 +140,8 @@ wg_peers:
 
 - name: dn42-timxzhao
   port: 23388
-  remote: yvr-01.xinzhao.ca:21080
-  wg_pubkey: RFvID+eRAIxo3bGV6Q9ARLEUAzEcS7Nx570GYUSV634=
+  remote: yvr-02.v4.xinzhao.ca:21080
+  wg_pubkey: XZ2BzPGn86Y+fJ69u5SNpdgruGeZSSfQxWB9t7/S518=
   peer_v4: null
   peer_v6: fe80::3388
   bgp:
