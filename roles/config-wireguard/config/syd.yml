@@ -180,3 +180,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-duststars
+  port: 21771
+  remote: akl1.exploro.one:32585
+  wg_pubkey: ezRFQbvWP//h3fXy5XZn11rDlO+2jZ/JyoCWt/CFtxw=
+  peer_v4: null
+  peer_v6: fe80::1771
+  bgp:
+    asn: 4242421771
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
