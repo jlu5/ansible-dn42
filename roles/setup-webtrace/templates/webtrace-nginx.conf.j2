@@ -3,7 +3,7 @@ upstream webtrace-backend {
     server unix:/run/webtrace.sock;
 }
 
-{% set _webtrace_server_name = public_host | default(ansible_host) %}
+{% set _webtrace_server_name = lookup('serverhost', inventory_hostname) %}
 {% set _webtrace_use_https = webtrace_https | default(true) %}
 server {
 {% if _webtrace_use_https %}

@@ -25,12 +25,12 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
 {% if serverdata.web_display_name | default('') %}
     ({{ serverdata.web_display_name }})
 {% endif %}
-[<a href="https://{{ serverdata.public_host | default(serverdata.ansible_host) }}/webtrace/">webtrace</a>]
+[<a href="https://{{ lookup('serverhost', host) }}/webtrace/">webtrace</a>]
 [<a href="https://lg.highdef.network/summary/{{ host }}/">looking glass</a>]
     {{ helpers.anchor(host) }}
 </h4>
 <ul>
-    <li><strong>Hostname</strong>: {{ serverdata.public_host | default(serverdata.ansible_host) }}
+    <li><strong>Hostname</strong>: {{ lookup('serverhost', host) }}
 {% if serverdata.v6_only|default(False) %}
     <span class="info-warn">(Clearnet IPv6 only)</span>
 {% elif serverdata.v4_only|default(False) %}

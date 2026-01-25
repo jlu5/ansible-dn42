@@ -10,8 +10,8 @@ title = AS4242421080 Nodes
 {# Only add a ping target if the src and target host both support the AF type #}
 {% set _smokeping_add_v4 = _smokeping_local_has_v4 and not (hostvars[host].v6_only | default(False)) %}
 {% set _smokeping_add_v6 = _smokeping_local_has_v6 and not (hostvars[host].v4_only | default(False)) %}
-{% set _smokeping_host_v4 = hostvars[host].public_host_v4 | default(hostvars[host].public_host) | default(hostvars[host].ansible_host) %}
-{% set _smokeping_host_v6 = hostvars[host].public_host_v6 | default(hostvars[host].public_host) | default(hostvars[host].ansible_host) %}
+{% set _smokeping_host_v4 = lookup('serverhost', host, aftype=4, resolve=False) %}
+{% set _smokeping_host_v6 = lookup('serverhost', host, aftype=6, resolve=False) %}
 {% set _smokeping_add_int = hostvars[host].get('ownip', '') | length > 0 %}
 {% if _smokeping_add_v4 %}
 
