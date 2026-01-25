@@ -11,7 +11,7 @@ c_reset="$(tput sgr0)"
 
 print_configured_host() {
     echo -n "  Configured Endpoint: "
-    grep -oP "(?<=Endpoint = ).*(?=\\:[0-9]{0,5})" "/etc/wireguard/$1.conf" || echo "NONE"
+    grep -oP "(?<=endpoint )(\S+)" "/opt/dn42/interfaces/42${1}" || echo "NONE"
 }
 
 declare -A iface_for_ip;
