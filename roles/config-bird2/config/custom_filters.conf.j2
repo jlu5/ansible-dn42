@@ -105,7 +105,9 @@ function handle_special_cases() {
             [= * [4242420101, 65043, 64654, 4242421337, 65026] * =]) then {
         bgp_med = bgp_med + 20;
     }
-    if (DN42_REGION != 41 && (net = 172.20.0.179/32 || net = fd42:d42:d42:179::/64)) then {
+
+    # Force GRC routes to Amsterdam to lower the number of servers they traverse
+    if (NODEID != 117 && (net = 172.20.0.179/32 || net = fd42:d42:d42:179::/64)) then {
         bgp_med = bgp_med + 20;
     }
 
