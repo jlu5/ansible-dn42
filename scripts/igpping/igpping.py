@@ -59,7 +59,7 @@ def calc_costs(fping_output) -> dict[str, int]:
     # '-' means timeout, everything else is RTT in milliseconds
     for line in fping_output.decode('utf-8').splitlines():
         print(line)
-        host, rtt_entries = line.split(": ")
+        host, rtt_entries = line.rsplit(": ", 1)
         host = host.strip()  # This can be right padded if there are many hosts
         penalty = 0
         rtt_sum = 0
