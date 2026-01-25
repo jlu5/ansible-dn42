@@ -15,6 +15,7 @@ Most settings in [`hosts.yml`](hosts.yml) should be self documenting. Here are s
 - `igp_upstreams`: specifies (bidirectional) direct neighbours for the node, to connect using an IGP.
   - I use a convention of writing nodes that appear earlier in `hosts.yml` (US > EU > APAC > private) as *upstreams* for nodes that appear later, but doing so is not required.
   - These tunnels are enumerated with [`scripts/enumerate-igp-tunnels.py`](scripts/enumerate-igp-tunnels.py) and templated in the [`config-wireguard` role](roles/config-wireguard/tasks).
+- `igp_wg_aftype[server1][server2]`: specifies the AF type (4, 6) that server1 should use to connect to server2
 - `ibgp_rr_upstreams`: for private nodes, configures iBGP route reflector upstreams.
     - These sessions are needed to broadcast parts of the network that are not distributed in an IGP, such as Anycast DNS
     - Not supported for regular nodes in the `dn42routers` group, as these use a full mesh iBGP.

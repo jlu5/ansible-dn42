@@ -29,7 +29,7 @@
     peer_info:
       name: "igp-{{ igp_node }}"
       port: "{{ igp_wg_ports[inventory_hostname][igp_node] }}"
-      remote: "{{ hostvars[igp_node]['ansible_host'] }}:{{ igp_wg_ports[inventory_hostname][igp_node] }}"
+      remote: "{{ lookup('serverhost', igp_node) }}:{{ igp_wg_ports[inventory_hostname][igp_node] }}"
       wg_pubkey: "{{ hostvars[igp_node]['wg_pubkey'] }}"
       peer_v4: "{{ hostvars[igp_node]['link_local_ip4'] }}"
       peer_v6: "{{ hostvars[igp_node]['link_local_ip6'] }}"

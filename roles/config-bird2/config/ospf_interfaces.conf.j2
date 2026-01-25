@@ -8,7 +8,7 @@ area 0 {
         cost {{ igpping_override[host] }};
 {% else %}
         cost
-        include "{{ automation_root_dir }}/igpping/rxcost/{{ hostvars[host]['ansible_host'] }}.conf";;
+        include "{{ automation_root_dir }}/igpping/rxcost/{{ lookup('serverhost', host) }}.conf";;
 {% endif %}
         type ptp;
     };
