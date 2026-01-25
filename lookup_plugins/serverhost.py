@@ -42,15 +42,18 @@ class LookupModule(LookupBase):
     def run(self, terms: list[str], variables=None, aftype: AfType = None, resolve=True, **kwargs):
         assert variables
         hostvars = variables.get('hostvars')
+        inventory_hostname = variables.get('inventory_hostname')
 
         if hostvars is None:
             raise AnsibleError('hostvars not available')
+        if inventory_hostname is None:
+            raise AnsibleError('inventory_hostname not available')
 
         results = []
         for server in terms:
             if server not in hostvars:
                 raise AnsibleError(f'Server {server} not found in inventory')
-            if aftype is None:
+            if aftype is None and server != inventory_hostname:
                 aftype = variables.get('igp_wg_aftype', {}).get(server)
 
             endpoint = None
