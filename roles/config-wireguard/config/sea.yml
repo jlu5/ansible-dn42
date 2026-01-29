@@ -1,10 +1,136 @@
 wg_peers:
+- name: igp-yvrlab
+  port: 19999
+  wg_pubkey: "NkronPmAay/PQInqZ6Mn0EYk0GDeLIULY5VAV8egEjo="
+  peer_v4: null
+  local_v4: 169.254.108.76/31
+  peer_v6: fe80::364a:e89c:f980:6b2f
+
 - name: cl-roam
-  local_v4: 172.22.108.100/31
+  local_v4: 172.22.108.98/31
   local_v6_multi:
-  - fd86:bad:11b7:83::1/64
+  - fd86:bad:11b7:35:2::1/124
   # A dummy link local v6 is needed for BIRD to pick this up as an OSPF stub interface for IPv6
   - "{{ link_local_ip6 }}"
-  port: 19998
-  wg_pubkey: aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc=
+  port: 21080
+  multi:
+  - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
+    wg_allowedips: "172.22.108.99/32,fd86:bad:11b7:35:2::2/128"
   peer_v6: null
+
+- name: dn42-piggy
+  port: 22705
+  remote: sea1.node.piggy.moe:21080
+  wg_pubkey: DyiUEXYuE6TNhfqj4c3MZdUOrjAxs6BbRhjImF251WA=
+  peer_v4: null
+  peer_v6: fe80::4242:2705
+  bgp:
+    asn: 4242422705
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-routedbits
+  port: 20207
+  remote: router.sea1.routedbits.com:51080
+  wg_pubkey: /aY73VNAGQ7W+GersZUSO6PqHJV8nWKb12Op9EQzY3k=
+  peer_v4: null
+  peer_v6: fe80::207
+  bgp:
+    asn: 4242420207
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-colby
+  port: 22558
+  remote: us-pdx1.dn42.derix.au:21080
+  wg_pubkey: pEgl/q/fxrcdnqEur25ZKrIkOvoISDVBrU80R86jY1Q=
+  peer_v4: null
+  peer_v6: fe80::2558:2
+  bgp:
+    asn: 4242422558
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-fmepnet
+  port: 23703
+  remote: us-sea0.fmepnet.org:51827
+  wg_pubkey: vSbQKeo8VCL+8j3060zh9cvhCTf2pakOkcndeW0TBjY=
+  peer_v4: 172.20.159.235
+  peer_v6: fe80::3703:235
+  bgp:
+    asn: 4242423703
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
+
+- name: dn42-yuchow
+  remote: portal.405218.eu.org:60108
+  port: 21260
+  wg_pubkey: BHloE4+0aYsFeKzcAD47szCTIdCdq9EsXgjAOfarxwM=
+  peer_v4: null
+  peer_v6: fe80::abcd
+  bgp:
+    asn: 4242421260
+    extended_next_hop: true
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+
+- name: dn42-joenet
+  port: 20157
+  remote: sea01.ke8jwh.com:31080
+  wg_pubkey: 9vBrb8Jq3WmifgCjncMzLZvdkoDi3FoSvHjJGsUMwGg=
+  peer_v4: null
+  peer_v6: fe80::157:240
+  bgp:
+    asn: 4242420157
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+
+- name: dn42-kellertk
+  port: 20057
+  remote: home.tompkel.net:13244
+  wg_pubkey: erQef80xClj/NLRMoPPmzJIgzBy7bKt5ZJO3NSJqRQk=
+  peer_v4: 172.22.159.12
+  peer_v6: fd48:ce37:a00f:4fff::1
+  bgp:
+    asn: 4242420057
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
+
+- name: dn42-iris
+  port: 21023
+  remote: dls-01.node.svc.moe:21080
+  wg_pubkey: NWNxHIL6Fdwk8AkflKAlpdpeo8l3fYyMZH+JcTug6iQ=
+  peer_v4: null
+  peer_v6: fe80::1023:2
+  bgp:
+    asn: 4242421023
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+
+- name: dn42-timxzhao
+  port: 23388
+  remote: yvr-02.v4.xinzhao.ca:21080
+  wg_pubkey: XZ2BzPGn86Y+fJ69u5SNpdgruGeZSSfQxWB9t7/S518=
+  peer_v4: null
+  peer_v6: fe80::3388
+  bgp:
+    asn: 4242423388
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
