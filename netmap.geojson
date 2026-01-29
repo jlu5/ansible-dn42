@@ -126,6 +126,21 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    -122.332071,
+                    47.606209
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#sea\" class=\"netmap-server-link\">Seattle, WA, US</a>",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     103.819836,
                     1.352083
                 ]
@@ -207,21 +222,6 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#ymq\" class=\"netmap-server-link\">Montreal, QC, CA</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -123.120738,
-                    49.282729
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#yvr\" class=\"netmap-server-link\">Vancouver, BC, CA</a>",
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
