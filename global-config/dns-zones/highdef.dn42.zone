@@ -15,8 +15,6 @@ ping IN A 172.22.108.3
 ping IN AAAA fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
 ping-ymq3 IN A 172.22.108.32
 ping-ymq3 IN AAAA fd86:bad:11b7:a332::1
-ping-lax IN A 172.22.108.48
-ping-lax IN AAAA fd86:bad:11b7:48::1
 routegraphs IN A 172.20.229.117
 routegraphs IN AAAA fd86:bad:11b7:117::1
 ns IN A 172.22.108.54

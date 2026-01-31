@@ -13,9 +13,6 @@ dns_records:
     "ping-ymq3":
       type: ansible_host_alias
       target: ymq3
-    "ping-lax":
-      type: ansible_host_alias
-      target: lax
     "routegraphs":
       type: ansible_host_alias
       target: ams

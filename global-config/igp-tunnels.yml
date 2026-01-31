@@ -37,7 +37,6 @@ igp_neighbours:
     ash: null
     atl: null
     dal: null
-    lax: null
     lon: null
     sea: null
     sjc: null
@@ -47,7 +46,6 @@ igp_neighbours:
     ash: null
     atl: null
     chi: null
-    lax: null
     lon: null
     sea: null
     sjc: null
@@ -59,10 +57,6 @@ igp_neighbours:
     sjc: null
     syd: null
     tyo: null
-  lax: !!set
-    chi: null
-    dal: null
-    sjc: null
   lon: !!set
     ams: null
     ash: null
@@ -106,7 +100,6 @@ igp_neighbours:
     chi: null
     dal: null
     hkg: null
-    lax: null
     sea: null
     sgp: null
     syd: null
