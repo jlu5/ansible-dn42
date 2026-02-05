@@ -20,6 +20,11 @@ title = [US/CA] Misaka Network - San Jose, CA, United States [us-sjc10.speed.mis
 host = us-sjc10.speed.misaka.one
 {% endif %}
 
+++ serverpoint-scl
+menu = [US/CA] ServerPoint (Santa Clara)
+title = [US/CA] ServerPoint.com - Santa Clara, CA, US [2607:3fc0:37::19]
+host = 2607:3fc0:37::19
+
 ++ vultr-sjo
 menu = [US/CA] Vultr (San Jose)
 title = [US/CA] Vultr - Silicon Valley [2001:19f0:ac00:126:5400:ff:fe01:7cd4]
@@ -32,6 +37,11 @@ title = [US/CA] xTom / V.PS - San Jose, United States [sjc.speedtest.v.ps]
 host = sjc.speedtest.v.ps
 {% endif %}
 
+++ advinservers-lax
+menu = [US/CA] Advin Servers (Los Angeles)
+title = [US/CA] Advin Servers - Los Angeles, CA, US [lg-lax.advinservers.com]
+host = lg-lax.advinservers.com
+
 ++ colocrossing-la
 menu = [US/CA] ColoCrossing (Los Angeles)
 title = [US/CA] DediRock @ ColoCrossing - Los Angeles, CA, US [2607:9d00:2000:7::1a5c:fc52]
@@ -42,10 +52,12 @@ menu = [US/CA] HostDare (Los Angeles)
 title = [US/CA] HostDare @ GSL Networks - Los Angeles, CA, US [2a14:640:2:02b1:0000:0000:0000:0001]
 host = 2a14:640:2:02b1:0000:0000:0000:0001
 
+{% if not smokeping_lite %}
 ++ hosteons-lax
 menu = [US/CA] hostEONS (Los Angeles)
 title = [US/CA] hostEONS @ Limestone Networks - Los Angeles, CA, US [2402:d0c0:11:6::1]
 host = 2402:d0c0:11:6::1
+{% endif %}
 
 ++ hosthatch-lax
 menu = [US/CA] HostHatch (Los Angeles)

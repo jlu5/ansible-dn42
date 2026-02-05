@@ -54,6 +54,13 @@ menu = [SG] OVHcloud
 title = [SG] OVHcloud - Singapore [sgp.proof.ovh.net]
 host = sgp.proof.ovh.net
 
+{% if not smokeping_lite %}
+++ serverpoint-sg
+menu = [SG] ServerPoint.com
+title = [SG] ServerPoint.com - Singapore [2607:3fc0:34::29]
+host = 2607:3fc0:34::29
+{% endif %}
+
 ++ shockhosting-sg
 menu = [SG] Shock Hosting
 title = [SG] Shock Hosting @ Host Universal - Singapore [sg-lg.shockhosting.net]
