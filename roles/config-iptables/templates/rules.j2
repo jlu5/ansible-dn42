@@ -4,10 +4,10 @@
 # - Tunnels to simple clients start with "cl"
 
 {% if aftype == 6 -%}
-{% set _default_interface = ansible_facts.default_ipv6.interface %}
+{% set _default_interface = ansible_facts.default_ipv6.interface | default('') %}
 {% set _dn42_allowed_ips = 'fd00::/8,ff00::/8,fe80::/64' %}
 {% else %}
-{% set _default_interface = ansible_facts.default_ipv4.interface %}
+{% set _default_interface = ansible_facts.default_ipv4.interface | default('') %}
 {% set _dn42_allowed_ips = '172.20.0.0/14,10.0.0.0/8,172.31.0.0/16,169.254.0.0/16,224.0.0.0/24' %}
 {% endif -%}
 -N DN42LOGREJECT
@@ -45,6 +45,7 @@
 -A INPUT -p tcp --dport 179 -i dn42+ -j ACCEPT
 -A INPUT -p tcp --dport 179 -i igp+ -j ACCEPT
 
+{% if _default_interface %}
 {# This is dynamically generated because I don't like having larger than needed port ranges open. #}
 {# Downside: more coupling in the code here. #}
 ## WireGuard - IGP links
@@ -77,6 +78,7 @@
 -A INPUT -p gre -s {{ gre_peer.remote }} -j ACCEPT
 {% endif %}
 {% endfor %}
+{% endif %}
 
 ## OSPF (internal only)
 -A INPUT -p ospf -i igp+ -j ACCEPT
