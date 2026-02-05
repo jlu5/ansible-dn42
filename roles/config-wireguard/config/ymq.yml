@@ -150,19 +150,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-routedbits
-  port: 20207
-  remote: router.tor1.routedbits.com:51080
-  wg_pubkey: +5TlmsmGyXgIAv4Ej8yTum0sHQ+PWNkhcznnC+lv12M=
-  peer_v4: null
-  peer_v6: fe80::207
-  bgp:
-    asn: 4242420207
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-colby
   port: 22558
   remote: us-nyc1.dn42.derix.au:21080
@@ -369,19 +356,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-cowgl
-  port: 23999
-  remote: yyz.node.cowgl.xyz:31080
-  wg_pubkey: XGIBvqoUOgb8IiLIWtO9JVNZc4SEpEAM1eWh26MtoRE=
-  peer_v4: 172.22.144.69
-  peer_v6: "fd36:62be:ef51:5::1"
-  bgp:
-    asn: 4242423999
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: false
 
 - name: dn42-ulti
   port: 20424
