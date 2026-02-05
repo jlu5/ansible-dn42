@@ -208,15 +208,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: cl-roam
-  local_v4: 172.22.108.102/31
-  local_v6: null
-  port: 19997
-  multi:
-  - wg_pubkey: "krMnDawVDAurrJqWkePFp1vE2zwK2vQy6ie6tGLcnX0="
-    wg_allowedips: "172.22.108.103/32"
-  peer_v6: null
-
 - name: dn42-cdubs
   port: 20566
   remote: dn19.tyo.surgebytes.com:31080

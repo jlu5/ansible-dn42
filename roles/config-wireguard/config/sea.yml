@@ -17,6 +17,7 @@ wg_peers:
   - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
     wg_allowedips: "172.22.108.99/32,fd86:bad:11b7:35:2::2/128"
   peer_v6: null
+  allow_clearnet: true
 
 - name: dn42-piggy
   port: 22705

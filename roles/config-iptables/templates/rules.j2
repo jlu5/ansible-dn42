@@ -4,8 +4,10 @@
 # - Tunnels to simple clients start with "cl"
 
 {% if aftype == 6 -%}
+{% set _default_interface = ansible_facts.default_ipv6.interface %}
 {% set _dn42_allowed_ips = 'fd00::/8,ff00::/8,fe80::/64' %}
 {% else %}
+{% set _default_interface = ansible_facts.default_ipv4.interface %}
 {% set _dn42_allowed_ips = '172.20.0.0/14,10.0.0.0/8,172.31.0.0/16,169.254.0.0/16,224.0.0.0/24' %}
 {% endif -%}
 -N DN42LOGREJECT
@@ -49,13 +51,13 @@
 {% for igp_neighbour in igp_neighbours.get(inventory_hostname, []) | sort %}
 {% set igp_wg_port = igp_wg_ports[inventory_hostname][igp_neighbour] %}
 # {{ igp_neighbour }}
--A INPUT -p udp --dport {{ igp_wg_port }} -i {{ ansible_default_ipv4.interface | default(ansible_default_ipv6.interface) }} -j ACCEPT
+-A INPUT -p udp --dport {{ igp_wg_port }} -i {{ _default_interface }} -j ACCEPT
 {% endfor %}
 
 {% macro _maybe_forward_rule(conf_block) -%}
-{% if conf_block.get('iptables_free_forward') -%}
--A FORWARD -i {{ conf_block.name }} -j ACCEPT
--A FORWARD -o {{ conf_block.name }} -j ACCEPT
+{% if conf_block.get('allow_clearnet') -%}
+-I FORWARD -i {{ conf_block.name }} -o {{ _default_interface }} -j ACCEPT
+-I FORWARD -i {{ _default_interface }} -o {{ conf_block.name }} -j ACCEPT
 {% endif -%}
 {% endmacro -%}
 
@@ -63,7 +65,7 @@
 {% for wg_peer in wg_peers|default([]) -%}
 {%- if wg_peer.get('port') -%}
 # {{ wg_peer.name }}
--A INPUT -p udp --dport {{ wg_peer['port'] }} -i {{ ansible_default_ipv4.interface | default(ansible_default_ipv6.interface)}} -j ACCEPT
+-A INPUT -p udp --dport {{ wg_peer['port'] }} -i {{ _default_interface }} -j ACCEPT
 {% endif -%}
 {{ _maybe_forward_rule(wg_peer) }}
 {%- endfor %}
