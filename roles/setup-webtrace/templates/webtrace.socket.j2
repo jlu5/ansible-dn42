@@ -3,6 +3,9 @@
 Description=webtrace gunicorn socket
 
 [Socket]
+{% if webtrace_port %}
+ListenStream={{ webtrace_port }}
+{% else %}
 ListenStream=/run/webtrace.sock
 # Our service won't need permissions for the socket, since it
 # inherits the file descriptor by socket activation
@@ -10,6 +13,7 @@ ListenStream=/run/webtrace.sock
 SocketUser=www-data
 # Optionally restrict the socket permissions even more.
 # SocketMode=600
+{% endif %}
 
 [Install]
 WantedBy=sockets.target

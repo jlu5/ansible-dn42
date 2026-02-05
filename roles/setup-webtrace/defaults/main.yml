@@ -1,1 +1,3 @@
 webtrace_venv_dir: "{{ automation_root_dir }}/webtrace-venv"
+webtrace_port: 0  # use unix socket by default
+webtrace_https: true

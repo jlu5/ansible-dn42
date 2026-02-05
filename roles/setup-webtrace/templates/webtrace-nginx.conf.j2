@@ -1,12 +1,15 @@
 {# See roles/upload-splash-site for more listeners #}
 upstream webtrace-backend {
+{% if webtrace_port %}
+    server 127.0.0.1:{{ webtrace_port }};
+{% else %}
     server unix:/run/webtrace.sock;
+{% endif %}
 }
 
-{% set _webtrace_server_name = lookup('serverhost', inventory_hostname) %}
-{% set _webtrace_use_https = webtrace_https | default(true) %}
+{% set _webtrace_server_name = webtrace_server_name | default(lookup('serverhost', inventory_hostname)) %}
 server {
-{% if _webtrace_use_https %}
+{% if webtrace_https %}
     listen 443 ssl;
     listen [::]:443 ssl;
     ssl_trusted_certificate /etc/letsencrypt/live/{{ _webtrace_server_name }}/chain.pem;
@@ -32,7 +35,7 @@ server {
     }
 }
 
-{% if _webtrace_use_https %}
+{% if webtrace_https %}
 server {
     listen 80;
     listen [::]:80;
