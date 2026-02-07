@@ -801,7 +801,7 @@ wg_peers:
 
 - name: dn42-cowgl
   port: 23999
-  remote: ams.node.cowgl.xyz:31080
+  remote: ams.node.cowgl.tech:31080
   wg_pubkey: sHPUV74X+hqUK5wFj3m5kCga0rlPCxImUBwZ/oLiEn4=
   peer_v4: 172.22.144.67
   peer_v6: fd36:62be:ef51:3::1

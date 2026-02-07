@@ -263,7 +263,7 @@ wg_peers:
 
 - name: dn42-cowgl
   port: 23999
-  remote: tyo.node.cowgl.xyz:31080
+  remote: tyo.node.cowgl.tech:31080
   wg_pubkey: mMGGxtEqsagrx1Raw57C2H3Stl6ch/cUuF7y08eVgBE=
   peer_v4: 172.22.144.65
   peer_v6: "fd36:62be:ef51:1::1"

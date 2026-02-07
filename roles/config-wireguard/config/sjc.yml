@@ -485,7 +485,7 @@ wg_peers:
 
 - name: dn42-cowgl
   port: 23999
-  remote: lax.node.cowgl.xyz:31080
+  remote: lax.node.cowgl.tech:31080
   wg_pubkey: jhOukGNAKHI8Ivn8uI1TS25n5ho/rVlKFfenGmwCVlg=
   peer_v4: 172.22.144.66
   peer_v6: "fd36:62be:ef51:2::1"
