@@ -225,6 +225,21 @@
                 "description": "+ Anycast DNS PoP<br>",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.383184,
+                    43.653226
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#yyz\" class=\"netmap-server-link\">Toronto, ON, CA</a>",
+                "description": "+ Anycast DNS PoP<br>",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
         }
     ]
 }
