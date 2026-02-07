@@ -1,4 +1,11 @@
 wg_peers:
+- name: igp-yvrlab
+  port: 19999
+  wg_pubkey: 3Tfb4WKNtT4fXGvdobXA5eNGfpCRWNug++TiCCrDVEQ=
+  peer_v4: null
+  local_v4: 169.254.108.70/31
+  peer_v6: fe80::dd37:dbe1:628d:b53e/64
+
 - name: dn42-routedbits
   port: 20207
   remote: router.tor1.routedbits.com:51080
@@ -24,3 +31,29 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: false
+
+- name: dn42-lezi
+  port: 23377
+  remote: ca1-yyz.peer.dn42.leziblog.com:21080
+  wg_pubkey: 3g3PDuwQCak26e760RurWm684Ur7CG3k+dwRsQgzyxU=
+  peer_v4: null
+  peer_v6: fe80::3377
+  bgp:
+    asn: 4242423377
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+
+- name: dn42-prefixlabs
+  port: 21240
+  remote: ca-01.prefixlabs.net:21080
+  wg_pubkey: GKUu2Jk49pStCQyK/YUDrGF02JsZhggQBSXk8KlxXAM=
+  peer_v4: 172.20.209.14
+  peer_v6: fe80::1240:5
+  bgp:
+    asn: 4242421240
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
