@@ -45,6 +45,11 @@
 -A INPUT -p tcp --dport 179 -i dn42+ -j ACCEPT
 -A INPUT -p tcp --dport 179 -i igp+ -j ACCEPT
 
+{% if ownas == "4242421080" %}
+# Only HTTP is supported for internal services
+-A INPUT -d {{ _dn42_allowed_ips }} -p tcp --dport 443 -j REJECT
+{% endif %}
+
 {% if _default_interface %}
 {# This is dynamically generated because I don't like having larger than needed port ranges open. #}
 {# Downside: more coupling in the code here. #}
