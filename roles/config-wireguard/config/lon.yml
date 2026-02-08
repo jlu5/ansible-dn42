@@ -1,11 +1,4 @@
 wg_peers:
-- name: igp-stub-lon03
-  port: 19998
-  remote: lon03.jlu5.com:19998
-  wg_pubkey: "nrSWF5TDKZKD9GaLR+iOehPZzC1OhUJBOf3h+Q/IuWY="
-  local_v4: 172.22.108.57/31
-  peer_v6: null
-
 - name: dn42-napster
   port: 51050
   remote: mcr1-uk.dn42.napshome.net:51080
