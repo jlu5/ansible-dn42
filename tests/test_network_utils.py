@@ -6,6 +6,7 @@ import unittest
 
 def import_from_path(module_name, file_path):
     spec = importlib.util.spec_from_file_location(module_name, file_path)
+    assert spec and spec.loader
     module = importlib.util.module_from_spec(spec)
     sys.modules[module_name] = module
     spec.loader.exec_module(module)
@@ -15,7 +16,7 @@ path = pathlib.Path(__file__).parent.parent / 'filter_plugins' / 'network_utils.
 network_utils = import_from_path('network_utils', path)
 
 class TestNetworkUtils(unittest.TestCase):
-    def test_peer_v4(self):
+    def test_peer_v4_single_ip(self):
         config = {
             'peer_v4': '172.22.108.5',
         }
@@ -24,6 +25,7 @@ class TestNetworkUtils(unittest.TestCase):
             '172.22.108.5',
         )
 
+    def test_peer_v4_slash31(self):
         config = {
             'peer_v4': '172.22.108.10/31',
         }
@@ -32,10 +34,14 @@ class TestNetworkUtils(unittest.TestCase):
             '172.22.108.10',
         )
 
+    def test_empty_error(self):
         with self.assertRaises(ValueError):
             network_utils.get_dn42_remote_ip({}, 4)
 
-    def test_peer_v6(self):
+        with self.assertRaises(ValueError):
+            network_utils.get_dn42_remote_ip({}, 6)
+
+    def test_peer_v6_link_local(self):
         config = {
             'peer_v6': 'fe80::1/64',
         }
@@ -44,6 +50,7 @@ class TestNetworkUtils(unittest.TestCase):
             'fe80::1',
         )
 
+    def test_peer_v6_ula(self):
         config = {
             'peer_v6': 'fd00:1122:3344:5566:7788:99aa:bbcc:ddee',
         }
@@ -52,10 +59,7 @@ class TestNetworkUtils(unittest.TestCase):
             'fd00:1122:3344:5566:7788:99aa:bbcc:ddee',
         )
 
-        with self.assertRaises(ValueError):
-            network_utils.get_dn42_remote_ip({}, 6)
-
-    def test_local_v4(self):
+    def test_local_v4_slash31(self):
         config = {
             'local_v4': '169.254.108.22/31',
         }
@@ -64,6 +68,7 @@ class TestNetworkUtils(unittest.TestCase):
             '169.254.108.23',
         )
 
+    def test_local_v4_slash30(self):
         config = {
             'local_v4': '169.254.108.53/30',
         }
@@ -72,6 +77,7 @@ class TestNetworkUtils(unittest.TestCase):
             '169.254.108.54',
         )
 
+    def test_local_v4_error_too_wide(self):
         # Range too big to guess an IP
         config = {
             'local_v4': '169.254.108.54/28',
@@ -79,6 +85,7 @@ class TestNetworkUtils(unittest.TestCase):
         with self.assertRaises(ValueError):
             network_utils.get_dn42_remote_ip(config, 4)
 
+    def test_local_v4_error_network_address(self):
         # Using the network address is erroneous
         config = {
             'local_v4': '169.254.108.52/30',
@@ -86,6 +93,7 @@ class TestNetworkUtils(unittest.TestCase):
         with self.assertRaises(ValueError):
             network_utils.get_dn42_remote_ip(config, 4)
 
+    def test_local_v4_error_broadcast_address(self):
         # Using the broadcast address is erroneous
         config = {
             'local_v4': '169.254.108.55/30',
@@ -93,7 +101,7 @@ class TestNetworkUtils(unittest.TestCase):
         with self.assertRaises(ValueError):
             network_utils.get_dn42_remote_ip(config, 4)
 
-    def test_local_v6(self):
+    def test_local_v6_slash127(self):
         config = {
             'local_v6': 'fd00::3/127',
         }
@@ -110,6 +118,7 @@ class TestNetworkUtils(unittest.TestCase):
             'fd00::5',
         )
 
+    def test_local_v6_slash126(self):
         # Does anyone actually use this?!
         config = {
             'local_v6': 'fd00::5/126',
@@ -119,6 +128,7 @@ class TestNetworkUtils(unittest.TestCase):
             'fd00::6',
         )
 
+    def test_local_v6_error_too_wide(self):
         # Range too big to guess an IP
         config = {
             'local_v6': 'fd00::6/64',
