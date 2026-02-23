@@ -786,19 +786,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: false
 
-- name: dn42-grmml
-  port: 20123
-  remote: tuisto.grmml.net:51080
-  wg_pubkey: /r/8OQNOcl9SNbHt3pNNJhviG6lo06HHQpiuxw1V9VI=
-  peer_v4: 172.23.149.6
-  peer_v6: fe80::149:6
-  bgp:
-    asn: 4242420123
-    ipv4: true
-    ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
-
 - name: dn42-cowgl
   port: 23999
   remote: ams.node.cowgl.tech:31080
@@ -1069,6 +1056,20 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
     suffix: _de
+
+- name: dn42-grmmlams
+  port: 20123
+  remote: gw-ams-nl.dn42.grmml.net:51080
+  wg_pubkey: Lw1HtYV5umbipqWC2Y/YE7Hdda2tx9oBL5voJTqG/kc=
+  peer_v4: null
+  peer_v6: fe80::149:4
+  bgp:
+    asn: 4242420123
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+    suffix: _ams
 
 - name: dn42-moraxyc
   port: 23011
