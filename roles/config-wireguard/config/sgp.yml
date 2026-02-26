@@ -221,3 +221,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-osiris
+  port: 23444
+  remote: 2001:df7:5300:3::26b:21080
+  wg_pubkey: HAc3zEk+1VAquZhg6DJkc5hpiWwhk9x431d1tOiddTk=
+  peer_v4: null
+  peer_v6: fe80::3444
+  bgp:
+    asn: 4242423444
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
