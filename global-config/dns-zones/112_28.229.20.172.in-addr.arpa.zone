@@ -13,7 +13,6 @@ $TTL 300
 115 IN PTR yyz.rtr.highdef.dn42.
 123 IN PTR ymq.rtr.highdef.dn42.
 112 IN PTR ash.rtr.highdef.dn42.
-119 IN PTR atl.rtr.highdef.dn42.
 116 IN PTR lon.rtr.highdef.dn42.
 117 IN PTR ams.rtr.highdef.dn42.
 121 IN PTR sto.rtr.highdef.dn42.

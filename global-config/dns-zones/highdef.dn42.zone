@@ -13,6 +13,8 @@ lg IN A 172.20.229.117
 lg IN AAAA fd86:bad:11b7:117::1
 ping IN A 172.22.108.3
 ping IN AAAA fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
+ping-sea1 IN A 172.22.108.83
+ping-sea1 IN AAAA fd86:bad:11b7:83::1
 routegraphs IN A 172.20.229.117
 routegraphs IN AAAA fd86:bad:11b7:117::1
 ns IN A 172.22.108.54
@@ -38,8 +40,6 @@ dal.rtr IN A 172.22.108.33
 dal.rtr IN AAAA fd86:bad:11b7:33::1
 ash.rtr IN A 172.20.229.112
 ash.rtr IN AAAA fd86:bad:11b7:12::1
-atl.rtr IN A 172.20.229.119
-atl.rtr IN AAAA fd86:bad:11b7:9::1
 lon.rtr IN A 172.20.229.116
 lon.rtr IN AAAA fd86:bad:11b7:116::1
 ams.rtr IN A 172.20.229.117

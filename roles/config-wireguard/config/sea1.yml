@@ -1,0 +1,13 @@
+wg_peers:
+- name: cl-roam
+  local_v4: 172.22.108.102/31
+  local_v6_multi:
+  - fd86:bad:11b7:83:2::1/124
+  # A dummy link local v6 is needed for BIRD to pick this up as an OSPF stub interface for IPv6
+  - "{{ link_local_ip6 }}"
+  port: 21080
+  multi:
+  - wg_pubkey: "aJUsDF7fducvds8FjS4KsqzDrxBNO2g8sY2caAVOFFc="
+    wg_allowedips: "172.22.108.103/32,fd86:bad:11b7:83:2::2/128"
+  peer_v6: null
+  allow_clearnet: true
