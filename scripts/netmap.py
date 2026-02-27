@@ -11,7 +11,7 @@ import geopy
 import geojson
 import yaml
 
-from _common import yaml_load, is_anycast_host, get_hosts
+from _common import yaml_load, get_hosts
 
 # https://sites.google.com/site/gmapsdevelopment/
 ICON_PREFIX = "https://maps.google.com/mapfiles/ms/micons/"
@@ -84,18 +84,11 @@ def main():
         point = geojson.Point((coords[1], coords[0]))
 
         description = ""
-        is_anycast = is_anycast_host(hosts_yaml, node)
         is_v6_only = nodedata.get('v6_only')
-        icon_name = "red"
-
-        if is_anycast:
-            description += "+ Anycast DNS PoP<br>"
-            icon_name = "red-dot"
-        else:
-            description += "- LITE node, NO Anycast DNS<br>"
+        icon_name = "red-dot"
 
         if is_v6_only:
-            icon_name = "yellow"
+            icon_name = "yellow-dot"
             description += "- Peering over IPv6 only<br>"
 
         title = f'<a href="nodes.html#{node}" class="netmap-server-link">{nodedata["location"]}</a>'

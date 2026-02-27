@@ -12,7 +12,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#ams\" class=\"netmap-server-link\">Amsterdam, NL</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -27,22 +27,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#ash\" class=\"netmap-server-link\">Ashburn, VA, US</a>",
-                "description": "+ Anycast DNS PoP<br>",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -84.387982,
-                    33.748995
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#atl\" class=\"netmap-server-link\">Atlanta, GA, US</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -57,7 +42,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#chi\" class=\"netmap-server-link\">Chicago, IL, US</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -72,7 +57,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#dal\" class=\"netmap-server-link\">Dallas, TX, US</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -87,7 +72,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#hkg\" class=\"netmap-server-link\">Hong Kong, HK</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -102,7 +87,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#lon\" class=\"netmap-server-link\">London, UK</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -117,7 +102,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#mum\" class=\"netmap-server-link\">Mumbai, IN</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -132,7 +117,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sea\" class=\"netmap-server-link\">Seattle, WA, US</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -147,7 +132,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sgp\" class=\"netmap-server-link\">Singapore, SG</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -162,7 +147,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sjc\" class=\"netmap-server-link\">San Jose, CA, US</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -177,7 +162,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sto\" class=\"netmap-server-link\">Stockholm, SE</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -192,7 +177,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#syd\" class=\"netmap-server-link\">Sydney, AU</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -207,7 +192,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#tyo\" class=\"netmap-server-link\">Tokyo, JP</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -222,7 +207,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#ymq\" class=\"netmap-server-link\">Montreal, QC, CA</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         },
@@ -237,7 +222,7 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#yyz\" class=\"netmap-server-link\">Toronto, ON, CA</a>",
-                "description": "+ Anycast DNS PoP<br>",
+                "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
         }
