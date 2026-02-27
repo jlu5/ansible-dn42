@@ -72,6 +72,7 @@ igp_neighbours:
     dal: null
     hkg: null
     sea1: null
+    sgp: null
     sjc: null
     tyo: null
     ymq: null
@@ -87,6 +88,7 @@ igp_neighbours:
     hkg: null
     lon: null
     mum: null
+    sea: null
     sjc: null
     syd: null
     tyo: null
