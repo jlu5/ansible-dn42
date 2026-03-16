@@ -102,6 +102,11 @@ host = lg.skylonhost.com
 menu = [PL] Melbicom
 title = [PL] Melbicom - Warsaw, Poland [dl.war.melbicom.net]
 host = dl.war.melbicom.net
+
+++ mevspace
+menu = [PL] Mevspace
+title = [PL] Mevspace - Wyszkow, Poland [149.86.224.18]
+host = 149.86.224.18
 {% endif %}
 
 ++ ovh-waw
@@ -114,10 +119,17 @@ menu = [PL] Scaleway
 title = [PL] Scaleway / Online.net - Warsaw, Poland [151.115.9.151]
 host = 151.115.9.151
 
+{% if not smokeping_lite %}
+++ strike-pl
+menu = [PL] Strike.bz / 3K33
+title = [PL] Strike.bz / 3K33 - Gdansk, Poland [lg-pl.strike.bz]
+host = lg-pl.strike.bz
+
 ++ vultr-waw
 menu = [PL] Vultr
 title = [PL] Vultr - Warsaw, Poland [waw-pl-ping.vultr.com]
 host = waw-pl-ping.vultr.com
+{% endif %}
 
 ++ bacloud-lt
 menu = [LT] BaCloud
@@ -243,17 +255,29 @@ host = lg.alexhost.com
 
 ++ ultravps-md
 menu = [MD] UltraVPS
-title = [MD] UltraVPS @ Trabia - Chisinau, Moldova, Republic of [lg.kiv.md.ultravps.eu]
+title = [MD] UltraVPS @ Trabia - Chisinau, Moldova [lg.kiv.md.ultravps.eu]
 host = lg.kiv.md.ultravps.eu
 
+{% if not smokeping_lite %}
 ++ hosteroid-tia
 menu = [AL] Hosteroid
 title = [AL] Hosteroid @ Host.AL - Tirana, Albania [185.75.243.29]
 host = 185.75.243.29
 
-{% if not smokeping_lite %}
 ++ justhost-tr
 menu = [TR] JustHost
-title = [TR] JustHost @ Comnet - Istanbul, Türkiye [lg-ist1.just.hosting]
+title = [TR] JustHost @ Comnet - Istanbul, Turkiye [lg-ist1.just.hosting]
 host = lg-ist1.just.hosting
+{% endif %}
+
+++ turknet
+menu = [TR] Turknet
+title = [TR] Turknet - Istanbul, Turkiye [speedtest.turk.net]
+host = speedtest.turk.net
+
+{% if not smokeping_lite %}
+++ ttnet
+menu = [TR] Turk Telekom
+title = [TR] Turk Telekom - Istanbul, Turkiye [umr1speedtest.turktelekom.com.tr]
+host = umr1speedtest.turktelekom.com.tr
 {% endif %}

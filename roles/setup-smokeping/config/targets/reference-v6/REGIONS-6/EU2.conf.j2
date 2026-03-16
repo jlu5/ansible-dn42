@@ -110,10 +110,17 @@ menu = [PL] Scaleway
 title = [PL] Scaleway / Online.net - Warsaw, Poland [2001:bc8:1c08:203::c]
 host = 2001:bc8:1c08:203::c
 
+{% if not smokeping_lite %}
+++ strike-pl
+menu = [PL] Strike.bz / 3K33
+title = [PL] Strike.bz / 3K33 - Gdansk, Poland [lg-pl.strike.bz]
+host = lg-pl.strike.bz
+
 ++ vultr-waw
 menu = [PL] Vultr
 title = [PL] Vultr - Warsaw, Poland [waw-pl-ping.vultr.com]
 host = waw-pl-ping.vultr.com
+{% endif %}
 
 ++ alphavps-bg
 menu = [BG] AlphaVPS
@@ -134,17 +141,22 @@ host = lg.alexhost.com
 
 ++ ultravps-md
 menu = [MD] UltraVPS
-title = [MD] UltraVPS @ Trabia - Chisinau, Moldova, Republic of [2a02:e00:ffe8:3::1]
+title = [MD] UltraVPS @ Trabia - Chisinau, Moldova [2a02:e00:ffe8:3::1]
 host = 2a02:e00:ffe8:3::1
 
+{% if not smokeping_lite %}
 ++ hosteroid-tia
 menu = [AL] Hosteroid
 title = [AL] Hosteroid @ Host.AL - Tirana, Albania [2a13:9403::57e8:d519:da31:1]
 host = 2a13:9403::57e8:d519:da31:1
 
-{% if not smokeping_lite %}
 ++ justhost-tr
 menu = [TR] JustHost
-title = [TR] JustHost @ Comnet - Istanbul, Türkiye [lg-ist1.just.hosting]
+title = [TR] JustHost @ Comnet - Istanbul, Turkiye [lg-ist1.just.hosting]
 host = lg-ist1.just.hosting
 {% endif %}
+
+++ turknet
+menu = [TR] Turknet
+title = [TR] Turknet - Istanbul, Turkiye [speedtest.turk.net]
+host = speedtest.turk.net

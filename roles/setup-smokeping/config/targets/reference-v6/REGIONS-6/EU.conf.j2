@@ -172,12 +172,12 @@ host = 2a0b:b7c4:1:1286:0000:0000:0000:0001
 menu = [NL] SpectraIP
 title = [NL] SpectraIP - Amsterdam, Netherlands [as62068.net]
 host = as62068.net
+{% endif %}
 
 ++ tube-hosting-nl
 menu = [NL] Tube-Hosting
 title = [NL] Tube-Hosting - Eygelshoven, Netherlands [2a12:de40:12::c0de]
 host = 2a12:de40:12::c0de
-{% endif %}
 
 ++ ultravps-ams
 menu = [NL] UltraVPS
@@ -204,16 +204,6 @@ host = lg.aurologic.com
 menu = [DE] Clouvider (Frankfurt)
 title = [DE] Clouvider - Frankfurt, Germany [de.mirrors.clouvider.net]
 host = de.mirrors.clouvider.net
-
-++ computebox-bremen
-menu = [DE] ComputeBox (Bremen)
-title = [DE] ComputeBox @ LWLcom - Bremen, Germany [2a06:de04:10:1014::]
-host = 2a06:de04:10:1014::
-
-++ computebox
-menu = [DE] ComputeBox (Hamburg)
-title = [DE] ComputeBox @ CSN-Solutions - Hamburg, Germany [2a05:901:6:1002::0]
-host = 2a05:901:6:1002::0
 {% endif %}
 
 ++ php-friends
@@ -236,12 +226,12 @@ host = mirror.de.leaseweb.net
 menu = [DE] Linode (Frankfurt)
 title = [DE] Linode - Frankfurt, Germany [speedtest.frankfurt.linode.com]
 host = speedtest.frankfurt.linode.com
-
-++ vultr-fra
-menu = [DE] Vultr (Frankfurt)
-title = [DE] Vultr - Frankfurt, Germany [2001:19f0:6c00:8002:5400:ff:fe00:536a]
-host = 2001:19f0:6c00:8002:5400:ff:fe00:536a
 {% endif %}
+
+++ smartnet-fra
+menu = [DE] SMARTNET (Frankfurt)
+title = [DE] SMARTNET - Frankfurt, Germany [lg.as203446.net]
+host = lg.as203446.net
 
 ++ synlinq
 menu = [DE] SYNLINQ (Frankfurt)
@@ -249,6 +239,11 @@ title = [DE] SYNLINQ - Frankfurt, Germany [speedtest1.synlinq.de]
 host = speedtest1.synlinq.de
 
 {% if not smokeping_lite %}
+++ vultr-fra
+menu = [DE] Vultr (Frankfurt)
+title = [DE] Vultr - Frankfurt, Germany [2001:19f0:6c00:8002:5400:ff:fe00:536a]
+host = 2001:19f0:6c00:8002:5400:ff:fe00:536a
+
 ++ xtom-fra
 menu = [DE] xTom (Frankfurt)
 title = [DE] xTom / V.PS - Frankfurt, Germany [fra.lg.v.ps]
@@ -267,15 +262,27 @@ title = [DE] Hetzner - Nuremberg, Germany [nbg.icmp.hetzner.com]
 host = nbg.icmp.hetzner.com
 {% endif %}
 
+++ netcup-nbg
+menu = [DE] Netcup (Nuremberg)
+title = [DE] Netcup / Anexia - Nuremberg, Germany [lg.netcup.net]
+host = lg.netcup.net
+
 ++ hetzner-fsn
 menu = [DE] Hetzner (Falkenstein)
 title = [DE] Hetzner - Falkenstein, Germany [fsn.icmp.hetzner.com]
 host = fsn.icmp.hetzner.com
 
-++ netcup-nbg
-menu = [DE] Netcup (Nuremberg)
-title = [DE] Netcup / Anexia - Nuremberg, Germany [lg.netcup.net]
-host = lg.netcup.net
+{% if not smokeping_lite %}
+++ computebox-bremen
+menu = [DE] ComputeBox (Bremen)
+title = [DE] ComputeBox @ LWLcom - Bremen, Germany [2a06:de04:10:1014::]
+host = 2a06:de04:10:1014::
+
+++ computebox
+menu = [DE] ComputeBox (Hamburg)
+title = [DE] ComputeBox @ CSN-Solutions - Hamburg, Germany [2a05:901:6:1002::0]
+host = 2a05:901:6:1002::0
+{% endif %}
 
 ++ buyvm-lu
 menu = [CH] BuyVM
