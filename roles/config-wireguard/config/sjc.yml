@@ -743,3 +743,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-mashiro
+  port: 20214
+  remote: climax.origincode.me:10440
+  wg_pubkey: wLrRyJ2l0OOcqgc97RKNIWQE3upgYKmlU1rrNOfndRs=
+  peer_v4: null
+  peer_v6: fe80::214
+  bgp:
+    asn: 4242420214
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true

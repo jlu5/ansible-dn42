@@ -66,6 +66,21 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    8.682127,
+                    50.110922
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"nodes.html#fra\" class=\"netmap-server-link\">Frankfurt, DE</a>",
+                "description": "",
+                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     114.169361,
                     22.319304
                 ]
