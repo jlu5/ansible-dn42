@@ -717,3 +717,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-vconet
+  port: 23322
+  remote: us.node.vconet.top:21080
+  wg_pubkey: lYWDxApAxfusGQz5W3lSPFmfRzHMzAKoh8dg5dyVyV8=
+  peer_v4: null
+  peer_v6: fe80::3322
+  bgp:
+    asn: 4242423322
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
