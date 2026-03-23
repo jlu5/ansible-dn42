@@ -33,6 +33,7 @@
     dest: "{{ dn42_registry_clone_path }}"
     update: yes
     key_file: "{{ automation_user_home }}/.ssh/id_ed25519"
+    accept_newhostkey: true
   become: yes
   become_user: "{{ automation_user }}"
 
@@ -87,6 +88,7 @@
   shell:
     cmd: "{{ _routegraphs_update_cmd }}"
     creates: "{{ routegraphs_db_path }}"
+  ignore_errors: true
 
 - name: Create cron job for routegraphs update
   cron:
