@@ -730,3 +730,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-gongyun
+  port: 23919
+  remote: la.na.dn42.saont.net:21080
+  wg_pubkey: Kbi20Z+gDxxqRrwNQM1JTi9+zNfm+/5SoLrAKXThgBE=
+  peer_v4: null
+  peer_v6: fe80::3919:34
+  bgp:
+    asn: 4242423919
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
