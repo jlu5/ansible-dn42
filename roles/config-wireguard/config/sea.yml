@@ -161,3 +161,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-nedifinita
+  port: 20454
+  remote: dn42a.nedifinita.com:59931
+  wg_pubkey: 8EXT6zciVdil3Zg6dqB0YT2SssTh2OTKDeBBfrVGUkE=
+  peer_v4: null
+  peer_v6: fe80::454
+  bgp:
+    asn: 4242420454
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
