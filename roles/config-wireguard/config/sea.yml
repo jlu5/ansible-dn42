@@ -138,19 +138,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-mdr
-  port: 20401
-  remote: uswest01.dn42.markround.com:21080
-  wg_pubkey: HQy5+GyAOSYGpZ9hwbNxLHrSOvKZtJ3yZUazImiM5Bs=
-  peer_v4: null
-  peer_v6: fe80::401
-  bgp:
-    asn: 4242420401
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-9pfs
   port: 22002
   remote: null
