@@ -163,3 +163,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-sess
+  port: 22466
+  remote: ne-e2-goog.xhustudio.eu.org:21080
+  wg_pubkey: laXweKmj2O3NEYYqcT69H9x2QKgnyjDGHOi305v3sUc=
+  peer_v4: null
+  peer_v6: fe80::164:2466
+  bgp:
+    asn: 4242422466
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
