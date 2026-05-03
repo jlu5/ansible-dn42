@@ -812,3 +812,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-chofstede
+  port: 22539
+  remote: 2003:a:1318:5802::123:51824
+  wg_pubkey: z7oRH9dWmGlIsh033ANjfRHRMuoE0f4iSf6ydJFQxFw=
+  peer_v4: null
+  peer_v6: fe80::109
+  bgp:
+    asn: 4242422539
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
