@@ -292,3 +292,16 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
+
+- name: dn42-mltfr
+  port: 22412
+  remote: rer.asmltfr.net.eu.org:21080
+  wg_pubkey: VGW0Qsvlh0Mm8SRVLdDJIWsN0P4zH6xzIYSvtPGp9zc=
+  peer_v4: null
+  peer_v6: fe80::2412
+  bgp:
+    asn: 4242422412
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
