@@ -89,3 +89,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-pixia
+  port: 23729
+  remote: 6.ams1.pixiainfra.pixia.eu.org:21080
+  wg_pubkey: TbyUZ7/u1wlAPkOqW8kngIwFBMfVt+oryJQqQb2jfzY=
+  peer_v4: null
+  peer_v6: fd83:4f44:4298::2
+  bgp:
+    asn: 4242423729
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
