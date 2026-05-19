@@ -9,6 +9,7 @@ Group=bird
 ExecStart={{ _bird_lg_go_dir }}/bird-lg-go
 Restart=on-failure
 EnvironmentFile={{ _bird_lg_go_dir }}/bird-lg-frontend.env
+CPUQuota={{ bird_lg_cpuquota_percent | default('20%') }}
 
 [Install]
 WantedBy=multi-user.target
