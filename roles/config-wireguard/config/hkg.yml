@@ -526,3 +526,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-hanlin
+  port: 20251
+  remote: hkvt.s.iabc.work:21080
+  wg_pubkey: 0T1LzUSOLckanEuH0bgX9o/RzbDN7vgSB4kAn1KDxXk=
+  peer_v4: 172.23.163.35
+  peer_v6: fe80::0251
+  bgp:
+    asn: 4242420251
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: false
