@@ -22,6 +22,7 @@ Most settings in [`hosts.yml`](hosts.yml) should be self documenting. Here are s
 - `igpping_base_cost`/`igpping_fallback_cost`: sets base and default (unreachable) weights for igpping (defaults in [`igpping.conf.j2`](scripts/igpping/))
 - `igpping_override`: a map of IGP node name to IGP metric; used to override igpping on specific links
 - `stub_ifnames_append`: extra interfaces to import as device routes in the IGP. See also `stub_ifnames` in [`general.yml`](global-config/general.yml)
+- `disable_ebgp`: if true, sets all eBGP peers to disabled status in BIRD
 
 ### Runtime flags (extra variables)
 
