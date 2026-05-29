@@ -769,3 +769,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-headscarf1
+  port: 20842
+  remote: s2.headscarf175.net:21080
+  wg_pubkey: urPzSwUlqcJiJjpgz9JGBgLSwnSDEHsE4+ZnixQXpDI=
+  peer_v4: null
+  peer_v6: fe80::842
+  bgp:
+    asn: 4242420842
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
