@@ -5,8 +5,6 @@ wg_peers:
   peer_v4: null
   local_v4: 169.254.108.70/31
   peer_v6: fe80::dd37:dbe1:628d:b53e/64
-  local_v6: fe80::1080:115
-  wg_privkey: /etc/wireguard/privatekey_yyz
 
 - name: dn42-routedbits
   port: 20207
@@ -53,7 +51,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-wg_peers:
 - name: dn42-tomkap
   port: 52092
   remote: "us0.dn42.pebkac.gr:51080"
