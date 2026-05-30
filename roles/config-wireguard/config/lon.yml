@@ -64,19 +64,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-rhysperry
-  peer_v4: 172.22.76.1
-  peer_v6: null
-  port: 23665
-  remote: rhysperry.com:55505
-  wg_pubkey: I1WlxMXrSoN2g3WVJNYNG+4MsYhJwNA6UYgt5pHOGGY=
-  bgp:
-    asn: 4242423665
-    extended_next_hop: false
-    ipv4: true
-    ipv6: false
-    mp_bgp: false
-
 - name: dn42-htw
   peer_v4: 172.21.78.33
   peer_v6: fe80::1440:1080
@@ -181,19 +168,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: false
 
-- name: dn42-9pfs
-  port: 22002
-  remote: nolife.uk:21080
-  wg_pubkey: FFBT/0qnj6FoBl6AIdivLG3usRYVUsfoYAVlg7Uo+Rs=
-  peer_v4: null
-  peer_v6: fe80::2002:15
-  bgp:
-    asn: 4242422002
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-joenet
   port: 20157
   remote: ire01.ke8jwh.com:31080
@@ -233,19 +207,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-optistream
-  port: 22096
-  remote: null
-  wg_pubkey: Aao+tCL6FMS8qwy1HKfflCzJZpwz5IDkE3WjD79h7mQ=
-  peer_v4: null
-  peer_v6: fe80::2096
-  bgp:
-    asn: 4242422096
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-grmml
   port: 20123
   remote: alator.grmml.net:51080
@@ -272,19 +233,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-bitrate
-  port: 23997
-  remote: uk1.dn42.bitrate.studio:21080
-  wg_pubkey: 7uqGJcYhftxmM+8WrYZbGKnUi4ye8PD6A1/KrfSjXno=
-  peer_v4: 172.21.95.40
-  peer_v6: fe80::3997
-  bgp:
-    asn: 4242423997
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-alemal
   port: 21525
   remote: uk1.alemal.se:51080
@@ -306,19 +254,6 @@ wg_peers:
   peer_v6: fe80::2189:122
   bgp:
     asn: 4242422189
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
-- name: dn42-tatk
-  port: 23152
-  remote: rt0.uk.tatk.network:21080
-  wg_pubkey: jvng3/Q+uAlmk64ol9gDHImR1GvGVMvkOmYO7USMYX0=
-  peer_v4: null
-  peer_v6: fe80::3152:1
-  bgp:
-    asn: 4242423152
     ipv4: true
     ipv6: true
     mp_bgp: true

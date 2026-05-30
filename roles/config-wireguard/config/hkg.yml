@@ -254,19 +254,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-mxmilu
-  port: 21166
-  remote: hk.dn42.milu.moe:21080
-  wg_pubkey: f9ZDh2U0UXxtEroHUYNWzaE6TZM3hhY3eLXQQpgkvBY=
-  peer_v4: 172.22.110.34
-  peer_v6: fe80::1166
-  bgp:
-    asn: 4242421166
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: false
-
 - name: dn42-alice8585
   port: 20387
   remote: 156.226.173.78:21080
@@ -353,19 +340,6 @@ wg_peers:
   peer_v6: fe80::2279
   bgp:
     asn: 4242422279
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
-- name: dn42-choco
-  port: 23845
-  remote: hkg1.dn42.aerodefense.co.uk:21080
-  wg_pubkey: jR21mrHsYv4KHPrRgtPPTl4BNU2by6dRV110nUIVfU4=
-  peer_v4: null
-  peer_v6: fe80::114
-  bgp:
-    asn: 4242423845
     ipv4: true
     ipv6: true
     mp_bgp: true

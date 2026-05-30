@@ -1,17 +1,4 @@
 wg_peers:
-- name: dn42-hackclub
-  port: 20392
-  remote: hackclub.app:21080
-  wg_pubkey: BOI9J1hyFwlbjatNi9NUUMVnRXSOwBpb0f+Cgwl4p28=
-  peer_v4: null
-  peer_v6: fe80::392
-  bgp:
-    asn: 4242420392
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-cdubs
   port: 20566
   remote: dn13.se.surgebytes.com:31080
@@ -24,19 +11,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-m724
-  port: 20129
-  remote: ipv4.se1.420129.xyz:21080
-  wg_pubkey: tS6j+/aroaMYT/mbzv4xDGI7bc6/LAgwc/KKrw/LIVI=
-  peer_v4: null
-  peer_v6: fe80::129:5
-  bgp:
-    asn: 4242420129
-    ipv4: false
-    ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
 
 - name: dn42-myxoz
   port: 20166

@@ -1,17 +1,4 @@
 wg_peers:
-- name: dn42-narnia
-  port: 52037
-  remote: "syd2.dn42.narnia.network:42011"
-  wg_pubkey: "0T0LUDBHnWAAg5Kz4OBF0r0+r+9WHtaUsvywKZSci2I="
-  peer_v4: null
-  peer_v6: "fd23:0:0:ffff::2037"
-  bgp:
-    asn: 4242422037
-    extended_next_hop: false
-    ipv4: false
-    ipv6: true
-    mp_bgp: false
-
 - name: dn42-kskb
   peer_v4: 10.127.111.81
   peer_v6: fe80::aa:1111:51
@@ -154,19 +141,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-9pfs
-  port: 22002
-  remote: null
-  wg_pubkey: k2MW2Bh0YzhLP/Dzb4IdCEBEl5Ifg26lo7MKK/P95EQ=
-  peer_v4: null
-  peer_v6: fe80::2002:22
-  bgp:
-    asn: 4242422002
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
 
 - name: dn42-iedon
   port: 22189

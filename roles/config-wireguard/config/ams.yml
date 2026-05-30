@@ -77,19 +77,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-ty3r0x
-  port: 22596
-  remote: incognet.chaox.ro:21080
-  wg_pubkey: sxIWYIrbJKKnUjnQ/SIbcUlhYsBGZcAujnT9Xn5mdFw=
-  peer_v4: 169.254.42.5
-  peer_v6: fe80::2596:5
-  bgp:
-    asn: 4242422596
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-tmnet
   peer_v4: null
   peer_v6: fe80::cafe
@@ -161,19 +148,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-alemal
-  port: 21525
-  remote: de1.alemal.se:51080
-  wg_pubkey: eT9G9iM8XDIuUU1CAYl8eBLdI43z77nfWxJSeknQjQg=
-  peer_v4: null
-  peer_v6: fe80::1525
-  bgp:
-    asn: 4242421525
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-baragoon
   port: 21732
   remote: chr-am02.as215887.net:21080
@@ -181,19 +155,6 @@ wg_peers:
   peer_v6: fe80::1732
   bgp:
     asn: 4242421732
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-- name: dn42-iphizicmsk
-  port: 22086
-  remote: msk00.dn42.su:11080
-  wg_pubkey: Ta4/IuXDtCv7hf+UzCa73qJYmCTwofJio8CAb1Qe73M=
-  peer_v4: 172.21.107.17
-  peer_v6: fe80::2086
-  bgp:
-    asn: 4242422086
     extended_next_hop: true
     ipv4: true
     ipv6: true
@@ -240,19 +201,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-grmml
-  port: 20123
-  remote: tuisto.grmml.net:51080
-  wg_pubkey: /r/8OQNOcl9SNbHt3pNNJhviG6lo06HHQpiuxw1V9VI=
-  peer_v4: 172.23.149.6
-  peer_v6: fe80::149:6
-  bgp:
-    asn: 4242420123
-    ipv4: true
-    ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
 
 - name: dn42-vconet
   port: 23322

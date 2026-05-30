@@ -52,19 +52,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-kskb1817
-  port: 21817
-  remote: "4.jp.kskb.eu.org:21080"
-  wg_pubkey: "jxCsSXtUSVjaP+eMWOyRsHg3JShQfBFEtyssMKWQaS8="
-  peer_v4: null
-  peer_v6: "fe80::42:1817:1"
-  bgp:
-    asn: 4242421817
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-iedon
   port: 22189
   remote: jp-tyo.dn42.kuu.moe:54764
@@ -74,19 +61,6 @@ wg_peers:
   bgp:
     asn: 4242422189
     extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-- name: dn42-yurui
-  port: 52330
-  remote: "tp01.tw.node.argonauts.xyz:51080"
-  wg_pubkey: "LNpOdAZMc2RszmMB/JrvGoqLt8aE+p9JyYODKphzyyw="
-  peer_v4: "172.23.32.5"
-  peer_v6: "fe80::2330:5"
-  bgp:
-    asn: 4242422330
-    extended_next_hop: false
     ipv4: true
     ipv6: true
     mp_bgp: true
@@ -164,19 +138,6 @@ wg_peers:
   wg_pubkey: b3gUz8an2+wSCvXAwuxGR7AnxKDUqqQMd1+LASo93R0=
   bgp:
     asn: 4242423088
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
-- name: dn42-link2
-  peer_v4: 172.21.109.17
-  peer_v6: fe80::864:1
-  port: 20864
-  remote: tyo.dn42.christine.pp.ua:21080
-  wg_pubkey: 6x6cydEpu7OpSy6kaMyEVSA869gmvy4OcLx2IpMZRxs=
-  bgp:
-    asn: 4242420864
     extended_next_hop: true
     ipv4: true
     ipv6: true
@@ -287,19 +248,6 @@ wg_peers:
     ipv6: true
     mp_bgp: false
 
-- name: dn42-luoyu
-  port: 21999
-  remote: 156.231.112.158:21080
-  wg_pubkey: vzCKl611U0MVeaIcNyb8gJgWk1p6HY6oHr1oE846Py8=
-  peer_v4: 172.23.11.42
-  peer_v6: fe80::1999
-  bgp:
-    asn: 4242421999
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-bitrate
   port: 23997
   remote: jp1.dn42.bitrate.studio:21080
@@ -312,19 +260,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-mxmilu
-  port: 21166
-  remote: jp.dn42.milu.moe:21080
-  wg_pubkey: KEvc8ZVx68bazeY2XO4LDIb3PAxFtiQSTY5xNesTFDc=
-  peer_v4: 172.22.110.33
-  peer_v6: fe80::1166
-  bgp:
-    asn: 4242421166
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: false
 
 - name: dn42-xeiu
   port: 21336
@@ -438,19 +373,6 @@ wg_peers:
   peer_v6: fe80::1023:2
   bgp:
     asn: 4242421023
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
-- name: dn42-fxnet
-  port: 20014
-  remote: jp.dn42.fxnet.top:21080
-  wg_pubkey: RwS9qiSqkptO9QTje9stsxRD1CA/CR5HaDdNdPBydyU=
-  peer_v4: null
-  peer_v6: fe80::0014:4
-  bgp:
-    asn: 4242420014
     ipv4: true
     ipv6: true
     mp_bgp: true

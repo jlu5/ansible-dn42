@@ -405,19 +405,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-404net
-  port: 21716
-  remote: sjc.us.dn42.nngnn.com:21080
-  wg_pubkey: 9wjlepdAM+yr/G3VoI2bc6ogDUiPcE4UsUzadJn0jnA=
-  peer_v4: null
-  peer_v6: fe80::1716:1080
-  bgp:
-    asn: 4242421716
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-furry
   port: 20088
   remote: 150.241.207.40:21080
@@ -562,19 +549,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-tatk
-  port: 23152
-  remote: rt1.us.tatk.network:21080
-  wg_pubkey: 8EjYngEiwoUaIMjHlOTysiy2SZsQzBxEy7epNK3zMGk=
-  peer_v4: null
-  peer_v6: fe80::3152:6
-  bgp:
-    asn: 4242423152
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-maoyue
   port: 23942
   remote: 192.161.163.236:21080
@@ -627,19 +601,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-stevie
-  port: 20337
-  remote: lax01.dn42.wwrr.ru:21080
-  wg_pubkey: QK813SDMiaIhfBw9VOkpTCgQSLdUNFDmSphymv5c7To=
-  peer_v4: null
-  peer_v6: fe80::337
-  bgp:
-    asn: 4242420337
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-iris
   port: 21023
   remote: lax-01.node.svc.moe:21080
@@ -648,19 +609,6 @@ wg_peers:
   peer_v6: fe80::1023:2
   bgp:
     asn: 4242421023
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
-- name: dn42-fxnet
-  port: 20014
-  remote: lax.dn42.fxnet.top:21080
-  wg_pubkey: OP2tNInmeirCM5AqP+eYsYcCu48dqFSMxReMYwHHJzo=
-  peer_v4: null
-  peer_v6: fe80::0014:5
-  bgp:
-    asn: 4242420014
     ipv4: true
     ipv6: true
     mp_bgp: true
