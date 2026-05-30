@@ -26,7 +26,6 @@ igp_neighbours:
     lon: null
     sea: null
     sjc: null
-    ymq: null
     yyz: null
   fra: !!set
     ash: null
@@ -72,7 +71,6 @@ igp_neighbours:
     sgp: null
     sjc: null
     tyo: null
-    ymq: null
     yyz: null
   sea1: !!set
     chi: null
@@ -99,7 +97,6 @@ igp_neighbours:
     sgp: null
     syd: null
     tyo: null
-    ymq: null
     yyz: null
   sto: !!set
     ash: null
@@ -122,11 +119,8 @@ igp_neighbours:
   ymq: !!set
     ash: null
     chi: null
-    dal: null
     fra: null
     lon: null
-    sea: null
-    sjc: null
     ymq2: null
     yyz: null
   ymq2: !!set
