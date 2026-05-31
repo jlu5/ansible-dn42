@@ -773,3 +773,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-yuetau
+  port: 20925
+  remote: 2a0e:46c4:2903:beef::4242:21080
+  wg_pubkey: JmjoF9DosETYg6++oO82eC3VvysK08ym7DTc/Z2RjB8=
+  peer_v4: null
+  peer_v6: fe80::925
+  bgp:
+    asn: 4242420925
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
