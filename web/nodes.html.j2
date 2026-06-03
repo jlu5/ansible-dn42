@@ -62,10 +62,6 @@ When possible, use a script like <a href="https://git.zx2c4.com/wireguard-tools/
 {{ peering_info(host) }}
 {% endfor %}
 
-{% for host in groups['sa'] %}
-{{ peering_info(host) }}
-{% endfor %}
-
 <h2 id="europe">🌍 Europe</h2>
 {% for host in groups['eu'] %}
 {{ peering_info(host) }}
