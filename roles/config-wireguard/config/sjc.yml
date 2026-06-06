@@ -730,3 +730,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-afnooi
+  port: 22213
+  remote: us1.115411.xyz:21080
+  wg_pubkey: ldQkbgB+ErWemexq5h5+TDFBUR6sGTnVIT6KuHK0Nno=
+  peer_v4: null
+  peer_v6: fe80::3443
+  bgp:
+    asn: 4242422213
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
