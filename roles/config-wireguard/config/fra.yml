@@ -799,3 +799,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-kolo
+  port: 26954
+  remote: ams.dn42.kolo.dev:21080
+  wg_pubkey: XWWc+nLZ52ArAQUfNBFd86cpsYN5vcUca4kHoH75sQQ=
+  peer_v4: null
+  peer_v6: fe80::6954
+  bgp:
+    asn: 26954
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
