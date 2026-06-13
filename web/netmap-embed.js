@@ -1,8 +1,8 @@
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         // Roughly centre the map so that all PoPs are in view
-        center: new google.maps.LatLng(30, -120),
-        zoom: 2,
+        center: new google.maps.LatLng(40, -50),
+        zoom: 3,
         mapTypeId: 'hybrid'
     });
     var infoWindow = new google.maps.InfoWindow();
