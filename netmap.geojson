@@ -6,57 +6,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    4.904139,
-                    52.367573
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#ams\" class=\"netmap-server-link\">Amsterdam, NL</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -77.487442,
-                    39.043757
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#ash\" class=\"netmap-server-link\">Ashburn, VA, US</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -87.629798,
                     41.878114
                 ]
             },
             "properties": {
                 "title": "<a href=\"nodes.html#chi\" class=\"netmap-server-link\">Chicago, IL, US</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -96.796988,
-                    32.776664
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#dal\" class=\"netmap-server-link\">Dallas, TX, US</a>",
                 "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
@@ -81,21 +36,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    114.169361,
-                    22.319304
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#hkg\" class=\"netmap-server-link\">Hong Kong, HK</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -0.127758,
                     51.507351
                 ]
@@ -111,42 +51,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    72.832073,
-                    18.958193
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#mum\" class=\"netmap-server-link\">Mumbai, IN</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -122.332071,
                     47.606209
                 ]
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sea\" class=\"netmap-server-link\">Seattle, WA, US</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    103.819836,
-                    1.352083
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#sgp\" class=\"netmap-server-link\">Singapore, SG</a>",
                 "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
@@ -177,51 +87,6 @@
             },
             "properties": {
                 "title": "<a href=\"nodes.html#sto\" class=\"netmap-server-link\">Stockholm, SE</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    151.209295,
-                    -33.86882
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#syd\" class=\"netmap-server-link\">Sydney, AU</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    139.650311,
-                    35.676192
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#tyo\" class=\"netmap-server-link\">Tokyo, JP</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -73.567256,
-                    45.501689
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#ymq\" class=\"netmap-server-link\">Montreal, QC, CA</a>",
                 "description": "",
                 "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
             }
