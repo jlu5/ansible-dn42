@@ -408,3 +408,17 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-sernet
+  port: 23947
+  remote: buf1.sherpherd.net:23947
+  wg_pubkey: PXkGrHooCFnB6N8bD6isgVjhl9GvzD2CLqlA+e2XikM=
+  peer_v4: null
+  peer_v6: fe80::3947:7
+  bgp:
+    asn: 4242423947
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
+
