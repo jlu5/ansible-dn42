@@ -271,3 +271,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-logn
+  port: 20651
+  remote: us-ky1.dn42.zirco.dev:21080
+  wg_pubkey: UVYk1STZ2zZbbYrtwdhqUOWD1Kpp+O8EwyiGh9dJ2jA=
+  peer_v4: 172.22.154.96
+  peer_v6: fe80::651:1
+  bgp:
+    asn: 4242420651
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
