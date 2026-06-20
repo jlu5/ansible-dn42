@@ -76,3 +76,16 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-proseka
+  port: 23931
+  remote: haruka.proseka.network.darrenmc.dev:51828
+  wg_pubkey: xNtMgmWenYWsdOiJ51Clqae4UG8zd0jNEAxF8QY6q0M=
+  peer_v4: null
+  peer_v6: fe80::acb1
+  bgp:
+    asn: 4242423931
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
