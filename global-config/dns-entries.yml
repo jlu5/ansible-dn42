@@ -94,6 +94,7 @@ dns_dn42_secondary_zones:
 - delegation-servers.dn42
 - recursive-servers.dn42
 - registry-sync.dn42
+- tel.dn42
 - 10.in-addr.arpa
 - 20.172.in-addr.arpa
 - 21.172.in-addr.arpa
