@@ -21,6 +21,14 @@ wg_peers:
   peer_v6: null
   allow_clearnet: true
 
+- name: cl-ext
+  local_v4: 172.22.108.57/29
+  port: 21081
+  multi:
+  - wg_pubkey: DEQRT6fi9bZs7+oVqzxVmkNtqU7JDlTK8Xm3dks/K1s=
+    wg_allowedips: 172.22.108.58/32
+  peer_v6: null
+
 - name: dn42-piggy
   port: 22705
   remote: sea1.node.piggy.moe:21080
