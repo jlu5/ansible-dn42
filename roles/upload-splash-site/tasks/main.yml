@@ -24,6 +24,7 @@
   with_fileglob:
     - "{{ playbook_dir }}/web/*.html.j2"
     - "{{ playbook_dir }}/web/*.htm.j2"
+    - "{{ playbook_dir }}/web/*.js.j2"
 
 - name: Configure splash page for dn42 in nginx
   include_role:

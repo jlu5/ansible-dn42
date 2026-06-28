@@ -1,0 +1,36 @@
+    <h2>
+        <i class="fa fa-server" aria-hidden="true"></i>
+        Server info
+    </h2>
+    <div class="container">
+        <p>Current server: <b>{{ location[-2:] | flag }} {{ location }} ({{ inventory_hostname }})</b></p>
+        <p>Test IPs: <b>{{ ownip }}</b> / <b>{{ ownip6 }}</b></p>
+    </div>
+    <hr>
+    <h2>
+        <i class="fa fa-signal" aria-hidden="true"></i>
+        Connection info
+    </h2>
+    <div class="container">
+        <noscript>
+            <p>JavaScript unavailable - Click to check manually:
+                <a href="connectionInfo">Default</a>
+                <a href="connectionInfo4">IPv4</a>
+                <a href="connectionInfo6">IPv6</a>
+            </p>
+        </noscript>
+        <p>Default: <span id="connectionInfo">
+            <span class="info-dim">Loading...</span>
+        </p>
+        <p>IPv4: <span id="connectionInfo4">
+            <span class="info-dim">Loading...</span>
+        </p>
+        <p>IPv6: <span id="connectionInfo6">
+            <span class="info-dim">Loading...</span>
+        </p>
+        <p>Also check out the <b>myip.dn42</b> API:
+            <a href="http://myip.dn42/api">JSON</a>
+            -
+            <a href="http://myip.dn42/raw">Plain text</a>
+        </p>
+    </div>
