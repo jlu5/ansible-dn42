@@ -3,33 +3,32 @@ menu = dn42
 title = dn42 Services
 
 {% import 'smokeping-helpers.j2' as helpers %}
-{# For consistency, keep this list sorted by ASN - entries without the asn key
-are labelled as anycast and go first #}
+{# Skip a3 as all nodes will hit our own instance #}
 {% set dn42_dests = {
     'a0_dns': {
+        'asn': 0,
         'desc': 'a0 DNS',
         'host4': '172.20.0.53',
         'host6': 'fd42:d42:d42:54::1'
     },
-    'a3_dns': {
-        'desc': 'a3 DNS',
-        'host4': '172.23.0.53',
-        'host6': 'fd42:d42:d42:53::1'
-    },
     'wiki_dn42': {
+        'asn': 0,
         'desc': 'dn42 Wiki',
         'host4': '172.23.0.80',
         'host6': 'fd42:d42:d42:80::1'
     },
     'wiki-ng': {
+        'asn': 0,
         'host': 'wiki-ng.dn42'
     },
     'whois': {
+        'asn': 0,
         'desc': 'dn42 Whois',
         'host4': '172.22.0.43',
         'host6': 'fd42:d42:d42:43::1'
     },
     'neo_dns': {
+        'asn': 0,
         'desc': 'NeoNetwork DNS',
         'host4': '10.127.255.54',
         'host6': 'fd10:127:53:53::'
@@ -48,10 +47,6 @@ are labelled as anycast and go first #}
     'kskb': {
         'asn': 4242421817,
         'host': 'ns.kskb.dn42',
-    },
-    'map_dn42': {
-        'asn': 4242422189,
-        'host': 'map.dn42',
     },
     'grc': {
         'asn': 4242420123,
@@ -76,9 +71,26 @@ are labelled as anycast and go first #}
         'asn': 4242423618,
         'host': 'map.jerry.dn42',
     },
-} %}
+} -%}
 
-{% for entry_name, entry in dn42_dests.items() %}
+{# Skip ourselves (h), already covered in anycast-dns section #}
+{% set _delegation_servers = {
+    'b': 4242422601,
+    'i': 4242422189,
+    'j': 4242420119,
+    'k': 4242423914,
+} %}
+{% for dns_server_letter, asn in _delegation_servers.items() %}
+{% set _ = dn42_dests.update({
+    dns_server_letter + '_dns': {
+        'asn': asn,
+        'host': dns_server_letter + '.delegation-servers.dn42',
+        'desc': dns_server_letter + '. DNS',
+    }
+}) %}
+{% endfor -%}
+
+{% for entry_name, entry in dn42_dests.items() | sort(attribute='1.asn') %}
 {% set _host4 = entry.get('host') or entry.get('host4') %}
 {% set _host6 = entry.get('host') or entry.get('host6') -%}
 
