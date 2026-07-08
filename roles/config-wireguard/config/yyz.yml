@@ -422,3 +422,15 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
+- name: dn42-andibr
+  port: 22686
+  remote: dn42.andi.com.br:41080
+  wg_pubkey: g+SQbE2fRQw8xgNVU6aaiRhxbvqToCF68mDUaFkkxmw=
+  peer_v4: null
+  peer_v6: fe80::1
+  bgp:
+    asn: 4242422686
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
