@@ -19,14 +19,12 @@ igp_neighbours:
     chi: null
     lon: null
     sea: null
-    sto: null
     ymq: null
     yyz: null
   lon: !!set
     chi: null
     dal: null
     fra: null
-    sto: null
     ymq: null
     yyz: null
   sea: !!set
@@ -47,9 +45,6 @@ igp_neighbours:
     sea: null
     sea1: null
     yyz: null
-  sto: !!set
-    fra: null
-    lon: null
   ymq: !!set
     chi: null
     fra: null

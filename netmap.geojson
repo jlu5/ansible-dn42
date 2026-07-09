@@ -81,21 +81,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    18.068581,
-                    59.329323
-                ]
-            },
-            "properties": {
-                "title": "<a href=\"nodes.html#sto\" class=\"netmap-server-link\">Stockholm, SE</a>",
-                "description": "",
-                "icon": "https://maps.google.com/mapfiles/ms/micons/red-dot.png"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -79.383184,
                     43.653226
                 ]
