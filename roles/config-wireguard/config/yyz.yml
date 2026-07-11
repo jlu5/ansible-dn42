@@ -385,7 +385,7 @@ wg_peers:
 
 - name: dn42-sess
   port: 22466
-  remote: antarctica-gateway.xhustudio.eu.org:21080
+  remote: v4.glaciaxion.xhustudio.eu.org:14703
   wg_pubkey: huBBjePFmL3fELCh54yKrQjcCzv+8zYkEweMteJttS4=
   peer_v4: null
   peer_v6: fe80::2466
