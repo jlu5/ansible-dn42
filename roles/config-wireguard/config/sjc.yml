@@ -182,10 +182,8 @@ wg_peers:
   port: 23914
   remote: "us3.g-load.eu:21080"
   wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
-  peer_v4: "172.20.53.103"
-  peer_v6: "fe80::ade0"
-  local_v4: 172.20.229.122
-  local_v6: "fe80::ade1"
+  peer_v4: null
+  peer_v6: fe80::ade0
   wg_privkey: /etc/wireguard/privatekey_lax
   bgp:
     asn: 4242423914
