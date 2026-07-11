@@ -56,8 +56,8 @@ wg_peers:
   port: 23914
   remote: "de2.g-load.eu:21080"
   wg_pubkey: "B1xSG/XTJRLd+GrWDsB06BqnIq8Xud93YVh/LYYYtUY="
-  peer_v4: "172.20.53.97"
-  peer_v6: "fe80::ade0"
+  peer_v4: null
+  peer_v6: fe80::ade0
   bgp:
     asn: 4242423914
     extended_next_hop: true

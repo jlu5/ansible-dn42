@@ -81,7 +81,7 @@ wg_peers:
   port: 23914
   remote: uk1.g-load.eu:21080
   wg_pubkey: sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8=
-  peer_v4: 172.20.53.104
+  peer_v4: null
   peer_v6: fe80::ade0
   bgp:
     asn: 4242423914
