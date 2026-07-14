@@ -14,10 +14,10 @@ For peer name section, **you should only include your AS name**, and not any rou
 
 ```
 $ peerconfgen.py --help
-usage: peerconfgen.py [-h] [--dry-run] [--replace] node peername
+usage: peerconfgen.py [-h] [--dry-run] [--replace] [--create] [--mtu MTU] node peername
 
-Interactively generate peering configs (WireGuard+BIRD) by scraping plain text
-node info and autofilling as many fields as possible.
+Interactively generate peering configs (WireGuard+BIRD) by scraping plain text node info and autofilling as
+many fields as possible.
 
 positional arguments:
   node           Node to generate config for
@@ -27,6 +27,8 @@ options:
   -h, --help     show this help message and exit
   --dry-run, -n  Only print generated output; do not write it to disk
   --replace, -r  Overwrite existing config blocks
+  --create, -c   Create WireGuard config file if it doesn't exist
+  --mtu, -m MTU  Override WireGuard tunnel MTU
 ```
 
 The `--replace` option allows you to overwrite existing configurations - otherwise doing so is an error.
