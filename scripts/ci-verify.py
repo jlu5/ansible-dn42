@@ -27,6 +27,7 @@ ALLOWED_PEER_V4 = [
     # neonetwork space
     ipaddress.IPv4Network('10.127.0.0/16'),
 ]
+DISALLOWED_PEER_V4 = []
 ALLOWED_PEER_V6 = [
     ipaddress.IPv6Network('fd00::/8'),
     ipaddress.IPv6Network('fe80::/64'), # NOT fe80::/10
@@ -71,9 +72,14 @@ class PeerVerifier():
                 f'Peer {ifname!r} has invalid tunnel IP {candidate!r}',
                 config_path) from e
         allowed_ips = ALLOWED_PEER_V4 if ipnet.version == 4 else ALLOWED_PEER_V6
-        if not any(ipnet.subnet_of(net) for net in allowed_ips):
-            raise ValidationError(
-                f'Peer {ifname!r} has out of range tunnel IP {ipnet}', config_path)
+        disallowed_ips = DISALLOWED_PEER_V4 if ipnet.version == 4 else DISALLOWED_PEER_V6
+        if key.startswith("peer_"):
+            if not any(ipnet.subnet_of(net) for net in allowed_ips):  # pyright: ignore[reportArgumentType]
+                raise ValidationError(
+                    f'Peer {ifname!r} has out of range tunnel IP {ipnet}', config_path)
+            if any(ipnet.subnet_of(net) for net in disallowed_ips):  # pyright: ignore[reportArgumentType]
+                raise ValidationError(
+                    f'Peer {ifname!r} has disallowed tunnel IP {ipnet}', config_path)
         if min_size is not None and ipnet.num_addresses < min_size:
             raise ValidationError(
                 f'Peer {ifname!r} has too small {key!r}', config_path)
