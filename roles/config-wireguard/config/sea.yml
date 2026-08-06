@@ -18,6 +18,8 @@ wg_peers:
     wg_allowedips: "172.22.108.106/32,fd86:bad:11b7:35:2::2/128"
   - wg_pubkey: "QvCwX1hELIjTTjbq1mjx3AfWc//FZH98Il+GCGprWzU="
     wg_allowedips: "172.22.108.107/32,fd86:bad:11b7:35:2::3/128"
+  - wg_pubkey: sRb50rOrqjbYvnYol8KlgXdd7LZ1LfKvCFlGNeohsVo=
+    wg_allowedips: "172.22.108.108/32,fd86:bad:11b7:35:2::4/128"
   peer_v6: null
   allow_clearnet: true
 
