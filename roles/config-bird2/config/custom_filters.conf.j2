@@ -106,9 +106,14 @@ function handle_special_cases() {
         bgp_med = bgp_med + 20;
     }
 
-    # Force GRC routes to Amsterdam to lower the number of servers they traverse
-    if (NODEID != 117 && (net = 172.20.0.179/32 || net = fd42:d42:d42:179::/64)) then {
+    # Force GRC routes to EU to lower the number of servers they traverse
+    if (DN42_REGION != 41 && (net = 172.20.0.179/32 || net = fd42:d42:d42:179::/64)) then {
         bgp_med = bgp_med + 20;
+    }
+
+    # 2026-07: route optim for yp.dn42
+    if (bgp_path ~ [= * [4242422189, 4242420298, 4242423914] * [4242421331] * =]) then {
+        bgp_med = bgp_med - 10;
     }
 
     # Less preferred transits (usually due to incomplete interconnects or other
@@ -125,11 +130,6 @@ function handle_special_cases() {
             4242423035
         ] ? * =]) then {
             bgp_med = bgp_med + 15;
-    }
-
-    # Depref transit from massive networks (>200 peers)
-    else if (bgp_path ~ [= [4242421588, 4242423914] ? * =]) then {
-        bgp_med = bgp_med + 5;
     }
 }
 
