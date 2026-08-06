@@ -93,6 +93,7 @@
 - name: Create cron job for routegraphs update
   cron:
     name: "Routegraphs DB update"
+    hour: "*/2"
     minute: "37"
     job: "{{ _routegraphs_update_cmd }} > routegraph-update.log 2>&1"
     user: "{{ automation_user }}"
