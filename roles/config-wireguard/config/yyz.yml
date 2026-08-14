@@ -6,6 +6,13 @@ wg_peers:
   local_v4: 169.254.108.70/31
   peer_v6: fe80::dd37:dbe1:628d:b53e/64
 
+- name: igp-yvrlab2
+  port: 21081
+  wg_pubkey: tC9hwoNHswb8JxENZt/imoj/lv0VDB30HE3cyCK2tSg=
+  peer_v4: null
+  local_v4: 169.254.108.18/31
+  peer_v6: fe80::b42f:61c2:8347:b306/64
+
 - name: dn42-routedbits
   port: 20207
   remote: router.tor1.routedbits.com:51080
