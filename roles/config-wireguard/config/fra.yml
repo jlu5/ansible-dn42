@@ -750,7 +750,7 @@ wg_peers:
 
 - name: dn42-sess
   port: 22466
-  remote: netzilla.xhustudio.eu.org:21080
+  remote: a-l-p-s.xhustudio.eu.org:21080
   wg_pubkey: NneXyO6ANmBoREGcDQh/KCi2MtkAGU4xS/HIkNB8wQg=
   peer_v4: null
   peer_v6: fe80::2466
@@ -760,6 +760,7 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+  wg_mtu: 1396
 
 - name: dn42-headscarf1
   port: 20842
