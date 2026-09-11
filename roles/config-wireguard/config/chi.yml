@@ -102,9 +102,9 @@ wg_peers:
 
 - name: dn42-gatuno
   port: 20180
-  remote: bokbok.gatuno.mx:21080
-  wg_pubkey: sORFj7pR8ZO1U4vZxmgq0ue9gGGNf8wdrgr7kb+CTBA=
-  peer_v4: 172.22.122.15
+  remote: pongo.gatuno.mx:21080
+  wg_pubkey: L+hJFlmj0bMmOmbUkWB9JP69OEYwJz0S2CAN/JlrrXU=
+  peer_v4: 172.22.122.4
   peer_v6: fe80::0180
   bgp:
     asn: 4242420180
