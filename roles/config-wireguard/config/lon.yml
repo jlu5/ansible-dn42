@@ -38,19 +38,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-andi
-  port: 53991
-  remote: "iota.h4ck.space:42029"
-  wg_pubkey: "s6OL5S5GvUykOs1XVAWL2i6Mflk6niZ4BZhrHmdB5Gw="
-  peer_v4: null
-  peer_v6: "fe80::1"
-  bgp:
-    asn: 4242423991
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-
 - name: dn42-atolm
   peer_v4: null
   peer_v6: fe80::585
@@ -129,19 +116,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-tildegreen
-  port: 20953
-  remote: dn42peer.tilde.green:21080
-  wg_pubkey: VnkrpG4H2XwmpQvb+Wh4RVAa7r94juW4Eu4133qQnFQ=
-  peer_v4: null
-  peer_v6: fe80:0000:0000:0000:215d:4229:2c80:9b69
-  bgp:
-    asn: 4242420953
-    extended_next_hop: false
-    ipv4: false
-    ipv6: true
-    mp_bgp: false
 
 - name: dn42-baragoon
   port: 21732
@@ -232,19 +206,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-alemal
-  port: 21525
-  remote: uk1.alemal.se:51080
-  wg_pubkey: 1JwYl6O6Y94PiKe5dXcgwMYjDxRK3im8mqvbZIeMSDE=
-  peer_v4: null
-  peer_v6: fe80::1525
-  bgp:
-    asn: 4242421525
-    extended_next_hop: true
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
 
 - name: dn42-iedon
   port: 22189
@@ -484,20 +445,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-vr18
-  port: 20705
-  remote: 151.250.94.244:708
-  wg_pubkey: MG6SSrDTQ1CHAleXrOsypHPZfhCFk6Yy314GBfCI/y0=
-  peer_v4: 172.23.203.193
-  peer_v6: null
-  wg_privkey: /etc/wireguard/privatekey_ams
-  bgp:
-    asn: 4242420705
-    extended_next_hop: false
-    ipv4: true
-    ipv6: false
-    mp_bgp: false
 
 - name: dn42-mltfr
   port: 22412

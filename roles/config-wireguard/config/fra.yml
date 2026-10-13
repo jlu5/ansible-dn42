@@ -438,19 +438,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: false
 
-- name: dn42-cowgl
-  port: 23999
-  remote: ams.node.cowgl.tech:31080
-  wg_pubkey: sHPUV74X+hqUK5wFj3m5kCga0rlPCxImUBwZ/oLiEn4=
-  peer_v4: 172.22.144.67
-  peer_v6: fd36:62be:ef51:3::1
-  bgp:
-    asn: 4242423999
-    ipv4: true
-    ipv6: true
-    mp_bgp: false
-    extended_next_hop: false
-
 - name: dn42-badaimweeb
   port: 23797
   remote: de-fra1.rc.badaimweeb.me:5607
@@ -581,20 +568,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
-
-- name: dn42-lezi
-  port: 23377
-  remote: de1.peer.dn42.leziblog.com:21080
-  wg_pubkey: Kd5+CvZW3NRvUXpbdqGFt85VzMyReBtnVeDVXae06Qg=
-  peer_v4: null
-  peer_v6: fe80::3377
-  bgp:
-    asn: 4242423377
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-  wg_mtu: 1370
 
 - name: dn42-iris
   port: 21023
@@ -762,19 +735,6 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
-- name: dn42-yuetau
-  port: 20925
-  remote: 2a0e:46c4:2903:beef::4242:21080
-  wg_pubkey: JmjoF9DosETYg6++oO82eC3VvysK08ym7DTc/Z2RjB8=
-  peer_v4: null
-  peer_v6: fe80::925
-  bgp:
-    asn: 4242420925
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
 - name: dn42-ca73testne
   port: 22363
   remote: 104.255.67.181:23630
@@ -839,21 +799,6 @@ wg_peers:
   wg_privkey: /etc/wireguard/privatekey_sto
   bgp:
     asn: 4242420166
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: true
-
-- name: dn42-zyner
-  port: 20900
-  remote: dn42.selud02.zyner.net:21080
-  wg_pubkey: Odxqq2L5HH26owU2Qu2zZsZbrYj/TyfpUhUxOaOyjyY=
-  peer_v4: null
-  peer_v6: fe80::0900
-  local_v6: fe80::1080:121
-  wg_privkey: /etc/wireguard/privatekey_sto
-  bgp:
-    asn: 4242420900
     ipv4: true
     ipv6: true
     mp_bgp: true

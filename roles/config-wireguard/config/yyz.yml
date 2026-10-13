@@ -28,21 +28,6 @@ wg_peers:
     ipv6: true
     mp_bgp: true
 
-- name: dn42-cowgl
-  port: 23999
-  remote: yyz.node.cowgl.tech:31080
-  wg_pubkey: XGIBvqoUOgb8IiLIWtO9JVNZc4SEpEAM1eWh26MtoRE=
-  peer_v4: 172.22.144.69
-  peer_v6: "fd36:62be:ef51:5::1"
-  local_v6: fd86:bad:11b7:15::1
-  wg_privkey: /etc/wireguard/privatekey_yyz
-  bgp:
-    asn: 4242423999
-    extended_next_hop: false
-    ipv4: true
-    ipv6: true
-    mp_bgp: false
-
 - name: dn42-prefixlabs
   port: 21240
   remote: ca-01.prefixlabs.net:21080
@@ -239,19 +224,6 @@ wg_peers:
     ipv4: true
     ipv6: true
     mp_bgp: true
-
-- name: dn42-fiberplz
-  port: 20389
-  remote: dn42.fiberoptic.ninja:51807
-  wg_pubkey: ZacdnI4XHUC+7CCvV1qFnZagbZt8e1ZntILfPMVmjgU=
-  peer_v4: 172.20.132.2
-  peer_v6: fe80::dda7
-  bgp:
-    asn: 4242420389
-    ipv4: true
-    ipv6: true
-    mp_bgp: true
-    extended_next_hop: false
 
 - name: dn42-cdubs
   port: 20566
