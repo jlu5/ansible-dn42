@@ -20,6 +20,7 @@ KillMode=mixed
 TimeoutStopSec=5
 PrivateTmp=true
 ProtectSystem=strict
+CPUQuota={{ '85%' if ansible_facts['processor_vcpus'] == 1 else '100%' }}
 
 [Install]
 WantedBy=multi-user.target
