@@ -9,8 +9,6 @@ Type=notify
 NotifyAccess=main
 User={{ automation_user }}
 Group=nogroup
-DynamicUser=true
-RuntimeDirectory=gunicorn
 WorkingDirectory={{ routegraphs_clone_path }}
 ExecStart={{ routegraphs_venv_dir }}/bin/gunicorn --pythonpath=. app:app
 ExecReload=/bin/kill -s HUP $MAINPID
@@ -19,7 +17,6 @@ Environment=ROUTEGRAPHS_BASE_URL=https://{{ routegraphs_server_name }}/
 KillMode=mixed
 TimeoutStopSec=5
 PrivateTmp=true
-ProtectSystem=strict
 CPUQuota={{ '85%' if ansible_facts['processor_vcpus'] == 1 else '100%' }}
 
 [Install]
