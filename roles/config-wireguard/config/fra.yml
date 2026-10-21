@@ -937,3 +937,15 @@ wg_peers:
     mp_bgp: true
     extended_next_hop: true
 
+- name: dn42-sabrina
+  port: 21810
+  remote: de42.sabrinaishere.party:21080
+  wg_pubkey: hxfukVZizPWmH35E7PaOoT3LOKlbGYvDhHgufaIFr1I=
+  peer_v4: null
+  peer_v6: fe80::1810
+  bgp:
+    asn: 4242421810
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
