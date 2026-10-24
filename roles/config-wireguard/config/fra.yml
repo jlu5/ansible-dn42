@@ -27,10 +27,10 @@ wg_peers:
 
 - name: dn42-lantian
   port: 52547
-  remote: "buyvm.lantian.pub:21080"
-  wg_pubkey: "DkmSBCIgrxPPZmT07DraoCSD/jSByjPkYqHJWfVZ5hM="
-  peer_v4: "172.22.76.187"
-  peer_v6: "fe80::2547"
+  remote: buyvm.lantian.pub:21080
+  wg_pubkey: ZxgwVMViBl4b0okjnRPSPZZ/ep/5sdwDzSnCI4pTRXA=
+  peer_v4: null
+  peer_v6: fe80::2547
   bgp:
     asn: 4242422547
     extended_next_hop: true

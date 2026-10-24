@@ -198,13 +198,12 @@ wg_peers:
     mp_bgp: true
 
 - name: dn42-lantian
-  peer_v4: 172.22.76.185
+  peer_v4: null
   peer_v6: fe80::2547
   port: 22547
-  remote: hostdare.lantian.pub:21080
-  wg_pubkey: zyATu8FW392WFFNAz7ZH6+4TUutEYEooPPirwcoIiXo=
-  local_v4: 172.20.229.122
-  local_v6: "fe80::122"
+  remote: bwg-lax.lantian.pub:21080
+  wg_pubkey: DipkJyCAKPpGTEs66PuBfWYb6JcnHDaurDJW0ofTSWo=
+  local_v6: fe80::122
   wg_privkey: /etc/wireguard/privatekey_lax
   bgp:
     asn: 4242422547

@@ -58,10 +58,10 @@ wg_peers:
 
 - name: dn42-lantian
   port: 52547
-  remote: "45.42.214.121:21080"
-  wg_pubkey: "a+zL2tDWjwxBXd2bho2OjR/BEmRe2tJF9DHFmZIE+Rk="
-  peer_v4: "172.22.76.190"
-  peer_v6: "fe80::2547"
+  remote: colocrossing.lantian.pub:21080
+  wg_pubkey: 2Q6m6AZfkTPy9sJTFyYbUvMXv0AsAqDP+K3atit0mXU=
+  peer_v4: null
+  peer_v6: fe80::2547
   bgp:
     asn: 4242422547
     extended_next_hop: true
