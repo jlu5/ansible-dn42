@@ -727,3 +727,17 @@ wg_peers:
     ipv6: true
     mp_bgp: true
     extended_next_hop: true
+
+- name: dn42-tes286
+  port: 20078
+  remote: us02.tes286.top:21080
+  wg_pubkey: Gb+Ja7Z2AUhNih9ciFCCfSM1k9xdv2nY0j3IpHCL4m4=
+  wg_mtu: 1400
+  peer_v4: null
+  peer_v6: fe80::78
+  bgp:
+    asn: 4242420078
+    ipv4: true
+    ipv6: true
+    mp_bgp: true
+    extended_next_hop: true
