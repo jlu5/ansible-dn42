@@ -9,7 +9,6 @@ $TTL 300
         3600        ; minimum TTL
 )
 @   IN  NS      ns.highdef.dn42.
-3 IN PTR ping.highdef.dn42.
 54 IN PTR ns.highdef.dn42.
 53 IN PTR dns.highdef.dn42.
 1 IN PTR gw.yvrlab.highdef.dn42.

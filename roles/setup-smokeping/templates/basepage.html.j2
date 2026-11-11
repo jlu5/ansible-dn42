@@ -83,7 +83,7 @@
 <div class="navbar-ext">
     <!-- This feature is currently broken in git master -->
     <div class="hdnet-navbar-item" style="display: none"><a id="refresh-button" href="#">Auto Refresh</a></div>
-{% for host in groups['smokeping'] %}
+{% for host in groups['smokeping_public'] %}
 {% set other_url = hostvars[host].smokeping_base_url | default(host + dns_auto_host_record_suffix + "." + dns_domain) %}
 {% if host == inventory_hostname %}
     <div class="hdnet-navbar-item" id="hdnet-navbar-current"><b>{{ host|upper }}</b></div>

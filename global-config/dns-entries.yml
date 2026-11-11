@@ -6,10 +6,6 @@ dns_records:
       # ansible_host_alias expands to the IPv4 & IPv6 (ownip & ownip6) of a particular node
       type: ansible_host_alias
       target: sjc
-    "ping":
-      type: host_record
-      ip4: 172.22.108.3
-      ip6: fd86:bad:11b7:aaaa:38c2:3ff:fe0b:5860
     "ping-sea1":
       type: ansible_host_alias
       target: sea1
